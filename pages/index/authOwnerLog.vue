@@ -20,9 +20,9 @@
 				</view>
 				<view class="flex margin-top-xs justify-between">
 					<view class="text-gray">人员类型</view>
-					<view class="text-gray" v-if="item.ownerTypeCd = '1001'">业主</view>
-					<view class="text-gray" v-else-if="item.ownerTypeCd = '1002'">家庭成员</view>
-					<view class="text-gray" v-else-if="item.ownerTypeCd = '1003'">租客</view>
+					<view class="text-gray" v-if="item.ownerTypeCd == '1001'">业主</view>
+					<view class="text-gray" v-else-if="item.ownerTypeCd == '1002'">家庭成员</view>
+					<view class="text-gray" v-else-if="item.ownerTypeCd == '1003'">租客</view>
 					<view class="text-gray" v-else>其他</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">

@@ -177,9 +177,10 @@
 					},
 				}).then(()=>{
 					uni.removeStorageSync('_tempItemReleaseResource');
-					uni.navigateTo({
-						url:'/pages/my/my'
-					})
+					uni.navigateBack();
+					// uni.navigateTo({
+					// 	url:'/pages/my/my'
+					// })
 				},_err=>{
 					uni.showToast({
 						icon:'none',

@@ -35,7 +35,9 @@
 				.then((_owner)=>{
 					let _data = {
 						memberId: _owner.memberId,
-						communityId: _owner.communityId
+						communityId: _owner.communityId,
+						page:1,
+						row:300
 					};
 					_that.communityName = _owner.communityName;
 					_that.communityId = _owner.communityId;

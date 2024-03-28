@@ -15,7 +15,7 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址
-const baseUrl = 'https://192.168.100.108:8088/';
+const baseUrl = 'https://wuye.taksongroup.com/';
 // #endif
 
 let commonBaseUrl = 'http://demo.homecommunity.cn/';

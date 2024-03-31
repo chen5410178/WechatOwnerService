@@ -1,12 +1,5 @@
 <template>
 	<view>
-		<view class="bg-white">
-			<view class="cu-steps">
-				<view class="cu-item" :class="index>active?'':'text-green'" v-for="(item,index) in steps" :key="index">
-					<text :class="'cuIcon-' + item.cuIcon"></text> {{item.name}}
-				</view>
-			</view>
-		</view>
 		<view class="block__title">小区信息</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
@@ -40,15 +33,6 @@
 					<text class="text-grey text-sm">{{appUserName}}</text>
 				</view>
 			</view>
-			<!-- <view class="cu-item">
-				<view class="content">
-					<text class="cuIcon-card text-green"></text>
-					<text class="text-grey">身份证</text>
-				</view>
-				<view class="action">
-					<text class="text-grey text-sm">{{idCard}}</text>
-				</view>
-			</view> -->
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
@@ -60,10 +44,6 @@
 			</view>
 		</view>
 
-		<view class="button_up_blank"></view>
-		<view v-if="active == 1" class="cu-form-group justify-center">
-			<button class="cu-btn bg-red lg" @tap.native.stop="unbindOwner">解绑业主</button>
-		</view>
 	</view>
 </template>
 
@@ -71,26 +51,18 @@
 	// pages/viewBindOwner/viewBindOwner.js
 	import context from '../../lib/java110/Java110Context.js';
 	const constant = context.constant;
-	
-	import {getCommunityName} from '@/api/community/communityApi.js'
+
+	import {
+		getCommunityId,
+		getCommunityName
+	} from '@/api/community/communityApi.js';
+	import {
+		loadLoginOwner
+	} from '../../api/owner/ownerApi.js';
 
 	export default {
 		data() {
 			return {
-				steps: [{
-					cuIcon: 'usefullfill',
-					name: '申请',
-					desc: ''
-				}, {
-					cuIcon: 'radioboxfill',
-					name: '审核中',
-					desc: ''
-				}, {
-					cuIcon: 'roundcheckfill',
-					name: '完成',
-					desc: ''
-				}],
-				active: 0,
 				areaName: '',
 				communityId: '',
 				communityName: '',
@@ -115,16 +87,17 @@
 			 */
 			loadOwnerInfo: function() {
 				let _that = this;
-
-				context.getOwner(function(_ownerInfo) {
+			
+				loadLoginOwner({
+					communityId:getCommunityId()
+				}).then(function(_ownerInfo) {
+					console.log(_ownerInfo)
 					if (_ownerInfo) {
 						let _active = _ownerInfo.state == '10000' ? 1 : 2;
 						_that.areaName = _ownerInfo.parentAreaName + _ownerInfo.areaName;
 						_that.communityId = _ownerInfo.communityId;
-						_that.appUserName = _ownerInfo.ownerName;
+						_that.appUserName = _ownerInfo.name;
 						_that.link = _ownerInfo.link;
-						_that.active = _active;
-
 					}
 				});
 			},

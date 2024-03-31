@@ -85,6 +85,8 @@
 			let that = this;
 			this.logoUrl = constant.url.baseUrl + 'logo.png';
 			//todo 清除缓存内容，以防 业主后退，然后还显示他的东西
+			uni.removeStorageSync("ownerInfo");
+			uni.removeStorageSync("userInfo");
 			uni.removeStorageSync("JAVA110_USER_INFO");
 			uni.removeStorageSync("currentCommunityInfo");
 			removeUserLoginInfo();

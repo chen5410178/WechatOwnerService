@@ -93,16 +93,12 @@
 				_this.ownerId = _owner.memberId;
 				_this.userId = _owner.ownerId;
 				_this.applyPersonName = _owner.ownerName;
-				_this.applyPersonLink = _owner.link;
-				_this.applyPersonId = _owner.ownerId;
+				_this.applyPersonLink = _owner.ownerTel;
+				_this.applyPersonId = _owner.memberId;
 				_this.listParkingSpace();
 			});
-			let param = {
-				"communityId":_this.communityId
-			}
 		},
 		methods: {
-			
 			listParkingSpace: function() {
 				context.request({
 					url: constant.url.queryParkingSpaces,

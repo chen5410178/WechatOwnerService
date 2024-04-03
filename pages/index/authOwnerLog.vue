@@ -45,7 +45,7 @@
 				</view>
 			</view>
 		</view>
-		<view v-else class="text-center to-auth" >
+		<view  class="text-center to-auth" >
 			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toAuthOwner()">去认证</button>
 		</view>
 
@@ -118,6 +118,6 @@
 		height: 180rpx;
 	}
 	.to-auth{
-		margin-top:300upx
+		margin-top:20upx
 	}
 </style>

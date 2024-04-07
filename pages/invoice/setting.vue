@@ -19,9 +19,18 @@
 			<input v-model="invoiceNum" placeholder="请输入纳税人识别号" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">地址、电话</view>
-			<input v-model="invoiceAddress" placeholder="请输入地址、电话" class="text-right"></input>
+			<view class="title">地址</view>
+			<input v-model="invoiceAddress" placeholder="请输入地址" class="text-right"></input>
 		</view>
+		<view class="cu-form-group">
+			<view class="title">电话</view>
+			<input v-model="invoiceLink" placeholder="请输入电话" class="text-right"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">开户行及账号</view>
+			<input v-model="invoiceAccount" placeholder="请输入开户行及账号" class="text-right"></input>
+		</view>
+		
 
 		<view class="flex flex-direction padding">
 			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_updateOwnerInvoice()" v-if="oiId">提交</button>
@@ -59,8 +68,9 @@
 				invoiceNum: '',
 				invoiceAddress: '',
 				ownerId: '',
-				oiId:''
-
+				oiId:'',
+				invoiceLink:'',
+				invoiceAccount:''
 			}
 		},
 		onLoad(options) {
@@ -114,6 +124,8 @@
 					invoiceName:this.invoiceName,
 					invoiceNum:this.invoiceNum,
 					invoiceAddress:this.invoiceAddress,
+					invoiceLink:this.invoiceLink,
+					invoiceAccount:this.invoiceAccount,
 					ownerId:this.ownerId,
 					ownerName:getOwnerName(),
 					communityId: getCommunityId(),
@@ -133,6 +145,8 @@
 					invoiceName:this.invoiceName,
 					invoiceNum:this.invoiceNum,
 					invoiceAddress:this.invoiceAddress,
+					invoiceLink:this.invoiceLink,
+					invoiceAccount:this.invoiceAccount,
 					ownerId:this.ownerId,
 					oiId:this.oiId,
 					communityId: getCommunityId(),

@@ -57,8 +57,9 @@ export function autoLogin(options) {
 	if (hasLogin()) {
 		return;
 	}
+	
 	//todo 如果是 h5 或者 微信小程序 ，检查是否做了配置，如果没有做配置不做自登陆
-	// #ifdef H5 || MP-MP-WEIXIN
+	// #ifdef H5 || MP-WEIXIN
 	autoLoginWechat(options);
 	// #endif
 
@@ -70,11 +71,11 @@ export function autoLogin(options) {
  */
 export function autoLoginWechat(options) {
 	let _openId = options.openId;
+	
 	if(_openId){ //h5 自登陆的情况
 		loginByOpenId(_openId);
 		return;
 	}
-	
 	//todo 如果参数中带了wAppId
 	let _wAppId = options.wAppId;
 	
@@ -82,6 +83,7 @@ export function autoLoginWechat(options) {
 		_generatorOpenId(options, _wAppId);
 		return;
 	}
+	
 	
 	let _objType = "1100"; // todo public
 	// #ifdef MP-WEIXIN

@@ -4,10 +4,10 @@
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">费用</text>
+					<text class="text-grey">表号</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{feeConfigName}}</text>
+					<text class="text-grey text-sm">{{address}}</text>
 				</view>
 			</view>
 			<view class="cu-item">

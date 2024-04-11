@@ -15,7 +15,7 @@
 					<text class="text-grey">剩余余额</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{prestoreDegrees}}</text>
+					<text class="text-grey text-sm">{{curDegrees}}</text>
 				</view>
 			</view>
 			<view class="cu-item">
@@ -53,8 +53,8 @@
 			return {
 				machineId:'',
 				machineName:'',
-				feeConfigName:'',
-				prestoreDegrees:'0',
+				address:'',
+				curDegrees:'0',
 				amount:'0',
 				appId:'',
 				communityId:'',
@@ -77,8 +77,8 @@
 					roomId:this.roomId
 				}).then(_data=>{
 					_that.machineName=_data[0].machineName;
-					_that.feeConfigName=_data[0].feeConfigName;
-					_that.prestoreDegrees=_data[0].prestoreDegrees;
+					_that.address=_data[0].address;
+					_that.curDegrees=_data[0].curDegrees;
 					_that.amount=_data[0].amount;
 				})
 			},

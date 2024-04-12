@@ -179,6 +179,7 @@ export function loginByOpenId(openId){
 				communityId:_json.data.communityId,
 				communityName:_json.data.communityName,
 			});
+			uni.removeStorageSync("ownerInfo");
 			saveUserLoginInfo(_json.data.userId, _json.data.token, _json.data.key);
 		},
 		fail: function(e) {

@@ -94,23 +94,6 @@
 			this._initData();
 			
 		},
-		onPullDownRefresh: function() {
-			// 上拉刷新
-			if (!this.loading) {
-				this.getTable(1, true).then(() => {
-					// 处理完成后，终止下拉刷新
-					wx.stopPullDownRefresh();
-				});
-			}
-		},
-		onReachBottom: function() {
-			console.log(1, !this.loading, this.page < this.totalPage); // 下拉触底，先判断是否有请求正在进行中
-			// 以及检查当前请求页数是不是小于数据总页数，如符合条件，则发送请求
-
-			if (!this.loading && this.page < this.totalPage) {
-				this.getTable(this.page + 1);
-			}
-		},
 		methods: {
 			_initData:function(){
 				let that = this;

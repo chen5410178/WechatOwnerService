@@ -98,7 +98,7 @@
 							page: 1,
 							row: 20,
 							idCard: _ownerInfo.idCard,
-							link: _ownerInfo.link,
+							link: _ownerInfo.ownerTel,
 							communityId: _ownerInfo.communityId
 						}).then((data) => {
 							if (!data) {

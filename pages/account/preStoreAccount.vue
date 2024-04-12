@@ -73,7 +73,7 @@
 							page: 1,
 							row: 20,
 							idCard: _ownerInfo.idCard,
-							link: _ownerInfo.link,
+							link: _ownerInfo.ownerTel,
 							communityId: _that.communityId,
 							acctType:'2003'
 						}).then((data) => {

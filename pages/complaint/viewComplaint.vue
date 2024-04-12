@@ -140,7 +140,7 @@
 						_that.appUserName = _ownerInfo.appUserName;
 						_that.appUserId = _ownerInfo.appUserId;
 						_that.idCard = _ownerInfo.idCard;
-						_that.link = _ownerInfo.link;
+						_that.link = _ownerInfo.ownerTel;
 						_that.active = _active;
 					}
 				});

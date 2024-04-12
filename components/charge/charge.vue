@@ -48,7 +48,7 @@
 						getChargeMonthOrder({
 							page: 1,
 							row: 20,
-							personTel: _ownerInfo.link,
+							personTel: _ownerInfo.ownerTel,
 							communityId: _communityId,
 							queryTime:formatDate(new Date())
 						}).then((data) => {

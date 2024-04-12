@@ -118,7 +118,7 @@
 			getCurOwner()
 			.then(_ownerInfo=>{
 				//_that.personName = _ownerInfo.appUserName;
-				// _that.personTel = _ownerInfo.link;
+				// _that.personTel = _ownerInfo.ownerTel;
 				_that.communityId = _ownerInfo.communityId;
 			});
 			this.todayDate = formatDate(new Date());

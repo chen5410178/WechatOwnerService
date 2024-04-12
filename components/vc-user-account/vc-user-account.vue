@@ -97,7 +97,7 @@
 							page: 1,
 							row: 99,
 							idCard: _ownerInfo.idCard,
-							link: _ownerInfo.link,
+							link: _ownerInfo.ownerTel,
 							communityId: _communityId,
 							// acctType:'2003',
 							acctTypes: '2003,2004'

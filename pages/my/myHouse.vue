@@ -4,7 +4,7 @@
 			<view class="cu-item arrow" v-if="rooms.length > 0" v-for="(item, key) in rooms" :key="key" :data-item="item" @click="myHouseDetail(item)">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="cuIcon-homefill text-green margin-right-xs"></text> {{item.floorNum}}号楼{{item.unitNum}}单元{{item.roomNum}}室</view>
+						<text class="cuIcon-homefill text-green margin-right-xs"></text> {{item.floorNum}}-{{item.unitNum}}-{{item.roomNum}}</view>
 					<view class="text-gray text-sm">
 						<text class="cuIcon-right margin-right-xs"></text> {{item.roomId}}</view>
 				</view>

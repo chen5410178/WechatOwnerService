@@ -152,7 +152,7 @@
 							page: 1,
 							row: 20,
 							idCard: _ownerInfo.idCard,
-							link: _ownerInfo.link,
+							link: _ownerInfo.ownerTel,
 							communityId: _ownerInfo.communityId
 						}).then((data) => {
 							if (!data) {
@@ -192,7 +192,7 @@
 						getCouponUsers({
 							page: 1,
 							row: 100,
-							tel: _ownerInfo.link,
+							tel: _ownerInfo.ownerTel,
 							communityId: _ownerInfo.communityId,
 							state: '1001'
 						}, null)

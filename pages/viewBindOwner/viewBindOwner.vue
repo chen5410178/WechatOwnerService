@@ -97,7 +97,7 @@
 						_that.areaName = _ownerInfo.parentAreaName + _ownerInfo.areaName;
 						_that.communityId = _ownerInfo.communityId;
 						_that.appUserName = _ownerInfo.name;
-						_that.link = _ownerInfo.link;
+						_that.link = _ownerInfo.ownerTel;
 					}
 				});
 			},

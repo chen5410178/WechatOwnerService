@@ -39,6 +39,7 @@
 <script>
 	// pages/my/myHouseDetail.js
 	import context from '../../lib/java110/Java110Context.js';
+	import {hasLogin} from '@/api/user/sessionApi.js';
 	const factory = context.factory;
 
 	export default {
@@ -65,11 +66,7 @@
 			context.onLoad(options);
 			_that.roomDetail = JSON.parse(options.room);
 
-			factory.login.checkLoginStatus(function() {
-				_that.userInfo = context.getUserInfo();
-				//_that.roomDetail = wx.getStorageSync('roomDetail');
-			}); //查询用户信息
-
+		
 			_that.loadOwenrInfo();
 		},
 

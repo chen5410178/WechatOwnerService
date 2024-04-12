@@ -66,11 +66,11 @@
 				let _that = this;
 				context.getOwner(function(_ownerInfo) {
 					if (_ownerInfo) {
-						_that.personTel = _ownerInfo.link;
+						_that.personTel = _ownerInfo.ownerTel;
 						getChargeMonthOrder({
 							page: 1,
 							row: 20,
-							personTel: _ownerInfo.link,
+							personTel: _ownerInfo.ownerTel,
 							communityId: _that.communityId,
 							queryTime:formatDate(new Date())
 						}).then((data) => {

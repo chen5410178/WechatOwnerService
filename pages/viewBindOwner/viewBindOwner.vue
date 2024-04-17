@@ -91,13 +91,12 @@
 				loadLoginOwner({
 					communityId:getCommunityId()
 				}).then(function(_ownerInfo) {
-					console.log(_ownerInfo)
 					if (_ownerInfo) {
 						let _active = _ownerInfo.state == '10000' ? 1 : 2;
 						_that.areaName = _ownerInfo.parentAreaName + _ownerInfo.areaName;
 						_that.communityId = _ownerInfo.communityId;
 						_that.appUserName = _ownerInfo.name;
-						_that.link = _ownerInfo.ownerTel;
+						_that.link = _ownerInfo.link;
 					}
 				});
 			},

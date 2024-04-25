@@ -103,10 +103,14 @@
 				let _date = new Date();
 				let _curHours = _date.getHours();
 				_that.curSecHours = this.secHours[0];
+				let _break =false;
 				this.secHours.forEach(_hours => {
+					if(_break){
+						return;
+					}
 					if (_hours.hours >= _curHours) {
 						_that.curSecHours = _hours;
-						return;
+						_break = true
 					}
 				})
 

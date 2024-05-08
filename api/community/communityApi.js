@@ -104,6 +104,16 @@ export function getCommunityTel() {
 }
 
 
+export function getCommunityQrCode() {
+	let _currentCommunity = uni.getStorageSync("currentCommunityInfo")
+	if (_currentCommunity) {
+		return _currentCommunity.communityQrCode;
+	}
+	return '';
+}
+
+
+
 /**
  * 查询当前小区
  * 

@@ -171,7 +171,7 @@
 					carNum: this.carNum,
 					remark: this.remark,
 					communityId:this.communityId,
-					passTime:this.todayDate+" "+this.todayDateTime+":00",
+					passTime:this.bindDate+" "+this.bindTime+":00",
 					audit: {
 						staffId: this.audit.assignee,
 					},

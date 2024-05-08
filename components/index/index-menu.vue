@@ -78,7 +78,8 @@
 
 	import {
 		getCommunityName,
-		getCommunityTel
+		getCommunityTel,
+		getCommunityQrCode
 	} from '../../api/community/communityApi.js';
 
 	export default {
@@ -199,6 +200,7 @@
 
 				this.property.sCommunityTel = getCommunityTel();
 				this.property.communityName = getCommunityName();
+				this.property.communityQrCode = getCommunityQrCode();
 				_that.callPropertyModal = true;
 
 			},

@@ -309,7 +309,8 @@ export function ownerLogin(_that, _data) {
 					uni.setStorageSync("currentCommunityInfo",{
 						communityId:_json.data.communityId,
 						communityName:_json.data.communityName,
-						sCommunityTel:_json.data.communityTel
+						sCommunityTel:_json.data.communityTel,
+						communityQrCode:_json.data.communityQrCode
 					});
 					resolve(_json.data);
 				},

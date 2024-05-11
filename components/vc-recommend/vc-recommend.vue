@@ -90,7 +90,11 @@
 					})
 			},
 			_loadRecommendProdcut: function() {
-				let _that = this;
+					let _that = this;
+				if(!_that.curCategoryId || _that.curCategoryId == -1){
+					return ;
+				}
+			
 				_that.communityId = getMallCommunityId();
 				let _data = {
 					page: this.pagefrom+1,

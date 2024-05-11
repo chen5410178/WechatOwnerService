@@ -135,7 +135,7 @@ export default {
 	queryQuestionAnswerTitle: baseUrl + "app/question.listQuestionTitle",
 	saveUserQuestionAnswerValue: baseUrl + "app/question.saveOwnerQuestionAnswer",
 	listMachineTranslates: baseUrl + "app/machineTranslate.listMachineTranslates",
-	generatorHcCode: baseUrl + "app/userLogin/generatorHcCode",
+	generatorHcCode: baseUrl + "app/login.generatorHcCode",
 	queryApplyRoomDiscount: baseUrl + "app/applyRoomDiscount/queryApplyRoomDiscount",
 	querySetting: baseUrl + "app/reportInfoSetting/queryReportInfoSetting",
 	saveReportInfoBackCity: baseUrl + "app/reportInfoBackCity/saveReportInfoBackCity",

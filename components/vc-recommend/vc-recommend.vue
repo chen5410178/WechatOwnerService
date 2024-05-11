@@ -93,7 +93,7 @@
 				let _that = this;
 				_that.communityId = getMallCommunityId();
 				let _data = {
-					page: this.pagefrom+1,
+					page: 1,
 					row: this.pagesize,
 					communityId: _that.communityId,
 					mainCategoryId: _that.curCategoryId

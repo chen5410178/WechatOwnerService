@@ -151,13 +151,13 @@ export default {
 	queryOwnerAccount: baseUrl + "app/account/queryOwnerAccount",
 	queryOwnerAccountDetail: baseUrl + "app/account/queryOwnerAccountDetail",
 	ownerCommunity: baseUrl + "app/owner.ownerCommunity",
-	queryShopType: baseUrl + 'app/shopType/queryShopType', //查询店铺类型
+	queryShopType: baseUrl + 'app/mall.queryShopType', //查询店铺类型
 	// 家政服务类型（菜单）
-	queryHousekeepingType: baseUrl + 'app/housekeepingType/queryHousekeepingType',
+	queryHousekeepingType: baseUrl + 'app/mall.queryHousekeepingType',
 	queryMainCategoryAllGoods: baseUrl + "app/productCategory/queryMainCategoryAllGoods",
-	queryPhoneMainCategoryProduct: baseUrl + "app/product.queryPhoneMainCategoryProduct",
+	queryPhoneMainCategoryProduct: baseUrl + "app/mall.queryPhoneMainCategoryProduct",
 
-	queryMainCategory: baseUrl + "app/productCategory/queryMainCategory",
+	queryMainCategory: baseUrl + "app/mall.queryMainCategory",
 
 	queryShopCommunity: baseUrl + "app/shop/queryShopCommunity",
 	saveAddVisit: baseUrl + "app/visit.saveVisit",
@@ -196,8 +196,8 @@ export default {
 	listReserveParams: baseUrl + "app/reserve.listReserveParams", // 查询预约商品
 	listReserveGoodsOrderTime: baseUrl + "app/reserveOrder.listMyReserveGoodsOrderTime", // 查询预约订单
 	deleteReserveGoodsPerson: baseUrl + "app/reserveOrder.deleteReserveGoodsPerson", // 查询预约订单
-	listProductSeckill: baseUrl + "app/productSeckill.listProductSeckill",
-	listProductGroup: baseUrl + "app/productGroup.listProductGroup",
+	listProductSeckill: baseUrl + "app/mall.listProductSeckill",
+	listProductGroup: baseUrl + "app/mall.listProductGroup",
 	listRegisterProtocol: baseUrl + "app/system.listRegisterProtocol",
 	queryCurrentOwner: baseUrl + "app/owner.queryCurrentOwner",
 	listItemReleaseType: baseUrl + "app/itemRelease.listItemReleaseType",

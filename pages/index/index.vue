@@ -110,10 +110,7 @@
 		 * 页面上拉触底事件的处理函数
 		 */
 		onReachBottom: function() {
-			if (this.notices.length >= this.page * this.row) {
-				this.page = this.page + 1;
-				this._loadActivites();
-			}
+			
 		},
 		methods: {
 			judgeBindOwnerFun: function() {

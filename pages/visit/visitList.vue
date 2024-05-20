@@ -10,20 +10,20 @@
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
 					<view>预约状态</view>
 					<view class="text-gray">
-						{{item.state == 0 || item.state == 2 || item.state == 3 ? '未生效' : (item.recordState == 0 ? '已生效' : '已失效')}}
+						{{item.stateName}}
 					</view>
 				</view>
 				<view class="flex margin-top justify-between">
 					<view class="text-gray">访客姓名</view>
-					<view class="text-gray">{{item.vName}}</view>
+					<view class="text-gray">{{item.name}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.carNum">
 					<view class="text-gray">车牌号</view>
 					<view class="text-gray">{{item.carNum}}</view>
 				</view>
-				<view class="flex margin-top-xs justify-between" v-if="item.carNum">
-					<view class="text-gray">车辆审核状态</view>
-					<view class="text-gray">{{item.stateName}}</view>
+				<view class="flex margin-top-xs justify-between">
+					<view class="text-gray">访客电话</view>
+					<view class="text-gray">{{item.phoneNumber}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
 					<view class="text-gray">预计来访时间</view>
@@ -72,13 +72,15 @@
 		 */
 		onLoad: function(options) {
 			context.onLoad(options);
-			let _that = this;
+		
+
+		},
+		onShow() {
+				let _that = this;
 			context.getOwner(function(_owner) {
 				_that.ownerInfo = _owner;
 				_that._loadVisitList();
 			});
-
-
 		},
 		onReachBottom: function() {
 			this._loadVisitList();
@@ -103,7 +105,7 @@
 
 			_showDetail(_item) {
 				uni.navigateTo({
-					url: '/pages/visit/visitDetail?vId=' + _item.vId
+					url: '/pages/visit/visitDetail?visitId=' + _item.visitId
 				})
 			}
 		}

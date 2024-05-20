@@ -69,3 +69,22 @@ export function saveAddVisit(_data) {
 		});
 	})
 }
+
+export function queryVisitQrCode(_data) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryVisitQrCode,
+			method: "GET",
+			data: _data,
+			success: function(res) {
+				if (res.statusCode == 200) {
+					//成功情况下跳转
+					resolve(res.data);
+				}
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	})
+}

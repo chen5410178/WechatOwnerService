@@ -15,7 +15,8 @@
 <script>
 	import context from '../../lib/java110/Java110Context.js';
 	import {listOwnerVisit}  from '../../api/visit/visit.js'
-	import drawQrcode from '@/components/weapp-qrcode/weapp.qrcode.esm.js'
+	import drawQrcode from '@/components/weapp-qrcode/weapp.qrcode.esm.js';
+	import { getCommunityId } from '../../api/community/communityApi.js';
 	const constant = context.constant;
 	const util = context.util;
 	export default {
@@ -77,14 +78,12 @@
 				let _objData = {
 					page: 1,
 					row: 1,
-					vId: vId,
-					ownerId: this.ownerInfo.ownerId,
-					userId: this.ownerInfo.userId,
-					communityId: this.ownerInfo.communityId
+					visitId: vId,
+					communityId: getCommunityId()
 				}
 				listOwnerVisit(_objData).then((_visits) => {
-					_that.visitInfo = _visits.visits[0];
-					let qrText = _that.visitInfo.vId;
+					_that.visitInfo = _visits.data[0];
+					let qrText = _that.visitInfo.visitId;
 					drawQrcode({
 						width: 200,
 						height: 200,

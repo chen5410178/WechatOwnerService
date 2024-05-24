@@ -77,6 +77,7 @@
 					ownerId: _community.ownerId,
 					ownerTel: _community.link,
 					communityId: _community.communityId,
+					ownerTypeCd:_community.ownerTypeCd,
 					link: _community.link
 				})
 				uni.navigateBack({

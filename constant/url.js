@@ -241,6 +241,10 @@ export default {
 	listInvoiceEvent: baseUrl+"app/invoice.listInvoiceEvent",
 	saveInvoiceApply: baseUrl+"app/invoice.saveInvoiceApply",
 	getNativeQrcodePayment: baseUrl+"app/payment.getNativeQrcodePayment",
+	queryAppOwnerCars: baseUrl+"app/owner.queryAppOwnerCars",
+	queryAppCarMonthCard: baseUrl+"app/carMonth.queryAppCarMonthCard",
+	
+	
 	
 	
 	

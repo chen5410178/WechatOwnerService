@@ -1029,6 +1029,13 @@
         		"navigationBarTitleText" : "认证记录",
         		"enablePullDownRefresh" : false
         	}
+        },
+        {
+        	"path" : "pages/fee/buyeCarMonthCard",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "车辆月卡"
+        	}
         }
     ],
 	"tabBar": {

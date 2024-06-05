@@ -28,12 +28,12 @@ export function getCars(_objData) {
 			success: function(res) {
 				if (res.statusCode == 200) {
 					//将业主信息和房屋信息一起返回
-					let _parkingSpaces = res.data.data;
+					let _cars = res.data.data;
 					if (_parkingSpaces.length == 0) {
-						reject("业主没有房屋信息");
+						reject("业主没有车辆信息");
 						return;
 					}
-					resolve(_parkingSpaces);
+					resolve(_cars);
 				} else {
 					reject("查询车辆失败");
 				}
@@ -44,6 +44,59 @@ export function getCars(_objData) {
 		});
 	});
 };
+
+export function queryAppOwnerCars(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryAppOwnerCars,
+			method: "GET",
+			data:_objData,
+			success: function(res) {
+				if (res.statusCode == 200) {
+					//将业主信息和房屋信息一起返回
+					let _cars = res.data.data;
+					if (_cars.length == 0) {
+						reject("业主没有车辆信息");
+						return;
+					}
+					resolve(_cars);
+				} else {
+					reject("查询车辆失败");
+				}
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+export function queryAppCarMonthCard(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryAppCarMonthCard,
+			method: "GET",
+			data:_objData,
+			success: function(res) {
+				if (res.statusCode == 200) {
+					//将业主信息和房屋信息一起返回
+					let _cars = res.data.data;
+					if (_cars.length == 0) {
+						reject("业主没有车辆信息");
+						return;
+					}
+					resolve(_cars);
+				} else {
+					reject("查询车辆失败");
+				}
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+
+
 
 
 export function queryWaitPayFeeTempCar(_objData) {

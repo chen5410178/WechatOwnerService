@@ -182,12 +182,12 @@
 						href: '/pages/itemRelease/itemRelease',
 						ownerAuth:true
 					},
-					// {
-					// 	name: '智能充电',
-					// 	src: this.imgUrl + '/h5/images/serve/my3.png',
-					// 	href: '/pages/machine/chargeMachines',
-					// 	ownerAuth:false
-					// },
+					{
+						name: '车辆月卡',
+						src: this.imgUrl + '/h5/images/serve/my3.png',
+						href: '/pages/fee/buyeCarMonthCard',
+						ownerAuth:false
+					},
 					{
 						name: '物业打分',
 						src: this.imgUrl + '/h5/images/serve/my9.png',

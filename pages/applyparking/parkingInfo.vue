@@ -28,19 +28,15 @@
 						<view class="text-gray">{{item.carBrand}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">起租时间</view>
+						<view class="text-gray">申请时间</view>
 						<view class="text-gray">{{item.createTime}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">结租时间</view>
-						<view class="text-gray">{{item.endTime}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
 						<view class="text-gray">备注</view>
 						<view class="text-gray">{{item.remark}}</view>
 					</view>
-					<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm"  v-if="item.state == '2002'">
-						<button class="cu-btn sm bg-green margin-left" @click="toPayFee(item)">去缴费</button>
+					<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm"  v-if="item.state == '3003'">
+						<button class="cu-btn sm bg-green margin-left" @click="_toBuyCarMonthCard(item)">去缴费</button>
 					</view>
 				</view>
 			</view>
@@ -65,9 +61,6 @@
 				parkingType: [{
 					"name": '待审核',
 					"code": 1001
-				}, {
-					"name": '待缴费',
-					"code": 2002
 				}, {
 					"name": '完成',
 					"code": 3003
@@ -149,9 +142,9 @@
 				this.noData = false;
 				this.listParkingSpace();
 			},
-			toPayFee: function() {
+			_toBuyCarMonthCard: function() {
 				this.vc.navigateTo({
-					url: '/pages/fee/payParkingFeeList',
+					url: '/pages/fee/buyeCarMonthCard',
 				})
 			},
 		}

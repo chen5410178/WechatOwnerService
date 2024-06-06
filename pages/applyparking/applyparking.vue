@@ -2,37 +2,21 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">车牌号</view>
-			<input v-model="carNum" style="text-align:right"></input>
+			<input v-model="carNum" placeholder="请输入车牌号" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">品牌</view>
-			<input v-model="carBrand" style="text-align:right"></input>
+			<input v-model="carBrand" placeholder="请输入品牌" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">颜色</view>
-			<input v-model="carColor" style="text-align:right"></input>
+			<input v-model="carColor"  placeholder="请输入颜色" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">车辆类型</view>
 			<picker bindchange="PickerChange" :value="index" :range="carTypes" @change="chooseCarTypes">
 				<view class="picker">
 					{{carTypeName?carTypeName:'请选择'}}
-				</view>
-			</picker>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">起租日期</view>
-			<picker mode="date" :value="startDate" @change="startDateChange">
-				<view class="picker">
-					{{startDate}}
-				</view>
-			</picker>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">结组日期</view>
-			<picker mode="date" :value="endDate" @change="endDateChange">
-				<view class="picker">
-					{{endDate}}
 				</view>
 			</picker>
 		</view>
@@ -43,6 +27,12 @@
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
 			<button @click="submitApply()" class="cu-btn bg-green margin-tb-sm lg">提交</button>
+		</view>
+		
+		<view class="temp-remark">
+			<view>车位申请说明</view>
+			<view>1、只有第一次租车位时，需要申请：</view>
+			<view>2、审核通过后，请到车辆月卡界面购买月卡续租：</view>
 		</view>
 	</view>
 </template>
@@ -131,18 +121,11 @@
 				this.psId = this.parkingSpaceIds[checkInIndex];
 				this.parkingSpacesName = this.parkingSpaces[checkInIndex];
 			},
-			endDateChange: function(e) {
-				this.endDate = e.detail.value
-			},
 			//车辆类型
 			chooseCarTypes: function(e) {
 				let index = e.target.value;
 				this.carTypeCode = this.carTypeCodes[index];
 				this.carTypeName = this.carTypes[index];
-			},
-		
-			startDateChange: function(e) {
-				this.startDate = e.detail.value
 			},
 			submitApply:function(){
 				let obj = {
@@ -150,8 +133,6 @@
 					"carBrand": this.carBrand,
 					"carColor": this.carColor,
 					"remark": this.remark,
-					"startTime": this.startDate,
-					"endTime": this.endDate,
 					"carType":this.carTypeCode,
 					"communityId":this.communityId,
 					"ownerId":this.ownerId,
@@ -172,12 +153,6 @@
 					msg = "请填写车辆颜色";
 				}else if(obj.carType == ""){
 					msg = "请选择车辆类型";
-				}
-				if(obj.startTime == '2020-01-01'){
-					msg = "请选择起租日期";
-				}
-				if(obj.endTime == '2020-01-01'){
-					msg = "请选择结租日期";
 				}
 				if(msg != ""){
 					wx.showToast({
@@ -213,10 +188,7 @@
 							duration: 2000
 						});
 					}
-				});
-				
-				
-				
+				});	
 			
 			}
 		}
@@ -233,5 +205,11 @@
 
 	.button_up_blank {
 		height: 40rpx;
+	}
+	
+	.temp-remark{
+		margin-top: 300upx;
+		padding:10upx;
+		color: #888888;
 	}
 </style>

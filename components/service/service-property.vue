@@ -143,7 +143,7 @@
 					{
 						name: "车位申请",
 						src: this.imgUrl + "/h5/images/serve/my6.png",
-						href: "/pages/applyparking/applyparking",
+						href: "/pages/car/applyparking",
 						ownerAuth:true
 					},
 					{

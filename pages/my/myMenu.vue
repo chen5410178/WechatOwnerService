@@ -147,7 +147,7 @@
 			},
 			myParking: function() {
 				this.vc.navigateTo({
-					url: '/pages/applyparking/parkingInfo',
+					url: '/pages/car/parkingInfo',
 				});
 			},
 			_machineTranslate: function() {

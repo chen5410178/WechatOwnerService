@@ -119,6 +119,59 @@ export function queryWaitPayFeeTempCar(_objData) {
 		});
 	});
 };
+
+
+export function editSelfCarNum(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.appEditSelfCarNum,
+			method: "POST",
+			data:_objData,
+			success: function(res) {
+				//将业主信息和房屋信息一起返回
+				resolve(res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+
+
+export function saveMemberCar(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.appSaveMemberCar,
+			method: "POST",
+			data:_objData,
+			success: function(res) {
+				//将业主信息和房屋信息一起返回
+				resolve(res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+export function deleteMemberCar(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.appDeleteMemberCar,
+			method: "POST",
+			data:_objData,
+			success: function(res) {
+				//将业主信息和房屋信息一起返回
+				resolve(res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+
 /**
  * 保存业主车辆
  */

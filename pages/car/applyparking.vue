@@ -26,7 +26,11 @@
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
-			<button @click="submitApply()" class="cu-btn bg-green margin-tb-sm lg">提交</button>
+			<button @click="submitApply()" class="cu-btn bg-blue margin-tb-sm lg">提交</button>
+		</view>
+		
+		<view class="flex flex-direction">
+			<button @click="_applyDetail()" class="cu-btn line-blue margin-tb-sm lg">查看进度</button>
 		</view>
 		
 		<view class="temp-remark">
@@ -43,8 +47,6 @@
 	import {getCurCommunity} from '../../api/community/communityApi.js'
 	
 	import {getProperty} from '../../api/property/propertyApi.js';
-
-
 
 	export default {
 		data() {
@@ -127,6 +129,11 @@
 				this.carTypeCode = this.carTypeCodes[index];
 				this.carTypeName = this.carTypes[index];
 			},
+			_applyDetail:function(){
+				uni.navigateTo({
+					url:'/pages/car/parkingInfo'
+				})
+			},
 			submitApply:function(){
 				let obj = {
 					"carNum": this.carNum,
@@ -171,7 +178,7 @@
 						let _json = res.data;
 						if (_json.code == 0) {
 							wx.redirectTo({
-								url: '/pages/applyparking/parkingInfo',
+								url: '/pages/car/parkingInfo',
 							});
 							return;
 						}

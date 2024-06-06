@@ -243,7 +243,10 @@ export default {
 	getNativeQrcodePayment: baseUrl+"app/payment.getNativeQrcodePayment",
 	queryAppOwnerCars: baseUrl+"app/owner.queryAppOwnerCars",
 	queryAppCarMonthCard: baseUrl+"app/carMonth.queryAppCarMonthCard",
-	
+	appEditSelfCarNum: baseUrl+"app/owner.appEditSelfCarNum",
+	appSaveMemberCar: baseUrl+"app/owner.appSaveMemberCar",
+	appDeleteMemberCar: baseUrl+"app/owner.appDeleteMemberCar",
+	 	
 	
 	
 	

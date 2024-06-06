@@ -296,7 +296,7 @@
 			}
 		},
 		{
-			"path": "pages/applyparking/applyparking",
+			"path": "pages/car/applyparking",
 			"style": {
 				"navigationBarTitleText": "车位申请"
 			}
@@ -313,7 +313,7 @@
 			}
 		},
 		{
-			"path": "pages/applyparking/parkingInfo",
+			"path": "pages/car/parkingInfo",
 			"style": {
 				"navigationBarTitleText": "车位申请进度"
 			}
@@ -1035,6 +1035,20 @@
         	"style" : 
         	{
         		"navigationBarTitleText" : "车辆月卡"
+        	}
+        },
+        {
+        	"path" : "pages/car/ownerCars",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "业主车辆"
+        	}
+        },
+        {
+        	"path" : "pages/car/carDetail",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "车辆详情"
         	}
         }
     ],

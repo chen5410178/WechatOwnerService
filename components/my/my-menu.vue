@@ -92,9 +92,9 @@
 						ownerAuth: true
 					},
 					{
-						name: '我的车位',
+						name: '我的车辆',
 						src: this.imgUrl + '/h5/images/serve/my6.png',
-						href: '/pages/applyparking/parkingInfo',
+						href: '/pages/car/ownerCars',
 						ownerAuth: true
 					},
 					{

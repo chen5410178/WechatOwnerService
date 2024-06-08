@@ -111,6 +111,7 @@
 				this.loadOwnerHeaderImg();
 				this.loadOwnerAccount();
 				this.loadOwnerCoupon();
+				this.loadUserIntegral();
 			},
 			ckeckUserInfo: function() {
 				return context.checkLoginStatus();
@@ -162,22 +163,12 @@
 							}
 							_that.accounts = data;
 							let blanceSum = 0;
-							let interSum = 0;
-							//let kaSum = 0;
 							_that.accounts.forEach((v, k) => {
-								// if(v.acctType == '2005'){
-								// 	kaSum += parseFloat(v.amount);
-								// }
-								if(v.acctType == '2004'){
-									interSum += parseFloat(v.amount);
-								}
 								if(v.acctType == '2003'){
 									blanceSum += parseFloat(v.amount);
 								}
 							})
 							_that.blance = blanceSum.toFixed(2);
-							_that.inter = interSum.toFixed(2);
-							//_that.ka = kaSum.toFixed(2);
 							
 						})
 					}
@@ -206,6 +197,9 @@
 							})
 					}
 				});
+			},
+			loadUserIntegral:function(){
+				
 			},
 			showLongModel: function() {
 				this.vc.navigateTo({

@@ -98,6 +98,33 @@ export function sendSmsCode(_link, _that) {
 }
 
 /**
+ * 查询用户积分信息
+ * @param {Object} _objData
+ */
+export function queryUserIntegral(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryAppUserIntegral,
+			method: "GET",
+			data: _objData, //动态数据
+			success: function(res) {
+				let _json = res.data;
+				if (_json.code == 0) {
+					//成功情况下跳转
+					let _integral = _json.data;
+					resolve(_integral);
+					return;
+				}
+				reject();
+			},
+			fail: function(e) {
+				reject();
+			}
+		});
+	})
+}
+
+/**
  * 查询用户账户信息
  * @param {Object} _objData
  */

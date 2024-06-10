@@ -55,7 +55,7 @@
 	const factory = context.factory; //获取app实例
 	const constant = context.constant;
 	import conf from '@/conf/config.js';
-	import {queryOwnerAccount} from '@/api/user/userApi.js';
+	import {queryOwnerAccount,queryUserIntegral} from '@/api/user/userApi.js';
 	import {
 		getCouponUsers
 	} from '../../api/fee/feeApi.js';
@@ -199,7 +199,14 @@
 				});
 			},
 			loadUserIntegral:function(){
-				
+				let _that =this;
+				this.inter = 0;
+				queryUserIntegral({
+					page:1,
+					row:1,
+				}).then(_data=>{
+					_that.inter = _data.integral
+				})
 			},
 			showLongModel: function() {
 				this.vc.navigateTo({

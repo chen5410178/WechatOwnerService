@@ -52,8 +52,8 @@
 				<no-data-page></no-data-page>
 			</view>
 		</view>
-		<modify-car-num ref="modifyCarNumRef" :loadData="_loadData"></modify-car-num>
-		<add-member-car ref="addMemberCarRef"></add-member-car>
+		<modify-car-num ref="modifyCarNumRef" @loadData="_loadData"></modify-car-num>
+		<add-member-car ref="addMemberCarRef" @loadData="_loadData"></add-member-car>
 	</view>
 </template>
 

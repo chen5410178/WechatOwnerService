@@ -55,10 +55,6 @@ export function queryAppOwnerCars(_objData) {
 				if (res.statusCode == 200) {
 					//将业主信息和房屋信息一起返回
 					let _cars = res.data.data;
-					if (_cars.length == 0) {
-						reject("业主没有车辆信息");
-						return;
-					}
 					resolve(_cars);
 				} else {
 					reject("查询车辆失败");

@@ -2,15 +2,15 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">车牌号</view>
-			<input v-model="carNum" placeholder="请输入车牌号" style="text-align:right"></input>
+			<input v-model="carNum" placeholder="必填,请输入车牌号" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">品牌</view>
-			<input v-model="carBrand" placeholder="请输入品牌" style="text-align:right"></input>
+			<input v-model="carBrand" placeholder="选填,请输入品牌" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">颜色</view>
-			<input v-model="carColor"  placeholder="请输入颜色" style="text-align:right"></input>
+			<input v-model="carColor"  placeholder="选填,请输入颜色" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">车辆类型</view>
@@ -154,11 +154,7 @@
 				
 				if (obj.carNum == "") {
 					msg = "请填写车牌号";
-				} else if (obj.carBrand == "") {
-					msg = "请填写车辆品牌";
-				} else if (obj.carColor == "") {
-					msg = "请填写车辆颜色";
-				}else if(obj.carType == ""){
+				} else if(obj.carType == ""){
 					msg = "请选择车辆类型";
 				}
 				if(msg != ""){

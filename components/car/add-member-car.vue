@@ -63,7 +63,7 @@
 						
 					}
 					_that.showModel = false;
-					uni.$emit("loadData")
+					this.$emit("loadData",{})
 				})
 			},
 			cancel:function(){

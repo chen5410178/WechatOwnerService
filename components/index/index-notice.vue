@@ -107,7 +107,7 @@
 				//加载活动
 				loadActivites(_objData)
 					.then(function(_acts) {
-						_that.notices = _that.notices.concat(_acts);
+						_that.notices = _acts;
 					});
 			},
 			_toDetail: function(_item) {

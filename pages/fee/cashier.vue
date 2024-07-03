@@ -234,7 +234,7 @@
 					return;
 				}
 				
-				this.useIntegral = 'N';
+				this.useIntegral = 'Y';
 				this.money = parseFloat(this.orgMoney) - parseFloat(this.integralMoney);
 				this.money = this.money.toFixed(2);
 			},

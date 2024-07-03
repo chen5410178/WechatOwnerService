@@ -235,6 +235,10 @@
 				}
 				
 				this.useIntegral = 'Y';
+				if(parseFloat(this.integralMoney)>parseFloat(this.orgMoney)){
+					this.money = 0;
+					return;
+				}
 				this.money = parseFloat(this.orgMoney) - parseFloat(this.integralMoney);
 				this.money = this.money.toFixed(2);
 			},

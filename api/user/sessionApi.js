@@ -20,17 +20,17 @@ import {
 } from '../../api/community/communityApi.js';
 
 import {
-		saveOwnerStorage,
-		saveUserLoginInfo,
-		removeUserLoginInfo,
-		getWAppId,
-		saveWAppId,
-		getLoginFlag
-	} from '@/lib/java110/utils/StorageUtil.js';
+	saveOwnerStorage,
+	saveUserLoginInfo,
+	removeUserLoginInfo,
+	getWAppId,
+	saveWAppId,
+	getLoginFlag
+} from '@/lib/java110/utils/StorageUtil.js';
 
 import {
-		isWxOrAli
-	} from '../../lib/java110/utils/EnvUtil.js';
+	isWxOrAli
+} from '../../lib/java110/utils/EnvUtil.js';
 
 const LOGIN_FLAG = 'loginFlag'; //登录标识
 
@@ -57,7 +57,7 @@ export function autoLogin(options) {
 	if (hasLogin()) {
 		return;
 	}
-	
+
 	//todo 如果是 h5 或者 微信小程序 ，检查是否做了配置，如果没有做配置不做自登陆
 	// #ifdef H5 || MP-WEIXIN
 	autoLoginWechat(options);
@@ -71,20 +71,23 @@ export function autoLogin(options) {
  */
 export function autoLoginWechat(options) {
 	let _openId = options.openId;
-	
-	if(_openId){ //h5 自登陆的情况
-		loginByOpenId(_openId);
-		return;
+	if (_openId) { //h5 自登陆的情况
+		let _time = uni.getStorageSync('refreshUserOpenId');
+		if(_time){
+			loginByOpenId(_openId);
+			uni.removeStorageSync('refreshUserOpenId');
+			return;
+		}
 	}
 	//todo 如果参数中带了wAppId
 	let _wAppId = options.wAppId;
-	
-	if(_wAppId){
+
+	if (_wAppId) {
 		_generatorOpenId(options, _wAppId);
 		return;
 	}
-	
-	
+
+
 	let _objType = "1100"; // todo public
 	// #ifdef MP-WEIXIN
 	_objType = "1000";
@@ -123,6 +126,8 @@ export function _refreshWechatOpenId(options, appId) {
 		wAppId: appId,
 	}).then(_data => {
 		if (_data.code == 0) {
+			let _date = new Date();
+			uni.setStorageSync("refreshUserOpenId", _data.getTime());
 			window.location.href = _data.data.openUrl;
 			return;
 		}
@@ -160,12 +165,12 @@ export function _refreshWechatMiniOpenId() {
 	});
 }
 
-export function loginByOpenId(openId){
+export function loginByOpenId(openId) {
 	requestNoAuth({
 		url: url.ownerUserLoginByOpenId,
 		method: "POST",
 		data: {
-			openId:openId
+			openId: openId
 		},
 		//动态数据
 		success: function(res) {
@@ -174,18 +179,19 @@ export function loginByOpenId(openId){
 				return;
 			}
 			//todo 保存业主信息
-			uni.setStorageSync("userInfo",_json.data);
-			uni.setStorageSync("currentCommunityInfo",{
-				communityId:_json.data.communityId,
-				communityName:_json.data.communityName,
+			uni.setStorageSync("userInfo", _json.data);
+			uni.setStorageSync("currentCommunityInfo", {
+				communityId: _json.data.communityId,
+				communityName: _json.data.communityName,
 			});
 			uni.removeStorageSync("ownerInfo");
 			saveUserLoginInfo(_json.data.userId, _json.data.token, _json.data.key);
+
 		},
 		fail: function(e) {
 			uni.hideLoading();
 			reject(e);
 		}
 	});
-	
+
 }

@@ -35,6 +35,7 @@
 	import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
 	/** index.js **/
 	import context from '../../lib/java110/Java110Context.js';
+	import { getCommunityId } from '../../api/community/communityApi.js';
 	const constant = context.constant; //获取app实例
 	//获取app实例
 	const app = getApp().globalData;
@@ -61,7 +62,7 @@
 		onLoad: function(options) {
 			let that = this;
 			context.onLoad(options);
-			that.communityId = context.getUserInfo().communityId;
+			that.communityId = getCommunityId();
 			that._loadNotices();
 		},
 		onShow: function() {

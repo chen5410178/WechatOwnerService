@@ -1050,6 +1050,13 @@
         	{
         		"navigationBarTitleText" : "车辆详情"
         	}
+        },
+        {
+        	"path" : "pages/machine/openDoorVideo",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
         }
     ],
 	"tabBar": {

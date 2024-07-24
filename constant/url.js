@@ -247,7 +247,7 @@ export default {
 	appSaveMemberCar: baseUrl+"app/owner.appSaveMemberCar",
 	appDeleteMemberCar: baseUrl+"app/owner.appDeleteMemberCar",
 	queryAppUserIntegral: baseUrl+"app/integral.queryAppUserIntegral",
-	
+	queryOwnerAcVideoUrl:baseUrl+"app/owner.queryOwnerAcVideoUrl",
 	
 	
 	

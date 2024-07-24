@@ -10,19 +10,20 @@
 			</view>
 		</view>
 
-		<view class="cu-modal" :class="openDoorFlag==true?'show':''">
-			<view class="cu-dialog">
+		<view class="cu-modal" :class="openDoorFlag==true?'show':''" >
+			<view class="cu-dialog" >
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">温馨提示</view>
+					<view class="content">{{curMachine.machineName}}</view>
 					<view class="action" @tap="_cancleCall()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					您确认{{curMachine.machineName}}开门? 开门次数有限,请勿频繁操作！
+					您确认开门? 开门次数有限,请勿频繁操作！
 				</view>
 				<view class="cu-bar bg-white justify-end">
 					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleOpenDoor()">取消</view>
+					<view class="action margin-0 flex-sub  solid-left" v-if="curMachine.monitorId" @tap="_viewDoorVideo()">视频</view>
 					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doOpenDoor()">确认开门</view>
 				</view>
 			</view>
@@ -34,8 +35,9 @@
 	import noDataPage from '@/components/no-data-page/no-data-page.vue';
 	import {
 		listOwnerMachines,
-		openDoor
-	} from '../../api/applicationKey/applicationKeyApi.js'
+		openDoor,
+		getOwnerAcVideoUrl
+	} from '@/api/applicationKey/applicationKeyApi.js'
 	import {
 		getCurOwner
 	} from '../../api/owner/ownerApi.js';
@@ -51,6 +53,7 @@
 				openDoorFlag: false,
 				curMachine: {},
 				memberId: '',
+				videoUrl:'',
 				topImg: this.imgUrl + '/h5/images/openDoorTop.png'
 			};
 		},
@@ -92,12 +95,24 @@
 					})
 			},
 			showOpenDoor: function(_machine) {
+				//调用视频播放地址
 				this.openDoorFlag = true;
 				this.curMachine = _machine;
 			},
 			_cancleOpenDoor: function() {
 				this.openDoorFlag = false;
 				this.curMachine = {};
+			},
+			_viewDoorVideo:function(){
+				
+				uni.navigateTo({
+					url:'/pages/machine/openDoorVideo?machineId='
+					+this.curMachine.machineId
+					+"&machineName="+this.curMachine.machineName
+					+"&memberId="+this.memberId
+					+"&machineCode="+this.curMachine.machineCode
+				});
+				this._cancleOpenDoor();
 			},
 			_doOpenDoor: function() {
 				let _that = this;

@@ -56,7 +56,8 @@
 				let _that = this;
 				getOwnerAcVideoUrl({
 					machineId: this.machineId,
-					communityId: getCommunityId()
+					communityId: getCommunityId(),
+					videoType: 'AccessControl'
 				}).then(_data => {
 					// #ifndef H5
 					let _url = conf.commonBaseUrl + "/h5/jessibuca/videoOpenDoor.html?tt=" +
@@ -72,8 +73,8 @@
 
 				})
 			},
-			_onMessage:function(e){
-					let _data = e.detail.data;
+			_onMessage: function(e) {
+				let _data = e.detail.data;
 				console.log(e.detail.data);
 				this._doOpenDoor();
 			},

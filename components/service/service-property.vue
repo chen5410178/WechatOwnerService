@@ -76,7 +76,7 @@
 						href: '/pages/fee/roomFeeListNew',
 						ownerAuth:true
 					}, {
-						name: '停车费',
+						name: '车位费',
 						src: this.imgUrl + '/h5/images/serve/9.png',
 						href: '/pages/fee/payParkingFeeList',
 						ownerAuth:true
@@ -198,6 +198,12 @@
 						name: '小区公示',
 						src: this.imgUrl + '/h5/images/serve/my1.png',
 						href: '/pages/common/communityPublicity',
+						ownerAuth:false
+					},
+					{
+						name: '充电桩',
+						src: this.imgUrl + '/h5/images/serve/my1.png',
+						href: '/pages/machine/chargeMachines',
 						ownerAuth:false
 					},
 				];

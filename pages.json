@@ -1057,6 +1057,20 @@
         	{
         		"navigationBarTitleText" : ""
         	}
+        },
+        {
+        	"path" : "pages/machine/chargeDetail",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+        {
+        	"path" : "pages/machine/playVideo",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
         }
     ],
 	"tabBar": {

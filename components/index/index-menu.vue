@@ -147,7 +147,7 @@
 							ownerAuth: true
 						},
 						{
-							name: '停车费',
+							name: '车位费',
 							src: this.imgUrl + '/h5/images/serve/9.png',
 							href: '/pages/fee/payParkingFeeList',
 							ownerAuth: true

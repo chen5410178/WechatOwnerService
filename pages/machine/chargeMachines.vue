@@ -4,7 +4,7 @@
 			<image :src="topImg" class="heard-location-icon"></image>
 		</view>
 		<view class="cu-list grid" :class="'col-2'">
-			<view class="cu-item" @click="_toCharge(item);"
+			<view class="cu-item" @click="_toChargeDetail(item);"
 			v-for="(item,index) in machines" :key="index">
 				<view :class="['cuIcon-command','text-green']"></view>
 				<text>{{item.machineName}}</text>
@@ -42,9 +42,13 @@
 				})
 			},
 			_toCharge:function(_item){
-				hasOwner();
+				// this.vc.navigateTo({
+				// 	url: '/pages/machine/machineToCharge?machineId='+_item.machineId+"&communityId="+_item.communityId
+				// });
+			},
+			_toChargeDetail:function(_item){
 				this.vc.navigateTo({
-					url: '/pages/machine/machineToCharge?machineId='+_item.machineId+"&communityId="+_item.communityId
+					url: '/pages/machine/chargeDetail?machineId='+_item.machineId+"&communityId="+_item.communityId
 				});
 			}
 			

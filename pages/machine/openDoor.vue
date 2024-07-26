@@ -107,8 +107,8 @@
 				
 				uni.navigateTo({
 					url:'/pages/machine/openDoorVideo?machineId='
-					+this.curMachine.machineId
-					+"&machineName="+this.curMachine.machineName
+					+this.curMachine.monitorId
+					+"&machineName="+this.curMachine.monitorName
 					+"&memberId="+this.memberId
 					+"&machineCode="+this.curMachine.machineCode
 				});

@@ -248,6 +248,8 @@ export default {
 	appDeleteMemberCar: baseUrl+"app/owner.appDeleteMemberCar",
 	queryAppUserIntegral: baseUrl+"app/integral.queryAppUserIntegral",
 	queryOwnerAcVideoUrl:baseUrl+"app/owner.queryOwnerAcVideoUrl",
+	queryOwnerCamera:baseUrl+"app/machine.queryOwnerCamera",
+	
 	
 	
 	

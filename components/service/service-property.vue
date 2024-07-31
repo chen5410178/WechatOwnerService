@@ -206,6 +206,12 @@
 						href: '/pages/machine/chargeMachines',
 						ownerAuth:false
 					},
+					{
+						name: '监控',
+						src: this.imgUrl + '/h5/images/camera.png',
+						href: '/pages/machine/monitorCamera',
+						ownerAuth:false
+					}
 				];
 			}
 		}

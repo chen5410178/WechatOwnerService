@@ -273,4 +273,28 @@ export function getChargeMonthCard(_objData) {
 		});
 	});
 };
+/**
+ * 查询业主监控
+ * @param {Object} _objData
+ */
+export function getOwnerCamera(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryOwnerCamera,
+			method: "GET",
+			data: _objData,
+			success: function(res) {
+				if (res.data.code != 0) {
+					reject(res.data.msg);
+					return;
+				}
+				resolve(res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+
 

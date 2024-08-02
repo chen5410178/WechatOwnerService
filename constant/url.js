@@ -100,7 +100,7 @@ export default {
 	changeOwnerPhone: baseUrl + 'app/ownerApi/changeOwnerPhone', //修改密码
 	queryRentingConfig: baseUrl + 'app/renting/queryRentingConfig', // 房屋出租配置查询
 	saveRentingPool: baseUrl + 'app/renting/saveRentingPool', //出租提交
-	listOweFees: baseUrl + 'app/feeApi/listOweFees', //查询房屋欠费
+	listOweFees: baseUrl + 'app/fee.queryOwnerOweFee', //查询房屋欠费
 	toOweFeePay: baseUrl + "app/payment/toOweFeePay", //欠费缴费
 	toPayTempCarFee: baseUrl + "app/payment/toPayTempCarFee", //欠费缴费
 	queryRentingPool: baseUrl + 'app/renting/queryRentingPool',
@@ -148,7 +148,7 @@ export default {
 	listApplyRoomDiscountRecordDetail: baseUrl + "app/applyRoomDiscountRecord/queryApplyRoomDiscountRecordDetail",
 	// 查询房屋费用项
 	listRoomFee: baseUrl + "app/fee.listFee",
-	queryOwnerAccount: baseUrl + "app/account/queryOwnerAccount",
+	queryOwnerAccount: baseUrl + "app/account.queryOwnerAccount",
 	queryOwnerAccountDetail: baseUrl + "app/account/queryOwnerAccountDetail",
 	ownerCommunity: baseUrl + "app/owner.ownerCommunity",
 	queryShopType: baseUrl + 'app/mall.queryShopType', //查询店铺类型

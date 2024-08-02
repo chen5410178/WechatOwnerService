@@ -82,10 +82,11 @@
 		formatDate,
 		dateSubOneDay,
 		getDate,
-	} from '../../lib/java110/utils/DateUtil.js'
+	} from '../../lib/java110/utils/DateUtil.js';
+
 
 	import {
-		getCurCommunity
+		getCommunityId
 	} from '../../api/community/communityApi.js';
 
 	import {
@@ -96,9 +97,6 @@
 		getRoomOweFees
 	} from '../../api/fee/feeApi.js'
 
-	import {
-		getCurOwner
-	} from '../../api/owner/ownerApi.js'
 
 	import {
 		getRoomFees
@@ -138,25 +136,21 @@
 		onLoad: function(options) {
 			context.onLoad(options);
 			autoLogin(options);
+			this.communityId = options.communityId;
+			this.payerObjId = options.payerObjId;
+			if(!this.communityId){
+				this.communityId = getCommunityId();
+			}
 			let _that = this;
-			setTimeout(function() {
-				_that.$refs.vcUserAccountRef._listOwnerAccount(_that.communityId);
-			}, 1500)
 		},
 		onShow() {
 			let _that = this;
-			getCurOwner().then(function(_owner) {
-				_that.communityId = _owner.communityId;
-				_that.communityName = _owner.communityName;
-				_that.ownerId = _owner.ownerId;
-				_that._loadOweFee();
-			});
+			_that._loadOweFee();
 		},
 		methods: {
 			_loadOweFee: function() {
 				let _that = this;
 				let _objData = {
-					ownerId: this.ownerId,
 					page: 1,
 					row: 50,
 					communityId: this.communityId,
@@ -176,6 +170,9 @@
 						});
 						_that.computeFeeObj(_fees);
 						_that.computeReceivableAmount();
+						setTimeout(function(){
+							_that.$refs.vcUserAccountRef._listOwnerAccount(_that.communityId);
+						},1500)
 						return _fees;
 					}, function(error) {
 						uni.showToast({

@@ -18,7 +18,7 @@ const baseUrl = '/';
 const baseUrl = 'http://127.0.0.1:8008/';
 // #endif
 
-let commonBaseUrl = 'http://127.0.0.1:3000/';
+let commonBaseUrl = 'http://demo.homecommunity.cn/';
 
 //商城的url
 let mallUrl = 'http://mallapp.homecommunity.cn/';
@@ -43,7 +43,7 @@ let systemName="业主版";
 
 if(_systemConfig){
 	mallUrl = _systemConfig.mallUrl;
-	//commonBaseUrl = _systemConfig.imgUrl;
+	commonBaseUrl = _systemConfig.imgUrl;
 	systemName = _systemConfig.ownerTitle;
 	DEFAULT_COMMUNITY_ID = _systemConfig.defaultCommunityId;
 }

@@ -91,7 +91,9 @@ export function hasAuthOwner(_that) {
 				wx.setStorageSync(mapping.OWNER_INFO, _ownerInfo);
 				let _currentCommunityInfo = {
 					communityId: _ownerInfo.communityId,
-					communityName: _ownerInfo.communityName
+					communityName: _ownerInfo.communityName,
+					communityTel: _ownerInfo.communityTel
+					
 				};
 				wx.setStorageSync(mapping.CURRENT_COMMUNITY_INFO, _currentCommunityInfo);
 				resolve(_ownerInfo);

@@ -125,7 +125,7 @@ export function getCurCommunity() {
 		if (!_currentCommunityInfo) {
 			_currentCommunityInfo = {
 				communityId: conf.DEFAULT_COMMUNITY_ID,
-				communityName: conf.DEFAULT_COMMUNITY_NAME
+				communityName: conf.DEFAULT_COMMUNITY_NAME,
 			}
 		}
 		resolve(_currentCommunityInfo);

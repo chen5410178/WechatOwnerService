@@ -13,7 +13,7 @@ export default {
 	saveOwnerRepair: baseUrl + 'app/ownerRepair.saveOwnerRepair', //报修
 	listOwnerRepairs: baseUrl + 'app/ownerRepair.listOwnerRepairs', //查询报修
 	saveOwner: baseUrl + 'app/owner.saveOwnerMember', //家庭成员列表
-	queryOwnerMembers: baseUrl + 'app/owner.queryOwnerMembers', //投诉建议列表
+	queryOwnerMembers: baseUrl + 'app/owner.queryAppOwnerMembers', //投诉建议列表
 	listComplaints: baseUrl + 'app/complaint.queryUserComplaints', //添加投诉建议
 	listComplaintEvent: baseUrl + 'app/complaint.listComplaintEvent', //添加投诉建议
 	saveComplaintAppraise: baseUrl + 'app/complaintAppraise.saveComplaintAppraise', //添加投诉建议

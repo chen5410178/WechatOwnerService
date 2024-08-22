@@ -244,7 +244,7 @@
 				uni.navigateTo({
 					url: '/pages/fee/cashier?money=' + _receivedAmount + "&business=payFee&communityId=" + this
 						.communityId + "&cashierUserId=" + getUserId()
-				})
+				});
 			}
 		}
 	};

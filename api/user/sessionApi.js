@@ -127,7 +127,7 @@ export function _refreshWechatOpenId(options, appId) {
 	}).then(_data => {
 		if (_data.code == 0) {
 			let _date = new Date();
-			uni.setStorageSync("refreshUserOpenId", _data.getTime());
+			uni.setStorageSync("refreshUserOpenId", _date.getTime());
 			window.location.href = _data.data.openUrl;
 			return;
 		}

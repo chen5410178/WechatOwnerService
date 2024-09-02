@@ -18,10 +18,10 @@ const baseUrl = '/';
 const baseUrl = 'http://127.0.0.1:8008/';
 // #endif
 
-let commonBaseUrl = 'http://demo.homecommunity.cn/';
+let commonBaseUrl = 'http://service.xinyejiawangtb.ltd/';
 
 //商城的url
-let mallUrl = 'http://mallapp.homecommunity.cn/';
+let mallUrl = 'http://mallapp.xinyejiawangtb.ltd/';
 
 //商城小程序ID
 let mallMinAppId = "xxx";

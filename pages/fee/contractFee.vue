@@ -125,7 +125,7 @@
 	// #endif
 	
 	import {addMonth,formatDate,date2String} from '../../lib/java110/utils/DateUtil.js'
-	
+	import {getUserId} from '../../api/user/userApi.js';
 	import {getCurContract} from '../../api/contract/contractApi.js'
 	export default {
 		components:{
@@ -163,6 +163,12 @@
 				feeFlag:'',
 				paymentCycle:1,
 				squarePrice: 0,
+				selectUserAccount: [], // 选中的账户
+				accountAmount: 0.0, // 账户金额
+				deductionAmount: 0.0, // 抵扣金额
+				couponAmount: 0.0,
+				amountCount: 0.0,
+				couponList: [],
 			};
 		},
 		
@@ -332,80 +338,27 @@
 			},
 			onPayFee: function() {
 				let _receivedAmount = this.receivableAmount;
-				wx.showLoading({
-					title: '支付中'
-				});
 				let _tradeType = 'JSAPI';
 				let _objData = {
+					business: "payFee",
 					cycles: this.feeMonth,
 					communityId: this.communityId,
 					feeId: this.feeId,
 					feeName: '物业费',
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
-					appId: this.appId,
 					payerObjId: this.contractId,
-					payerObjType: 3333,
-					endTime: this.formatEndTime
+					payerObjType: 7777,
+					endTime: this.formatEndTime,
+					selectUserAccount: this.selectUserAccount, // 选中的账户
+					accountAmount: this.accountAmount, // 账户金额
+					deductionAmount: this.deductionAmount, // 抵扣金额
+					couponList: this.couponList
 				};
-				context.request({
-					url: constant.url.preOrder,
-					header: context.getHeaders(),
-					method: "POST",
-					data: _objData,
-					//动态数据
-					success: function(res) {
-
-						if (res.statusCode == 200 && res.data.code == '0') {
-							let data = res.data; //成功情况下跳转
-							// #ifdef MP-WEIXIN
-							uni.requestPayment({
-								'timeStamp': data.timeStamp,
-								'nonceStr': data.nonceStr,
-								'package': data.package,
-								'signType': data.signType,
-								'paySign': data.sign,
-								'success': function(res) {
-									uni.showToast({
-										title: "支付成功",
-										duration: 2000
-									});
-									uni.navigateBack({});
-								},
-								'fail': function(res) {
-									console.log('fail:' + JSON.stringify(res));
-								}
-							});
-							// #endif
-							// #ifdef H5
-								WexinPayFactory.wexinPay(data,function(){
-									uni.showToast({
-										title: "支付成功",
-										duration: 2000
-									});
-									uni.navigateBack({});
-								});
-							// #endif
-							wx.hideLoading();
-							return;
-						}
-
-						wx.hideLoading();
-						wx.showToast({
-							title: "缴费失败",
-							icon: 'none',
-							duration: 2000
-						});
-					},
-					fail: function(e) {
-						wx.hideLoading();
-						wx.showToast({
-							title: "服务器异常了",
-							icon: 'none',
-							duration: 2000
-						});
-					}
-				});
+				uni.setStorageSync('doing_cashier',_objData);
+				uni.navigateTo({
+					url:'/pages/fee/cashier?money='+_receivedAmount+"&business=payFee&communityId="+this.communityId+"&cashierUserId="+getUserId()
+				})
 			},
 			_loadCurContract:function(_contractId){
 				let _that =this;

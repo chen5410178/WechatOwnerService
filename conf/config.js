@@ -15,16 +15,16 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'http://127.0.0.1:8008/';
+const baseUrl = 'https://wuye.huilinwan.cn/';
 // #endif
 
-let commonBaseUrl = 'http://service.xinyejiawangtb.ltd/';
+let commonBaseUrl = 'https://wuye.huilinwan.cn/';
 
 //商城的url
-let mallUrl = 'http://mallapp.xinyejiawangtb.ltd/';
+let mallUrl = 'https://mallapp.huilinwan.cn/';
 
 //商城小程序ID
-let mallMinAppId = "xxx";
+let mallMinAppId = "wx7a01aad34e06840f";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 

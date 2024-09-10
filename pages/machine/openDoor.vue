@@ -23,7 +23,7 @@
 				</view>
 				<view class="cu-bar bg-white justify-end">
 					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleOpenDoor()">取消</view>
-					<view class="action margin-0 flex-sub  solid-left" v-if="curMachine.monitorId" @tap="_viewDoorVideo()">视频</view>
+					<view class="action margin-0 flex-sub  solid-left" v-if="curMachine.monitorId && curMachine.monitorId != '-1'" @tap="_viewDoorVideo()">视频</view>
 					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doOpenDoor()">确认开门</view>
 				</view>
 			</view>

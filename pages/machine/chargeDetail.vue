@@ -26,7 +26,7 @@
 				<view class="title">状态</view>
 				{{machine.stateName}}
 			</view>
-			<view class="cu-form-group" v-if="machine.monitorId">
+			<view class="cu-form-group" v-if="machine.monitorId && machine.monitorId != '-1'">
 				<view class="title">监控</view>
 				<view><button @click="_toPlayChargeVideo()" class="cu-btn  line-blue round q-input">观看</button></view>
 			</view>

@@ -118,9 +118,9 @@
 					method: "GET",
 					data: _paramIn,
 					success: function(res) {
-						if (res.statusCode == 200) {
-							let _owners = res.data.owners;
-							that.owners = _owners;
+						let _json = res.data;
+						if (_json.code == 0) {
+							that.owners = _json.data;
 							that.loading = false;
 						}
 					},

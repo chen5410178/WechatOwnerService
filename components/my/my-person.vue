@@ -118,12 +118,10 @@
 			},
 			loadOwenrInfo: function() {
 				let _that = this;
-				context.getOwner(function(_ownerInfo) {
-					if (_ownerInfo) {
-						_that.ownerFlag = true;
-					} else {
-						_that.ownerFlag = false;
-					}
+				hasAuthOwner(this).then(_owner => {
+					_that.ownerFlag = true;
+				},()=>{
+					_that.ownerFlag = false;
 				});
 			},
 			/**
@@ -137,8 +135,8 @@
 					communityId:getCommunityId()
 				}).then(_data=>{
 					//console.log(_data);
-					if(_data.url){
-						_that.headerImg = _data.url;
+					if(_data.faceUrl){
+						_that.headerImg = _data.faceUrl;
 					}else{
 						_that.headerImg =conf.imgUrl+'/h5/images/serve/head.png';
 					}

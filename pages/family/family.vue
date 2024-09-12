@@ -18,11 +18,7 @@
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">年龄</view>
-			<input type="number" v-model="age" placeholder="请输入年龄"></input>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">人员类型</view>
+			<view class="title">人员角色</view>
 			<picker :value="typeCdIndex" :range="typeCds" range-key="name" @change="_changeTypeCd">
 				<view class="picker">
 					{{typeCds[typeCdIndex].name}}
@@ -30,8 +26,8 @@
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">家庭住址</view>
-			<input type="text" v-model="address" placeholder="选填,请输入家庭住址"></input>
+			<view class="title">地址</view>
+			<input type="text" v-model="address" placeholder="选填,请输入地址"></input>
 		</view>
 		
 		<view class="block__title">联系信息</view>
@@ -39,11 +35,6 @@
 			<view class="title">手机号</view>
 			<input v-model="link" placeholder="请输入手机号(没有手机号随便写一个)"></input>
 		</view>
-		<!-- <view class="cu-form-group">
-			<view class="title">验证码</view>
-			<input v-model="msgCode" placeholder="请输入短信验证码" name="input"></input>
-			<button class='cu-btn bg-green shadow' :disabled="btnDisabled" @click="_sendMsgCode()">{{btnValue}}</button>
-		</view> -->
 		
 		<view class="block__title">相关图片</view>
 		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="uploadImage.imgTitle" @sendImagesData="sendImagesData"></uploadImageAsync>
@@ -81,22 +72,26 @@
 				"userId": "",
 				"typeCds": [
 					{
-						value: '1002',
+						value: '3',
 						name: '家庭成员'
 					},
 					{
-						value: '1003',
+						value: '2',
 						name: '租客'
 					},
 					{
-						value: '1005',
+						value: '4',
+						name: '公司员工'
+					},
+					{
+						value: '99',
 						name: '其他'
 					}
 				],
 				"typeCdIndex": 0,
+				"personRole":'3',
 				"ownerTypeCd": "1002",
 				"idCard": "",
-				"age": "",
 				"memberId": "-1",
 				"communityId": "",
 				"second": 60,
@@ -104,7 +99,7 @@
 				"btnValue": "验证码",
 				"msgCode":'',
 				"address": "",
-				photos:[],
+				photos:'',
 				uploadImage: {
 					maxPhotoNum: 1,
 					imgTitle: '图片上传',
@@ -134,7 +129,7 @@
 		onPullDownRefresh: function() {},
 		methods: {
 			sendImagesData: function(e){
-				this.photos = e[0].fileId
+				this.photos = e[0].url;
 			},
 			submitOwnerMember: function(e) {
 				let obj = {
@@ -149,9 +144,10 @@
 					"memberId": this.memberId,
 					"communityId": this.communityId,
 					"idCard": this.idCard,
-					//"msgCode":this.msgCode,
+					"personRole":this.personRole,
+					"personType":'P',
 					"address": this.address,
-					"ownerPhoto": this.photos
+					"ownerPhotoUrl": this.photos
 				}
 				
 				let msg = "";
@@ -159,8 +155,6 @@
 					msg = "请填写业主";
 				} else if (obj.name == "") {
 					msg = "请填写姓名";
-				}else if (obj.age == "") {
-					msg = "请填写年龄";
 				} else if (obj.link == "") {
 					msg = "请填写手机号";
 				} else if (!checkPhoneNumber(obj.link)){
@@ -212,7 +206,7 @@
 			},
 			_changeTypeCd: function(e){
 				this.typeCdIndex = e.detail.value;
-				this.ownerTypeCd = this.typeCds[this.typeCdIndex].value;
+				this.personRole = this.typeCds[this.typeCdIndex].value;
 			},
 			idCardChange: function(){
 				let idCard = this.idCard;

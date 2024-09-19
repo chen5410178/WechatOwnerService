@@ -161,6 +161,7 @@
 					.then(function(_fees) {
 						if (_fees && _fees.length > 0) {
 							_that.storeId = _fees[0].incomeObjId;
+							_that.ownerId = _fees[0].ownerId;
 						}
 						_that.fees = _fees;
 						_fees.forEach(function(_item) {

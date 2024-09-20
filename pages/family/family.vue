@@ -33,7 +33,7 @@
 		<view class="block__title">联系信息</view>
 		<view class="cu-form-group">
 			<view class="title">手机号</view>
-			<input v-model="link" placeholder="请输入手机号(没有手机号随便写一个)"></input>
+			<input v-model="link" placeholder="选填,请输入手机号"></input>
 		</view>
 		
 		<view class="block__title">相关图片</view>
@@ -155,11 +155,7 @@
 					msg = "请填写业主";
 				} else if (obj.name == "") {
 					msg = "请填写姓名";
-				} else if (obj.link == "") {
-					msg = "请填写手机号";
-				} else if (!checkPhoneNumber(obj.link)){
-				 	msg = "手机号有误";
-				 }
+				} 
 				 // todo 这里手机号关闭 因为 小朋友没有手机号
 				 //else if (obj.msgCode == "") {
 				// 	msg = "请填写验证码";

@@ -64,15 +64,7 @@
 					},
 					{
 						value: '1002',
-						name: '家庭成员'
-					},
-					{
-						value: '1003',
-						name: '租客'
-					},
-					{
-						value: '1005',
-						name: '其他'
+						name: '成员'
 					}
 				],
 				"typeCdIndex": 0,

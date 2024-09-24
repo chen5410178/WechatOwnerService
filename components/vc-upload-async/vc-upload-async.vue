@@ -141,7 +141,8 @@
 					sizeType: this.sizeType, //原图或压缩图
 					sourceType: this.sourceType, // 相册或拍摄
 					success: (upImgRes) => {
-						var tempFilePaths = upImgRes.tempFilePaths[0]
+						console.log(upImgRes);
+						let tempFilePaths = upImgRes.tempFilePaths[0]
 						that.imgList.push(tempFilePaths);
 						that.$forceUpdate();
 						TanslateImage.translate(this,tempFilePaths, (base64) => {

@@ -10,7 +10,7 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="grid col-4 grid-square flex-sub">
-				<view class="bg-img" v-for="(img,index) in imgList" @click.stop="preview(index)">
+				<view class="bg-img" v-for="(img,index) in imgList" :key="index" @click.stop="preview(index)">
 					<image :src="img" mode='aspectFill'></image>
 					<view class="cu-tag bg-red" v-if="canEdit" @tap.stop="deleteImage(index)">
 						<text class="cuIcon-close"></text>
@@ -21,17 +21,22 @@
 				</view>
 			</view>
 		</view>
+		<!--#ifdef MP-WEIXIN -->
+		<canvas canvas-id="materCanvas" style="display: none;" type="2d" id="materCanvas"></canvas>
+		<!--#endif -->
 	</view>
 </template>
 
 <script>
 	import * as TanslateImage from '../../lib/java110/utils/translate-image.js';
 	import conf from '../../conf/config.js'
-	import {uploadImageAsync} from '../../api/common/commonApi.js'
+	import {
+		uploadImageAsync
+	} from '../../api/common/commonApi.js'
 	const context = require("../../lib/java110/Java110Context.js");
 	const factory = context.factory;
 	export default {
-		name:"vc-upload",
+		name: "vc-upload",
 		data() {
 			return {
 				photos: [],
@@ -79,14 +84,14 @@
 				default: true
 			}
 		},
-		watch:{
-			photos:function(val){
+		watch: {
+			photos: function(val) {
 				this.sendData();
 			},
 			deep: true
 		},
 		mounted() {
-			if(this.sendImgList.length > 0){
+			if (this.sendImgList.length > 0) {
 				uni.showLoading({
 					title: "图片加载中...",
 					mask: true
@@ -99,19 +104,25 @@
 				if (item.indexOf("https") > -1 || item.indexOf("http") > -1 || item.indexOf(this.photoUrl) > -1) {
 					this.imgList.push(item);
 					let urlParams = this._getUrlParams(item);
-					if(urlParams['fileId']){
-						this.photos.push({fileId:urlParams['fileId'], url:item});
+					if (urlParams['fileId']) {
+						this.photos.push({
+							fileId: urlParams['fileId'],
+							url: item
+						});
 					}
-				}else{
+				} else {
 					let url = this.photoUrl + "?fileId=" + item + "&communityId=-1&time=" + new Date();
 					this.imgList.push(url);
-					this.photos.push({fileId:item, url:url});
+					this.photos.push({
+						fileId: item,
+						url: url
+					});
 				}
 			})
 			uni.hideLoading();
 			console.log(this.imgList);
 		},
-		methods:{
+		methods: {
 			// 向父组件传递base64数据
 			sendData() {
 				this.$emit('sendImagesData', this.photos)
@@ -123,8 +134,9 @@
 			},
 			// 添加
 			ChooseImage: function() {
+				console.log(this.count,this.sizeType,this.sourceType)
 				let that = this;
-				wx.chooseImage({
+				uni.chooseImage({
 					count: this.count, // 选择数量
 					sizeType: this.sizeType, //原图或压缩图
 					sourceType: this.sourceType, // 相册或拍摄
@@ -132,20 +144,7 @@
 						var tempFilePaths = upImgRes.tempFilePaths[0]
 						that.imgList.push(tempFilePaths);
 						that.$forceUpdate();
-						//#ifdef H5
-						TanslateImage.translate(tempFilePaths, (base64) => {
-							let _objData = {
-								uploadFile: base64,
-								communityId: that.communityId
-							}
-							uploadImageAsync(_objData, that).then((res) => {
-								that.photos.push(res);
-							})
-						})
-						//#endif
-
-						//#ifndef H5
-						factory.base64.urlTobase64(tempFilePaths).then(function(base64) {
+						TanslateImage.translate(this,tempFilePaths, (base64) => {
 							let _objData = {
 								uploadFile: base64,
 								communityId: that.communityId
@@ -154,21 +153,22 @@
 								that.photos.push(res);
 							})
 						});
-						//#endif
+					},fail:(e)=> {
+						console.error(e)
 					}
 				});
 			},
 			// 预览
-			preview: function(index){
+			preview: function(index) {
 				let urls = this.imgList;
 				// 空集合 return
-				if(urls.length < 1){
+				if (urls.length < 1) {
 					return;
 				}
 				// domain拼接
 				urls.forEach((item, index) => {
 					let start = item.indexOf("/callComponent");
-					if(start == 0){
+					if (start == 0) {
 						urls[index] = conf.commonBaseUrl + item;
 					}
 				})

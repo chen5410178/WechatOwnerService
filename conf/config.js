@@ -15,16 +15,16 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'http://demo.homecommunity.cn/';
+const baseUrl = 'https://wuye.yunxiaowuye.com/';
 // #endif
 
-let commonBaseUrl = 'http://demo.homecommunity.cn/';
+let commonBaseUrl = 'https://wuye.yunxiaowuye.com/';
 
 //商城的url
-let mallUrl = 'https://mallapp.huilinwan.cn/';
+let mallUrl = 'https://mallapp.yunxiaowuye.com/';
 
 //商城小程序ID
-let mallMinAppId = "wx7a01aad34e06840f";
+let mallMinAppId = "wxa4211361ca1e1bfb";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 

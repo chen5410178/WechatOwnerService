@@ -57,7 +57,7 @@ export function getCommunitys(dataObj) {
 
 
 export function getMallCommunityId() {
-	let _currentCommunity = uni.getStorageSync(mapping.CURRENT_MALL_COMMUNITY_INFO)
+	let _currentCommunity = uni.getStorageSync("_selectCommunity")
 	if (_currentCommunity) {
 		return _currentCommunity.communityId;
 	}
@@ -65,7 +65,7 @@ export function getMallCommunityId() {
 }
 
 export function getMallCommunityName() {
-	let _currentCommunity = uni.getStorageSync(mapping.CURRENT_MALL_COMMUNITY_INFO)
+	let _currentCommunity = uni.getStorageSync("_selectCommunity")
 	if (_currentCommunity) {
 		return _currentCommunity.name;
 	}

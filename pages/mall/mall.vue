@@ -164,9 +164,9 @@
 			},
 			//切换小区
 			toSelectArea(e) {
-				this.vc.navigateToMall({
-					url: `/pages/selectcommunity/selectcommunity`
-				})
+				uni.navigateTo({
+					url:'/pages/mall/selectcommunity'
+				});
 			}
 		}
 	}

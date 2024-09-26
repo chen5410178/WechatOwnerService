@@ -132,20 +132,11 @@
 						});
 						var tempFilePaths = res.tempFilePaths
 						console.log('头像地址', tempFilePaths);
-						//#ifdef H5
-						TanslateImage.translate(tempFilePaths, (_baseInfo) => {
+						TanslateImage.translate(this,tempFilePaths, (_baseInfo) => {
 							_that.headerImg = _baseInfo;
 							_that._uploadOwnerHeaderImg();
 							wx.hideLoading()
 						})
-						//#endif
-						//#ifdef MP-WEIXIN
-						factory.base64.urlTobase64(tempFilePaths[0]).then(function(_baseInfo) {
-							_that.headerImg = _baseInfo;
-								_that._uploadOwnerHeaderImg();
-							wx.hideLoading()
-						});
-						//#endif
 					}
 				})
 			},

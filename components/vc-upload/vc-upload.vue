@@ -156,17 +156,10 @@
 						
 						that.imgList.push(tempFilePaths);
 						that.$forceUpdate();
-						//#ifdef H5
-						TanslateImage.translate(tempFilePaths, (url) => {
+						TanslateImage.translate(this,tempFilePaths, (url) => {
 							that.photos.push(url);
 						})
-						//#endif
-
-						//#ifdef MP-WEIXIN
-						factory.base64.urlTobase64(tempFilePaths).then(function(_res) {
-							that.photos.push(_res);
-						});
-						//#endif
+						
 					}
 				});
 			},

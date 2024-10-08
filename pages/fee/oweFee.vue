@@ -150,11 +150,15 @@
 		methods: {
 			_loadOweFee: function() {
 				let _that = this;
+				let _payObjId = "";
+				if(this.payerObjId){
+					_payObjId = this.payerObjId;
+				}
 				let _objData = {
 					page: 1,
 					row: 50,
 					communityId: this.communityId,
-					payObjId: this.payerObjId
+					payObjId: _payObjId
 				}
 				_that.feeIds = [];
 				getRoomOweFees(_objData)

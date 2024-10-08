@@ -89,6 +89,8 @@
 	import context from '../../lib/java110/Java110Context.js'
 	import * as TanslateImage from '../../lib/java110/utils/translate-image.js';
 	import {refreshOwner} from '@/api/owner/ownerApi.js';
+	import {loadLoginOwner,getMemberId,hasAuthOwner} from '../../api/owner/ownerApi.js';
+	import {getCommunityId,getCommunityName}  from '../../api/community/communityApi.js';
 	import conf from '@/conf/config.js';
 	const constant = context.constant;
 	const factory = context.factory;
@@ -143,18 +145,20 @@
 			/**
 			 * 查询业主头像
 			 */
-			loadOwnerHeaderImg: function() {
-				console.log('loadOwnerHeaderImg')
+		loadOwnerHeaderImg: function() {
 				let _that = this;
-				refreshOwner().then(_owner=>{
-					if(_owner.headImgUrl ){
-						_that.headerImg = _owner.headImgUrl;
+				
+				loadLoginOwner({
+					memberId:getMemberId(),
+					communityId:getCommunityId()
+				}).then(_data=>{
+					//console.log(_data);
+					if(_data.faceUrl){
+						_that.headerImg = _data.faceUrl;
 					}else{
-						_that.headerImg = conf.imgUrl+'/h5/images/serve/head.png';
-					}	
-				},err=>{
-					
-				});
+						_that.headerImg =conf.imgUrl+'/h5/images/serve/head.png';
+					}
+				})
 			},
 			_uploadOwnerHeaderImg: function() {
 				let _that = this;

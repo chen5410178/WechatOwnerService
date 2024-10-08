@@ -3,7 +3,7 @@
 		<view class="user-container bg-white my_user">
 			<view class="userinfo" :style="{background: 'url('+topImg+') no-repeat center center'}" >
 				<view class="wait" v-if="login">
-					<view class="cu-avatar header-img round " :style="{ backgroundImage: 'url(' + headerImg + ')' }">
+					<view class="cu-avatar header-img round " @click="settingHeadImg()" :style="{ backgroundImage: 'url(' + headerImg + ')' }">
 					</view>
 					<view class="userinfo-nickname margin-top">
 						<text class="username">{{ userName }}</text>
@@ -55,6 +55,7 @@
 	const factory = context.factory; //获取app实例
 	const constant = context.constant;
 	import conf from '@/conf/config.js';
+	import * as TanslateImage from '../../lib/java110/utils/translate-image.js';
 	import {queryOwnerAccount,queryUserIntegral} from '@/api/user/userApi.js';
 	import {
 		getCouponUsers
@@ -90,6 +91,70 @@
 			authOwnerDialog
 		},
 		methods: {
+		    //上传人脸
+		    settingHeadImg: function() {
+				var _that = this;
+				wx.chooseImage({
+					count: 1,
+					sizeType: ['compressed'],
+					sourceType: ['album', 'camera'],
+					success: function(res) {
+						// console.log(res)
+						wx.showToast({
+							title: '正在上传',
+							icon: 'loading',
+							mask: true,
+							duration: 1000
+						});
+						var tempFilePaths = res.tempFilePaths
+						console.log('头像地址', tempFilePaths);
+						TanslateImage.translate(this,tempFilePaths, (_baseInfo) => {
+							_that.headerImg = _baseInfo;
+							_that._uploadOwnerHeaderImg();
+							wx.hideLoading()
+						})
+					}
+				})
+			},
+			_uploadOwnerHeaderImg: function() {
+				let _that = this;
+				context.getOwner(function(_owner) {
+					let _memberId = _owner.memberId;
+					let _communityId = _owner.communityId;
+					let obj = {
+						memberId: _memberId,
+						communityId: _communityId,
+						photo: _that.headerImg
+					};
+					context.request({
+						url: constant.url.uploadOwnerPhoto,
+						header: context.getHeaders(),
+						method: "POST",
+						data: obj, //动态数据
+						success: function(res) {
+							console.log(res);
+							if (res.statusCode != 200) {
+								wx.showToast({
+									title: '头像上传失败',
+									icon: 'none',
+									duration: 2000
+								});
+								return;
+							}
+							
+							_that.loadOwnerHeaderImg();
+						},
+						fail: function(e) {
+							wx.showToast({
+								title: "服务器异常了",
+								icon: 'none',
+								duration: 2000
+							});
+						}
+					});
+				});
+			
+			},
 			//切换小区
 			_changeCommunity: function() {
 				uni.navigateTo({

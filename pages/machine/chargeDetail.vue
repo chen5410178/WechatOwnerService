@@ -151,7 +151,8 @@
 				getChargeMachines({
 					page:1,
 					row:100,
-					communityId:getCommunityId()
+					communityId:getCommunityId(),
+					machineId:this.machineId
 				}).then(_data=>{
 					_that.machine = _data.data[0];
 					_that.tabSelect(1);

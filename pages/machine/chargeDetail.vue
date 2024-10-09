@@ -116,7 +116,6 @@
 							<text>状态:</text>
 							<text>{{item.stateName}}</text>
 						</view>
-						
 					</view>
 				</view>
 			</view>

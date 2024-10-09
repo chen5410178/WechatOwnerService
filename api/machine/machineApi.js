@@ -195,7 +195,7 @@ export function getChargeMachineOrder(_objData) {
 					reject(res.data.msg);
 					return;
 				}
-				resolve(res.data.data);
+				resolve(res.data);
 			},
 			fail: function(res) {
 				reject(res);

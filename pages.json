@@ -95,7 +95,6 @@
 				"enablePullDownRefresh": false
 			}
 		},
-
 		{
 			"path": "pages/repair/detail/detail",
 			"style": {}
@@ -109,14 +108,12 @@
 		{
 			"path": "pages/family/familyList",
 			"style": {
-				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "家庭成员"
 			}
 		},
 		{
 			"path": "pages/complaint/complaintList",
 			"style": {
-				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "投诉建议"
 			}
 		},

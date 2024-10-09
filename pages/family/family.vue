@@ -29,8 +29,6 @@
 			<view class="title">地址</view>
 			<input type="text" v-model="address" placeholder="选填,请输入地址"></input>
 		</view>
-		
-		<view class="block__title">联系信息</view>
 		<view class="cu-form-group">
 			<view class="title">手机号</view>
 			<input v-model="link" placeholder="选填,请输入手机号"></input>
@@ -40,9 +38,9 @@
 		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="uploadImage.imgTitle" @sendImagesData="sendImagesData"></uploadImageAsync>
 			
 		
-		<view class="cu-form-group margin-top">
+		<!-- <view class="cu-form-group margin-top">
 			<textarea v-model="remark" placeholder="请输入备注"></textarea>
-		</view>
+		</view> -->
 
 		<view class="flex flex-direction margin-top margin-bottom">
 			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitOwnerMember()">提交</button>
@@ -176,7 +174,7 @@
 						method: "POST",
 						data: obj,
 						success: function(res) {
-							if (res.statusCode == 200 && res.data.code == 0) {
+							if (res.data.code == 0) {
 								uni.hideLoading();
 								uni.navigateBack();
 								return;

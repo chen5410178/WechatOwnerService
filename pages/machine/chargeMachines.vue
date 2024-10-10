@@ -158,4 +158,66 @@
 	text {
 		text-align: center;
 	}
+	
+	.block__title {
+		margin: 0;
+		font-weight: 400;
+		font-size: 14px;
+		color: rgba(69, 90, 100, .6);
+		padding: 40rpx 30rpx 20rpx;
+	}
+	
+	.button_up_blank {
+		height: 40rpx;
+	}
+	
+	.cu-list.menu-avatar>.cu-item .content-left {
+		left: 30upx;
+	}
+	
+	.cu-list+.cu-list {
+		margin-top: 20upx;
+	}
+	
+	.cu-btn.lgplus {
+		padding: 0 20px;
+		font-size: 18px;
+		height: 100upx;
+	
+	}
+	
+	.cu-btn.sharp {
+		border-radius: 0upx;
+	}
+	
+	.line-height {
+		line-height: 100upx;
+	}
+	
+	.sub-info {
+		background-color: #fff;
+		//margin-top: 0.5upx;
+		padding: 15upx;
+	
+		.sub-info-item {
+			width: 45%;
+			margin: 10upx 15upx 0upx 15upx;
+		}
+	}
+	.apply-title {
+		height: 60upx;
+		line-height: 50upx;
+		border-bottom: 1upx solid #F1F1F1;
+	}
+	
+	.apply-content {
+		.item {
+			width: 50%;
+			margin-top: 20upx;
+		}
+	}
+	
+	.radius-sm {
+		border-radius: 16upx;
+	}
 </style>

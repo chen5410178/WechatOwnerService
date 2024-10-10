@@ -38,7 +38,6 @@
 					<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
 						订单
 					</view>
-					
 				</view>
 			</scroll-view>
 			<view v-show="active == 0" class="margin-top-xs">

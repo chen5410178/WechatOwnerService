@@ -72,12 +72,11 @@ export function sendSmsCode(_link, _that) {
 					uni.hideLoading();
 					let _json = res.data;
 					if (_json.code == 0) {
-						wx.showToast({
+						uni.showToast({
 							title:_json.data,
 							icon: 'none',
-							duration: 2000
+							duration: 5000
 						});
-						wx.hideLoading();
 						timer(_that);
 						resolve();
 						return;
@@ -85,7 +84,7 @@ export function sendSmsCode(_link, _that) {
 					wx.showToast({
 						title: _json.msg,
 						icon: 'none',
-						duration: 2000
+						duration: 5000
 					});
 					reject();
 				},

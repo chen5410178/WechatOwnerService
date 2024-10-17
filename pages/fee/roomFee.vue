@@ -228,11 +228,6 @@
 		onLoad: function(options) {
 			context.onLoad(options);
 			let _fee = JSON.parse(options.fee);
-			let _amount = _fee.amount;
-			let _receivableAmount = _amount;
-			if (_fee.feeFlag == "2006012") { // 一次性费用
-				_receivableAmount = _amount;
-			}
 			let _communityInfo = context.getCurrentCommunity();
 			let _lastDate = new Date(_fee.endTime);
 			this.receivableAmount = _receivableAmount;
@@ -245,7 +240,7 @@
 			this.layer = _fee.layer;
 			this.builtUpArea = _fee.builtUpArea;
 			this.feeId = _fee.feeId;
-			this.amount = _amount;
+			this.amount = _fee.amountOwed;
 			this.additionalAmount = _fee.additionalAmount;
 			this.ordEndTime = _fee.endTime;
 			this.formatEndTime = date2String(_fee.endTime);

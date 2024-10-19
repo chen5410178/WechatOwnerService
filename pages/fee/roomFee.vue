@@ -230,7 +230,7 @@
 			let _fee = JSON.parse(options.fee);
 			let _communityInfo = context.getCurrentCommunity();
 			let _lastDate = new Date(_fee.endTime);
-			this.receivableAmount = _receivableAmount;
+			this.receivableAmount = _fee.amountOwed;
 			this.communityId = _communityInfo.communityId;
 			this.communityName = _communityInfo.communityName;
 			this.floorNum = _fee.floorNum;

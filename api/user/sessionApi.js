@@ -183,6 +183,7 @@ export function loginByOpenId(openId) {
 			uni.setStorageSync("currentCommunityInfo", {
 				communityId: _json.data.communityId,
 				communityName: _json.data.communityName,
+				sCommunityTel:_json.data.communityTel
 			});
 			uni.removeStorageSync("ownerInfo");
 			saveUserLoginInfo(_json.data.userId, _json.data.token, _json.data.key);

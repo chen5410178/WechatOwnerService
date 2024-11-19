@@ -6,8 +6,9 @@
 				<view class="text">{{item.name}}</view>
 			</view>
 		</view>
-
+		
 		<view class="serve_box">
+
 			<view class="serve_title">功能服务<text class="more" @click="more()">更多</text></view>
 			<view class="serve_list">
 				<view class="serve_item" v-for="(item,index) in serve_list" :key="index" @click="to(item)">
@@ -16,12 +17,13 @@
 				</view>
 			</view>
 		</view>
+		<view class="margin-bottom-xs" @click="_toNoticePage()">
+			<uni-notice-bar showIcon="true" scrollable="true" single="true" speed="30" :text="noticeText">
+			</uni-notice-bar>
+		</view>
 
 		<view class="new_box">
-			<view class="margin-bottom-xs">
-				<uni-notice-bar showIcon="true" scrollable="true" single="true" speed="30" text="欢迎访问智慧物业">
-				</uni-notice-bar>
-			</view>
+
 			<view class="new_list">
 				<view class="new_item" v-for="(item,index) in new_list" :key="index" @click="to(item)">
 					<view class="new_wrap">
@@ -79,8 +81,11 @@
 	import {
 		getCommunityName,
 		getCommunityTel,
-		getCommunityQrCode
-	} from '../../api/community/communityApi.js';
+		getCommunityQrCode,
+		getCommunityId
+	} from '@/api/community/communityApi.js';
+	
+	import {queryNotices} from '@/api/index/indexApi.js';
 
 	export default {
 		name: "indexMenu",
@@ -90,25 +95,27 @@
 				serve_list: [],
 				callPropertyModal: false,
 				property: {},
+				noticeText:'暂无公告',
 				new_list: [{
 						src: this.imgUrl + '/h5/images/serve/new1.png',
 						name: '报事报修',
 						desc: '一键维修',
 						href: '/pages/repair/repair',
-						ownerAuth:true
+						ownerAuth: true
 					},
 					{
 						src: this.imgUrl + '/h5/images/serve/new2.png',
 						name: '联系物业',
 						desc: '一键搞定',
 						href: '_callPropertyTel',
-						ownerAuth:false
+						ownerAuth: false
 					},
 				],
 			};
 		},
 		created() {
 			this._loadFunc();
+			this._loadNotices();
 		},
 		components: {
 			authOwnerDialog
@@ -116,9 +123,9 @@
 		methods: {
 			_loadFunc: function() {
 				this.home_list = [{
-							name: '社区公告',
-							src: this.imgUrl + '/h5/images/serve/7.png',
-							href: '/pages/notice/index',
+							name: '投诉咨询',
+							src: this.imgUrl + '/h5/images/serve/12.png',
+							href: '/pages/complaint/complaint',
 							ownerAuth: false
 						},
 						{
@@ -223,10 +230,32 @@
 			_cancleCall: function() {
 				this.callPropertyModal = false;
 			},
+			_loadNotices: function() {
+				this.loadingStatus = 'more';
+				let that = this;
+				queryNotices({
+					communityId: getCommunityId(),
+					page: 1,
+					row: 3,
+					noticeTypeCd: '1000,1003',
+					clientType: 'H5'
+				}).then((_notices) => {
+					let _notice = "";
+					for(let _nIndex = 0;_nIndex < _notices.length; _nIndex++){
+						_notice +=("【公告"+(_nIndex+1)+"】"+_notices[_nIndex].title+";   ");
+					}
+					that.noticeText = _notice;
+				});
+			},
 			more: function() {
 				uni.switchTab({
 					url: '/pages/homemaking/homemaking'
 				})
+			},
+			_toNoticePage:function(){
+				this.vc.navigateTo({
+					url: '/pages/notice/index'
+				});
 			}
 		}
 	}

@@ -251,4 +251,28 @@ export function listCommunityMarketGoods(dataObj) {
 			});
 		})
 }
+/**
+ * 查询通知
+ * @param {Object} dataObj
+ */
+export function queryNotices(dataObj) {
+	return new Promise(
+		(resolve, reject) => {
+			requestNoAuth({
+				url: url.GetNoticeListUrl,
+				method: "GET",
+				data: dataObj,
+				//动态数据
+				success: function(res) {
+					res.data.notices.forEach(function(item, index) {
+						item.timeStr = item.startTime.replace(/:\d{1,2}$/, ' ');
+					});
+					resolve(res.data.notices);
+				},
+				fail: function(e) {
+					reject();
+				}
+			});
+		})
+}
 

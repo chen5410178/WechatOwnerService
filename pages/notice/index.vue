@@ -2,7 +2,7 @@
 	<view class="user-container">
 		<block v-if="notices.length > 0">
 			<view class="cu-list menu" v-for="(notice, idx) in notices" :key="idx" :data-item="notice"
-			 @click="gotoDetail(notice)">
+				@click="gotoDetail(notice)">
 				<view class="cu-item arrow">
 					<view class="content padding-tb-sm">
 						<view>
@@ -10,7 +10,8 @@
 							<view class="text-cut" style="width:220px">{{notice.title}}</view>
 						</view>
 						<view class="text-gray text-sm">
-							<text class="margin-right-xs">发布时间：</text> {{notice.timeStr}}</view>
+							<text class="margin-right-xs">发布时间：</text> {{notice.timeStr}}
+						</view>
 					</view>
 				</view>
 			</view>
@@ -35,10 +36,16 @@
 	import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
 	/** index.js **/
 	import context from '../../lib/java110/Java110Context.js';
-	import { getCommunityId } from '../../api/community/communityApi.js';
+	import {
+		getCommunityId
+	} from '../../api/community/communityApi.js';
 	const constant = context.constant; //获取app实例
 	//获取app实例
 	const app = getApp().globalData;
+
+	import {
+		queryNotices
+	} from '@/api/index/indexApi.js';
 
 	export default {
 		data() {
@@ -48,7 +55,7 @@
 				currPageIndex: 0,
 				pageSize: 10,
 				page: 1,
-				loadingStatus : 'loading',
+				loadingStatus: 'loading',
 				loadingContentText: {
 					contentdown: '上拉加载更多',
 					contentrefresh: '加载中',
@@ -68,44 +75,35 @@
 		onShow: function() {
 			let that = this;
 		},
-		onReachBottom : function(){
-			if(this.loadingStatus == 'noMore'){
+		onReachBottom: function() {
+			if (this.loadingStatus == 'noMore') {
 				return;
 			}
 			this._loadApply();
 		},
 		methods: {
-			_loadNotices: function(){
+			_loadNotices: function() {
 				this.loadingStatus = 'more';
 				let that = this;
-				context.request({
-					header: context.getHeaders(),
-					url: constant.url.GetNoticeListUrl,
-					method: "GET",
-					data: {
-						communityId: that.communityId,
-						page: that.page,
-						row: 10,
-						noticeTypeCd:'1000,1003',
-						clientType: 'H5'
-					},
-					success: function(res) {
-						// TODO 判断
-						res.data.notices.forEach(function(item, index) {
-							item.timeStr = item.startTime.replace(/:\d{1,2}$/, ' ');
-						});
-						that.notices = that.notices.concat(res.data.notices);
-						if(that.notices.length == res.data.total){
-							that.loadingStatus = 'noMore';
-							return;
-						}
+				queryNotices({
+					communityId: that.communityId,
+					page: that.page,
+					row: 10,
+					noticeTypeCd: '1000,1003',
+					clientType: 'H5'
+				}).then((_notices) => {
+					that.notices = that.notices.concat(_notices);
+					if (that.notices.length == res.data.total) {
+						that.loadingStatus = 'noMore';
+						return;
 					}
 				});
 			},
 			gotoDetail: function(_notice) {
 				let that = this;
 				this.vc.navigateTo({
-					url: "/pages/notice/detail/detail?noticeId=" + _notice.noticeId+"&communityId="+that.communityId
+					url: "/pages/notice/detail/detail?noticeId=" + _notice.noticeId + "&communityId=" + that
+						.communityId
 				});
 			},
 		}
@@ -113,7 +111,8 @@
 </script>
 <style>
 	@import "./index.css";
+
 	.cu-list+.cu-list {
-	    margin-top: 10px;
+		margin-top: 10px;
 	}
 </style>

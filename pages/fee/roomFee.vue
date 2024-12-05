@@ -258,7 +258,14 @@
 			this.payOnline = _fee.payOnline;
 			if (this.feeFlag != '2006012') {
 				this.paymentCycle = _fee.paymentCycle;
-				for (let _index = 1; _index < 7; _index++) {
+				let _maxCycle = 7;
+				if(this.paymentCycle <= 6){
+					_maxCycle = 18
+				}
+				if(this.paymentCycle < 12 && this.paymentCycle > 6){
+					_maxCycle = 12
+				}
+				for (let _index = 1; _index < _maxCycle; _index++) {
 					this.feeMonthList.push(_index * this.paymentCycle + '个月')
 				}
 				this.feeMonthName = this.paymentCycle + '个月';

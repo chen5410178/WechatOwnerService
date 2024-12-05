@@ -265,7 +265,7 @@
 				if(this.paymentCycle < 12 && this.paymentCycle > 6){
 					_maxCycle = 12
 				}
-				for (let _index = 1; _index < _maxCycle; _index++) {
+				for (let _index = 1; _index <= _maxCycle; _index++) {
 					this.feeMonthList.push(_index * this.paymentCycle + '个月')
 				}
 				this.feeMonthName = this.paymentCycle + '个月';

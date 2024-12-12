@@ -149,7 +149,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.heard-location-icon {
 		width: 100%;
 		height: 300rpx;

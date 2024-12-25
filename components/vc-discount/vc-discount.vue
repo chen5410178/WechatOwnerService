@@ -91,6 +91,9 @@
 							_totalDiscountMoney += parseFloat(Math.abs(disItem.discountPrice));
 							disItem.discountPrice = Math.abs(disItem.discountPrice);
 						}
+						if(disItem.ruleId == '102020008'){
+							_totalDiscountMoney = 0;
+						}
 						_selectDiscount.push(disItem);
 					})
 					// if(_totalDiscountMoney > 0){

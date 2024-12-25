@@ -15,16 +15,16 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'https://xytzjt.vip/';
+const baseUrl = 'https://crsdt.cn/';
 // #endif
 
-let commonBaseUrl = 'https://xytzjt.vip/';
+let commonBaseUrl = 'https://crsdt.cn/';
 
 //商城的url
-let mallUrl = 'https://mallapp.xytzjt.vip/';
+let mallUrl = 'https://mallapp.crsdt.cn/';
 
 //商城小程序ID
-let mallMinAppId = "wxa6504363be652e26";
+let mallMinAppId = "wx8ded6b260f1b8f63";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 

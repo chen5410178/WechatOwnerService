@@ -15,10 +15,10 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'https://crsdt.cn/';
+const baseUrl = 'https://wuye.beefuwu.com/';
 // #endif
 
-let commonBaseUrl = 'https://crsdt.cn/';
+let commonBaseUrl = 'https://wuye.beefuwu.com/';
 
 //商城的url
 let mallUrl = 'https://mallapp.crsdt.cn/';

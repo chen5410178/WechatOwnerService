@@ -81,6 +81,9 @@
 				</view>
 			</view>
 		</view>
+		<!--#ifdef MP-WEIXIN -->
+		 <canvas canvas-id="materCanvas" style="display: none;" type="2d" id="materCanvas"></canvas>
+		 <!--#endif -->
 	</view>
 </template>
 
@@ -134,7 +137,7 @@
 						});
 						var tempFilePaths = res.tempFilePaths
 						console.log('头像地址', tempFilePaths);
-						TanslateImage.translate(this,tempFilePaths, (_baseInfo) => {
+						TanslateImage.translate(_that,tempFilePaths, (_baseInfo) => {
 							_that.headerImg = _baseInfo;
 							_that._uploadOwnerHeaderImg();
 							wx.hideLoading()

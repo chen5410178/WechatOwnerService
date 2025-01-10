@@ -63,6 +63,7 @@
 
 	import vcDiscount from '@/components/vc-discount/vc-discount.vue'
 	import vcUserAccount from '@/components/vc-user-account/vc-user-account.vue'
+	import {getCommunityId} from '@/api/community/communityApi.js'
 
 
 	// #ifdef H5
@@ -165,7 +166,7 @@
 					let _tradeType = 'APP';
 					let _objData = {
 						cycles: this.feeMonth,
-						communityId: this.communityId,
+						communityId: getCommunityId(),
 						feeId: this.feeId,
 						feeName: '物业费',
 						receivedAmount: _receivedAmount,
@@ -306,7 +307,7 @@
 					let _objData = {
 						"business": "venueReservation",
 						"tradeType": _tradeType,
-						"communityId": this.ownerInfo.communityId,
+						"communityId": getCommunityId(),
 						"spaces": JSON.stringify(spacesList),
 						"personName": getUserName(),
 						"personTel": getUserTel(),

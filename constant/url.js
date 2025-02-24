@@ -249,6 +249,7 @@ export default {
 	queryAppUserIntegral: baseUrl+"app/integral.queryAppUserIntegral",
 	queryOwnerAcVideoUrl:baseUrl+"app/owner.queryOwnerAcVideoUrl",
 	queryOwnerCamera:baseUrl+"app/machine.queryOwnerCamera",
+	queryCommunityRecommend:baseUrl+"app/mall.queryCommunityRecommend",
 	
 	
 	

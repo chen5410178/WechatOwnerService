@@ -276,3 +276,28 @@ export function queryNotices(dataObj) {
 		})
 }
 
+
+/**
+ * 查询小区广告
+ */
+export function getCommunityRecommend(dataObj) {
+	return new Promise(
+		(resolve, reject) => {
+			requestNoAuth({
+				url: url.queryCommunityRecommend,
+				method: "GET",
+				data: dataObj,
+				//动态数据
+				success: function(res) {
+					if (res.statusCode == 200) {
+						resolve(res.data);
+						return;
+					}
+					reject();
+				},
+				fail: function(e) {
+					reject();
+				}
+			});
+		})
+}

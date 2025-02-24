@@ -16,7 +16,7 @@
 				<button class="cu-btn bg-green lg" @click="_indexPage()">返回首页</button>
 			</view>
 		</view>
-
+		<community-recommend></community-recommend>
 		<view class="home_wrap">
 			<success-ads :objType="objType"></success-ads>
 		</view>
@@ -29,6 +29,7 @@
 <script>
 	import successAds from '@/components/success/success-ads.vue';
 	import successGoods from '@/components/success/success-goods.vue';
+	import communityRecommend from '@/components/community-recommend.vue';
 	export default {
 		data() {
 			return {
@@ -44,7 +45,8 @@
 		},
 		components: {
 			successAds,
-			successGoods
+			successGoods,
+			communityRecommend
 		},
 		methods: {
 			_indexPage:function(){

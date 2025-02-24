@@ -6,6 +6,8 @@
 		<my-menu></my-menu>
 
 		<my-system ref="mySystem"></my-system>
+		
+		<community-recommend></community-recommend>
 	</view>
 </template>
 
@@ -44,6 +46,7 @@
 	import myPerson from '@/components/my/my-person.vue'
 	import myMenu from '@/components/my/my-menu.vue'
 	import mySystem from '@/components/my/my-system.vue'
+	import communityRecommend from '@/components/community-recommend.vue';
 	export default {
 		data() {
 			return {
@@ -54,7 +57,8 @@
 		components: {
 			myPerson,
 			myMenu,
-			mySystem
+			mySystem,
+			communityRecommend
 		},
 		props: {},
 		onLoad: function(options) {

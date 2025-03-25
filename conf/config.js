@@ -15,21 +15,21 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'https://shuimuwy.com/';
+const baseUrl = 'http://wuye.52wy.top/';
 // #endif
 
-let commonBaseUrl = 'https://shuimuwy.com/';
+let commonBaseUrl = 'http://wuye.52wy.top/';
 
 //商城的url
-let mallUrl = 'https://mallapp.heyiiot.com/';
+let mallUrl = 'http://mallapp.52wy.top/';
 
 //商城小程序ID
 let mallMinAppId = "wx8ded6b260f1b8f63";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 
-let DEFAULT_COMMUNITY_ID = "2024082218590143"; //HC测试小区id  用于没有登录时展示相关信息
-let DEFAULT_COMMUNITY_NAME = "选择小区";
+let DEFAULT_COMMUNITY_ID = "2024122649870005"; //HC测试小区id  用于没有登录时展示相关信息
+let DEFAULT_COMMUNITY_NAME = "演示小区";
 
 // APP 或者 公众号  appId
 const wAppId = ""; //微信AppId

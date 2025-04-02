@@ -210,12 +210,13 @@
 			},
 			_doUrgeRepair:function(_repair){
 				urgeRepair({
-					repiarId:_repair.repairId,
+					repairId:_repair.repairId,
 					communityId:getCommunityId()
 				}).then(_data=>{
 					uni.showToast({
 						icon:'none',
-						title:'已经催过师傅了，请耐心等待，感谢您的支持'
+						title:'已经催过师傅了，请耐心等待，感谢您的支持',
+						duration:5000
 					});
 					return;
 				})

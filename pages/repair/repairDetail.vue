@@ -1,7 +1,90 @@
 <template>
 	<view>
-		<view class="cu-timeline">
-			<view class="cu-time">工单</view>
+		<view class="block__title">工单详情</view>
+		<view class="cu-list menu">
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">报修类型</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.repairTypeName}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">处理时间标准</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.doTime}}小时</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">报修人</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.repairName}}({{repairInfo.tel}})</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">位置</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.repairObjName}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">预约开始时间</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.appointmentTime}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">提单时间</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.createTime}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">提单时长</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.submitHours || 0}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">完成时间</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.finishTime || '-'}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">状态</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.stateName}}</text>
+				</view>
+			</view>
+			<view class="cu-item">
+				<view class="content">
+					<text class="text-grey">报修内容</text>
+				</view>
+				<view class="action">
+					<text class="text-grey text-sm">{{repairInfo.context}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="cu-timeline margin-top">
+			<view class="cu-time">工单进度</view>
 			<view class="cu-item " v-for="(item,index) in staffs" :key="key">
 				<view class="bg-cyan content">
 					<text>{{item.startTime}} </text> 到达 {{item.staffName}} 工位
@@ -36,7 +119,8 @@
 	const constant = context.constant;
 	const factory = context.factory;
 	import conf from '../../conf/config.js';
-	import {listRepairStaffs} from '@/api/repair/repairApi.js';
+	import {listRepairStaffs,queryUserRepair} from '@/api/repair/repairApi.js';
+	import { getCommunityId } from '@/api/community/communityApi.js';
 	
 	export default {
 		data() {
@@ -48,6 +132,7 @@
 				communityId:'',
 				imgUrlPre: '',
 				photoUrl: conf.commonBaseUrl + '/callComponent/download/getFile/file',
+				repairInfo:{}
 			}
 		},
 		components: {
@@ -59,20 +144,33 @@
 			let that = this;
 			context.onLoad(options);
 			this.repairId = options.repairId;
-			this.communityId = context.getCurrentCommunity().communityId;
+			this.communityId = getCommunityId();
 			this.imgUrlPre = conf.commonBaseUrl;
 			
 			//加载报修类型
+			this._loadRepair();
 			this._loadRepairStaffs();
 		},
 		methods: {
+			_loadRepair: function(_active) {
+				let that = this;
+			
+				queryUserRepair({
+					"communityId": that.communityId,
+					"page": 1,
+					"row": 1,
+					"repairId": that.repairId,
+				}).then(_json => {
+					that.repairInfo = _json.data[0];
+			
+				});
+			},
 			_loadRepairStaffs:function(){
-				let _communityInfo = context.getCurrentCommunity();
 				let _that =this;
 				let dataObj = {
 					page: 1,
 					row: 50,
-					communityId: _communityInfo.communityId,
+					communityId: getCommunityId(),
 					repairId: this.repairId
 				};
 				
@@ -103,6 +201,18 @@
 	}
 </script>
 <style>
+	.block__title {
+	  margin: 0;
+	  font-weight: 400;
+	  font-size: 14px;
+	  color: rgba(69,90,100,.6);
+	  padding: 60rpx 30rpx 20rpx;
+	}
+	
+	
+	.button_up_blank{
+	  height: 40rpx;
+	}
 	.repair-img-item{
 		display: inline-block;
 		margin: 0 20upx;

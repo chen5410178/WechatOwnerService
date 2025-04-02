@@ -85,7 +85,7 @@ export default {
 	phoneUrgeRepair: baseUrl + "app/repair.phoneUrgeRepair",
 	
 	// 查询报修单处理师傅
-	listRepairStaffs: baseUrl + "app/ownerRepair.listRepairStaffs",
+	listRepairStaffs: baseUrl + "app/repair.listPhoneRepairStaffs",
 	// 删除报修单
 	deleteOwnerRepair: baseUrl + "app/ownerRepair.deleteOwnerRepair",
 	// 报修退单

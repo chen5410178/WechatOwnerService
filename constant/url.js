@@ -43,7 +43,7 @@ export default {
 	queryParkingSpacesByOwner: baseUrl + "app/parkingSpace.queryParkingSpacesByOwner", //查询停车位费用
 	queryFeeByParkingSpace: baseUrl + "app/fee.queryFeeByParkingSpace", //查询物业费用
 	queryFeeByOwner: baseUrl + "app/fee.listFee", //预下单
-	queryCouponUser: baseUrl + "app/couponProperty.listCouponPropertyUser", //查询用户优惠卷
+	queryCouponUser: baseUrl + "app/coupon.listPhoneCouponPropertyUser", //查询用户优惠卷
 	preOrder: baseUrl + "app/payment/toPay", //查询小区
 	//临时车缴费
 	preOrderTempCarInout: baseUrl + "/app/payment/toPayTempCarInout",
@@ -81,7 +81,9 @@ export default {
 	//待办工单
 	listStaffRepairs: baseUrl + "app/ownerRepair.listStaffRepairs",
 	//已办工单
-	listStaffFinishRepairs: baseUrl + "app/ownerRepair.listStaffFinishRepairs",
+	listStaffFinishRepairs: baseUrl + "app/repair.queryPhoneRepairs",
+	phoneUrgeRepair: baseUrl + "app/repair.phoneUrgeRepair",
+	
 	// 查询报修单处理师傅
 	listRepairStaffs: baseUrl + "app/ownerRepair.listRepairStaffs",
 	// 删除报修单
@@ -207,7 +209,7 @@ export default {
 	listMyItemRelease: baseUrl + "app/itemRelease.listMyItemRelease",
 	listItemReleaseRes: baseUrl + "app/itemRelease.listItemReleaseRes",
 	queryOaWorkflowUser: baseUrl + "app/oaWorkflow/queryOaWorkflowUser",
-	listChargeMachine: baseUrl + "app/chargeMachine.listChargeMachine",
+	listChargeMachine: baseUrl + "app/chargeMachine.listPhoneChargeMachine",
 	listChargeMachinePort: baseUrl + "app/chargeMachine.listChargeMachinePort",
 	listExamineStaff: baseUrl + "app/examine.listExamineStaff", // 查询打分员工
 	startCharge: baseUrl + "app/chargeMachine.startCharge", // 开始充电

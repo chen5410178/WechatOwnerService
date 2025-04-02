@@ -14,11 +14,12 @@
 			</view>
 		</scroll-view>
 		<!---->
-		<view v-if="active == 0" class="ppfl_c">
-			<view v-if="noData == false">
-				<view v-for="(item,index) in waitRepair" :key="index" class="bg-white margin-top margin-right-xs radius margin-left-xs padding">
+		<view class="ppfl_c">
+			<view v-if="repairs && repairs.length>0">
+				<view v-for="(item,index) in repairs" :key="index"
+					class="bg-white margin-top margin-right-xs radius margin-left-xs padding">
 					<view class="flex padding-bottom-xs solid-bottom justify-between">
-						<view>{{item.repairId}}</view>
+						<view>{{item.repairId}}({{item.stateName}})</view>
 						<view class="text-gray">{{item.tel}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
@@ -34,12 +35,16 @@
 						<view class="text-gray">{{item.repairObjName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">预约时间</view>
-						<view class="text-gray">{{item.appointmentTime }}</view>
+						<view class="text-gray">提单时间</view>
+						<view class="text-gray">{{item.createTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">状态</view>
-						<view class="text-gray">{{item.stateName}}</view>
+						<view class="text-gray">提单时长</view>
+						<view class="text-gray">{{item.submitHours }}</view>
+					</view>
+					<view class="flex margin-top-xs justify-between">
+						<view class="text-gray">预约时间</view>
+						<view class="text-gray">{{item.appointmentTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
 						<view class="text-gray">报修内容</view>
@@ -47,93 +52,16 @@
 					</view>
 					<view class="solid-top flex justify-end margin-top padding-top-sm ">
 						<button class="cu-btn sm line-gray" @click="repairDetail(item)">详情</button>
-						<button class="cu-btn sm bg-red margin-left" @click="deleteRepair(item)">删除</button>
-					</view>
-				</view>
-			</view>
-			<view v-else>
-				<no-data-page></no-data-page>
-			</view>
-		</view>
-
-		<view v-if="active == 1" class="ppfl_c">
-			<view v-if="noData == false">
-				<view v-for="(item,index) in doingRepair" :key="index" class="bg-white margin-top margin-right-xs radius margin-left-xs padding">
-					<view class="flex padding-bottom-xs solid-bottom justify-between">
-						<view>{{item.repairId}}</view>
-						<view class="text-gray">{{item.tel}}</view>
-					</view>
-					<view class="flex margin-top justify-between">
-						<view class="text-gray">报修类型</view>
-						<view class="text-gray">{{item.repairTypeName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">报修人</view>
-						<view class="text-gray">{{item.repairName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">位置</view>
-						<view class="text-gray">{{item.repairObjName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">预约时间</view>
-						<view class="text-gray">{{item.appointmentTime }}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">状态</view>
-						<view class="text-gray">{{item.stateName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">报修内容</view>
-						<view class="text-gray">{{item.context}}</view>
-					</view>
-					<view class="solid-top flex justify-end margin-top padding-top-sm ">
-						<button class="cu-btn sm line-gray" @click="repairDetail(item)">详情</button>
-					</view>
-				</view>
-			</view>
-			<view v-else>
-				<no-data-page></no-data-page>
-			</view>
-		</view>
-
-		<view v-if="active == 2" class="ppfl_c">
-			<view v-if="noData == false">
-				<view v-for="(item,index) in repaired" :key="index" class="bg-white margin-top margin-right-xs radius margin-left-xs padding">
-					<view class="flex padding-bottom-xs solid-bottom justify-between">
-						<view>{{item.repairId}}</view>
-						<view class="text-gray">{{item.tel}}</view>
-					</view>
-					<view class="flex margin-top justify-between">
-						<view class="text-gray">报修类型</view>
-						<view class="text-gray">{{item.repairTypeName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">报修人</view>
-						<view class="text-gray">{{item.repairName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">位置</view>
-						<view class="text-gray">{{item.repairObjName}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">预约时间</view>
-						<view class="text-gray">{{item.appointmentTime }}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">状态</view>
-						<view class="text-gray">{{item.stateName}}</view>
-					</view>
-
-					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">报修内容</view>
-						<view class="text-gray">{{item.context}}</view>
-					</view>
-					<view class="solid-top flex justify-end margin-top padding-top-sm ">
-						<button class="cu-btn sm line-gray" @click="repairDetail(item)">详情</button>
-						<button v-if="item.state == '1400'" class="cu-btn sm bg-green  margin-left" @click="_toPay(item)">支付</button>
-						<button v-if="item.state == '1700'" class="cu-btn sm bg-green margin-left" @click="_appraiseRepair(item)">评价</button>
-						<button v-if="item.state == '1700' || item.state == '1400'" class="cu-btn sm  bg-red margin-left" @click="_backRepair(item)">退回</button>
+						<button class="cu-btn sm line-gray margin-left" v-if="item.timeoutFlag == 'Y'"
+							@click="_doUrgeRepair(item)">催单</button>
+						<button class="cu-btn sm bg-red margin-left" v-if="item.state == '1000'"
+							@click="deleteRepair(item)">删除</button>
+						<button v-if="item.state == '1400'" class="cu-btn sm bg-green  margin-left"
+							@click="_toPay(item)">支付</button>
+						<button v-if="item.state == '1700'" class="cu-btn sm bg-green margin-left"
+							@click="_appraiseRepair(item)">评价</button>
+						<button v-if="item.state == '1700' || item.state == '1400'"
+							class="cu-btn sm  bg-red margin-left" @click="_backRepair(item)">退回</button>
 					</view>
 				</view>
 			</view>
@@ -185,8 +113,22 @@
 <script>
 	import noDataPage from '@/components/no-data-page/no-data-page.vue'
 	import context from '../../lib/java110/Java110Context.js';
-	import {listRepairStaffs} from '@/api/repair/repairApi.js';
-	import {getUserId} from '../../api/user/userApi.js';
+	import {
+		listRepairStaffs
+	} from '@/api/repair/repairApi.js';
+	import {
+		getUserId
+	} from '../../api/user/userApi.js';
+	import {
+		getCommunityId
+	} from '@/api/community/communityApi.js';
+	import {
+		queryUserRepair,
+		urgeRepair
+	} from '@/api/repair/repairApi.js';
+	import {
+		hasLogin
+	} from '@/api/user/sessionApi.js';
 	const factory = context.factory;;
 	const constant = context.constant;
 	export default {
@@ -196,13 +138,10 @@
 				userId: '',
 				roomId: '',
 				communityId: '',
-				waitRepair: [],
-				doingRepair: [],
-				repaired: [],
+				repairs: [],
 				deleteRepairModal: false,
 				backRepairModal: false,
 				curRepair: {},
-				noData: false,
 				preStaffId: '',
 				preStaffName: '',
 				context: '',
@@ -217,17 +156,15 @@
 		onLoad: function(options) {
 			let that = this;
 			context.onLoad(options);
-			this.userId = getUserId();
-			context.getOwner(res => {
-				that.communityId = res.communityId;
-				that._loadRepair(that.active);
-			});
-		},
-		
-		onShow: function(){
-			if(this.userId && this.communityId){
-				this._loadRepair(this.active);
+			if (!hasLogin()) {
+				uni.showToast({
+					icon: 'none',
+					title: '未登录'
+				})
+				return;
 			}
+			this.communityId = getCommunityId();
+			this._loadRepair(this.active);
 		},
 		methods: {
 			/**
@@ -236,65 +173,26 @@
 			_loadRepair: function(_active) {
 				let that = this;
 
-				let _url = '';
 				let _states = '';
-				_url = constant.url.listStaffFinishRepairs;
 				if (_active == 0) {
 					_states = '1000';
 				} else if (_active == 1) {
-					_url = constant.url.listStaffFinishRepairs;
 					_states = '1100,1200,1300';
 				} else {
-					_url = constant.url.listStaffFinishRepairs;
 					_states = '1400,1500,1700,1800,1900,2000'
 				}
+				that.repairs = [];
 
-				let _paramIn = {
+				queryUserRepair({
 					"communityId": that.communityId,
 					"page": 1,
 					"row": 10,
 					"userId": that.userId,
 					"repairStates": _states
-				};
-				context.request({
-					url: _url,
-					header: context.getHeaders(),
-					method: "GET",
-					data: _paramIn,
-					success: function(res) {
-						let _json = res.data;
-						if (_json.code == 0) {
-							let _ownerRepairs = _json.data;
-							console.log('_ownerRepairs', _ownerRepairs);
-							if (_ownerRepairs.length < 1) {
-								that.noData = true;
-							} else {
-								that.noData = false;
-							}
-							if (_active == 0) {
-								that.waitRepair = _ownerRepairs;
-							} else if (_active == 1) {
-								that.doingRepair = _ownerRepairs;
-							} else {
-								that.repaired = _ownerRepairs;
-							}
-							return;
-						}
+				}).then(_json => {
+					that.repairs = _json.data;
 
-						wx.showToast({
-							title: "查询报修单失败",
-							icon: 'none',
-							duration: 2000
-						});
-					},
-					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
-							icon: 'none',
-							duration: 2000
-						})
-					}
-				})
+				});
 			},
 			onChange: function(e) {
 				console.log(e);
@@ -309,6 +207,18 @@
 				context.navigateTo({
 					url: '/pages/repair/repairDetail?repairId=' + _repair.repairId
 				});
+			},
+			_doUrgeRepair:function(_repair){
+				urgeRepair({
+					repiarId:_repair.repairId,
+					communityId:getCommunityId()
+				}).then(_data=>{
+					uni.showToast({
+						icon:'none',
+						title:'已经催过师傅了，请耐心等待，感谢您的支持'
+					});
+					return;
+				})
 			},
 			deleteRepair: function(_repair) {
 				this.curRepair = _repair;
@@ -365,10 +275,10 @@
 					staffId: this.userId,
 					//state: '10001'
 				};
-				listRepairStaffs(_paramIn).then(_json=>{
+				listRepairStaffs(_paramIn).then(_json => {
 					if (_json.code == 0) {
 						let _data = _json.data;
-					
+
 						if (_data.length < 1) {
 							uni.showToast({
 								title: '当前不能退单'
@@ -442,18 +352,18 @@
 					url: '/pages/repair/appraiseRepair?repairId=' + _repair.repairId
 				});
 			},
-			_toPay:function(_item){
+			_toPay: function(_item) {
 				console.log(_item);
 				context.navigateTo({
-					url:'/pages/fee/repairPay?repairId='+_item.repairId+
-					"&communityId="+_item.communityId+
-					"&userId="+this.userId+
-					"&repairObjId="+_item.repairObjId+
-					"&appointmentTime="+_item.appointmentTime+
-					"&repairTypeName="+_item.repairTypeName+
-					"&repairObjName="+_item.repairObjName+
-					"&repairName="+_item.repairName+
-					"&context="+_item.context
+					url: '/pages/fee/repairPay?repairId=' + _item.repairId +
+						"&communityId=" + _item.communityId +
+						"&userId=" + this.userId +
+						"&repairObjId=" + _item.repairObjId +
+						"&appointmentTime=" + _item.appointmentTime +
+						"&repairTypeName=" + _item.repairTypeName +
+						"&repairObjName=" + _item.repairObjName +
+						"&repairName=" + _item.repairName +
+						"&context=" + _item.context
 				})
 			}
 		}

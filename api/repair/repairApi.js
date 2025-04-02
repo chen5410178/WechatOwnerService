@@ -70,3 +70,44 @@ export function listRepairStaffs(_data) {
 		});
 	})
 }
+
+
+export function queryUserRepair(_data) {
+	return new Promise((resolve, reject) => {
+		let moreRooms = [];
+		request({
+			url: url.listStaffFinishRepairs,
+			method: "GET",
+			data: _data, //动态数据
+			success: function(res) {
+				let _data = res.data;
+				resolve(_data);
+			},
+			fail: function(e) {
+				reject(e);
+			}
+		});
+	})
+}
+
+export function urgeRepair(_data) {
+	return new Promise((resolve, reject) => {
+		let moreRooms = [];
+		request({
+			url: url.phoneUrgeRepair,
+			method: "POST",
+			data: _data, //动态数据
+			success: function(res) {
+				let _data = res.data;
+				if (_data.code == 0) {
+					resolve(_data);
+					return;
+				}
+				reject(_data.msg);
+			},
+			fail: function(e) {
+				reject(e);
+			}
+		});
+	})
+}

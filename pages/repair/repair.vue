@@ -9,16 +9,6 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group arrow" v-if="repairObjType == '002' || repairObjType =='003'" @tap="chooseFloor">
-			<view class="title">楼栋</view>
-			<input required readonly label="楼栋" v-model="floorNum" class="text-right" placeholder="请选择楼栋" name="floorNum" icon="arrow"></input>
-			<text class='cuIcon-right'></text>
-		</view>
-		<view class="cu-form-group arrow" v-if="repairObjType =='003'" @tap="chooseUnit">
-			<view class="title">单元</view>
-			<input v-model="unitNum" placeholder="请选择单元" class="text-right"></input>
-			<text class='cuIcon-right'></text>
-		</view>
 		<view class="cu-form-group" v-if="repairObjType == '004'">
 			<view class="title">房屋信息</view>
 			<picker bindchange="PickerChange" :value="index" :range="roomCloums" @change="roomChange">
@@ -130,32 +120,20 @@
 				complaintIndex: 0,
 				index: 0,
 				repairScopes: [{
-						id: '001',
-						name: '小区'
-					},
-					{
-						id: '002',
-						name: '楼栋'
-					},
-					{
-						id: '003',
-						name: '单元'
-					},
-					{
 						id: '004',
 						name: '房屋'
+					},
+					{
+						id: '001',
+						name: '公共区域'
 					}
 				],
 				repairTypes: [],
 				repairTypeIndex: 0,
-				repairScopeIndex: 3,
+				repairScopeIndex: 0,
 				repairObjType: '004',
 				repairObjId: '',
 				repairObjName: '',
-				floorNum: '',
-				floorId: '',
-				unitNum: '',
-				unitId: '',
 				priceScope: '',
 				todayDate:'',
 				todayDateTime:'',
@@ -201,43 +179,6 @@
 			this.todayDateTime = formatHourAndMin(new Date())
 		},
 
-		/**
-		 * 生命周期函数--监听页面初次渲染完成
-		 */
-		onReady: function() {},
-
-		/**
-		 * 生命周期函数--监听页面显示
-		 */
-		onShow: function() {
-			let _floor = uni.getStorageSync("_selectFloor");
-
-			if (_floor != null && _floor != undefined && _floor != '') {
-				this.floorNum = _floor.floorNum + "栋";
-				this.floorId = _floor.floorId;
-			}
-
-			let _unit = uni.getStorageSync("_selectUnit");
-			if (_unit != null && _unit != undefined && _unit != '') {
-				this.unitNum = _unit.unitNum + "单元";
-				this.unitId = _unit.unitId;
-			}
-		},
-
-		/**
-		 * 生命周期函数--监听页面隐藏
-		 */
-		onHide: function() {},
-
-		/**
-		 * 生命周期函数--监听页面卸载
-		 */
-		onUnload: function() {
-			//清理楼栋和单元
-			uni.removeStorageSync('_selectFloor');
-			uni.removeStorageSync('_unitFloor');
-		},
-
 		methods: {
 			sendImagesData: function(e){
 				this.photos = [];
@@ -279,23 +220,10 @@
 				if (this.repairObjType == '001') {
 					obj.repairObjId = this.communityId;
 					obj.repairObjName = this.communityName;
-				} else if (this.repairObjType == '002') {
-					obj.repairObjId = this.floorId;
-					obj.repairObjName = this.floorNum;
-				} else if (this.repairObjType == '003') {
-					obj.repairObjId = this.unitId;
-					obj.repairObjName = this.floorNum + this.unitNum;
-				} else {
+				}  else {
 					obj.repairObjId = this.roomId;
 					obj.repairObjName = this.roomName;
 				}
-
-				// let _photos = this.photos;
-				// _photos.forEach(function(_item) {
-				// 	obj.photos.push({
-				// 		"photo": _item
-				// 	});
-				// });
 				// 预约时间校验
 				let oppoTime = Date.parse(new Date(obj.appointmentTime.replace(/-/g, '/'))),
 				now = Date.parse(new Date());
@@ -308,9 +236,7 @@
 					msg = "报修人长度不能超过15位";
 				} else if (obj.tel == "") {
 					msg = "请填写手机号";
-				} else if (!checkPhoneNumber(obj.tel)) {
-					msg = "手机号有误";
-				} else if (obj.bindDate == "请选择") {
+				}  else if (obj.bindDate == "请选择") {
 					msg = "请选择预约日期";
 				} else if (obj.bindTime == "请选择") {
 					msg = "请选择预约时间";
@@ -337,9 +263,6 @@
 						success: function(res) {
 							let _json = res.data;
 							if (_json.code == 0) {
-								// wx.redirectTo({
-								// 	url: '/pages/repair/myRepair',
-								// });
 								uni.navigateTo({
 									url:"/pages/successPage/successPage?msg=提交成功&objType=4004"
 								})
@@ -420,24 +343,7 @@
 			timeChange: function(e) {
 				this.bindTime = e.detail.value;
 			},
-			chooseFloor: function(e) {
-				context.navigateTo({
-					url: '/pages/selectFloor/selectFloor'
-				});
-			},
-			chooseUnit: function(e) {
-				if (this.floorId == null || this.floorId == '') {
-					uni.showToast({
-						title: "请先选择楼栋"
-					});
-					return;
-				}
-				context.navigateTo({
-					url: '/pages/selectUnit/selectUnit?floorId=' + this.floorId
-				});
-			},
 			_loadRepairTypes: function() {
-				let _communityInfo = context.getCurrentCommunity();
 				let _that = this;
 				// 公共区域标识
 				let publicArea = _that.repairObjType == '004' ? 'F' : 'T';
@@ -446,7 +352,7 @@
 				let dataObj = {
 					page: 1,
 					row: 50,
-					communityId: _communityInfo.communityId,
+					communityId: getCommunityId(),
 					publicArea: publicArea
 				};
 				listRepairSettings(dataObj).then(_json=>{

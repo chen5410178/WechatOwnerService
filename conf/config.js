@@ -15,10 +15,10 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'http://wuye.52wy.top/';
+const baseUrl = 'http://demo.homecommunity.cn/';
 // #endif
 
-let commonBaseUrl = 'http://wuye.52wy.top/';
+let commonBaseUrl = 'http://127.0.0.1:8008/';
 
 //商城的url
 let mallUrl = 'http://mallapp.52wy.top/';

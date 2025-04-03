@@ -33,6 +33,7 @@
 	import {
 		getRooms
 	} from '../../api/room/roomApi.js'	
+import { getCommunityId } from '../../api/community/communityApi.js';
 	
 	export default {
 		data() {
@@ -57,18 +58,15 @@
 		 */
 		onShow: function() {
 			let _that = this;
-			getRooms().then(data => {
+			getRooms({
+				communityId:getCommunityId()
+			}).then(data => {
 				let _rooms = data.rooms;
 				this.rooms = _rooms;
-				let _owner = data.owner;
 				_that.moreRooms = [];
 				if (_rooms.length == 0) {
 					return;
 				}
-				_rooms.forEach(function(_room) {
-					_room.communityId = _owner.communityId;
-					_room.communityName = _owner.communityName;
-				});
 				_that.curRoom = _rooms[0];
 			});
 		},

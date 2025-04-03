@@ -160,8 +160,10 @@
 			this.userName = getOwnerName();
 			this.bindTel = getOwnerTel();
 			this.bindRepairName = this.userName;
-			context.getRooms().then(res => {
-				let arr = res.data.rooms;
+			getRooms({
+				communityId:getCommunityId()
+			}).then(_data => {
+				let arr = _data.rooms;
 				let roomCloums = [];
 				let roomIdArr = [];
 				arr.map(item => {
@@ -170,7 +172,6 @@
 				})
 				that.roomCloums = roomCloums;
 				that.roomIdArr = roomIdArr;
-				that.userId = res.data.owner.userId;
 			});
 
 			//加载报修类型

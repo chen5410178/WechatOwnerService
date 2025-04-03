@@ -23,39 +23,19 @@ import {
 /**
  * 查询业主房屋
  */
-export function getRooms() {
+export function getRooms(_data) {
 	return new Promise((resolve, reject) => {
-		
-		getCurOwner()
-			.then(function(_owner) {
-				if(!_owner.ownerId){
-					reject('未包含业主信息');
-				}
-				request({
-					url: url.queryRoomsByOwner,
-					method: "GET",
-					data: {
-						communityId: _owner.communityId,
-						ownerId: _owner.ownerId
-					},
-					success: function(res) {
-						if (res.statusCode == 200) {
-							//将业主信息和房屋信息一起返回
-							res.data['owner'] = _owner;
-							if (res.data.rooms.length == 0) {
-								reject("业主没有房屋信息");
-								return;
-							}
-							resolve(res.data);
-						} else {
-							reject("查询房屋失败");
-						}
-					},
-					fail: function(res) {
-						reject(res);
-					}
-				});
-			});
+		request({
+			url: url.queryRoomsByOwner,
+			method: "GET",
+			data: _data,
+			success: function(res) {
+				resolve(res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
 	});
 };
 

@@ -1,12 +1,16 @@
 <template>
 	<view class="tab-container bg-white">
 		<view class="cu-list menu">
-			<view class="cu-item arrow" v-if="rooms.length > 0" v-for="(item, key) in rooms" :key="key" :data-item="item" @click="myHouseDetail(item)">
+			<view class="cu-item arrow" v-if="rooms.length > 0" v-for="(item, key) in rooms" :key="key"
+				:data-item="item" @click="myHouseDetail(item)">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="cuIcon-homefill text-green margin-right-xs"></text> {{item.floorNum}}-{{item.unitNum}}-{{item.roomNum}}</view>
+						<text class="cuIcon-homefill text-green margin-right-xs"></text>
+						{{item.floorNum}}-{{item.unitNum}}-{{item.roomNum}}
+					</view>
 					<view class="text-gray text-sm">
-						<text class="cuIcon-right margin-right-xs"></text> {{item.roomId}}</view>
+						<text class="cuIcon-right margin-right-xs"></text> {{item.roomId}}
+					</view>
 				</view>
 				<view class="action">
 
@@ -27,6 +31,9 @@
 
 <script>
 	// pages/my/myHouse.js
+	import {
+		getCommunityId
+	} from '../../api/community/communityApi.js';
 	import context from '../../lib/java110/Java110Context.js';
 	const constant = context.constant;
 
@@ -98,63 +105,60 @@
 			 */
 			loadOwnerHouse: function() {
 				let _that = this;
-
-				context.getRooms().then(res => {
-					if (res) {
-						_that.rooms = res.data.rooms;
-					}
-					
+				getRooms({
+					communityId: getCommunityId()
+				}).then(_data => {
+					_that.rooms = _data.rooms;
 				});
 			}
 		}
 	};
 </script>
 <style>
-	
-.tab-container {
-	/*border: 1px solid black;*/
-	
-	margin-top: 30rpx;
-}
+	.tab-container {
+		/*border: 1px solid black;*/
 
-.tab-item {
-	padding: 20rpx 30rpx;
+		margin-top: 30rpx;
+	}
 
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-}
+	.tab-item {
+		padding: 20rpx 30rpx;
 
-.tab-item-hover {
-	background-color: #e6e6e6;
-}
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-.tab-icon {
-	width: 30rpx;
-	height: 30rpx;
-}
+	.tab-item-hover {
+		background-color: #e6e6e6;
+	}
 
-.tab-text {
-	display: inline-block;
-	margin-left: 10rpx;
-	color: #1e1e1e;
-}
+	.tab-icon {
+		width: 30rpx;
+		height: 30rpx;
+	}
 
-.tab-arrow {
-	display: inline-block;
-	width: 20rpx;
-	height: 20rpx;
-	border: 1px solid #cdcdcd;
+	.tab-text {
+		display: inline-block;
+		margin-left: 10rpx;
+		color: #1e1e1e;
+	}
 
-	border-left: none;
-	border-bottom: none;
+	.tab-arrow {
+		display: inline-block;
+		width: 20rpx;
+		height: 20rpx;
+		border: 1px solid #cdcdcd;
 
-	transform: rotate(45deg);
-}
+		border-left: none;
+		border-bottom: none;
 
-.border-bottom .icon{
-  font-size: 38rpx;
-  line-height: 38rpx;
-}
+		transform: rotate(45deg);
+	}
+
+	.border-bottom .icon {
+		font-size: 38rpx;
+		line-height: 38rpx;
+	}
 </style>

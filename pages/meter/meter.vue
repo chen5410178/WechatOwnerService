@@ -71,7 +71,9 @@
 			_loadRooms:function(){
 				let _that = this;
 				_that.noData = false;
-				getRooms().then(data => {
+				getRooms({
+					communityId:getCommunityId()
+				}).then(data => {
 					let _rooms = data.rooms;
 					this.rooms = _rooms;
 					if (_rooms.length == 0) {

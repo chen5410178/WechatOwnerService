@@ -48,7 +48,8 @@
 	import context from '../../lib/java110/Java110Context.js';
 	import uploadImageAsync from "../../components/vc-upload-async/vc-upload-async.vue";
 	import {complaint,getComplaintType} from '@/api/community/complaintApi.js';
-	import {getCommunityId} from '@/api/community/communityApi.js'
+	import {getCommunityId} from '@/api/community/communityApi.js';
+	import { getRooms } from '@/api/room/roomApi.js';
 	const constant = context.constant;
 	const factory = context.factory;
 
@@ -92,8 +93,10 @@
 		onLoad: function(options) {
 			let that = this;
 			context.onLoad(options);
-			context.getRooms().then(res => {
-				let arr = res.data.rooms;
+			getRooms({
+				communityId:getCommunityId()
+			}).then(_data=>{
+				let arr = _data.rooms;
 				let roomCloums = [];
 				let roomIdArr = [];
 				arr.map(item => {
@@ -102,10 +105,6 @@
 				});
 				that.roomCloums = roomCloums;
 				that.roomIdArr = roomIdArr;
-				that.userId = res.data.owner.appUserId;
-				that.communityId = res.data.owner.communityId;
-				that.complaintName = res.data.owner.appUserName;
-				that.tel = res.data.owner.link;
 			});
 			this._loadComplaintType();
 		},

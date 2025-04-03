@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<service-property></service-property>
-		<!-- <service-homemaking></service-homemaking> -->
+		<service-homemaking></service-homemaking>
 	</view>
 </template>
 

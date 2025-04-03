@@ -20,7 +20,7 @@ export default {
 	listComplaintType: baseUrl + 'app/complaint.queryPhoneComplaintType', //查询投诉类型
 	
 	saveComplaint: baseUrl + 'app/complaint.saveComplaint', //查询业主房间
-	queryRoomsByOwner: baseUrl + 'app/room.queryRoomsByOwner', //绑定业主
+	queryRoomsByOwner: baseUrl + 'app/room.queryPhoneOwnerRooms', //绑定业主
 	queryRoomsByApp: baseUrl + 'app/room.queryRoomsByApp', //绑定业主
 	appUserBindingOwner: baseUrl + 'app/owner.appUserBindingOwner', //查询绑定业主
 	authOwner: baseUrl + 'app/owner.authOwner', //业主认证

@@ -15,13 +15,13 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'http://demo.homecommunity.cn/';
+const baseUrl = 'http://wuye.heyiiot.com/';
 // #endif
 
-let commonBaseUrl = 'http://127.0.0.1:8008/';
+let commonBaseUrl = 'http://wuye.heyiiot.com/';
 
 //商城的url
-let mallUrl = 'http://mallapp.52wy.top/';
+let mallUrl = 'http://mallapp.heyiiot.com/';
 
 //商城小程序ID
 let mallMinAppId = "wx8ded6b260f1b8f63";

@@ -106,10 +106,12 @@
 
 	import {
 		queryRentingConfig,
-		hireRoom
+		hireRoom,
+		getRooms
 	} from '../../api/room/roomApi.js'
 
 	import base64 from '../../factory/Base64Factory.js'
+import { getCommunityId } from '../../api/community/communityApi.js';
 
 	export default {
 		data() {
@@ -170,8 +172,10 @@
 		onLoad: function(options) {
 			let that = this;
 			this.vc.onLoad(options);
-			context.getRooms().then(res => {
-				let arr = res.data.rooms;
+			getRooms({
+				communityId:getCommunityId()
+			}).then(_data => {
+				let arr = _data.rooms;
 				that.rooms = arr;
 				let roomCloums = [];
 				let roomIdArr = [];
@@ -181,10 +185,6 @@
 				})
 				that.roomCloums = roomCloums;
 				that.roomIdArr = roomIdArr;
-				that.userTel = res.data.owner.link;
-				that.userName = res.data.owner.appUserName;
-				that.communityId = res.data.owner.communityId;
-				that.communityName = res.data.owner.communityName;
 			});
 
 			//加载报修类型

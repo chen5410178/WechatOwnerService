@@ -433,3 +433,34 @@ export function ownerRegiter(_data){
 }
 
 
+export function wechatLogin(_data) {
+
+	return new Promise((resolve, reject) => {
+		requestNoAuth({
+			url: url.phoneWechatLogin,
+			method: "POST",
+			data: _data, //动态数据
+			success: function(res) {
+				let _json = res.data;
+				if (_json.code != 0) {
+					reject(_json.msg);
+					return;
+				}
+				//todo 保存业主信息
+				uni.setStorageSync("userInfo",_json.data);
+				uni.setStorageSync("currentCommunityInfo",{
+					communityId:_json.data.communityId,
+					communityName:_json.data.communityName,
+					sCommunityTel:_json.data.communityTel,
+					communityQrCode:_json.data.communityQrCode
+				});
+				resolve(_json.data);
+			},
+			fail: function(e) {
+				reject(e);
+			}
+		});
+	})
+}
+
+

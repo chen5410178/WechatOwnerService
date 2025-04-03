@@ -34,6 +34,7 @@
 	import {
 		getCommunityId
 	} from '../../api/community/communityApi.js';
+	import {getRooms} from '@/api/room/roomApi.js';
 	import context from '../../lib/java110/Java110Context.js';
 	const constant = context.constant;
 

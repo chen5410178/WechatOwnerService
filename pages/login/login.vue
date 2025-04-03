@@ -23,17 +23,23 @@
 			<view class="cu-form-group border-bottom">
 				<view class="title">验证码</view>
 				<input v-model="password" placeholder="请输入短信验证码" name="input"></input>
-				<button class='cu-btn bg-green shadow' :disabled="btnDisabled"
+				<button class='cu-btn bg-blue shadow' :disabled="btnDisabled"
 					@click="sendMsgCode()">{{btnValue}}</button>
 			</view>
 		</view>
 
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green lg" @click="_doLogin()">登录</button>
-			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_doRegister()">注册</button>
-
-			<view class="text-center margin-top-sm text-green" @click="_doLoginPhone()">{{phoneLoginName}}</view>
+			<button class="cu-btn bg-blue lg" @click="_doLogin()">登录</button>
+			<!-- #ifdef MP-WEIXIN -->
+			<wechat-login ref="wechatLoginRef"></wechat-login>
+			<!-- #endif -->
 		</view>
+		<!-- #ifdef H5 -->
+		<view class="padding-lr flex justify-between">
+			<view class="text-green" @click="_doLoginPhone()">{{phoneLoginName}}</view>
+			<view class="text-green" @click="_doRegister()">注册</view>
+		</view>
+		<!-- #endif -->
 
 	</view>
 </template>
@@ -60,7 +66,8 @@
 		getWAppId,
 		saveWAppId,
 		getLoginFlag
-	} from '@/lib/java110/utils/StorageUtil.js'
+	} from '@/lib/java110/utils/StorageUtil.js';
+	import wechatLogin from '@/components/user/wechat-login.vue';
 
 	const constant = context.constant;
 	const factory = context.factory;
@@ -90,6 +97,14 @@
 			if (wAppId) {
 				uni.setStorageSync(constant.mapping.W_APP_ID, wAppId);
 			}
+			// #ifdef MP-WEIXIN
+			setTimeout(function(){
+				that.$refs.wechatLoginRef._initWechatLogin();
+			},1000)
+			// #endif
+		},
+		components:{
+			wechatLogin
 		},
 		methods: {
 			_doLogin: function() {

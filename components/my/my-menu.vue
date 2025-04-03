@@ -12,7 +12,7 @@
 			</view>
 		</view>
 
-		<view class="order_box">
+	<!-- 	<view class="order_box">
 			<view class="order_title">我的订单</view>
 			<view class="order_list">
 				<view class="list">
@@ -22,7 +22,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 
 		<auth-owner-dialog ref="authOwnerDialogRef"></auth-owner-dialog>
 	</view>

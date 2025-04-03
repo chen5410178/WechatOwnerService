@@ -28,7 +28,7 @@
 			</view>
 		</view>
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green   lg" @click="_doRegister()">绑定</button>
+			<button class="cu-btn bg-green   lg" @click="_doRegister()">提交</button>
 		</view>
 	</view>
 </template>

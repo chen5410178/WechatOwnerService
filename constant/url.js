@@ -8,6 +8,7 @@ export default {
 	loginUrl: baseUrl + 'app/loginWx',
 	getWxPhoto: baseUrl + 'app/getWxPhoto',
 	loginOwnerUrl: baseUrl + 'app/loginOwner',
+	phoneWechatLogin: baseUrl + "app/login.phoneWechatLogin",
 	areaUrl: baseUrl + "app/area.listAreas",
 	GetNoticeListUrl: baseUrl + 'app/notice.listNotices', //公告接口
 	saveOwnerRepair: baseUrl + 'app/ownerRepair.saveOwnerRepair', //报修
@@ -15,7 +16,7 @@ export default {
 	saveOwner: baseUrl + 'app/owner.saveOwnerMember', //家庭成员列表
 	queryOwnerMembers: baseUrl + 'app/owner.queryAppOwnerMembers', //投诉建议列表
 	listComplaints: baseUrl + 'app/complaint.queryUserComplaints', //添加投诉建议
-	listComplaintEvent: baseUrl + 'app/complaint.listComplaintEvent', //添加投诉建议
+	listComplaintEvent: baseUrl + 'app/complaint.listPhoneComplaintEvent', //添加投诉建议
 	saveComplaintAppraise: baseUrl + 'app/complaintAppraise.saveComplaintAppraise', //添加投诉建议
 	listComplaintType: baseUrl + 'app/complaint.queryPhoneComplaintType', //查询投诉类型
 	

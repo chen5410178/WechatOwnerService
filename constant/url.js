@@ -17,7 +17,7 @@ export default {
 	listComplaints: baseUrl + 'app/complaint.queryUserComplaints', //添加投诉建议
 	listComplaintEvent: baseUrl + 'app/complaint.listComplaintEvent', //添加投诉建议
 	saveComplaintAppraise: baseUrl + 'app/complaintAppraise.saveComplaintAppraise', //添加投诉建议
-	listComplaintType: baseUrl + 'app/complaintType.listComplaintType', //查询投诉类型
+	listComplaintType: baseUrl + 'app/complaint.queryPhoneComplaintType', //查询投诉类型
 	
 	saveComplaint: baseUrl + 'app/complaint.saveComplaint', //查询业主房间
 	queryRoomsByOwner: baseUrl + 'app/room.queryRoomsByOwner', //绑定业主

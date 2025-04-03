@@ -139,7 +139,7 @@
 					"photos": this.photos,
 					"context": this.context,
 					"userId": this.userId,
-					"communityId": this.communityId
+					"communityId": getCommunityId()
 				}).then(_data =>{
 					uni.navigateTo({
 						url:"/pages/successPage/successPage?msg=提交成功&objType=4004"

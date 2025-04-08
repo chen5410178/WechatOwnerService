@@ -126,7 +126,8 @@
 			saveOpenIdToOwner:function(){
 				refreshAppUserBindingOwnerOpenId(this,{
 					openId:this.openId,
-					communityId:this.communityId
+					communityId:this.communityId,
+					appId:this.appId
 				}).then(_data=>{
 					wx.switchTab({
 						url: "/pages/index/index"

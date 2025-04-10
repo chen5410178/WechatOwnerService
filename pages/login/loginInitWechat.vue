@@ -124,10 +124,14 @@
 				});
 			},
 			saveOpenIdToOwner:function(){
+				let _wechatType = "1100";
+				// #ifdef MP-WEIXIN
+					_wechatType = "1000";
+				// #endif
 				refreshAppUserBindingOwnerOpenId(this,{
 					openId:this.openId,
 					communityId:this.communityId,
-					appId:this.appId
+					wechatType:_wechatType
 				}).then(_data=>{
 					wx.switchTab({
 						url: "/pages/index/index"

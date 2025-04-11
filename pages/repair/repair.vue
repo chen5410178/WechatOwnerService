@@ -91,6 +91,7 @@
 	import uploadImageAsync from "../../components/vc-upload-async/vc-upload-async.vue";
 	
 	import {listRepairSettings} from '../../api/repair/repairApi.js'
+	import {getRooms} from '@/api/room/roomApi.js'
 
 	export default {
 		data() {

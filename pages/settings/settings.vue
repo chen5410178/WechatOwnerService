@@ -137,7 +137,7 @@
 						});
 						var tempFilePaths = res.tempFilePaths
 						console.log('头像地址', tempFilePaths);
-						TanslateImage.translate(_that,tempFilePaths, (_baseInfo) => {
+						TanslateImage.translate(_that,tempFilePaths[0], (_baseInfo) => {
 							_that.headerImg = _baseInfo;
 							_that._uploadOwnerHeaderImg();
 							wx.hideLoading()

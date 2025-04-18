@@ -110,7 +110,7 @@ import { getCommunityId } from '../../api/community/communityApi.js';
 					page: 1,
 					row: 30,
 					payerObjId: _room.roomId,
-					communityId: _room.communityId,
+					communityId: getCommunityId(),
 					state: '2008001'
 				}
 				_that.moreRooms = [];

@@ -10,7 +10,7 @@ export default {
 	loginOwnerUrl: baseUrl + 'app/loginOwner',
 	phoneWechatLogin: baseUrl + "app/login.phoneWechatLogin",
 	areaUrl: baseUrl + "app/area.listAreas",
-	GetNoticeListUrl: baseUrl + 'app/notice.listNotices', //公告接口
+	GetNoticeListUrl: baseUrl + 'app/notice.queryPhoneNotice', //公告接口
 	saveOwnerRepair: baseUrl + 'app/ownerRepair.saveOwnerRepair', //报修
 	listOwnerRepairs: baseUrl + 'app/ownerRepair.listOwnerRepairs', //查询报修
 	saveOwner: baseUrl + 'app/owner.saveOwnerMember', //家庭成员列表

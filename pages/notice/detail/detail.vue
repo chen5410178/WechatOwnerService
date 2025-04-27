@@ -25,6 +25,9 @@
 	import {replaceImgSrc} from '../../../lib/java110/utils/ImageUtil.js'
 	//获取app实例
 	const app = getApp().globalData;
+	import {
+		queryNotices
+	} from '@/api/index/indexApi.js';
 	
 	import jyfParser from "@/components/jyf-parser/jyf-parser";
 
@@ -54,25 +57,16 @@
 		methods: {
 			_loadNoticeDetail: function() {
 				let that = this;
-				
-				context.request({
-					header: context.getHeaders(),
-					url: constant.url.GetNoticeListUrl,
-					method: "GET",
-					data: {
-						communityId: that.communityId,
-						page: 1,
-						row: 10,
-						noticeId: that.noticeId
-					},
-					success: function(res) {
-						// TODO 判断
-						console.log(res);
-						let notice = res.data.notices[0]
-						notice.timeStr = notice.startTime.replace(/:\d{1,2}$/, ' ');
-						notice.context = replaceImgSrc(notice.context,conf.baseUrl);
-						that.notice = notice;
-					}
+				queryNotices({
+					communityId: that.communityId,
+					page: 1,
+					row: 10,
+					noticeId: that.noticeId
+				}).then((_notices) => {
+					let notice = _notices[0]
+					notice.timeStr = notice.startTime.replace(/:\d{1,2}$/, ' ');
+					notice.context = replaceImgSrc(notice.context,conf.baseUrl);
+					that.notice = notice;
 				});
 			}
 		}

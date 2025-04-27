@@ -99,8 +99,8 @@
 					page: 1,
 					row: 99,
 					communityId: _communityId,
-					// acctType:'2003',
-					acctTypes: '2003,2004'
+					 acctType:'2003',
+					
 				}).then((data) => {
 					if (!data) {
 						_that.accounts = [];

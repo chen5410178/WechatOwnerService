@@ -59,7 +59,7 @@
     "quickapp" : {},
     "mp-weixin" : {
         "usingComponents" : true,
-        "appid" : "wx702e87d56708f858",
+        "appid" : "wx945d6ea60acf8f36",
         "setting" : {
             "urlCheck" : false,
             "es6" : false
@@ -80,12 +80,12 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/app" : {
-                    "target" : "http://127.0.0.1:8008/", //目标接口域名
+                    "target" : "http://mall.jyzctech.com/", //目标接口域名
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 },
                 "/callComponent" : {
-                    "target" : "http://127.0.0.1:8008/", //目标接口域名
+                    "target" : "http://mall.jyzctech.com/", //目标接口域名
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 }

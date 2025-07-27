@@ -15,20 +15,20 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'https://crsdt.cn/';
+const baseUrl = 'http://demo.homecommunity.cn/';
 // #endif
 
-let commonBaseUrl = 'https://crsdt.cn/';
+let commonBaseUrl = 'http://demo.homecommunity.cn/';
 
 //商城的url
-let mallUrl = 'http://mallapp.crsdt.cn/';
+let mallUrl = 'http://mallapp.homecommunity.cn/';
 
 //商城小程序ID
 let mallMinAppId = "xx";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 
-let DEFAULT_COMMUNITY_ID = "2024121997074180"; //HC测试小区id  用于没有登录时展示相关信息
+let DEFAULT_COMMUNITY_ID = "2025071810280004"; //HC测试小区id  用于没有登录时展示相关信息
 let DEFAULT_COMMUNITY_NAME = "演示小区";
 
 // APP 或者 公众号  appId

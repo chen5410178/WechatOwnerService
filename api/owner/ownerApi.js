@@ -400,11 +400,13 @@ export function authOwner(_data) {
 			data: _data,
 			success: function(res) {
 				let _json = res.data;
-				uni.showToast({
-					title: _json.msg,
-					icon: 'none',
-					duration: 5000
-				});
+				setTimeout(function(){
+					uni.showToast({
+						title: _json.msg,
+						icon: 'none',
+						duration: 5000
+					});
+				},1000)
 				if (_json.code != 0) {
 					reject(_json.msg);
 					return;

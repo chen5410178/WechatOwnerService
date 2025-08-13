@@ -240,7 +240,7 @@
 			this.layer = _fee.layer;
 			this.builtUpArea = _fee.builtUpArea;
 			this.feeId = _fee.feeId;
-			this.amount = _fee.amountOwed;
+			this.amount = _fee.amount;
 			this.additionalAmount = _fee.additionalAmount;
 			this.ordEndTime = _fee.endTime;
 			this.formatEndTime = date2String(_fee.endTime);

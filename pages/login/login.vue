@@ -46,18 +46,18 @@
 
 <script>
 	var _this;
-	import wInput from '../../components/watch-input.vue' //input
-	import wButton from '../../components/watch-button.vue' //button
+	import wInput from '@/components/watch-input.vue' //input
+	import wButton from '@/components/watch-button.vue' //button
 	import {
 		sendSmsCode,
 		ownerLogin,
-	} from '../../api/user/userApi.js'
-	import context from '../../lib/java110/Java110Context.js';
+	} from '@/api/user/userApi.js'
+	import context from '@/lib/java110/Java110Context.js';
 
 	import {
 		
 		getLoginCode
-	} from '../../lib/java110/page/Page.js';
+	} from '@/lib/java110/page/Page.js';
 	
 	import {
 		saveOwnerStorage,

@@ -157,11 +157,8 @@ export function loadActivites(dataObj) {
 						}
 						
 						_activites.forEach(function(_item) {
-							_item.src = url.filePath + "?fileId=" + _item.headerImg +
-								"&communityId=" + dataObj.communityId +
-								"&time=" + new Date();
+							_item.src = _item.headerImg;
 							_item.startTime = dateTimeStringToDateString(_item.startTime);
-
 							_acts.push(_item);
 						});
 						resolve(_acts);

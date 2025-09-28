@@ -1,52 +1,72 @@
 <template>
 	<view>
-		<view class="cu-form-group arrow margin-top" v-if="payerObjs &&payerObjs.length >1">
-			<view class="title" style="width: 200upx;">按房屋缴费</view>
-			<picker bindchange="PickerChange" :value="payerObjIndex" :range="payerObjs" :range-key="'payerObjName'"
-				@change="_payerObjectChange">
-				<view class="picker">
-					{{payerObjs[payerObjIndex].payerObjName}}
-				</view>
-			</picker>
-		</view>
-		<scroll-view scroll-y style="padding-bottom: 200rpx;">
-			<view class="block__title" v-if="fees.length > 0">应缴费用</view>
-			<view v-if="fees && fees.length >0">
-				<view class="cu-list menu" v-for="(item,index) in fees" :key="index" :data-item="item"
-					v-if="item.payOnline == 'Y'">
-					<view class="cu-item " @click="_showDetailFee(item)">
+		<scroll-view scroll-y class="padding-top ">
+			<view v-if="batchFees && batchFees.length >0">
+				<view class="cu-list menu " v-for="(payObj,index) in batchFees" :key="index" :data-item="payObj">
+					<view class="cu-item  " @click="switchSimplifyFeeFlag(payObj)">
 						<view class="content padding-tb-sm">
 							<view>
-								<view class="text-cut" style="width:150px">{{item.feeName}}({{item.payerObjName}})
+								<view class="text-cut" style="width:150px">{{payObj.payerObjName}}
 								</view>
 							</view>
 							<view class="text-gray text-sm">
-								<text class="margin-right-xs">{{item.endTime}}至{{item.deadlineTime}}</text>
+								<text class="margin-right-xs">{{payObj.ownerName}}</text>
 							</view>
 						</view>
-						<view class="action">
-							<text class="text-grey text-sm">应缴:￥{{item.feeTotalPrice}}</text>
+						<view class="action ">
+							<text class="text-red text-lg">￥{{payObj.oweAmount}}</text>
 						</view>
 					</view>
-					<view class="sub-info flex justify-start flex-wrap" v-if="item.showDetail">
-						<view class="sub-info-item text-gray text-sm" v-if="item.preDegrees">
-							<text class="margin-right-xs">上期读数:{{item.preDegrees}}</text>
-						</view>
-						<view class="sub-info-item text-gray text-sm" v-if="item.preDegrees">
-							<text class="margin-right-xs">上期读表时间:{{_getReadTime(item.preReadingTime)}}</text>
-						</view>
-						<view class="sub-info-item text-gray text-sm" v-if="item.curDegrees">
-							<text class="margin-right-xs">本期读数:{{item.curDegrees}}</text>
-						</view>
-						<view class="sub-info-item text-gray text-sm" v-if="item.preDegrees">
-							<text class="margin-right-xs">本期读表时间:{{_getReadTime(item.curReadingTime)}}</text>
-						</view>
-						<view class="sub-info-item text-gray text-sm" v-if="item.curDegrees">
-							<text class="margin-right-xs">使用量:{{item.curDegrees-item.preDegrees}}</text>
-						</view>
-						<view class="sub-info-item text-gray text-sm">
-							<text
-								class="margin-right-xs">单价:{{item.mwPrice && item.mwPrice>0?item.mwPrice:item.squarePrice}}/{{item.additionalAmount}}</text>
+					<view v-if="payObj.showFlag == 'Y'">
+						<view v-for="(feeConfig,fIndex) in payObj.childs" :key="fIndex">
+							<view class="block__title">{{feeConfig.feeName}}</view>
+							<checkbox-group class="block" @change="checkboxChange($event,feeConfig)">
+								<view class="cu-list menu left-line">
+									<view class="cu-item" v-for="(fee,feeIndex) in feeConfig.childs" :key="feeIndex"
+										:data-item="fee">
+										<view class="padding-tb-sm flex justify-start">
+											<view style="line-height: 1.6rem; display: flex; align-items: center;">
+												<checkbox :value="fee.feeId">
+												</checkbox>
+											</view>
+											<view class="margin-left-sm" @click="_showDetailFee(fee)">
+												<view>
+													<view class="text-cut" style="width:220px">
+														{{fee.startTime}}~{{fee.endTime}}
+													</view>
+												</view>
+												<view class="text-gray text-sm">
+													<text>{{fee.remark}}</text>
+												</view>
+											</view>
+										</view>
+										<view class="action">
+											<text class="text-red text-sm">￥{{fee.oweAmount}}</text>
+										</view>
+									</view>
+								</view>
+							</checkbox-group>
+							<view class="cu-list menu left-line margin-top-xs">
+								<view class="cu-item" v-for="(discount,discountIndex) in feeConfig.discounts"
+									:key="discountIndex" :data-item="discount">
+									<view class="padding-tb-sm flex justify-start">
+										<view class="margin-left-sm">
+											<view>
+												<view class="text-cut" style="width:220px">
+													{{discount.discountName}}
+												</view>
+											</view>
+											<view class="text-gray text-sm">
+												<text>{{discount.ruleName}}</text>
+											</view>
+										</view>
+									</view>
+									<view class="action">
+										<text class="text-red text-sm">￥{{discount.discountPrice}}</text>
+									</view>
+								</view>
+							</view>
+
 						</view>
 					</view>
 				</view>
@@ -58,7 +78,7 @@
 				<no-data-page></no-data-page>
 			</view>
 		</scroll-view>
-		<view v-if="fees.length > 0" class="bg-white  border flex justify-end"
+		<view v-if="batchFees.length > 0" class="bg-white  border flex justify-end"
 			style="position: fixed;width: 100%;bottom: 0;">
 			<view class="action text-orange margin-right line-height">
 				合计：{{receivableAmount}}元
@@ -94,13 +114,10 @@
 	} from '../../api/user/userApi.js';
 
 	import {
-		getRoomOweFees
+		queryOwnerFees,
+		computeAppFeeDiscount
 	} from '../../api/fee/feeApi.js'
 
-
-	import {
-		getRoomFees
-	} from '../../api/fee/feeApi.js';
 	import {
 		autoLogin
 	} from '../../api/user/sessionApi.js';
@@ -110,18 +127,13 @@
 		data() {
 			return {
 				scrollLeft: 0,
-				amount: 0,
+				discount: 0,
 				receivableAmount: 0.00,
 				communityId: '',
 				communityName: '',
+				ownerId:'',
 				appId: '',
-				fees: [],
-				roomId: '',
-				storeId: '',
-				payerObjs: [],
-				payerObjId: '',
-				payerObjIndex: 0,
-				feeIds: [],
+				batchFees: [],
 				selectUserAccount: [], // 选中的账户
 				accountAmount: 0.0, // 账户金额
 			};
@@ -137,47 +149,32 @@
 			context.onLoad(options);
 			autoLogin(options);
 			this.communityId = options.communityId;
-			this.payerObjId = options.payerObjId;
-			if(!this.communityId){
+			if (!this.communityId) {
 				this.communityId = getCommunityId();
 			}
-			let _that = this;
+			
 		},
 		onShow() {
 			let _that = this;
-			_that._loadOweFee();
+			_that._loadOwnerFee();
 		},
 		methods: {
-			_loadOweFee: function() {
+			_loadOwnerFee: function() {
 				let _that = this;
-				let _payObjId = "";
-				if(this.payerObjId){
-					_payObjId = this.payerObjId;
-				}
 				let _objData = {
 					page: 1,
 					row: 50,
 					communityId: this.communityId,
-					payObjId: _payObjId
+					payObjType: '3333'
 				}
 				_that.feeIds = [];
-				getRoomOweFees(_objData)
+				queryOwnerFees(_objData)
 					.then(function(_fees) {
-						if (_fees && _fees.length > 0) {
-							_that.storeId = _fees[0].incomeObjId;
-							_that.ownerId = _fees[0].ownerId;
+						if (!_fees || _fees.length < 1) {
+							return;
 						}
-						_that.fees = _fees;
-						_fees.forEach(function(_item) {
-							if (_item.payOnline == 'Y') {
-								_that.feeIds.push(_item.feeId);
-							}
-						});
-						_that.computeFeeObj(_fees);
-						_that.computeReceivableAmount();
-						setTimeout(function(){
-							_that.$refs.vcUserAccountRef._listOwnerAccount(_that.communityId);
-						},1500)
+						_fees = _that._initSelectAll(_fees);
+						_that.batchFees = _fees;
 						return _fees;
 					}, function(error) {
 						uni.showToast({
@@ -186,11 +183,121 @@
 						})
 					});
 			},
+			_initSelectAll: function(_fees) {
+				if (_fees.length < 1) {
+					return _fees;
+				}
+				let _that = this;
+				_fees.forEach(_fee => {
+					_that.ownerId = _fee.ownerId;
+					_fee.childs.forEach(_feeConfig => {
+						_feeConfig.selectedFeeIds = [];
+						//_feeConfig.selectedFeeIds = _feeConfig.childs.map(_fee => _fee.feeId);
+						_feeConfig.childs.map(_fee => {
+							_fee.receivedAmount = _fee.oweAmount;
+						});
+						this._computeDiscount(_feeConfig);
+					})
+				});
+				_fees[0].showFlag = 'Y';
+				setTimeout(function(){
+					_that.$refs.vcUserAccountRef._listOwnerAccount( _that.communityId);
+				},500)
+				return _fees;
+			},
+			checkboxChange: function(e, feeConfig) {
+				console.log(e)
+				let _that = this;
+				feeConfig.selectedFeeIds = e.detail.value;
+				this._computeDiscount(feeConfig);
+				this._doComputeTotalFee();
+			},
+			switchSimplifyFeeFlag: function(payerObj) {
+				payerObj.showFlag = (payerObj.showFlag == 'Y') ? 'N' : 'Y';
+				this.$forceUpdate()
+			},
+			_doComputeTotalFee: function() {
+				let _payObjs = this.batchFees;
+				let _totalFee = 0;
+				let _discountFee = 0;
+				_payObjs.forEach(obj => {
+					obj.childs.forEach(_feeConfig => {
+						_feeConfig.selectedFeeIds.forEach(_feeId => {
+							_feeConfig.childs.forEach(_fee => {
+								if (_fee.feeId == _feeId) {
+									_totalFee += parseFloat(_fee.receivedAmount);
+								}
+							})
+						})
+						if (!_feeConfig.selectedDiscountIds || _feeConfig.selectedDiscountIds.length ==
+							0) {
+							return;
+						}
+						// 优惠是负数
+						_feeConfig.selectedDiscountIds.forEach(_discountId => {
+							_feeConfig.discounts.forEach(_discount => {
+								if (_discount.discountId == _discountId) {
+									_totalFee += parseFloat(_discount.discountPrice);
+									_discountFee += parseFloat(_discount
+										.discountPrice);
+								}
+							})
+						})
+					})
+				});
+				
+				this.receivableAmount = _totalFee.toFixed(2);
+				if(this.receivableAmount > this.accountAmount){
+					this.receivableAmount = (this.receivableAmount - this.accountAmount).toFixed(2)
+				}else{
+					this.receivableAmount = 0;
+				}
+				this.discount = _discountFee.toFixed(2);
+				this.$forceUpdate()
+
+			},
+			_computeDiscount: function(_feeConfig) {
+				let _that = this;
+				if (_feeConfig.selectedFeeIds.length == 0) {
+					_feeConfig.discounts = [];
+					_feeConfig.selectedDiscountIds = [];
+					return;
+				}
+				computeAppFeeDiscount({
+					communityId: this.communityId,
+					feeIds: _feeConfig.selectedFeeIds,
+				}).then(_json => {
+					_feeConfig.discounts = _json.data;
+					_feeConfig.selectedDiscountIds = _feeConfig.discounts.map(_discount => _discount
+						.discountId);
+					_that._doComputeTotalFee();
+				})
+			},
+			getUserAmount: function(_accInfo) {
+				// 选中的账户列表
+				this.selectUserAccount = _accInfo.selectedAccounts;
+				// 账户金额
+				this.accountAmount = _accInfo.totalUserAmount;
+				this._doComputeTotalFee();
+			},
 			onPayFee: function() {
 				//payOweFee(this);
 				let _receivedAmount = this.receivableAmount;
 				let _tradeType = 'JSAPI';
-				if (!this.feeIds || this.feeIds.length < 1) {
+				let _fees = this.batchFees;
+				let _payFees = [];
+				_fees.forEach(_fee => {
+					_fee.childs.forEach(_feeConfig => {
+						const payFees = _feeConfig.childs.filter(child =>
+							_feeConfig.selectedFeeIds.includes(child.feeId)
+						);
+						_payFees.push({
+							configId: _feeConfig.configId,
+							payFees: payFees
+						});
+					});
+				});
+				if (_payFees.length < 1) {
 					uni.showToast({
 						icon: 'none',
 						title: '未选择费用'
@@ -203,15 +310,12 @@
 				}
 				let _objData = {
 					business: "oweFee",
-					cycles: this.feeMonth,
+					feeConfigs: this._payFees,
 					communityId: this.communityId,
 					ownerId: this.ownerId,
 					feeName: '物业费',
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
-					//appId: uni.getStorageSync(mapping.W_APP_ID),
-					storeId: this.storeId,
-					feeIds: this.feeIds,
 					acctId: _acctId,
 				};
 				uni.setStorageSync('doing_cashier', _objData);
@@ -220,80 +324,9 @@
 						.communityId + "&cashierUserId=" + getUserId()
 				})
 			},
-			_getDeadlineTime: function(_fee) {
-				//todo 处理周期性费用和间接费用的结束时间
-				return dateSubOneDay(_fee.startTime, _fee.deadlineTime, _fee.feeFlag);
-			},
-			_getReadTime: function(_value) {
-				let _date = getDate(_value);
-				return formatDate(_date);
-			},
-			_showDetailFee: function(_fee) {
-				let _fees = this.fees;
-				_fees.forEach(item => {
-					//item.showDetail = false;
-					if (_fee.feeId == item.feeId) {
-						item.showDetail = !item.showDetail;
-					}
-				});
-				this.$forceUpdate();
-			},
-			computeFeeObj: function(_fees) {
-				let _that = this;
-				if (this.payerObjId) {
-					return;
-				}
-				_that.payerObjs = [{
-					payerObjId:'',
-					payerObjName:'全部'
-				}];
-				let _allBatchFees = this.fees;
-				_allBatchFees.forEach(_fee => {
-					if (!this._hasPayerObj(_fee)) {
-						_that.payerObjs.push({
-							payerObjId: _fee.payerObjId,
-							payerObjName: _fee.payerObjName
-						})
-					}
-				});
-			},
-			_hasPayerObj: function(_fee) {
-				let _hasIn = false;
-				this.payerObjs.forEach(_obj => {
-					if (_fee.payerObjId == _obj.payerObjId) {
-						_hasIn = true;
-					}
-				})
-				return _hasIn;
-			},
-			_payerObjectChange: function(e) {
-				this.payerObjIndex =e.detail.value; 
-				let _curPayerObj = this.payerObjs[e.detail.value];
-				this.payerObjId = _curPayerObj.payerObjId;
-				this._loadOweFee();
-			},
-			getUserAmount: function(_accInfo) {
-				// 选中的账户列表
-				this.selectUserAccount = _accInfo.selectedAccounts;
-				// 账户金额
-				this.accountAmount = _accInfo.totalUserAmount;
-				this.computeReceivableAmount();
-			},
-			computeReceivableAmount() {
-				let _that = this;
-				let _feeIds = this.feeIds;
-				let _receivableAmount = 0.0;
-				this.fees.forEach(_item => {
-					_feeIds.forEach(_feeId => {
-						if (_item.feeId == _feeId) {
-							_receivableAmount += parseFloat(_item.feeTotalPrice);
-						}
-					})
-				});
-				_receivableAmount = _receivableAmount - parseFloat(this.accountAmount);
-				_receivableAmount = _receivableAmount < 0 ? 0.00 : _receivableAmount;
-				this.receivableAmount = _receivableAmount.toFixed(2);
-			}
+
+
+
 		}
 	};
 </script>
@@ -302,13 +335,24 @@
 		padding: 0rpx 0rpx 0rpx 0rpx;
 	}
 
+	.cu-list {
+		.left-line {
+			border-left-style: solid;
+			/* 添加这一行 */
+			border-left-width: 6upx;
+			border-left-color: #3E77FC;
+		}
+
+	}
+
 	.block__title {
 		margin: 0;
 		font-weight: 400;
 		font-size: 14px;
 		color: rgba(69, 90, 100, .6);
-		padding: 40rpx 30rpx 20rpx;
+		padding: 20rpx;
 	}
+
 
 	.button_up_blank {
 		height: 40rpx;
@@ -346,5 +390,24 @@
 			width: 45%;
 			margin: 10upx 15upx 0upx 15upx;
 		}
+	}
+
+	/* 在 style 部分添加 */
+	::v-deep checkbox .uni-checkbox-input {
+		border-width: 2px !important;
+		/* 调整边框粗细 */
+	}
+
+	::v-deep checkbox .uni-checkbox-input.uni-checkbox-input-checked {
+		border-width: 2px !important;
+		/* 选中状态边框 */
+		background-color: #3E77FC !important;
+		/* 选中背景色 */
+	}
+
+	::v-deep checkbox .uni-checkbox-input.uni-checkbox-input-checked::before {
+		font-size: 18px !important;
+		/* 调整勾选标记大小 */
+		line-height: 1 !important;
 	}
 </style>

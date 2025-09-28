@@ -142,21 +142,21 @@
 						},
 					],
 					this.serve_list = [{
-							name: '生活缴费',
+							name: '物业费',
 							src: this.imgUrl + '/h5/images/serve/1.png',
 							href: '/pages/fee/oweFee',
 							ownerAuth: true
 						},
 						{
-							name: '房屋费',
+							name: '水电充值',
 							src: this.imgUrl + '/h5/images/serve/5.png',
-							href: '/pages/fee/roomFeeListNew',
+							href: '/pages/meter/meter',
 							ownerAuth: true
 						},
 						{
-							name: '车位费',
+							name: '车辆月卡',
 							src: this.imgUrl + '/h5/images/serve/9.png',
-							href: '/pages/fee/payParkingFeeList',
+							href: '/pages/fee/buyeCarMonthCard',
 							ownerAuth: true
 						},
 						{

@@ -196,7 +196,7 @@
 			loadApplyRoomDiscountType: function(){
 				let _that = this;
 				let params = {
-					communityId: this.roomDetail.communityId,
+					communityId: getCommunityId(),
 					page: 1,
 					row: 50
 				}

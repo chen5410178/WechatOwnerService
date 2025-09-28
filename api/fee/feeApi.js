@@ -177,6 +177,53 @@ export function getRoomOweFees(_objData) {
 		});
 	})
 }
+/**
+ * 查询欠费信息
+ * @param {Object} _objData 欠费对象
+ */
+export function queryOwnerFees(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryOwnerFees,
+			method: "GET",
+			data: _objData, //动态数据
+			success: function(res) {
+				let _json = res.data;
+				if (_json.code == 0) {
+					//成功情况下跳转
+					resolve(_json.data);
+					return;
+				}
+				reject();
+			},
+			fail: function(e) {
+				reject();
+			}
+		});
+	})
+}
+
+export function computeAppFeeDiscount(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.computeAppFeeDiscount,
+			method: "POST",
+			data: JSON.stringify(_objData), //动态数据
+			success: function(res) {
+				if (res.data.code == 0) {
+					//成功情况下跳转
+					resolve(res.data);
+					return;
+				}
+				reject();
+			},
+			fail: function(e) {
+				reject();
+			}
+		});
+	})
+}
+
 export function couponPropertyUserGiftCar(_objData) {
 	return new Promise((resolve, reject) => {
 		requestNoAuth({

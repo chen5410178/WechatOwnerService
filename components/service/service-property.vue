@@ -65,25 +65,9 @@
 			},
 			_loadMenu: function() {
 				this.real_list = [{
-						name: '生活缴费',
+						name: '物业费',
 						src: this.imgUrl + '/h5/images/serve/1.png',
 						href: '/pages/fee/oweFee',
-						ownerAuth:true
-					},
-					{
-						name: '房屋费',
-						src: this.imgUrl + '/h5/images/serve/5.png',
-						href: '/pages/fee/roomFeeListNew',
-						ownerAuth:true
-					}, {
-						name: '车位费',
-						src: this.imgUrl + '/h5/images/serve/9.png',
-						href: '/pages/fee/payParkingFeeList',
-						ownerAuth:true
-					}, {
-						name: '合同费',
-						src: this.imgUrl + '/h5/images/serve/12.png',
-						href: '/pages/fee/contractFeeList',
 						ownerAuth:true
 					},
 					{

@@ -105,6 +105,8 @@ export default {
 	saveRentingPool: baseUrl + 'app/renting/saveRentingPool', //出租提交
 	listOweFees: baseUrl + 'app/fee.queryOwnerOweFee', //查询房屋欠费
 	toOweFeePay: baseUrl + "app/payment/toOweFeePay", //欠费缴费
+	queryOwnerFees:baseUrl+'app/fee.listAppOwnerFee',
+	computeAppFeeDiscount:baseUrl+'app/feeDiscount.computeAppFeeDiscount',
 	toPayTempCarFee: baseUrl + "app/payment/toPayTempCarFee", //欠费缴费
 	queryRentingPool: baseUrl + 'app/renting/queryRentingPool',
 	saveRentingAppointment: baseUrl + 'app/rentingAppointment/saveRentingAppointment', //房屋预约

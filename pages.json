@@ -128,18 +128,6 @@
 			"style": {}
 		},
 		{
-			"path": "pages/fee/payParkingFeeList",
-			"style": {
-				"navigationBarTitleText": "停车费"
-			}
-		},
-		{
-			"path": "pages/fee/payParkingFee",
-			"style": {
-				"navigationBarTitleText": "缴停车费"
-			}
-		},
-		{
 			"path": "pages/my/myHouseDetail",
 			"style": {
 				"navigationBarTitleText": "我的房屋明细"
@@ -155,18 +143,6 @@
 			"path": "pages/activites/activitesDetail",
 			"style": {
 				"navigationBarTitleText": "详情"
-			}
-		},
-		{
-			"path": "pages/fee/roomFeeListNew",
-			"style": {
-				"navigationBarTitleText": "房屋费"
-			}
-		},
-		{
-			"path": "pages/fee/roomFee",
-			"style": {
-				"navigationBarTitleText": "缴物业费"
 			}
 		}, {
 			"path": "pages/login/login",
@@ -203,22 +179,7 @@
 			"style": {
 				"navigationBarTitleText": "技术支持"
 			}
-		}, {
-			"path": "pages/market/market",
-			"style": {
-				"navigationBarTitleText": "跳蚤市场"
-			}
-		}, {
-			"path": "pages/market/newJunk",
-			"style": {
-				"navigationBarTitleText": "发布信息"
-			}
-		}, {
-			"path": "pages/market/myJunk",
-			"style": {
-				"navigationBarTitleText": "我的发布"
-			}
-		},
+		}, 
 		{
 			"path": "pages/login/showlogin",
 			"style": {
@@ -259,11 +220,6 @@
 			"style": {
 				"navigationBarTitleText": "评价投诉"
 			}
-		// }, {
-		// 	"path": "pages/login/registerByWechat",
-		// 	"style": {
-		// 		"navigationBarTitleText": "业主绑定"
-		// 	}
 		}, {
 			"path": "pages/settings/changePassword",
 			"style": {
@@ -274,24 +230,7 @@
 			"style": {
 				"navigationBarTitleText": "修改手机"
 			}
-		}, {
-			"path": "pages/hireRoom/hireRoom",
-			"style": {
-				"navigationBarTitleText": "房屋出租"
-			}
-		},
-		{
-			"path": "pages/rentHouse/rentHouse",
-			"style": {
-				"enablePullDownRefresh": true,
-				"navigationBarTitleText": "房源"
-			}
-		}, {
-			"path": "pages/rentHouse/rentingDetail",
-			"style": {
-				"navigationBarTitleText": ""
-			}
-		},
+		}, 
 		{
 			"path": "pages/car/applyparking",
 			"style": {
@@ -304,22 +243,9 @@
 			}
 		},
 		{
-			"path": "pages/fee/oweFeeGarden",
-			"style": {
-				"navigationBarTitleText": "综合缴费"
-			}
-		},
-		{
 			"path": "pages/car/parkingInfo",
 			"style": {
 				"navigationBarTitleText": "车位申请进度"
-			}
-		}
-
-		, {
-			"path": "pages/rentHouse/rentingAppointment",
-			"style": {
-				"navigationBarTitleText": "租房预约"
 			}
 		}, 
 		{
@@ -376,31 +302,7 @@
 				"navigationBarTitleText": "跟踪记录详情",
 				"enablePullDownRefresh": false
 			}
-		}, {
-			"path": "pages/fee/tempParkingFee",
-			"style": {
-				"navigationBarTitleText": "临时车缴费",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/fee/contractFee",
-			"style": {
-				"navigationBarTitleText": "合同缴费",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/fee/contractFeeList",
-			"style": {
-				"navigationBarTitleText": "合同费用",
-				"enablePullDownRefresh": false
-			}
-		}, {
-			"path": "pages/fee/contractOweFee",
-			"style": {
-				"navigationBarTitleText": "欠费缴费",
-				"enablePullDownRefresh": false
-			}
-		}, {
+		},  {
 			"path": "pages/questionAnswer/questionAnswer",
 			"style": {
 				"navigationBarTitleText": "投票问卷",
@@ -462,13 +364,7 @@
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom"
 			}
-		}, {
-			"path": "pages/fee/tempCarFee",
-			"style": {
-				"navigationBarTitleText": "停车费",
-				"enablePullDownRefresh": false
-			}
-		}, {
+		},  {
 			"path": "pages/applyRoom/myApplyRoomRecord",
 			"style": {
 				"navigationBarTitleText": "跟踪记录",
@@ -1005,6 +901,30 @@
         	"style" : 
         	{
         		"navigationBarTitleText" : ""
+        	}
+        },
+		 {
+        	"path" : "pages/fee/preFee",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "预付款",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/fee/rulePreFee",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "预付费缴费",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/fee/meterRulePreFee",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "水电预付费缴费",
+        		"enablePullDownRefresh" : false
         	}
         },
         {

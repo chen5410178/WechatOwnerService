@@ -90,11 +90,13 @@
 		onShow() {
 			this.loadNotices();
 			this.loadAdverts();		
-			this.$refs.indexActivities.loadActivites();
-
-			if (hasLogin()) {
-				this.$refs.indexTop.loadOwnerFee();
-			}
+			setTimeout(() => {
+				this.$refs.indexActivities.loadActivites();
+				if (hasLogin()) {
+					this.$refs.indexTop.loadOwnerFee();
+				}
+			}, 1500);
+			
 		},
 		methods: {
 			async loadNotices() {

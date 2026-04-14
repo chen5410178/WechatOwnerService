@@ -7,10 +7,6 @@ url
 from '../../constant/url.js'
 
 
-import {
-	hasLogin
-} from '../../lib/java110/page/Page.js'
-
 import mapping from '../../constant/MappingConstant.js'
 
 import {

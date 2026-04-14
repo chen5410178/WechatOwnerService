@@ -50,6 +50,14 @@
 
 		<!-- 设置与认证 -->
 		<view class="setting-list">
+			<view class="setting-item" @click="goToChangeCommunity">
+				<view class="setting-left">
+					<text class="iconfont icon-community"></text> 切换小区
+				</view>
+				<view class="setting-right">
+					<text class="iconfont icon-arrow-right"></text>
+				</view>
+			</view>
 			<view class="setting-item" @click="onAuthClick">
 				<view class="setting-left">房屋认证</view>
 				<view class="setting-right">
@@ -240,7 +248,12 @@
 			},
 			onAuthClick: function() {
 				this.vc.navigateTo({
-					url: '/pages/index/authOwner'
+					url: '/pages/my/authOwnerRecord'
+				});
+			},
+			goToChangeCommunity: function() {
+				this.vc.navigateTo({
+					url: '/pages/my/changeOwnerCommunity'
 				});
 			},
 			goToSetting: function() {

@@ -186,8 +186,6 @@
 	};
 </script>
 <style>
-	@import "./my.css";
-
 	.header-img {
 		width: 200upx;
 		height: 200upx;

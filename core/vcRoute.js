@@ -13,7 +13,7 @@ import {
 import {
 	hasLogin,
 	checkSession
-} from '../lib/java110/page/Page.js'
+} from '../api/user/sessionApi.js'
 
 
 import mapping from '../constant/MappingConstant.js'

@@ -31,7 +31,7 @@ import {navigateTo,navigateBack,navigateToMall} from './vcRoute.js'
 
 import {isEmpty} from '../lib/java110/utils/StringUtil.js'
 
-import {hasLogin} from '../lib/java110/page/Page.js'
+import {hasLogin} from '../api/user/sessionApi.js'
 
 
 

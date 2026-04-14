@@ -71,7 +71,7 @@
 					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
 					{ name: '联系物业', icon: 'fa-solid fa-phone-volume c-purple', href: '_callProperty' },
 					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-red', href: '/pages/common/communityPublicityList' },
-					{ name: '预存费用', icon: 'fa-solid fa-wallet c-orange', href: '/pages/fee/preFee' }
+					{ name: '预存费用', icon: 'fa-solid fa-coins c-orange', href: '/pages/fee/preFee' }
 				]
 			};
 		},
@@ -129,7 +129,7 @@
 				if (item && item.url && item.urlHref) {
 					this.vc.navigateTo({ url: item.urlHref });
 				} else {
-					this.vc.navigateToWithLogin({ url: '/pages/fee/oweFee' });
+					this.vc.navigateToWithLogin({ url: '/pages/fee/preFee' });
 				}
 			},
 			onGridMenu(item) {

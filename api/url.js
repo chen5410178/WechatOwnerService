@@ -255,6 +255,10 @@ export default {
 	queryOwnerAcVideoUrl:baseUrl+"app/owner.queryOwnerAcVideoUrl",
 	queryOwnerCamera:baseUrl+"app/machine.queryOwnerCamera",
 	queryCommunityRecommend:baseUrl+"app/mall.queryCommunityRecommend",
+	// 查询预付费规则
+	listPrePayFeeRule: baseUrl + "app/prePayFee.queryPhonePrePayFeeRule",
+	// 查询水电预付费规则
+	queryPhoneMeterPayFeeRule: baseUrl + "app/prePayFee.queryPhoneMeterPayFeeRule",
 	
 	
 	

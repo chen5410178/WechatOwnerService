@@ -698,5 +698,59 @@ export function cashierPayFee(_that, _data,_successUrl) {
 
 }
 
+/**
+ * 查询预付费规则
+ * @param {Object} _objData {
+ *   communityId: '',
+ *   payerObjId: '', // roomId
+ *   payerObjType: '3333'
+ * }
+ */
+export function listPrePayFeeRule(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.listPrePayFeeRule,
+			method: "GET",
+			data: _objData,
+			success: function(res) {
+				if (res.statusCode == 200 && res.data.code == 0) {
+					resolve(res.data);
+					return;
+				}
+				reject(res.data.msg || '查询失败');
+			},
+			fail: function(e) {
+				reject('服务器异常');
+			}
+		});
+	})
+}
+
+/**
+ * 查询水电预付费规则
+ * @param {Object} _objData {
+ *   communityId: ''
+ * }
+ */
+export function queryPhoneMeterPayFeeRule(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryPhoneMeterPayFeeRule,
+			method: "GET",
+			data: _objData,
+			success: function(res) {
+				if (res.statusCode == 200 && res.data.code == 0) {
+					resolve(res.data);
+					return;
+				}
+				reject(res.data.msg || '查询失败');
+			},
+			fail: function(e) {
+				reject('服务器异常');
+			}
+		});
+	})
+}
+
 
 

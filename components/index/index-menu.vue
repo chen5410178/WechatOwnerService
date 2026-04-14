@@ -123,28 +123,40 @@
 		methods: {
 			_loadFunc: function() {
 				this.home_list = [{
-							name: '投诉咨询',
-							src: this.imgUrl + '/h5/images/serve/12.png',
-							href: '/pages/complaint/complaint',
-							ownerAuth: false
-						},
-						{
-							name: '家庭成员',
-							src: this.imgUrl + '/h5/images/serve/2.png',
-							href: '/pages/family/familyList',
-							ownerAuth: true
-						},
-						{
 							name: '访客通行',
 							src: this.imgUrl + '/h5/images/serve/3.png',
 							href: '/pages/visit/visitList',
 							ownerAuth: true
 						},
+						{
+							name: '物业缴费',
+							src: this.imgUrl + '/h5/images/serve/1.png',
+							href: '/pages/fee/oweFee',
+							ownerAuth: true
+						},
+						{
+							name: '报事报修',
+							src: this.imgUrl + '/h5/images/serve/12.png',
+							href: '/pages/repair/repair',
+							ownerAuth: true
+						},
 					],
 					this.serve_list = [{
+							name: '生活缴费',
+							src: this.imgUrl + '/h5/images/serve/1.png',
+							href: '/pages/fee/oweFee',
+							ownerAuth: true
+						},
+						{
 							name: '物业费',
 							src: this.imgUrl + '/h5/images/serve/1.png',
 							href: '/pages/fee/oweFee',
+							ownerAuth: true
+						},
+						{
+							name: '车位费',
+							src: this.imgUrl + '/h5/images/serve/my6.png',
+							href: '/pages/fee/payParkingFeeList',
 							ownerAuth: true
 						},
 						{
@@ -154,22 +166,29 @@
 							ownerAuth: true
 						},
 						{
-							name: '车辆月卡',
-							src: this.imgUrl + '/h5/images/serve/9.png',
-							href: '/pages/fee/buyeCarMonthCard',
+							name: '报修记录',
+							src: this.imgUrl + '/h5/images/serve/12.png',
+							href: '/pages/repair/myRepair',
 							ownerAuth: true
 						},
 						{
-							name: '一键开门',
-							src: this.imgUrl + '/h5/images/serve/8.png',
-							href: '/pages/machine/openDoor',
-							ownerAuth: true
+							name: '联系物业',
+							src: this.imgUrl + '/h5/images/serve/4.png',
+							href: '_callPropertyTel',
+							ownerAuth: false
 						},
-						// {
-						// 	name: '人脸识别',
-						// 	src: this.imgUrl + '/h5/images/serve/8.png',
-						// 	href: '/pages/machine/faceRecognition'
-						// },
+						{
+							name: '社区公告',
+							src: this.imgUrl + '/h5/images/serve/7.png',
+							href: '_toNoticePage',
+							ownerAuth: false
+						},
+						{
+							name: '全部',
+							src: this.imgUrl + '/h5/images/serve/11.png',
+							href: '/pages/homemaking/homemaking',
+							ownerAuth: false
+						},
 					]
 			},
 			to: function(v) {
@@ -186,6 +205,8 @@
 				hasAuthOwner(this).then(_owner => {
 					if (v.href == '_callPropertyTel') {
 						this.callPropertyTel();
+					} else if(v.href == '_toNoticePage'){
+						this._toNoticePage();
 					} else {
 						this.vc.navigateTo({
 							url: v.href

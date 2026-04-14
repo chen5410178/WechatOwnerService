@@ -316,8 +316,8 @@
 	}
 
 	.userinfo {
-		height: 280upx;
-		//background: url('/static/images/serve/bg.png') no-repeat center center;
+		height: 320upx;
+		background: linear-gradient(180deg, #FF6B6B 0%, #FF8E8E 100%);
 		background-size: 100% 100%;
 		display: flex;
 		align-items: center;

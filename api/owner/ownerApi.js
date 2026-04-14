@@ -22,7 +22,7 @@ import {
 } from '../community/communityApi.js';
 
 export function getOwnerId() {
-	let _ownerInfo = wx.getStorageSync(mapping.OWNER_INFO);
+	let _ownerInfo = uni.getStorageSync(mapping.OWNER_INFO);
 	if (_ownerInfo) {
 		return _ownerInfo.ownerId;
 	}
@@ -30,7 +30,7 @@ export function getOwnerId() {
 }
 
 export function getOwnerName() {
-	let _ownerInfo = wx.getStorageSync(mapping.OWNER_INFO);
+	let _ownerInfo = uni.getStorageSync(mapping.OWNER_INFO);
 	if (_ownerInfo) {
 		return _ownerInfo.ownerName;
 	}
@@ -38,7 +38,7 @@ export function getOwnerName() {
 }
 
 export function getOwnerTel() {
-	let _ownerInfo = wx.getStorageSync(mapping.OWNER_INFO);
+	let _ownerInfo = uni.getStorageSync(mapping.OWNER_INFO);
 	if (_ownerInfo) {
 		return _ownerInfo.ownerTel;
 	}
@@ -46,7 +46,7 @@ export function getOwnerTel() {
 }
 
 export function getMemberId() {
-	let _ownerInfo = wx.getStorageSync(mapping.OWNER_INFO);
+	let _ownerInfo = uni.getStorageSync(mapping.OWNER_INFO);
 	if (_ownerInfo) {
 		return _ownerInfo.memberId;
 	}
@@ -66,7 +66,7 @@ export function hasAuthOwner(_that) {
 			reject('未登录,请先登录!');
 			return;
 		}
-		let _ownerInfo = wx.getStorageSync(mapping.OWNER_INFO);
+		let _ownerInfo = uni.getStorageSync(mapping.OWNER_INFO);
 		if (_ownerInfo) {
 			resolve(_ownerInfo);
 			return;
@@ -88,7 +88,7 @@ export function hasAuthOwner(_that) {
 					return;
 				}
 				let _ownerInfo = _json.data;
-				wx.setStorageSync(mapping.OWNER_INFO, _ownerInfo);
+				uni.setStorageSync(mapping.OWNER_INFO, _ownerInfo);
 				let _currentCommunityInfo = {
 					communityId: _ownerInfo.communityId,
 					communityName: _ownerInfo.communityName,
@@ -96,7 +96,7 @@ export function hasAuthOwner(_that) {
 					sCommunityTel:_ownerInfo.communityTel,
 					
 				};
-				wx.setStorageSync(mapping.CURRENT_COMMUNITY_INFO, _currentCommunityInfo);
+				uni.setStorageSync(mapping.CURRENT_COMMUNITY_INFO, _currentCommunityInfo);
 				resolve(_ownerInfo);
 			},
 			fail: function(error) {
@@ -131,7 +131,7 @@ export function getCurOwner() {
 export function refreshOwner() {
 	return new Promise(
 		(resolve, reject) => {
-			let _userInfo = wx.getStorageSync(mapping.USER_INFO);
+			let _userInfo = uni.getStorageSync(mapping.USER_INFO);
 			if (!_userInfo) {
 				reject();
 				return;
@@ -151,12 +151,12 @@ export function refreshOwner() {
 							return;
 						}
 						if (_ownerInfo.state == '12000') {
-							wx.setStorageSync(mapping.OWNER_INFO, _ownerInfo);
+							uni.setStorageSync(mapping.OWNER_INFO, _ownerInfo);
 							let _currentCommunityInfo = {
 								communityId: _ownerInfo.communityId,
 								communityName: _ownerInfo.communityName
 							};
-							wx.setStorageSync(mapping.CURRENT_COMMUNITY_INFO, _currentCommunityInfo);
+							uni.setStorageSync(mapping.CURRENT_COMMUNITY_INFO, _currentCommunityInfo);
 						}
 						resolve(_json.data[0]);
 					}
@@ -311,13 +311,13 @@ export function deleteOwnerMember(_data) {
  * 
  */
 export function hasOwner() {
-	let loginFlag = wx.getStorageSync(mapping.LOGIN_FLAG);
+	let loginFlag = uni.getStorageSync(mapping.LOGIN_FLAG);
 	let nowDate = new Date();
 	//判断如果是APP
 	if (!loginFlag || loginFlag.expireTime < nowDate.getTime()) {
 		return;
 	}
-	let _ownerInfo = wx.getStorageSync(mapping.OWNER_INFO);
+	let _ownerInfo = uni.getStorageSync(mapping.OWNER_INFO);
 	if (!_ownerInfo) {
 		uni.showToast({
 			icon: 'none',

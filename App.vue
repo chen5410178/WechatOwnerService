@@ -58,6 +58,7 @@
 </script>
 <style>
 	@import "./app.css";
+	@import "./static/iconfont/iconfont.css";
 
 	/* #ifdef H5 */
 	uni-page-head {

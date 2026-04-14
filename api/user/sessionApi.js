@@ -38,7 +38,7 @@ const LOGIN_FLAG = 'loginFlag'; //登录标识
  * 是否 登录
  */
 export function hasLogin() {
-	let loginFlag = wx.getStorageSync(LOGIN_FLAG);
+	let loginFlag = uni.getStorageSync(LOGIN_FLAG);
 	let nowDate = new Date();
 	if (loginFlag && loginFlag.expireTime > nowDate.getTime()) {
 		return true;

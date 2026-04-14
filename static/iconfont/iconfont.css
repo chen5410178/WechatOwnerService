@@ -1,0 +1,61 @@
+/* iconfont 图标字体 - 复用现有字体文件 + emoji 后备 */
+
+/* 颜色辅助类 */
+.c-blue { color: #1890ff; }
+.c-orange { color: #fa8c16; }
+.c-green { color: #52c41a; }
+.c-red { color: #f5222d; }
+.c-purple { color: #722ed1; }
+
+/* 首页 - 顶部导航 */
+.icon-user::before { content: "\e7cd"; }
+.icon-search::before { content: "\e8b1"; }
+.icon-comment::before { content: "\e779"; }
+
+/* 首页 - 金刚区 */
+.icon-key::before { content: "🔑"; }           /* 开门 */
+.icon-qrcode::before { content: "📱"; }        /* 访客 */
+.icon-yen::before { content: "💰"; }           /* 缴费 */
+.icon-shield::before { content: "🛡️"; }       /* 报修 */
+
+/* 首页 - 网格菜单 */
+.icon-bolt::before { content: "⚡"; color: inherit; }          /* 生活缴费 */
+.icon-file-dollar::before { content: "💵"; }                   /* 物业费 */
+.icon-parking::before { content: "🚗"; }                       /* 车位费 */
+.icon-droplet::before { content: "💧"; }                      /* 水电充值 */
+.icon-wrench::before { content: "🔧"; }                       /* 报修记录 */
+.icon-phone::before { content: "📞"; }                        /* 联系物业 */
+.icon-bullhorn::before { content: "📢"; }                    /* 社区公告 */
+.icon-ellipsis::before { content: "⋯"; }                     /* 全部 */
+
+/* 首页 - 文章缩略图 */
+.icon-film::before { content: "🎬"; }           /* 活动图标 */
+.icon-paint::before { content: "🎨"; }        /* 公告图标 */
+
+/* 服务页 - 费用管理 */
+.icon-house::before { content: "🏠"; }          /* 房屋费 */
+.icon-car::before { content: "🚗"; }          /* 车位费 */
+.icon-contract::before { content: "📄"; }     /* 合同费 */
+.icon-receipt::before { content: "🧾"; }      /* 发票 */
+
+/* 服务页 - 居住通行 */
+.icon-users::before { content: "👥"; }        /* 家庭成员 */
+.icon-clock::before { content: "⏰"; }        /* 访客通行 */
+.icon-door::before { content: "🚪"; }        /* 空置房 */
+.icon-renovation::before { content: "🔨"; }  /* 装修备案 */
+
+/* 我的页面 - 我的服务 */
+.icon-file::before { content: "📄"; }         /* 缴费记录 */
+.icon-repair::before { content: "🔧"; }      /* 报修记录 */
+.icon-feedback::before { content: "💬"; }     /* 投诉记录 */
+.icon-bag::before { content: "🛍️"; }         /* 订单记录 */
+.icon-idcard::before { content: "🪪"; }      /* 门禁日志 */
+.icon-vacant::before { content: "🏚️"; }     /* 空置房 */
+.icon-decoration::before { content: "🎨"; }  /* 装修记录 */
+.icon-calendar::before { content: "📅"; }    /* 预约记录 */
+.icon-exit::before { content: "📦"; }        /* 放行记录 */
+.icon-invoice::before { content: "💵"; }     /* 开票历史 */
+
+/* 我的页面 - 设置 */
+.icon-setting::before { content: "⚙️"; }      /* 设置 */
+.icon-arrow-right::before { content: ">"; }  /* 箭头 */

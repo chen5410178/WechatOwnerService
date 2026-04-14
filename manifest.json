@@ -59,7 +59,7 @@
     "quickapp" : {},
     "mp-weixin" : {
         "usingComponents" : true,
-        "appid" : "wx945d6ea60acf8f36",
+        "appid" : "wxcd8b8c8a0a849145",
         "setting" : {
             "urlCheck" : false,
             "es6" : false
@@ -80,18 +80,18 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/app" : {
-                    "target" : "http://demo2.homecommunity.cn/", //目标接口域名
+                    "target" : "http://demo.homecommunity.cn/", //目标接口域名
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 },
                 "/callComponent" : {
-                    "target" : "http://demo2.homecommunity.cn/", //目标接口域名
+                    "target" : "http://demo.homecommunity.cn/", //目标接口域名
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 }
             }
         },
-        "domain" : "owner.demo.winqi.cn",
+        "domain" : "owner.homecommunity.cn",
         "publicPath" : "./",
         "title" : "业主版"
     }

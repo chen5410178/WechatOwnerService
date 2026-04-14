@@ -7,7 +7,7 @@
 const appConstant = require("./AppConstant.js"); // url 常量类
 
 
-const urlConstant = require("./UrlConstant.js"); // 映射 常量类
+const urlConstant = require("./url.js").default; // 映射 常量类
 
 
 const mappingConstant = require("./MappingConstant.js");

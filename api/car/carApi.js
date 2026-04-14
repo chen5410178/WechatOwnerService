@@ -22,15 +22,14 @@ from '../../constant/MappingConstant.js'
 export function getCars(_objData) {
 	return new Promise((resolve, reject) => {
 		request({
-			url: url.queryOwnerCars,
+			url: url.queryAppOwnerCars,
 			method: "GET",
 			data:_objData,
 			success: function(res) {
 				if (res.statusCode == 200) {
-					//将业主信息和房屋信息一起返回
 					let _cars = res.data.data;
-					if (_parkingSpaces.length == 0) {
-						reject("业主没有车辆信息");
+					if (!_cars || _cars.length == 0) {
+						resolve([]);
 						return;
 					}
 					resolve(_cars);

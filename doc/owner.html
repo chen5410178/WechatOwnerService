@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>智慧社区业主版</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #E60012; /* 银行红 */
+            --primary-gradient: linear-gradient(180deg, #FF6B6B 0%, #FF8E8E 100%);
+            --bg-gray: #F5F7FA;
+            --text-dark: #333333;
+            --text-gray: #999999;
+            --card-radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-gray); font-size: 14px; color: var(--text-dark); padding-bottom: 70px; }
+
+        /* --- 顶部沉浸式背景 --- */
+        .header-bg { background: var(--primary-gradient); height: 220px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; padding: 20px 15px; position: relative; z-index: 1; }
+        .nav-bar { display: flex; align-items: center; justify-content: space-between; color: white; margin-bottom: 20px; }
+        .search-bar { flex: 1; background: rgba(255,255,255,0.9); height: 36px; border-radius: 18px; margin: 0 15px; display: flex; align-items: center; padding: 0 15px; color: #999; font-size: 13px; }
+        .icon-btn { text-align: center; font-size: 10px; }
+        .icon-btn i { display: block; font-size: 20px; margin-bottom: 2px; }
+
+        /* --- 核心金刚区 --- */
+        .hero-actions { display: flex; justify-content: space-around; color: white; margin-bottom: 25px; }
+        .hero-item { display: flex; flex-direction: column; align-items: center; font-size: 13px; font-weight: 500; }
+        .hero-item .fa-icon-box { background: rgba(255,255,255,0.2); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-size: 20px; backdrop-filter: blur(5px); }
+
+        /* --- 浮动卡片 (年度账单) --- */
+        .banner-card { background: #fff; margin: -60px 15px 15px 15px; padding: 15px; border-radius: var(--card-radius); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.15); position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; background-image: linear-gradient(to right, #fff 70%, #fff0f0 100%); }
+        .banner-text h3 { font-size: 16px; margin-bottom: 5px; color: #333; }
+        .banner-text p { color: var(--primary-red); font-weight: bold; font-size: 18px; }
+        .banner-btn { background: #ffecec; color: var(--primary-red); padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+
+        /* --- 头条 --- */
+        .news-bar { background: #fff; margin: 0 15px 15px; border-radius: 8px; padding: 12px; display: flex; align-items: center; }
+        .news-tag { font-weight: 800; color: var(--primary-red); margin-right: 10px; font-style: italic; border-right: 1px solid #eee; padding-right: 10px; }
+        .news-content { font-size: 13px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* --- 网格菜单 --- */
+        .grid-menu { background: #fff; margin: 0 15px 15px 15px; border-radius: var(--card-radius); padding: 15px 5px; display: grid; grid-template-columns: repeat(4, 1fr); row-gap: 20px; }
+        .grid-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #333; }
+        .grid-item i { font-size: 24px; margin-bottom: 8px; }
+        .grid-item span { font-size: 12px; }
+
+        /* --- 纯色 CSS 广告位 --- */
+        .ad-banner-css {
+            margin: 0 15px 20px 15px;
+            padding: 20px;
+            border-radius: var(--card-radius);
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ad-banner-css::before { content: ''; position: absolute; right: -20px; top: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.2); border-radius: 50%; }
+        .ad-content h3 { font-size: 18px; margin-bottom: 5px; }
+        .ad-content p { font-size: 12px; opacity: 0.9; }
+        .ad-btn { background: white; color: #FF5E62; padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 12px; z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        /* --- 社区文章列表 --- */
+        .section-header { margin: 0 15px 10px; display: flex; justify-content: space-between; align-items: center; }
+        .section-title { font-size: 16px; font-weight: bold; color: #333; display: flex; align-items: center; }
+        .section-title::before { content: ''; display: block; width: 4px; height: 16px; background: var(--primary-red); margin-right: 8px; border-radius: 2px; }
+        .section-more { font-size: 12px; color: #999; }
+        .article-list { background: #fff; margin: 0 15px 15px; border-radius: var(--card-radius); padding: 0 15px; }
+        .article-item { display: flex; padding: 15px 0; border-bottom: 1px solid #f5f5f5; }
+        .article-item:last-child { border-bottom: none; }
+        .article-content { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding-right: 10px; }
+        .article-title { font-size: 15px; font-weight: 500; color: #333; line-height: 1.4; margin-bottom: 8px; }
+        .article-meta { display: flex; align-items: center; font-size: 11px; color: #999; }
+        .tag-hot { background: #FFF0F0; color: #FF4D4F; padding: 2px 4px; border-radius: 4px; margin-right: 8px; }
+        .tag-notice { background: #E6F7FF; color: #1890ff; padding: 2px 4px; border-radius: 4px; margin-right: 8px; }
+        .article-thumb { width: 90px; height: 60px; border-radius: 6px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; flex-shrink: 0; }
+        .thumb-1 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .thumb-2 { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #999; }
+        .thumb-3 { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); }
+
+        /* 颜色辅助类 */
+        .c-blue { color: #1890ff; } .c-orange { color: #fa8c16; } .c-green { color: #52c41a; } .c-red { color: #f5222d; } .c-purple { color: #722ed1; }
+
+        /* 通用页面样式 */
+        .page { display: none; padding-bottom: 20px; }
+        .page.active { display: block; }
+        .list-group { background: #fff; margin: 15px; border-radius: var(--card-radius); overflow: hidden; }
+        .list-header { padding: 15px; border-bottom: 1px solid #f0f0f0; font-weight: bold; font-size: 15px; }
+        
+        /* 底部导航 */
+        .tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: white; border-top: 1px solid #eee; display: flex; justify-content: space-around; align-items: center; z-index: 99; }
+        .tab-item { text-align: center; color: #999; flex: 1; padding: 8px 0; }
+        .tab-item.active { color: var(--primary-red); }
+        .tab-item i { font-size: 22px; display: block; margin-bottom: 4px; }
+        .tab-item span { font-size: 10px; }
+
+        /* ========================
+           “我的”页面专属新样式
+           ======================== */
+        
+        /* 1. 全新的头部，带背景色 */
+        .mine-header-red {
+            background: var(--primary-gradient);
+            padding: 40px 20px 80px 20px; /* 底部留白给悬浮卡片用 */
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        .mine-header-red .avatar {
+            width: 64px; height: 64px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.6);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; color: white;
+            backdrop-filter: blur(5px);
+        }
+        .mine-header-red .user-info h2 { font-size: 20px; margin-bottom: 5px; font-weight: bold;}
+        .mine-header-red .user-addr { font-size: 12px; color: rgba(255,255,255,0.9); background: rgba(0,0,0,0.1); padding: 4px 10px; border-radius: 20px; display: inline-block;}
+        
+        /* 2. 悬浮的资产卡片 (白色) */
+        .assets-card {
+            background: #fff;
+            margin: -50px 15px 15px 15px; /* 向上负边距，实现叠加 */
+            border-radius: var(--card-radius);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 增加投影 */
+            position: relative;
+            z-index: 2;
+        }
+        .assets-card .asset-item { text-align: center; }
+        .assets-card .asset-num { font-size: 20px; font-weight: bold; color: #333;}
+        .assets-card .asset-label { font-size: 12px; color: #888; margin-top: 4px; }
+
+
+        /* 3. 复刻参考图的网格布局 */
+        .mine-grid-container {
+            background: #fff;
+            margin: 15px;
+            border-radius: var(--card-radius);
+            padding: 20px 0;
+        }
+        .mine-grid-title {
+            padding: 0 15px 15px 15px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        .mine-grid-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); 
+            row-gap: 20px;
+        }
+        .mine-grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .mine-grid-item .icon-wrapper {
+            width: 30px; 
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 8px; 
+        }
+        .mine-grid-item span { font-size: 11px; color: #666; }
+
+        /* 4. 单独的设置列表 */
+        .setting-list { background: #fff; margin: 15px; border-radius: var(--card-radius); padding: 0 15px; }
+        .setting-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #f9f9f9; }
+        .setting-item:last-child { border-bottom: none; }
+        .setting-left { font-size: 14px; color: #333; }
+        
+        /* 5. 退出登录按钮 */
+        .logout-btn { background: #fff; margin: 20px 15px 30px 15px; padding: 15px; border-radius: var(--card-radius); text-align: center; color: #ff4d4f; font-size: 15px; font-weight: 500; cursor: pointer;}
+    </style>
+</head>
+<body>
+
+    <!-- 页面 1: 首页 -->
+    <div id="page-home" class="page active">
+        <div class="header-bg">
+            <div class="nav-bar">
+                <div class="icon-btn"><i class="fa-regular fa-user"></i> <span>登录</span></div>
+                <div class="search-bar"><i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i> 输入缴费、报修</div>
+                <div class="icon-btn" style="margin-left: 10px;"><i class="fa-regular fa-comment-dots"></i> <span>消息</span></div>
+            </div>
+            <div class="hero-actions">
+                <div class="hero-item"><div class="fa-icon-box"><i class="fa-solid fa-key"></i></div><span>开门</span></div>
+                <div class="hero-item"><div class="fa-icon-box"><i class="fa-solid fa-qrcode"></i></div><span>访客</span></div>
+                <div class="hero-item"><div class="fa-icon-box"><i class="fa-solid fa-yen-sign"></i></div><span>缴费</span></div>
+                <div class="hero-item"><div class="fa-icon-box"><i class="fa-solid fa-user-shield"></i></div><span>报修</span></div>
+            </div>
+        </div>
+        <div class="banner-card">
+            <div class="banner-text">
+                <h3>本月物业账单</h3>
+                <p>285.00 <span style="font-size:12px; font-weight:normal; color:#999">元</span></p>
+                <span style="font-size:10px; color:#999">2025年4月账单</span>
+            </div>
+            <div class="banner-btn">去支付</div>
+        </div>
+        <div class="news-bar">
+            <div class="news-tag">小区头条</div>
+            <div class="news-content">关于本周六小区水箱清洗停水的通知...</div>
+        </div>
+        <div class="grid-menu">
+            <div class="grid-item"><i class="fa-solid fa-bolt c-orange"></i><span>生活缴费</span></div>
+            <div class="grid-item"><i class="fa-solid fa-file-invoice-dollar c-red"></i><span>物业费</span></div>
+            <div class="grid-item"><i class="fa-solid fa-square-parking c-blue"></i><span>车位费</span></div>
+            <div class="grid-item"><i class="fa-solid fa-droplet c-blue"></i><span>水电充值</span></div>
+            <div class="grid-item"><i class="fa-solid fa-screwdriver-wrench c-green"></i><span>报修记录</span></div>
+            <div class="grid-item"><i class="fa-solid fa-phone-volume c-purple"></i><span>联系物业</span></div>
+            <div class="grid-item"><i class="fa-solid fa-bullhorn c-orange"></i><span>社区公告</span></div>
+            <div class="grid-item"><i class="fa-solid fa-ellipsis"></i><span>全部</span></div>
+        </div>
+        <div class="ad-banner-css">
+            <div class="ad-content"><h3>预缴物业费 9.8折</h3><p>限时开启，年费缴纳赠送家政券</p></div>
+            <div class="ad-btn">立即查看</div>
+        </div>
+        <div class="section-header">
+            <div class="section-title">社区动态</div>
+            <div class="section-more">更多 ></div>
+        </div>
+        <div class="article-list">
+            <div class="article-item">
+                <div class="article-content"><div class="article-title">【活动】周末露天电影节，邀您共赏《流浪地球2》</div><div class="article-meta"><span class="tag-hot">热门</span> <span>4月20日 19:30</span></div></div>
+                <div class="article-thumb thumb-1"><i class="fa-solid fa-film"></i></div>
+            </div>
+            <div class="article-item">
+                <div class="article-content"><div class="article-title">关于地下车库地坪漆翻新施工的温馨提示</div><div class="article-meta"><span class="tag-notice">公告</span> <span>物业中心</span></div></div>
+                <div class="article-thumb thumb-2"><i class="fa-solid fa-paint-roller"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面 2: 服务 -->
+    <div id="page-service" class="page">
+        <div style="background: white; padding: 40px 15px 15px; font-size: 18px; font-weight: bold;">服务大厅</div>
+        <div class="list-group">
+            <div class="list-header">费用管理</div>
+            <div class="grid-menu" style="margin:0; box-shadow:none;">
+                <div class="grid-item"><i class="fa-solid fa-house-user c-red"></i><span>房屋费</span></div>
+                <div class="grid-item"><i class="fa-solid fa-car c-blue"></i><span>车位费</span></div>
+                <div class="grid-item"><i class="fa-solid fa-file-contract c-orange"></i><span>合同费</span></div>
+                <div class="grid-item"><i class="fa-solid fa-receipt c-green"></i><span>发票</span></div>
+            </div>
+        </div>
+        <div class="list-group">
+            <div class="list-header">居住通行</div>
+            <div class="grid-menu" style="margin:0; box-shadow:none;">
+                <div class="grid-item"><i class="fa-solid fa-users c-blue"></i><span>家庭成员</span></div>
+                <div class="grid-item"><i class="fa-solid fa-user-clock c-purple"></i><span>访客通行</span></div>
+                <div class="grid-item"><i class="fa-solid fa-door-open c-green"></i><span>空置房</span></div>
+                <div class="grid-item"><i class="fa-solid fa-paint-roller c-red"></i><span>装修备案</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面 3: 我的 (已修改) -->
+    <div id="page-mine" class="page">
+        <!-- 红色背景头部 -->
+        <div class="mine-header-red">
+            <div class="avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="user-info">
+                <h2>张三的家</h2>
+                <div class="user-addr">幸福花园 1-2-1001</div>
+            </div>
+        </div>
+        
+        <!-- 悬浮的白色资产卡片 -->
+        <div class="assets-card">
+            <div class="asset-item"><div class="asset-num">1</div><div class="asset-label">房屋</div></div>
+            <div class="asset-item"><div class="asset-num">2</div><div class="asset-label">车辆</div></div>
+            <div class="asset-item"><div class="asset-num">0</div><div class="asset-label">优惠券</div></div>
+        </div>
+
+        <!-- 基础服务 (宫格样式) -->
+        <div class="mine-grid-container">
+            <div class="mine-grid-title">我的服务</div>
+            <div class="mine-grid-row">
+                <div class="mine-grid-item"><div class="icon-wrapper c-red"><i class="fa-solid fa-file-lines"></i></div><span>缴费记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-orange"><i class="fa-solid fa-screwdriver-wrench"></i></div><span>报修记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-blue"><i class="fa-solid fa-comment-dots"></i></div><span>投诉记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-green"><i class="fa-solid fa-bag-shopping"></i></div><span>订单记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-purple"><i class="fa-solid fa-id-card"></i></div><span>门禁日志</span></div>
+
+                <!-- 第二行 -->
+                <div class="mine-grid-item"><div class="icon-wrapper c-orange"><i class="fa-solid fa-house-chimney-crack"></i></div><span>空置房</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-blue"><i class="fa-solid fa-paint-roller"></i></div><span>装修记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-green"><i class="fa-solid fa-calendar-check"></i></div><span>预约记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-red"><i class="fa-solid fa-dolly"></i></div><span>放行记录</span></div>
+                <div class="mine-grid-item"><div class="icon-wrapper c-orange"><i class="fa-solid fa-receipt"></i></div><span>开票历史</span></div>
+            </div>
+        </div>
+
+        <!-- 设置与认证 -->
+        <div class="setting-list">
+             <div class="setting-item">
+                <div class="setting-left">房屋认证</div>
+                <div style="font-size:12px; color:#1890ff;">已认证 <i class="fa-solid fa-angle-right" style="color:#ccc;"></i></div>
+            </div>
+            <div class="setting-item">
+                <div class="setting-left"><i class="fa-solid fa-gear" style="color:#666; width:20px; text-align:center; margin-right:5px;"></i> 设置</div>
+                <div><i class="fa-solid fa-angle-right" style="color:#ccc;"></i></div>
+            </div>
+        </div>
+
+        <!-- 退出登录 -->
+        <div class="logout-btn">
+            退出登录
+        </div>
+    </div>
+
+    <!-- 底部 Tab 栏 -->
+    <div class="tab-bar">
+        <div class="tab-item active" onclick="switchTab('home', this)"><i class="fa-solid fa-house"></i><span>首页</span></div>
+        <div class="tab-item" onclick="switchTab('service', this)"><i class="fa-solid fa-layer-group"></i><span>服务</span></div>
+        <div class="tab-item" onclick="switchTab('mine', this)"><i class="fa-regular fa-user"></i><span>我的</span></div>
+    </div>
+
+    <script>
+        function switchTab(pageId, element) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            document.querySelectorAll('.tab-item').forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>

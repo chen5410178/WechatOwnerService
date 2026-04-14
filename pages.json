@@ -441,7 +441,7 @@
 		}, {
 			"path": "pages/homemaking/homemaking",
 			"style": {
-				"navigationBarTitleText": "服务"
+				"navigationBarTitleText": "服务大厅"
 			}
 		}, {
 			"path": "pages/applyRoom/myRoomList",
@@ -1093,18 +1093,9 @@
     ],
 	"tabBar": {
 		"color": "#272636",
-		"selectedColor": "#00AA00",
+		"selectedColor": "#E60012",
 		"backgroundColor": "#fff",
 		"borderStyle": "black",
-		// #ifdef H5
-		"midButton": {
-			"width": "65px",
-			"height": "65px",
-			"iconPath": "static/images/homekey.png",
-			"text": "开门",
-			"iconWidth": "45px"
-		},
-		// #endif
 		"list": [{
 				"pagePath": "pages/index/index",
 				"text": "首页",
@@ -1116,12 +1107,6 @@
 				"text": "服务",
 				"iconPath": "static/images/rent.png",
 				"selectedIconPath": "static/images/rent-selected.png"
-			},
-			{
-				"pagePath": "pages/mall/mall",
-				"text": "商圈",
-				"iconPath": "static/images/market.png",
-				"selectedIconPath": "static/images/market-selected.png"
 			},
 			{
 				"pagePath": "pages/my/my",

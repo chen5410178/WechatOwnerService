@@ -27,7 +27,7 @@ import {onLoad} from '../lib/java110/page/Page.js'
 
 import {getWAppId} from '../lib/java110/utils/StorageUtil.js'
 
-import {navigateTo,navigateBack,navigateToMall} from './vcRoute.js'
+import {navigateTo,navigateToWithLogin,navigateBack,navigateToMall} from './vcRoute.js'
 
 import {isEmpty} from '../lib/java110/utils/StringUtil.js'
 
@@ -47,6 +47,7 @@ export default{
 	recoveryCommunityInfo:recoveryCommunityInfo,//将小区输入相应对象
 	onLoad:onLoad,
 	navigateTo:navigateTo,
+	navigateToWithLogin:navigateToWithLogin,
 	navigateBack:navigateBack,
 	isEmpty:isEmpty,
 	hasLogin:hasLogin,

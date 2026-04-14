@@ -41,9 +41,6 @@
 				activites: []
 			};
 		},
-		onLoad() {
-			this.loadActivites();
-		},
 		methods: {
 			async loadActivites() {
 				this.activites = await loadActivites({

@@ -1,6 +1,6 @@
 <template>
 	<view class="page-home">
-		<index-top></index-top>
+		<index-top ref="indexTop"></index-top>
 
 		<!-- 头条 -->
 		<view class="news-bar" @click="goToNotice">
@@ -35,7 +35,7 @@
 			</view>
 		</view>
 
-		<index-activities></index-activities>
+		<index-activities ref="indexActivities"></index-activities>
 	</view>
 </template>
 
@@ -50,6 +50,9 @@
 	import {
 		loadAdverts
 	} from '@/api/index/indexApi.js';
+	import {
+		hasLogin
+	} from '@/api/user/sessionApi.js';
 	import indexTop from '@/components/index/index-top.vue';
 	import indexActivities from '@/components/index/index-activities.vue';
 
@@ -82,10 +85,12 @@
 			autoLogin(options);
 		},
 		onShow() {
-			this.loadAdverts();
-		},
-		created() {
 			this.loadNotices();
+			this.loadAdverts();
+			this.$refs.indexActivities.loadActivites();
+			if (hasLogin()) {
+				this.$refs.indexTop.loadOwnerFee();
+			}
 		},
 		methods: {
 			async loadNotices() {
@@ -118,7 +123,7 @@
 				if (item && item.url && item.urlHref) {
 					this.vc.navigateTo({ url: item.urlHref });
 				} else {
-					this.vc.navigateTo({ url: '/pages/fee/oweFee' });
+					this.vc.navigateToWithLogin({ url: '/pages/fee/oweFee' });
 				}
 			},
 			onGridMenu(item) {
@@ -127,7 +132,7 @@
 					return;
 				}
 				if (item.href) {
-					this.vc.navigateTo({ url: item.href });
+					this.vc.navigateToWithLogin({ url: item.href });
 				}
 			},
 			goToNotice() {

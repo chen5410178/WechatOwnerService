@@ -36,6 +36,7 @@ import {
 
 
 
+
 export function navigateH5(_url) {
 	if (_url.indexOf("http") < 0 && _url.indexOf("https") < 0) {
 		_url = conf.mallUrl + '#' + _url;
@@ -75,48 +76,19 @@ export function navigateMP(_url) {
  * @param {Object} _param 跳转入参
  */
 export function navigateTo(_param, callback = () => {}) {
+	uni.navigateTo(_param);
+};
 
-	//参数中刷入wAppId 
-	let _url = _param.url;
-	let _tempUrl = '';
-	let _newUrl = '';
-	//url 中强制写入wAppId 每个页面必须带入
-	if (_url.indexOf('?') > 0) {
-		_newUrl = _url + ('&wAppId=' + getWAppId());
-		_tempUrl = _url.substring(0, _url.indexOf('?'))
-	} else {
-		_newUrl = _url + ('?wAppId=' + getWAppId());
-		_tempUrl = _url;
-	}
-
-	if (_tempUrl.startsWith("/")) {
-		_tempUrl = _tempUrl.substring(1)
-	}
-
-	if (_url.indexOf('wAppId') < 0) {
-		_param.url = _newUrl;
-	}
-
-	//是否需要登录
-	let noLoginFlag = false;
-	url.NEED_NOT_LOGIN_PAGE.forEach(item => {
-		if (item == _tempUrl) {
-			console.log('item=>', item, _tempUrl)
-			uni.navigateTo(_param);
-			noLoginFlag = true;
-		}
-	});
-	if (noLoginFlag) {
+export function navigateToWithLogin(_param, callback = () => {}) {
+	if (!hasLogin()) {
+		uni.showToast({
+			title: '请先登录',
+			icon: 'none'
+		});
 		return;
 	}
-	debug('vcRoute', 'navigateTo', _param);
-	uni.navigateTo(_param);
-	//校验是否登录，如果没有登录跳转至温馨提示页面
-	// checkSession(_param.url, function() {
-	// 	//有回话 跳转至相应页面
-	// 	uni.navigateTo(_param);
-	// })
-};
+	navigateTo(_param, callback);
+}
 
 /*
  * 跳转功能封装

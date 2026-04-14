@@ -93,7 +93,7 @@
 		methods: {
 			onItemClick: function(item) {
 				if (item.href) {
-					this.vc.navigateTo({
+					this.vc.navigateToWithLogin({
 						url: item.href
 					});
 				}

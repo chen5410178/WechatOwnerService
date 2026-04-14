@@ -65,11 +65,9 @@
 				billAmount: '0.00'
 			};
 		},
-		created() {
-			this.loadOwnerFee();
-		},
 		methods: {
 			async loadOwnerFee() {
+				if (!hasLogin()) return;
 				try {
 					const data = await queryOwnerFees({
 						page: 1,
@@ -95,7 +93,13 @@
 				}
 			},
 			async onHeroAction(type) {
-				if (!hasLogin()) return;
+				if (!hasLogin()) {
+					uni.showToast({
+						title: '请先登录',
+						icon: 'none'
+					});
+					return;
+				};
 				const urlMap = {
 					openDoor: '/pages/machine/openDoor',
 					visitor: '/pages/visit/visitList',
@@ -105,11 +109,11 @@
 				if (!urlMap[type]) return;
 				try {
 					await hasAuthOwner(this);
-					this.vc.navigateTo({ url: urlMap[type] });
+					this.vc.navigateToWithLogin({ url: urlMap[type] });
 				} catch (e) {}
 			},
 			goToPayment() {
-				this.vc.navigateTo({ url: '/pages/fee/oweFee' });
+				this.vc.navigateToWithLogin({ url: '/pages/fee/oweFee' });
 			}
 		}
 	};

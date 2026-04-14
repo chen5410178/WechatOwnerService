@@ -173,7 +173,6 @@ export function switchPage(_url){
  * @param {Object} event事件
  */
 export function reciveMessage(event, that) {
-	console.log('商城回传的参数', event);
 	let _data = event.data;
 	if (_data.action == ACTION_NAVIGATE_HOME) {
 		switchPage(_data.url);

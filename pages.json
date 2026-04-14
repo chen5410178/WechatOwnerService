@@ -321,13 +321,7 @@
 			"style": {
 				"navigationBarTitleText": "租房预约"
 			}
-		}, {
-			"path": "pages/mall/mall",
-			"style": {
-				"navigationBarTitleText": "商圈",
-				"navigationStyle": "custom"
-			}
-		},
+		}, 
 		{
 			"path": "pages/applyRoom/applyRoom",
 			"style": {
@@ -499,13 +493,6 @@
 				"navigationBarTitleText": "账户明细",
 				"enablePullDownRefresh": false
 			}
-		},
-		{
-			"path": "pages/my/myMenu",
-			"style": {
-				"navigationBarTitleText": "我",
-				"enablePullDownRefresh": false
-			}
 		}, {
 			"path": "pages/my/changeOwnerCommunity",
 			"style": {
@@ -530,13 +517,6 @@
 			"path": "pages/coupon/tempCarCoupon",
 			"style": {
 				"navigationBarTitleText": "停车劵",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/unlicensedCarIn/unlicensedCarIn",
-			"style": {
-				"navigationBarTitleText": "无牌车入场",
 				"enablePullDownRefresh": false
 			}
 		},
@@ -640,54 +620,6 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "送停车券",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/reserve/reserveDining",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "预约就餐",
-                "enablePullDownRefresh": false
-            } 
-        }
-        ,{
-            "path" : "pages/reserve/reserveOrder",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "确认订单",
-                "enablePullDownRefresh": false
-            }
-        },{
-            "path" : "pages/reserve/reserveService",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "预约服务",
-                "enablePullDownRefresh": false
-            } 
-        },{
-            "path" : "pages/reserve/reserveServiceGoods",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "预约服务",
-                "enablePullDownRefresh": false
-            } 
-        }
-        ,{
-            "path" : "pages/reserve/reserveMyOrder",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的预约订单",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/reserve/reserveQrCode",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "预约核销",
                 "enablePullDownRefresh": false
             }
             

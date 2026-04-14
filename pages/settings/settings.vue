@@ -46,41 +46,17 @@
 						<text class="text-grey">版本号</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">V0.1.0</text>
+						<text class="text-grey text-sm">V2.0</text>
 					</view>
 				</view>
 
 			</view>
 
-			<view v-if="login" class="margin-top">
-				<view class="cu-list menu">
-					<view class="cu-item " @tap="_logout()">
-						<view class="content text-center">
-							<text class="text-red">退 出</text>
-						</view>
-					</view>
-				</view>
-			</view>
+	
 
 
 		</view>
-		<view class="cu-modal" :class="logoutUser==true?'show':''">
-			<view class="cu-dialog">
-				<view class="cu-bar bg-white justify-end">
-					<view class="content">退出系统</view>
-					<view class="action" @tap="_cancleLogout()">
-						<text class="cuIcon-close text-red"></text>
-					</view>
-				</view>
-				<view class="padding-xl">
-					您确认退出系统吗？
-				</view>
-				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleLogout()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doLogoutUser()">确定</view>
-				</view>
-			</view>
-		</view>
+		
 		<!--#ifdef MP-WEIXIN -->
 		 <canvas canvas-id="materCanvas" style="display: none;" type="2d" id="materCanvas"></canvas>
 		 <!--#endif -->

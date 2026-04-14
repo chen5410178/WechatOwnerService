@@ -38,7 +38,6 @@
 		},
 		methods: {
 			onReciveMessage: function(event) {
-				console.log('商城回传的参数', event);
 				event.data = JSON.parse(event.data);
 				reciveMessage(event);
 			},

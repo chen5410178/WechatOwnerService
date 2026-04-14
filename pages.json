@@ -602,15 +602,6 @@
             
         }
         ,{
-            "path" : "pages/complaint/examineStaff",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "物业人员打分",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/machine/chargeMachineOrder",
             "style" :                                                                                    
             {
@@ -633,15 +624,6 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "充电优惠券",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/complaint/examineStaffScore",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "评分",
                 "enablePullDownRefresh": false
             }
             

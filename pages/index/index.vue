@@ -36,6 +36,7 @@
 		</view>
 
 		<index-activities ref="indexActivities"></index-activities>
+		<call-property ref="callPropertyRef"></call-property>
 	</view>
 </template>
 
@@ -55,6 +56,7 @@
 	} from '@/api/user/sessionApi.js';
 	import indexTop from '@/components/index/index-top.vue';
 	import indexActivities from '@/components/index/index-activities.vue';
+	import callProperty from '@/components/index/call-property.vue';
 
 	export default {
 		data() {
@@ -75,7 +77,8 @@
 		},
 		components: {
 			indexTop,
-			indexActivities
+			indexActivities,
+			callProperty
 		},
 		onLoad: function(options) {
 			uni.setNavigationBarTitle({
@@ -86,8 +89,9 @@
 		},
 		onShow() {
 			this.loadNotices();
-			this.loadAdverts();
+			this.loadAdverts();		
 			this.$refs.indexActivities.loadActivites();
+
 			if (hasLogin()) {
 				this.$refs.indexTop.loadOwnerFee();
 			}
@@ -128,7 +132,7 @@
 			},
 			onGridMenu(item) {
 				if (item.href === '_callProperty') {
-					this.vc.navigateTo({ url: '/pages/notice/index' });
+					this.$refs.callPropertyRef.open();
 					return;
 				}
 				if (item.href) {

@@ -94,12 +94,9 @@
 			},
 			async onHeroAction(type) {
 				if (!hasLogin()) {
-					uni.showToast({
-						title: '请先登录',
-						icon: 'none'
-					});
+					uni.showToast({ title: '请先登录', icon: 'none' });
 					return;
-				};
+				}
 				const urlMap = {
 					openDoor: '/pages/machine/openDoor',
 					visitor: '/pages/visit/visitList',

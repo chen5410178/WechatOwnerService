@@ -174,8 +174,8 @@
 
 				hasAuthOwner(this).then(owner => {
 					_that.isAuthOwner = true;
-					_that.userName = owner.ownerName || getUserName() || '我的家';
-					_that.communityInfo = owner.floorNum || getCommunityName() + ' 未绑定房屋';
+					_that.userName = owner.ownerName || getUserName() ;
+					_that.communityInfo = owner.floorNum || getCommunityName() ;
 				}, () => {
 					_that.isAuthOwner = false;
 				});

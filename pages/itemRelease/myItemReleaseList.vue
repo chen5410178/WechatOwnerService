@@ -72,7 +72,7 @@
 	} from '../../api/itemRelease/itemReleaseApi.js';
 	
 	import {getCommunityId} from '@/api/community/communityApi.js';
-	import url from '@/constant/url.js';
+	import url from '@/api/url.js';
 
 	export default {
 		data() {

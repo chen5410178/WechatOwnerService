@@ -1,7 +1,7 @@
 import context from '../../lib/java110/Java110Context.js';
 
 import mapping from '../../constant/MappingConstant.js'
-import url from '../../constant/url.js'
+import url from '../url.js'
 
 import conf from '../../conf/config.js'
 

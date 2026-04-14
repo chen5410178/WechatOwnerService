@@ -107,7 +107,7 @@
 	} from '@/api/user/userApi.js';
 	import {
 		hasLogin
-	} from '@/lib/java110/page/Page.js';
+	} from '@/api/user/sessionApi.js';
 
 	export default {
 		data() {
@@ -248,7 +248,7 @@
 			},
 			onAuthClick: function() {
 				this.vc.navigateTo({
-					url: '/pages/my/authOwnerRecord'
+					url: '/pages/index/authOwnerLog'
 				});
 			},
 			goToChangeCommunity: function() {

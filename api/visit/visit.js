@@ -10,7 +10,7 @@ import {
 } from '../../lib/java110/java110Request.js'
 import
 url
-from '../../constant/url.js'
+from '../url.js'
 import {formatTime}  from '../../lib/java110/utils/DateUtil.js'
 
 /**

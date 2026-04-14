@@ -53,7 +53,7 @@
 
 <script>
 	import context from '../../lib/java110/Java110Context.js';
-	import url from '../../constant/url.js';
+	import url from '../../api/url.js';
 	const constant = context.constant;
 	const factory = context.factory;
 

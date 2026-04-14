@@ -58,4 +58,5 @@
 
 /* 我的页面 - 设置 */
 .icon-setting::before { content: "⚙️"; }      /* 设置 */
+.icon-community::before { content: "🏘️"; }  /* 切换小区 */
 .icon-arrow-right::before { content: ">"; }  /* 箭头 */

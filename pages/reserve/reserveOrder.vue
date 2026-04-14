@@ -62,7 +62,7 @@
 	// pages/fee/payParkingFee.js
 	import context from '../../lib/java110/Java110Context.js';
 	const constant = context.constant;
-	import url from '@/constant/url.js'
+	import url from '@/api/url.js'
 
 	// #ifdef H5
 

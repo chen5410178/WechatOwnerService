@@ -101,7 +101,7 @@
 <script>
 	import context from '../../lib/java110/Java110Context.js';
 	const default_img = '../../static/images/rentimage.jpg';
-	import url from '../../constant/url.js';
+	import url from '../../api/url.js';
 
 	import {
 		getRentingPool

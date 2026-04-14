@@ -275,7 +275,7 @@
 
 	.header-bg {
 		background: linear-gradient(180deg, #FF6B6B 0%, #FF8E8E 100%);
-		height: 440rpx;
+		height: 320rpx;
 		border-bottom-left-radius: 40rpx;
 		border-bottom-right-radius: 40rpx;
 		padding: 40rpx 30rpx 0;

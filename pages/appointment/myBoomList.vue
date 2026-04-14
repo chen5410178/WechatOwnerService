@@ -105,7 +105,7 @@
 	import {
 		getBooks
 	} from '../../api/booking/bookingApi.js';
-	import url from '@/constant/url.js';
+	import url from '@/api/url.js';
 	import {getUserName,getUserTel} from '../../api/user/userApi.js'
 
 	export default {

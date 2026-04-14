@@ -2,7 +2,7 @@ import {
 	request,
 	requestNoAuth
 } from '../../lib/java110/java110Request.js';
-import url from '../../constant/url.js';
+import url from '../url.js';
 
 /**
  * 查询拼团产品

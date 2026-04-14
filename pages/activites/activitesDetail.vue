@@ -40,7 +40,7 @@
 		getCurOwner
 	} from '../../api/owner/ownerApi.js'
 
-	import url from '../../constant/url.js'
+	import url from '../../api/url.js'
 
 	import {
 		loadActivites

@@ -10,7 +10,7 @@
 	import {requestNoAuth} from './lib/java110/java110Request.js';
 	
 	
-	import url from './constant/url.js'
+	import url from './api/url.js'
 
 	export default {
 		// 小程序启动生命周期

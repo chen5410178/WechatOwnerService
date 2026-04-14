@@ -4,7 +4,7 @@ import {
 } from '../../lib/java110/java110Request.js';
 import
 url
-from '../../constant/url.js';
+from '../url.js';
 
 export function complaint(_data) {
 	

@@ -11,7 +11,7 @@ import {
 import {
 	requestNoAuth
 } from '../../lib/java110/java110Request.js';
-import url from '../../constant/url.js';
+import url from '../url.js';
 
 import context from '../../lib/java110/Java110Context.js'
 const constant = context.constant;

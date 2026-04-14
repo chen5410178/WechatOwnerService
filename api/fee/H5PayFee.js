@@ -2,7 +2,7 @@
 import context from '../../lib/java110/Java110Context.js';
 import WexinPayFactory from '../../factory/WexinPayFactory.js'
 import mapping from '../../constant/MappingConstant.js'
-import url from '../../constant/url.js'
+import url from '../url.js'
 
 export function payOweFee(_that) {
 	let _receivedAmount = _that.receivableAmount;

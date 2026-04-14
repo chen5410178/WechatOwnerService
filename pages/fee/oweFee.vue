@@ -313,7 +313,7 @@
 				}
 				let _objData = {
 					business: "oweFee",
-					feeConfigs: this._payFees,
+					feeConfigs: _payFees,
 					communityId: this.communityId,
 					ownerId: this.ownerId,
 					feeName: '物业费',

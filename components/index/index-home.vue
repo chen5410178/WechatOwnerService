@@ -99,6 +99,9 @@
 	import {
 		hasAuthOwner
 	} from '@/api/owner/ownerApi.js';
+	import {
+		hasLogin
+	} from '@/api/user/sessionApi.js';
 
 	export default {
 		data() {

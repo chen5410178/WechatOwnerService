@@ -2,18 +2,6 @@
 	<view class="page-home">
 		<!-- 顶部沉浸式背景 -->
 		<view class="header-bg">
-			<view class="nav-bar">
-				<view class="icon-btn" @click="onLoginClick">
-					<view class="icon-circle">登录</view>
-				</view>
-				<view class="search-bar" @click="onSearchClick">
-					<text class="icon-search"></text>
-					<text class="search-text">输入缴费、报修</text>
-				</view>
-				<view class="icon-btn" @click="onMessageClick">
-					<view class="icon-circle icon-msg">消息</view>
-				</view>
-			</view>
 			<!-- 核心金刚区 -->
 			<view class="hero-actions">
 				<view class="hero-item" @click="onHeroAction('openDoor')">
@@ -103,9 +91,6 @@
 
 <script>
 	import {
-		hasLogin
-	} from '@/lib/java110/page/Page.js';
-	import {
 		getCommunityId
 	} from '@/api/community/communityApi.js';
 	import {
@@ -167,24 +152,6 @@
 					if (notices && notices.length > 0) {
 						that.latestNotice = notices[0].title;
 					}
-				});
-			},
-			onLoginClick: function() {
-				if (!hasLogin()) {
-					this.vc.navigateTo({
-						url: '/pages/login/login'
-					});
-				}
-			},
-			onSearchClick: function() {
-				uni.showToast({
-					title: '搜索功能开发中',
-					icon: 'none'
-				});
-			},
-			onMessageClick: function() {
-				this.vc.navigateTo({
-					url: '/pages/notice/index'
 				});
 			},
 			onHeroAction: function(type) {
@@ -275,56 +242,10 @@
 
 	.header-bg {
 		background: linear-gradient(180deg, #FF6B6B 0%, #FF8E8E 100%);
-		height: 320rpx;
+		height: 360rpx;
 		border-bottom-left-radius: 40rpx;
 		border-bottom-right-radius: 40rpx;
-		padding: 40rpx 30rpx 0;
-	}
-
-	.nav-bar {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 40rpx;
-	}
-
-	.icon-btn {
-		text-align: center;
-		width: 80rpx;
-	}
-
-	.icon-circle {
-		width: 80rpx;
-		height: 80rpx;
-		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.2);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 20rpx;
-		color: #fff;
-	}
-
-	.search-bar {
-		flex: 1;
-		height: 72rpx;
-		border-radius: 36rpx;
-		margin: 0 30rpx;
-		display: flex;
-		align-items: center;
-		padding: 0 30rpx;
-		background: rgba(255, 255, 255, 0.9);
-	}
-
-	.icon-search {
-		font-size: 28rpx;
-		color: #999;
-		margin-right: 16rpx;
-	}
-
-	.search-text {
-		font-size: 26rpx;
-		color: #999;
+		padding: 20rpx 30rpx 0;
 	}
 
 	.hero-actions {

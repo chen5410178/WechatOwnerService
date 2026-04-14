@@ -3,7 +3,7 @@
 		<!-- 红色背景头部 -->
 		<view class="mine-header-red" @click="goToLogin">
 			<view class="avatar">
-				<text class="iconfont icon-user"></text>
+				<view class="iconfont fa-solid fa-user"></view>
 			</view>
 			<view class="user-info">
 				<view class="user-name">{{userName}}</view>
@@ -32,16 +32,16 @@
 			<view class="mine-grid-title">我的服务</view>
 			<view class="mine-grid-row">
 				<view class="mine-grid-item" v-for="(item, index) in serviceList1" :key="index" @click="onServiceClick(item)">
-					<view class="icon-wrapper" :class="item.icon.split(' ')[1]">
-						<text class="iconfont" :class="item.icon.split(' ')[0]"></text>
+					<view class="icon-wrapper" >
+						<view class="iconfont" :class="item.icon"></view>
 					</view>
 					<text class="item-text">{{item.name}}</text>
 				</view>
 			</view>
 			<view class="mine-grid-row">
 				<view class="mine-grid-item" v-for="(item, index) in serviceList2" :key="index" @click="onServiceClick(item)">
-					<view class="icon-wrapper" :class="item.icon.split(' ')[1]">
-						<text class="iconfont" :class="item.icon.split(' ')[0]"></text>
+					<view class="icon-wrapper" >
+						<view class="iconfont" :class="item.icon"></view>
 					</view>
 					<text class="item-text">{{item.name}}</text>
 				</view>
@@ -52,25 +52,27 @@
 		<view class="setting-list">
 			<view class="setting-item" @click="goToChangeCommunity">
 				<view class="setting-left">
-					<text class="iconfont icon-community"></text> 切换小区
+					<view class="iconfont fa-solid fa-building"></view> 切换小区
 				</view>
 				<view class="setting-right">
-					<text class="iconfont icon-arrow-right"></text>
+					<view class="iconfont fa-solid fa-chevron-right"></view>
 				</view>
 			</view>
 			<view class="setting-item" @click="onAuthClick">
-				<view class="setting-left">房屋认证</view>
+				<view class="setting-left">
+					<view class="iconfont fa-solid fa-house-user"></view> 房屋认证
+				</view>
 				<view class="setting-right">
 					<text class="auth-status">{{authStatusText}}</text>
-					<text class="iconfont icon-arrow-right"></text>
+					<view class="iconfont fa-solid fa-chevron-right"></view>
 				</view>
 			</view>
 			<view class="setting-item" @click="goToSetting">
 				<view class="setting-left">
-					<text class="iconfont icon-setting"></text> 设置
+					<view class="iconfont fa-solid fa-gear"></view> 设置
 				</view>
 				<view class="setting-right">
-					<text class="iconfont icon-arrow-right"></text>
+					<view class="iconfont fa-solid fa-chevron-right"></view>
 				</view>
 			</view>
 		</view>
@@ -120,18 +122,18 @@
 				couponCount: '0',
 				isAuthOwner: false,
 				serviceList1: [
-					{ name: '缴费记录', icon: 'icon-file c-red', href: '/pages/fee/payFeeDetail' },
-					{ name: '报修记录', icon: 'icon-repair c-orange', href: '/pages/repair/myRepair' },
-					{ name: '投诉记录', icon: 'icon-feedback c-blue', href: '/pages/complaint/complaintList' },
-					{ name: '订单记录', icon: 'icon-bag c-green', href: '' },
-					{ name: '门禁日志', icon: 'icon-idcard c-purple', href: '/pages/machine/machineTranslateLog' }
+					{ name: '缴费记录', icon: 'fa-solid fa-file-lines c-red', href: '/pages/fee/payFeeDetail' },
+					{ name: '报修记录', icon: 'fa-solid fa-screwdriver-wrench c-orange', href: '/pages/repair/myRepair' },
+					{ name: '投诉记录', icon: 'fa-solid fa-comment-dots c-blue', href: '/pages/complaint/complaintList' },
+					{ name: '订单记录', icon: 'fa-solid fa-bag-shopping c-green', href: '' },
+					{ name: '门禁日志', icon: 'fa-solid fa-id-card c-purple', href: '/pages/machine/machineTranslateLog' }
 				],
 				serviceList2: [
-					{ name: '空置房', icon: 'icon-vacant c-orange', href: '/pages/applyRoom/myApplyRoomList' },
-					{ name: '装修记录', icon: 'icon-decoration c-blue', href: '/pages/renovation/myRoomRenovationList' },
-					{ name: '预约记录', icon: 'icon-calendar c-green', href: '/pages/reserve/reserveMyOrder' },
-					{ name: '放行记录', icon: 'icon-exit c-red', href: '/pages/itemRelease/myItemReleaseList' },
-					{ name: '开票历史', icon: 'icon-invoice c-orange', href: '/pages/invoice/invoiceApply' }
+					{ name: '空置房', icon: 'fa-solid fa-house-chimney-crack c-orange', href: '/pages/applyRoom/myApplyRoomList' },
+					{ name: '装修记录', icon: 'fa-solid fa-paint-roller c-blue', href: '/pages/renovation/myRoomRenovationList' },
+					{ name: '预约记录', icon: 'fa-solid fa-calendar-check c-green', href: '/pages/reserve/reserveMyOrder' },
+					{ name: '放行记录', icon: 'fa-solid fa-dolly c-red', href: '/pages/itemRelease/myItemReleaseList' },
+					{ name: '开票历史', icon: 'fa-solid fa-receipt c-orange', href: '/pages/invoice/invoiceApply' }
 				]
 			};
 		},
@@ -384,16 +386,17 @@
 		justify-content: center;
 
 		.icon-wrapper {
-			width: 60rpx;
-			height: 60rpx;
+			width: 80rpx;
+			height: 80rpx;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 48rpx;
 			margin-bottom: 16rpx;
+			border-radius: 50%;
+			background: #f5f5f5;
 
 			.iconfont {
-				font-size: 48rpx;
+				font-size: 40rpx;
 			}
 		}
 
@@ -425,12 +428,15 @@
 	.setting-left {
 		font-size: 28rpx;
 		color: #333;
+		display: flex;
+		align-items: center;
 
 		.iconfont {
 			width: 40rpx;
 			text-align: center;
 			margin-right: 10rpx;
 			color: #666;
+			display: inline-block;
 		}
 	}
 

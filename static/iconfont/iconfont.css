@@ -1,4 +1,65 @@
-/* iconfont 图标字体 - 复用现有字体文件 + emoji 后备 */
+/* iconfont 图标字体 - Font Awesome 6.4.0 */
+
+/* 加载 Font Awesome 字体 */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url('@/static/iconfont/fa-solid-900.woff2') format('woff2');
+}
+
+/* 图标基础样式 - 兼容小程序 */
+.iconfont {
+  display: inline-block;
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 兼容直接使用 fa- 类名 */
+[class*="fa-solid"],
+[class*="fa-regular"],
+[class*="fa-"] {
+  font-family: 'Font Awesome 6 Free' !important;
+}
+
+/* Font Awesome 图标 Unicode */
+.fa-key::before { content: "\f084"; }
+.fa-qrcode::before { content: "\f029"; }
+.fa-yen-sign::before { content: "\f157"; }
+.fa-user-shield::before { content: "\f509"; }
+.fa-phone-volume::before { content: "\f2a0"; }
+.fa-bolt::before { content: "\f0e7"; }
+.fa-file-invoice-dollar::before { content: "\f571"; }
+.fa-square-parking::before { content: "\f540"; }
+.fa-droplet::before { content: "\f043"; }
+.fa-screwdriver-wrench::before { content: "\f7d9"; }
+.fa-bullhorn::before { content: "\f0a1"; }
+.fa-film::before { content: "\f008"; }
+.fa-paint-roller::before { content: "\f53f"; }
+.fa-house-user::before { content: "\e1b0"; }
+.fa-car::before { content: "\f1b9"; }
+.fa-receipt::before { content: "\f81d"; }
+.fa-users::before { content: "\f0c0"; }
+.fa-user-clock::before { content: "\f4fd"; }
+.fa-door-open::before { content: "\f52b"; }
+.fa-file-lines::before { content: "\f15c"; }
+.fa-comment::before { content: "\f4ad"; }
+.fa-comment-dots::before { content: "\f4ad"; }
+.fa-bag-shopping::before { content: "\f290"; }
+.fa-id-card::before { content: "\f2c2"; }
+.fa-house-chimney-crack::before { content: "\f6f1"; }
+.fa-house-chimney-user::before { content: "\e1b2"; }
+.fa-calendar-check::before { content: "\f274"; }
+.fa-dolly::before { content: "\f472"; }
+.fa-gear::before { content: "\f013"; }
+.fa-building::before { content: "\f1ad"; }
+.fa-chevron-right::before { content: "\f054"; }
+.fa-user::before { content: "\f007"; }
+.fa-newspaper::before { content: "\f1ea"; }
+.fa-baseball::before { content: "\f433"; }
 
 /* 颜色辅助类 */
 .c-blue { color: #1890ff; }
@@ -6,57 +67,3 @@
 .c-green { color: #52c41a; }
 .c-red { color: #f5222d; }
 .c-purple { color: #722ed1; }
-
-/* 首页 - 顶部导航 */
-.icon-user::before { content: "\e7cd"; }
-.icon-search::before { content: "\e8b1"; }
-.icon-comment::before { content: "\e779"; }
-
-/* 首页 - 金刚区 */
-.icon-key::before { content: "🔑"; }           /* 开门 */
-.icon-qrcode::before { content: "📱"; }        /* 访客 */
-.icon-yen::before { content: "💰"; }           /* 缴费 */
-.icon-shield::before { content: "🛡️"; }       /* 报修 */
-
-/* 首页 - 网格菜单 */
-.icon-bolt::before { content: "⚡"; color: inherit; }          /* 生活缴费 */
-.icon-file-dollar::before { content: "💵"; }                   /* 物业费 */
-.icon-parking::before { content: "🚗"; }                       /* 车位费 */
-.icon-droplet::before { content: "💧"; }                      /* 水电充值 */
-.icon-wrench::before { content: "🔧"; }                       /* 报修记录 */
-.icon-phone::before { content: "📞"; }                        /* 联系物业 */
-.icon-bullhorn::before { content: "📢"; }                    /* 社区公告 */
-.icon-ellipsis::before { content: "⋯"; }                     /* 全部 */
-
-/* 首页 - 文章缩略图 */
-.icon-film::before { content: "🎬"; }           /* 活动图标 */
-.icon-paint::before { content: "🎨"; }        /* 公告图标 */
-
-/* 服务页 - 费用管理 */
-.icon-house::before { content: "🏠"; }          /* 房屋费 */
-.icon-car::before { content: "🚗"; }          /* 车位费 */
-.icon-contract::before { content: "📄"; }     /* 合同费 */
-.icon-receipt::before { content: "🧾"; }      /* 发票 */
-
-/* 服务页 - 居住通行 */
-.icon-users::before { content: "👥"; }        /* 家庭成员 */
-.icon-clock::before { content: "⏰"; }        /* 访客通行 */
-.icon-door::before { content: "🚪"; }        /* 空置房 */
-.icon-renovation::before { content: "🔨"; }  /* 装修备案 */
-
-/* 我的页面 - 我的服务 */
-.icon-file::before { content: "📄"; }         /* 缴费记录 */
-.icon-repair::before { content: "🔧"; }      /* 报修记录 */
-.icon-feedback::before { content: "💬"; }     /* 投诉记录 */
-.icon-bag::before { content: "🛍️"; }         /* 订单记录 */
-.icon-idcard::before { content: "🪪"; }      /* 门禁日志 */
-.icon-vacant::before { content: "🏚️"; }     /* 空置房 */
-.icon-decoration::before { content: "🎨"; }  /* 装修记录 */
-.icon-calendar::before { content: "📅"; }    /* 预约记录 */
-.icon-exit::before { content: "📦"; }        /* 放行记录 */
-.icon-invoice::before { content: "💵"; }     /* 开票历史 */
-
-/* 我的页面 - 设置 */
-.icon-setting::before { content: "⚙️"; }      /* 设置 */
-.icon-community::before { content: "🏘️"; }  /* 切换小区 */
-.icon-arrow-right::before { content: ">"; }  /* 箭头 */

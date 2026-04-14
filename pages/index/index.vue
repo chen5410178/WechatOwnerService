@@ -6,25 +6,25 @@
 			<view class="hero-actions">
 				<view class="hero-item" @click="onHeroAction('openDoor')">
 					<view class="fa-icon-box">
-						<text class="iconfont icon-key"></text>
+						<view class="iconfont fa-solid fa-key"></view>
 					</view>
 					<text class="hero-text">开门</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('visitor')">
 					<view class="fa-icon-box">
-						<text class="iconfont icon-qrcode"></text>
+						<view class="iconfont fa-solid fa-qrcode"></view>
 					</view>
 					<text class="hero-text">访客</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('payment')">
 					<view class="fa-icon-box">
-						<text class="iconfont icon-yen"></text>
+						<view class="iconfont fa-solid fa-yen-sign"></view>
 					</view>
 					<text class="hero-text">缴费</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('repair')">
 					<view class="fa-icon-box">
-						<text class="iconfont icon-shield"></text>
+						<view class="iconfont fa-solid fa-user-shield"></view>
 					</view>
 					<text class="hero-text">报修</text>
 				</view>
@@ -54,7 +54,7 @@
 		<!-- 网格菜单 -->
 		<view class="grid-menu">
 			<view class="grid-item" @click="onGridMenu(item)" v-for="(item, index) in gridMenu" :key="index">
-				<text class="grid-icon iconfont" :class="item.icon"></text>
+				<view class="grid-icon iconfont" :class="item.icon"></view>
 				<text class="grid-text">{{item.name}}</text>
 			</view>
 		</view>
@@ -142,13 +142,13 @@
 				adverts: [],
 				currentAdIndex: 0,
 				gridMenu: [
-					{ name: '家庭成员', icon: 'icon-users c-blue', href: '/pages/family/familyList' },
-					{ name: '投诉建议', icon: 'icon-message-square c-orange', href: '/pages/complaint/complaint' },
-					{ name: '停车月卡', icon: 'icon-car c-green', href: '/pages/fee/payParkingFeeList' },
-					{ name: '水电充值', icon: 'icon-droplet c-blue', href: '/pages/meter/meter' },
-					{ name: '联系物业', icon: 'icon-phone c-purple', href: '_callProperty' },
-					{ name: '小区公示', icon: 'icon-file-text c-red', href: '/pages/common/communityPublicityList' },
-					{ name: '缴费记录', icon: 'icon-file-dollar c-orange', href: '/pages/fee/oweFee' }
+					{ name: '家庭成员', icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
+					{ name: '投诉建议', icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
+					{ name: '停车月卡', icon: 'fa-solid fa-car c-green', href: '/pages/fee/payParkingFeeList' },
+					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
+					{ name: '联系物业', icon: 'fa-solid fa-phone-volume c-purple', href: '_callProperty' },
+					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-red', href: '/pages/common/communityPublicityList' },
+					{ name: '缴费记录', icon: 'fa-solid fa-file-invoice-dollar c-orange', href: '/pages/fee/oweFee' }
 				]
 			};
 		},

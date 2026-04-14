@@ -547,14 +547,6 @@
 				"enablePullDownRefresh": false
 			}
 		},
-		// {
-		//     "path" : "pages/visit/addVisitSuccess",
-		//     "style" :                                                                                    
-		//     {
-		//         "navigationBarTitleText": "登记成功",
-		//         "enablePullDownRefresh": false
-		//     }
-		// },
 		{
 			"path": "pages/visit/visitList",
 			"style": {
@@ -1105,14 +1097,14 @@
 			{
 				"pagePath": "pages/homemaking/homemaking",
 				"text": "服务",
-				"iconPath": "static/images/rent.png",
-				"selectedIconPath": "static/images/rent-selected.png"
+				"iconPath": "static/images/service.png",
+				"selectedIconPath": "static/images/service-selected.png"
 			},
 			{
 				"pagePath": "pages/my/my",
 				"text": "我的",
 				"iconPath": "static/images/my.png",
-				"selectedIconPath": "static/images/mySelected.png"
+				"selectedIconPath": "static/images/my-selected.png"
 			}
 		]
 	},

@@ -5,7 +5,7 @@
 			<view class="list-header">费用</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in feeList" :key="index" @click="onItemClick(item)">
-					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<view class="grid-icon iconfont" :class="item.icon"></view>
 					<text class="grid-text">{{item.name}}</text>
 				</view>
 			</view>
@@ -16,7 +16,7 @@
 			<view class="list-header">物业服务</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in propertyList" :key="index" @click="onItemClick(item)">
-					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<view class="grid-icon iconfont" :class="item.icon"></view>
 					<text class="grid-text">{{item.name}}</text>
 				</view>
 			</view>
@@ -27,7 +27,7 @@
 			<view class="list-header">工单</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in workOrderList" :key="index" @click="onItemClick(item)">
-					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<view class="grid-icon iconfont" :class="item.icon"></view>
 					<text class="grid-text">{{item.name}}</text>
 				</view>
 			</view>
@@ -38,7 +38,7 @@
 			<view class="list-header">通行</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in passList" :key="index" @click="onItemClick(item)">
-					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<view class="grid-icon iconfont" :class="item.icon"></view>
 					<text class="grid-text">{{item.name}}</text>
 				</view>
 			</view>
@@ -49,7 +49,7 @@
 			<view class="list-header">其他</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in otherList" :key="index" @click="onItemClick(item)">
-					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<view class="grid-icon iconfont" :class="item.icon"></view>
 					<text class="grid-text">{{item.name}}</text>
 				</view>
 			</view>
@@ -62,31 +62,31 @@
 		data() {
 			return {
 				feeList: [
-					{ name: '物业缴费', icon: 'icon-house c-red', href: '/pages/fee/roomFee' },
-					{ name: '水电充值', icon: 'icon-droplet c-blue', href: '/pages/meter/meter' },
-					{ name: '车辆月卡', icon: 'icon-car c-orange', href: '/pages/fee/payParkingFeeList' },
-					{ name: '发票', icon: 'icon-receipt c-green', href: '/pages/invoice/invoice' }
+					{ name: '物业缴费', icon: 'fa-solid fa-house-user c-red', href: '/pages/fee/roomFee' },
+					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
+					{ name: '车辆月卡', icon: 'fa-solid fa-car c-orange', href: '/pages/fee/payParkingFeeList' },
+					{ name: '发票', icon: 'fa-solid fa-receipt c-green', href: '/pages/invoice/invoice' }
 				],
 				propertyList: [
-					{ name: '社区公告', icon: 'icon-bullhorn c-orange', href: '/pages/notice/index' },
-					{ name: '家庭成员', icon: 'icon-users c-blue', href: '/pages/family/familyList' },
-					{ name: '业主信息', icon: 'icon-user c-purple', href: '/pages/my/viewAdmin' },
-					{ name: '车位申请', icon: 'icon-parking c-green', href: '/pages/car/applyparking' },
-					{ name: '空置房申请', icon: 'icon-door c-red', href: '/pages/applyRoom/applyRoom' },
-					{ name: '小区公示', icon: 'icon-file-text c-blue', href: '/pages/common/communityPublicityList' }
+					{ name: '社区公告', icon: 'fa-solid fa-bullhorn c-orange', href: '/pages/notice/index' },
+					{ name: '家庭成员', icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
+					{ name: '业主信息', icon: 'fa-solid fa-user c-purple', href: '/pages/my/viewAdmin' },
+					{ name: '车位申请', icon: 'fa-solid fa-square-parking c-green', href: '/pages/car/applyparking' },
+					{ name: '空置房申请', icon: 'fa-solid fa-door-open c-red', href: '/pages/applyRoom/applyRoom' },
+					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-blue', href: '/pages/common/communityPublicityList' }
 				],
 				workOrderList: [
-					{ name: '报事报修', icon: 'icon-wrench c-green', href: '/pages/repair/myRepair' },
-					{ name: '投诉咨询', icon: 'icon-message-square c-orange', href: '/pages/complaint/complaint' },
-					{ name: '装修报备', icon: 'icon-renovation c-red', href: '/pages/renovation/roomRenovation' },
-					{ name: '球场预约', icon: 'icon-ball c-blue', href: '/pages/reserve/reserveOrder' }
+					{ name: '报事报修', icon: 'fa-solid fa-screwdriver-wrench c-green', href: '/pages/repair/myRepair' },
+					{ name: '投诉咨询', icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
+					{ name: '装修报备', icon: 'fa-solid fa-paint-roller c-red', href: '/pages/renovation/roomRenovation' },
+					{ name: '球场预约', icon: 'fa-solid fa-baseball c-blue', href: '/pages/reserve/reserveOrder' }
 				],
 				passList: [
-					{ name: '一键开门', icon: 'icon-key c-red', href: '/pages/machine/openDoor' },
-					{ name: '访客通行', icon: 'icon-clock c-purple', href: '/pages/visit/visitList' }
+					{ name: '一键开门', icon: 'fa-solid fa-key c-red', href: '/pages/machine/openDoor' },
+					{ name: '访客通行', icon: 'fa-solid fa-user-clock c-purple', href: '/pages/visit/visitList' }
 				],
 				otherList: [
-					{ name: '充电桩', icon: 'icon-zap c-blue', href: '/pages/charge/chargeStation' }
+					{ name: '充电桩', icon: 'fa-solid fa-bolt c-blue', href: '/pages/charge/chargeStation' }
 				]
 			};
 		},

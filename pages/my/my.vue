@@ -224,38 +224,38 @@
 			},
 			onServiceClick: function(item) {
 				if (item.href) {
-					this.vc.navigateTo({
+					this.vc.navigateToWithLogin({
 						url: item.href
 					});
 				}
 			},
 			goToHouse: function() {
-				this.vc.navigateTo({
+				this.vc.navigateToWithLogin({
 					url: '/pages/my/myHouse'
 				});
 			},
 			goToCar: function() {
-				this.vc.navigateTo({
+				this.vc.navigateToWithLogin({
 					url: '/pages/car/ownerCars'
 				});
 			},
 			goToCoupon: function() {
-				this.vc.navigateTo({
+				this.vc.navigateToWithLogin({
 					url: '/pages/coupon/myCoupons'
 				});
 			},
 			onAuthClick: function() {
-				this.vc.navigateTo({
+				this.vc.navigateToWithLogin({
 					url: '/pages/index/authOwnerLog'
 				});
 			},
 			goToChangeCommunity: function() {
-				this.vc.navigateTo({
+				this.vc.navigateToWithLogin({
 					url: '/pages/my/changeOwnerCommunity'
 				});
 			},
 			goToSetting: function() {
-				this.vc.navigateTo({
+				this.vc.navigateToWithLogin({
 					url: '/pages/settings/settings'
 				});
 			},

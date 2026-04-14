@@ -69,7 +69,7 @@
 					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
 					{ name: '联系物业', icon: 'fa-solid fa-phone-volume c-purple', href: '_callProperty' },
 					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-red', href: '/pages/common/communityPublicityList' },
-					{ name: '缴费记录', icon: 'fa-solid fa-file-invoice-dollar c-orange', href: '/pages/fee/oweFee' }
+					{ name: '缴费记录', icon: 'fa-solid fa-file-invoice-dollar c-orange', href: '/pages/fee/payFeeDetail' }
 				]
 			};
 		},

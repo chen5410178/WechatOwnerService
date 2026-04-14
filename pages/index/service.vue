@@ -62,7 +62,7 @@
 		data() {
 			return {
 				feeList: [
-					{ name: '物业缴费', icon: 'fa-solid fa-house-user c-red', href: '/pages/fee/roomFee' },
+					{ name: '物业缴费', icon: 'fa-solid fa-house-user c-red', href: '/pages/fee/oweFee' },
 					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
 					{ name: '车辆月卡', icon: 'fa-solid fa-car c-orange', href: '/pages/fee/payParkingFeeList' },
 					{ name: '发票', icon: 'fa-solid fa-receipt c-green', href: '/pages/invoice/invoice' }
@@ -70,23 +70,23 @@
 				propertyList: [
 					{ name: '社区公告', icon: 'fa-solid fa-bullhorn c-orange', href: '/pages/notice/index' },
 					{ name: '家庭成员', icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
-					{ name: '业主信息', icon: 'fa-solid fa-user c-purple', href: '/pages/my/viewAdmin' },
+					{ name: '业主信息', icon: 'fa-solid fa-user c-purple', href: '/pages/viewBindOwner/viewBindOwner' },
 					{ name: '车位申请', icon: 'fa-solid fa-square-parking c-green', href: '/pages/car/applyparking' },
 					{ name: '空置房申请', icon: 'fa-solid fa-door-open c-red', href: '/pages/applyRoom/applyRoom' },
 					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-blue', href: '/pages/common/communityPublicityList' }
 				],
 				workOrderList: [
-					{ name: '报事报修', icon: 'fa-solid fa-screwdriver-wrench c-green', href: '/pages/repair/myRepair' },
+					{ name: '报事报修', icon: 'fa-solid fa-screwdriver-wrench c-green', href: '/pages/repair/repair' },
 					{ name: '投诉咨询', icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
 					{ name: '装修报备', icon: 'fa-solid fa-paint-roller c-red', href: '/pages/renovation/roomRenovation' },
-					{ name: '球场预约', icon: 'fa-solid fa-baseball c-blue', href: '/pages/reserve/reserveOrder' }
+					{ name: '球场预约', icon: 'fa-solid fa-baseball c-blue', href: '/pages/appointment/appointment' }
 				],
 				passList: [
 					{ name: '一键开门', icon: 'fa-solid fa-key c-red', href: '/pages/machine/openDoor' },
 					{ name: '访客通行', icon: 'fa-solid fa-user-clock c-purple', href: '/pages/visit/visitList' }
 				],
 				otherList: [
-					{ name: '充电桩', icon: 'fa-solid fa-bolt c-blue', href: '/pages/charge/chargeStation' }
+					{ name: '充电桩', icon: 'fa-solid fa-bolt c-blue', href: '/pages/machine/chargeMachines' }
 				]
 			};
 		},

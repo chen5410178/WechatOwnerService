@@ -186,7 +186,7 @@
 						{
 							name: '全部',
 							src: this.imgUrl + '/h5/images/serve/11.png',
-							href: '/pages/homemaking/homemaking',
+							href: '/pages/index/service',
 							ownerAuth: false
 						},
 					]
@@ -270,7 +270,7 @@
 			},
 			more: function() {
 				uni.switchTab({
-					url: '/pages/homemaking/homemaking'
+					url: '/pages/index/service'
 				})
 			},
 			_toNoticePage:function(){

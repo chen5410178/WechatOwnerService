@@ -439,7 +439,7 @@
 				"navigationStyle": "custom"
 			}
 		}, {
-			"path": "pages/homemaking/homemaking",
+			"path": "pages/index/service",
 			"style": {
 				"navigationBarTitleText": "服务大厅"
 			}
@@ -1095,7 +1095,7 @@
 				"selectedIconPath": "static/images/home-selected.png"
 			},
 			{
-				"pagePath": "pages/homemaking/homemaking",
+				"pagePath": "pages/index/service",
 				"text": "服务",
 				"iconPath": "static/images/service.png",
 				"selectedIconPath": "static/images/service-selected.png"
@@ -1118,7 +1118,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "#2B7FF0",
+		"navigationBarBackgroundColor": "#E60012",
 		"navigationBarTitleText": "业主版",
 		"usingComponents": { //这里为方便，全局引入了所有组件，也可以在某个page下单独引用某个组件
 

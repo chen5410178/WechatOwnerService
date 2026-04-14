@@ -85,7 +85,6 @@
 </template>
 
 <script>
-	import context from '@/lib/java110/Java110Context.js';
 	import {
 		getCommunityName,
 		getCommunityId
@@ -125,14 +124,11 @@
 					{ name: '缴费记录', icon: 'fa-solid fa-file-lines c-red', href: '/pages/fee/payFeeDetail' },
 					{ name: '报修记录', icon: 'fa-solid fa-screwdriver-wrench c-orange', href: '/pages/repair/myRepair' },
 					{ name: '投诉记录', icon: 'fa-solid fa-comment-dots c-blue', href: '/pages/complaint/complaintList' },
-					{ name: '订单记录', icon: 'fa-solid fa-bag-shopping c-green', href: '' },
-					{ name: '门禁日志', icon: 'fa-solid fa-id-card c-purple', href: '/pages/machine/machineTranslateLog' }
+					{ name: '空置房', icon: 'fa-solid fa-house-chimney-crack c-orange', href: '/pages/applyRoom/myApplyRoomList' },
+					{ name: '装修记录', icon: 'fa-solid fa-paint-roller c-blue', href: '/pages/renovation/myRoomRenovationList' }
 				],
 				serviceList2: [
-					{ name: '空置房', icon: 'fa-solid fa-house-chimney-crack c-orange', href: '/pages/applyRoom/myApplyRoomList' },
-					{ name: '装修记录', icon: 'fa-solid fa-paint-roller c-blue', href: '/pages/renovation/myRoomRenovationList' },
-					{ name: '预约记录', icon: 'fa-solid fa-calendar-check c-green', href: '/pages/reserve/reserveMyOrder' },
-					{ name: '放行记录', icon: 'fa-solid fa-dolly c-red', href: '/pages/itemRelease/myItemReleaseList' },
+					{ name: '门禁日志', icon: 'fa-solid fa-id-card c-purple', href: '/pages/machine/machineTranslateLog' },
 					{ name: '开票历史', icon: 'fa-solid fa-receipt c-orange', href: '/pages/invoice/invoiceApply' }
 				]
 			};

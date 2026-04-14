@@ -267,7 +267,7 @@ export default {
 		'pages/index/index',
 		'pages/market/market',
 		'pages/login/showlogin',
-		'pages/homemaking/homemaking',
+		'pages/index/service',
 		'pages/mall/mall',
 		'pages/appointment/appointment',
 		'pages/appointment/appointmentPay',

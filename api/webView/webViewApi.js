@@ -159,7 +159,7 @@ export function switchPage(_url){
 		})
 	}else if(_url == 'homemaking'){
 		uni.switchTab({
-			url:'/pages/homemaking/homemaking'
+			url:'/pages/index/service'
 		})
 	}else{
 		uni.switchTab({

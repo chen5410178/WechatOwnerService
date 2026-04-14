@@ -210,12 +210,12 @@
 	  margin-top: 10rpx;
 	  color: black;
 	  font-size: 30rpx;
-	  display: -webkit-box;  /*设置为弹性盒子*/
-	  -webkit-line-clamp: 2;  /*最多显示5行*/
-	  overflow: hidden;  /*超出隐藏*/
-	  text-overflow: ellipsis;  /*超出显示为省略号*/
+	  display: -webkit-box;  
+	  -webkit-line-clamp: 2;  
+	  overflow: hidden;  
+	  text-overflow: ellipsis;  
 	  -webkit-box-orient: vertical;
-	  word-break: break-all;  /*强制英文单词自动换行*/
+	  word-break: break-all;  
 	}
 	.notices-info-image image{
 	  width: 200rpx;

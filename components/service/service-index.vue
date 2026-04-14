@@ -1,11 +1,8 @@
 <template>
 	<view class="page-service">
-		<!-- 页面标题 -->
-		<view class="page-title">服务大厅</view>
-
-		<!-- 费用管理 -->
+		<!-- 费用 -->
 		<view class="list-group">
-			<view class="list-header">费用管理</view>
+			<view class="list-header">费用</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in feeList" :key="index" @click="onItemClick(item)">
 					<text class="grid-icon iconfont" :class="item.icon"></text>
@@ -14,11 +11,44 @@
 			</view>
 		</view>
 
-		<!-- 居住通行 -->
+		<!-- 物业服务 -->
 		<view class="list-group">
-			<view class="list-header">居住通行</view>
+			<view class="list-header">物业服务</view>
+			<view class="grid-menu">
+				<view class="grid-item" v-for="(item, index) in propertyList" :key="index" @click="onItemClick(item)">
+					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<text class="grid-text">{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+
+		<!-- 工单 -->
+		<view class="list-group">
+			<view class="list-header">工单</view>
+			<view class="grid-menu">
+				<view class="grid-item" v-for="(item, index) in workOrderList" :key="index" @click="onItemClick(item)">
+					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<text class="grid-text">{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+
+		<!-- 通行 -->
+		<view class="list-group">
+			<view class="list-header">通行</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in passList" :key="index" @click="onItemClick(item)">
+					<text class="grid-icon iconfont" :class="item.icon"></text>
+					<text class="grid-text">{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+
+		<!-- 其他 -->
+		<view class="list-group">
+			<view class="list-header">其他</view>
+			<view class="grid-menu">
+				<view class="grid-item" v-for="(item, index) in otherList" :key="index" @click="onItemClick(item)">
 					<text class="grid-icon iconfont" :class="item.icon"></text>
 					<text class="grid-text">{{item.name}}</text>
 				</view>
@@ -28,24 +58,35 @@
 </template>
 
 <script>
-	import {
-		hasAuthOwner
-	} from '@/api/owner/ownerApi.js';
-
 	export default {
 		data() {
 			return {
 				feeList: [
-					{ name: '房屋费', icon: 'icon-house c-red', href: '/pages/fee/roomFeeListNew' },
-					{ name: '车位费', icon: 'icon-car c-blue', href: '/pages/fee/payParkingFeeList' },
-					{ name: '合同费', icon: 'icon-contract c-orange', href: '/pages/fee/contractFeeList' },
+					{ name: '物业缴费', icon: 'icon-house c-red', href: '/pages/fee/roomFee' },
+					{ name: '水电充值', icon: 'icon-droplet c-blue', href: '/pages/meter/meter' },
+					{ name: '车辆月卡', icon: 'icon-car c-orange', href: '/pages/fee/payParkingFeeList' },
 					{ name: '发票', icon: 'icon-receipt c-green', href: '/pages/invoice/invoice' }
 				],
-				passList: [
+				propertyList: [
+					{ name: '社区公告', icon: 'icon-bullhorn c-orange', href: '/pages/notice/index' },
 					{ name: '家庭成员', icon: 'icon-users c-blue', href: '/pages/family/familyList' },
-					{ name: '访客通行', icon: 'icon-clock c-purple', href: '/pages/visit/visitList' },
-					{ name: '空置房', icon: 'icon-door c-green', href: '/pages/applyRoom/applyRoom' },
-					{ name: '装修备案', icon: 'icon-renovation c-red', href: '/pages/renovation/roomRenovation' }
+					{ name: '业主信息', icon: 'icon-user c-purple', href: '/pages/my/viewAdmin' },
+					{ name: '车位申请', icon: 'icon-parking c-green', href: '/pages/car/applyparking' },
+					{ name: '空置房申请', icon: 'icon-door c-red', href: '/pages/applyRoom/applyRoom' },
+					{ name: '小区公示', icon: 'icon-file-text c-blue', href: '/pages/common/communityPublicityList' }
+				],
+				workOrderList: [
+					{ name: '报事报修', icon: 'icon-wrench c-green', href: '/pages/repair/myRepair' },
+					{ name: '投诉咨询', icon: 'icon-message-square c-orange', href: '/pages/complaint/complaint' },
+					{ name: '装修报备', icon: 'icon-renovation c-red', href: '/pages/renovation/roomRenovation' },
+					{ name: '球场预约', icon: 'icon-ball c-blue', href: '/pages/reserve/reserveOrder' }
+				],
+				passList: [
+					{ name: '一键开门', icon: 'icon-key c-red', href: '/pages/machine/openDoor' },
+					{ name: '访客通行', icon: 'icon-clock c-purple', href: '/pages/visit/visitList' }
+				],
+				otherList: [
+					{ name: '充电桩', icon: 'icon-zap c-blue', href: '/pages/charge/chargeStation' }
 				]
 			};
 		},
@@ -83,10 +124,10 @@
 	}
 
 	.list-header {
-		padding: 30rpx;
-		border-bottom: 1px solid #f0f0f0;
+		padding-left: 30rpx;
+		padding-top: 30rpx;
 		font-weight: bold;
-		font-size: 30rpx;
+		font-size: 28rpx;
 	}
 
 	.grid-menu {

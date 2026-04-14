@@ -280,6 +280,9 @@
 				this.accountAmount = _accInfo.totalUserAmount;
 				this._doComputeTotalFee();
 			},
+			_showDetailFee:function(_fee){
+		
+			},
 			onPayFee: function() {
 				//payOweFee(this);
 				let _receivedAmount = this.receivableAmount;

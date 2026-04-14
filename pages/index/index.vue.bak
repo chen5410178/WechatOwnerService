@@ -90,6 +90,7 @@
 </template>
 
 <script>
+	import {autoLogin} from '../../api/user/sessionApi.js';
 	import {
 		getCommunityId
 	} from '@/api/community/communityApi.js';
@@ -138,6 +139,13 @@
 					}
 				]
 			};
+		},
+		onLoad: function(options) {
+			uni.setNavigationBarTitle({
+				title: '业主版'
+			})
+			this.vc.onLoad(options);
+			autoLogin(options);
 		},
 		created() {
 			this._loadNotices();

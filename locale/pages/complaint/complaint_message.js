@@ -42,7 +42,17 @@ export default {
       evaluate: '评价',
       evaluateContent: '评价内容',
       reply: '回复',
-      replyContent: '回复内容'
+      replyContent: '回复内容',
+      cityDistrict: '市/区',
+      communityCode: '小区编码',
+      communityName: '小区名称',
+      ownerCode: '业主编码',
+      name: '姓名',
+      idCard: '身份证',
+      comprehensiveScore: '综合评分',
+      serviceEvaluation: '服务评价',
+      evaluationPlaceholder: '请您填写本次服务感受和评价，以便给大家提供更好的服务品质哦！',
+      submitEvaluation: '评价'
     }
   },
   'en': {
@@ -88,7 +98,17 @@ export default {
       evaluate: 'Rate',
       evaluateContent: 'Rating',
       reply: 'Reply',
-      replyContent: 'Reply'
+      replyContent: 'Reply',
+      cityDistrict: 'City/District',
+      communityCode: 'Community Code',
+      communityName: 'Community Name',
+      ownerCode: 'Owner Code',
+      name: 'Name',
+      idCard: 'ID Card',
+      comprehensiveScore: 'Overall Rating',
+      serviceEvaluation: 'Service Evaluation',
+      evaluationPlaceholder: 'Please share your experience to help us serve better!',
+      submitEvaluation: 'Evaluate'
     }
   }
 }

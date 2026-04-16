@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">工单详情</view>
+		<view class="block__title">{{ $t('repair.workOrderDetail') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">报修类型</text>
+					<text class="text-grey">{{ $t('repair.repairType') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.repairTypeName}}</text>
@@ -12,15 +12,15 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">处理时间标准</text>
+					<text class="text-grey">{{ $t('repair.processingTimeStandard') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{repairInfo.doTime}}小时</text>
+					<text class="text-grey text-sm">{{repairInfo.doTime}}{{ $t('repair.hours') }}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">报修人</text>
+					<text class="text-grey">{{ $t('repair.repairPerson') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.repairName}}({{repairInfo.tel}})</text>
@@ -28,7 +28,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">位置</text>
+					<text class="text-grey">{{ $t('repair.location') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.repairObjName}}</text>
@@ -36,7 +36,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">预约开始时间</text>
+					<text class="text-grey">{{ $t('repair.appointmentStartTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.appointmentTime}}</text>
@@ -44,7 +44,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">提单时间</text>
+					<text class="text-grey">{{ $t('repair.submitTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.createTime}}</text>
@@ -52,7 +52,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">提单时长</text>
+					<text class="text-grey">{{ $t('repair.submitDuration') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.submitHours || 0}}</text>
@@ -68,7 +68,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">状态</text>
+					<text class="text-grey">{{ $t('repair.status') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.stateName}}</text>
@@ -76,7 +76,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">报修内容</text>
+					<text class="text-grey">{{ $t('repair.repairContent') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.context}}</text>
@@ -84,7 +84,7 @@
 			</view>
 		</view>
 		<view class="cu-timeline margin-top">
-			<view class="cu-time">工单进度</view>
+			<view class="cu-time">{{ $t('repair.workOrderProgress') }}</view>
 			<view class="cu-item " v-for="(item,index) in staffs" :key="key">
 				<view class="bg-cyan content">
 					<text>{{item.startTime}} </text> 到达 {{item.staffName}} 工位

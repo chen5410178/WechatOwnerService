@@ -1,32 +1,32 @@
 <template>
 	<view>
 		<view v-if="owners.length>0">
-			<view class="block__title">成员信息</view>
+			<view class="block__title">{{ $t('family.memberInfo') }}</view>
 			<view v-for="(item,index) in owners" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
 					<view>{{item.name}}</view>
 					<view class="text-gray">{{item.link}}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">成员编号</view>
+					<view class="text-gray">{{ $t('family.memberId') }}</view>
 					<view class="text-gray">{{item.memberId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">身份证号</view>
+					<view class="text-gray">{{ $t('family.idCardNo') }}</view>
 					<view class="text-gray">{{item.idCard}}</view>
 				</view>
 
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">成员年龄</view>
-					<view class="text-gray">{{item.age}}岁</view>
+					<view class="text-gray">{{ $t('family.memberAge') }}</view>
+					<view class="text-gray">{{item.age}}{{ $t('family.age') }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">成员性别</view>
-					<view class="text-gray">{{item.sex == 0? '男': '女'}}</view>
+					<view class="text-gray">{{ $t('family.memberSex') }}</view>
+					<view class="text-gray">{{item.sex == 0 ? $t('family.male') : $t('family.female') }}</view>
 				</view>
 				
 				<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm">
-					<button  class="cu-btn sm bg-red " @click="_deleteOwnerMember(item)">删除</button>
+					<button  class="cu-btn sm bg-red " @click="_deleteOwnerMember(item)">{{ $t('family.delete') }}</button>
 				</view>
 			</view>
 		</view>
@@ -40,24 +40,24 @@
 
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-green shadow-blur lgplus sharp" @click="goAdd()">添加成员</button>
+				<button class="cu-btn bg-green shadow-blur lgplus sharp" @click="goAdd()">{{ $t('family.addMember') }}</button>
 			</view>
 		</view>
 		
 		<view class="cu-modal" :class="delOwnerMemberFlag==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">温馨提示</view>
+					<view class="content">{{ $t('family.prompt') }}</view>
 					<view class="action" @tap="_cancleDeleteOwnerMember()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					您确认删除该成员？
+					{{ $t('family.confirmDeleteMember') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteOwnerMember()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteOwnerMember()">确认</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteOwnerMember()">{{ $t('family.cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteOwnerMember()">{{ $t('family.confirm') }}</view>
 				</view>
 			</view>
 		</view>
@@ -152,7 +152,7 @@
 				.then((res)=>{
 					uni.showToast({
 						icon:'none',
-						title:'删除成功'
+						title: this.$t('family.deleteSuccess')
 					});
 					that._cancleDeleteOwnerMember();
 					that._initData();

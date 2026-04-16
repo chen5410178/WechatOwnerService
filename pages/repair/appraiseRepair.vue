@@ -2,30 +2,30 @@
 	<view>
 		<view class="content bg-white margin-top">
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">综合评分</view>
+				<view class="item-title padding-sm radius">{{ $t('repair.comprehensiveScore') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync1" @change="appraiseScoreChange" />
 				</view>
 			</view>
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">维修速度</view>
+				<view class="item-title padding-sm radius">{{ $t('repair.repairSpeed') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync2" @change="doorSpeedScoreChange" />
 				</view>
 			</view>
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">维修员服务</view>
+				<view class="item-title padding-sm radius">{{ $t('repair.repairmanService') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync3" @change="repairmanServiceScoreChange" />
 				</view>
 			</view>
 			<view class="cu-form-group padding align-start">
-				<view class="title padding-left-sm">服务评价</view>
-				<textarea maxlength="200" v-model="context" placeholder="请您填写本次服务感受和评价，以便给大家提供更好的服务品质哦！"></textarea>
+				<view class="title padding-left-sm">{{ $t('repair.serviceEvaluation') }}</view>
+				<textarea maxlength="200" v-model="context" :placeholder="$t('repair.evaluationPlaceholder')"></textarea>
 			</view>
 			
 			<view class="flex flex-direction margin">
-				<button class="cu-btn bg-green margin-tb-sm lg" @click="submitAppraiseRepair()">评价</button>
+				<button class="cu-btn bg-green margin-tb-sm lg" @click="submitAppraiseRepair()">{{ $t('repair.evaluate') }}</button>
 			</view>
 
 		</view>

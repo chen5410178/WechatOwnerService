@@ -7,35 +7,35 @@
 				</view>
 			</view>
 		</view>
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('complaint.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">市/区</view>
+			<view class="title">{{ $t('complaint.cityDistrict') }}</view>
 			{{areaName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">小区编码</view>
+			<view class="title">{{ $t('complaint.communityCode') }}</view>
 			{{communityId}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">小区名称</view>
+			<view class="title">{{ $t('complaint.communityName') }}</view>
 			{{communityName}}
 		</view>
-		<view class="block__title">投诉信息</view>
+		<view class="block__title">{{ $t('complaint.complaintInfo') }}</view>
 
 		<view class="cu-form-group">
-			<view class="title">业主编码</view>
+			<view class="title">{{ $t('complaint.ownerCode') }}</view>
 			{{appUserId}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">姓名</view>
+			<view class="title">{{ $t('complaint.name') }}</view>
 			{{appUserName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
+			<view class="title">{{ $t('complaint.idCard') }}</view>
 			{{idCard}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
+			<view class="title">{{ $t('complaint.phone') }}</view>
 			{{link}}
 		</view>
 		<view class="button_up_blank"></view>

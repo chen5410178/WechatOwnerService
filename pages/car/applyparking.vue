@@ -5,24 +5,24 @@
 			<input v-model="carNum" :placeholder="$t('pleaseInputCarNum')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">品牌</view>
-			<input v-model="carBrand" placeholder="选填,请输入品牌" style="text-align:right"></input>
+			<view class="title">{{ $t('car.brand') }}</view>
+			<input v-model="carBrand" :placeholder="$t('car.inputBrand')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">颜色</view>
-			<input v-model="carColor"  placeholder="选填,请输入颜色" style="text-align:right"></input>
+			<view class="title">{{ $t('car.color') }}</view>
+			<input v-model="carColor" :placeholder="$t('car.inputColor')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">车辆类型</view>
+			<view class="title">{{ $t('car.carType') }}</view>
 			<picker bindchange="PickerChange" :value="index" :range="carTypes" @change="chooseCarTypes">
 				<view class="picker">
-					{{carTypeName?carTypeName:'请选择'}}
+					{{carTypeName ? carTypeName : $t('car.pleaseSelect')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group align-start">
-			<view class="title">备注信息</view>
-			<textarea maxlength="-1" v-model="remark" placeholder="请输入备注信息"></textarea>
+			<view class="title">{{ $t('car.remarkInfo') }}</view>
+			<textarea maxlength="-1" v-model="remark" :placeholder="$t('car.inputRemarkInfo')"></textarea>
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
@@ -30,13 +30,13 @@
 		</view>
 		
 		<view class="flex flex-direction">
-			<button @click="_applyDetail()" class="cu-btn line-blue margin-tb-sm lg">查看进度</button>
+			<button @click="_applyDetail()" class="cu-btn line-blue margin-tb-sm lg">{{ $t('car.viewProgress') }}</button>
 		</view>
 		
 		<view class="temp-remark">
-			<view>车位申请说明</view>
-			<view>1、只有第一次租车位时，需要申请：</view>
-			<view>2、审核通过后，请到车辆月卡界面购买月卡续租：</view>
+			<view>{{ $t('car.parkingApplyNote') }}</view>
+			<view>1、{{ $t('car.parkingApplyNote1') }}</view>
+			<view>2、{{ $t('car.parkingApplyNote2') }}</view>
 		</view>
 	</view>
 </template>

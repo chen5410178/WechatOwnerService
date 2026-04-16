@@ -20,23 +20,23 @@
 						<view></view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">车牌号</view>
+						<view class="text-gray">{{ $t('car.carNumber') }}</view>
 						<view class="text-gray">{{item.carNum}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">车辆品牌</view>
+						<view class="text-gray">{{ $t('car.brand') }}</view>
 						<view class="text-gray">{{item.carBrand}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">申请时间</view>
+						<view class="text-gray">{{ $t('car.applyTime') }}</view>
 						<view class="text-gray">{{item.createTime}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">备注</view>
+						<view class="text-gray">{{ $t('car.remark') }}</view>
 						<view class="text-gray">{{item.remark}}</view>
 					</view>
 					<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm"  v-if="item.state == '3003'">
-						<button class="cu-btn sm bg-green margin-left" @click="_toBuyCarMonthCard(item)">去缴费</button>
+						<button class="cu-btn sm bg-green margin-left" @click="_toBuyCarMonthCard(item)">{{ $t('car.goToPay') }}</button>
 					</view>
 				</view>
 			</view>

@@ -18,7 +18,25 @@ export default {
       selectCarType: '选择车辆类型',
       privateCar: '私家车',
       commercialCar: '商用车',
-      noCar: '暂无车辆'
+       noCar: '暂无车辆',
+      carType: '车辆类型',
+      pleaseSelect: '请选择',
+      remarkInfo: '备注信息',
+      inputRemarkInfo: '请输入备注信息',
+      viewProgress: '查看进度',
+      parkingApplyNote: '车位申请说明',
+      parkingApplyNote1: '只有第一次租车位时，需要申请',
+      parkingApplyNote2: '审核通过后，请到车辆月卡界面购买月卡续租',
+      inputBrand: '选填,请输入品牌',
+      inputColor: '选填,请输入颜色',
+      noParkingSpace: '没有车位',
+      leaseTerm: '租期',
+      memberVehicles: '成员车辆',
+      addMemberCar: '添加成员车',
+      applyTime: '申请时间',
+      remark: '备注',
+      goToPay: '去缴费',
+      pleaseSelectDate: '请选择'
     }
   },
   'en': {
@@ -40,7 +58,25 @@ export default {
       selectCarType: 'Select Vehicle Type',
       privateCar: 'Private Car',
       commercialCar: 'Commercial Car',
-      noCar: 'No vehicles'
+      noCar: 'No vehicles',
+      carType: 'Vehicle Type',
+      pleaseSelect: 'Please select',
+      remarkInfo: 'Remark',
+      inputRemarkInfo: 'Please enter remark',
+      viewProgress: 'View Progress',
+      parkingApplyNote: 'Parking Application Note',
+      parkingApplyNote1: 'Only first time parking space application required',
+      parkingApplyNote2: 'After approval, please purchase monthly card in vehicle monthly card interface',
+      inputBrand: 'Optional, please enter brand',
+      inputColor: 'Optional, please enter color',
+      noParkingSpace: 'No parking space',
+      leaseTerm: 'Lease Term',
+      memberVehicles: 'Member Vehicles',
+      addMemberCar: 'Add Member Car',
+      applyTime: 'Apply Time',
+      remark: 'Remark',
+      goToPay: 'Go to Pay',
+      pleaseSelectDate: 'Please select'
     }
   }
 }

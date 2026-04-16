@@ -16,7 +16,7 @@
 			</view>
 		</view>
 		<view class=" mtc-hours-title">
-			<view>充电时长</view>
+			<view>{{ $t('machine.chargeDuration') }}</view>
 		</view>
 		<view class="flex justify-start mtc-machine-hours">
 			<view v-for="(item,index) in  hours" :key="index" class="hours-item">
@@ -32,11 +32,11 @@
 			<view class="cu-item arrow">
 				<view class="content padding-tb-sm">
 					<view>
-						<view class="text-cut" style="width:220px">使用充电劵抵扣</view>
+						<view class="text-cut" style="width:220px">{{ $t('machine.useCoupon') }}</view>
 					</view>
 				</view>
-				<view v-if="couponCount == 0">请选择</view>
-				<view v-else>{{couponCount+ '张' }}</view>
+				<view v-if="couponCount == 0">{{ $t('machine.pleaseSelect') }}</view>
+				<view v-else>{{couponCount+ $t('machine.coupon') }}</view>
 			</view>
 		</view>
 		<view class="margin-sm" v-show="login">

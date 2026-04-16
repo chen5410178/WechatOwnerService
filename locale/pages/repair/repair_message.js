@@ -26,7 +26,22 @@ export default {
       pleaseSelectTime: '请选择时间',
       appointmentTimeError: '预约时间错误',
       submitSuccess: '提交成功',
-      notConfigRepair: '未配置报修类型'
+      notConfigRepair: '未配置报修类型',
+      workOrderDetail: '工单详情',
+      processingTimeStandard: '处理时间标准',
+      hours: '小时',
+      appointmentStartTime: '预约开始时间',
+      submitTime: '提单时间',
+      submitDuration: '提单时长',
+      status: '状态',
+      repairContent: '报修内容',
+      workOrderProgress: '工单进度',
+      comprehensiveScore: '综合评分',
+      repairSpeed: '维修速度',
+      repairmanService: '维修员服务',
+      serviceEvaluation: '服务评价',
+      evaluationPlaceholder: '请您填写本次服务感受和评价，以便给大家提供更好的服务品质哦！',
+      evaluate: '评价'
     }
   },
   'en': {
@@ -56,7 +71,22 @@ export default {
       pleaseSelectTime: 'Please select time',
       appointmentTimeError: 'Appointment time error',
       submitSuccess: 'Submit success',
-      notConfigRepair: 'No repair type configured'
+      notConfigRepair: 'No repair type configured',
+      workOrderDetail: 'Work Order Detail',
+      processingTimeStandard: 'Processing Time Standard',
+      hours: 'Hours',
+      appointmentStartTime: 'Appointment Start Time',
+      submitTime: 'Submit Time',
+      submitDuration: 'Submit Duration',
+      status: 'Status',
+      repairContent: 'Repair Content',
+      workOrderProgress: 'Work Order Progress',
+      comprehensiveScore: 'Overall Rating',
+      repairSpeed: 'Repair Speed',
+      repairmanService: 'Repairman Service',
+      serviceEvaluation: 'Service Evaluation',
+      evaluationPlaceholder: 'Please share your experience to help us serve better!',
+      evaluate: 'Evaluate'
     }
   }
 }

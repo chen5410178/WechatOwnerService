@@ -1,42 +1,42 @@
 <template>
 	<view>
 		<view>
-			<view class="block__title">充电桩</view>
+			<view class="block__title">{{ $t('machine.chargePile') }}</view>
 			<view class="cu-form-group">
-				<view class="title">名称</view>
+				<view class="title">{{ $t('machine.name') }}</view>
 				{{machine.machineName}}
 			</view>
 			<view class="cu-form-group">
-				<view class="title">设备编号</view>
+				<view class="title">{{ $t('machine.deviceNo') }}</view>
 				{{machine.machineCode}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">厂家</view>
+				<view class="title">{{ $t('machine.factory') }}</view>
 				{{machine.factoryName}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">充电规则</view>
+				<view class="title">{{ $t('machine.chargeRule') }}</view>
 				{{machine.ruleName}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">充电类型</view>
+				<view class="title">{{ $t('machine.chargeType') }}</view>
 				{{machine.chargeTypeName}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">状态</view>
+				<view class="title">{{ $t('machine.status') }}</view>
 				{{machine.stateName}}
 			</view>
 			<view class="cu-form-group" v-if="machine.monitorId && machine.monitorId != '-1'">
-				<view class="title">监控</view>
-				<view><button @click="_toPlayChargeVideo()" class="cu-btn  line-blue round q-input">观看</button></view>
+				<view class="title">{{ $t('machine.monitor') }}</view>
+				<view><button @click="_toPlayChargeVideo()" class="cu-btn  line-blue round q-input">{{ $t('machine.watch') }}</button></view>
 			</view>
 			<scroll-view scroll-x class="bg-white nav margin-top">
 				<view class="flex text-center">
 					<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-						插座
+						{{ $t('machine.socket') }}
 					</view>
 					<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-						订单
+						{{ $t('machine.order') }}
 					</view>
 				</view>
 			</scroll-view>
@@ -53,39 +53,39 @@
 					</view>
 					<view class="apply-content flex justify-start flex-wrap">
 						<view class="item">
-							<text>充电桩:</text>
+							<text>{{ $t('machine.chargePile') }}:</text>
 							<text>{{item.machineName}}>{{item.machineCode}}</text>
 						</view>
 						<view class="item">
-							<text>插座:</text>
+							<text>{{ $t('machine.socket') }}:</text>
 							<text>{{item.portCode}}</text>
 						</view>
 						<view class="item">
-							<text>充电小时:</text>
+							<text>{{ $t('machine.chargeHours') }}:</text>
 							<text>{{item.chargeHours}}</text>
 						</view>
 						<view class="item">
-							<text>小时电价:</text>
+							<text>{{ $t('machine.hourlyPrice') }}:</text>
 							<text>{{item.durationPrice}}</text>
 						</view>
 						<view class="item">
-							<text>充电量:</text>
+							<text>{{ $t('machine.energy') }}:</text>
 							<text>{{item.energy}}</text>
 						</view>
 						<view class="item">
-							<text>扣款金额:</text>
+							<text>{{ $t('machine.deductAmount') }}:</text>
 							<text>{{item.amount}}</text>
 						</view>
 						<view class="item">
-							<text>开始时间:</text>
+							<text>{{ $t('machine.startTime') }}:</text>
 							<text>{{item.startTime}}</text>
 						</view>
 						<view class="item">
-							<text>结束时间:</text>
+							<text>{{ $t('machine.endTime') }}:</text>
 							<text>{{item.endTime}}</text>
 						</view>
 						<view class="item">
-							<text>状态:</text>
+							<text>{{ $t('machine.status') }}:</text>
 							<text>{{item.stateName}}</text>
 						</view>
 						<view class="item">

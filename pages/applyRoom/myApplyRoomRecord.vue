@@ -10,7 +10,7 @@
 						</view>
 						<view class="text-gray text-sm flex">
 							<view class="text-cut">
-								操作人员：{{item.createUserName}}
+								{{ $t('applyRoom.operator') }}：{{item.createUserName}}
 							</view>
 						</view>
 					</view>
@@ -41,10 +41,10 @@
 				applyRoomRecordList: [],
 				page: 1,
 				loadingStatus : 'loading',
-				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+			loadingContentText: {
+					contentdown: this.$t('applyRoom.pullUpLoadMore'),
+					contentrefresh: this.$t('applyRoom.loading'),
+					contentnomore: this.$t('applyRoom.noMore')
 				}
 			}
 		},

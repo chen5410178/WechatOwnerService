@@ -12,18 +12,18 @@
 			<view class="cu-form-group">
 				<view class="title">{{ $t('parkingSpace') || '车位' }}</view>
 				<view v-if="areaNum">{{areaNum}}-{{num}}</view>
-				<view v-else>没有车位</view>
+				<view v-else>{{ $t('car.noParkingSpace') }}</view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">租期</view>
+				<view class="title">{{ $t('car.leaseTerm') }}</view>
 				<view>
 					<view>{{startTime}}</view>
 					<view>~{{endTime}}</view>
 				</view>
 			</view>
 			<view class="block__title flex justify-between">
-				<view>成员车辆</view>
-				<button class="cu-btn line-blue round margin-left" @tap="_openAddMemberCar()">添加成员车</button>
+				<view>{{ $t('car.memberVehicles') }}</view>
+				<button class="cu-btn line-blue round margin-left" @tap="_openAddMemberCar()">{{ $t('car.addMemberCar') }}</button>
 			</view>
 			<view v-if="memberCars && memberCars.length>0">
 				<view v-for="(item,index) in memberCars" :key="index"
@@ -33,17 +33,17 @@
 						<view class="text-gray">{{item.createTime}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">品牌</view>
+						<view class="text-gray">{{ $t('car.brand') }}</view>
 						<view class="text-gray">{{item.carBrand}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">颜色</view>
+						<view class="text-gray">{{ $t('car.color') }}</view>
 						<view class="text-gray">{{item.carColor}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
 						<view class="text-gray"></view>
 						<view class="text-gray">
-							<button class="cu-btn line-red round sm" @tap="_doDeleteMemberCar(item)">删除</button>
+							<button class="cu-btn line-red round sm" @tap="_doDeleteMemberCar(item)">{{ $t('car.delete') }}</button>
 						</view>
 					</view>
 				</view>

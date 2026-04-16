@@ -3,10 +3,10 @@
 		<scroll-view scroll-x class="bg-white nav ">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-blue cur':''" @tap="tabSelect(0)">
-					充电桩
+					{{ $t('machine.chargePile') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-blue cur':''" @tap="tabSelect(1)">
-					订单
+					{{ $t('machine.order') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -32,19 +32,19 @@
 				</view>
 				<view class="apply-content flex justify-start flex-wrap">
 					<view class="item">
-						<text>充电桩:</text>
+						<text>{{ $t('machine.chargePile') }}:</text>
 						<text>{{item.machineName}}>{{item.machineCode}}</text>
 					</view>
 					<view class="item">
-						<text>插座:</text>
+						<text>{{ $t('machine.socket') }}:</text>
 						<text>{{item.portCode}}</text>
 					</view>
 					<view class="item">
-						<text>充电小时:</text>
+						<text>{{ $t('machine.chargeHours') }}:</text>
 						<text>{{item.chargeHours}}</text>
 					</view>
 					<view class="item">
-						<text>小时电价:</text>
+						<text>{{ $t('machine.hourlyPrice') }}:</text>
 						<text>{{item.durationPrice}}</text>
 					</view>
 					<view class="item">

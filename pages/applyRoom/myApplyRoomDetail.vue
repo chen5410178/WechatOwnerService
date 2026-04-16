@@ -1,34 +1,34 @@
 <template>
 	<view>
 		<view class="cu-form-group" @click="showRecord()">
-			<view class="title">跟踪记录</view>
-			点击查看>
+			<view class="title">{{ $t('applyRoom.trackRecord') }}</view>
+			{{ $t('applyRoom.clickToView') }}>
 		</view>
-		<view class="block__title">用户信息</view>
+		<view class="block__title">{{ $t('applyRoom.userInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">名称</view>
+			<view class="title">{{ $t('applyRoom.name') }}</view>
 			{{applyDetail.createUserName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">联系方式</view>
+			<view class="title">{{ $t('applyRoom.contact') }}</view>
 			{{applyDetail.createUserTel}}
 		</view>
 	
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('applyRoom.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">房屋号</view>
+			<view class="title">{{ $t('applyRoom.roomNo') }}</view>
 			{{applyDetail.roomName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">开始时间</view>
+			<view class="title">{{ $t('applyRoom.startTime') }}</view>
 			{{applyDetail.startTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">结束时间</view>
+			<view class="title">{{ $t('applyRoom.endTime') }}</view>
 			{{applyDetail.endTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">当前进度</view>
+			<view class="title">{{ $t('applyRoom.currentProgress') }}</view>
 			{{applyDetail.stateName}}
 		</view>
 		<uploadImageAsync v-if="applyDetail.urls.length > 0" ref="vcUploadRef" :maxPhotoNum="maxPhotoNum" :sendImgList="sendImgList" :canEdit="canEdit" :title="imgTitle"></uploadImageAsync>
@@ -50,7 +50,7 @@
 				maxPhotoNum: 4,
 				sendImgList: [],
 				canEdit: false,
-				imgTitle: '图片材料'
+				imgTitle: this.$t('applyRoom.imageMaterial')
 			};
 		},
 

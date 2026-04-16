@@ -29,7 +29,23 @@ export default {
       pleaseInputOwner: '请输入业主信息',
       idCardError: '身份证格式错误',
       memberAdded: '成员添加成功',
-      memberUpdated: '成员更新成功'
+      memberUpdated: '成员更新成功',
+      memberInfo: '成员信息',
+      memberId: '成员编号',
+      idCardNo: '身份证号',
+      memberAge: '成员年龄',
+      age: '岁',
+      memberSex: '成员性别',
+      delete: '删除',
+      addMember: '添加成员',
+      prompt: '温馨提示',
+      confirmDeleteMember: '您确认删除该成员？',
+      cancel: '取消',
+      confirm: '确认',
+      selectFloor: '选择楼栋',
+      selectUnit: '选择单元',
+      pleaseSelect: '请选择',
+      deleteSuccess: '删除成功'
     }
   },
   'en': {
@@ -62,7 +78,23 @@ export default {
       pleaseInputOwner: 'Please enter owner info',
       idCardError: 'Invalid ID card format',
       memberAdded: 'Member added successfully',
-      memberUpdated: 'Member updated successfully'
+      memberUpdated: 'Member updated successfully',
+      memberInfo: 'Member Info',
+      memberId: 'Member ID',
+      idCardNo: 'ID Card Number',
+      memberAge: 'Age',
+      age: 'Years',
+      memberSex: 'Gender',
+      delete: 'Delete',
+      addMember: 'Add Member',
+      prompt: 'Prompt',
+      confirmDeleteMember: 'Are you sure to delete this member?',
+      cancel: 'Cancel',
+      confirm: 'Confirm',
+      selectFloor: 'Select Floor',
+      selectUnit: 'Select Unit',
+      pleaseSelect: 'Please select',
+      deleteSuccess: 'Deleted successfully'
     }
   }
 }

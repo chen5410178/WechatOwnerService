@@ -15,36 +15,36 @@
 			<view v-for="(item,index) in orders"  :key="index"
 				class="bg-white margin-top margin-right-xs radius margin-left-xs ">
 				<view class="flex padding solid-bottom justify-between">
-					<view style="font-size: 14px;">单号<span style="margin-left: 10px;"
+					<view style="font-size: 14px;">{{ $t('orderNo') }}</view><span style="margin-left: 10px;"
 							class="text-gray">{{item.irId}}</span></view>
 				</view>
 				<view class="flex padding-left padding-right margin-top padding-bottom-sm justify-between">
-					<view class="text-gray">放行类型</view>
+					<view class="text-gray">{{ $t('releaseType') }}</view>
 					<view class="text-gray">{{item.typeName}}</view>
 				</view>
 				<view class="flex padding-left padding-right padding-bottom-sm justify-between">
-					<view class="text-gray">申请单位</view>
+					<view class="text-gray">{{ $t('applyCompany') }}</view>
 					<view class="text-gray">{{item.applyCompany}}</view>
 				</view>
 				<view class="flex padding-left padding-right padding-bottom-sm justify-between">
-					<view class="text-gray">申请人</view>
+					<view class="text-gray">{{ $t('applicant') }}</view>
 					<view class="text-gray">{{item.applyPerson}}({{item.applyTel}})</view>
 				</view>
 				<view class="flex padding-left padding-right padding-bottom-sm justify-between">
-					<view class="text-gray">通行时间</view>
+					<view class="text-gray">{{ $t('passTime') }}</view>
 					<view class="text-gray">{{item.passTime}}</view>
 				</view>
 				<view class="flex padding-left padding-right padding-bottom-sm justify-between">
-					<view class="text-gray">物品数量</view>
+					<view class="text-gray">{{ $t('itemCount') }}</view>
 					<view class="text-gray">{{item.amount }}</view>
 				</view>
 				<view class="flex padding-left padding-right padding-bottom-sm justify-between">
-					<view class="text-gray">状态</view>
+					<view class="text-gray">{{ $t('keyStatus') }}</view>
 					<view class="text-gray">{{item.stateName}}</view>
 				</view>
 
 				<view class="solid-top flex justify-end margin-top padding-top-sm ">
-					<button class="cu-btn bg-gradual-blue margin-left" @click="_toDetail(item)">详情</button>
+					<button class="cu-btn bg-gradual-blue margin-left" @click="_toDetail(item)">{{ $t('detail') }}</button>
 				</view>
 				<view
 					style="margin-bottom:-13px;margin-top: 10px;margin-left: -20px;margin-right: -20px; height: 10px;background-color: #f2f2f2;">
@@ -54,7 +54,7 @@
 			<view class="cu-item margin-top" v-if="orders.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">暂无记录</text>
+					<text class="text-grey">{{ $t('noRecords') }}</text>
 				</view>
 				<view class="action">
 
@@ -81,23 +81,7 @@
 				moreRooms: [],
 				noData: false,
 				owner: [],
-				// W待审核 D 审核中 C 审核完成 D 审核失败
-				parkingType: [{
-					"name": '全部',
-					"state": ''
-				}, {
-					"name": '待审核',
-					"state": 'W'
-				},{
-					"name": '审核中',
-					"state": 'D'
-				}, {
-					"name": '审核完成',
-					"state": 'C'
-				}, {
-					"name": '审核失败',
-					"state": 'F'
-				}],
+				parkingType: [],
 				curStata: '',
 			};
 		},
@@ -106,7 +90,24 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad: function(options) {
+			let _that = this;
 			context.onLoad(options);
+			this.parkingType = [{
+					"name": _that.$t('all'),
+					"state": ''
+				}, {
+					"name": _that.$t('waitReview'),
+					"state": 'W'
+				},{
+					"name": _that.$t('reviewing'),
+					"state": 'D'
+				}, {
+					"name": _that.$t('reviewCompleted'),
+					"state": 'C'
+				}, {
+					"name": _that.$t('reviewFailed'),
+					"state": 'F'
+				}];
 			this._loadReserveOrder();
 		},
 		methods: {

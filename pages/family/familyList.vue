@@ -125,8 +125,8 @@
 						}
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						})

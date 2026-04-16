@@ -18,7 +18,7 @@
 			<view class="cu-item" v-if="applyList.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">暂无申请信息</text>
+					<text class="text-grey">{{ $t('noApplyInfo') }}</text>
 				</view>
 				<view class="action">
 	
@@ -46,9 +46,9 @@
 				page: 1,
 				loadingStatus : 'loading',
 				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+					contentdown: '',
+					contentrefresh: '',
+					contentnomore: ''
 				}
 			};
 		},

@@ -2,7 +2,7 @@
 	<view class="login-container margin-top-sm">
 		<!-- 确保方法名一致 -->
 		<button open-type="getPhoneNumber" @getphonenumber="_getPhoneNumber" class="login-btn">
-			手机号快捷登录
+			{{ $t('wechatLogin') }}
 		</button>
 	</view>
 </template>
@@ -37,12 +37,13 @@
 							let accountInfo = uni.getAccountInfoSync();
 							_that.appId = accountInfo.miniProgram.appId;
 						} else {
-							console.error('获取登录code失败:', res);
+							console.error(_that.$t('loginFailed') + ':', res);
 						}
 					}
 				});
 			},
 			_getPhoneNumber(e) {
+				let _that = this;
 				if (e.detail.errMsg === "getPhoneNumber:ok") {
 					// 获取到加密数据
 					const {
@@ -55,12 +56,13 @@
 					this._loginByPhoneNumber();
 				} else {
 					uni.showToast({
-						title: '获取手机号失败',
+						title: _that.$t('getPhoneFailed'),
 						icon: 'none'
 					});
 				}
 			},
 			_loginByPhoneNumber() {
+				let _that = this;
 				wechatLogin({
 						encryptedData: this.encryptedData,
 						iv: this.iv,

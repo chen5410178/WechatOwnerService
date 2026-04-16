@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">房屋信息</view>
+			<view class="block__title">{{ $t('houseInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">小区名称</text>
+						<text class="text-grey">{{ $t('communityName') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{communityName}}</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">房屋</text>
+						<text class="text-grey">{{ $t('room') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{payerObjName}}</text>
@@ -21,38 +21,38 @@
 				</view>
 				<view class="cu-item" v-if="buildUpArea">
 					<view class="content">
-						<text class="text-grey">建筑面积</text>
+						<text class="text-grey">{{ $t('builtUpArea') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{buildUpArea + '平方米'}}</text>
+						<text class="text-grey text-sm">{{buildUpArea + $t('sqm')}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">费用信息</view>
+			<view class="block__title">{{ $t('feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item arrow" v-if="feeTypes && feeTypes.length > 0">
 					<view class="content">
-						<text class="text-grey">费用类型</text>
+						<text class="text-grey">{{ $t('feeType') }}</text>
 					</view>
 					<view class="action">
 						<picker :value="selectedFeeTypeIndex" :range="feeTypeNames" @change="onFeeTypeChange">
 							<view class="picker">
-								{{selectedFeeTypeName || '请选择费用类型'}}
+								{{selectedFeeTypeName || $t('selectFeeType')}}
 							</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedFeeType">
 					<view class="content">
-						<text class="text-grey">充值金额</text>
+						<text class="text-grey">{{ $t('rechargeAmount') }}</text>
 					</view>
 					<view class="action">
-						<input v-model="amount" placeholder="请输入充值金额" type="digit" class="text-right" @input="onAmountInput"></input>
+						<input v-model="amount" :placeholder="$t('inputRechargeAmount')" type="digit" class="text-right" @input="onAmountInput"></input>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedFeeType && amount">
 					<view class="content">
-						<text class="text-grey">金额</text>
+						<text class="text-grey">{{ $t('amount') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-red text-lg">￥{{amount}}</text>
@@ -62,10 +62,10 @@
 		</scroll-view>
 		<view class="bg-white border flex justify-end" style="position: fixed;width: 100%;bottom: 0;" v-if="selectedFeeType && amount">
 			<view class="action text-orange margin-right line-height">
-				合计：{{amount}}元
+				{{ $t('total') }}：{{amount}}{{ $t('yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">缴费</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('payNow') }}</button>
 			</view>
 		</view>
 	</view>
@@ -139,7 +139,7 @@
 				if (!this.roomId) {
 					uni.showToast({
 						icon: 'none',
-						title: '房屋ID不能为空'
+						title: this.$t('roomIdRequired')
 					});
 					return;
 				}
@@ -171,14 +171,14 @@
 				if (!this.communityId) {
 					uni.showToast({
 						icon: 'none',
-						title: '小区ID不能为空'
+						title: this.$t('communityIdRequired')
 					});
 					return;
 				}
 				
 				let _that = this;
 				uni.showLoading({
-					title: '加载中...'
+					title: this.$t('loading')
 				});
 				
 				queryPhoneMeterPayFeeRule({
@@ -199,7 +199,7 @@
 						} else {
 							uni.showToast({
 								icon: 'none',
-								title: '暂无费用类型'
+								title: this.$t('noFeeType')
 							});
 						}
 					}
@@ -207,7 +207,7 @@
 					uni.hideLoading();
 					uni.showToast({
 						icon: 'none',
-						title: error || '加载失败'
+						title: error || this.$t('loadFailed')
 					});
 				});
 			},

@@ -115,22 +115,21 @@
 						header: context.getHeaders(),
 						method: "POST",
 						data: obj,
-						//动态数据
 						success: function(res) {
 							console.log(res);
 							if (res.statusCode != 200) {
-								wx.showToast({
-									title: '人脸上传失败',
+								uni.showToast({
+									title: this.$t('faceUploadFailed'),
 									icon: 'none',
 									duration: 2000
 								});
 								return;
-							} //成功情况下跳转
+							}
 							_that.loadOwnerFace();
 						},
 						fail: function(e) {
-							wx.showToast({
-								title: "服务器异常了",
+							uni.showToast({
+								title: this.$t('serverError'),
 								icon: 'none',
 								duration: 2000
 							});

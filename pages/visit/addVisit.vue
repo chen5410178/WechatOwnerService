@@ -4,10 +4,10 @@
 		<view class="padding-left-xl padding-right-xl margin-top">
 			<canvas style="width: 520upx;height: 520upx;  margin: 0 auto;" canvas-id="openDoorQrcode"></canvas>
 		</view>
-		<view class="text-center">请手机截图后，分享访客</view>
+		<view class="text-center">{{ $t('shareQrcodeTip') }}</view>
 
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @tap="_closeModal()">关闭</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @tap="_closeModal()">{{ $t('close') }}</button>
 		</view>
 	</view>
 </template>

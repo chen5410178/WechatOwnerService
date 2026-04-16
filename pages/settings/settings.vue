@@ -5,7 +5,7 @@
 				<view class="cu-item arrow" @click="settingHeadImg()">
 					<view class="content">
 						<text class="cuIcon-emojiflashfill text-pink"></text>
-						<text class="text-grey">我的头像</text>
+						<text class="text-grey">{{ $t('settings.myAvatar') }}</text>
 					</view>
 					<view class="action">
 						<view class="cu-avatar round " :style="{backgroundImage: 'url(' + headerImg + ')'}"></view>
@@ -14,7 +14,7 @@
 				<view class="cu-item arrow" @click="_toPage('/pages/settings/changeOwnerPhone')">
 					<view class="content">
 						<text class="cuIcon-mobilefill text-cyan"></text>
-						<text class="text-grey">手机号</text>
+						<text class="text-grey">{{ $t('settings.phone') }}</text>
 					</view>
 					<view class="action">
 
@@ -23,7 +23,7 @@
 				<view class="cu-item arrow" @click="_toPage('/pages/settings/changePassword')">
 					<view class="content">
 						<text class="cuIcon-warnfill text-cyan"></text>
-						<text class="text-grey">密码</text>
+						<text class="text-grey">{{ $t('settings.password') }}</text>
 					</view>
 					<view class="action">
 
@@ -31,10 +31,19 @@
 				</view>
 			</view>
 			<view class="cu-list menu">
+				<view class="cu-item arrow" @click="switchLanguage">
+					<view class="content">
+						<text class="cuIcon-global text-cyan"></text>
+						<text class="text-grey">{{ $t('settings.language') }}</text>
+					</view>
+					<view class="action">
+						<text class="text-grey text-sm">{{ currentLanguageName }}</text>
+					</view>
+				</view>
 				<view class="cu-item arrow" @click="_toPage('/pages/my/viewAdmin')">
 					<view class="content">
 						<text class="cuIcon-questionfill text-cyan"></text>
-						<text class="text-grey">技术支持</text>
+						<text class="text-grey">{{ $t('settings.support') }}</text>
 					</view>
 					<view class="action">
 
@@ -43,7 +52,7 @@
 				<view class="cu-item">
 					<view class="content">
 						<text class="cuIcon-warn text-green"></text>
-						<text class="text-grey">版本号</text>
+						<text class="text-grey">{{ $t('settings.version') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">V2.0</text>
@@ -83,6 +92,11 @@
 				login: true
 			}
 		},
+		computed: {
+			currentLanguageName() {
+				return this.$i18n.locale === 'zh-CN' ? '中文' : 'English'
+			}
+		},
 		/**
 		 * 生命周期函数--监听页面加载
 		 */
@@ -99,14 +113,13 @@
 		methods: {
 			settingHeadImg: function() {
 				var _that = this;
-				wx.chooseImage({
+				uni.chooseImage({
 					count: 1,
 					sizeType: ['compressed'],
 					sourceType: ['album', 'camera'],
 					success: function(res) {
-						// console.log(res)
-						wx.showToast({
-							title: '正在上传',
+						uni.showToast({
+							title: this.$t('uploading'),
 							icon: 'loading',
 							mask: true,
 							duration: 1000
@@ -116,7 +129,7 @@
 						TanslateImage.translate(_that,tempFilePaths[0], (_baseInfo) => {
 							_that.headerImg = _baseInfo;
 							_that._uploadOwnerHeaderImg();
-							wx.hideLoading()
+							uni.hideLoading()
 						})
 					}
 				})
@@ -153,12 +166,12 @@
 						url: constant.url.uploadOwnerPhoto,
 						header: context.getHeaders(),
 						method: "POST",
-						data: obj, //动态数据
+						data: obj,
 						success: function(res) {
 							console.log(res);
 							if (res.statusCode != 200) {
-								wx.showToast({
-									title: '头像上传失败',
+								uni.showToast({
+									title: this.$t('uploadAvatarFailed'),
 									icon: 'none',
 									duration: 2000
 								});
@@ -168,8 +181,8 @@
 							_that.loadOwnerHeaderImg();
 						},
 						fail: function(e) {
-							wx.showToast({
-								title: "服务器异常了",
+							uni.showToast({
+								title: this.$t('serverError'),
 								icon: 'none',
 								duration: 2000
 							});
@@ -190,9 +203,18 @@
 					url: _url
 				});
 			},
+			switchLanguage: function() {
+				const newLang = this.$i18n.locale === 'zh-CN' ? 'en' : 'zh-CN';
+				this.$i18n.locale = newLang;
+				uni.setStorageSync('language', newLang);
+				uni.showToast({
+					title: this.$t('settings.switchSuccess'),
+					icon: 'success'
+				});
+			},
 			_doLogoutUser: function() {
 				let _data = {
-					token: wx.getStorageSync('token')
+					token: uni.getStorageSync('token')
 				}
 				let that = this;
 				context.request({

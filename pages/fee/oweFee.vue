@@ -81,10 +81,10 @@
 		<view v-if="batchFees.length > 0" class="bg-white  border flex justify-end"
 			style="position: fixed;width: 100%;bottom: 0;">
 			<view class="action text-orange margin-right line-height">
-				合计：{{receivableAmount}}元
+				{{ $t('fee_total') }}：{{receivableAmount}}{{ $t('yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">缴费</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('fee_pay') }}</button>
 			</view>
 		</view>
 	</view>
@@ -179,7 +179,7 @@
 					}, function(error) {
 						uni.showToast({
 							icon: 'none',
-							title: '没有应缴费用'
+							title: _that.$t('noOweFee')
 						})
 					});
 			},
@@ -303,7 +303,7 @@
 				if (_payFees.length < 1) {
 					uni.showToast({
 						icon: 'none',
-						title: '未选择费用'
+						title: _that.$t('noFeeSelected')
 					});
 					return;
 				}

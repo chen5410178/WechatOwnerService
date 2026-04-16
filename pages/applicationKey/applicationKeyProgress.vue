@@ -10,7 +10,7 @@
 							<view class="text-cut" style="width:85%;">{{item.locationObjName}}</view>
 						</view>
 						<view class="text-gray text-sm">
-							<text class="margin-right-xs">审核进度：</text> {{item.stateName}}</view>
+							<text class="margin-right-xs">{{ $t('reviewProgress') }}：</text> {{item.stateName}}</view>
 					</view>
 				</view>
 			</view>
@@ -18,7 +18,7 @@
 				<view class="cu-item">
 					<view class="content">
 						<text class="cuIcon-notification text-grey"></text>
-						<text class="text-grey">暂无审核信息</text>
+						<text class="text-grey">{{ $t('noReviewInfo') }}</text>
 					</view>
 					<view class="action">
 					</view>
@@ -102,7 +102,7 @@
 			},
 			gotoDetail: function(_item) {
 				let _applicationKey = _item;
-				wx.navigateTo({
+				uni.navigateTo({
 					url: '/pages/applicationKey/viewApplicationKeyUser?applicationKeyId=' + _applicationKey.applicationKeyId +
 						"&communityId=" + this.communityId
 				});

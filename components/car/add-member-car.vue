@@ -4,21 +4,21 @@
 			<view class="cu-dialog">
 				<scroll-view scroll-y style="height: 300upx; ">
 					<view class="cu-form-group">
-						<view class="title">车牌号</view>
-						<input v-model="carNum" placeholder="请输入车牌号" style="text-align:right"></input>
+						<view class="title">{{ $t('carNum') }}</view>
+						<input v-model="carNum" :placeholder="$t('pleaseInputCarNum')" style="text-align:right"></input>
 					</view>
 					<view class="cu-form-group">
-						<view class="title">车品牌</view>
-						<input v-model="carBrand" placeholder="请输入车品牌" style="text-align:right"></input>
+						<view class="title">{{ $t('carBrand') }}</view>
+						<input v-model="carBrand" :placeholder="$t('enterCarNum')" style="text-align:right"></input>
 					</view>
 					<view class="cu-form-group">
-						<view class="title">颜色</view>
-						<input v-model="carColor" placeholder="请输入颜色" style="text-align:right"></input>
+						<view class="title">{{ $t('carColor') }}</view>
+						<input v-model="carColor" :placeholder="$t('enterCarNum')" style="text-align:right"></input>
 					</view>
 				</scroll-view>
 				<view class="btn-box padding">
-					<button class=" btn bg-blue" @click="_doSaveMemberCarNum()">提交</button>
-					<button class="line-red margin-top" @click="cancel()">取消</button>
+					<button class=" btn bg-blue" @click="_doSaveMemberCarNum()">{{ $t('submit') }}</button>
+					<button class="line-red margin-top" @click="cancel()">{{ $t('cancel') }}</button>
 				</view>
 			</view>
 		</view>

@@ -1,0 +1,62 @@
+export default {
+  'zh-CN': {
+    repair: {
+      repair: '报事报修',
+      houseInfo: '房屋信息',
+      location: '位置',
+      pleaseSelect: '请选择',
+      repairInfo: '报修信息',
+      repairType: '报修类型',
+      chargeStandard: '收费标准',
+      repairPerson: '报修人',
+      pleaseInputRepairPerson: '请输入报修人',
+      phone: '电话',
+      pleaseInputPhone: '请输入电话',
+      appointmentDate: '预约日期',
+      appointmentTime: '预约时间',
+      pleaseInputContent: '请输入报修内容',
+      relatedImages: '相关图片',
+      submit: '提交',
+      floorUnit: '栋',
+      unit: '单元',
+      room: '室',
+      pleaseSelectRepairType: '请选择报修类型',
+      nameTooLong: '姓名过长',
+      pleaseSelectDate: '请选择日期',
+      pleaseSelectTime: '请选择时间',
+      appointmentTimeError: '预约时间错误',
+      submitSuccess: '提交成功',
+      notConfigRepair: '未配置报修类型'
+    }
+  },
+  'en': {
+    repair: {
+      repair: 'Repair',
+      houseInfo: 'House Info',
+      location: 'Location',
+      pleaseSelect: 'Please select',
+      repairInfo: 'Repair Info',
+      repairType: 'Repair Type',
+      chargeStandard: 'Charge Standard',
+      repairPerson: 'Repair Person',
+      pleaseInputRepairPerson: 'Please enter repair person',
+      phone: 'Phone',
+      pleaseInputPhone: 'Please enter phone',
+      appointmentDate: 'Appointment Date',
+      appointmentTime: 'Appointment Time',
+      pleaseInputContent: 'Please enter content',
+      relatedImages: 'Related Images',
+      submit: 'Submit',
+      floorUnit: 'Building',
+      unit: 'Unit',
+      room: 'Room',
+      pleaseSelectRepairType: 'Please select repair type',
+      nameTooLong: 'Name too long',
+      pleaseSelectDate: 'Please select date',
+      pleaseSelectTime: 'Please select time',
+      appointmentTimeError: 'Appointment time error',
+      submitSuccess: 'Submit success',
+      notConfigRepair: 'No repair type configured'
+    }
+  }
+}

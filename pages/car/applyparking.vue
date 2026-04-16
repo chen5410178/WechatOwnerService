@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<view class="cu-form-group">
-			<view class="title">车牌号</view>
-			<input v-model="carNum" placeholder="必填,请输入车牌号" style="text-align:right"></input>
+			<view class="title">{{ $t('carNum') || '车牌号' }}</view>
+			<input v-model="carNum" :placeholder="$t('pleaseInputCarNum')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">品牌</view>
@@ -26,7 +26,7 @@
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
-			<button @click="submitApply()" class="cu-btn bg-blue margin-tb-sm lg">提交</button>
+			<button @click="submitApply()" class="cu-btn bg-blue margin-tb-sm lg">{{ $t('submit') || '提交' }}</button>
 		</view>
 		
 		<view class="flex flex-direction">
@@ -110,8 +110,8 @@
 						})
 					},
 					fail(res) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -153,12 +153,12 @@
 				let msg = "";
 				
 				if (obj.carNum == "") {
-					msg = "请填写车牌号";
+					msg = this.$t('fillCarNumber');
 				} else if(obj.carType == ""){
-					msg = "请选择车辆类型";
+					msg = this.$t('selectCarType');
 				}
 				if(msg != ""){
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -173,20 +173,20 @@
 					success: function(res) {
 						let _json = res.data;
 						if (_json.code == 0) {
-							wx.redirectTo({
+							uni.redirectTo({
 								url: '/pages/car/parkingInfo',
 							});
 							return;
 						}
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});

@@ -102,7 +102,7 @@
 				uni.setStorageSync("_selectCommunity",_community);
 				prevPage.communityName = _community.name;
 				//console.log(e);
-				wx.navigateBack({
+				uni.navigateBack({
 					delta: 1
 				});
 			},

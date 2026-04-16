@@ -2,32 +2,32 @@
 	<view>
 		<view class="content_box">
 			<view class="cu-form-group">
-				<view class="title">收货人</view>
-				<input v-model="username" placeholder="请输入收货人" class="text-right"></input>
+				<view class="title">{{ $t('addressName') }}</view>
+				<input v-model="username" :placeholder="$t('pleaseInputName')" class="text-right"></input>
 			</view>
 
 			<view class="cu-form-group">
-				<view class="title">手机号</view>
-				<input v-model="tel" placeholder="请输入手机号" type="number" class="text-right"></input>
+				<view class="title">{{ $t('addressPhone') }}</view>
+				<input v-model="tel" :placeholder="$t('pleaseInputPhone')" type="number" class="text-right"></input>
 			</view>
 			<view class="cu-form-group arrow">
-				<view class="title">市/区</view>
+				<view class="title">{{ $t('cityDistrict') || '市/区' }}</view>
 				<pickerAddress @change="change" class="text-right" style="width:80%">{{areaName}}</pickerAddress>
 				<text class='cuIcon-right'></text>
 			</view>
 			<view class="cu-form-group margin-top">
-				<textarea v-model="address" placeholder="请输入详细地址"></textarea>
+				<textarea v-model="address" :placeholder="$t('pleaseInputAddress')"></textarea>
 			</view>
 			<view class="default-box flex justify-between align-center">
-				<text class="title">设为默认地址</text>
+				<text class="title">{{ $t('addressSetDefault') }}</text>
 				<switch class="olive switch" @tap="onSwitch" :class="{ checked: isDefault=='T' }" :checked="isDefault=='T'"></switch>
 			</view>
 		</view>
 		<view v-if="addressId != 0" class="foot_box flex justify-between">
-			<button class="cu-btn delete-btn" @tap="deleteAddress">删除收货地址</button>
-			<button class="cu-btn save-btn" @tap="editAddress">保存收货地址</button>
+			<button class="cu-btn delete-btn" @tap="deleteAddress">{{ $t('deleteAddress') }}</button>
+			<button class="cu-btn save-btn" @tap="editAddress">{{ $t('saveAddress') }}</button>
 		</view>
-		<view v-else class="foot_box "><button class="cu-btn add-btn" @tap="editAddress">保存收货地址</button></view>
+		<view v-else class="foot_box "><button class="cu-btn add-btn" @tap="editAddress">{{ $t('saveAddress') }}</button></view>
 		<shopro-picker ref="shoproCityPicker" :pickerValueDefault="cityPickerValueDefault" @onCancel="onCancel" @onConfirm="onConfirm"></shopro-picker>
 	</view>
 </template>
@@ -48,7 +48,7 @@
 				areaCode: '',
 				address: '',
 				isDefault: 'F',
-				areaName:'请选择地区'
+				areaName: this.$t('pleaseSelectArea')
 			};
 		},
 		computed: {
@@ -149,13 +149,14 @@
 			},
 			// 删除收货地址
 			deleteAddress() {
+				let _that = this;
 				deleteUserAddress({
 					addressId: this.addressId,
 					userId:this.userId
 				}).then(res => {
 					if (res.code === 0) {
 						uni.showToast({
-							title: '删除成功',
+							title: _that.$t('deleteSuccess'),
 							icon: 'none',
 							success: () => {
 								uni.navigateBack({

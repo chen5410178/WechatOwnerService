@@ -20,6 +20,8 @@
 			//loginFactory.checkLoginStatus(); // 获取用户地理位置
 			userFactory.getUserLocation();
 			
+			this.initLanguage();
+			
 			 // #ifdef H5
 			 window.addEventListener("message", reciveMessage);
 			 // #endif
@@ -49,11 +51,24 @@
 				
 				});
 		},
+		methods: {
+			initLanguage: function() {
+				let language = uni.getStorageSync('language');
+				
+				if (!language) {
+					const systemInfo = uni.getSystemInfoSync();
+					const systemLang = systemInfo.language || systemInfo.system;
+					language = /en/i.test(systemLang) ? 'en' : 'zh-CN';
+					uni.setStorageSync('language', language);
+				}
+				
+				this.$i18n.locale = language;
+			}
+		},
 		// app全局数据
 		globalData: {
 			userInfo: null
-		},
-		methods: {}
+		}
 	};
 </script>
 <style>

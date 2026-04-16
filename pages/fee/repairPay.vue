@@ -169,15 +169,15 @@
 							that.feeInfo = _json.data[0];
 							return;
 						}
-						wx.showToast({
-							title: "查询费用失败",
+						uni.showToast({
+							title: this.$t('queryFeeFailed'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -206,15 +206,15 @@
 							that.repairInfo = _json.data[0];
 							return;
 						}
-						wx.showToast({
-							title: "查询报修单失败",
+						uni.showToast({
+							title: this.$t('queryRepairFailed'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -222,8 +222,8 @@
 				})
 			},
 			onPayFee: function() {
-				wx.showLoading({
-					title: '支付中'
+				uni.showLoading({
+					title: this.$t('processing')
 				});
 				let _tradeType = 'JSAPI';
 				let _receivedAmount = this.feeInfo.feePrice;

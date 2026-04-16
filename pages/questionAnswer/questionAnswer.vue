@@ -5,21 +5,21 @@
 			<view class="cu-item arrow">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="text-green margin-right-xs">{{question.qaType == '3003'?'投票':'问卷'}}</text>
+						<text class="text-green margin-right-xs">{{question.qaType == '3003'?$t('vote'):$t('questionnaire')}}</text>
 						<view class="text-cut" style="width:220px">{{question.qaName}}</view>
 					</view>
 					<view class="text-gray text-sm">
-						<text class="margin-right-xs">结束时间：</text> {{question.endTime}}</view>
+						<text class="margin-right-xs">{{ $t('endTime') }}：</text> {{question.endTime}}</view>
 				</view>
-				<view class="action" v-if="question.state == '0'">已结束</view>
-				<view class="action" v-else-if="question.state == '2'">已投票</view>
+				<view class="action" v-if="question.state == '0'">{{ $t('ended') }}</view>
+				<view class="action" v-else-if="question.state == '2'">{{ $t('voted') }}</view>
 			</view>
 		</view>
 		<view class="cu-list menu" v-if="questions.length === 0">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-notification text-grey"></text>
-					<text class="text-grey">暂无投票问卷信息</text>
+					<text class="text-grey">{{ $t('noData') }}</text>
 				</view>
 				<view class="action">
 				</view>
@@ -89,28 +89,25 @@
 				})
 			},
 			gotoDetail: function(_question) {
-				let _msg = "问卷";
-				if(_question.qaType == '3003'){
-					_msg = "投票";
-				}
+				let _msgType = _question.qaType == '3003' ? this.$t('vote') : this.$t('questionnaire');
 				if(_question.state == '-1'){
 					uni.showToast({
 						icon:'none',
-						title:_msg+'尚未开始'
+						title:_msgType+' '+this.$t('notStarted')
 					})
 					return ;
 				}
 				if(_question.state == '0'){
 					uni.showToast({
 						icon:'none',
-						title:_msg+'已结束'
+						title:_msgType+' '+this.$t('ended')
 					})
 					return ;
 				}
 				if(_question.state == '2'){
 					uni.showToast({
 						icon:'none',
-						title:_msg+'已投票'
+						title:_msgType+' '+this.$t('voted')
 					})
 					return ;
 				}

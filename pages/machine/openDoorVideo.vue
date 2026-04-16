@@ -80,8 +80,8 @@
 			},
 			_doOpenDoor: function() {
 				let _that = this;
-				wx.showLoading({
-					title: '请求中'
+				uni.showLoading({
+					title: this.$t('processing')
 				});
 				openDoor({
 					communityId: getCommunityId(),
@@ -89,23 +89,23 @@
 					machineCode: this.machineCode,
 					memberId: this.memberId
 				}).then((res) => {
-					wx.hideLoading();
+					uni.hideLoading();
 					let data = res.data;
 					let msg = '';
 					if (data.code == 0) {
-						msg = '请求发送至门禁'
+						msg = this.$t('requestSentToDoor');
 					} else {
 						msg = data.msg;
 					}
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
 					});
 				}, (err) => {
-					wx.hideLoading();
-					wx.showToast({
-						title: '开门失败',
+					uni.hideLoading();
+					uni.showToast({
+						title: this.$t('openDoorFailed'),
 						icon: 'none',
 						duration: 2000
 					});

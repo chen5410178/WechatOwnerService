@@ -2,15 +2,15 @@
 	<view>
 		<view>
 			<view class="block__title flex justify-between">
-				<view>车辆信息</view>
-				<view> <button class="cu-btn line-blue round" @tap="_openModifyCarNum()">修改车牌</button></view>
+				<view>{{ $t('carDetail') || '车辆信息' }}</view>
+				<view> <button class="cu-btn line-blue round" @tap="_openModifyCarNum()">{{ $t('modifyCarNum') || '修改车牌' }}</button></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">车牌号</view>
+				<view class="title">{{ $t('carNum') || '车牌号' }}</view>
 				{{carNum}}
 			</view>
 			<view class="cu-form-group">
-				<view class="title">车位</view>
+				<view class="title">{{ $t('parkingSpace') || '车位' }}</view>
 				<view v-if="areaNum">{{areaNum}}-{{num}}</view>
 				<view v-else>没有车位</view>
 			</view>

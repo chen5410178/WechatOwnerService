@@ -1,0 +1,42 @@
+export default {
+  'zh-CN': {
+    noFeeSelected: '未选择费用',
+    propertyFee: '物业费',
+    recommendForYou: '为你推荐',
+    noMoreData: '已经到底了',
+    featureNotAvailable: '此功能暂不开放',
+    shouldPay: '应缴',
+    previousReading: '上期读数',
+    previousReadTime: '上期读表时间',
+    currentReading: '本期读数',
+    currentReadTime: '本期读表时间',
+    usage: '使用量',
+    owner: '业主',
+    unitPrice: '单价',
+    roomNumber: '房号',
+    total: '合计',
+    pay: '缴费',
+    yuanUnit: '元',
+    salesUnit: '件'
+  },
+  'en': {
+    noFeeSelected: 'No fee selected',
+    propertyFee: 'Property Fee',
+    recommendForYou: 'Recommended for You',
+    noMoreData: 'No more data',
+    featureNotAvailable: 'Feature not available',
+    shouldPay: 'Payable',
+    previousReading: 'Previous Reading',
+    previousReadTime: 'Previous Read Time',
+    currentReading: 'Current Reading',
+    currentReadTime: 'Current Read Time',
+    usage: 'Usage',
+    owner: 'Owner',
+    unitPrice: 'Unit Price',
+    roomNumber: 'Room',
+    total: 'Total',
+    pay: 'Pay',
+    yuanUnit: '',
+    salesUnit: 'units'
+  }
+}

@@ -44,7 +44,7 @@
 			callUndefined:function(){
 				uni.showToast({
 					icon:'none',
-					title:'此功能暂不开放'
+					title:this.$t('components.featureNotAvailable')
 				})
 			},
 		}

@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "jweixin-module": "^1.6.0",
-    "vant-weapp": "^0.5.27"
+    "vant-weapp": "^0.5.27",
+    "vue-i18n": "^8.28.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,17 +25,17 @@
   },
   "homepage": "https://github.com/java110/WechatOwnerService#readme",
   "uni-app": {
-  			"scripts": {
-  			"WUYE": {
-  				"title":"业主端包含商城",
-  				"BROWSER":"",
-  				"env": {
-  					"UNI_PLATFORM": "h5"
-  				 },
-  				"define": {
-  					"WUYE": true
-  				}
-  			}
-  		}   
-  	}
+    "scripts": {
+      "WUYE": {
+        "title": "业主端包含商城",
+        "BROWSER": "",
+        "env": {
+          "UNI_PLATFORM": "h5"
+        },
+        "define": {
+          "WUYE": true
+        }
+      }
+    }
+  }
 }

@@ -154,8 +154,8 @@
 				let msg = "";
 
 				if (obj.appUserId == "" || obj.communityId == "") {
-					msg = "数据异常";
-					wx.showToast({
+					msg = this.$t('dataError');
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -163,32 +163,31 @@
 					return;
 				}
 
-				wx.request({
+				uni.request({
 					url: constant.url.appUserUnBindingOwner,
 					header: context.getHeaders(),
 					method: "POST",
 					data: obj,
-					//动态数据
 					success: function(res) {
 						console.log(res);
 
 						if (res.statusCode != 200) {
-							wx.showToast({
-								title: '解绑失败',
+							uni.showToast({
+								title: this.$t('unbindFailed'),
 								icon: 'none',
 								duration: 2000
 							});
 							return;
-						} //成功情况下跳转
+						}
 
 
-						wx.redirectTo({
+						uni.redirectTo({
 							url: "/pages/bindOwner/bindOwner"
 						});
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});

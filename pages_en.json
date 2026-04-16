@@ -1,0 +1,971 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "Owner",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/my/myHouse",
+			"style": {
+				"navigationBarTitleText": "My House",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/viewBindOwner/viewBindOwner",
+			"style": {
+				"navigationBarTitleText": "Owner Info"
+			}
+		},
+		{
+			"path": "pages/my/viewCommunitys",
+			"style": {
+				"navigationBarTitleText": "Select Community"
+			}
+		},
+		{
+			"path": "pages/applicationKey/applicationKeyLocation",
+			"style": {
+				"navigationBarTitleText": "Access Control"
+			}
+		},
+		{
+			"path": "pages/location/location",
+			"style": {
+				"navigationBarTitleText": "Select Community",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/machine/openDoor",
+			"style": {
+				"navigationBarTitleText": "Open Door"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "Me"
+			}
+		},
+		{
+			"path": "pages/notice/index",
+			"style": {
+				"navigationBarTitleText": "Announcement"
+			}
+		},
+		{
+			"path": "pages/notice/detail/detail",
+			"style": {
+				"navigationBarTitleText": "Announcement Detail"
+			}
+		},
+		{
+			"path": "pages/repair/repairList",
+			"style": {
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/repair/repair",
+			"style": {
+				"navigationBarTitleText": "Repair"
+			}
+		},
+		{
+			"path": "pages/reportInfoBack/reportInfoBack",
+			"style": {
+				"navigationBarTitleText": "Report",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/fee/payParkingApplyFee",
+			"style": {
+				"navigationBarTitleText": "Parking Application Fee",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/reportInfoBack/reportInfoDetail",
+			"style": {
+				"navigationBarTitleText": "Questionnaire",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/repair/detail/detail",
+			"style": {}
+		},
+		{
+			"path": "pages/family/family",
+			"style": {
+				"navigationBarTitleText": "Add Member"
+			}
+		},
+		{
+			"path": "pages/family/familyList",
+			"style": {
+				"navigationBarTitleText": "Family Members"
+			}
+		},
+		{
+			"path": "pages/complaint/complaintList",
+			"style": {
+				"navigationBarTitleText": "Complaint"
+			}
+		},
+		{
+			"path": "pages/complaint/complaint",
+			"style": {
+				"navigationBarTitleText": "Complaint"
+			}
+		},
+		{
+			"path": "pages/complaint/viewComplaint",
+			"style": {}
+		},
+		{
+			"path": "pages/my/myHouseDetail",
+			"style": {
+				"navigationBarTitleText": "My House Detail"
+			}
+		},
+		{
+			"path": "pages/activites/activites",
+			"style": {
+				"navigationBarTitleText": "Community Culture"
+			}
+		},
+		{
+			"path": "pages/activites/activitesDetail",
+			"style": {
+				"navigationBarTitleText": "Detail"
+			}
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "Please Login"
+			}
+		}, {
+			"path": "pages/repair/myRepair",
+			"style": {
+				"navigationBarTitleText": "My Repair Orders"
+			}
+		}, {
+			"path": "pages/settings/settings",
+			"style": {
+				"navigationBarTitleText": "Settings"
+			}
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"navigationBarTitleText": "Register"
+			}
+		}, {
+			"path": "pages/fee/payFeeDetail",
+			"style": {
+				"navigationBarTitleText": "Payment History"
+			}
+		}, {
+			"path": "pages/my/myProperty",
+			"style": {
+				"navigationBarTitleText": "My Property"
+			}
+		}, {
+			"path": "pages/my/viewAdmin",
+			"style": {
+				"navigationBarTitleText": "Technical Support"
+			}
+		}, 
+		{
+			"path": "pages/login/showlogin",
+			"style": {
+				"navigationBarTitleText": "Notice"
+			}
+		}, {
+			"path": "pages/selectFloor/selectFloor",
+			"style": {
+				"navigationBarTitleText": "Select Building"
+			}
+		}, {
+			"path": "pages/selectUnit/selectUnit",
+			"style": {
+				"navigationBarTitleText": "Select Unit"
+			}
+		}, {
+			"path": "pages/repair/repairDetail",
+			"style": {
+				"navigationBarTitleText": "Order Detail"
+			}
+		}, {
+			"path": "pages/repair/appraiseRepair",
+			"style": {
+				"navigationBarTitleText": "Order Rating"
+			}
+		}, {
+			"path": "pages/fee/repairPay",
+			"style": {
+				"navigationBarTitleText": "Repair Payment"
+			}
+		}, {
+			"path": "pages/complaint/complaintDetail",
+			"style": {
+				"navigationBarTitleText": "Complaint Detail"
+			}
+		}, {
+			"path": "pages/complaint/appraiseComplaint",
+			"style": {
+				"navigationBarTitleText": "Rate Complaint"
+			}
+		}, {
+			"path": "pages/settings/changePassword",
+			"style": {
+				"navigationBarTitleText": "Change Password"
+			}
+		}, {
+			"path": "pages/settings/changeOwnerPhone",
+			"style": {
+				"navigationBarTitleText": "Change Phone"
+			}
+		}, 
+		{
+			"path": "pages/car/applyparking",
+			"style": {
+				"navigationBarTitleText": "Parking Application"
+			}
+		}, {
+			"path": "pages/fee/oweFee",
+			"style": {
+				"navigationBarTitleText": "Payment"
+			}
+		},
+		{
+			"path": "pages/car/parkingInfo",
+			"style": {
+				"navigationBarTitleText": "Parking Application Progress"
+			}
+		}, 
+		{
+			"path": "pages/applyRoom/applyRoom",
+			"style": {
+				"navigationBarTitleText": "Select House",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/applyRoom/applyRoomDetail",
+			"style": {
+				"navigationBarTitleText": "Vacant Room Application",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/roomRenovation",
+			"style": {
+				"navigationBarTitleText": "Select House",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/roomRenovationDetail",
+			"style": {
+				"navigationBarTitleText": "Renovation Application",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/myRoomList",
+			"style": {
+				"navigationBarTitleText": "Select House",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/myRoomRenovationList",
+			"style": {
+				"navigationBarTitleText": "Renovation Records",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/myRoomRenovationDetail",
+			"style": {
+				"navigationBarTitleText": "Renovation Detail",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/myRoomRenovationRecord",
+			"style": {
+				"navigationBarTitleText": "Tracking Record",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/renovation/myRoomRenovationRecordDetail",
+			"style": {
+				"navigationBarTitleText": "Tracking Record Detail",
+				"enablePullDownRefresh": false
+			}
+		},  {
+			"path": "pages/questionAnswer/questionAnswer",
+			"style": {
+				"navigationBarTitleText": "Vote",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/questionAnswer/questionAnswerDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/machine/machineTranslateLog",
+			"style": {
+				"navigationBarTitleText": "Access Sync Log",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/hcWebView/hcWebView",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/hcWebViewRefresh/hcWebViewRefresh",
+			"style": {
+				"navigationBarTitleText": "User Auth",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/index/service",
+			"style": {
+				"navigationBarTitleText": "Service Center"
+			}
+		}, {
+			"path": "pages/applyRoom/myRoomList",
+			"style": {
+				"navigationBarTitleText": "Select House",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/applyRoom/myApplyRoomList",
+			"style": {
+				"navigationBarTitleText": "Vacant Room Application Records",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/applyRoom/myApplyRoomDetail",
+			"style": {
+				"navigationBarTitleText": "Vacant Room Application Detail",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/machine/openDoorByQrCode",
+			"style": {
+				"navigationBarTitleText": "QR Code Door",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},  {
+			"path": "pages/applyRoom/myApplyRoomRecord",
+			"style": {
+				"navigationBarTitleText": "Tracking Record",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/applyRoom/myApplyRoomRecordDetail",
+			"style": {
+				"navigationBarTitleText": "Tracking Record Detail",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/account/myAccount",
+			"style": {
+				"navigationBarTitleText": "My Account",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/account/myAccountDetail",
+			"style": {
+				"navigationBarTitleText": "Account Detail",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/my/changeOwnerCommunity",
+			"style": {
+				"navigationBarTitleText": "Change Community",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/coupon/ownerCoupon",
+			"style": {
+				"navigationBarTitleText": "Coupon",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/coupon/myCoupons",
+			"style": {
+				"navigationBarTitleText": "My Coupons",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/coupon/tempCarCoupon",
+			"style": {
+				"navigationBarTitleText": "Parking Coupon",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/visit/addVisit",
+			"style": {
+				"navigationBarTitleText": "Visitor Registration",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/visit/visitList",
+			"style": {
+				"navigationBarTitleText": "Registration List",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/visit/visitDetail",
+			"style": {
+				"navigationBarTitleText": "Reservation Detail",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/coupon/getParkingCoupon",
+			"style": {
+				"navigationBarTitleText": "Get Coupon",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/successPage/successPage",
+			"style": {
+				"navigationBarTitleText": "Success",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/appointment/appointment",
+			"style": {
+				"navigationBarTitleText": "Venue Booking"
+			}
+		},
+		{
+			"path": "pages/appointment/appointmentPay",
+			"style": {
+				"navigationBarTitleText": "Pay Order"
+			}
+		},
+		{
+			"path": "pages/appointment/myBoomList",
+			"style": {
+				"navigationBarTitleText": "Booking Records",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/appointment/myBooksRenovationDetail",
+			"style": {
+				"navigationBarTitleText": "Booking Detail",
+				"enablePullDownRefresh": false
+			}
+		}
+	    ,{
+            "path" : "pages/machine/machine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Device Info",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/machineMaintainance",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Device Maintenance",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/machineInspection",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Device Inspection",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/coupon/goodsCoupon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Product Redeem",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/coupon/giftParkingCoupon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Gift Parking Coupon",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/registerProtocol",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/faceRecognition",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/itemRelease/itemRelease",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/itemRelease/addItemReleaseResource",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/itemRelease/myItemReleaseList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/itemRelease/myItemReleaseDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/chargeMachines",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Smart Charging",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/machineToCharge",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Smart Charging",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/chargeConfirm",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Confirm Charging",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/chargeMachineOrder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Charging Order Detail",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/account/preStoreAccount",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Account Recharge",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/coupon/chargeCoupon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Charging Coupon",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/chargeMachineOrders",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Charging Orders",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/meter/meter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Meter Recharge",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/meter/preStoreMeter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Prepaid Fee",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/common/communityPublicity",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Community Publicity",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/common/communityPublicityList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },{
+            "path" : "pages/common/communityPublicityDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        }
+        ,{
+            "path" : "pages/machine/chargeCard",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/machine/prestoreChargeCard",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/userQrCode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "User QR Code",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/fee/payQrCode",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "QR Code Payment",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/fee/payQrCodeFee",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "QR Code Payment",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/fee/cashier",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Collection",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/questionAnswer/ownerVote",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Vote",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/loginInitWechat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "WeChat Login",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/invoice/invoice",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Invoice",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/invoice/setting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Invoice Settings",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/invoice/invoiceApply",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Invoice Records",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/invoice/invoiceDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Invoice Detail",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/invoice/addInvoiceApply",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Apply Invoice",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/fee/qrCodeCashier",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "QR Code Payment",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+        {
+        	"path" : "pages/index/authOwner",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "House Auth",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/family/selectRoom",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Select House",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/index/authOwnerLog",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Auth Records",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/fee/buyeCarMonthCard",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Monthly Car Card"
+        	}
+        },
+        {
+        	"path" : "pages/car/ownerCars",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Owner Vehicles"
+        	}
+        },
+        {
+        	"path" : "pages/car/carDetail",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Vehicle Detail"
+        	}
+        },
+        {
+        	"path" : "pages/machine/openDoorVideo",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+        {
+        	"path" : "pages/machine/chargeDetail",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+        {
+        	"path" : "pages/machine/playVideo",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+        {
+        	"path" : "pages/machine/monitorCamera",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+        {
+        	"path" : "pages/mall/selectcommunity",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        },
+		 {
+        	"path" : "pages/fee/preFee",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Prepayment",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/fee/rulePreFee",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Prepaid Payment",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/fee/meterRulePreFee",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "Utility Prepaid Payment",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/mall/viewCommunitys",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : ""
+        	}
+        }
+    ],
+	"tabBar": {
+		"color": "#272636",
+		"selectedColor": "#E60012",
+		"backgroundColor": "#fff",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "Home",
+				"iconPath": "static/images/home.png",
+				"selectedIconPath": "static/images/home-selected.png"
+			},
+			{
+				"pagePath": "pages/index/service",
+				"text": "Service",
+				"iconPath": "static/images/service.png",
+				"selectedIconPath": "static/images/service-selected.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "Me",
+				"iconPath": "static/images/my.png",
+				"selectedIconPath": "static/images/my-selected.png"
+			}
+		]
+	},
+	"networkTimeout": {
+		"request": 10000
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "Your location information will be used for location-based services"
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#E60012",
+		"navigationBarTitleText": "Owner",
+		"usingComponents": {
+
+		},
+		"onReachBottonDistance": 50
+	},
+	"condition": {
+		"current": 0,
+		"list": [{
+			"name": "",
+			"path": "",
+			"query": ""
+		}]
+	},
+	"subPackages": []
+}

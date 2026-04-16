@@ -18,7 +18,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">暂无装修信息</text>
+					<text class="text-grey">{{ $t('noRenovationInfo') }}</text>
 				</view>
 				<view class="action">
 

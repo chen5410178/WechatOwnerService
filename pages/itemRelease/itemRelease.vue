@@ -1,37 +1,37 @@
 <template>
 	<view>
-		<view class="block__title">基础信息</view>
+		<view class="block__title">{{ $t('basicInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">放行类型</view>
+			<view class="title">{{ $t('releaseType') }}</view>
 			<picker id="complaintType" bindchange="PickerChange" :value="typeId" :range-key="'typeName'"
 				:range="itemReleaseTypes" v-if="itemReleaseTypes.length>0" @change="itemReleaseTypeChange">
 				<view class="picker">
-					{{typeIndex==-1 ? "请选择" : itemReleaseTypes[typeIndex].typeName}}
+					{{typeIndex==-1 ? $t('selectFirst') : itemReleaseTypes[typeIndex].typeName}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">申请单位</view>
-			<input v-model="applyCompany" placeholder="请输入申请单位" class="text-right"></input>
+			<view class="title">{{ $t('applyCompany') }}</view>
+			<input v-model="applyCompany" :placeholder="$t('inputCompany')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">申请人</view>
-			<input v-model="applyPerson" placeholder="请输入申请人" class="text-right"></input>
+			<view class="title">{{ $t('applicant') }}</view>
+			<input v-model="applyPerson" :placeholder="$t('inputApplicant')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="applyTel" placeholder="请输入手机号" class="text-right"></input>
+			<view class="title">{{ $t('phone') }}</view>
+			<input v-model="applyTel" :placeholder="$t('inputPhone')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
-			<input v-model="idCard" placeholder="请输入身份证" class="text-right"></input>
+			<view class="title">{{ $t('idCard') }}</view>
+			<input v-model="idCard" :placeholder="$t('inputIdCard')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">车牌号</view>
-			<input v-model="carNum" placeholder="请输入车牌号" class="text-right"></input>
+			<view class="title">{{ $t('carNum') }}</view>
+			<input v-model="carNum" :placeholder="$t('inputCarNum')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">通行日期</view>
+			<view class="title">{{ $t('passDate') }}</view>
 			<picker mode="date" :value="bindDate" :start="todayDate" end="2050-09-01" @change="dateChange">
 				<view class="picker">
 					{{bindDate}}
@@ -39,7 +39,7 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">通行时间</view>
+			<view class="title">{{ $t('passTime') }}</view>
 			<picker mode="time" :value="bindTime" :start="todayDateTime" end="22:00" @change="timeChange">
 				<view class="picker">
 					{{bindTime}}
@@ -47,18 +47,18 @@
 			</picker>
 		</view>
 		<view class="cu-form-group margin-top arrow" @tap="_addRes">
-			<view class="title">放行物品</view>
-			<view class="arrow" v-if="!resNames || resNames.length< 1">请添加</view>
+			<view class="title">{{ $t('releaseItems') }}</view>
+			<view class="arrow" v-if="!resNames || resNames.length< 1">{{ $t('addItem') }}</view>
 			<view class="arrow" v-else>{{_computeResAmount()}}</view>
 		</view>
 		
 		<view class="cu-form-group margin-top">
-			<textarea v-model="remark" placeholder="选填,请填写备注"></textarea>
+			<textarea v-model="remark" :placeholder="$t('inputRemark')"></textarea>
 		</view>
 		<view class="button_up_blank"></view>
 
 		<view class="flex flex-direction">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitItemRelease()">提交</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitItemRelease()">{{ $t('submit') }}</button>
 		</view>
 
 	</view>
@@ -84,8 +84,8 @@
 	export default {
 		data() {
 			return {
-				bindDate: '请选择',
-				bindTime: '请选择',
+				bindDate: '',
+				bindTime: '',
 				typeId: '',
 				applyCompany: '',
 				applyPerson: '',
@@ -156,7 +156,7 @@
 				if(!this.audit.assignee || this.audit.assignee == '-2'){
 					uni.showToast({
 						icon:'none',
-						title:'审批流程设置错误，手机端提交，第一个审核人必须指定相应的员工'
+						title: this.$t('auditError')
 					});
 					return ;
 				}

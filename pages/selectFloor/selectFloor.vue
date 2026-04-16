@@ -60,7 +60,7 @@
 				uni.setStorageSync("_selectFloor", _Floor);
 				prevPage.FloorName = _Floor.name;
 				//console.log(e);
-				wx.navigateBack({
+				uni.navigateBack({
 					delta: 1
 				});
 			},
@@ -89,8 +89,8 @@
 						}
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});

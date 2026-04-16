@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">小区信息</view>
+		<view class="block__title">{{ $t('communityInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">小区编码</text>
+					<text class="text-grey">{{ $t('communityCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityId}}</text>
@@ -15,19 +15,19 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-home text-green"></text>
-					<text class="text-grey">小区名称</text>
+					<text class="text-grey">{{ $t('communityName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
 				</view>
 			</view>
 		</view>
-		<view class="block__title">业主信息</view>
+		<view class="block__title">{{ $t('ownerInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">姓名</text>
+					<text class="text-grey">{{ $t('name') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{appUserName}}</text>
@@ -36,7 +36,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">手机号</text>
+					<text class="text-grey">{{ $t('phone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{link}}</text>
@@ -109,8 +109,8 @@
 				let msg = "";
 
 				if (obj.appUserId == "" || obj.communityId == "") {
-					msg = "数据异常";
-					wx.showToast({
+					msg = this.$t('dataError');
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -123,27 +123,26 @@
 					header: context.getHeaders(),
 					method: "POST",
 					data: obj,
-					//动态数据
 					success: function(res) {
 						console.log(res);
 
 						if (res.statusCode != 200) {
-							wx.showToast({
-								title: '解绑失败',
+							uni.showToast({
+								title: this.$t('unbindFailed'),
 								icon: 'none',
 								duration: 2000
 							});
 							return;
-						} //成功情况下跳转
+						}
 
 
-						wx.redirectTo({
+						uni.redirectTo({
 							url: "/pages/bindOwner/bindOwner"
 						});
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});

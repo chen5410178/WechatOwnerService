@@ -4,10 +4,10 @@
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white ">
 					<view class="action">
-						预约商品
+						{{ $t('reserveGoods') }}
 					</view>
 					<view class="action">
-						<button class="cu-btn line-blue round sm" @click="_closes()">关闭</button>
+						<button class="cu-btn line-blue round sm" @click="_closes()">{{ $t('close') }}</button>
 					</view>
 				</view>
 				<scroll-view scroll-y style="height: 700upx;">
@@ -25,7 +25,7 @@
 										</view>
 									</view>
 									<view class="action">
-										<button class="cu-btn line-red round sm" @click="_delete(items)">删除</button>
+										<button class="cu-btn line-red round sm" @click="_delete(items)">{{ $t('delete') }}</button>
 									</view>
 								</view>
 							</view>

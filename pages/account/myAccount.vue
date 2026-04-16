@@ -18,7 +18,7 @@
 				<view class="cu-item arrow" @click="coupons(item)">
 					<view class="content padding-tb-sm">
 						<view>
-							<text class="cuIcon-ticket text-green margin-right-xs"></text>我的优惠券
+							<text class="cuIcon-ticket text-green margin-right-xs"></text>{{ $t('myCoupon') }}
 						</view>
 						<view class="text-gray text-sm">
 						</view>
@@ -33,7 +33,7 @@
 		</view>
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" >
-			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">账户充值</button>
+			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">{{ $t('accountRecharge') }}</button>
 		</view>
 	</view>
 

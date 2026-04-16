@@ -4,14 +4,14 @@
 			<view class="ak_row_black">
 			</view>
 			<view class="ak_row_title">
-				<text>领取停车劵</text>
+				<text>{{ $t('getParkingCoupon') }}</text>
 			</view>
 
 			<view class="tips_block">
 			</view>
 
 			<view class='tips'>
-				<text>点击方框输入车牌号</text>
+				<text>{{ $t('clickInputCarNum') }}</text>
 			</view>
 			<view class="plate-input-body">
 				<view class="plate-input-content" @click="showCarNumberKeyboard">
@@ -53,14 +53,14 @@
 			<view class="plat-btn-black"></view>
 			<view class="cu-bar btn-group" style="margin-top: 30px;">
 				<button @click="_receiveParkingCoupon" :disabled="carNum.length< 7 || getSuccess"
-					class="cu-btn bg-green shadow-blur round lg">立即领取</button>
+					class="cu-btn bg-green shadow-blur round lg">{{ $t('getNow') }}</button>
 			</view>
 
 			<view class="temp-remark">
-				<view>停车劵说明</view>
-				<view>1、领取的停车劵请在24小时内使用：</view>
-				<view>2、领取停车劵请在扫码缴费时使用：</view>
-				<view>3、若长时间无法加载页面，请检查网络是否畅通或扫码重试。</view>
+				<view>{{ $t('parkingCouponNote') }}</view>
+				<view>{{ $t('parkingCouponNote1') }}</view>
+				<view>{{ $t('parkingCouponNote2') }}</view>
+				<view>{{ $t('parkingCouponNote3') }}</view>
 			</view>
 		</view>
 
@@ -166,7 +166,7 @@
 				if(!this.carNum){
 					uni.showToast({
 						icon:'none',
-						title:'未填写车牌号'
+						title: this.$t('noCarNum')
 					});
 					return ;
 				}
@@ -186,7 +186,7 @@
 					}
 					uni.showToast({
 						icon:'none',
-						title:'停车劵领取成功，请关闭页面',
+						title: this.$t('parkingCouponSuccess'),
 						duration:10000
 					})
 					_that.getSuccess = true;

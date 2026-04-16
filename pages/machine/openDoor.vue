@@ -19,12 +19,12 @@
 					</view>
 				</view>
 				<view class="padding-xl">
-					您确认开门? 开门次数有限,请勿频繁操作！
+					{{ $t('confirmOpenDoor') || '您确认开门? 开门次数有限,请勿频繁操作！' }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleOpenDoor()">取消</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleOpenDoor()">{{ $t('cancel') }}</view>
 					<view class="action margin-0 flex-sub  solid-left" v-if="curMachine.monitorId && curMachine.monitorId != '-1'" @tap="_viewDoorVideo()">视频</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doOpenDoor()">确认开门</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doOpenDoor()">{{ $t('confirm') }}{{ $t('openDoor') }}</view>
 				</view>
 			</view>
 		</view>
@@ -116,8 +116,8 @@
 			},
 			_doOpenDoor: function() {
 				let _that = this;
-				wx.showLoading({
-					title: '请求中'
+				uni.showLoading({
+					title: this.$t('processing')
 				});
 				openDoor({
 					communityId: this.communityId,
@@ -125,24 +125,24 @@
 					machineCode: _that.curMachine.machineCode,
 					memberId: this.memberId
 				}).then((res) => {
-					wx.hideLoading();
+					uni.hideLoading();
 					let data = res.data;
 					let msg = '';
 					if (data.code == 0) {
-						msg = '请求发送至门禁'
+						msg = this.$t('requestSentToDoor');
 					} else {
 						msg = data.msg;
 					}
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
 					});
 					_that._cancleOpenDoor();
 				}, (err) => {
-					wx.hideLoading();
-					wx.showToast({
-						title: '开门失败',
+					uni.hideLoading();
+					uni.showToast({
+						title: this.$t('openDoorFailed'),
 						icon: 'none',
 						duration: 2000
 					});

@@ -5,13 +5,13 @@
 			<!-- 审核状态 W待审核 U 待上传 F 审核失败 G 带领用 C 已领用-->
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-					全部
+					{{ $t('all') || '全部' }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-					待审核
+					{{ $t('waitApprove') || '待审核' }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==2?'text-green cur':''" @tap="tabSelect(2)">
-					待领用
+					{{ $t('invoicePending') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -23,20 +23,20 @@
 						<view class="text-gray">{{item.stateName}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">发票类型</view>
-						<view class="text-gray">{{item.invoiceType == '1001'?'个人':'企业'}}</view>
+						<view class="text-gray">{{ $t('invoiceType') }}</view>
+						<view class="text-gray">{{item.invoiceType == '1001'?$t('personal'):$t('enterprise')}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">申请时间</view>
+						<view class="text-gray">{{ $t('applyTime') }}</view>
 						<view class="text-gray">{{item.createTime}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">申请金额</view>
+						<view class="text-gray">{{ $t('applyAmount') }}</view>
 						<view class="text-gray">{{item.invoiceAmount}}</view>
 					</view>
 					<view class="solid-top flex justify-end margin-top padding-top-sm ">
-						<button class="cu-btn sm line-gray" @click="invoiceDetail(item)">详情</button>
-						<button class="cu-btn sm bg-red margin-left" v-if="item.state == 'W'" @click="deleteInvoice(item)">删除</button>
+						<button class="cu-btn sm line-gray" @click="invoiceDetail(item)">{{ $t('detail') }}</button>
+						<button class="cu-btn sm bg-red margin-left" v-if="item.state == 'W'" @click="deleteInvoice(item)">{{ $t('delete') }}</button>
 					</view>
 				</view>
 			</view>
@@ -48,17 +48,17 @@
 		<view class="cu-modal" :class="deleteInvoiceModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">温馨提示</view>
+					<view class="content">{{ $t('tips') }}</view>
 					<view class="action" @tap="_cancleDeleteInvoice()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					您确认删除当前订单
+					{{ $t('confirmDeleteOrder') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteInvoice()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteInvoice()">删除</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteInvoice()">{{ $t('cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteInvoice()">{{ $t('delete') }}</view>
 				</view>
 			</view>
 		</view>

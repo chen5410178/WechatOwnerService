@@ -1,51 +1,51 @@
 <template>
 	<view>
-		<view class="block__title">基础信息</view>
+		<view class="block__title">{{ $t('basicInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">放行类型</view>
+			<view class="title">{{ $t('releaseType') }}</view>
 			<view>{{order.typeName}}</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">申请单位</view>
+			<view class="title">{{ $t('applyCompany') }}</view>
 			<view>{{order.applyCompany}}</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">申请人</view>
+			<view class="title">{{ $t('applicant') }}</view>
 			<view>{{order.applyPerson}}</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
+			<view class="title">{{ $t('phone') }}</view>
 			<view>{{order.applyTel}}</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
+			<view class="title">{{ $t('idCard') }}</view>
 			<view>{{order.idCard}}</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">车牌号</view>
+			<view class="title">{{ $t('carNum') }}</view>
 			<view>{{order.carNum}}</view>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">通行时间</view>
+			<view class="title">{{ $t('passTime') }}</view>
 			<view>{{order.passTime}}</view>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">备注</view>
+			<view class="title">{{ $t('remark') }}</view>
 			<view>{{order.remark}}</view>
 		</view>
 
-		<view class="block__title">物品信息</view>
-		<view class="cu-form-group arrow" v-for="(item,index) in resNames">
+		<view class="block__title">{{ $t('itemInfo') }}</view>
+		<view class="cu-form-group arrow" v-for="(item,index) in resNames" :key="index">
 			<view class="title">{{item.resName}}</view>
 			<view class="">{{item.amount}}</view>
 		</view>
 
-		<view class="block__title">审批流程</view>
-		<view class="cu-form-group arrow" v-for="(item,index) in comments">
+		<view class="block__title">{{ $t('auditProcess') }}</view>
+		<view class="cu-form-group arrow" v-for="(item,index) in comments" :key="index">
 			<view class="title">{{item.staffName}}</view>
 			<view class="">
-				<text v-if="item.endTime">处理完成</text>
-				<text v-else>正在处理</text>
+				<text v-if="item.endTime">{{ $t('completed') }}</text>
+				<text v-else>{{ $t('processing') }}</text>
 				<text v-if="item.context">({{item.context}})</text>
 			</view>
 		</view>

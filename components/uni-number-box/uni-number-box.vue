@@ -93,7 +93,7 @@ export default {
 			} else if (type === 'plus') {
 				if (JSON.stringify(that.currentSkuPrice) !== '{}') {
 					if (value >= that.currentSkuPrice.stock) {
-						that.$tools.toast('库存不足');
+						that.$tools.toast(that.$t('insufficientStock'));
 						return;
 					}
 				}
@@ -101,7 +101,7 @@ export default {
 				if (that.goodsInfo.activity_type === 'seckill' || that.goodsInfo.activity_type === 'groupon') {
 					let rules = that.goodsInfo.activity.rules;
 					if (rules.limit_buy != 0 && value >= rules.limit_buy) {
-						that.$tools.toast('本次活动最多购买' + rules.limit_buy + '件');
+						that.$tools.toast(that.$t('purchaseLimit', {count: rules.limit_buy}));
 						return;
 					}
 				}

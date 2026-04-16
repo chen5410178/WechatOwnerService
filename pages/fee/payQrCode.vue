@@ -4,30 +4,30 @@
 			<view class="tips_block">
 			</view>
 			<view class="ak_row_title">
-				<text>{{config.qrcodeName}}</text>
+				<text>{{config.qrcodeName || $t('qrCodeName')}}</text>
 			</view>
 			<view class="tips_block">
 			</view>
 			<view class="cu-bar btn-group margin-left margin-right" style="margin-top: 30px;">
 				<button @click="_changeFlag('room')" style="margin-left: 0px;" v-if="config.queryWay == '2002' || config.queryWay == '3003'" class="cu-btn shadow-blur  lg"
-					:class="{'bg-blue':queryWay == 'room','line-blue':queryWay != 'room'}">房屋</button>
+					:class="{'bg-blue':queryWay == 'room','line-blue':queryWay != 'room'}">{{ $t('roomWay') }}</button>
 				<button @click="_changeFlag('phone')" style="margin-right: 0px;" v-if="config.queryWay == '1001' || config.queryWay == '3003'" class="cu-btn  shadow-blur lg"
-					:class="{'bg-blue':queryWay == 'phone','line-blue':queryWay != 'phone'}">手机号</button>
+					:class="{'bg-blue':queryWay == 'phone','line-blue':queryWay != 'phone'}">{{ $t('phoneWay') }}</button>
 			</view>
 			<view>
 				<view class='tips'>
-					<text v-if="queryWay == 'room'">请输入房号</text>
-					<text v-else>请输入手机号</text>
+					<text v-if="queryWay == 'room'">{{ $t('inputRoomNum') }}</text>
+					<text v-else>{{ $t('inputPhone') }}</text>
 				</view>
 				<view class="plate-input-body">
 					<view class="plate-input-content" v-if="queryWay == 'room'">
-						<input type="text" class="input-ui" v-model="roomNum" placeholder="请输入房号 楼栋-单元-房屋 如:1-1-1001" />
+						<input type="text" class="input-ui" v-model="roomNum" :placeholder="$t('inputRoomTip')" />
 					</view>
 					<view class="plate-input-content" v-else>
-						<input type="number" maxlength="11" class="input-ui" v-model="link" placeholder="请输入业主手机号" />
+						<input type="number" maxlength="11" class="input-ui" v-model="link" :placeholder="$t('inputOwnerPhone')" />
 					</view>
 					<view class="flex justify-between margin-top msg-code" v-if="config.smsValidate == 'ON'">
-						<input v-model="msgCode" placeholder="请输入短信验证码" name="input" style="width: 70%;"
+						<input v-model="msgCode" :placeholder="$t('inputSmsCode')" name="input" style="width: 70%;"
 							class="input-ui"></input>
 						<button class='cu-btn bg-green shadow msg-code' :disabled="btnDisabled"
 							@click="_sendSms()">{{btnValue}}</button>
@@ -37,11 +37,11 @@
 
 			<view class="plat-btn-black"></view>
 			<view class="cu-bar btn-group" style="margin-top: 30px;">
-				<button @click="_queryOwnerInfo" class="cu-btn bg-green shadow-blur round lg">立即查询</button>
+				<button @click="_queryOwnerInfo" class="cu-btn bg-green shadow-blur round lg">{{ $t('queryNow') }}</button>
 			</view>
 
 			<view class="temp-remark">
-				<view>支付说明</view>
+				<view>{{ $t('payDescription') }}</view>
 				<view>{{config.content}}</view>
 			</view>
 		</view>
@@ -99,7 +99,7 @@
 				if(this.config.state != 'ON'){
 					uni.showToast({
 						icon:'none',
-						title:'二维码已停用'
+						title: this.$t('qrCodeDisabled')
 					});
 					return;
 				}

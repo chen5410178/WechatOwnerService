@@ -5,18 +5,18 @@
 				<view class="flex text-center">
 					<view class="cu-item flex-sub" :class="item.roomId==curRoom.roomId?'text-green cur':''" v-for="(item,index) in rooms"
 					 :key="index" @tap="switchRoom(item)" :data-id="index">
-						{{item.floorNum}}栋{{item.roomNum}}室
+						{{item.floorNum}}{{ $t('building') }}{{item.roomNum}}{{ $t('room') }}
 					</view>
 				</view>
 			</scroll-view>
 			<scroll-view v-if="rooms.length >4" scroll-x class="bg-white nav" scroll-with-animation scroll-left="true">
 				<view class="cu-item flex-sub" :class="item.roomId==curRoom.roomId?'text-green cur':''" v-for="(item,index) in rooms"
 				 :key="index" @tap="switchRoom(item)" :data-id="index">
-					{{item.floorNum}}栋{{item.roomNum}}室
+					{{item.floorNum}}{{ $t('building') }}{{item.roomNum}}{{ $t('room') }}
 				</view>
 			</scroll-view>
 		</view>
-		<view v-if="rooms.length == 1" class="block__title">{{rooms[0].floorNum}}栋{{rooms[0].roomNum}}室</view>
+		<view v-if="rooms.length == 1" class="block__title">{{rooms[0].floorNum}}{{ $t('building') }}{{rooms[0].roomNum}}{{ $t('room') }}</view>
 		<view v-if="rooms.length > 1" class="margin-header-top"></view>
 		
 		<view v-if="noData == false" style="padding-bottom: 200rpx;">

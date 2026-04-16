@@ -59,13 +59,13 @@
 		data() {
 			return {
 				parkingType: [{
-					"name": '待审核',
+					"name": this.$t('waitApprove') || '待审核',
 					"code": 1001
 				}, {
-					"name": '完成',
+					"name": this.$t('complete') || '完成',
 					"code": 3003
 				}, {
-					"name": '申请失败',
+					"name": this.$t('applyFailed') || '申请失败',
 					"code": 4004
 				}],
 				code: '1001',
@@ -129,8 +129,8 @@
 						this.parkings = data;
 					},
 					fail(res) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						})

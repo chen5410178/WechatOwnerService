@@ -1,0 +1,62 @@
+export default {
+  'zh-CN': {
+    login: {
+      login: '登录',
+      register: '注册',
+      username: '用户名',
+      password: '密码',
+      verificationCode: '验证码',
+      getCode: '获取验证码',
+      loginBtn: '登录',
+      registerBtn: '注册',
+      noAccount: '没有账号？',
+      hasAccount: '已有账号？',
+      agreeProtocol: '同意协议',
+      userProtocol: '《用户协议》',
+      privacyPolicy: '《隐私政策》',
+      bindPhone: '绑定手机',
+      getPhoneFailed: '获取手机号失败',
+      loginSuccess: '登录成功',
+      loginFailed: '登录失败',
+      codeSent: '验证码已发送',
+      codeError: '验证码错误',
+      phoneError: '手机号格式错误',
+      passwordError: '密码格式错误',
+      codeEmptyError: '请输入验证码',
+      wechatLogin: '微信登录',
+      initWechat: '初始化微信',
+      welcome: '欢迎使用',
+      nextStep: '下一步'
+    }
+  },
+  'en': {
+    login: {
+      login: 'Login',
+      register: 'Register',
+      username: 'Username',
+      password: 'Password',
+      verificationCode: 'Verification Code',
+      getCode: 'Get Code',
+      loginBtn: 'Login',
+      registerBtn: 'Register',
+      noAccount: 'No account?',
+      hasAccount: 'Have an account?',
+      agreeProtocol: 'I agree to',
+      userProtocol: 'User Agreement',
+      privacyPolicy: 'Privacy Policy',
+      bindPhone: 'Bind Phone',
+      getPhoneFailed: 'Failed to get phone number',
+      loginSuccess: 'Login successful',
+      loginFailed: 'Login failed',
+      codeSent: 'Verification code sent',
+      codeError: 'Invalid code',
+      phoneError: 'Invalid phone number',
+      passwordError: 'Invalid password',
+      codeEmptyError: 'Please enter verification code',
+      wechatLogin: 'WeChat Login',
+      initWechat: 'Initializing WeChat',
+      welcome: 'Welcome',
+      nextStep: 'Next Step'
+    }
+  }
+}

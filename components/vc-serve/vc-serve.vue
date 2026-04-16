@@ -2,7 +2,7 @@
 	<view class="shopro-selector-rect" v-if="serveList">
 		<view class="x-bc serve-box" @tap="onServe">
 			<view class="x-f">
-				<text class="title">服务</text>
+				<text class="title">{{ $t('service') || '服务' }}</text>
 				<view class="tip x-f">
 					<view class="tip-list x-f" v-for="(serve, index) in serveList" :key="serve.title">
 						<view class="x-f" v-if="index < 3">
@@ -18,7 +18,7 @@
 			<view class="cu-dialog server-modal" @tap.stop style="background: none;">
 				<view class="server-modal-box page_box">
 					<view class="modal-head x-c">
-						<text class="head-title">服务保障</text>
+						<text class="head-title">{{ $t('serviceGuarantee') || '服务保障' }}</text>
 						<text class="cuIcon-roundclosefill" @tap="hideModal"></text>
 					</view>
 					<view class="modal-content content_box">
@@ -30,7 +30,7 @@
 							<view class="serve-detail">{{ serve.description }}</view>
 						</view>
 					</view>
-					<view class="modal-foot x-c"><button class="cu-btn serve-btn" @tap="hideModal">确定</button></view>
+					<view class="modal-foot x-c"><button class="cu-btn serve-btn" @tap="hideModal">{{ $t('confirm') }}</button></view>
 				</view>
 			</view>
 		</view>

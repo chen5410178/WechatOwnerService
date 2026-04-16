@@ -39,7 +39,7 @@
 									<view class="expire">{{ item.createTime }}-{{ item.endTime+'00：00' }}</view>
 								</view>
 								<view class="usestate" >
-									已使用
+									{{ $t('usedCoupon') }}
 								</view>
 							</view>
 						</view>
@@ -56,7 +56,7 @@
 									<view class="expire">{{ item.createTime }}-{{ item.endTime+'00：00' }}</view>
 								</view>
 								<view class="usestate">
-									已过期
+									{{ $t('expiredCoupon') }}
 								</view>
 							</view>
 						</view>
@@ -109,11 +109,15 @@
 				userLink: '',
 				couponAmount: 0.0,
 				imgStaticUrl: this.STATICURL,
-				tab: ['未使用', '已使用', '已过期'],
 				active: 0, //当前选中项
 				isHas: true,
 				pageShow: false,
 				couponImg:this.imgUrl+'/h5/images/coupon.png',
+			}
+		},
+		computed: {
+			tab() {
+				return [this.$t('availableCoupon'), this.$t('usedCoupon'), this.$t('expiredCoupon')];
 			}
 		},
 		onLoad: function(options) {
@@ -185,7 +189,7 @@
 				if(_coupon.toType == '2002'){
 					uni.showToast({
 						icon:'none',
-						title:'请到缴费抵消'
+						title: this.$t('notFound')
 					})
 					return;
 				}else if(_coupon.toType == '1001' || _coupon.toType == '1011'){

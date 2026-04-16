@@ -1,44 +1,44 @@
 <template>
 	<view>
-		<view class="block__title">业主信息</view>
+		<view class="block__title">{{ $t('ownerInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">名称</view>
+			<view class="title">{{ $t('name') }}</view>
 			{{userName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">联系方式</view>
+			<view class="title">{{ $t('contact') }}</view>
 			{{userTel}}
 		</view>
 	
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">楼栋</view>
-			{{roomDetail.floorNum}}号楼
+			<view class="title">{{ $t('building') }}</view>
+			{{roomDetail.floorNum}}{{ $t('floor') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">单元</view>
-			{{roomDetail.unitNum}}单元
+			<view class="title">{{ $t('unit') }}</view>
+			{{roomDetail.unitNum}}{{ $t('unit') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">房屋编号</view>
-			{{roomDetail.roomNum}}室
+			<view class="title">{{ $t('roomNo') }}</view>
+			{{roomDetail.roomNum}}{{ $t('room') }}
 		</view>
 	
 		<view class="cu-form-group">
-			<view class="title">楼层</view>
-			{{roomDetail.layer+'层'}}
+			<view class="title">{{ $t('floor') }}</view>
+			{{roomDetail.layer}}{{ $t('layer') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">户型</view>
+			<view class="title">{{ $t('apartment') }}</view>
 			{{roomDetail.apartment}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">建筑面积</view>
-			{{roomDetail.builtUpArea+'平方米'}}
+			<view class="title">{{ $t('builtUpArea') }}</view>
+			{{roomDetail.builtUpArea}}{{ $t('sqm') }}
 		</view>
-		<view class="block__title">装修申请信息填写</view>
+		<view class="block__title">{{ $t('renovationApply') }}</view>
 		<view class="cu-form-group arrow">
-			<view class="title">开始日期</view>
+			<view class="title">{{ $t('startDate') }}</view>
 			<picker mode="date" :value="startTime" start="2020-09-01" end="2050-09-01" @change="dateStartChange">
 				<view class="picker">
 					{{startTime}}
@@ -46,7 +46,7 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">结束日期</view>
+			<view class="title">{{ $t('endDate') }}</view>
 			<picker mode="date" :value="endTime" start="2020-09-01" end="2050-09-01" @change="dateEndChange">
 				<view class="picker">
 					{{endTime}}
@@ -54,23 +54,23 @@
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">装修单位</view>
-			<input type="text" v-model="renovationCompany" placeholder="请输入装修单位">
+			<view class="title">{{ $t('renovationCompany') }}</view>
+			<input type="text" v-model="renovationCompany" :placeholder="$t('inputCompany')">
 		</view>
 		<view class="cu-form-group">
-			<view class="title">装修负责人</view>
-			<input type="text" v-model="personMain" placeholder="请输入装修负责人">
+			<view class="title">{{ $t('renovationPerson') }}</view>
+			<input type="text" v-model="personMain" :placeholder="$t('inputPerson')">
 		</view>
 		<view class="cu-form-group">
-			<view class="title">负责人电话</view>
-			<input type="text" v-model="personMainTel" placeholder="请输入负责人电话">
+			<view class="title">{{ $t('personTel') }}</view>
+			<input type="text" v-model="personMainTel" :placeholder="$t('inputTel')">
 		</view>
 		<view class="cu-form-group">
-			<view class="title">装修详情</view>
-			<input type="text" v-model="remark" placeholder="请输入装修详情">
+			<view class="title">{{ $t('renovationDetail') }}</view>
+			<input type="text" v-model="remark" :placeholder="$t('inputDetail')">
 		</view>
 		<view class="btn-box">
-			<button type="default" class="btn-sub" @click="subApply()">提交申请</button>
+			<button type="default" class="btn-sub" @click="subApply()">{{ $t('submitApply') }}</button>
 		</view>
 	
 		<view class="button_up_blank"></view>
@@ -93,8 +93,8 @@
 				ownerInfo: {},
 				ownerFlag: false,
 				roomDetail: {},
-				startTime: '请选择',
-				endTime: '请选择',
+				startTime: '',
+				endTime: '',
 				remark: '',
 				isPostpone: 'N',
 				renovationCompany: '',
@@ -160,18 +160,18 @@
 			// 提交申请
 			subApply: function(){
 				let msg = '';
-				if(this.startTime == '请选择' || this.endTime == '请选择'){
-					msg = '请选择时间范围';
+				if(this.startTime == this.$t('selectFirst') || this.endTime == this.$t('selectFirst')){
+					msg = this.$t('pleaseSelectTime');
 				}else if(!compareDate(this.endTime, this.startTime)){
-					msg = '时间范围有误';
+					msg = this.$t('timeRangeError');
 				}else if(this.renovationCompany == ''){
-					msg = '请填写装修单位';
+					msg = this.$t('pleaseFillCompany');
 				}else if(this.personMain == ''){
-					msg = '请填写装修负责人';
+					msg = this.$t('pleaseFillPerson');
 				}else if(this.personMainTel == '' || !checkPhoneNumber(this.personMainTel)){
-					msg = '负责人电话有误';
+					msg = this.$t('telError');
 				}else if(this.remark == ''){
-					msg = '请填写装修详情';
+					msg = this.$t('pleaseFillDetail');
 				}
 				
 				if(msg != ''){
@@ -201,7 +201,7 @@
 				}
 				saveRoomRenovation(params).then(function(_res){
 					uni.showToast({
-						title: '申请成功'
+						title: this.$t('applySuccess')
 					});
 					setTimeout(function(){
 						uni.navigateBack({})

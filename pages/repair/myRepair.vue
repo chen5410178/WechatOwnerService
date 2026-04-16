@@ -3,13 +3,13 @@
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-					待处理
+					{{ $t('repair.pending') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-					处理中
+					{{ $t('repair.processing') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==2?'text-green cur':''" @tap="tabSelect(2)">
-					完成
+					{{ $t('repair.completed') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -23,45 +23,45 @@
 						<view class="text-gray">{{item.tel}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">报修类型</view>
+						<view class="text-gray">{{ $t('repair.repairTypeName') }}</view>
 						<view class="text-gray">{{item.repairTypeName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">报修人</view>
+						<view class="text-gray">{{ $t('repair.repairPerson') }}</view>
 						<view class="text-gray">{{item.repairName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">位置</view>
+						<view class="text-gray">{{ $t('repair.location') }}</view>
 						<view class="text-gray">{{item.repairObjName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">提单时间</view>
+						<view class="text-gray">{{ $t('repair.submitTime') }}</view>
 						<view class="text-gray">{{item.createTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">提单时长</view>
+						<view class="text-gray">{{ $t('repair.submitHours') }}</view>
 						<view class="text-gray">{{item.submitHours }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">预约时间</view>
+						<view class="text-gray">{{ $t('repair.appointmentTime') }}</view>
 						<view class="text-gray">{{item.appointmentTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">报修内容</view>
+						<view class="text-gray">{{ $t('repair.repairContent') }}</view>
 						<view class="text-gray">{{item.context}}</view>
 					</view>
 					<view class="solid-top flex justify-end margin-top padding-top-sm ">
-						<button class="cu-btn sm line-gray" @click="repairDetail(item)">详情</button>
+						<button class="cu-btn sm line-gray" @click="repairDetail(item)">{{ $t('detail') }}</button>
 						<button class="cu-btn sm line-gray margin-left" v-if="item.timeoutFlag == 'Y'"
-							@click="_doUrgeRepair(item)">催单</button>
+							@click="_doUrgeRepair(item)">{{ $t('repair.urgeRepair') }}</button>
 						<button class="cu-btn sm bg-red margin-left" v-if="item.state == '1000'"
-							@click="deleteRepair(item)">删除</button>
+							@click="deleteRepair(item)">{{ $t('repair.delete') }}</button>
 						<button v-if="item.state == '1400'" class="cu-btn sm bg-green  margin-left"
-							@click="_toPay(item)">支付</button>
+							@click="_toPay(item)">{{ $t('repair.pay') }}</button>
 						<button v-if="item.state == '1700'" class="cu-btn sm bg-green margin-left"
-							@click="_appraiseRepair(item)">评价</button>
+							@click="_appraiseRepair(item)">{{ $t('repair.evaluate') }}</button>
 						<button v-if="item.state == '1700' || item.state == '1400'"
-							class="cu-btn sm  bg-red margin-left" @click="_backRepair(item)">退回</button>
+							class="cu-btn sm  bg-red margin-left" @click="_backRepair(item)">{{ $t('repair.returnRepair') }}</button>
 					</view>
 				</view>
 			</view>
@@ -73,17 +73,17 @@
 		<view class="cu-modal" :class="deleteRepairModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">温馨提示</view>
+					<view class="content">{{ $t('repair.tips') || '温馨提示' }}</view>
 					<view class="action" @tap="_cancleDeleteRepair()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					您确认删除当前订单
+					{{ $t('repair.confirmDelete') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteRepair()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteRepair()">删除</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteRepair()">{{ $t('cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteRepair()">{{ $t('repair.delete') }}</view>
 				</view>
 			</view>
 		</view>
@@ -91,17 +91,17 @@
 		<view class="cu-modal" :class="backRepairModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">退单原因</view>
+					<view class="content">{{ $t('repair.returnReason') }}</view>
 					<view class="action" @tap="_cancleBackRepair()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="cu-form-group">
-					<textarea v-model="context" maxlength="50" placeholder="请输入退单原因"></textarea>
+					<textarea v-model="context" maxlength="50" :placeholder="$t('repair.inputReturnReason')"></textarea>
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleBackRepair()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doBackRepair()">确认</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleBackRepair()">{{ $t('cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doBackRepair()">{{ $t('confirm') }}</view>
 				</view>
 			</view>
 		</view>
@@ -159,7 +159,7 @@
 			if (!hasLogin()) {
 				uni.showToast({
 					icon: 'none',
-					title: '未登录'
+					title: this.$t('repair.notLogin')
 				})
 				return;
 			}
@@ -215,7 +215,7 @@
 				}).then(_data=>{
 					uni.showToast({
 						icon:'none',
-						title:'已经催过师傅了，请耐心等待，感谢您的支持',
+						title: this.$t('repair.urgeSuccess'),
 						duration:5000
 					});
 					return;
@@ -248,7 +248,7 @@
 						}
 						uni.showToast({
 							icon: 'none',
-							title: '处理成功',
+							title: this.$t('repair.processSuccess'),
 							duration: 2000
 						});
 						that._cancleDeleteRepair();
@@ -256,8 +256,8 @@
 					},
 					fail: function(e) {
 						console.log(e);
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('repair.serverError'),
 							icon: 'none',
 							duration: 2000
 						});
@@ -276,13 +276,13 @@
 					staffId: this.userId,
 					//state: '10001'
 				};
-				listRepairStaffs(_paramIn).then(_json => {
+				listRepairStaffs(dataObj).then(_json => {
 					if (_json.code == 0) {
 						let _data = _json.data;
 
 						if (_data.length < 1) {
 							uni.showToast({
-								title: '当前不能退单'
+								title: this.$t('repair.cannotReturn')
 							});
 							return;
 						}
@@ -300,7 +300,7 @@
 				let that = this;
 				if (this.context == '') {
 					uni.showToast({
-						title: '退单内容不能为空',
+						title: this.$t('repair.returnContentEmpty'),
 						icon: 'none'
 					});
 					return;
@@ -332,7 +332,7 @@
 						}
 						uni.showToast({
 							icon: 'none',
-							title: '处理成功',
+							title: this.$t('repair.processSuccess'),
 							duration: 2000
 						});
 						that._cancleBackRepair();
@@ -340,8 +340,8 @@
 					},
 					fail: function(e) {
 						console.log(e);
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('repair.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

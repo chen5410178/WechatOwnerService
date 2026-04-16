@@ -7,12 +7,12 @@
 				</view>
 			</view>
 		</view>
-		<view class="block__title">业主信息</view>
+		<view class="block__title">{{ $t('ownerInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">申请编码</text>
+					<text class="text-grey">{{ $t('applyCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{applicationKeyId}}</text>
@@ -21,7 +21,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-order text-green"></text>
-					<text class="text-grey">状态</text>
+					<text class="text-grey">{{ $t('keyStatus') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{stateName}}</text>
@@ -31,7 +31,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">姓名</text>
+					<text class="text-grey">{{ $t('name') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{name}}</text>
@@ -40,7 +40,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-wefill text-green"></text>
-					<text class="text-grey">年龄</text>
+					<text class="text-grey">{{ $t('age') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{age}}</text>
@@ -49,7 +49,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-friend text-green"></text>
-					<text class="text-grey">性别</text>
+					<text class="text-grey">{{ $t('gender') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{sex}}</text>
@@ -57,12 +57,12 @@
 			</view>
 		</view>
 
-		<view class="block__title">身份信息</view>
+		<view class="block__title">{{ $t('identityInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-vipcard text-green"></text>
-					<text class="text-grey">身份</text>
+					<text class="text-grey">{{ $t('identity') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{typeCdName}}</text>
@@ -71,7 +71,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-card text-green"></text>
-					<text class="text-grey">身份证</text>
+					<text class="text-grey">{{ $t('idCard') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{idCard}}</text>
@@ -80,7 +80,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-time text-green"></text>
-					<text class="text-grey">开始时间</text>
+					<text class="text-grey">{{ $t('startDate') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{startTime}}</text>
@@ -89,7 +89,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-time text-green"></text>
-					<text class="text-grey">结束时间</text>
+					<text class="text-grey">{{ $t('endDate') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{endTime}}</text>
@@ -98,7 +98,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">手机号</text>
+					<text class="text-grey">{{ $t('phone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{tel}}</text>
@@ -116,19 +116,7 @@
 	export default {
 		data() {
 			return {
-				steps: [{
-					cuIcon: 'usefullfill',
-					name: '申请',
-					desc: ''
-				}, {
-					cuIcon: 'radioboxfill',
-					name: '审核中',
-					desc: ''
-				}, {
-					cuIcon: 'roundcheckfill',
-					name: '完成',
-					desc: ''
-				}],
+				steps: [],
 				active: 0,
 				applicationKeyId: '',
 				name: '',
@@ -151,7 +139,21 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad: function(options) {
+			let _that = this;
 			context.onLoad(options);
+			this.steps = [{
+				cuIcon: 'usefullfill',
+				name: _that.$t('apply'),
+				desc: ''
+			}, {
+				cuIcon: 'radioboxfill',
+				name: _that.$t('reviewing'),
+				desc: ''
+			}, {
+				cuIcon: 'roundcheckfill',
+				name: _that.$t('completed'),
+				desc: ''
+			}];
 			this.applicationKeyId = options.applicationKeyId;
 			this.communityId = options.communityId;
 			this.showApplicationKey();
@@ -215,8 +217,8 @@
 							let _applicationKeys = res.data.applicationKeys;
 
 							if (_applicationKeys.length == 0) {
-								wx.showToast({
-									title: "未查询到钥匙",
+								uni.showToast({
+									title: this.$t('noKeyFound'),
 									icon: 'none',
 									duration: 2000
 								});
@@ -238,15 +240,15 @@
 							}
 
 							if (_applicationKey.sex == '0') {
-								_sex = '男';
+								_sex = _that.$t('male');
 							}
 
 							if (_applicationKey.typeCd == "10004") {
-								_typeCd = "业主";
+								_typeCd = _that.$t('owner');
 							} else if (_applicationKey.typeCd == "10005") {
-								_typeCd = "家庭成员";
+								_typeCd = _that.$t('familyMember');
 							} else {
-								_typeCd = "租客";
+								_typeCd = _that.$t('tenant');
 							}
 
 							_that.applicationKeyId = _applicationKey.applicationKeyId;
@@ -263,8 +265,8 @@
 						}
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="block__title" >我的充电劵</view>
+		<view class="block__title" >{{ $t('myChargeCoupon') }}</view>
 		<!-- 费用项 -->
 		<uni-collapse @change="change" class="margin-top fee-content">
 			<uni-tr v-show="false">
@@ -10,8 +10,8 @@
 			<view class="tl-section">
 				<checkbox-group class="block" @change="checkboxChange">
 					<view class="cu-form-group" v-for="(coupon,index) in couponList">
-						<view class="title">{{coupon.couponName}} 面值：{{coupon.value}}小时
-							有效期：{{coupon.endTime}}
+						<view class="title">{{coupon.couponName}} {{ $t('couponValue') }}：{{coupon.value}}{{ $t('hours') }}
+							{{ $t('couponTime') }}：{{coupon.endTime}}
 						</view>
 						<checkbox class='round' :class="couponList[index].checked?'checked':''"
 							:checked="couponList[index].checked?true:false" :value="coupon.couponId"></checkbox>
@@ -22,10 +22,10 @@
 
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 			<view class="action text-orange margin-right line-height">
-				共：{{selectCoupons.length}}张
+				{{ $t('total') }}：{{selectCoupons.length}}{{ $t('pcs') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_selectCouponBack()">确定</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_selectCouponBack()">{{ $t('confirm') }}</button>
 			</view>
 		</view>
 	</view>

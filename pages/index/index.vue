@@ -4,7 +4,7 @@
 
 		<!-- 头条 -->
 		<view class="news-bar" @click="goToNotice">
-			<view class="news-tag">小区头条</view>
+			<view class="news-tag">{{ $t('index.news') }}</view>
 			<view class="news-content">{{latestNotice}}</view>
 		</view>
 
@@ -25,10 +25,10 @@
 			</swiper>
 			<view v-else class="ad-content">
 				<view class="ad-text">
-					<view class="ad-title">预交物业费 享受优惠</view>
-					<view class="ad-desc">限时开启，年费缴纳享减免打折优惠</view>
+					<view class="ad-title">{{ $t('index.adTitle') }}</view>
+					<view class="ad-desc">{{ $t('index.adDesc') }}</view>
 				</view>
-				<view class="ad-btn">立即查看</view>
+				<view class="ad-btn">{{ $t('index.viewNow') }}</view>
 			</view>
 			<view class="ad-indicator" v-if="adverts && adverts.length > 1">
 				<view v-for="(item, index) in adverts" :key="index" :class="index == currentAdIndex ? 'active' : ''"></view>
@@ -61,19 +61,23 @@
 	export default {
 		data() {
 			return {
-				latestNotice: '暂无公告',
+				latestNotice: '',
 				adverts: [],
-				currentAdIndex: 0,
-				gridMenu: [
-					{ name: '家庭成员', icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
-					{ name: '投诉建议', icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
-					{ name: '停车月卡', icon: 'fa-solid fa-car c-green', href: '/pages/fee/payParkingFeeList' },
-					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
-					{ name: '联系物业', icon: 'fa-solid fa-phone-volume c-purple', href: '_callProperty' },
-					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-red', href: '/pages/common/communityPublicityList' },
-					{ name: '预存费用', icon: 'fa-solid fa-coins c-orange', href: '/pages/fee/preFee' }
-				]
+				currentAdIndex: 0
 			};
+		},
+		computed: {
+			gridMenu() {
+				return [
+					{ name: this.$t('index.familyMembers'), icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
+					{ name: this.$t('index.complaint'), icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
+					{ name: this.$t('index.parkingMonthly'), icon: 'fa-solid fa-car c-green', href: '/pages/fee/payParkingFeeList' },
+					{ name: this.$t('index.waterElectric'), icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
+					{ name: this.$t('index.contactProperty'), icon: 'fa-solid fa-phone-volume c-purple', href: '_callProperty' },
+					{ name: this.$t('index.communityBulletin'), icon: 'fa-solid fa-newspaper c-red', href: '/pages/common/communityPublicityList' },
+					{ name: this.$t('index.preStored'), icon: 'fa-solid fa-coins c-orange', href: '/pages/fee/preFee' }
+				]
+			}
 		},
 		components: {
 			indexTop,

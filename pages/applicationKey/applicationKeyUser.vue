@@ -1,62 +1,62 @@
 <template>
 	<view>
 
-		<view class="block__title">业主信息</view>
+		<view class="block__title">{{ $t('ownerInfo') }}</view>
 
 		<view class="cu-form-group">
-			<view class="title">姓名</view>
-			<input  v-model="name" required label="姓名" clearable placeholder="请输入名称" name="name"></input>
+			<view class="title">{{ $t('name') }}</view>
+			<input  v-model="name" required label="姓名" clearable :placeholder="$t('fillName')" name="name"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">年龄</view>
-			<input  v-model="age" type="number" label="年龄" placeholder="请输入年龄" required clearable name="age"></input>
+			<view class="title">{{ $t('age') }}</view>
+			<input  v-model="age" type="number" label="年龄" :placeholder="$t('fillAge')" required clearable name="age"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">性别</view>
+			<view class="title">{{ $t('gender') }}</view>
 			<picker @change="PickerChange" :value="sex" :range="sexList">
 				<view class="picker">
-					{{index>-1?sexList[index]:'请选择性别'}}
+					{{index>-1?sexList[index]:$t('selectGender')}}
 				</view>
 			</picker>
 		</view>
 
-		<view class="block__title">身份信息</view>
+		<view class="block__title">{{ $t('identity') }}</view>
 		<view class="cu-form-group">
-			<view class="title">身份</view>
+			<view class="title">{{ $t('identity') }}</view>
 			<picker :value="typeCdName" @change="PickerIdentChange" :range="typeCdList">
 				<view class="picker" @change="onChange" @cancel="onCancel" @confirm="onConfirm">
-					{{indexIdent>-1?typeCdList[indexIdent]:'请选择身份'}}
+					{{indexIdent>-1?typeCdList[indexIdent]:$t('selectIdentity')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
-			<input v-model="idCard" required label="身份证" clearable placeholder="请输入身份证"
+			<view class="title">{{ $t('idCard') }}</view>
+			<input v-model="idCard" required label="身份证" clearable :placeholder="$t('pleaseInputIdCard')"
 			 name="idCard"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">有效期</view>
+			<view class="title">{{ $t('expiry') }}</view>
 			<picker :value="expiry" @change="PickerExpiryChange" :range="expiryList">
 				<view class="picker">
-					{{indexExpiry>-1?expiryList[indexExpiry]:'请选择有效期'}}
+					{{indexExpiry>-1?expiryList[indexExpiry]:$t('selectExpiry')}}
 				</view>
 			</picker>
 		</view>
 
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="tel" type="number" required label="手机号" clearable placeholder="请输入手机号" name="tel"></input>
+			<view class="title">{{ $t('phone') }}</view>
+			<input v-model="tel" type="number" required label="手机号" clearable :placeholder="$t('pleaseInputPhone')" name="tel"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">验证码</view>
-			<input v-model="msgCode" placeholder="请输入短信验证码" name="input"></input>
+			<view class="title">{{ $t('verifyCode') }}</view>
+			<input v-model="msgCode" :placeholder="$t('pleaseInputVerifyCode')" name="input"></input>
 			<button class='cu-btn bg-green shadow' type="number" :disabled="btnDisabled" @click="sendMsgCode()">{{btnValue}}</button>
 		</view>
 
-		<view class="block__title">证件照片</view>
+		<view class="block__title">{{ $t('idCardPhoto') }}</view>
 		<view class="cu-bar bg-white ">
 			<view class="action">
-				请上传身份证正反面
+				{{ $t('uploadIdCardPhoto') }}
 			</view>
 			<view class="action">
 				{{imgList.length}}/2
@@ -77,7 +77,7 @@
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="padding flex flex-direction">
-			<button class="cu-btn bg-green lg" @click="saveApplicationKey()">提交申请</button>
+			<button class="cu-btn bg-green lg" @click="saveApplicationKey()">{{ $t('submitApplication') }}</button>
 		</view>
 		<view class="button_up_blank"></view>
 	</view>
@@ -109,16 +109,16 @@
 				locations: [],
 				communityId: '',
 				showTypeCd: false,
-				typeCdList: ['业主', '家庭成员', '租客'],
-				typeCdName: '业主',
-				sexList: ['男', '女'],
+				typeCdList: ['owner', 'familyMember', 'tenant'],
+				typeCdName: '',
+				sexList: ['male', 'female'],
 				showSex: false,
 				showExpiry: false,
-				expiryList: ['一个月', '半年', '一年'],
+				expiryList: [],
 				photoList: [],
 				name: '',
 				age: null,
-				sex: '男',
+				sex: 'male',
 				typeCd: "10004",
 				idCard: '',
 				startTime: null,
@@ -129,7 +129,7 @@
 				imgList: [],
 				expiry: "",
 				second: 60,
-				btnValue: '验证码',
+				btnValue: '',
 				btnDisabled: false,
 				propertyId: ''
 			};
@@ -152,6 +152,11 @@
 			});
 			this.locations = JSON.parse(options.locations);
 			this.communityId = options.communityId;
+			this.typeCdList = [_that.$t('owner'), _that.$t('familyMember'), _that.$t('tenant')];
+			this.typeCdName = _that.$t('owner');
+			this.sexList = [_that.$t('male'), _that.$t('female')];
+			this.expiryList = [_that.$t('oneMonth'), _that.$t('halfYear'), _that.$t('oneYear')];
+			this.btnValue = _that.$t('sendVerifyCode');
 
 			getProperty()
 			.then(function(_property) {
@@ -188,9 +193,9 @@
 			PickerExpiryChange(e) {
 				this.indexExpiry = e.detail.value
 				let _endTime = null;
-				if (e.detail.value == '一个月') {
+				if (e.detail.value == 0) {
 					_endTime = formatTime(addMonth(new Date(), 1));
-				} else if (e.detail.value == '半年') {
+				} else if (e.detail.value == 1) {
 					_endTime = formatTime(addMonth(new Date(), 6));
 				} else {
 					_endTime = formatTime(addYear(new Date(), 1));
@@ -230,10 +235,10 @@
 			},
 			ChooseImage: function(e) {
 				let that = this;
-				wx.chooseImage({
-					count: 4, //默认9
-					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album'], //从相册选择
+				uni.chooseImage({
+					count: 4,
+					sizeType: ['original', 'compressed'],
+					sourceType: ['album'],
 					success: (res) => {
 						console.log(res);
 						that.$data.imgList.push(res.tempFilePaths[0]);
@@ -253,8 +258,8 @@
 					tel: this.tel
 				};
 				if (obj.tel == '') {
-					wx.showToast({
-						title: '请输入手机号',
+					uni.showToast({
+						title: _that.$t('fillPhone'),
 						icon: 'none',
 						duration: 2000
 					});
@@ -313,9 +318,9 @@
 				console.log("onConfirm", e);
 				let _endTime = null;
 
-				if (e.detail.value == '一个月') {
+				if (e.detail.value == 0) {
 					_endTime = formatTime(addMonth(new Date(), 1));
-				} else if (e.detail.value == '半年') {
+				} else if (e.detail.value == 1) {
 					_endTime = formatTime(addMonth(new Date(), 6));
 				} else {
 					_endTime = formatTime(addYear(new Date(), 1));
@@ -334,6 +339,7 @@
 
 
 			saveApplicationKey: function() {
+				let _that = this;
 				//保存钥匙信息
 				let _objData = {
 					name: this.name,
@@ -361,51 +367,51 @@
 				let msg = '';
 
 				if (_objData.name == '') {
-					msg = '请填写名称';
+					msg = _that.$t('fillName');
 				}
 
 				if (_objData.age == null) {
-					msg = "请填写年龄";
+					msg = _that.$t('fillAge');
 				}
 
 				if (_objData.sex != 0 && _objData.sex != 1) {
-					msg = "请选择性别";
+					msg = _that.$t('selectGenderTip');
 				}
 
 				if (_objData.typeCd == '') {
-					msg = "请选择身份";
+					msg = _that.$t('selectIdentityTip');
 				}
 
 				if (_objData.idCard == '') {
-					msg = "请填写身份证";
+					msg = _that.$t('fillIdCard');
 				}
 
 				if (_objData.startTime == null) {
-					msg = "请选择有效期";
+					msg = _that.$t('selectExpiryTip');
 				}
 
 				if (_objData.endTime == null) {
-					msg = "请选择有效期";
+					msg = _that.$t('selectExpiryTip');
 				}
 
 				if (_objData.tel == '') {
-					msg = "请选择填写手机号";
+					msg = _that.$t('fillPhone');
 				}
 
 				if (_objData.photos == null || _objData.photos.length < 2) {
-					msg = "请选择证件照片";
+					msg = _that.$t('uploadIdCardPhotos');
 				}
 
 				if (_objData.msgCode == '') {
-					msg = "请填写验证码";
+					msg = _that.$t('fillVerifyCode');
 				}
 
 				if (this.locations == null || this.locations.length < 1) {
-					msg = "没有设备可申请钥匙";
+					msg = _that.$t('noMachineAvailable');
 				}
 
 				if (msg != '') {
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -420,7 +426,7 @@
 				});
 				applyApplicationKey(_objData)
 				.then((res)=>{
-					wx.redirectTo({
+					uni.redirectTo({
 						url: "/pages/applicationKey/applicationKeyProgress"
 					});
 					return;

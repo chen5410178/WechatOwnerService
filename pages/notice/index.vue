@@ -10,7 +10,7 @@
 							<view class="text-cut" style="width:220px">{{notice.title}}</view>
 						</view>
 						<view class="text-gray text-sm">
-							<text class="margin-right-xs">发布时间：</text> {{notice.timeStr}}
+							<text class="margin-right-xs">{{ $t('notice.publishTime') }}：</text> {{notice.timeStr}}
 						</view>
 					</view>
 				</view>
@@ -22,7 +22,7 @@
 				<view class="cu-item">
 					<view class="content">
 						<text class="cuIcon-notification text-grey"></text>
-						<text class="text-grey">暂无公告信息</text>
+						<text class="text-grey">{{ $t('notice.noAnnouncement') }}</text>
 					</view>
 					<view class="action">
 					</view>
@@ -57,11 +57,20 @@
 				page: 1,
 				loadingStatus: 'loading',
 				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+					contentdown: '',
+					contentrefresh: '',
+					contentnomore: ''
 				}
 			};
+		},
+		computed: {
+			loadingContentText() {
+				return {
+					contentdown: this.$t('notice.pullToLoadMore'),
+					contentrefresh: this.$t('notice.loading'),
+					contentnomore: this.$t('notice.noMore')
+				};
+			}
 		},
 		components: {
 			uniLoadMore

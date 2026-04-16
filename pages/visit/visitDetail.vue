@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="block__title">
-			<text>访客二维码</text>
+			<text>{{ $t('qrCode') }}</text>
 		</view>
 		<view class="u-qrcode" style="text-align: center;">
 			<canvas style="width: 520upx;height: 520upx;  margin: 0 auto;" canvas-id="myQrcode" v-show="!needLongTapSaveImg"></canvas>
@@ -9,55 +9,55 @@
 		</view>
 		
 		<view class="block__title">
-			<text>来访信息</text>
+			<text>{{ $t('visitDetail') || '来访信息' }}</text>
 		</view>
 		<view class="bg-white margin-bottom padding">
 			<view class="flex padding-bottom-xs solid-bottom justify-between">
-				<view>审核状态</view>
+				<view>{{ $t('auditStatus') }}</view>
 				<view class="text-gray">{{visitInfo.stateName}}</view>
 			</view>
 			<view class="flex margin-top justify-between">
-				<view class="text-gray">创建时间</view>
+				<view class="text-gray">{{ $t('createTime') }}</view>
 				<view class="text-gray">{{visitInfo.createTime}}</view>
 			</view>
 			<view class="flex margin-top justify-between">
-				<view class="text-gray">访客姓名</view>
+				<view class="text-gray">{{ $t('visitorName') }}</view>
 				<view class="text-gray">{{visitInfo.name}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">访客联系方式</view>
+				<view class="text-gray">{{ $t('contactWay') }}</view>
 				<view class="text-gray">{{visitInfo.phoneNumber}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">访客类型</view>
+				<view class="text-gray">{{ $t('visitType') }}</view>
 				<view class="text-gray">{{visitInfo.visitTypeName}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray w100">来访事由</view>
+				<view class="text-gray w100">{{ $t('visitCase') }}</view>
 				<view class="text-gray">{{visitInfo.visitCase}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">预计来访时间</view>
+				<view class="text-gray">{{ $t('estimatedVisitTime') }}</view>
 				<view class="text-gray">{{visitInfo.visitTime}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">预计离开时间</view>
+				<view class="text-gray">{{ $t('estimatedLeaveTime') }}</view>
 				<view class="text-gray">{{visitInfo.departureTime}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-if="visitInfo.roomName">
-				<view class="text-gray">拜访房屋</view>
+				<view class="text-gray">{{ $t('visitRoom') }}</view>
 				<view class="text-gray">{{visitInfo.roomName}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-if="visitInfo.ownerName">
-				<view class="text-gray">拜访业主</view>
+				<view class="text-gray">{{ $t('visitOwner') }}</view>
 				<view class="text-gray">{{visitInfo.ownerName}}</view>
 			</view>
-			<view class="flex margin-top-xs justify-between" v-if="visitInfo.ownerName">
-				<view class="text-gray">访客车辆</view>
+			<view class="flex margin-top-xs justify-between" v-if="visitInfo.carNum">
+				<view class="text-gray">{{ $t('visitCar') }}</view>
 				<view class="text-gray">{{visitInfo.carNum}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-show="visitInfo.msg">
-				<view class="text-gray w100">审核备注</view>
+				<view class="text-gray w100">{{ $t('auditRemark') }}</view>
 				<view class="text-gray">{{visitInfo.msg}}</view>
 			</view>
 		</view>
@@ -110,9 +110,10 @@
 		onReachBottom : function(){},
 		methods: {
 			_toTempFilePath: function() {
+				let _that = this;
 				if(this.tempFilePath == ''){
 					uni.showToast({
-						title: '图片未生成',
+						title: _that.$t('imageNotGenerated'),
 						icon: 'none'
 					})
 					return;
@@ -122,7 +123,7 @@
 					filePath: this.tempFilePath,
 					success: function() {
 						uni.showToast({
-							title: '已保存至相册',
+							title: _that.$t('savedToAlbum'),
 							icon: 'none'
 						})
 					}
@@ -130,7 +131,7 @@
 				//#endif
 				//#ifdef H5
 				uni.showToast({
-					title: '请长按图片-保存至相册'
+					title: _that.$t('longPressSave')
 				})
 				//#endif
 			},

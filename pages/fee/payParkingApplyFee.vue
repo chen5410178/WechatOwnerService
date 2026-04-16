@@ -244,8 +244,8 @@
 			},
 			_payWxApp: function(_data) {
 				let _receivedAmount = this.receivableAmount;
-				wx.showLoading({
-					title: '支付中'
+				uni.showLoading({
+					title: this.$t('processing')
 				});
 				let _tradeType = 'APP';
 				let _objData = {
@@ -296,21 +296,21 @@
 									console.log('fail:' + JSON.stringify(err));
 								}
 							});
-							wx.hideLoading();
+							uni.hideLoading();
 							return;
 						}
 
-						wx.hideLoading();
-						wx.showToast({
-							title: "缴费失败",
+						uni.hideLoading();
+						uni.showToast({
+							title: this.$t('paymentFailed'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
-						wx.hideLoading();
-						wx.showToast({
-							title: "服务器异常了",
+						uni.hideLoading();
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});
@@ -319,8 +319,8 @@
 			},
 			onPayFee: function() {
 				let _receivedAmount = this.receivableAmount;
-				wx.showLoading({
-					title: '支付中',
+				uni.showLoading({
+					title: this.$t('processing'),
 				});
 				let _tradeType = 'JSAPI';
 				let _objData = {
@@ -371,12 +371,12 @@
 								uni.navigateBack({});
 							});
 							// #endif
-							wx.hideLoading();
+							uni.hideLoading();
 							return;
 						}
 						uni.hideLoading();
 						uni.showToast({
-							title: "缴费失败",
+							title: this.$t('paymentFailed'),
 							icon: 'none',
 							duration: 2000
 						})

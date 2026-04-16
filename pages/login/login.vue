@@ -7,29 +7,29 @@
 
 		<view class="margin-top padding-left padding-right radius" v-if="!loginByPhone">
 			<view class="cu-form-group margin-top">
-				<view class="title">用户名</view>
-				<input placeholder="请输入用户名" name="input" v-model="username"></input>
+				<view class="title">{{ $t('login.username') }}</view>
+				<input :placeholder="$t('login.pleaseInputUsername')" name="input" v-model="username"></input>
 			</view>
 			<view class="cu-form-group border-bottom">
-				<view class="title">密码</view>
-				<input placeholder="请输入密码" type="password" name="input" v-model="password"></input>
+				<view class="title">{{ $t('login.password') }}</view>
+				<input :placeholder="$t('login.pleaseInputPassword')" type="password" name="input" v-model="password"></input>
 			</view>
 		</view>
 		<view class="margin-top padding-left padding-right radius" v-else>
 			<view class="cu-form-group margin-top">
-				<view class="title">手机号</view>
-				<input placeholder="请输入手机号" name="input" v-model="username"></input>
+				<view class="title">{{ $t('login.phone') }}</view>
+				<input :placeholder="$t('login.pleaseInputPhone')" name="input" v-model="username"></input>
 			</view>
 			<view class="cu-form-group border-bottom">
-				<view class="title">验证码</view>
-				<input v-model="password" placeholder="请输入短信验证码" name="input"></input>
+				<view class="title">{{ $t('login.verificationCode') }}</view>
+				<input v-model="password" :placeholder="$t('login.pleaseInputCode')" name="input"></input>
 				<button class='cu-btn bg-blue shadow' :disabled="btnDisabled"
 					@click="sendMsgCode()">{{btnValue}}</button>
 			</view>
 		</view>
 
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-blue lg" @click="_doLogin()">登录</button>
+			<button class="cu-btn bg-blue lg" @click="_doLogin()">{{ $t('login.loginBtn') }}</button>
 			<!-- #ifdef MP-WEIXIN -->
 			<wechat-login ref="wechatLoginRef"></wechat-login>
 			<!-- #endif -->
@@ -37,7 +37,7 @@
 		<!-- #ifdef H5 -->
 		<view class="padding-lr flex justify-between">
 			<view class="text-green" @click="_doLoginPhone()">{{phoneLoginName}}</view>
-			<view class="text-green" @click="_doRegister()">注册</view>
+			<view class="text-green" @click="_doRegister()">{{ $t('login.register') }}</view>
 		</view>
 		<!-- #endif -->
 
@@ -83,10 +83,18 @@
 				loginByPhone: false,
 				msgCode: '',
 				btnDisabled: false,
-				btnValue: '验证码',
-				phoneLoginName: '验证码登录'
+				btnValue: '',
+				phoneLoginName: ''
 
 			};
+		},
+		computed: {
+			btnValue() {
+				return this.$t('login.verificationCode');
+			},
+			phoneLoginName() {
+				return this.loginByPhone ? this.$t('login.passwordLogin') : this.$t('login.codeLogin');
+			}
 		},
 		onLoad(option) {
 			let that = this;
@@ -110,15 +118,15 @@
 			_doLogin: function() {
 				let _that = this;
 				if (this.username == '') {
-					wx.showToast({
-						title: '请填写用户名',
+					uni.showToast({
+						title: this.$t('login.pleaseInputUsername'),
 						icon: "none"
 					});
 					return;
 				}
 				if (this.password == '') {
-					wx.showToast({
-						title: '请填写密码',
+					uni.showToast({
+						title: this.$t('login.pleaseInputPassword'),
 						icon: "none"
 					});
 					return;
@@ -156,11 +164,6 @@
 			},
 			_doLoginPhone: function() {
 				this.loginByPhone = !this.loginByPhone;
-				if (this.loginByPhone) {
-					this.phoneLoginName = "密码登录"
-				} else {
-					this.phoneLoginName = "验证码登录"
-				}
 				this.username = '';
 				this.password = '';
 			}

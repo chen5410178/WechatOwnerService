@@ -5,7 +5,7 @@
 			<view class="cu-item arrow" @click="_toPage('/pages/invoice/setting')">
 				<view class="content">
 					<text class="cuIcon-mobilefill text-cyan"></text>
-					<text class="text-grey">发票设置</text>
+					<text class="text-grey">{{ $t('invoice') }}{{ $t('invoiceSettings') }}</text>
 				</view>
 				<view class="action">
 		
@@ -14,7 +14,7 @@
 			<view class="cu-item arrow" @click="_toPage('/pages/invoice/invoiceApply')">
 				<view class="content">
 					<text class="cuIcon-warnfill text-cyan"></text>
-					<text class="text-grey">开票记录</text>
+					<text class="text-grey">{{ $t('invoiceHistory') }}</text>
 				</view>
 				<view class="action">
 		

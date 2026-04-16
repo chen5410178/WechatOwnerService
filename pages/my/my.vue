@@ -5,9 +5,13 @@
 			<view class="avatar">
 				<view class="iconfont fa-solid fa-user"></view>
 			</view>
-			<view class="user-info">
+			<view class="user-info" v-if="isLogin">
 				<view class="user-name">{{userName}}</view>
 				<view class="user-addr">{{communityInfo}}</view>
+			</view>
+			<view class="user-info" v-else>
+				<view class="user-name">{{ $t('my.clickToLogin') }}</view>
+				<view class="user-addr">{{ $t('my.loginToSeeMore') }}</view>
 			</view>
 		</view>
 
@@ -15,21 +19,21 @@
 		<view class="assets-card">
 			<view class="asset-item" @click="goToHouse">
 				<view class="asset-num">{{houseCount}}</view>
-				<view class="asset-label">房屋</view>
+				<view class="asset-label">{{ $t('my.house') }}</view>
 			</view>
 			<view class="asset-item" @click="goToCar">
 				<view class="asset-num">{{carCount}}</view>
-				<view class="asset-label">车辆</view>
+				<view class="asset-label">{{ $t('my.car') }}</view>
 			</view>
 			<view class="asset-item" @click="goToCoupon">
 				<view class="asset-num">{{couponCount}}</view>
-				<view class="asset-label">优惠券</view>
+				<view class="asset-label">{{ $t('my.coupon') }}</view>
 			</view>
 		</view>
 
 		<!-- 我的服务 -->
 		<view class="mine-grid-container">
-			<view class="mine-grid-title">我的服务</view>
+			<view class="mine-grid-title">{{ $t('my.myService') }}</view>
 			<view class="mine-grid-row">
 				<view class="mine-grid-item" v-for="(item, index) in serviceList1" :key="index" @click="onServiceClick(item)">
 					<view class="icon-wrapper" >
@@ -52,7 +56,7 @@
 		<view class="setting-list">
 			<view class="setting-item" @click="goToChangeCommunity">
 				<view class="setting-left">
-					<view class="iconfont fa-solid fa-building"></view> 切换小区
+					<view class="iconfont fa-solid fa-building"></view> {{ $t('my.changeCommunity') }}
 				</view>
 				<view class="setting-right">
 					<view class="iconfont fa-solid fa-chevron-right"></view>
@@ -60,7 +64,7 @@
 			</view>
 			<view class="setting-item" @click="onAuthClick">
 				<view class="setting-left">
-					<view class="iconfont fa-solid fa-house-user"></view> 房屋认证
+					<view class="iconfont fa-solid fa-house-user"></view> {{ $t('my.houseAuth') }}
 				</view>
 				<view class="setting-right">
 					<text class="auth-status">{{authStatusText}}</text>
@@ -69,7 +73,7 @@
 			</view>
 			<view class="setting-item" @click="goToSetting">
 				<view class="setting-left">
-					<view class="iconfont fa-solid fa-gear"></view> 设置
+					<view class="iconfont fa-solid fa-gear"></view> {{ $t('my.settings') }}
 				</view>
 				<view class="setting-right">
 					<view class="iconfont fa-solid fa-chevron-right"></view>
@@ -79,7 +83,7 @@
 
 		<!-- 退出登录 -->
 		<view class="logout-btn" @click="logout" v-if="isLogin">
-			退出登录
+			{{ $t('my.logout') }}
 		</view>
 	</view>
 </template>
@@ -114,35 +118,39 @@
 		data() {
 			return {
 				isLogin: false,
-				userName: '请点击登录',
-				communityInfo: '登录后查看更多信息',
+				userName: '',
+				communityInfo: '',
 				houseCount: '0',
 				carCount: '0',
 				couponCount: '0',
-				isAuthOwner: false,
-				serviceList1: [
-					{ name: '缴费记录', icon: 'fa-solid fa-file-lines c-red', href: '/pages/fee/payFeeDetail' },
-					{ name: '报修记录', icon: 'fa-solid fa-screwdriver-wrench c-orange', href: '/pages/repair/myRepair' },
-					{ name: '投诉记录', icon: 'fa-solid fa-comment-dots c-blue', href: '/pages/complaint/complaintList' },
-					{ name: '空置房', icon: 'fa-solid fa-house-chimney-crack c-orange', href: '/pages/applyRoom/myApplyRoomList' },
-					{ name: '装修记录', icon: 'fa-solid fa-paint-roller c-blue', href: '/pages/renovation/myRoomRenovationList' }
-				],
-				serviceList2: [
-					{ name: '门禁日志', icon: 'fa-solid fa-id-card c-purple', href: '/pages/machine/machineTranslateLog' },
-					{ name: '开票历史', icon: 'fa-solid fa-receipt c-orange', href: '/pages/invoice/invoiceApply' }
-				]
+				isAuthOwner: false
 			};
+		},
+		computed: {
+			serviceList1() {
+				return [
+					{ name: this.$t('my.paymentRecord'), icon: 'fa-solid fa-file-lines c-red', href: '/pages/fee/payFeeDetail' },
+					{ name: this.$t('my.repairRecord'), icon: 'fa-solid fa-screwdriver-wrench c-orange', href: '/pages/repair/myRepair' },
+					{ name: this.$t('my.complaintRecord'), icon: 'fa-solid fa-comment-dots c-blue', href: '/pages/complaint/complaintList' },
+					{ name: this.$t('my.vacantRoom'), icon: 'fa-solid fa-house-chimney-crack c-orange', href: '/pages/applyRoom/myApplyRoomList' },
+					{ name: this.$t('my.renovationRecord'), icon: 'fa-solid fa-paint-roller c-blue', href: '/pages/renovation/myRoomRenovationList' }
+				];
+			},
+			serviceList2() {
+				return [
+					{ name: this.$t('my.accessLog'), icon: 'fa-solid fa-id-card c-purple', href: '/pages/machine/machineTranslateLog' },
+					{ name: this.$t('my.invoiceHistory'), icon: 'fa-solid fa-receipt c-orange', href: '/pages/invoice/invoiceApply' }
+				];
+			},
+			authStatusText() {
+				return this.isAuthOwner ? this.$t('my.verified') : this.$t('my.unverified');
+			}
 		},
 		onLoad: function(options) {
 			this.vc.onLoad(options);
 		},
 		onShow: function() {
 			this._checkLogin();
-		},
-		computed: {
-			authStatusText: function() {
-				return this.isAuthOwner ? '已认证' : '未认证';
-			}
 		},
 		methods: {
 			_checkLogin: function() {
@@ -151,8 +159,8 @@
 					this._loadData();
 				} else {
 					this.isLogin = false;
-					this.userName = '请点击登录';
-					this.communityInfo = '登录后查看更多信息';
+					this.userName = '';
+					this.communityInfo = '';
 					this.houseCount = '0';
 					this.carCount = '0';
 					this.couponCount = '0';
@@ -261,8 +269,8 @@
 			},
 			logout: function() {
 				uni.showModal({
-					title: '提示',
-					content: '确定要退出登录吗？',
+					title: this.$t('my.tip'),
+					content: this.$t('my.logoutConfirm'),
 					success: (res) => {
 						if (res.confirm) {
 							uni.clearStorageSync();

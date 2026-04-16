@@ -118,15 +118,15 @@
 			_doLogin: function() {
 				let _that = this;
 				if (this.username == '') {
-					wx.showToast({
-						title: '请填写用户名',
+					uni.showToast({
+						title: this.$t('login.pleaseInputUsername'),
 						icon: "none"
 					});
 					return;
 				}
 				if (this.password == '') {
-					wx.showToast({
-						title: '请填写密码',
+					uni.showToast({
+						title: this.$t('login.pleaseInputPassword'),
 						icon: "none"
 					});
 					return;

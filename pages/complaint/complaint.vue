@@ -1,41 +1,41 @@
 <template>
 	<view>
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('complaint.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">房屋信息</view>
+			<view class="title">{{ $t('complaint.houseInfo') }}</view>
 			<picker  :value="index" :range="roomCloums" @change="_changeRoom">
 				<view class="picker">
-					{{roomName}}
+					{{roomName || $t('complaint.pleaseSelect')}}
 				</view>
 			</picker>
 		</view>
-		<view class="block__title">投诉信息</view>
+		<view class="block__title">{{ $t('complaint.complaintInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">投诉类型</view>
+			<view class="title">{{ $t('complaint.complaintType') }}</view>
 			<picker :value="complaintIndex" :range="typeCds" :range-key="'typeName'" @change="_changeComplaint">
 				<view class="picker">
-					{{typeName}}
+					{{typeName || $t('complaint.pleaseSelect')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">投诉人</view>
-			<input id="complaintName" v-model="complaintName"  placeholder="请输入投诉人"></input>
+			<view class="title">{{ $t('complaint.complainant') }}</view>
+			<input id="complaintName" v-model="complaintName"  :placeholder="$t('complaint.pleaseInputComplainant')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input id="tel" v-model="tel"  placeholder="请输入手机号"></input>
+			<view class="title">{{ $t('complaint.phone') }}</view>
+			<input id="tel" v-model="tel"  :placeholder="$t('complaint.pleaseInputPhone')"></input>
 		</view>
 		<view class="cu-form-group margin-top">
-			<textarea id="context" v-model="context" placeholder="请输入投诉内容"></textarea>
+			<textarea id="context" v-model="context" :placeholder="$t('complaint.pleaseInputContent')"></textarea>
 		</view>
 
-		<view class="block__title">照片信息</view>
+		<view class="block__title">{{ $t('complaint.photoInfo') }}</view>
 		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="uploadImage.imgTitle" @sendImagesData="sendImagesData"></uploadImageAsync>
 		
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="_submitComplaint()">提交</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="_submitComplaint()">{{ $t('complaint.submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -62,11 +62,11 @@
 				complaintIndex: 0,
 				roomCloums: [],
 				roomIdArr: [],
-				roomName: "请选择",
+				roomName: "",
 				roomId: '',
 				roomShow: false,
 				typeCds: [],
-				typeName: '请选择',
+				typeName: '',
 				typeCd: '',
 				typeShow: false,
 				photoList: [],
@@ -79,10 +79,18 @@
 				communityId: "",
 				uploadImage: {
 					maxPhotoNum: 4,
-					imgTitle: '图片上传',
+					imgTitle: '',
 					canEdit: true
 				}
 			};
+		},
+		computed: {
+			roomNameDisplay() {
+				return this.roomName || this.$t('complaint.pleaseSelect');
+			},
+			typeNameDisplay() {
+				return this.typeName || this.$t('complaint.pleaseSelect');
+			}
 		},
 		components: {
 			uploadImageAsync
@@ -131,6 +139,7 @@
 				this.roomId = this.roomIdArr[e.detail.value];
 			},
 			_submitComplaint: function(e) {
+				let that = this;
 				complaint({
 					"typeCd": this.typeCd,
 					"complaintName": this.complaintName,
@@ -142,7 +151,7 @@
 					"communityId": getCommunityId()
 				}).then(_data =>{
 					uni.navigateTo({
-						url:"/pages/successPage/successPage?msg=提交成功&objType=4004"
+						url:"/pages/successPage/successPage?msg=" + that.$t('complaint.submitSuccess') + "&objType=4004"
 					})
 				},err=>{
 					uni.showToast({

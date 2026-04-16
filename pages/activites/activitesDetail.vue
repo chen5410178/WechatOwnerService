@@ -11,14 +11,14 @@
 				<view class="content">
 					<view class="text-grey">
 						<view class="text-cut">{{userName}}</view>
-						<view class="cu-tag round bg-orange sm">管理员</view>
+						<view class="cu-tag round bg-orange sm">{{ $t('admin') || '管理员' }}</view>
 					</view>
 					<view class="text-gray text-sm ">
 						<view class="text-cut">
 							<text class="margin-right-xs"></text>
 							{{startTime}}
-							<text class="iconfont iconyuedu padding-left"></text> {{readCount}}
-							<text class="iconfont icongood-fill padding-left"></text> {{likeCount}}
+							<text class="iconfont iconyuedu padding-left"></text> {{ $t('readCount') }} {{readCount}}
+							<text class="iconfont icongood-fill padding-left"></text> {{ $t('likeCount') }} {{likeCount}}
 						</view>
 					</view>
 				</view>
@@ -136,7 +136,7 @@
 						_that.context = replaceImgSrc(_activites.context,conf.commonBaseUrl);
 						_that.readCount = _activites.readCount;
 						_that.likeCount = _activites.likeCount;
-						wx.setNavigationBarTitle({
+						uni.setNavigationBarTitle({
 						  title: _activites.title
 						})
 					});

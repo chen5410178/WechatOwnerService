@@ -10,7 +10,7 @@
 						</view>
 						<view class="text-gray text-sm flex">
 							<view class="text-cut">
-								操作人员：{{item.staffName}}
+								{{ $t('operator') }}：{{item.staffName}}
 							</view>
 						</view>
 					</view>

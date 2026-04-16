@@ -29,45 +29,45 @@
 			<view v-for="(item,index) in bookingList" :key="index"
 				class="bg-white margin-top margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs justify-between">
-					<view style="font-size: 14px;">单号<span style="margin-left: 10px;"
+					<view style="font-size: 14px;">{{ $t('orderNo') }}<span style="margin-left: 10px;"
 							class="text-gray">{{item.timeId}}</span></view>
 				</view>
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view style="font-size: 14px;">场馆<span style="margin-left: 10px;"
+					<view style="font-size: 14px;">{{ $t('venue') }}<span style="margin-left: 10px;"
 							class="text-gray">{{item.venueName}}</span></view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">场地</view>
+					<view class="text-gray">{{ $t('space') }}</view>
 					<view class="text-gray">{{item.spaceName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">预约日期</view>
+					<view class="text-gray">{{ $t('bookDate') }}</view>
 					<view class="text-gray">{{item.appointmentTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">预约时间</view>
+					<view class="text-gray">{{ $t('bookTime') }}</view>
 					<view class="text-gray">{{HoursStr(item.hours)}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">预约人</view>
+					<view class="text-gray">{{ $t('bookPerson') }}</view>
 					<view class="text-gray">{{item.personName }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">预约电话</view>
+					<view class="text-gray">{{ $t('bookTel') }}</view>
 					<view class="text-gray">{{item.personTel }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">金额</view>
+					<view class="text-gray">{{ $t('amount') }}</view>
 					<view class="text-gray">{{item.total }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">核销状态</view>
+					<view class="text-gray">{{ $t('verifyStatus') }}</view>
 					<view class="text-gray">{{StateStr(item.state)}}</view>
 				</view>
 
 
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">核销时间</view>
+					<view class="text-gray">{{ $t('verifyTime') }}</view>
 					<view class="text-gray">{{item.stateTime}}</view>
 				</view>
 
@@ -76,7 +76,7 @@
 						@click="personTimeRefund(item,'T')">申请退款</button>
 					<button v-if="item.state == 'T'" class="cu-btn line-grey margin-left"
 						@click="personTimeRefund(item,'W')">取消退款</button> -->
-					<button class="cu-btn bg-gradual-blue margin-left" @click="toApplyDetail(item)">详情</button>
+					<button class="cu-btn bg-gradual-blue margin-left" @click="toApplyDetail(item)">{{ $t('detail') }}</button>
 				</view>
 
 				<view
@@ -88,7 +88,7 @@
 			<view class="cu-item" v-if="bookingList.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">暂无记录</text>
+					<text class="text-grey">{{ $t('noRecord') }}</text>
 				</view>
 				<view class="action">
 
@@ -117,23 +117,26 @@
 				noData: false,
 				userName:'',
 				userTel:'',
-				// W 待核销 C核销完成 T申请退款 Y已退款
-				parkingType: [{
-					"name": '全部',
-					"code": 1000
-				}, {
-					"name": '待核销',
-					"code": 1001
-				}, {
-					"name": '已核销',
-					"code": 2002
-				}],
 				code: '1001',
 			};
 		},
 
 		components: {
 			noDataPage
+		},
+		computed: {
+			parkingType() {
+				return [{
+					"name": this.$t('all'),
+					"code": 1000
+				}, {
+					"name": this.$t('waitVerify'),
+					"code": 1001
+				}, {
+					"name": this.$t('verified'),
+					"code": 2002
+				}];
+			}
 		},
 		/**
 		 * 生命周期函数--监听页面加载
@@ -158,13 +161,13 @@
 			initList() {
 				// debugger
 				uni.showLoading({
-					title: '加载中',
+					title: this.$t('loading'),
 					mask: true
 				});
 				let _that = this;
 				this.noData = false;
 				getBooks(0).then(data => {
-					wx.hideLoading();
+					uni.hideLoading();
 					let _bookings = data.data;
 					_that.moreRooms = [];
 					if (_bookings.length == 0) {
@@ -209,16 +212,16 @@
 			},
 			StateStr(s) {
 				if (s == "W") {
-					return "待核销";
+					return this.$t('waitVerify');
 				}
 				if (s == "C") {
-					return "已核销";
+					return this.$t('verified');
 				}
 				if (s == "Y") {
-					return "已退款"
+					return this.$t('refunded');
 				}
 				if (s == "T") {
-					return "申请退款"
+					return this.$t('applyRefund');
 				}
 			},
 			// 时间转换

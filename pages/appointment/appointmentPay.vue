@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">订单信息</view>
+			<view class="block__title">{{ $t('orderInfo') }}</view>
 			<form>
 				<view class="cu-list menu">
 					<view class="cu-item">
@@ -11,7 +11,7 @@
 					</view>
 					<view class="cu-item">
 						<view class="content">
-							<text class="text-grey">预约日期</text>
+							<text class="text-grey">{{ $t('bookDate') }}</text>
 						</view>
 						<view class="action">
 							<text class="text-grey text-sm">{{bookparams.bookDate}}</text>
@@ -19,7 +19,7 @@
 					</view>
 				</view>
 
-				<view class="block__title">场地信息</view>
+				<view class="block__title">{{ $t('venueInfo') }}</view>
 				<view class="cu-list menu" v-for="(item,index) in this.bookList" :key="index">
 					<view class="cu-item">
 						<view class="content">
@@ -35,18 +35,18 @@
 		</scroll-view>
 		<view class=" bg-white  border flex cu-form-group" style="position: fixed;width: 100%;bottom: 0;">
 
-			<view class="title">总计:
+			<view class="title">{{ $t('total') }}:
 				<text class="solid-bottom text-xxl text-price text-red">{{totalMoney}}</text>
 			</view>
 			<view class="btn-group">
 				<!-- #ifdef H5 || MP-WEIXIN -->
 				<!-- cu-btn bg-red shadow-blur lgplus sharp -->
 				<button @click="onPayFee()" class="cu-btn round bg-blue"
-					style="background-color: #1cbbb4;">提交订单</button>
+					style="background-color: #1cbbb4;">{{ $t('submitOrder') }}</button>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
 				<button @click="_payWxApp()" class="cu-btn round bg-blue"
-					style="background-color: #1cbbb4;">提交订单</button>
+					style="background-color: #1cbbb4;">{{ $t('submitOrder') }}</button>
 				<!-- #endif -->
 			</view>
 		</view>
@@ -159,8 +159,8 @@
 				console.log('_payWxApp');
 				if (this.canPay == "t") {
 					let _receivedAmount = this.receivableAmount;
-					wx.showLoading({
-						title: '支付中'
+					uni.showLoading({
+						title: this.$t('paying')
 					});
 
 					let _tradeType = 'APP';
@@ -168,7 +168,7 @@
 						cycles: this.feeMonth,
 						communityId: getCommunityId(),
 						feeId: this.feeId,
-						feeName: '物业费',
+						feeName: this.$t('propertyFee'),
 						receivedAmount: _receivedAmount,
 						tradeType: _tradeType,
 						appId: this.appId,
@@ -210,7 +210,7 @@
 									orderInfo: orderInfo, //微信、支付宝订单数据
 									success: function(res) {
 										uni.showToast({
-											title: "支付成功",
+											title: _that.$t('paySuccess'),
 											duration: 2000
 										});
 										uni.reLaunch({
@@ -224,13 +224,13 @@
 										console.log('fail:' + JSON.stringify(err));
 									}
 								});
-								wx.hideLoading();
+								uni.hideLoading();
 								return;
 							}
 							if (res.statusCode == 200 && res.data.code == '100') {
 								let data = res.data; //成功情况下跳转
 								uni.showToast({
-									title: "支付成功",
+									title: _that.$t('paySuccess'),
 									duration: 2000
 								});
 								setTimeout(function() {
@@ -245,25 +245,25 @@
 								return;
 							}
 
-							wx.hideLoading();
-							wx.showToast({
-								title: "缴费失败",
+							uni.hideLoading();
+							uni.showToast({
+								title: _that.$t('feeFailed'),
 								icon: 'none',
 								duration: 2000
 							});
 						},
 						fail: function(e) {
-							wx.hideLoading();
-							wx.showToast({
-								title: "服务器异常了",
+							uni.hideLoading();
+							uni.showToast({
+								title: _that.$t('serverError'),
 								icon: 'none',
 								duration: 2000
 							});
 						}
 					});
 				} else {
-					wx.showLoading({
-						title: '支付失败'
+					uni.showLoading({
+						title: _that.$t('payFail')
 					});
 				}
 			},
@@ -272,8 +272,8 @@
 				let _that = this;
 				if (this.canPay == "t") {
 					let totalMoney = this.totalMoney;
-					wx.showLoading({
-						title: '支付中'
+					uni.showLoading({
+						title: this.$t('paying')
 					});
 					let _tradeType = 'JSAPI';
 
@@ -339,7 +339,7 @@
 									'success': function(res) {
 										console.log("微信支付22",res)
 										uni.showToast({
-											title: "支付成功",
+											title: this.$t('paySuccess'),
 											duration: 2000
 										});
 										uni.reLaunch({
@@ -357,7 +357,7 @@
 								// #ifdef H5
 								WexinPayFactory.wexinPay(data, function() {
 									uni.showToast({
-										title: "支付成功",
+										title: this.$t('paySuccess'),
 										duration: 2000
 									});
 									uni.reLaunch({
@@ -368,13 +368,13 @@
 									});
 								});
 								// #endif
-								wx.hideLoading();
+								uni.hideLoading();
 								return;
 							}
 							if (res.statusCode == 200 && res.data.code == '100') {
 								let data = res.data; //成功情况下跳转
 								uni.showToast({
-									title: "支付成功",
+									title: this.$t('paySuccess'),
 									duration: 2000
 								});
 								setTimeout(function() {
@@ -393,40 +393,39 @@
 								let tips = _that.HoursStr(res.data.msg.substr(0, tipsIndex))+"\n\r" + res.data.msg
 									.substr(tipsIndex, res.data.msg.length - tipsIndex);
 
-								wx.showToast({
-									title: "缴费失败:" + tips,
+								uni.showToast({
+									title: _that.$t('feeFailed') + ":" + tips,
 									icon: 'none',
 									duration: 4000
 								});
 								}else{
-									wx.showToast({
-										title: "缴费失败:" + res.data.msg,
+									uni.showToast({
+										title: _that.$t('feeFailed') + ":" + res.data.msg,
 										icon: 'none',
 										duration: 4000
 									});
 								}
 							} else {
-								wx.showToast({
-									title: "缴费失败:" + res.data.msg,
+								uni.showToast({
+									title: _that.$t('feeFailed') + ":" + res.data.msg,
 									icon: 'none',
 									duration: 2000
 								});
 							}
-							wx.hideLoading();
+							uni.hideLoading();
 						},
 						fail: function(e) {
-							wx.hideLoading();
-							wx.showToast({
-								title: "服务器异常了",
+							uni.hideLoading();
+							uni.showToast({
+								title: _that.$t('serverError'),
 								icon: 'none',
 								duration: 2000
 							});
 						}
 					});
 				} else {
-					debugger
-					wx.showLoading({
-						title: '支付失败'
+					uni.showLoading({
+						title: this.$t('payFail')
 					});
 				}
 			}

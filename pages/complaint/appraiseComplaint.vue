@@ -70,8 +70,8 @@
 						"complaintId": this.complaintId
 					})
 					.then((_data) => {
-						wx.showToast({
-							title: '成功',
+						uni.showToast({
+							title: this.$t('success'),
 							icon: 'none',
 							duration: 2000
 						});
@@ -79,7 +79,7 @@
 							delta: 1
 						});
 					}, (error) => {
-						wx.showToast({
+						uni.showToast({
 							title: error,
 							icon: 'none',
 							duration: 2000

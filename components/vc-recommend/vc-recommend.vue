@@ -53,7 +53,7 @@
 			return {
 				curCategoryId: '-1',
 				mainCatagorys: [{
-					categoryName: "为你推荐",
+					categoryName: this.$t('components.recommendForYou'),
 					mainCategoryId: "-1"
 				}],
 				products: [],
@@ -108,7 +108,7 @@
 						if (_that.pagefrom <= _data.records) {
 							_that.pagefrom = _that.pagefrom + 1;
 						} else {
-							_that.loadingText = "已经到底了";
+							_that.loadingText = this.$t('components.noMoreData');
 						}
 					})
 			},

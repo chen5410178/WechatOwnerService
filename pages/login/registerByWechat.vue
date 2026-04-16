@@ -133,22 +133,20 @@
 		methods: {
 			onGetPhoneNumber(e) {
 				if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
-					wx.showToast({
-						title: '手机号码未授权，请授权后再使用',
+					uni.showToast({
+						title: this.$t('login.phoneNotAuthorized'),
 						icon: "none"
 					});
 					return;
 				}
 				let _that = this;
-				wx.request({
+				uni.request({
 					url: constant.url.getWxPhoto,
 					method: 'post',
 					header: context.getHeaders(),
 					data: {
 						iv: e.detail.iv,
-						// 用户非敏感信息
 						key: _that.sessionKey,
-						// 签名
 						decryptData: e.detail.encryptedData,
 					},
 					success: function(res) {
@@ -183,12 +181,12 @@
 				} else if (obj.communityName == "") {
 					msg = "请填写小区名称";
 				} else if (obj.appUserName == "") {
-					msg = "请填写业主名称";
+					msg = this.$t('login.pleaseInputOwnerName');
 				} else if (obj.link == "") {
-					msg = "请填写手机号";
+					msg = this.$t('login.pleaseInputPhone');
 				}
 				if (msg != "") {
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -196,8 +194,8 @@
 				} else {
 					ownerRegiter(obj).then(_data=>{
 						if (_data.code == 0) {
-							wx.hideLoading();
-							wx.redirectTo({
+							uni.hideLoading();
+							uni.redirectTo({
 								url: "/pages/login/login"
 							});
 							return;
@@ -221,13 +219,13 @@
 			chooseCommunity: function(e) {
 
 				if (this.areaCode == '' || this.areaCode == undefined) {
-					wx.showToast({
-						title: '请先选择地区',
+					uni.showToast({
+						title: this.$t('login.pleaseSelectAreaFirst'),
 						icon: 'none'
 					});
 					return;
 				}
-				wx.navigateTo({
+				uni.navigateTo({
 					url: '/pages/my/viewCommunitys?areaCode=' + this.areaCode,
 				})
 			},
@@ -238,7 +236,7 @@
 				let accountInfo = uni.getAccountInfoSync();
 				_appId = accountInfo.miniProgram.appId;
 				// #endif
-				wx.request({
+				uni.request({
 					url: constant.url.loginUrl,
 					method: 'post',
 					header: context.getHeaders(),

@@ -2,9 +2,9 @@
 	<view>
 		<view class="header">
 			<view class="search-input">
-				<input placeholder="请输入小区名称" @input="input"></input>
+				<input :placeholder="$t('inputCommunityName')" @input="input"></input>
 			</view>
-			<view class="search-btn">搜索</view>
+			<view class="search-btn">{{ $t('search') }}</view>
 		</view>
 		<view class="result-container" :hidden="hidden">
 			<scroll-view scroll-y="true" class="search-result-list" :hidden="hidden">
@@ -15,10 +15,10 @@
 				</block>
 			</scroll-view>
 		</view>
-		<view class="getLocation" @tap="getLocation">点击定位当前位置</view>
-		<view class="addLocation">新增收货地址<view class="addLocation-icon">+</view>
+		<view class="getLocation" @tap="getLocation">{{ $t('clickLocate') }}</view>
+		<view class="addLocation">{{ $t('addDeliveryAddress') }}<view class="addLocation-icon">+</view>
 		</view>
-		<view class="myLocation">我的收货地址</view>
+		<view class="myLocation">{{ $t('myDeliveryAddress') }}</view>
 		<view class="LocatonInfo"></view>
 		<view class="userTel"></view>
 	</view>
@@ -82,30 +82,13 @@
 		onShareAppMessage: function() {},
 		methods: {
 			onTap: function(e) {
-				wx.setStorageSync('location', e.currentTarget.dataset.key);
-				wx.switchTab({
+				uni.setStorageSync('location', e.currentTarget.dataset.key);
+				uni.switchTab({
 					url: '/pages/home/home'
 				});
 			},
 			getLocation: function() {
-				// wx.getLocation({
-				// 	type: 'gcj02',
-				// 	success: function(res) {
-				// 		var latitude = res.latitude;
-				// 		var longitude = res.longitude;
-				// 		wx.request({
-				// 			url: 'http://api.map.baidu.com/geocoder/v2/?ak=btsVVWf0TM1zUBEbzFz6QqWF&coordtype=gcj02ll&location=' +
-				// 				latitude + ',' + longitude + '&output=json&pois=0',
-				// 			method: "get",
-				// 			success: function(res) {
-				// 				console.log(res.data.result.formatted_address);
-				// 				wx.setStorageSync('location', res.data.result.formatted_address.substr(res.data.result.formatted_address
-				// 					.indexOf('市') + 1, 10));
-				// 			}
-				// 		});
-				// 	}
-				// });
-				wx.switchTab({
+				uni.switchTab({
 					url: '/pages/home/home'
 				});
 			},
@@ -123,7 +106,7 @@
 			},
 			search: function(text) {
 				var that = this;
-				wx.request({
+				uni.request({
 					url: 'http://api.map.baidu.com/place/v2/search?query=' + text +
 						'&page_size=20&page_num=0&scope=2&region=南昌&output=json&ak=btsVVWf0TM1zUBEbzFz6QqWF',
 					success: function(res) {

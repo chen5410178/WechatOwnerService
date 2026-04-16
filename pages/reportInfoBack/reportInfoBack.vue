@@ -6,35 +6,35 @@
 			<input :value="communityName" @input="bindInput" data-name="communityName" required readonly label="小区名称"
 			 ></input>
 		</view> -->
-		<view class="block__title">返省人员信息上报</view>
+		<view class="block__title">{{ $t('reportInfoBack') }}</view>
 		<view class="cu-form-group">
-			<view class="title">姓名</view>
-			<input :value="name" @input="bindInput" data-name="name" required label="姓名" clearable placeholder="请输入名称"
+			<view class="title">{{ $t('name') }}</view>
+			<input :value="name" @input="bindInput" data-name="name" required label="姓名" clearable :placeholder="$t('inputName')"
 			 name="name"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
-			<input :value="idCard" @input="bindInput" data-name="idCard" required label="身份证" clearable placeholder="请输入身份证"
+			<view class="title">{{ $t('idCard') }}</view>
+			<input :value="idCard" @input="bindInput" data-name="idCard" required label="身份证" clearable :placeholder="$t('inputIdCard')"
 			 name="idCard"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
+			<view class="title">{{ $t('phone') }}</view>
 			<view>
-			<input :value="tel" @input="bindInput" data-name="tel" required label="手机号" clearable placeholder="请输入手机号" name="tel"></input>
+			<input :value="tel" @input="bindInput" data-name="tel" required label="手机号" clearable :placeholder="$t('inputPhone')" name="tel"></input>
 		</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">来源地</view>
+			<view class="title">{{ $t('source') }}</view>
 			<picker @change="bindSourceChange" :value="indexSource" :range="arraySourceType" range-key="name">
 			        <view >{{arraySourceType[indexSource].name}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">城市名称</view>
-			<input :value="sourceCityName" @input="bindInput" data-name="sourceCityName" required label="城市名称" clearable placeholder="请输入城市名称" name="sourceCityName"></input>
+			<view class="title">{{ $t('cityName') }}</view>
+			<input :value="sourceCityName" @input="bindInput" data-name="sourceCityName" required label="城市名称" clearable :placeholder="$t('inputCityName')" name="sourceCityName"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">返回日期</view>
+			<view class="title">{{ $t('returnDate') }}</view>
 			<picker mode="date" :value="bindDate" start="2020-00-01" end="2030-09-01" @change="dateChange">
 				<view class="picker">
 					{{bindDate}}
@@ -42,7 +42,7 @@
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">返回时间</view>
+			<view class="title">{{ $t('returnTime') }}</view>
 			<picker mode="time" :value="bindTime" start="00:00" end="23:59" @change="timeChange">
 				<view class="picker">
 					{{bindTime}}
@@ -50,11 +50,11 @@
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">备注</view>
-			<textarea v-model="remark" placeholder="请输入备注"></textarea>
+			<view class="title">{{ $t('remark') }}</view>
+			<textarea v-model="remark" :placeholder="$t('inputRemark')"></textarea>
 		</view>
 		<view class="button_up_blank">
-			<button class="cu-btn bg-green lg margin-top" @tap="reportBack">上报数据</button>
+			<button class="cu-btn bg-green lg margin-top" @tap="reportBack">{{ $t('submitData') }}</button>
 		</view>
 	</view>
 </template>
@@ -85,7 +85,7 @@
 				bindDate: currentDate,
 				bindTime: '12:01',
 				areaShow: false,
-				arraySourceType: [{'code':"1001",'name':'国内'},{'code':"2002",'name':'国外'}],
+				arraySourceType: [{'code':"1001",'name': this.$t('domestic')},{'code':"2002",'name': this.$t('abroad')}],
 				indexSource: 0,
 				sourceCityName:"",
 				remark:"",
@@ -175,35 +175,35 @@
 				};
 				let msg = "";
 				if(obj.communityId == "") {
-					msg = "请重新扫码";
+					msg = this.$t('pleaseScanAgain');
 				} else if(obj.name == "") {
-					msg = "请填写姓名";
+					msg = this.$t('pleaseFillName');
 				} else if (obj.idCard == "" || obj.idCard.length != 18) {
-					msg = "请正确填写身份证号";
+					msg = this.$t('pleaseFillIdCard');
 				} else if (obj.tel == "" || obj.tel.length != 11) {
-					msg = "请正确填写的手机号";
+					msg = this.$t('pleaseFillPhone');
 				}else if (obj.sourceCityName == "") {
-					msg = "请填写城市名称";
-				}else if (obj.bindDate == "请选择") {
-					msg = "请选择返回日期";
-				} else if (obj.bindTime == "请选择") {
-					msg = "请选择返回时间";
+					msg = this.$t('pleaseFillCity');
+				}else if (obj.bindDate == this.$t('selectFirst')) {
+					msg = this.$t('pleaseSelectDate');
+				} else if (obj.bindTime == this.$t('selectFirst')) {
+					msg = this.$t('pleaseSelectTime');
 				}
 				if (msg != "") {
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
 					});
 				} else {
-					wx.showLoading({
-						title: '提交中'
+					uni.showLoading({
+						title: this.$t('submitting')
 					});
 					saveReportInfoBackCity(obj)
 						.then(_data => {
 							uni.showToast({
 								icon: 'none',
-								title: '保存成功'
+								title: this.$t('submitSuccess')
 							});
 							this.communityId = "";
 						}, err => {

@@ -7,25 +7,25 @@
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-key"></view>
 					</view>
-					<text class="hero-text">开门</text>
+					<text class="hero-text">{{ $t('indexOpenDoor') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('visitor')">
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-qrcode"></view>
 					</view>
-					<text class="hero-text">访客</text>
+					<text class="hero-text">{{ $t('indexVisit') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('payment')">
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-yen-sign"></view>
 					</view>
-					<text class="hero-text">缴费</text>
+					<text class="hero-text">{{ $t('indexPayment') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('repair')">
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-user-shield"></view>
 					</view>
-					<text class="hero-text">报修</text>
+					<text class="hero-text">{{ $t('quickRepair') }}</text>
 				</view>
 			</view>
 		</view>
@@ -33,14 +33,14 @@
 		<!-- 浮动卡片(物业账单) -->
 		<view class="banner-card" @click="goToPayment">
 			<view class="banner-text">
-				<view class="banner-title">物业账单</view>
+				<view class="banner-title">{{ $t('propertyBill') }}</view>
 				<view class="banner-amount">
 					<text class="amount" >{{billAmount}}</text>
-					<text class="unit">元</text>
+					<text class="unit">{{ $t('yuanUnit') }}</text>
 				</view>
-				<text class="banner-date">本期账单</text>
+				<text class="banner-date">{{ $t('currentBill') }}</text>
 			</view>
-			<view class="banner-btn">去支付</view>
+			<view class="banner-btn">{{ $t('goPay') }}</view>
 		</view>
 	</view>
 </template>
@@ -94,7 +94,7 @@
 			},
 			async onHeroAction(type) {
 				if (!hasLogin()) {
-					uni.showToast({ title: '请先登录', icon: 'none' });
+					uni.showToast({ title: this.$t('pleaseLoginFirst'), icon: 'none' });
 					return;
 				}
 				const urlMap = {

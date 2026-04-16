@@ -36,7 +36,7 @@
 			}
 			this._loadAppId(function(){
 				if(!_that.appId || _that.appId.indexOf('wx') < 0){
-					wx.switchTab({
+					uni.switchTab({
 						url: "/pages/index/index"
 					});
 				}
@@ -74,7 +74,7 @@
 			_refreshWechatOpenId: function() {	
 				//todo 不是微信环境 直接进入
 				if(isWxOrAli() != 'WECHAT'){
-					wx.switchTab({
+					uni.switchTab({
 						url: "/pages/index/index"
 					});
 					return ;
@@ -93,7 +93,7 @@
 			},
 			_refreshWechatMiniOpenId:function(){
 				let _that =this;
-				wx.login({
+				uni.login({
 					success: function(loginRes) {
 						if (!loginRes.code) {
 							return;
@@ -133,7 +133,7 @@
 					communityId:this.communityId,
 					wechatType:_wechatType
 				}).then(_data=>{
-					wx.switchTab({
+					uni.switchTab({
 						url: "/pages/index/index"
 					});
 				},err=>{

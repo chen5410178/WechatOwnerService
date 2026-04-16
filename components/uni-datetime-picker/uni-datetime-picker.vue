@@ -64,14 +64,14 @@
 			</view>
 			<view class="uni-datetime-picker-btn">
 				<view @click="clearTime">
-					<text class="uni-datetime-picker-btn-text">清空</text>
+					<text class="uni-datetime-picker-btn-text">{{ $t('clear') || '清空' }}</text>
 				</view>
 				<view class="uni-datetime-picker-btn-group">
 					<view class="uni-datetime-picker-cancel" @click="tiggerTimePicker">
-						<text class="uni-datetime-picker-btn-text">取消</text>
+						<text class="uni-datetime-picker-btn-text">{{ $t('cancel') }}</text>
 					</view>
 					<view @click="setTime">
-						<text class="uni-datetime-picker-btn-text">确定</text>
+						<text class="uni-datetime-picker-btn-text">{{ $t('confirm') }}</text>
 					</view>
 				</view>
 			</view>

@@ -7,12 +7,12 @@
 			</view>
 			<view class="main">
 				<view>
-					<view class="text">报修类型: {{item.repairTypeName}}</view>
-					<view class="text">状<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>态: {{item.stateName}}</view>
-					<view class="text">预约时间: {{item.appointmentTime}}</view>
+					<view class="text">{{ $t('repair.repairType') || '报修类型' }}: {{item.repairTypeName}}</view>
+					<view class="text">{{ $t('repair.status') || '状态' }}<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>: {{item.stateName}}</view>
+					<view class="text">{{ $t('repair.appointmentTime') || '预约时间' }}: {{item.appointmentTime}}</view>
 				</view>
 				<view>
-					<button class="button" size="mini" type="default" @tap.native.stop="gotoDetail" :data-item="item">查看</button>
+					<button class="button" size="mini" type="default" @tap.native.stop="gotoDetail" :data-item="item">{{ $t('view') || '查看' }}</button>
 				</view>
 			</view>
 		</view>
@@ -50,7 +50,7 @@
 			if (!this.loading) {
 				this.getTable(1, true).then(() => {
 					// 处理完成后，终止下拉刷新
-					wx.stopPullDownRefresh();
+					uni.stopPullDownRefresh();
 				});
 			}
 		},
@@ -78,14 +78,14 @@
 				});
 			},
 			gotoDetail: function(e) {
-				wx.navigateTo({
+				uni.navigateTo({
 					url: "/pages/repair/detail/detail?item=" + JSON.stringify(e.currentTarget.dataset.item)
 				});
 			},
 			//封装请求
 			request: function(data) {
 				return new Promise((resolve, reject) => {
-					wx.request({
+					uni.request({
 						url: constant.url.listOwnerRepairs,
 						header: context.getHeaders(),
 						method: "GET",

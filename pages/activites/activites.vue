@@ -16,8 +16,8 @@
 								</view>
 								<view class="text-gray text-sm padding-left">
 									<text>{{item.userName}}</text>
-									<text class="iconfont iconyuedu padding-left"></text> {{item.readCount}}
-									<text class="iconfont icongood-fill padding-left"></text> {{item.likeCount}}
+									<text class="iconfont iconyuedu padding-left"></text> {{ $t('readCount') }} {{item.readCount}}
+									<text class="iconfont icongood-fill padding-left"></text> {{ $t('likeCount') }} {{item.likeCount}}
 								</view>
 							</view>
 						</view>

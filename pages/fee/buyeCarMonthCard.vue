@@ -1,22 +1,22 @@
 <template>
 	<view>
-		<view class="block__title">购买月卡</view>
+		<view class="block__title">{{ $t('buyeCarMonthCard') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">车辆</text>
+					<text class="text-grey">{{ $t('car') }}</text>
 				</view>
 				<view class="action">
 					<picker bindchange="PickerChange" :value="carIndex" :range="cars" :range-key="'carNum'" @change="carChange">
 						<view class="picker ">
-							{{carIndex == -1?'请选择': cars[carIndex].carNum}}>
+							{{carIndex == -1? $t('selectFirst'): cars[carIndex].carNum}}
 						</view>
 					</picker>
 				</view>
 			</view>
 			<view class="cu-item" v-if="carNum">
 				<view class="content">
-					<text class="text-grey">到期时间</text>
+					<text class="text-grey">{{ $t('expireTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{endTime}}</text>
@@ -24,19 +24,19 @@
 			</view>
 			<view class="cu-item" v-if="carNum">
 				<view class="content">
-					<text class="text-grey">选择月卡</text>
+					<text class="text-grey">{{ $t('selectMonthCard') }}</text>
 				</view>
 				<view class="action">
 					<picker bindchange="PickerChange" :value="cardIndex" :range="cards" :range-key="'cardName'" @change="cardChange">
 						<view class="picker">
-							{{cardIndex == -1?'请选择': cards[cardIndex].cardName}}>
+							{{cardIndex == -1? $t('selectFirst'): cards[cardIndex].cardName}}
 						</view>
 					</picker>
 				</view>
 			</view>
 			<view class="cu-item" v-if="carNum">
 				<view class="content">
-					<text class="text-grey">支付金额</text>
+					<text class="text-grey">{{ $t('payAmount') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{amount}}</text>
@@ -47,10 +47,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				合计：{{amount}}元
+				{{ $t('total') }}：{{amount}}{{ $t('yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">提交订单</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
 			</view>
 		</view>
 	</view>
@@ -126,7 +126,7 @@
 				if(!this.cardId){
 					uni.showToast({
 						icon:'none',
-						title:'请选择月卡'
+						title: this.$t('pleaseSelectMonthCard')
 					});
 					return ;
 				}

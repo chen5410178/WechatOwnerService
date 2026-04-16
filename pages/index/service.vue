@@ -2,7 +2,7 @@
 	<view class="page-service">
 		<!-- 费用 -->
 		<view class="list-group">
-			<view class="list-header">费用</view>
+			<view class="list-header">{{ $t('service.fee') }}</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in feeList" :key="index" @click="onItemClick(item)">
 					<view class="grid-icon iconfont" :class="item.icon"></view>
@@ -13,7 +13,7 @@
 
 		<!-- 物业服务 -->
 		<view class="list-group">
-			<view class="list-header">物业服务</view>
+			<view class="list-header">{{ $t('service.propertyService') }}</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in propertyList" :key="index" @click="onItemClick(item)">
 					<view class="grid-icon iconfont" :class="item.icon"></view>
@@ -24,7 +24,7 @@
 
 		<!-- 工单 -->
 		<view class="list-group">
-			<view class="list-header">工单</view>
+			<view class="list-header">{{ $t('service.workOrder') }}</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in workOrderList" :key="index" @click="onItemClick(item)">
 					<view class="grid-icon iconfont" :class="item.icon"></view>
@@ -35,7 +35,7 @@
 
 		<!-- 通行 -->
 		<view class="list-group">
-			<view class="list-header">通行</view>
+			<view class="list-header">{{ $t('service.access') }}</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in passList" :key="index" @click="onItemClick(item)">
 					<view class="grid-icon iconfont" :class="item.icon"></view>
@@ -46,7 +46,7 @@
 
 		<!-- 其他 -->
 		<view class="list-group">
-			<view class="list-header">其他</view>
+			<view class="list-header">{{ $t('service.other') }}</view>
 			<view class="grid-menu">
 				<view class="grid-item" v-for="(item, index) in otherList" :key="index" @click="onItemClick(item)">
 					<view class="grid-icon iconfont" :class="item.icon"></view>
@@ -60,35 +60,46 @@
 <script>
 	export default {
 		data() {
-			return {
-				feeList: [
-					{ name: '物业缴费', icon: 'fa-solid fa-house-user c-red', href: '/pages/fee/oweFee' },
-					{ name: '水电充值', icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
-					{ name: '车辆月卡', icon: 'fa-solid fa-car c-orange', href: '/pages/fee/payParkingFeeList' },
-					{ name: '发票', icon: 'fa-solid fa-receipt c-green', href: '/pages/invoice/invoice' }
-				],
-				propertyList: [
-					{ name: '社区公告', icon: 'fa-solid fa-bullhorn c-orange', href: '/pages/notice/index' },
-					{ name: '家庭成员', icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
-					{ name: '业主信息', icon: 'fa-solid fa-user c-purple', href: '/pages/viewBindOwner/viewBindOwner' },
-					{ name: '车位申请', icon: 'fa-solid fa-square-parking c-green', href: '/pages/car/applyparking' },
-					{ name: '空置房申请', icon: 'fa-solid fa-door-open c-red', href: '/pages/applyRoom/applyRoom' },
-					{ name: '小区公示', icon: 'fa-solid fa-newspaper c-blue', href: '/pages/common/communityPublicityList' }
-				],
-				workOrderList: [
-					{ name: '报事报修', icon: 'fa-solid fa-screwdriver-wrench c-green', href: '/pages/repair/repair' },
-					{ name: '投诉咨询', icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
-					{ name: '装修报备', icon: 'fa-solid fa-paint-roller c-red', href: '/pages/renovation/roomRenovation' },
-					{ name: '球场预约', icon: 'fa-solid fa-baseball c-blue', href: '/pages/appointment/appointment' }
-				],
-				passList: [
-					{ name: '一键开门', icon: 'fa-solid fa-key c-red', href: '/pages/machine/openDoor' },
-					{ name: '访客通行', icon: 'fa-solid fa-user-clock c-purple', href: '/pages/visit/visitList' }
-				],
-				otherList: [
-					{ name: '充电桩', icon: 'fa-solid fa-bolt c-blue', href: '/pages/machine/chargeMachines' }
-				]
-			};
+			return {};
+		},
+		computed: {
+			feeList() {
+				return [
+					{ name: this.$t('service.propertyPay'), icon: 'fa-solid fa-house-user c-red', href: '/pages/fee/oweFee' },
+					{ name: this.$t('service.waterElectric'), icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
+					{ name: this.$t('service.carMonthly'), icon: 'fa-solid fa-car c-orange', href: '/pages/fee/payParkingFeeList' },
+					{ name: this.$t('service.invoice'), icon: 'fa-solid fa-receipt c-green', href: '/pages/invoice/invoice' }
+				];
+			},
+			propertyList() {
+				return [
+					{ name: this.$t('service.communityNotice'), icon: 'fa-solid fa-bullhorn c-orange', href: '/pages/notice/index' },
+					{ name: this.$t('service.familyMembers'), icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
+					{ name: this.$t('service.ownerInfo'), icon: 'fa-solid fa-user c-purple', href: '/pages/viewBindOwner/viewBindOwner' },
+					{ name: this.$t('service.parkingApply'), icon: 'fa-solid fa-square-parking c-green', href: '/pages/car/applyparking' },
+					{ name: this.$t('service.vacantApply'), icon: 'fa-solid fa-door-open c-red', href: '/pages/applyRoom/applyRoom' },
+					{ name: this.$t('service.communityBulletin'), icon: 'fa-solid fa-newspaper c-blue', href: '/pages/common/communityPublicityList' }
+				];
+			},
+			workOrderList() {
+				return [
+					{ name: this.$t('service.repair'), icon: 'fa-solid fa-screwdriver-wrench c-green', href: '/pages/repair/repair' },
+					{ name: this.$t('service.complaint'), icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
+					{ name: this.$t('service.renovation'), icon: 'fa-solid fa-paint-roller c-red', href: '/pages/renovation/roomRenovation' },
+					{ name: this.$t('service.courtBooking'), icon: 'fa-solid fa-baseball c-blue', href: '/pages/appointment/appointment' }
+				];
+			},
+			passList() {
+				return [
+					{ name: this.$t('service.openDoor'), icon: 'fa-solid fa-key c-red', href: '/pages/machine/openDoor' },
+					{ name: this.$t('service.visitorAccess'), icon: 'fa-solid fa-user-clock c-purple', href: '/pages/visit/visitList' }
+				];
+			},
+			otherList() {
+				return [
+					{ name: this.$t('service.charging'), icon: 'fa-solid fa-bolt c-blue', href: '/pages/machine/chargeMachines' }
+				];
+			}
 		},
 		methods: {
 			onItemClick: function(item) {

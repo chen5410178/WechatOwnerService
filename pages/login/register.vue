@@ -1,21 +1,21 @@
 <template>
 	<view>
-		<view class="block__title">注册信息</view>
+		<view class="block__title">{{ $t('login.registerInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="link" required label="手机号" clearable placeholder="请输入手机号"></input>
+			<view class="title">{{ $t('login.phone') }}</view>
+			<input v-model="link" required label="手机号" clearable :placeholder="$t('login.pleaseInputPhone')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">密码</view>
-			<input v-model="password" required type="password" label="密码" clearable placeholder="请输入密码"></input>
+			<view class="title">{{ $t('login.password') }}</view>
+			<input v-model="password" required type="password" label="密码" clearable :placeholder="$t('login.pleaseInputPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">确认密码</view>
-			<input v-model="rePassword" required type="password" label="确认密码" clearable placeholder="请输入确认密码"></input>
+			<view class="title">{{ $t('login.confirmPassword') }}</view>
+			<input v-model="rePassword" required type="password" label="确认密码" clearable :placeholder="$t('login.pleaseConfirmPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">验证码</view>
-			<input v-model="msgCode" placeholder="请输入短信验证码" name="input"></input>
+			<view class="title">{{ $t('login.verificationCode') }}</view>
+			<input v-model="msgCode" :placeholder="$t('login.pleaseInputCode')" name="input"></input>
 			<button class='cu-btn bg-green shadow' :disabled="btnDisabled" @click="_sendMsgCode()">{{btnValue}}</button>
 		</view>
 		<view class="padding flex justify-start">
@@ -23,12 +23,12 @@
 				<checkbox style="transform: scale(0.7)" value="readme"></checkbox>
 			</checkbox-group>
 			<view class="read-me">
-				<text class="margin-left-xs">我已阅读</text>
-				<text class="user-read" @click="_readMe">《用户须知》</text>
+				<text class="margin-left-xs">{{ $t('login.iHaveRead') }}</text>
+				<text class="user-read" @click="_readMe">{{ $t('login.userNotice') }}</text>
 			</view>
 		</view>
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green   lg" @click="_doRegister()">提交</button>
+			<button class="cu-btn bg-green   lg" @click="_doRegister()">{{ $t('login.submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -47,12 +47,17 @@
 				codeMsg: '',
 				msgCode: '',
 				areaShow: false,
-				btnValue: '验证码',
+				btnValue: '',
 				btnDisabled: false,
 				password: '',
 				rePassword: '',
 				readme:false,
 			};
+		},
+		computed: {
+			btnValue() {
+				return this.$t('login.verificationCode');
+			}
 		},
 		/**
 		 * 生命周期函数--监听页面加载
@@ -84,8 +89,8 @@
 					"defaultCommunityId": _communityId
 				}
 				if(!this.readme){
-					wx.showToast({
-						title: '未选择我已阅读《用户须知》',
+					uni.showToast({
+						title: this.$t('login.pleaseReadNotice'),
 						icon: 'none',
 						duration: 2000
 					})
@@ -93,14 +98,14 @@
 				}
 				let msg = "";
 				if (this.password == '' || this.password != this.rePassword) {
-					msg = "密码和重置密码不一致";
+					msg = this.$t('login.passwordNotMatch');
 				} else if (obj.link == "") {
-					msg = "请填写手机号";
+					msg = this.$t('login.pleaseInputPhone');
 				} else if (obj.msgCode == "") {
-					msg = "请填写验证码";
+					msg = this.$t('login.pleaseInputCode');
 				}
 				if (msg != "") {
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -109,8 +114,8 @@
 				}
 				ownerRegiter(obj).then(_data=>{
 					if (_data.code == 0) {
-						wx.hideLoading();
-						wx.redirectTo({
+						uni.hideLoading();
+						uni.redirectTo({
 							url: "/pages/login/login"
 						});
 						return;

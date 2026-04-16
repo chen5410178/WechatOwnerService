@@ -1,32 +1,32 @@
 <template>
 	<view>
 		<view class="block__title">
-			<text>访客历史</text>
-			<button class="cu-btn bg-blue" @click="_addVisit()">访客登记</button>
+			<text>{{ $t('visit.visitList') }}</text>
+			<button class="cu-btn bg-blue" @click="_addVisit()">{{ $t('visit.addVisit') }}</button>
 		</view>
 		<view v-if="visits && visits.length > 0">
 			<view v-for="(item,index) in visits" :key="index"
 				class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding" @click="_showDetail(item)">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>预约状态</view>
+					<view>{{ $t('visit.visitStatus') }}</view>
 					<view class="text-gray">
 						{{item.stateName}}
 					</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">访客姓名</view>
+					<view class="text-gray">{{ $t('visit.visitorName') }}</view>
 					<view class="text-gray">{{item.name}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.carNum">
-					<view class="text-gray">车牌号</view>
+					<view class="text-gray">{{ $t('visit.carNum') }}</view>
 					<view class="text-gray">{{item.carNum}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">访客电话</view>
+					<view class="text-gray">{{ $t('visit.visitorPhone') }}</view>
 					<view class="text-gray">{{item.phoneNumber}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">预计来访时间</view>
+					<view class="text-gray">{{ $t('visit.estimatedVisitTime') }}</view>
 					<view class="text-gray">{{item.visitTime}}</view>
 				</view>
 			</view>
@@ -56,9 +56,9 @@
 				page: 1,
 				loadingStatus: 'loading',
 				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+					contentdown: this.$t('loadMore'),
+					contentrefresh: this.$t('loading'),
+					contentnomore: this.$t('noMore')
 				}
 			}
 		},

@@ -1,27 +1,27 @@
 <template>
 	<view>
 		<view class="cu-form-group margin-top-sm">
-			<view class="title">车牌号</view>
-			<input placeholder="请输入车牌号" class="text-right" v-model="carNum"></input>
+			<view class="title">{{ $t('carNum') }}</view>
+			<input :placeholder="$t('inputCarNum')" class="text-right" v-model="carNum"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">停车场</view>
+			<view class="title">{{ $t('parkingLot') }}</view>
 			<picker @change="parkingAreaChange" :value="paIdIndex" :range="parkingAreas" :range-key="'num'">
 				<view class="picker">
-					{{paIdIndex > -1 ? paNum:'请选择停车场'}}
+					{{paIdIndex > -1 ? paNum:$t('selectParkingLot')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group margin-top-sm">
-			<view class="title">优惠券</view>
-			<input placeholder="请输入优惠券" class="text-right" disabled="disabled" v-model="couponName"></input>
+			<view class="title">{{ $t('coupon') }}</view>
+			<input :placeholder="$t('inputCoupon')" class="text-right" disabled="disabled" v-model="couponName"></input>
 		</view>
 		<view class="cu-form-group margin-top-sm">
-			<view class="title">赠送数量</view>
-			<input placeholder="请输入赠送数量" class="text-right" type="number" v-model="giftCount"></input>
+			<view class="title">{{ $t('giftCount') }}</view>
+			<input :placeholder="$t('inputGiftCount')" class="text-right" type="number" v-model="giftCount"></input>
 		</view>
 		<view class="padding">
-			<button class="cu-btn block bg-blue margin-tb-sm lg" @click="_saveCustomCoupon()" type="">赠送</button>
+			<button class="cu-btn block bg-blue margin-tb-sm lg" @click="_saveCustomCoupon()" type="">{{ $t('gift') }}</button>
 		</view>
 	</view>
 </template>
@@ -68,7 +68,7 @@
 				if(!this.carNum){
 					uni.showToast({
 						icon:'none',
-						title:'未填写车牌'
+						title: this.$t('noCarNum')
 					});
 					return ;
 				}
@@ -76,7 +76,7 @@
 				if(!this.couponId){
 					uni.showToast({
 						icon:'none',
-						title:'未选择停车劵'
+						title: this.$t('noParkingTicket')
 					});
 					return ;
 				}
@@ -92,7 +92,7 @@
 				couponPropertyUserGiftCar(_data).then(_msg=>{
 					uni.showToast({
 						icon:'none',
-						title:'赠送成功'
+						title: this.$t('giftSuccess')
 					});
 					uni.navigateBack({
 						delta:1

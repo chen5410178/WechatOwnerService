@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">{{machineName}}充值</view>
+		<view class="block__title">{{machineName}}{{ $t('recharge') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">表号</text>
+					<text class="text-grey">{{ $t('meterNo') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{address}}</text>
@@ -12,7 +12,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">剩余余额</text>
+					<text class="text-grey">{{ $t('remainBalance') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{curDegrees}}</text>
@@ -20,10 +20,10 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">充值金额</text>
+					<text class="text-grey">{{ $t('rechargeAmount') }}</text>
 				</view>
 				<view class="action">
-					<input v-model="amount" placeholder="请输入充值金额" type="number" class="text-right"></input>
+					<input v-model="amount" :placeholder="$t('inputRechargeAmount')" type="number" class="text-right"></input>
 				</view>
 			</view>
 		</view>
@@ -31,10 +31,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				合计：{{amount}}元
+				{{ $t('total') }}：{{amount}}{{ $t('yuan') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">提交订单</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
 			</view>
 		</view>
 	</view>
@@ -87,7 +87,7 @@
 				if(!this.amount){
 					uni.showToast({
 						icon:'none',
-						title:'未填写金额'
+						title: this.$t('noAmountFilled')
 					});
 					return ;
 				}
@@ -98,7 +98,7 @@
 					communityId:getCommunityId(),
 					roomId: this.roomId,
 					machineId: this.machineId,
-					feeName: this.feeConfigName+'充值',
+					feeName: this.feeConfigName + this.$t('recharge'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 				};

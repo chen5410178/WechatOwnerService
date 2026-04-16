@@ -32,7 +32,7 @@
 					let data = res;
 					let msg = '';
 					if(data.code != 0){
-						wx.showToast({
+						uni.showToast({
 							title: data.msg,
 							icon: 'none',
 							duration: 2000
@@ -41,7 +41,7 @@
 					}
 					_that.qrCode = data.data
 					new qrCode('userQrcode', {
-						text: _that.qrCode?_that.qrCode:'生成二维码失败',
+						text: _that.qrCode?_that.qrCode:this.$t('generateQrCodeFailed'),
 						width: 250,
 						height: 250,
 						colorDark: "#333333",
@@ -49,8 +49,8 @@
 						correctLevel: qrCode.CorrectLevel.L
 					})
 				},(err)=>{
-					wx.hideLoading();
-					wx.showToast({
+					uni.hideLoading();
+					uni.showToast({
 						title: err,
 						icon: 'none',
 						duration: 2000

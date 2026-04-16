@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view v-if="accounts.length > 0">
-			<view class="block__title">业主账户</view>
+			<view class="block__title">{{ $t('ownerAccount') }}</view>
 			<checkbox-group @change="checkboxChange">
 				<view class="cu-list menu" v-for="(account, idx) in accounts" :key="idx" :data-item="account"
 					@click="_viewAccountDetail(account)">
@@ -16,7 +16,7 @@
 						</view>
 						<view class="action">
 							<text
-								class="text-grey text-sm">{{account.amount}}{{account.acctType == '2004' ? '分' : '元'}}</text>
+								class="text-grey text-sm">{{account.amount}}{{account.acctType == '2004' ? $t('points') : $t('yuan')}}</text>
 						</view>
 					</view>
 				</view>

@@ -1,12 +1,12 @@
 <template>
 	<view>
-		<view class="block__title">业主信息</view>
+		<view class="block__title">{{ $t('ownerInfo') }}</view>
 		<!-- <view class="cu-form-group">
 			<view class="title">业主ID</view>
 			{{ownerInfo.memberId}}
 		</view> -->
 		<view class="cu-form-group">
-			<view class="title">名称</view>
+			<view class="title">{{ $t('name') }}</view>
 			{{userName}}
 		</view>
 		<!-- <view class="cu-form-group">
@@ -14,68 +14,68 @@
 			{{ownerInfo.idCard}}
 		</view> -->
 		<view class="cu-form-group">
-			<view class="title">联系方式</view>
+			<view class="title">{{ $t('contact') }}</view>
 			{{userTel}}
 		</view>
 	
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('houseInfo') }}</view>
 		<!-- <view class="cu-form-group">
 			<view class="title">房屋ID</view>
 			{{roomDetail.roomId}}
 		</view> -->
 		<view class="cu-form-group">
-			<view class="title">楼栋</view>
-			{{roomDetail.floorNum}}号楼
+			<view class="title">{{ $t('building') }}</view>
+			{{roomDetail.floorNum}}{{ $t('buildingUnit') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">单元</view>
-			{{roomDetail.unitNum}}单元
+			<view class="title">{{ $t('unit') }}</view>
+			{{roomDetail.unitNum}}{{ $t('unitUnit') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">房屋编号</view>
-			{{roomDetail.roomNum}}室
+			<view class="title">{{ $t('roomNo') }}</view>
+			{{roomDetail.roomNum}}{{ $t('roomRoom') }}
 		</view>
 	
 		<view class="cu-form-group">
-			<view class="title">楼层</view>
-			{{roomDetail.layer+'层'}}
+			<view class="title">{{ $t('layer') }}</view>
+			{{roomDetail.layer}}{{ $t('floorLayer') }}
 		</view>
 		<!-- <view class="cu-form-group">
 			<view class="title">房间数</view>
 			{{roomDetail.section}}个
 		</view> -->
 		<view class="cu-form-group">
-			<view class="title">户型</view>
+			<view class="title">{{ $t('apartment') }}</view>
 			{{roomDetail.apartment}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">建筑面积</view>
-			{{roomDetail.builtUpArea+'平方米'}}
+			<view class="title">{{ $t('builtUpArea') }}</view>
+			{{roomDetail.builtUpArea}}{{ $t('sqm') }}
 		</view>
 		<!-- <view class="cu-form-group">
 			<view class="title">单价</view>
 			{{roomDetail.unitPrice+'元/平方米'}}
 		</view> -->
 		
-		<view class="block__title">空置房申请信息填写</view>
+		<view class="block__title">{{ $t('vacantRoomApply') }}</view>
 		<view class="cu-form-group arrow">
-			<view class="title">优惠类型</view>
+			<view class="title">{{ $t('discountType') }}</view>
 			<picker mode="selector" :range="applyTypes" range-key="typeName"  @change="applyTypeChange">
 				<view class="picker">
-					{{applyTypeShow?applyTypeShow:"请选择"}}
+					{{applyTypeShow?applyTypeShow: $t('selectFirst')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">费用项目</view>
+			<view class="title">{{ $t('feeProject') }}</view>
 			<picker mode="selector" :range="feeTypeCds" range-key="feeName"  @change="feeTypeCdsChange">
 				<view class="picker">
-					{{feeTypeCd?feeTypeCd:"请选择"}}
+					{{feeTypeCd?feeTypeCd: $t('selectFirst')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">开始日期</view>
+			<view class="title">{{ $t('startDate') }}</view>
 			<picker mode="date" :value="bindStartDate" start="2020-09-01" end="2050-09-01" @change="dateStartChange">
 				<view class="picker">
 					{{bindStartDate}}
@@ -83,7 +83,7 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">结束日期</view>
+			<view class="title">{{ $t('endDate') }}</view>
 			<picker mode="date" :value="bindEndDate" start="2020-09-01" end="2050-09-01" @change="dateEndChange">
 				<view class="picker">
 					{{bindEndDate}}
@@ -91,14 +91,14 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">申请说明</view>
+			<view class="title">{{ $t('applyDescription') }}</view>
 			<input type="text" v-model="createRemark">
 		</view>
-		<view class="block__title">图片材料</view>
-		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="uploadImage.imgTitle" @sendImagesData="sendImagesData"></uploadImageAsync>
+		<view class="block__title">{{ $t('imageMaterial') }}</view>
+		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="$t('imageUpload')" @sendImagesData="sendImagesData"></uploadImageAsync>
 		
 		<view class="btn-box">
-			<button type="default" class="btn-sub" @click="subApply()">提交申请</button>
+			<button type="default" class="btn-sub" @click="subApply()">{{ $t('submitApplication') }}</button>
 		</view>
 	
 		<view class="button_up_blank"></view>
@@ -262,17 +262,18 @@
 			 * 提交申请
 			 */
 			subApply: function(){
+				let _that = this;
 				let msg = '';
 				if(this.applyType == ''){
-					msg = '请选择优惠类型';
+					msg = this.$t('pleaseSelectDiscountType');
 				}else if(this.feeId == ''){
-					msg = '请选择费用项目';
-				}else if(this.bindStartDate == '请选择' || this.bindEndDate == '请选择'){
-					msg = '请选择时间范围';
+					msg = this.$t('pleaseSelectFeeProject');
+				}else if(this.bindStartDate == this.$t('selectFirst') || this.bindEndDate == this.$t('selectFirst')){
+					msg = this.$t('pleaseSelectTime');
 				}else if(!compareDate(this.bindEndDate, this.bindStartDate)){
-					msg = '时间范围有误';
+					msg = this.$t('timeRangeError');
 				}else if(this.createRemark == ''){
-					msg = '请填写申请说明';
+					msg = this.$t('pleaseFillApplyDescription');
 				}
 				
 				if(msg != ''){
@@ -301,7 +302,7 @@
 				}
 				saveApplyRoomDiscount(params).then(function(_res){
 					uni.showToast({
-						title: '申请成功'
+						title: _that.$t('applySuccess')
 					});
 					setTimeout(function(){
 						uni.navigateBack({})

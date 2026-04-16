@@ -1,21 +1,21 @@
 <template>
 	<view>
 		<view v-if="oiId">
-			<view class="block__title">发票抬头</view>
+			<view class="block__title">{{ $t('invoiceTitle') }}</view>
 			<view class="cu-form-group">
-				<view class="title">发票类型</view>
-				<view><text>{{invoiceType=='1001'?'个人':'公司'}}</text></view>
+				<view class="title">{{ $t('invoiceType') }}</view>
+				<view><text>{{invoiceType=='1001'?$t('personal'):$t('company')}}</text></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">发票名头</view>
+				<view class="title">{{ $t('invoiceName') }}</view>
 				<view><text>{{invoiceName}}</text></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">纳税人识别号</view>
+				<view class="title">{{ $t('taxNo') }}</view>
 				<view><text>{{invoiceNum}}</text></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">地址、电话</view>
+				<view class="title">{{ $t('addressPhone') }}</view>
 				<view><text>{{invoiceAddress}}</text></view>
 			</view>
 
@@ -34,12 +34,12 @@
 										<view class="text-cut" style="width:220px">{{item.feeName || '-'}}</view>
 									</view>
 									<view class="text-gray text-sm">
-										<text class="margin-right-xs">{{item.startTime}}至{{item.endTime}}</text>
+										<text class="margin-right-xs">{{item.startTime}} {{ $t('to') }} {{item.endTime}}</text>
 									</view>
 								</view>
 							</view>
 							<view class="action">
-								<text class="text-grey text-sm">金额:￥{{item.receivedAmount}}</text>
+								<text class="text-grey text-sm">{{ $t('amount') }}:￥{{item.receivedAmount}}</text>
 							</view>
 						</view>
 					</view>
@@ -55,12 +55,12 @@
 
 				</view>
 				<view class="btn-group">
-					<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_submitInvoice()">提交订单</button>
+					<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_submitInvoice()">{{ $t('submitOrder') }}</button>
 				</view>
 			</view>
 		</view>
 		<view v-else class="flex flex-direction padding">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toSettings()">设置发票抬头</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toSettings()">{{ $t('setInvoiceTitle') }}</button>
 		</view>
 	</view>
 </template>
@@ -100,7 +100,7 @@
 			if (!_ownerId) {
 				uni.showToast({
 					icon: 'none',
-					title: '业主不存在',
+					title: this.$t('ownerNotExist'),
 				})
 				return;
 			}
@@ -163,7 +163,7 @@
 				if (!_that.detailIds || _that.detailIds.length < 1) {
 					uni.showToast({
 						icon: 'none',
-						title: '未选择缴费记录'
+						title: this.$t('noFeeSelected')
 					});
 					return;
 				}

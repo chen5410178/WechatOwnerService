@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('repair.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">位置</view>
+			<view class="title">{{ $t('repair.location') }}</view>
 			<picker bindchange="PickerChange" :value="repairScopeIndex" :range="repairScopes" :range-key="'name'" @change="repairScopeChange">
 				<view class="picker">
 					{{repairScopes[repairScopeIndex].name}}
@@ -10,17 +10,17 @@
 			</picker>
 		</view>
 		<view class="cu-form-group" v-if="repairObjType == '004'">
-			<view class="title">房屋信息</view>
+			<view class="title">{{ $t('repair.houseInfo') }}</view>
 			<picker bindchange="PickerChange" :value="index" :range="roomCloums" @change="roomChange">
 				<view class="picker">
-					{{roomName?roomName:'请选择'}}
+					{{roomName?roomName:$t('repair.pleaseSelect')}}
 				</view>
 			</picker>
 		</view>
 
-		<view class="block__title">报修信息</view>
+		<view class="block__title">{{ $t('repair.repairInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">报修类型</view>
+			<view class="title">{{ $t('repair.repairType') }}</view>
 			<picker id="complaintType" bindchange="PickerChange" 
 			:value="repairTypeIndex" 
 			:range-key="'repairTypeName'" 
@@ -28,24 +28,24 @@
 			v-if = "repairTypes.length>0"
 			 @change="repairTypeChange">
 				<view class="picker">
-					{{repairTypes.length==0 ? "请选择" : repairTypes[repairTypeIndex].repairTypeName}}
+					{{repairTypes.length==0 ? $t('repair.pleaseSelect') : repairTypes[repairTypeIndex].repairTypeName}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group" v-if="priceScope !=''">
-			<view class="title">收费标准</view>
+			<view class="title">{{ $t('repair.chargeStandard') }}</view>
 			<input disabled="disable" v-model="priceScope" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">报修人</view>
-			<input v-model="bindRepairName" placeholder="请输入报修人" class="text-right"></input>
+			<view class="title">{{ $t('repair.repairPerson') }}</view>
+			<input v-model="bindRepairName" :placeholder="$t('repair.pleaseInputRepairPerson')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="bindTel" placeholder="请输入手机号" class="text-right"></input>
+			<view class="title">{{ $t('repair.phone') }}</view>
+			<input v-model="bindTel" :placeholder="$t('repair.pleaseInputPhone')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">预约日期</view>
+			<view class="title">{{ $t('repair.appointmentDate') }}</view>
 			<picker mode="date" :value="bindDate" :start="todayDate" end="2050-09-01" @change="dateChange">
 				<view class="picker">
 					{{bindDate}}
@@ -53,7 +53,7 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow">
-			<view class="title">预约时间</view>
+			<view class="title">{{ $t('repair.appointmentTime') }}</view>
 			<picker mode="time" :value="bindTime" :start="todayDateTime" end="22:00" @change="timeChange">
 				<view class="picker">
 					{{bindTime}}
@@ -61,17 +61,17 @@
 			</picker>
 		</view>
 		<view class="cu-form-group margin-top">
-			<textarea v-model="context" placeholder="请输入报修内容"></textarea>
+			<textarea v-model="context" :placeholder="$t('repair.pleaseInputContent')"></textarea>
 		</view>
 
-		<view class="block__title">相关图片</view>
+		<view class="block__title">{{ $t('repair.relatedImages') }}</view>
 		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="uploadImage.imgTitle" @sendImagesData="sendImagesData"></uploadImageAsync>
 		
 
 		<view class="button_up_blank"></view>
 
 		<view class="flex flex-direction">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitRepair()">提交</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitRepair()">{{ $t('repair.submit') }}</button>
 		</view>
 
 	</view>
@@ -97,8 +97,8 @@
 		data() {
 			return {
 				minDate: new Date().getTime(),
-				bindDate: '请选择',
-				bindTime: '请选择',
+				bindDate: '',
+				bindTime: '',
 				roomCloums: [],
 				roomIdArr: [],
 				roomName: "",
@@ -122,11 +122,11 @@
 				index: 0,
 				repairScopes: [{
 						id: '004',
-						name: '房屋'
+						name: ''
 					},
 					{
 						id: '001',
-						name: '公共区域'
+						name: ''
 					}
 				],
 				repairTypes: [],
@@ -140,10 +140,21 @@
 				todayDateTime:'',
 				uploadImage: {
 					maxPhotoNum: 4,
-					imgTitle: '图片上传',
+					imgTitle: '',
 					canEdit: true
 				}
 			};
+		},
+		computed: {
+			roomNamePlaceholder() {
+				return this.roomName || this.$t('repair.pleaseSelect');
+			},
+			bindDateDisplay() {
+				return this.bindDate || this.$t('repair.pleaseSelect');
+			},
+			bindTimeDisplay() {
+				return this.bindTime || this.$t('repair.pleaseSelect');
+			}
 		},
 
 		components: {
@@ -168,7 +179,7 @@
 				let roomCloums = [];
 				let roomIdArr = [];
 				arr.map(item => {
-					roomCloums.push(item.floorNum + "号楼" + item.unitNum + "单元" + item.roomNum + "室");
+					roomCloums.push(item.floorNum + this.$t('repair.floorUnit') + item.unitNum + this.$t('repair.unit') + item.roomNum + this.$t('repair.room'));
 					roomIdArr.push(item.roomId);
 				})
 				that.roomCloums = roomCloums;
@@ -202,6 +213,7 @@
 			},
 
 			submitRepair: function(e) {
+				let that = this;
 				let obj = {
 					"repairName": this.bindRepairName,
 					"repairType": this.repairType,
@@ -231,27 +243,27 @@
 				now = Date.parse(new Date());
 				let msg = "";
 				if (obj.repairType == "") {
-					msg = "请选择报修类型";
+					msg = this.$t('repair.pleaseSelectRepairType');
 				} else if (obj.repairName == "") {
-					msg = "请填写报修人";
+					msg = this.$t('repair.pleaseInputRepairPerson');
 				} else if (checkStrLength(obj.repairName) > 30) {
-					msg = "报修人长度不能超过15位";
+					msg = this.$t('repair.nameTooLong');
 				} else if (obj.tel == "") {
-					msg = "请填写手机号";
-				}  else if (obj.bindDate == "请选择") {
-					msg = "请选择预约日期";
-				} else if (obj.bindTime == "请选择") {
-					msg = "请选择预约时间";
+					msg = this.$t('repair.pleaseInputPhone');
+				}  else if (obj.bindDate == this.$t('repair.pleaseSelect')) {
+					msg = this.$t('repair.pleaseSelectDate');
+				} else if (obj.bindTime == this.$t('repair.pleaseSelect')) {
+					msg = this.$t('repair.pleaseSelectTime');
 				} else if (now - oppoTime > 1800 * 1000){
-					msg = "预约时间有误";
+					msg = this.$t('repair.appointmentTimeError');
 				} else if (obj.context == "") {
-					msg = "请填写报修内容";
+					msg = this.$t('repair.pleaseInputContent');
 				} else if (obj.repairObjId == '') {
-					msg = "请选择报修位置";
+					msg = this.$t('repair.pleaseSelectLocation');
 				}
 
 				if (msg != "") {
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -266,19 +278,19 @@
 							let _json = res.data;
 							if (_json.code == 0) {
 								uni.navigateTo({
-									url:"/pages/successPage/successPage?msg=提交成功&objType=4004"
+									url:"/pages/successPage/successPage?msg=" + that.$t('repair.submitSuccess') + "&objType=4004"
 								})
 								return;
 							}
-							wx.showToast({
+							uni.showToast({
 								title: _json.msg,
 								icon: 'none',
 								duration: 2000
 							})
 						},
 						fail: function(e) {
-							wx.showToast({
-								title: "服务器异常了",
+							uni.showToast({
+								title: that.$t('common.serverError'),
 								icon: 'none',
 								duration: 2000
 							})
@@ -373,7 +385,7 @@
 					}else{
 						uni.showToast({
 							icon:"none",
-							title:"未配置报修设置"
+							title: this.$t('repair.notConfigRepair')
 						})
 					}
 				})

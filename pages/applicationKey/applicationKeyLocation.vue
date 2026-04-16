@@ -3,7 +3,7 @@
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">当前小区</text>
+					<text class="text-grey">{{ $t('currentCommunity') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
@@ -25,7 +25,7 @@
 			</view>
 			<view class="akl_wirte_btn">
 				<view class="padding flex flex-direction">
-					<button class="cu-btn bg-green lg" @click="gotoApplyApplicationKeyPage()">填写资料</button>
+					<button class="cu-btn bg-green lg" @click="gotoApplyApplicationKeyPage()">{{ $t('fillInfo') }}</button>
 				</view>
 			</view>
 		</view>
@@ -101,14 +101,14 @@
 				console.log('gotoApplyApplicationKeyPage', this.locations);
 
 				if (this.locations.length < 1) {
-					wx.showToast({
+					uni.showToast({
 						icon: 'none',
-						title: '没有相应门禁供您申请'
+						title: _that.$t('noMachineAvailable')
 					});
 					return;
 				}
 
-				wx.navigateTo({
+				uni.navigateTo({
 					url: "/pages/applicationKey/applicationKeyUser?locations=" + JSON.stringify(this.locations) +
 						"&communityId=" + this.communityId
 				});

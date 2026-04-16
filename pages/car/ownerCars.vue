@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="block__title">我的车辆</view>
+		<view class="block__title">{{ $t('ownerCars') }}</view>
 		<view class="cu-list menu" v-for="(item,index) in cars" :key="index">
 			<view class="cu-item arrow" @click="_toCarDetail(item)" >
 				<view class="content">
@@ -13,7 +13,7 @@
 			</view>
 		</view>
 		<view class="flex flex-direction">
-			<button @click="_applyParking()" class="cu-btn line-blue margin-tb-sm lg">申请车位</button>
+			<button @click="_applyParking()" class="cu-btn line-blue margin-tb-sm lg">{{ $t('applyParking') }}</button>
 		</view>
 	</view>
 </template>

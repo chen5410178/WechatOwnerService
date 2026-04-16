@@ -2,30 +2,30 @@
 	<view>
 		<view class="my_ak">
 			<view class="my_ak_text_01">
-				<text>每月1日自动更新</text>
+				<text>{{ $t('autoUpdateMonthly') }}</text>
 			</view>
 			<view class="my_ak_text_02">
 				<text>{{pwd}}</text>
 			</view>
 			<view class="my_ak_text_03">
-				<text>有效期至{{endTime}}</text>
+				<text>{{ $t('validUntil') }}{{endTime}}</text>
 			</view>
 			<view class="cu-bar bg-white">
 				<view class="action">
-					<text class="text-xl text-bold">说明</text>
+					<text class="text-xl text-bold">{{ $t('instruction') }}</text>
 				</view>
 			</view>
 			<view class="my_ak_text_explain">
-				<text>1.在门禁机上点击"密码开门"，再输入密码直接开门</text>
+				<text>1. {{ $t('passwordOpenInstruction') }}</text>
 			</view>
 			<view class="my_ak_text_explain">
-				<text>2.该密码能开启的门禁机有：{{loactions}}</text>
+				<text>2. {{ $t('accessibleMachines') }}{{loactions}}</text>
 			</view>
 			<view class="my_ak_text_explain">
-				<text>3.如果有新门禁添加时，则重新申请钥匙才能开新的门禁</text>
+				<text>3. {{ $t('newMachineApplyTip') }}</text>
 			</view>
 			<view class="my_ak_text_explain">
-				<text>4.如果分享密码给来访者，建议分享访客密码</text>
+				<text>4. {{ $t('sharePasswordTip') }}</text>
 			</view>
 		</view>
 	</view>
@@ -39,9 +39,9 @@
 		data() {
 			return {
 				applicationKeys: [],
-				pwd: '请先申请钥匙',
-				loactions: '没有门禁',
-				endTime: '0000-00-00 00:00:00',
+				pwd: '',
+				loactions: '',
+				endTime: '',
 				idCard: "",
 				communityId: ""
 			};
@@ -54,7 +54,11 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad: function(options) {
+			let _that = this;
 			context.onLoad(options);
+			_that.pwd = _that.$t('pleaseApplyFirst');
+			_that.loactions = _that.$t('noAccessMachine');
+			_that.endTime = '0000-00-00 00:00:00';
 		},
 
 		/**
@@ -128,8 +132,8 @@
 							let _applicationKeys = res.data.applicationKeys;
 
 							if (_applicationKeys.length == 0) {
-								wx.showToast({
-									title: "未查询到钥匙",
+								uni.showToast({
+									title: this.$t('noKeyFound'),
 									icon: 'none',
 									duration: 2000
 								});
@@ -142,8 +146,8 @@
 						}
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						});

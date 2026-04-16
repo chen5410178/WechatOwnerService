@@ -3,12 +3,12 @@
 
 		<view class="bg-white money-info text-center">
 			<view class="money-black"></view>
-			<view class="money-title">订单金额</view>
+			<view class="money-title">{{ $t('orderAmount') }}</view>
 			<view class="money-value">{{money}}</view>
 		</view>
 
 		<view class="padding-sm">
-			<view class="block__title">使用积分</view>
+			<view class="block__title">{{ $t('useIntegral') }}</view>
 			<checkbox-group @change="_checkIntegral" >
 				<view class="cu-list menu">
 					<view class="cu-item ">
@@ -22,19 +22,19 @@
 							</view>
 						</view>
 						<view class="action">
-							<text class="text-grey text-sm">{{integral}}个积分</text>
+							<text class="text-grey text-sm">{{integral}}{{ $t('integralUnit') }}</text>
 						</view>
 					</view>
 				</view>
 			</checkbox-group>
-			<view class="text-right" @click="_viewGetIntegral()">如何获取积分？</view>
+			<view class="text-right" @click="_viewGetIntegral()">{{ $t('howGetIntegral') }}</view>
 		</view>
 
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-if="!appId">
-			<button disabled="disabled" class="cu-btn bg-blue shadow-blur round lg">确认支付</button>
+			<button disabled="disabled" class="cu-btn bg-blue shadow-blur round lg">{{ $t('confirmPayment') }}</button>
 		</view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-else>
-			<button @click="_submit" class="cu-btn bg-blue shadow-blur round lg" :disabled="banButton">确认支付</button>
+			<button @click="_submit" class="cu-btn bg-blue shadow-blur round lg" :disabled="banButton">{{ $t('confirmPayment') }}</button>
 		</view>
 
 		<tips ref="tipRef"></tips>
@@ -167,7 +167,7 @@
 			},
 			_refreshWechatMiniOpenId: function() {
 				let _that = this;
-				wx.login({
+				uni.login({
 					success: function(loginRes) {
 						if (!loginRes.code) {
 							return;
@@ -200,7 +200,7 @@
 				if (!this.appId) {
 					uni.showToast({
 						icon: 'none',
-						title: '小区未配置支付信息'
+						title: this.$t('paymentNotConfigured')
 					});
 					return;
 				}
@@ -243,9 +243,8 @@
 				this.money = this.money.toFixed(2);
 			},
 			_viewGetIntegral: function() {
-
-				let _content = "您可以到商城购物或者物业缴费的方式获取积分，积分可以用来物业缴费和商城购物."
-				this.$refs.tipRef.openTip('如何获取积分？', _content);
+				let _content = this.$t('getIntegralTip');
+				this.$refs.tipRef.openTip(this.$t('howGetIntegral'), _content);
 			}
 		}
 	}

@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">房屋信息</view>
+			<view class="block__title">{{ $t('houseInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">小区名称</text>
+						<text class="text-grey">{{ $t('communityName') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{communityName}}</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">房屋</text>
+						<text class="text-grey">{{ $t('room') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{payerObjName}}</text>
@@ -21,50 +21,50 @@
 				</view>
 				<view class="cu-item" v-if="buildUpArea">
 					<view class="content">
-						<text class="text-grey">建筑面积</text>
+						<text class="text-grey">{{ $t('builtUpArea') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{buildUpArea + '平方米'}}</text>
+						<text class="text-grey text-sm">{{buildUpArea + $t('sqm')}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">费用信息</view>
+			<view class="block__title">{{ $t('feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item arrow" v-if="rules && rules.length > 0">
 					<view class="content">
-						<text class="text-grey">预付费用</text>
+						<text class="text-grey">{{ $t('prePayFee') }}</text>
 					</view>
 					<view class="action">
 						<picker :value="selectedRuleIndex" :range="ruleNames" @change="onRuleChange">
 							<view class="picker">
-								{{selectedRuleName || '请选择预付费用'}}
+								{{selectedRuleName || $t('selectPrePayFee')}}
 							</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cu-item arrow" v-if="selectedRule">
 					<view class="content">
-						<text class="text-grey">月份</text>
+						<text class="text-grey">{{ $t('month') }}</text>
 					</view>
 					<view class="action">
 						<picker :value="selectedMonthIndex" :range="monthList" @change="onMonthChange">
 							<view class="picker">
-								{{selectedMonthName || '请选择月份'}}
+								{{selectedMonthName || $t('selectMonth')}}
 							</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedRule && selectedMonth > 0">
 					<view class="content">
-						<text class="text-grey">月单价</text>
+						<text class="text-grey">{{ $t('monthPrice') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{selectedRule.monthAmount}}元/月</text>
+						<text class="text-grey text-sm">{{selectedRule.monthAmount}}{{ $t('monthUnit') }}</text>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedRule && selectedMonth > 0">
 					<view class="content">
-						<text class="text-grey">金额</text>
+						<text class="text-grey">{{ $t('amount') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-red text-lg">￥{{receivableAmount}}</text>
@@ -74,10 +74,10 @@
 		</scroll-view>
 		<view class="bg-white border flex justify-end" style="position: fixed;width: 100%;bottom: 0;" v-if="selectedRule && selectedMonth > 0">
 			<view class="action text-orange margin-right line-height">
-				合计：{{receivableAmount}}元
+				{{ $t('total') }}：{{receivableAmount}}{{ $t('yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">缴费</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('payNow') }}</button>
 			</view>
 		</view>
 	</view>
@@ -168,7 +168,7 @@
 				if (!this.roomId) {
 					uni.showToast({
 						icon: 'none',
-						title: '房屋ID不能为空'
+						title: this.$t('invalidRoomId')
 					});
 					return;
 				}
@@ -200,14 +200,14 @@
 				if (!this.roomId || !this.communityId) {
 					uni.showToast({
 						icon: 'none',
-						title: '房屋信息不完整'
+						title: this.$t('incompleteHouseInfo')
 					});
 					return;
 				}
 				
 				let _that = this;
 				uni.showLoading({
-					title: '加载中...'
+					title: this.$t('loading')
 				});
 				
 				listPrePayFeeRule({
@@ -232,7 +232,7 @@
 						} else {
 							uni.showToast({
 								icon: 'none',
-								title: '暂无预付费规则'
+								title: this.$t('noPrePayRule')
 							});
 						}
 					}
@@ -240,7 +240,7 @@
 					uni.hideLoading();
 					uni.showToast({
 						icon: 'none',
-						title: error || '加载失败'
+						title: error || this.$t('loadFailed')
 					});
 				});
 			},
@@ -291,7 +291,7 @@
 				if (!this.selectedRule) {
 					uni.showToast({
 						icon: 'none',
-						title: '请选择预付费用'
+						title: this.$t('pleaseSelectPrePayFee')
 					});
 					return;
 				}
@@ -299,7 +299,7 @@
 				if (this.selectedMonth <= 0) {
 					uni.showToast({
 						icon: 'none',
-						title: '请选择月份'
+						title: this.$t('pleaseSelectMonth')
 					});
 					return;
 				}
@@ -311,7 +311,7 @@
 					roomId: this.roomId,
 					ruleId: this.selectedRule.ruleId,
 					configId: this.selectedRule.configId,
-					months: this.selectedMonth,
+					cycles: this.selectedMonth,
 					receivedAmount: _receivedAmount,
 					feeName: this.selectedRule.feeName,
 					monthAmount: this.selectedRule.monthAmount,

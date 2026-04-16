@@ -1,34 +1,34 @@
 <template>
 	<view>
-		<view class="block__title">用户信息</view>
+		<view class="block__title">{{ $t('userInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">名称</view>
+			<view class="title">{{ $t('name') }}</view>
 			{{renovationDetail.personName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">联系方式</view>
+			<view class="title">{{ $t('contact') }}</view>
 			{{renovationDetail.personTel}}
 		</view>
 
-		<view class="block__title">场地信息</view>
+		<view class="block__title">{{ $t('venueInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">场馆</view>
+			<view class="title">{{ $t('venue') }}</view>
 			{{renovationDetail.venueName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">场地</view>
+			<view class="title">{{ $t('space') }}</view>
 			{{renovationDetail.spaceName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">时间</view>
+			<view class="title">{{ $t('time') }}</view>
 			{{ this.HoursStr(renovationDetail.hours) }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">核销状态</view>
+			<view class="title">{{ $t('verifyStatus') }}</view>
 			{{StateStr(renovationDetail.state)}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">预约日期</view>
+			<view class="title">{{ $t('bookDate') }}</view>
 			{{renovationDetail.appointmentTime}}
 		</view>
 		<view v-if="renovationDetail.state == 'W'">
@@ -39,10 +39,9 @@
 				<canvas canvas-id="qrcode" style="width: 300rpx;margin: 0 auto;"/>
 			</view>
 			<view class="text-center">
-				<view>出示二维码核销</view>
+				<view>{{ $t('showQrcode') }}</view>
 				<view>{{renovationDetail.timeId}}</view>
 			</view>
-			<!-- <text >{{renovationDetail}}</text> -->
 
 		</view>
 		<view class="button_up_blank"></view>
@@ -122,16 +121,16 @@
 		methods: {
 			StateStr(s) {
 				if (s == "W") {
-					return "待核销";
+					return this.$t('waitVerify');
 				}
 				if (s == "C") {
-					return "已核销";
+					return this.$t('verified');
 				}
 				if (s == "Y") {
-					return "已退款"
+					return this.$t('refunded')
 				}
 				if (s == "T") {
-					return "申请退款"
+					return this.$t('applyRefund')
 				}
 			},
 			// 时间转换

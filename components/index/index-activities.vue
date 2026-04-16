@@ -4,9 +4,9 @@
 			<view class="active_title">
 				<view class="title-left">
 					<text class="title-line"></text>
-					<text class="title-text">社区动态</text>
+					<text class="title-text">{{ $t('communityDynamics') }}</text>
 				</view>
-				<view class="more" @click="goToActivites">更多 ></view>
+				<view class="more" @click="goToActivites">{{ $t('more') }} ></view>
 			</view>
 			<view class="active_list" v-if="activites && activites.length > 0">
 				<view class="noticesList-list" v-for="(item,index) in activites" :key="index" @click="goToActivitesDetail(item)">
@@ -25,7 +25,7 @@
 				</view>
 			</view>
 			<view class="active_empty" v-else>
-				<text class="text">暂无活动哦~</text>
+				<text class="text">{{ $t('noActivity') }}</text>
 			</view>
 		</view>
 	</view>

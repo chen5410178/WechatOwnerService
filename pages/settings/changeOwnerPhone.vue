@@ -46,18 +46,15 @@
 				let accountInfo = uni.getAccountInfoSync();
 				_appId = accountInfo.miniProgram.appId;
 				// #endif
-				wx.request({
+				uni.request({
 					url: constant.url.loginUrl,
 					method: 'post',
 					header: context.getHeaders(),
 					data: {
 						code: _code,
-						// 用户非敏感信息
 						signature: '',
-						// 签名
 						encryptedData: '',
-						// 用户敏感信息
-						iv: '', // 解密算法的向量
+						iv: '',
 						appId: _appId,
 						userInfo:{}
 			
@@ -78,22 +75,20 @@
 			},
 			onGetPhoneNumber(e) {
 				if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
-					wx.showToast({
-						title: '手机号码未授权，请授权后再使用',
+					uni.showToast({
+						title: this.$t('login.phoneNotAuthorized'),
 						icon: "none"
 					});
 					return;
 				}
 				let _that = this;
-				wx.request({
+				uni.request({
 					url: constant.url.getWxPhoto,
 					method: 'post',
 					header: context.getHeaders(),
 					data: {
 						iv: e.detail.iv,
-						// 用户非敏感信息
 						key: _that.sessionKey,
-						// 签名
 						decryptData: e.detail.encryptedData,
 					},
 					success: function(res) {

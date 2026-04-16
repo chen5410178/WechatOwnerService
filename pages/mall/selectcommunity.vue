@@ -1,21 +1,21 @@
 <template>
 	<view>
-		<view class="block__title">选择小区</view>
+		<view class="block__title">{{ $t('selectCommunity') }}</view>
 
 		<view class="cu-form-group arrow">
-			<view class="title">市/区</view>
+			<view class="title">{{ $t('cityArea') }}</view>
 			<pickerAddress @change="change" class="text-right" style="width:80%">{{areaName}}</pickerAddress>
 			<text class='cuIcon-right'></text>
 		</view>
 
 		<view class="cu-form-group" @tap="chooseCommunity">
-			<view class="title">小区名称</view>
-			<input v-model="communityName" required readonly label="小区名称" placeholder="请选择小区" name="communityName" icon="arrow"
+			<view class="title">{{ $t('communityName') }}</view>
+			<input v-model="communityName" required readonly label="小区名称" :placeholder="$t('selectCommunity')" name="communityName" icon="arrow"
 			 ></input>
 			<text class='cuIcon-right'></text>
 		</view>
 		<view class="padding flex flex-direction margin-top" >
-			<button class="cu-btn bg-green lg" @click="_doSure()">确定</button>
+			<button class="cu-btn bg-green lg" @click="_doSure()">{{ $t('confirm') }}</button>
 		</view>
 	</view>
 </template>
@@ -32,7 +32,7 @@
 			return {
 				title: 'Hello',
 				areaCode: '',
-				areaName: '请选择地区',
+				areaName: this.$t('selectArea'),
 				communityName: '',
 				communityId: '',
 				areaList: {
@@ -88,13 +88,13 @@
 			 */
 			chooseCommunity: function(e) {
 				if (this.areaCode == '' || this.areaCode == undefined) {
-					wx.showToast({
-						title: '请先选择地区',
+					uni.showToast({
+						title: this.$t('selectAreaFirst'),
 						icon: 'none'
 					});
 					return;
 				}
-				wx.navigateTo({
+				uni.navigateTo({
 					url: '/pages/mall/viewCommunitys?areaCode=' + this.areaCode,
 				})
 			}

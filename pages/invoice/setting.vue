@@ -1,40 +1,40 @@
 <template>
 	<view>
-		<view class="block__title">发票设置</view>
+		<view class="block__title">{{ $t('invoiceSetting') }}</view>
 		<view class="cu-form-group">
-			<view class="title">发票类型</view>
+			<view class="title">{{ $t('invoiceType') }}</view>
 			<picker bindchange="PickerChange" :value="invoiceTypeIndex" :range="invoiceTypes" :range-key="'name'"
 				@change="invoiceTypeChange">
 				<view class="picker">
-					{{invoiceTypeIndex == -1?'请选择':invoiceTypes[invoiceTypeIndex].name}}
+					{{invoiceTypeIndex == -1?$t('selectFirst'):invoiceTypes[invoiceTypeIndex].name}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">发票名头</view>
-			<input v-model="invoiceName" placeholder="请输入发票名头" class="text-right"></input>
+			<view class="title">{{ $t('invoiceTitle') }}</view>
+			<input v-model="invoiceName" :placeholder="$t('inputInvoiceTitle')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">纳税人识别号</view>
-			<input v-model="invoiceNum" placeholder="请输入纳税人识别号" class="text-right"></input>
+			<view class="title">{{ $t('taxNo') }}</view>
+			<input v-model="invoiceNum" :placeholder="$t('inputTaxNo')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">地址</view>
-			<input v-model="invoiceAddress" placeholder="请输入地址" class="text-right"></input>
+			<view class="title">{{ $t('address') }}</view>
+			<input v-model="invoiceAddress" :placeholder="$t('inputAddress')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">电话</view>
-			<input v-model="invoiceLink" placeholder="请输入电话" class="text-right"></input>
+			<view class="title">{{ $t('phone') }}</view>
+			<input v-model="invoiceLink" :placeholder="$t('inputPhone')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">开户行及账号</view>
-			<input v-model="invoiceAccount" placeholder="请输入开户行及账号" class="text-right"></input>
+			<view class="title">{{ $t('bankAccount') }}</view>
+			<input v-model="invoiceAccount" :placeholder="$t('inputBankAccount')" class="text-right"></input>
 		</view>
 		
 
 		<view class="flex flex-direction padding">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_updateOwnerInvoice()" v-if="oiId">提交</button>
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_saveOwnerInvoice()" v-else>提交</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_updateOwnerInvoice()" v-if="oiId">{{ $t('submit') }}</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_saveOwnerInvoice()" v-else>{{ $t('submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -57,10 +57,10 @@
 			return {
 				invoiceTypeIndex: -1,
 				invoiceTypes: [{
-					name: '个人',
+					name: this.$t('personal'),
 					value: '1001'
 				}, {
-					name: '企业',
+					name: this.$t('enterprise'),
 					value: '2002'
 				}],
 				invoiceType: '',
@@ -79,7 +79,7 @@
 			if (!_ownerId) {
 				uni.showToast({
 					icon: 'none',
-					title: '业主不存在',
+					title: this.$t('ownerNotExist'),
 				})
 				return;
 			}

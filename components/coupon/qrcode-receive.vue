@@ -10,12 +10,12 @@
 					</view>
 					<view class="text-gray text-sm flex">
 						<view class="text-cut">
-							报修人：{{item.repairName}}-{{item.tel}}
+							{{ $t('repairPerson') || '报修人' }}：{{item.repairName}}-{{item.tel}}
 						</view>
 					</view>
 				</view>
 				<view  class="rob-order text-df text-white bg-green text-center" @tap.stop="dealRepair(item,'DISPATCH')">
-					二维码
+					{{ $t('qrCode') }}
 				</view>
 			</view>
 		</view>

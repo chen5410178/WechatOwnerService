@@ -10,49 +10,46 @@
 				</view>
 				<view class="padding-xl">
 					<view class="flex justify-between">
-						<view>预约数量</view>
+						<view>{{ $t('reserveQuantity') }}</view>
 						<view style="width: 60%;">
 							<radio-group class="flex justify-end" @change="_changeReserveQuantity">
 								<!-- #ifdef MP-WEIXIN -->
 								<view class="margin-right-sm"  v-for="item in goods.hoursMaxQuantity" :key="item">
 									<radio class=""  :value="item+1"></radio>
-									<view>{{item+1}}个</view>
+									<view>{{item+1}}{{ $t('unit') || '个' }}</view>
 								</view>
 								<!-- #endif -->
 								<!-- #ifndef MP-WEIXIN -->
 								<view class="margin-right-sm"  v-for="item in goods.hoursMaxQuantity" :key="item">
 									<radio class=""  :value="item"></radio>
-									<view>{{item}}个</view>
+									<view>{{item}}{{ $t('unit') || '个' }}</view>
 								</view>
 								<!-- #endif -->
 							</radio-group>
-							<!-- <checkbox class='round checked' checked="true" value="B"></checkbox> -->
 						</view>
 					</view>
 					<view class="flex justify-between margin-top">
-						<view>预约时间</view>
+						<view>{{ $t('reserveTime') }}</view>
 						<view style="width: 60%;">
 							<checkbox-group class="text-right" @change="_changeReserveTime">
 								<view class="margin-right-sm" style="display: inline-block;" v-if="item.isOpen == 'Y'"
 									v-for="(item,index) in openTimes" :key="index">
 									<checkbox class=' ' :value="item.hours"></checkbox>
-									<view>{{item.hours}}时</view>
+									<view>{{item.hours}}{{ $t('hourUnit') || '时' }}</view>
 								</view>
 							</checkbox-group>
-							<!--  -->
 						</view>
 					</view>
 					<view class="flex justify-between margin-top">
-						<view>金额</view>
+						<view>{{ $t('amount') }}</view>
 						<view >
 							<text class="text-red margin-right">￥{{money}}</text>
-							<!--  -->
 						</view>
 					</view>
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancle()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doSummit()">确定</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancle()">{{ $t('cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doSummit()">{{ $t('confirm') }}</view>
 				</view>
 			</view>
 		</view>
@@ -138,17 +135,18 @@
 				this.goods.money = this.money;
 			},
 			_doSummit: function() {
+				let _that = this;
 				if (!this.goods.quantity) {
 					uni.showToast({
 						icon: 'none',
-						title: '未选择数量'
+						title: _that.$t('notSelectQuantity')
 					});
 					return;
 				}
 				if (!this.goods.hours || this.goods.hours.length < 1) {
 					uni.showToast({
 						icon: 'none',
-						title: '未选择时间'
+						title: _that.$t('notSelectTime')
 					});
 					return;
 				}

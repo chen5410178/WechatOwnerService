@@ -5,7 +5,7 @@
 		</view>
 			
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @tap="_closeModal()">关闭</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @tap="_closeModal()">{{ $t('close') }}</button>
 		</view>
 	</view>
 </template>

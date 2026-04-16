@@ -2,44 +2,44 @@
 	<view>
 		<view class="flex justify-between">
 			<view class="page-title">
-				申请放行物品
+				{{ $t('applyReleaseItem') }}
 			</view>
 			<view>
-				<button class="cu-btn bg-red margin-tb-sm margin-right-sm" @click="_addRes">添加</button>
+				<button class="cu-btn bg-red margin-tb-sm margin-right-sm" @click="_addRes">{{ $t('add') }}</button>
 			</view>
 		</view>
 
-		<view class="cu-form-group" v-for="(item,index) in res" @click="_editResource(item)">
+		<view class="cu-form-group" v-for="(item,index) in res" @key="index" @click="_editResource(item)">
 			<view class="title">{{item.resName}}</view>
 			<view>{{item.amount}}</view>
 		</view>
 		
 		<view class="flex flex-direction">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_doFinishRes()">确定</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_doFinishRes()">{{ $t('confirm') }}</button>
 		</view>
 
 		<view class="cu-modal" :class="isShow?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">添加物品</view>
+					<view class="content">{{ $t('addItem2') }}</view>
 					<view class="action" @tap="_cancle()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="">
 					<view class="cu-form-group">
-						<view class="title">物品名称</view>
-						<input v-model="curRes.resName" placeholder="请输入物品名称" class="text-right"></input>
+						<view class="title">{{ $t('itemName') }}</view>
+						<input v-model="curRes.resName" :placeholder="$t('inputItemName')" class="text-right"></input>
 					</view>
 					<view class="cu-form-group">
-						<view class="title">数量</view>
-						<input v-model="curRes.amount" type="number" placeholder="请输入数量" class="text-right"></input>
+						<view class="title">{{ $t('quantity') }}</view>
+						<input v-model="curRes.amount" type="number" :placeholder="$t('inputQuantity')" class="text-right"></input>
 					</view>
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancle()" v-if="!curRes.in">取消</view>
-					<view class="action margin-0 flex-sub  solid-left" @tap="_delete()" v-else>删除</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doSummit()">确定</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancle()" v-if="!curRes.in">{{ $t('cancel') }}</view>
+					<view class="action margin-0 flex-sub solid-left" @tap="_delete()" v-else>{{ $t('delete') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doSummit()">{{ $t('confirm') }}</view>
 				</view>
 			</view>
 		</view>
@@ -94,7 +94,7 @@
 				if (!this.curRes.resName || !this.curRes.amount) {
 					uni.showToast({
 						icon: 'none',
-						title: '请填写物品信息'
+						title: this.$t('fillItemInfo')
 					})
 					return;
 				}

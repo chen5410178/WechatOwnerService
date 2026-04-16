@@ -5,13 +5,13 @@
 			<view class="uni-popup__wrapper-box" style="border-radius: unset;" @click.stop="clear">
 				<view class="title_outer flex_between">
 					<view class="close_title" @click="close(true)">
-						取消
+						{{ $t('cancel') }}
 					</view>
 					<view class="center_title">
-						请输入车牌号
+						{{ $t('selectCarNum') }}
 					</view>
 					<view class="cancle_title" @click="confirm">
-						确定
+						{{ $t('confirm') }}
 					</view>
 				</view>
 				<view class="inp_outer flex_between">
@@ -321,7 +321,7 @@
 				for (let i = 0; i < this.inplist.length; i++) {
 					if (!this.inplist[i].title && i < 2) {
 						uni.showToast({
-							title: "请填写正确的车牌号！",
+							title: this.$t('fillCorrectCarNum'),
 							icon: "none"
 						})
 						return
@@ -333,7 +333,7 @@
 							this.close();
 						} else {
 							uni.showToast({
-								title: "请填写正确的车牌号！",
+								title: this.$t('fillCorrectCarNum'),
 								icon: "none"
 							})
 						}

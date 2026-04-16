@@ -1,38 +1,37 @@
 <template>
 	<view>
-		<view class="cu-form-group" @click="showRenovationRecord()">
-			<view class="title">装修跟踪记录</view>
-			点击查看>
+		<view class="cu-form-group arrow" @click="showRenovationRecord()">
+			<view class="title">{{ $t('renovationTracking') }}</view>
 		</view>
-		<view class="block__title">用户信息</view>
+		<view class="block__title">{{ $t('userInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">名称</view>
+			<view class="title">{{ $t('name') }}</view>
 			{{renovationDetail.personName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">联系方式</view>
+			<view class="title">{{ $t('contact') }}</view>
 			{{renovationDetail.personTel}}
 		</view>
 	
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">房屋号</view>
+			<view class="title">{{ $t('roomNum') }}</view>
 			{{renovationDetail.roomName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">开始时间</view>
+			<view class="title">{{ $t('startDate') }}</view>
 			{{renovationDetail.startTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">结束时间</view>
+			<view class="title">{{ $t('endDate') }}</view>
 			{{renovationDetail.endTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">当前进度</view>
+			<view class="title">{{ $t('currentProgress') }}</view>
 			{{renovationDetail.stateName}}
 		</view>
 		<view class="btn-box" v-if="renovationDetail.state == 3000">
-			<button type="default" class="btn-sub" @click="renovationComplete()">装修完成</button>
+			<button type="default" class="btn-sub" @click="renovationComplete()">{{ $t('renovationComplete') }}</button>
 		</view>
 	
 		<view class="button_up_blank"></view>
@@ -104,14 +103,14 @@
 			renovationComplete: function(){
 				let _that = this;
 				uni.showModal({
-				    title: '提示',
-				    content: '确定完成房屋装修',
+				    title: _that.$t('tip'),
+				    content: _that.$t('confirmComplete'),
 				    success: function (res) {
 				        if (res.confirm) {
 							let params = _that.renovationDetail;
 							updateRoomRenovationState(params).then(function(_res){
 								uni.showToast({
-									title: '操作成功'
+									title: _that.$t('operationSuccess')
 								});
 								setTimeout(function(){
 									uni.navigateBack({})

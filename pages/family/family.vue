@@ -1,24 +1,24 @@
 <template>
 	<view>
-		<view class="block__title">基本信息</view>
+		<view class="block__title">{{ $t('family.basicInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">姓名</view>
-			<input v-model="name" placeholder="请输入成员名称"></input>
+			<view class="title">{{ $t('family.name') }}</view>
+			<input v-model="name" :placeholder="$t('family.pleaseInputName')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
-			<input v-model="idCard" placeholder="请输入身份证" ></input>
+			<view class="title">{{ $t('family.idCard') }}</view>
+			<input v-model="idCard" :placeholder="$t('family.pleaseInputIdCard')" ></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">性别</view>
+			<view class="title">{{ $t('family.sex') }}</view>
 			<picker bindchange="PickerChange" :value="index" :range="sexArr" @change="sexChange">
 				<view class="picker">
-					{{sex == '0'? '男':'女'}}
+					{{sex == '0'? $t('family.male'):$t('family.female')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">人员角色</view>
+			<view class="title">{{ $t('family.personRole') }}</view>
 			<picker :value="typeCdIndex" :range="typeCds" range-key="name" @change="_changeTypeCd">
 				<view class="picker">
 					{{typeCds[typeCdIndex].name}}
@@ -26,15 +26,15 @@
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">地址</view>
-			<input type="text" v-model="address" placeholder="选填,请输入地址"></input>
+			<view class="title">{{ $t('family.address') }}</view>
+			<input type="text" v-model="address" :placeholder="$t('family.optionalAddress')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="link" placeholder="选填,请输入手机号"></input>
+			<view class="title">{{ $t('family.phone') }}</view>
+			<input v-model="link" :placeholder="$t('family.optionalPhone')"></input>
 		</view>
 		
-		<view class="block__title">相关图片</view>
+		<view class="block__title">{{ $t('family.relatedImages') }}</view>
 		<uploadImageAsync ref="vcUploadRef" :communityId="communityId" :maxPhotoNum="uploadImage.maxPhotoNum" :canEdit="uploadImage.canEdit" :title="uploadImage.imgTitle" @sendImagesData="sendImagesData"></uploadImageAsync>
 			
 		
@@ -43,7 +43,7 @@
 		</view> -->
 
 		<view class="flex flex-direction margin-top margin-bottom">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitOwnerMember()">提交</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitOwnerMember()">{{ $t('family.submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -60,7 +60,7 @@
 	export default {
 		data() {
 			return {
-				"sexArr": ["男", "女"],
+				"sexArr": [],
 				"sexShow": false,
 				"sex": "0",
 				"name": "",
@@ -68,24 +68,7 @@
 				"remark": "",
 				"ownerId": "",
 				"userId": "",
-				"typeCds": [
-					{
-						value: '3',
-						name: '家庭成员'
-					},
-					{
-						value: '2',
-						name: '租客'
-					},
-					{
-						value: '4',
-						name: '公司员工'
-					},
-					{
-						value: '99',
-						name: '其他'
-					}
-				],
+				"typeCds": [],
 				"typeCdIndex": 0,
 				"personRole":'3',
 				"ownerTypeCd": "1002",
@@ -94,18 +77,33 @@
 				"communityId": "",
 				"second": 60,
 				"btnDisabled":false,
-				"btnValue": "验证码",
+				"btnValue": "",
 				"msgCode":'',
 				"address": "",
 				photos:'',
 				uploadImage: {
 					maxPhotoNum: 1,
-					imgTitle: '图片上传',
+					imgTitle: '',
 					canEdit: true
 				}
 			};
 		},
-		
+		computed: {
+			sexArr() {
+				return [this.$t('family.male'), this.$t('family.female')];
+			},
+			typeCds() {
+				return [
+					{ value: '3', name: this.$t('family.familyMember') },
+					{ value: '2', name: this.$t('family.tenant') },
+					{ value: '4', name: this.$t('family.companyStaff') },
+					{ value: '99', name: this.$t('family.other') }
+				];
+			},
+			btnValue() {
+				return this.$t('family.verificationCode');
+			}
+		},
 		components: {
 			uploadImageAsync
 		},
@@ -130,6 +128,7 @@
 				this.photos = e[0].url;
 			},
 			submitOwnerMember: function(e) {
+				let that = this;
 				let obj = {
 					"sex": this.sex,
 					"name": this.name,
@@ -150,14 +149,10 @@
 				
 				let msg = "";
 				if (obj.ownerId == "") {
-					msg = "请填写业主";
+					msg = this.$t('family.pleaseInputOwner');
 				} else if (obj.name == "") {
-					msg = "请填写姓名";
+					msg = this.$t('family.pleaseInputName');
 				} 
-				 // todo 这里手机号关闭 因为 小朋友没有手机号
-				 //else if (obj.msgCode == "") {
-				// 	msg = "请填写验证码";
-				// }
 				if (msg != "") {
 					uni.showToast({
 						title: msg,
@@ -166,7 +161,7 @@
 					});
 				} else {
 					uni.showLoading({
-						title: '提交中',
+						title: that.$t('family.submitting'),
 					});
 					context.request({
 						url: constant.url.saveOwner,
@@ -190,7 +185,7 @@
 						fail: function(e) {
 							uni.hideLoading();
 							uni.showToast({
-								title: "服务器异常了",
+								title: that.$t('common.serverError'),
 								icon: 'none',
 								duration: 2000
 							})
@@ -206,7 +201,7 @@
 				let idCard = this.idCard;
 				if(!isIDCard(idCard)){
 					uni.showToast({
-						title: '身份证号有误',
+						title: this.$t('family.idCardError'),
 						icon: 'none',
 					});
 					return;

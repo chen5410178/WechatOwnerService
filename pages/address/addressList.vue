@@ -6,10 +6,10 @@
 				<view class="top flex justify-start">
 					<text class="name">{{ address.username }}</text>
 					<text class="phone">{{ address.tel }}</text>
-					<text class="tag" v-if="address.isDefault === 'T'">默认</text>
+					<text class="tag" v-if="address.isDefault === 'T'">{{ $t('addressDefault') }}</text>
 				</view>
 				<view class="detail">{{ address.address }}</view>
-				<button class="cu-btn set-btn" @tap.stop="jump('/pages/address/addressEdit',address)">编辑</button>
+				<button class="cu-btn set-btn" @tap.stop="jump('/pages/address/addressEdit',address)">{{ $t('edit') }}</button>
 			</view>
 		</view>
 		<view class="foot_box flex justify-around">

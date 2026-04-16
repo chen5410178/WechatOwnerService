@@ -52,8 +52,8 @@
 			_generatorQrCode: function(_machines) {
 				let _that = this;
 				if (_machines == null || _machines.length < 1) {
-					wx.showToast({
-						title: '当前没有权限开门',
+					uni.showToast({
+						title: this.$t('noPermissionToOpenDoor'),
 						icon: 'none',
 						duration: 2000
 					});
@@ -68,7 +68,7 @@
 					let data = res.data;
 					let msg = '';
 					if (data.code != 0) {
-						wx.showToast({
+						uni.showToast({
 							title: data.msg,
 							icon: 'none',
 							duration: 2000
@@ -77,7 +77,7 @@
 					}
 					_that.qrCode = data.data
 					new qrCode('openDoorQrcode', {
-						text: _that.qrCode ? _that.qrCode : '当前没有绑定门禁设备，暂时无法使用',
+						text: _that.qrCode ? _that.qrCode : this.$t('noDoorDeviceBound'),
 						width: 250,
 						height: 250,
 						colorDark: "#333333",
@@ -85,8 +85,8 @@
 						correctLevel: qrCode.CorrectLevel.L
 					})
 				}, (err) => {
-					wx.hideLoading();
-					wx.showToast({
+					uni.hideLoading();
+					uni.showToast({
 						title: err,
 						icon: 'none',
 						duration: 2000

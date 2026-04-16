@@ -24,45 +24,45 @@
 			</checkbox-group>
 			<view v-else>
 				<view class="cu-form-group ">
-					<textarea maxlength="512" v-model="item.radio" placeholder="请回答"></textarea>
+					<textarea maxlength="512" v-model="item.radio" :placeholder="$t('pleaseAnswer')"></textarea>
 				</view>
 			</view>
 		</view>
 
-		<view class="block__title">人员信息</view>
+		<view class="block__title">{{ $t('personInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">姓名</view>
-			<input :value="name" @input="bindInput" data-name="name" required label="姓名" clearable placeholder="请输入名称"
+			<view class="title">{{ $t('name') }}</view>
+			<input :value="name" @input="bindInput" data-name="name" required label="姓名" clearable :placeholder="$t('inputName')"
 				name="name"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
+			<view class="title">{{ $t('idCard') }}</view>
 			<input :value="idCard" @input="bindInput" data-name="idCard" required label="身份证" clearable
-				placeholder="请输入身份证" name="idCard"></input>
+				:placeholder="$t('inputIdCard')" name="idCard"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input :value="tel" @input="bindInput" data-name="tel" required label="手机号" clearable placeholder="请输入手机号"
+			<view class="title">{{ $t('phone') }}</view>
+			<input :value="tel" @input="bindInput" data-name="tel" required label="手机号" clearable :placeholder="$t('inputPhone')"
 				name="tel"></input>
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitQuestionAnswer()">提交</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitQuestionAnswer()">{{ $t('submit') }}</button>
 		</view>
 		
 		<view class="cu-modal" :class="finishFlag==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">登记完成</view>
+					<view class="content">{{ $t('registerComplete') }}</view>
 					<view class="action" @tap="_cancleFinishModal()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					感谢您的反馈
+					{{ $t('thanksForFeedback') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleFinishModal()">关闭</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleFinishModal()">{{ $t('close') }}</view>
 				</view>
 			</view>
 		</view>
@@ -205,16 +205,16 @@
 				};
 				let msg = "";
 				if (obj.communityId == "") {
-					msg = "请从新扫码";
+					msg = this.$t('pleaseScanAgain');
 				} else if (obj.name == "") {
-					msg = "请填写姓名";
+					msg = this.$t('pleaseFillName');
 				} else if (obj.idCard == "" || obj.idCard.length != 18) {
-					msg = "请正确填写身份证号";
+					msg = this.$t('pleaseFillIdCard');
 				} else if (obj.tel == "" || obj.tel.length != 11) {
-					msg = "请正确填写的手机号";
+					msg = this.$t('pleaseFillPhone');
 				}
 				if (msg != "") {
-					wx.showToast({
+					uni.showToast({
 						title: msg,
 						icon: 'none',
 						duration: 2000
@@ -253,7 +253,7 @@
 					if (item.valueContent.toString().length == 0) {
 						uni.showToast({
 							icon: 'none',
-							title: '保存成功'
+							title: this.$t('submitSuccess')
 						});
 						reflag = true;
 						return false;
@@ -262,7 +262,7 @@
 				if (reflag) {
 					uni.showToast({
 						icon: 'none',
-						title: '有未答项，请作答！'
+						title: this.$t('hasUnanswered')
 					});
 					return false;
 				}
@@ -280,7 +280,7 @@
 					.then(_data => {
 						uni.showToast({
 							icon: 'none',
-							title: '保存成功'
+							title: _that.$t('submitSuccess')
 						});
 						this.communityId = "";
 						_that.finishFlag = true;

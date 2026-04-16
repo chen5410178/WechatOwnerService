@@ -51,7 +51,7 @@
 			},
 			title: {
 				type: String,
-				default: '图片上传'
+				default: 'imageUpload'
 			},
 			maxPhotoNum: {
 				type: Number,
@@ -93,7 +93,7 @@
 		mounted() {
 			if (this.sendImgList.length > 0) {
 				uni.showLoading({
-					title: "图片加载中...",
+					title: this.$t('loadingImage'),
 					mask: true
 				})
 			}

@@ -1,14 +1,14 @@
 <template>
 	<view>
-		<view  class="block__title">缴费历史</view>
+		<view  class="block__title">{{ $t('fee_history') }}</view>
 		<view v-if="noData == false">
 			<view v-for="(item,index) in feeDetails" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>缴费金额</view>
+					<view>{{ $t('fee_amount') }}</view>
 					<view class="text-gray">{{item.receivedAmount}}元</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">费用名称</view>
+					<view class="text-gray">{{ $t('fee_name') || '费用名称' }}</view>
 					<view class="text-gray">{{item.feeName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
@@ -16,7 +16,7 @@
 					<view class="text-gray">{{item.detailId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">缴费周期</view>
+					<view class="text-gray">{{ $t('fee_period') }}</view>
 					<view class="text-gray">{{item.cycles}}个月</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
@@ -28,7 +28,7 @@
 					<view class="text-gray">{{item.endTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">缴费时间</view>
+					<view class="text-gray">{{ $t('fee_paid_time') }}</view>
 					<view class="text-gray">{{item.createTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.preDegrees">
@@ -44,12 +44,12 @@
 					<view class="text-gray">{{item.curDegrees-item.preDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">备注</view>
+					<view class="text-gray">{{ $t('remark') || '备注' }}</view>
 					<view class="text-gray">{{item.remark}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.openInvoice == 'N'">
 					<view class="text-gray"></view>
-					<view class="text-gray"><button class="cu-btn sm line-blue" @click="_applyInvoice(item)">申请开票</button></view>
+					<view class="text-gray"><button class="cu-btn sm line-blue" @click="_applyInvoice(item)">{{ $t('invoiceApply') }}</button></view>
 				</view>
 			</view>
 			<uni-load-more :status="loadingStatus" :content-text="loadingContentText" />
@@ -164,8 +164,8 @@
 						}
 					},
 					fail: function(e) {
-						wx.showToast({
-							title: "服务器异常了",
+						uni.showToast({
+							title: this.$t('serverError'),
 							icon: 'none',
 							duration: 2000
 						})

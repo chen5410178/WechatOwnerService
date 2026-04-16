@@ -109,7 +109,7 @@
 							this.parkingSpaceIds.push(item.psId);
 						})
 					},
-					fail(res) {
+					fail: (res) => {
 						uni.showToast({
 							title: this.$t('serverError'),
 							icon: 'none',

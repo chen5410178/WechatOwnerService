@@ -1,8 +1,40 @@
 export default {
   'zh-CN': {
-    fee: {}
+    fee_history: '缴费历史',
+    fee_amount: '费用金额',
+    fee_name: '费用名称',
+    fee_code: '缴费编码',
+    fee_period: '费用周期',
+    fee_start_time: '起始时间',
+    fee_end_time: '结束时间',
+    fee_paid_time: '缴费时间',
+    fee_pre_degrees: '上期度数',
+    fee_cur_degrees: '本期度数',
+    fee_usage: '使用量',
+    remark: '备注',
+    invoiceApply: '申请开票',
+    serverError: '服务器异常了',
+    loadMore: '上拉加载更多',
+    loading: '加载中',
+    noMore: '没有更多'
   },
   'en': {
-    fee: {}
+    fee_history: 'Payment History',
+    fee_amount: 'Amount',
+    fee_name: 'Fee Name',
+    fee_code: 'Payment Code',
+    fee_period: 'Period',
+    fee_start_time: 'Start Time',
+    fee_end_time: 'End Time',
+    fee_paid_time: 'Paid Time',
+    fee_pre_degrees: 'Previous Reading',
+    fee_cur_degrees: 'Current Reading',
+    fee_usage: 'Usage',
+    remark: 'Remark',
+    invoiceApply: 'Apply Invoice',
+    serverError: 'Server error',
+    loadMore: 'Load More',
+    loading: 'Loading',
+    noMore: 'No More'
   }
 }

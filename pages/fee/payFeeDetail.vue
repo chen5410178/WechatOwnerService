@@ -12,7 +12,7 @@
 					<view class="text-gray">{{item.feeName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">缴费编码</view>
+					<view class="text-gray">{{ $t('fee_code') }}</view>
 					<view class="text-gray">{{item.detailId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
@@ -20,11 +20,11 @@
 					<view class="text-gray">{{item.cycles}}个月</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">起始时间</view>
+					<view class="text-gray">{{ $t('fee_start_time') }}</view>
 					<view class="text-gray">{{item.startTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">结束时间</view>
+					<view class="text-gray">{{ $t('fee_end_time') }}</view>
 					<view class="text-gray">{{item.endTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
@@ -32,15 +32,15 @@
 					<view class="text-gray">{{item.createTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.preDegrees">
-					<view class="text-gray">上期度数</view>
+					<view class="text-gray">{{ $t('fee_pre_degrees') }}</view>
 					<view class="text-gray">{{item.preDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.curDegrees">
-					<view class="text-gray">本期度数</view>
+					<view class="text-gray">{{ $t('fee_cur_degrees') }}</view>
 					<view class="text-gray">{{item.curDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.preDegrees">
-					<view class="text-gray">使用量</view>
+					<view class="text-gray">{{ $t('fee_usage') }}</view>
 					<view class="text-gray">{{item.curDegrees-item.preDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
@@ -80,9 +80,9 @@
 				page: 1,
 				loadingStatus : 'loading',
 				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+					contentdown: this.$t('loadMore'),
+					contentrefresh: this.$t('loading'),
+					contentnomore: this.$t('noMore')
 				}
 			}
 		},

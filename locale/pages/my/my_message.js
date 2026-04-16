@@ -98,13 +98,13 @@ export default {
       tip: 'Tip',
       clickToLogin: 'Click to login',
       loginToSeeMore: 'Login to see more',
-      paymentRecord: 'Payment Record',
-      repairRecord: 'Repair Record',
-      complaintRecord: 'Complaint Record',
+      paymentRecord: 'Payment',
+      repairRecord: 'Repair ',
+      complaintRecord: 'Complaint',
       vacantRoom: 'Vacant Room',
-      renovationRecord: 'Renovation Record',
+      renovationRecord: 'Renovation',
       accessLog: 'Access Log',
-      invoiceHistory: 'Invoice History'
+      invoiceHistory: 'Invoice '
     }
   }
 }

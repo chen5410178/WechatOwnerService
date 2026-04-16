@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">运维团队</view>
+		<view class="block__title">{{ $t('my.opsTeam') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-home text-green"></text>
-					<text class="text-grey">小区名称</text>
+					<text class="text-grey">{{ $t('my.communityName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
@@ -14,7 +14,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-service text-green"></text>
-					<text class="text-grey">运维名称</text>
+					<text class="text-grey">{{ $t('my.opsName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.storeName}}</text>
@@ -23,7 +23,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">运维编号</text>
+					<text class="text-grey">{{ $t('my.opsCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.storeId}}</text>
@@ -33,7 +33,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-location text-green"></text>
-					<text class="text-grey">公司地址</text>
+					<text class="text-grey">{{ $t('my.companyAddress') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.address}}</text>
@@ -43,7 +43,7 @@
 			<view class="cu-item arrow" @click="_callPhone()">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">联系电话</text>
+					<text class="text-grey">{{ $t('my.contactPhone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.tel}}</text>
@@ -54,17 +54,17 @@
 		<view class="cu-modal" :class="callAdminModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">拨打电话</view>
+					<view class="content">{{ $t('my.callPhone') }}</view>
 					<view class="action" @tap="_cancleCall()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					您确认拨打{{admin.name}}-{{admin.tel}}
+					{{ $t('my.confirmCall') }}{{admin.name}}-{{admin.tel}}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleCall()">取消</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doCall()">拨号</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleCall()">{{ $t('my.cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doCall()">{{ $t('my.dial') }}</view>
 				</view>
 			</view>
 		</view>

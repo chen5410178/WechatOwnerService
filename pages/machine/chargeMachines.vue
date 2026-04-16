@@ -47,28 +47,28 @@
 						<text>{{ $t('machine.hourlyPrice') }}:</text>
 						<text>{{item.durationPrice}}</text>
 					</view>
-					<view class="item">
-						<text>充电量:</text>
+<view class="item">
+						<text>{{ $t('machine.chargeEnergy') }}:</text>
 						<text>{{item.energy}}</text>
 					</view>
 					<view class="item">
-						<text>扣款金额:</text>
+						<text>{{ $t('machine.deductAmount') }}:</text>
 						<text>{{item.amount}}</text>
 					</view>
 					<view class="item">
-						<text>开始时间:</text>
+						<text>{{ $t('machine.startTime') }}:</text>
 						<text>{{item.startTime}}</text>
 					</view>
 					<view class="item">
-						<text>结束时间:</text>
+						<text>{{ $t('machine.endTime') }}:</text>
 						<text>{{item.endTime}}</text>
 					</view>
 					<view class="item">
-						<text>状态:</text>
+						<text>{{ $t('machine.status') }}:</text>
 						<text>{{item.stateName}}</text>
 					</view>
 					<view class="item">
-						<text>备注:</text>
+						<text>{{ $t('machine.remark') }}:</text>
 						<text>{{item.remark}}</text>
 					</view>
 				</view>

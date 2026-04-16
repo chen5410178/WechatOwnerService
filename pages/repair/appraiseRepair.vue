@@ -84,14 +84,14 @@
 			submitAppraiseRepair:function(){
 				if(this.context == ''){
 					uni.showToast({
-						title:'请填写评价内容',
+						title: this.$t('repair.evaluationPlaceholder'),
 						icon:'none'
 					});
 					return ;
 				}
 				if(this.repairId == ''){
 					uni.showToast({
-						title:'未包含报修信息',
+						title: this.$t('repair.notConfigRepair'),
 						icon:'none'
 					});
 					return ;

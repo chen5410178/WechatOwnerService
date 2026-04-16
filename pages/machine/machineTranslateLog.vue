@@ -1,22 +1,22 @@
 <template>
 	<view>
-		<view  class="block__title">门禁同步记录</view>
+<view  class="block__title">{{ $t('machine.syncRecord') }}</view>
 		<view v-if="noData == false">
 			<view v-for="(item,index) in machineTranslates" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>同步时间</view>
+					<view>{{ $t('machine.syncTime') }}</view>
 					<view class="text-gray">{{item.updateTime}}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">设备名称</view>
+					<view class="text-gray">{{ $t('machine.deviceNameLabel') }}</view>
 					<view class="text-gray">{{item.machineName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">状态</view>
+					<view class="text-gray">{{ $t('machine.syncStatus') }}</view>
 					<view class="text-gray">{{item.stateName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">说明</view>
+					<view class="text-gray">{{ $t('machine.syncRemark') }}</view>
 					<view class="text-gray">{{item.remark}}</view>
 				</view>
 			</view>

@@ -19,7 +19,16 @@ export default {
       applyRoom: '申请房间',
       trackRemark: '跟踪备注',
       image: '图片',
-      video: '视频'
+      video: '视频',
+      ownerId: '业主ID',
+      idCard: '身份证',
+      roomId: '房屋ID',
+      roomCount: '房间数',
+      sections: '个',
+      unitPrice: '单价',
+      yuanPerSqm: '元/平方米',
+      pleaseSelect: '请选择',
+      imageUpload: '图片上传'
     }
   },
   'en': {
@@ -42,7 +51,16 @@ export default {
       applyRoom: 'Apply Room',
       trackRemark: 'Track Remark',
       image: 'Image',
-      video: 'Video'
+      video: 'Video',
+      ownerId: 'Owner ID',
+      idCard: 'ID Card',
+      roomId: 'Room ID',
+      roomCount: 'Room Count',
+      sections: '',
+      unitPrice: 'Unit Price',
+      yuanPerSqm: 'Yuan/sqm',
+      pleaseSelect: 'Please select',
+      imageUpload: 'Image Upload'
     }
   }
 }

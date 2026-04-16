@@ -45,7 +45,8 @@ export default {
       selectFloor: '选择楼栋',
       selectUnit: '选择单元',
       pleaseSelect: '请选择',
-      deleteSuccess: '删除成功'
+      deleteSuccess: '删除成功',
+      optionalRemark: '请输入备注'
     }
   },
   'en': {
@@ -94,7 +95,8 @@ export default {
       selectFloor: 'Select Floor',
       selectUnit: 'Select Unit',
       pleaseSelect: 'Please select',
-      deleteSuccess: 'Deleted successfully'
+      deleteSuccess: 'Deleted successfully',
+      optionalRemark: 'Please enter remark'
     }
   }
 }

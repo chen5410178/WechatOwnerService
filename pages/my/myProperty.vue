@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">物业信息</view>
+<view class="block__title">{{ $t('my.propertyInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-home text-green"></text>
-					<text class="text-grey">小区名称</text>
+					<text class="text-grey">{{ $t('my.communityName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
@@ -14,7 +14,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-service text-green"></text>
-					<text class="text-grey">物业名称</text>
+					<text class="text-grey">{{ $t('my.propertyName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.storeName}}</text>
@@ -23,7 +23,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">物业编号</text>
+					<text class="text-grey">{{ $t('my.propertyCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.storeId}}</text>
@@ -33,7 +33,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-location text-green"></text>
-					<text class="text-grey">公司地址</text>
+					<text class="text-grey">{{ $t('my.companyAddress') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.address}}</text>
@@ -43,7 +43,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">联系电话</text>
+					<text class="text-grey">{{ $t('my.contactPhone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.tel}}</text>

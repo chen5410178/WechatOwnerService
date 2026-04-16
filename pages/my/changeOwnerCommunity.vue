@@ -2,7 +2,7 @@
 	<view>
 
 		<view>
-			<view class="padding">小区信息</view>
+<view class="padding">{{ $t('my.communityInfo') }}</view>
 			<view class="cu-list menu " v-if="communitys.length>0">
 				<view class="cu-item" v-for="(item,sub) in communitys" :key="sub" @tap="_doChangeCommunity(item)">
 					<view class="content padding-tb-sm">
@@ -20,7 +20,7 @@
 					<view class="cu-item">
 						<view class="content">
 							<text class="cuIcon-notification text-grey"></text>
-							<text class="text-grey">暂无小区信息</text>
+							<text class="text-grey">{{ $t('my.noCommunityInfo') }}</text>
 						</view>
 						<view class="action">
 						</view>

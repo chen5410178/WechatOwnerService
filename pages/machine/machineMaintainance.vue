@@ -1,30 +1,30 @@
 <template>
 	<view>
-		<view  class="block__title">保养记录</view>
+<view  class="block__title">{{ $t('machine.maintenanceRecord') }}</view>
 		<view v-if="details.length > 0">
 			<view v-for="(item,index) in details" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>设备名称</view>
+					<view>{{ $t('machine.deviceName') }}</view>
 					<view class="text-gray">{{item.machineName}}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">计划名称</view>
+					<view class="text-gray">{{ $t('machine.planName') }}</view>
 					<view class="text-gray">{{item.planName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">保养标准</view>
+					<view class="text-gray">{{ $t('machine.maintenanceStandard') }}</view>
 					<view class="text-gray">{{item.standardName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">保养时间</view>
+					<view class="text-gray">{{ $t('machine.maintenanceTime') }}</view>
 					<view class="text-gray">{{item.inspectionTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">保养人</view>
+					<view class="text-gray">{{ $t('machine.maintainer') }}</view>
 					<view class="text-gray">{{item.actUserName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">保养说明</view>
+					<view class="text-gray">{{ $t('machine.maintenanceRemark') }}</view>
 					<view class="text-gray">{{item.description}}</view>
 				</view>
 			</view>

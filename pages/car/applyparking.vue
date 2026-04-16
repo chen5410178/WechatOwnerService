@@ -56,8 +56,8 @@
 				carColor:'',
 				remark:'',
 				psId: '',
-				startDate: '请选择',
-				endDate: '请选择',
+				startDate: this.$t('car.pleaseSelectDate'),
+				endDate: this.$t('car.pleaseSelectDate'),
 				ownerId:'',
 				storeId:'',
 				userId:'',
@@ -68,7 +68,7 @@
 				parkingSpaceIds: [],
 				parkingSpacesName: '',
 				//车辆类型
-				carTypes: ['家用小汽车', '客车', '货车'],
+				carTypes: [],
 				carTypeCodes: ['9901', '9902', '9903'],
 				carTypeCode: '',
 				carTypeName: '',
@@ -76,6 +76,13 @@
 				page: 1,
 				row: 20,
 			};
+		},
+		created() {
+			this.carTypes = [
+				this.$t('car.carTypes.0'),
+				this.$t('car.carTypes.1'),
+				this.$t('car.carTypes.2')
+			];
 		},
 		onLoad: function(options) {
 			let _this = this;
@@ -105,7 +112,7 @@
 					success: (res) => {
 						let arr = res.data.parkingSpaces;
 						arr.map(item => {
-							this.parkingSpaces.push(item.areaNum + "停车场  " + item.num + "车位");
+							this.parkingSpaces.push(item.areaNum + " " + this.$t('car.parkingSpace') + "  " + item.num + this.$t('car.parkingSpaceNum'));
 							this.parkingSpaceIds.push(item.psId);
 						})
 					},

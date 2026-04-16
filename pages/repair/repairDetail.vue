@@ -60,7 +60,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">完成时间</text>
+					<text class="text-grey">{{ $t('repair.completedTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.finishTime || '-'}}</text>
@@ -87,20 +87,20 @@
 			<view class="cu-time">{{ $t('repair.workOrderProgress') }}</view>
 			<view class="cu-item " v-for="(item,index) in staffs" :key="key">
 				<view class="bg-cyan content">
-					<text>{{item.startTime}} </text> 到达 {{item.staffName}} 工位
+					<text>{{item.startTime}} </text> {{ $t('repair.arrivedWorkstation') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.endTime != undefined">
-					<text>{{item.endTime}} </text> 处理完成
+					<text>{{item.endTime}} </text> {{ $t('repair.processingComplete') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.endTime != undefined">
-					<text>处理意见：</text>  {{item.context}}
+					<text>{{ $t('repair.processingOpinion') }}：</text>  {{item.context}}
 					<block v-if="item.state == '12000' && item.payTypeName != undefined">
 						({{item.payTypeName}})
 					</block>
 				</view>
 				<!-- 待支付状态 - 详情描述 -->
 				<view class="bg-cyan content" v-if="item.state == '10009'">
-					<text>处理意见：</text> {{item.context}}
+					<text>{{ $t('repair.processingOpinion') }}：</text> {{item.context}}
 					<block v-if="item.payTypeName != undefined">({{item.payTypeName}})</block>
 				</view>
 				<view class="bg-cyan content" v-if="item.photoVos.length > 0 && item.state==10005">

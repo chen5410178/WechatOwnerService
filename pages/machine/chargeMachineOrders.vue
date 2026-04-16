@@ -8,8 +8,8 @@
 						<text
 							class="cuIcon-homefill text-green margin-right-xs"></text>{{item.machineName}}-{{item.portName}}
 					</view>
-					<view class="text-gray text-sm">
-						<text class="cuIcon-right margin-right-xs"></text> 订单：{{item.orderId}}
+<view class="text-gray text-sm">
+						<text class="cuIcon-right margin-right-xs"></text> {{ $t('machine.order') }}：{{item.orderId}}
 					</view>
 				</view>
 				<view class="action">
@@ -19,7 +19,7 @@
 			<view class="cu-item" v-if="orders.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">暂无充电记录</text>
+					<text class="text-grey">{{ $t('machine.noRecord') }}</text>
 				</view>
 				<view class="action">
 

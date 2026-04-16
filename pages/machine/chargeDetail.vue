@@ -88,8 +88,8 @@
 							<text>{{ $t('machine.status') }}:</text>
 							<text>{{item.stateName}}</text>
 						</view>
-						<view class="item">
-							<text>备注:</text>
+<view class="item">
+							<text>{{ $t('machine.remark') }}:</text>
 							<text>{{item.remark}}</text>
 						</view>
 					</view>
@@ -108,11 +108,11 @@
 					</view>
 					<view class="apply-content flex justify-start flex-wrap">
 						<view class="item">
-							<text>编号:</text>
+							<text>{{ $t('machine.deviceNo') }}:</text>
 							<text>{{item.portCode}}</text>
 						</view>
 						<view class="item">
-							<text>状态:</text>
+							<text>{{ $t('machine.status') }}:</text>
 							<text>{{item.stateName}}</text>
 						</view>
 					</view>

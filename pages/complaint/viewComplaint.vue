@@ -56,15 +56,15 @@
 			return {
 				steps: [{
 					cuIcon: 'usefullfill',
-					name: '申请',
+					name: this.$t('complaint.apply'),
 					desc: ''
 				}, {
 					cuIcon: 'radioboxfill',
-					name: '审核中',
+					name: this.$t('complaint.reviewing'),
 					desc: ''
 				}, {
 					cuIcon: 'roundcheckfill',
-					name: '完成',
+					name: this.$t('complaint.completed'),
 					desc: ''
 				}],
 				active: 0,

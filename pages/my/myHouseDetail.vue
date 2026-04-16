@@ -1,34 +1,34 @@
 <template>
 	<view>
-		<view class="block__title">房屋信息</view>
+<view class="block__title">{{ $t('my.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">房屋ID</view>
+			<view class="title">{{ $t('my.houseId') }}</view>
 			{{roomDetail.roomId}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">楼栋</view>
-			{{roomDetail.floorNum}}号楼
+			<view class="title">{{ $t('my.building') }}</view>
+			{{roomDetail.floorNum}}{{ $t('my.buildingNum') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">单元</view>
-			{{roomDetail.unitNum}}单元
+			<view class="title">{{ $t('my.unit') }}</view>
+			{{roomDetail.unitNum}}{{ $t('my.unitNum') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">房屋编号</view>
-			{{roomDetail.roomNum}}室
+			<view class="title">{{ $t('my.room') }}</view>
+			{{roomDetail.roomNum}}{{ $t('my.roomNum') }}
 		</view>
 
 		<view class="cu-form-group">
-			<view class="title">楼层</view>
-			{{roomDetail.layer+'层'}}
+			<view class="title">{{ $t('my.floor') }}</view>
+			{{roomDetail.layer}}{{ $t('my.floorLayer') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">户型</view>
+			<view class="title">{{ $t('my.houseType') }}</view>
 			{{roomDetail.apartment}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">建筑面积</view>
-			{{roomDetail.builtUpArea+'平方米'}}
+			<view class="title">{{ $t('my.builtUpArea') }}</view>
+			{{roomDetail.builtUpArea}}{{ $t('my.sqm') }}
 		</view>
 
 		<view class="button_up_blank"></view>

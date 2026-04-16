@@ -2,8 +2,8 @@
 	<view>
 		<form>
 			<view class="cu-form-group margin-top">
-				<view class="title">手机号</view>
-				<input placeholder="请输入手机号" type="number" v-model="phone"></input>
+				<view class="title">{{ $t('settings.phone') }}</view>
+				<input :placeholder="$t('settings.pleaseInputPhone')" type="number" v-model="phone"></input>
 				<!-- #ifdef MP-WEIXIN -->
 				<!-- <button  class="cu-btn bg-green" open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">获取手机号</button> -->
 				<!-- #endif -->
@@ -11,7 +11,7 @@
 		</form>
 		
 		<view class="padding flex flex-direction">
-			<button class="cu-btn bg-green lg" @tap="_doChangePhoto()">提交</button>
+			<button class="cu-btn bg-green lg" @tap="_doChangePhoto()">{{ $t('settings.submit') }}</button>
 		</view>
 		
 	</view>
@@ -106,7 +106,7 @@
 				if(this.phone == ''){
 					uni.showToast({
 						icon:'none',
-						title:'手机号不能为空'
+						title: this.$t('settings.phoneCannotBeEmpty')
 					});
 					return;
 				}
@@ -139,7 +139,7 @@
 					fail: function(error) {
 						// 调用服务端登录接口失败
 						uni.showToast({
-							title: '调用接口失败'
+							title: this.$t('settings.interfaceFailed')
 						});
 						console.log(error);
 					}

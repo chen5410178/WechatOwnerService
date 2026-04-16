@@ -52,7 +52,11 @@ export default {
       comprehensiveScore: '综合评分',
       serviceEvaluation: '服务评价',
       evaluationPlaceholder: '请您填写本次服务感受和评价，以便给大家提供更好的服务品质哦！',
-      submitEvaluation: '评价'
+      submitEvaluation: '评价',
+      apply: '申请',
+      reviewing: '审核中',
+      completed: '完成',
+      unbindOwner: '解绑业主'
     }
   },
   'en': {

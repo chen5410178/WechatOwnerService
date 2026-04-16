@@ -36,7 +36,14 @@ export default {
       applyTime: '申请时间',
       remark: '备注',
       goToPay: '去缴费',
-      pleaseSelectDate: '请选择'
+      pleaseSelectDate: '请选择',
+      carTypes: {
+        0: '家用小汽车',
+        1: '客车',
+        2: '货车'
+      },
+      parkingSpace: '停车场',
+      parkingSpaceNum: '车位'
     }
   },
   'en': {
@@ -76,7 +83,14 @@ export default {
       applyTime: 'Apply Time',
       remark: 'Remark',
       goToPay: 'Go to Pay',
-      pleaseSelectDate: 'Please select'
+      pleaseSelectDate: 'Please select',
+      carTypes: {
+        0: 'Sedan',
+        1: 'Bus',
+        2: 'Truck'
+      },
+      parkingSpace: 'Parking Lot',
+      parkingSpaceNum: 'Space'
     }
   }
 }

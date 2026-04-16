@@ -8,7 +8,7 @@
 				</view>
 				<view class="action ">
 					<text class="text-grey text-sm" v-if="item.areaNum">{{item.areaNum}}-{{item.num}}</text>
-					<text class="text-grey text-sm" v-else>没有车位</text>
+					<text class="text-grey text-sm" v-else>{{ $t('car.noParkingSpace') }}</text>
 				</view>
 			</view>
 		</view>

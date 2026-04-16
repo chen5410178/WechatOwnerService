@@ -7,8 +7,8 @@
 						<view>
 							<text class="cuIcon-rechargefill text-green margin-right-xs"></text> {{item.acctTypeName}}
 						</view>
-						<view class="text-gray text-sm">
-							<text class="cuIcon-right margin-right-xs"></text>余额: {{item.amount}}
+<view class="text-gray text-sm">
+							<text class="cuIcon-right margin-right-xs"></text> {{ $t('balance') }}: {{item.amount}}
 						</view>
 					</view>
 					<view class="action">
@@ -18,7 +18,7 @@
 		</view>
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" >
-			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">购买月卡</button>
+			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">{{ $t('machine.buyMonthCard') }}</button>
 		</view>
 	</view>
 

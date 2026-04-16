@@ -1,13 +1,13 @@
 <template>
 	<view class="user-container">
-		<view class="notice">
+<view class="notice">
 			<view>
-				<view class="text">姓<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>名: {{obj.repairName}}</view>
-				<view class="text">联系方式: {{obj.tel}}</view>
-				<view class="text">报修类型: {{obj.repairTypeName}}</view>
-				<view class="text">状<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>态: {{obj.stateName}}</view>
+				<view class="text">{{ $t('repair.repairPerson') }}: {{obj.repairName}}</view>
+				<view class="text">{{ $t('repair.phone') }}: {{obj.tel}}</view>
+				<view class="text">{{ $t('repair.repairType') }}: {{obj.repairTypeName}}</view>
+				<view class="text">{{ $t('repair.status') }}: {{obj.stateName}}</view>
 				<!-- <view class="text"> 报修时间: 2019-10-20 21:59:39</view> -->
-				<view class="text">预约时间: {{obj.appointmentTime}}</view>
+				<view class="text">{{ $t('repair.appointmentTime') }}: {{obj.appointmentTime}}</view>
 			</view>
 		</view>
 	</view>

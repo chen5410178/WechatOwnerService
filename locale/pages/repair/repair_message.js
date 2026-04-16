@@ -41,7 +41,11 @@ export default {
       repairmanService: '维修员服务',
       serviceEvaluation: '服务评价',
       evaluationPlaceholder: '请您填写本次服务感受和评价，以便给大家提供更好的服务品质哦！',
-      evaluate: '评价'
+      evaluate: '评价',
+      completedTime: '完成时间',
+      arrivedWorkstation: '到达工位',
+      processingComplete: '处理完成',
+      processingOpinion: '处理意见'
     }
   },
   'en': {
@@ -86,7 +90,11 @@ export default {
       repairmanService: 'Repairman Service',
       serviceEvaluation: 'Service Evaluation',
       evaluationPlaceholder: 'Please share your experience to help us serve better!',
-      evaluate: 'Evaluate'
+      evaluate: 'Evaluate',
+      completedTime: 'Completed Time',
+      arrivedWorkstation: 'Arrived workstation',
+      processingComplete: 'Processing complete',
+      processingOpinion: 'Processing opinion'
     }
   }
 }

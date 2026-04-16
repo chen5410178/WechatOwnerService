@@ -124,8 +124,8 @@
 				ownerFlag: false,
 				// 是否有业主信息 标记 如果有为 true  没有为false
 				roomDetail: {},
-				bindStartDate: '请选择',
-				bindEndDate: '请选择',
+				bindStartDate: this.$t('applyRoom.pleaseSelect'),
+				bindEndDate: this.$t('applyRoom.pleaseSelect'),
 				createRemark: '',
 				applyType: '',
 				applyTypeShow: '',
@@ -139,7 +139,7 @@
 				userTel:'',
 				uploadImage: {
 					maxPhotoNum: 4,
-					imgTitle: '图片上传',
+					imgTitle: this.$t('applyRoom.imageUpload'),
 					canEdit: true
 				}
 			};

@@ -39,7 +39,7 @@
 			
 		
 		<!-- <view class="cu-form-group margin-top">
-			<textarea v-model="remark" placeholder="请输入备注"></textarea>
+			<textarea v-model="remark" :placeholder="$t('family.optionalRemark')"></textarea>
 		</view> -->
 
 		<view class="flex flex-direction margin-top margin-bottom">

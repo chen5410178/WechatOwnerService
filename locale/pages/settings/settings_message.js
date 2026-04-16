@@ -16,7 +16,21 @@ export default {
       aboutUs: '关于我们',
       contactUs: '联系我们',
       userAgreement: '用户协议',
-      privacyPolicy: '隐私政策'
+      privacyPolicy: '隐私政策',
+      oldPassword: '旧密码',
+      newPassword: '新密码',
+      confirmPassword: '确认密码',
+      pleaseInputOldPassword: '请输入旧密码',
+      pleaseInputNewPassword: '请输入新密码',
+      pleaseInputConfirmPassword: '请输入确认密码',
+      passwordCannotBeEmpty: '密码不能为空',
+      newPasswordCannotBeEmpty: '新密码不能为空',
+      confirmPasswordCannotBeEmpty: '确认密码不能为空',
+      passwordNotMatch: '确认密码和新密码不一致',
+      pleaseInputPhone: '请输入手机号',
+      submit: '提交',
+      interfaceFailed: '调用接口失败',
+      phoneCannotBeEmpty: '手机号不能为空'
     }
   },
   'en': {
@@ -36,7 +50,21 @@ export default {
       aboutUs: 'About Us',
       contactUs: 'Contact Us',
       userAgreement: 'User Agreement',
-      privacyPolicy: 'Privacy Policy'
+      privacyPolicy: 'Privacy Policy',
+      oldPassword: 'Old Password',
+      newPassword: 'New Password',
+      confirmPassword: 'Confirm Password',
+      pleaseInputOldPassword: 'Please enter old password',
+      pleaseInputNewPassword: 'Please enter new password',
+      pleaseInputConfirmPassword: 'Please enter confirm password',
+      passwordCannotBeEmpty: 'Password cannot be empty',
+      newPasswordCannotBeEmpty: 'New password cannot be empty',
+      confirmPasswordCannotBeEmpty: 'Confirm password cannot be empty',
+      passwordNotMatch: 'Passwords do not match',
+      pleaseInputPhone: 'Please enter phone number',
+      submit: 'Submit',
+      interfaceFailed: 'Interface call failed',
+      phoneCannotBeEmpty: 'Phone number cannot be empty'
     }
   }
 }

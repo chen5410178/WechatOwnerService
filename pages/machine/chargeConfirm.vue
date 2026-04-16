@@ -4,26 +4,26 @@
 			<view class="a-name">
 				{{machineName}}
 			</view>
-			<view class="a-code">
-				设备编号: {{machineCode}}
+<view class="a-code">
+				{{ $t('machine.deviceNo') }}: {{machineCode}}
 			</view>
 		</view>
 		
 		<view class="suc-b">
-			<view class="suc-b-1">收费规则: 按时间收费(最小1小时);</view>
-			<view class="suc-b-1">充电价格: </view>
+			<view class="suc-b-1">{{ $t('machine.chargeRule') }}: {{ $t('machine.chargeRuleDetail') }};</view>
+			<view class="suc-b-1">{{ $t('machine.priceDesc') }}: </view>
 			<view class="suc-b-2" v-for="(item,index) in fees" :key="index">
-				{{index+1}}、{{item.minEnergyPrice}}~{{item.maxEnergyPrice}}功率,{{item.durationPrice}}元/小时;
+				{{index+1}}、{{item.minEnergyPrice}}~{{item.maxEnergyPrice}}功率,{{item.durationPrice}}{{ $t('machine.yuanPerHour') }};
 			</view>
-			<view class="suc-b-1 margin-top">规则说明:</view>
-			<view class="suc-b-2">1、充电时间不满1小时按1小时结算;</view>
-			<view class="suc-b-2">2、充电自满最长充电时间为10小时;</view>
+			<view class="suc-b-1 margin-top">{{ $t('machine.ruleDesc') }}:</view>
+			<view class="suc-b-2">1、{{ $t('machine.rule1') }};</view>
+			<view class="suc-b-2">2、{{ $t('machine.rule2') }};</view>
 		</view>
 		
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;">
 			<button @click="_toChargeConfirm"
-				class="cu-btn bg-orange shadow-blur round lg">我知道了</button>
+				class="cu-btn bg-orange shadow-blur round lg">{{ $t('machine.confirmKnow') }}</button>
 		</view>
 	</view>
 </template>

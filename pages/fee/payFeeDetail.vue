@@ -5,7 +5,7 @@
 			<view v-for="(item,index) in feeDetails" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
 					<view>{{ $t('fee_amount') }}</view>
-					<view class="text-gray">{{item.receivedAmount}}元</view>
+					<view class="text-gray">{{item.receivedAmount}}{{ $t('yuan') }}</view>
 				</view>
 				<view class="flex margin-top justify-between">
 					<view class="text-gray">{{ $t('fee_name') || '费用名称' }}</view>
@@ -17,7 +17,7 @@
 				</view>
 				<view class="flex margin-top-xs justify-between">
 					<view class="text-gray">{{ $t('fee_period') }}</view>
-					<view class="text-gray">{{item.cycles}}个月</view>
+					<view class="text-gray">{{item.cycles}}{{ $t('months') }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
 					<view class="text-gray">{{ $t('fee_start_time') }}</view>

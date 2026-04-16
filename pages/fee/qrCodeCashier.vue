@@ -9,14 +9,14 @@
 	export default {
 		data() {
 			return {
-				msg:"正在处理，请稍等！",
+				msg:this.$t('systemBusy'),
 				qrToken:'',
 			}
 		},
 		onLoad(options) {
 			this.qrToken = options.qrToken;
 			if(!this.qrToken){
-				this.msg='二维码错误';
+				this.msg=this.$t('qrCodeExpired');
 				return;
 			}
 			this._loadQrcodeData();

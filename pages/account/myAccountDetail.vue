@@ -1,34 +1,34 @@
 <template>
 	<view>
-		<view  class="block__title">账户明细</view>
+		<view  class="block__title">{{ $t('account.accountDetail') }}</view>
 		<view v-if="accountDetails.length > 0">
 			<view v-for="(item,index) in accountDetails" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>{{acctType == 2004 ? '积分' : '金额'}}</view>
-					<view class="text-gray">{{item.amount}}{{acctType == 2004 ? '分' : '元'}}</view>
+					<view>{{acctType == 2004 ? $t('account.points') : $t('account.amount')}}</view>
+					<view class="text-gray">{{item.amount}}{{acctType == 2004 ? $t('account.pointsUnit') : $t('account.yuan')}}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">交易编号</view>
+					<view class="text-gray">{{ $t('account.transactionNo') }}</view>
 					<view class="text-gray">{{item.orderId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">明细编号</view>
+					<view class="text-gray">{{ $t('account.detailNo') }}</view>
 					<view class="text-gray">{{item.detailId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">账户名称</view>
+					<view class="text-gray">{{ $t('account.accountName') }}</view>
 					<view class="text-gray">{{item.acctName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">明细类型</view>
-					<view class="text-gray">{{item.detailType =='1001'?'转入':'转出'}}</view>
+					<view class="text-gray">{{ $t('account.detailType') }}</view>
+					<view class="text-gray">{{item.detailType =='1001' ? $t('account.transferIn') : $t('account.transferOut')}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">交易时间</view>
+					<view class="text-gray">{{ $t('account.transactionTime') }}</view>
 					<view class="text-gray">{{item.createTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">说明</view>
+					<view class="text-gray">{{ $t('account.remark') }}</view>
 					<view class="text-gray">{{item.remark}}</view>
 				</view>
 			</view>
@@ -60,9 +60,9 @@
 				page: 1,
 				loadingStatus : 'loading',
 				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+					contentdown: this.$t('account.pullUpLoadMore'),
+					contentrefresh: this.$t('account.loading'),
+					contentnomore: this.$t('account.noMore')
 				}
 			}
 		},

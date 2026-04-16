@@ -157,7 +157,7 @@
 			_initMonthList: function() {
 				this.monthList = [];
 				for (let i = 1; i <= 24; i++) {
-					this.monthList.push(i + '月');
+					this.monthList.push(i + this.$t('month'));
 				}
 			},
 			

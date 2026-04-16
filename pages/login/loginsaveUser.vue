@@ -7,37 +7,37 @@
 
 		<view class="margin-top padding-left padding-right radius" v-if="!loginByPhone">
 			<view class="cu-form-group margin-top">
-				<view class="title">用户名</view>
-				<input placeholder="请输入用户名" name="input" v-model="username"></input>
+				<view class="title">{{ $t('login.username') }}</view>
+				<input :placeholder="$t('login.inputUsername')" name="input" v-model="username"></input>
 			</view>
 			<view class="cu-form-group border-bottom">
-				<view class="title">密码</view>
-				<input placeholder="请输入密码" type="password" name="input" v-model="password"></input>
+				<view class="title">{{ $t('login.password') }}</view>
+				<input :placeholder="$t('login.inputPassword')" type="password" name="input" v-model="password"></input>
 			</view>
 		</view>
 		<view class="margin-top padding-left padding-right radius" v-else>
 			<view class="cu-form-group margin-top">
-				<view class="title">手机号</view>
-				<input placeholder="请输入手机号" name="input" v-model="username"></input>
+				<view class="title">{{ $t('login.phoneNumber') }}</view>
+				<input :placeholder="$t('login.inputPhone')" name="input" v-model="username"></input>
 			</view>
 			<view class="cu-form-group border-bottom">
-				<view class="title">验证码</view>
-				<input v-model="password" placeholder="请输入短信验证码" name="input"></input>
+				<view class="title">{{ $t('login.verificationCode') }}</view>
+				<input v-model="password" :placeholder="$t('login.inputSmsCode')" name="input"></input>
 				<button class='cu-btn bg-green shadow' :disabled="btnDisabled"
 					@click="sendMsgCode()">{{btnValue}}</button>
 			</view>
 		</view>
 
 		<view class="padding-left padding-right padding-top flex flex-direction margin-top">
-			<button class="cu-btn bg-green lg" @click="_doLogin()">登录</button>
-			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_doRegister()">注册</button>
+			<button class="cu-btn bg-green lg" @click="_doLogin()">{{ $t('login.loginBtn') }}</button>
+			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_doRegister()">{{ $t('login.registerBtn') }}</button>
 		</view>
 		<view class="padding-right flex justify-end">
 			<checkbox-group @change="_changeSaveLogin">
 				<checkbox style="transform: scale(0.7)" :checked="loginInfo == 'ON'" ></checkbox>
 			</checkbox-group>
 			<view class="read-me">
-				<text class="margin-left-xs">记住密码</text>
+				<text class="margin-left-xs">{{ $t('login.rememberPassword') }}</text>
 			</view>
 		</view>
 
@@ -82,8 +82,8 @@
 				loginByPhone: false,
 				msgCode: '',
 				btnDisabled: false,
-				btnValue: '验证码',
-				phoneLoginName: '验证码登录',
+				btnValue: this.$t('login.verificationCode'),
+				phoneLoginName: this.$t('login.verificationCodeLogin'),
 				loginInfo:'OFF'
 
 			};

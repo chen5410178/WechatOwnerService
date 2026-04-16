@@ -316,7 +316,7 @@
 					feeConfigs: _payFees,
 					communityId: this.communityId,
 					ownerId: this.ownerId,
-					feeName: '物业费',
+					feeName: this.$t('propertyFee'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 					acctId: _acctId,

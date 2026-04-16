@@ -191,7 +191,7 @@
 					},
 					fail: function(error) {
 						// 调用 wx.login 接口失败
-						console.log('调用wx.login获取code失败');
+						console.log(this.$t('wxLoginFailed'));
 						console.log(error);
 					}
 				});

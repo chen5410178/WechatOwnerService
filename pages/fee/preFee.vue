@@ -80,7 +80,7 @@
 				}).then(data => {
 					_that.rooms = data.rooms || [];
 				}).catch(error => {
-					console.error('加载房屋列表失败:', error);
+					console.error(this.$t('loadRoomListFailed') + ':', error);
 					_that.rooms = [];
 				});
 			},

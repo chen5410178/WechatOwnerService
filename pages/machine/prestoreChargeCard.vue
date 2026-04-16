@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">购买月卡</view>
+		<view class="block__title">{{ $t('buyMonthCard') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">充电月卡</text>
+					<text class="text-grey">{{ $t('chargeMonthCard') }}</text>
 				</view>
 				<view class="action">
 					<picker  :value="cardIndex" :range="cards" :range-key="'cardName'" @change="cardChange">
@@ -16,23 +16,23 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">充值月</text>
+					<text class="text-grey">{{ $t('rechargeMonth') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{cardMonth}}个月</text>
+					<text class="text-grey text-sm">{{cardMonth}}{{ $t('months') }}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">每日充电</text>
+					<text class="text-grey">{{ $t('dailyCharge') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{dayHours}}小时</text>
+					<text class="text-grey text-sm">{{dayHours}}{{ $t('hours') }}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">充值金额</text>
+					<text class="text-grey">{{ $t('rechargeAmount') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{cardPrice}}</text>
@@ -43,14 +43,14 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				合计：{{cardPrice}}元
+				{{ $t('total') }}：{{cardPrice}}{{ $t('yuan') }}
 			</view>
 			<view class="btn-group">
 				<!-- #ifdef H5 || MP-WEIXIN -->
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">提交订单</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_payWxApp()">提交订单</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_payWxApp()">{{ $t('submitOrder') }}</button>
 				<!-- #endif -->
 			</view>
 		</view>
@@ -126,7 +126,7 @@
 				payFeeApp(this,{
 					communityId: this.communityId,
 					personTel: this.personTel,
-					feeName: '月卡充值',
+					feeName: this.$t('monthCardRecharge'),
 					receivedAmount: _receivedAmount,
 					cardId:this.cardId,
 					tradeType: _tradeType,
@@ -141,7 +141,7 @@
 					business: "preStoreChargeCard",
 					communityId: this.communityId,
 					personTel: this.personTel,
-					feeName: '月卡充值',
+					feeName: this.$t('monthCardRecharge'),
 					receivedAmount: _receivedAmount,
 					cardId:this.cardId,
 					tradeType: _tradeType,

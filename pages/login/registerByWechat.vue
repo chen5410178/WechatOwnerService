@@ -1,43 +1,43 @@
 <template>
 	<view>
-		<view class="block__title">选择小区</view>
+		<view class="block__title">{{ $t('login.selectCommunity') }}</view>
 
 		<view class="cu-form-group arrow">
-			<view class="title">市/区</view>
+			<view class="title">{{ $t('login.cityDistrict') }}</view>
 			<pickerAddress @change="change">{{areaName}}</pickerAddress>
 			<text class='cuIcon-right'></text>
 		</view>
 
 		<view class="cu-form-group" @tap="chooseCommunity">
-			<view class="title">小区名称</view>
-			<input v-model="communityName" required readonly label="小区名称" placeholder="请选择小区" name="communityName" icon="arrow"></input>
+			<view class="title">{{ $t('login.communityName') }}</view>
+			<input v-model="communityName" required readonly :label="$t('login.communityName')" :placeholder="$t('login.selectCommunityPlaceholder')" name="communityName" icon="arrow"></input>
 			<text class='cuIcon-right'></text>
 		</view>
 
-		<view class="block__title">业主信息</view>
+		<view class="block__title">{{ $t('login.ownerInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">姓名</view>
-			<input v-model="appUserName" required label="姓名" clearable placeholder="请输入名称" name="appUserName"></input>
+			<view class="title">{{ $t('login.name') }}</view>
+			<input v-model="appUserName" required :label="$t('login.name')" clearable :placeholder="$t('login.inputName')" name="appUserName"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">身份证</view>
-			<input v-model="idCard" required label="身份证" clearable placeholder="请输入身份证" name="idCard"></input>
+			<view class="title">{{ $t('login.idCard') }}</view>
+			<input v-model="idCard" required :label="$t('login.idCard')" clearable :placeholder="$t('login.inputIdCard')" name="idCard"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">密码</view>
-			<input v-model="password" required type="password" label="密码" clearable placeholder="请输入密码"></input>
+			<view class="title">{{ $t('login.password') }}</view>
+			<input v-model="password" required type="password" :label="$t('login.password')" clearable :placeholder="$t('login.inputPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">确认密码</view>
-			<input v-model="rePassword" required type="password" label="确认密码" clearable placeholder="请输入确认密码"></input>
+			<view class="title">{{ $t('login.confirmPassword') }}</view>
+			<input v-model="rePassword" required type="password" :label="$t('login.confirmPassword')" clearable :placeholder="$t('login.inputConfirmPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="link" required label="手机号" disabled="disabled" clearable placeholder="请输入手机号"></input>
-			<button  class="cu-btn bg-green" open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">获取手机号</button>
+			<view class="title">{{ $t('login.phoneNumber') }}</view>
+			<input v-model="link" required :label="$t('login.phoneNumber')" disabled="disabled" clearable :placeholder="$t('login.inputPhone')"></input>
+			<button  class="cu-btn bg-green" open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">{{ $t('login.getPhoneNumber') }}</button>
 		</view>
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green   lg" @click="_doRegister()">绑定</button>
+			<button class="cu-btn bg-green   lg" @click="_doRegister()">{{ $t('login.bind') }}</button>
 		</view>
 	</view>
 </template>
@@ -56,7 +56,7 @@
 			return {
 				title: 'Hello',
 				areaCode: '',
-				areaName: '请选择地区',
+				areaName: this.$t('login.selectCommunityPlaceholder'),
 				communityName: '',
 				communityId: '',
 				appUserName: '',
@@ -65,7 +65,7 @@
 				second: 60,
 				msgCode: '',
 				areaShow: false,
-				btnValue: '验证码',
+				btnValue: this.$t('login.verificationCode'),
 				btnDisabled: false,
 				password: '',
 				rePassword: '',

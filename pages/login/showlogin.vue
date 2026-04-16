@@ -7,7 +7,7 @@
 						<image class="cu-avatar xl round" :src="img" mode="widthFix"></image>
 					</view>
 					<view class="userinfo-nickname text-center margin-top">
-						<text>非常抱歉此功能需登录后才能体验</text>
+						<text>{{ $t('login.sorryLoginRequired') }}</text>
 					</view>
 				</block>
 
@@ -16,7 +16,7 @@
 		</view>
 
 		<view class="cu-bar btn-group" style="margin-top: 30px;">
-			<button @click="navToLogin" class="cu-btn bg-green shadow-blur round lg">我要登录</button>
+			<button @click="navToLogin" class="cu-btn bg-green shadow-blur round lg">{{ $t('login.iWantToLogin') }}</button>
 
 		</view>
 	</view>

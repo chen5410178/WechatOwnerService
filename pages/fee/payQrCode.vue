@@ -70,7 +70,7 @@
 				queryWay: 'room',
 				pfqId:'',
 				second:60,
-				btnValue: '验证码',
+				btnValue: this.$t('verificationCode'),
 				btnDisabled: false,
 				config:{
 					content: "",
@@ -78,7 +78,7 @@
 					createStaffName: "",
 					customFee: "",
 					preFee: "",
-					qrcodeName: "支付二维码",
+					qrcodeName: this.$t('qrCodeName'),
 					queryWay: "1001",
 					smsValidate: "ON",
 					state:''

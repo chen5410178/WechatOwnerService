@@ -238,7 +238,7 @@
 				if (!this.selectedFeeType) {
 					uni.showToast({
 						icon: 'none',
-						title: '请选择费用类型'
+						title: this.$t('selectFeeType')
 					});
 					return;
 				}
@@ -246,7 +246,7 @@
 				if (!this.amount || parseFloat(this.amount) <= 0) {
 					uni.showToast({
 						icon: 'none',
-						title: '请输入充值金额'
+						title: this.$t('inputRechargeAmount')
 					});
 					return;
 				}

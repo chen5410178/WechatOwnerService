@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class="block__title">房屋信息</view>
+		<view class="block__title">{{ $t('index.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">小区</view>
+			<view class="title">{{ $t('index.community') }}</view>
 			<picker bindchange="PickerChange" :value="communityIndex" :range="communitys" :range-key="'name'"
 				@change="communityChange">
 				<view class="picker">
@@ -11,21 +11,21 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow" v-if="communityId" @tap="chooseRoom">
-			<view class="title">房屋</view>
-			<input readonly v-model="roomName" class="text-right" placeholder="请选择房屋"  icon="arrow"></input>
+			<view class="title">{{ $t('index.house') }}</view>
+			<input readonly v-model="roomName" class="text-right" :placeholder="$t('index.selectHouse')"  icon="arrow"></input>
 			<text class='cuIcon-right'></text>
 		</view>
-		<view class="block__title">人员信息</view>
+		<view class="block__title">{{ $t('index.personInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">人员名称</view>
-			<input v-model="ownerName" placeholder="请输入名称" class="text-right"></input>
+			<view class="title">{{ $t('index.personName') }}</view>
+			<input v-model="ownerName" :placeholder="$t('index.inputName')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">手机号</view>
-			<input v-model="link" disabled="disabled" placeholder="请输入手机号" class="text-right"></input>
+			<view class="title">{{ $t('index.phoneNumber') }}</view>
+			<input v-model="link" disabled="disabled" :placeholder="$t('index.inputPhone')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">人员类型</view>
+			<view class="title">{{ $t('index.personType') }}</view>
 			<picker :value="typeCdIndex" :range="typeCds" range-key="name" @change="_changeTypeCd">
 				<view class="picker">
 					{{typeCds[typeCdIndex].name}}
@@ -34,7 +34,7 @@
 		</view>
 		
 		<view class="flex flex-direction margin-top margin-bottom">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_doAuthOwner()">提交</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_doAuthOwner()">{{ $t('index.submit') }}</button>
 		</view>
 
 	</view>
@@ -55,16 +55,16 @@
 				ownerName:'',
 				communitys: [{
 					communityId: '',
-					name: '请选择小区'
+					name: this.$t('index.selectCommunity')
 				}],
 				"typeCds": [
 					{
 						value: '1001',
-						name: '业主'
+						name: this.$t('index.owner')
 					},
 					{
 						value: '1002',
-						name: '成员'
+						name: this.$t('index.familyMember')
 					}
 				],
 				"typeCdIndex": 0,

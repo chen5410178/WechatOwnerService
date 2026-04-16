@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">报修信息</view>
+			<view class="block__title">{{ $t('repairInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">工单号</text>
+						<text class="text-grey">{{ $t('orderNo') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairId}}</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">报修类型</text>
+						<text class="text-grey">{{ $t('repairType') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairTypeName}}</text>
@@ -21,7 +21,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">报修位置</text>
+						<text class="text-grey">{{ $t('repairLocation') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairObjName}}</text>
@@ -29,7 +29,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">报修人</text>
+						<text class="text-grey">{{ $t('repairUser') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairName}}</text>
@@ -37,18 +37,18 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">报修内容</text>
+						<text class="text-grey">{{ $t('repairContent') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{remark}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">费用信息</view>
+			<view class="block__title">{{ $t('feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">费用编号</text>
+						<text class="text-grey">{{ $t('feeId') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{feeInfo.feeId }}</text>
@@ -56,10 +56,10 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">金额</text>
+						<text class="text-grey">{{ $t('amount') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{feeInfo.amount + '元' }}</text>
+						<text class="text-grey text-sm">{{feeInfo.amount + $t('yuan') }}</text>
 					</view>
 				</view>
 			</view>
@@ -67,10 +67,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 
 			<view class="action text-orange margin-right line-height">
-				合计：{{feeInfo.amount}}元
+				{{ $t('total') }}：{{feeInfo.amount}}{{ $t('yuan') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">提交订单</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
 			</view>
 
 
@@ -232,7 +232,7 @@
 					cycles: '1',
 					communityId: this.communityId,
 					feeId: this.feeInfo.feeId,
-					feeName: '报修费',
+					feeName: this.$t('repairFee'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 					appId: this.appId,

@@ -138,7 +138,7 @@
 					carId: this.carId,
 					carNum: this.carNum,
 					cardId: this.cardId,
-					feeName: '购买停车月卡',
+					feeName: this.$t('buyParkingMonthCard'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 				};

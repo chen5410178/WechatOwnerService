@@ -22,5 +22,17 @@ export default {
       noNotice: 'No notices',
       viewMore: 'View More'
     }
+  },
+  'zh-TW': {
+    notice: {
+      notice: '公告',
+      noticeList: '公告列表',
+      noticeDetail: '公告詳情',
+      publishTime: '發布時間',
+      title: '標題',
+      content: '內容',
+      noNotice: '暫無公告',
+      viewMore: '查看更多'
+    }
   }
 }

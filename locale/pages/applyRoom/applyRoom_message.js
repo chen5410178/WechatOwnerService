@@ -62,5 +62,37 @@ export default {
       pleaseSelect: 'Please select',
       imageUpload: 'Image Upload'
     }
+  },
+  'zh-TW': {
+    applyRoom: {
+      trackRecord: '跟蹤記錄',
+      clickToView: '點擊查看',
+      userInfo: '使用者資訊',
+      name: '名稱',
+      contact: '聯繫方式',
+      houseInfo: '房屋資訊',
+      roomNo: '房屋號',
+      startTime: '開始時間',
+      endTime: '結束時間',
+      currentProgress: '目前進度',
+      imageMaterial: '圖片材料',
+      operator: '操作人員',
+      pullUpLoadMore: '上拉載入更多',
+      loading: '載入中',
+      noMore: '沒有更多',
+      applyRoom: '申請房間',
+      trackRemark: '跟蹤備註',
+      image: '圖片',
+      video: '影片',
+      ownerId: '業主ID',
+      idCard: '身份證',
+      roomId: '房屋ID',
+      roomCount: '房間數',
+      sections: '個',
+      unitPrice: '單價',
+      yuanPerSqm: '元/平方公尺',
+      pleaseSelect: '請選擇',
+      imageUpload: '圖片上傳'
+    }
   }
 }

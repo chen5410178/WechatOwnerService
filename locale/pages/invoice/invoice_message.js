@@ -46,5 +46,29 @@ export default {
     enterprise: 'Enterprise',
     selectFirst: 'Please select',
     ownerNotExist: 'Owner does not exist'
+  },
+  'zh-TW': {
+    invoice: '發票',
+    invoiceSettings: '發票設定',
+    invoiceHistory: '發票記錄',
+    invoiceApply: '申請開票',
+    invoiceDetail: '發票詳情',
+    addInvoiceApply: '申請開票',
+    invoiceSetting: '發票設定',
+    invoiceType: '發票類型',
+    invoiceTitle: '發票抬頭',
+    inputInvoiceTitle: '請輸入發票抬頭',
+    taxNo: '稅號',
+    inputTaxNo: '請輸入稅號',
+    address: '地址',
+    inputAddress: '請輸入地址',
+    phone: '電話',
+    inputPhone: '請輸入電話',
+    bankAccount: '銀行帳號',
+    inputBankAccount: '請輸入銀行帳號',
+    personal: '個人',
+    enterprise: '企業',
+    selectFirst: '請選擇',
+    ownerNotExist: '業主不存在'
   }
 }

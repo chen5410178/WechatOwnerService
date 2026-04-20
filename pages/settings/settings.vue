@@ -94,7 +94,12 @@
 		},
 		computed: {
 			currentLanguageName() {
-				return this.$i18n.locale === 'zh-CN' ? '中文' : 'English'
+				const langMap = {
+					'zh-CN': '中文',
+					'en': 'English',
+					'zh-TW': '繁體中文'
+				};
+				return langMap[this.$i18n.locale] || '中文';
 			}
 		},
 		/**
@@ -204,12 +209,23 @@
 				});
 			},
 			switchLanguage: function() {
-				const newLang = this.$i18n.locale === 'zh-CN' ? 'en' : 'zh-CN';
-				this.$i18n.locale = newLang;
-				uni.setStorageSync('language', newLang);
-				uni.showToast({
-					title: this.$t('settings.switchSuccess'),
-					icon: 'success'
+				const _that = this;
+				const languageList = [
+					{ name: '中文', value: 'zh-CN' },
+					{ name: 'English', value: 'en' },
+					{ name: '繁體中文', value: 'zh-TW' }
+				];
+				uni.showActionSheet({
+					itemList: languageList.map(item => item.name),
+					success: function(res) {
+						const selected = languageList[res.tapIndex];
+						_that.$i18n.locale = selected.value;
+						uni.setStorageSync('language', selected.value);
+						uni.showToast({
+							title: _that.$t('settings.switchSuccess'),
+							icon: 'success'
+						});
+					}
 				});
 			},
 			_doLogoutUser: function() {

@@ -66,5 +66,39 @@ export default {
       interfaceFailed: 'Interface call failed',
       phoneCannotBeEmpty: 'Phone number cannot be empty'
     }
+  },
+  'zh-TW': {
+    settings: {
+      settings: '設定',
+      myAvatar: '我的頭像',
+      phone: '手機號',
+      password: '密碼',
+      support: '技術支援',
+      version: '版本',
+      language: '語言',
+      switchSuccess: '切換成功',
+      changePhone: '修改手機號',
+      changePassword: '修改密碼',
+      logout: '登出',
+      logoutConfirm: '確定要登出嗎？',
+      aboutUs: '關於我們',
+      contactUs: '聯繫我們',
+      userAgreement: '使用者協議',
+      privacyPolicy: '隱私政策',
+      oldPassword: '舊密碼',
+      newPassword: '新密碼',
+      confirmPassword: '確認密碼',
+      pleaseInputOldPassword: '請輸入舊密碼',
+      pleaseInputNewPassword: '請輸入新密碼',
+      pleaseInputConfirmPassword: '請輸入確認密碼',
+      passwordCannotBeEmpty: '密碼不能為空',
+      newPasswordCannotBeEmpty: '新密碼不能為空',
+      confirmPasswordCannotBeEmpty: '確認密碼不能為空',
+      passwordNotMatch: '確認密碼和新密碼不一致',
+      pleaseInputPhone: '請輸入手機號',
+      submit: '提交',
+      interfaceFailed: '呼叫介面失敗',
+      phoneCannotBeEmpty: '手機號不能為空'
+    }
   }
 }

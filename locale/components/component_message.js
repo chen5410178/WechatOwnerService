@@ -24,5 +24,18 @@ export default {
     points: 'pts',
     yuan: '',
     noImage: 'No image'
+  },
+  'zh-TW': {
+    loadMore: '上拉顯示更多',
+    loading: '載入中...',
+    noMore: '沒有更多資料了',
+    imageUpload: '圖片上傳',
+    loadingImage: '圖片載入中...',
+    insufficientStock: '庫存不足',
+    purchaseLimit: '本次活動最多購買{count}件',
+    ownerAccount: '業主帳戶',
+    points: '分',
+    yuan: '元',
+    noImage: '暫無圖片'
   }
 }

@@ -1,1 +1,1 @@
-export default { 'zh-CN': { renovation: {} }, 'en': { renovation: {} } }
+export default { 'zh-CN': { renovation: {} }, 'en': { renovation: {} }, 'zh-TW': { renovation: {} } }

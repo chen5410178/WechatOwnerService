@@ -92,5 +92,52 @@ export default {
       parkingSpace: 'Parking Lot',
       parkingSpaceNum: 'Space'
     }
+  },
+  'zh-TW': {
+    car: {
+      car: '車輛',
+      carList: '車輛列表',
+      addCar: '新增車輛',
+      editCar: '編輯車輛',
+      carNumber: '車牌號',
+      carBrand: '車輛品牌',
+      carColor: '車輛顏色',
+      submit: '提交',
+      cancel: '取消',
+      confirm: '確認',
+      delete: '刪除',
+      edit: '編輯',
+      success: '操作成功',
+      failed: '操作失敗',
+      selectCarType: '選擇車輛類型',
+      privateCar: '私家車',
+      commercialCar: '商用車',
+      noCar: '暫無車輛',
+      carType: '車輛類型',
+      pleaseSelect: '請選擇',
+      remarkInfo: '備註資訊',
+      inputRemarkInfo: '請輸入備註資訊',
+      viewProgress: '查看進度',
+      parkingApplyNote: '車位申請說明',
+      parkingApplyNote1: '只有第一次租車位時，需要申請',
+      parkingApplyNote2: '審核通過後，請到車輛月卡介面購買月卡續租',
+      inputBrand: '選填,請輸入品牌',
+      inputColor: '選填,請輸入顏色',
+      noParkingSpace: '沒有車位',
+      leaseTerm: '租期',
+      memberVehicles: '成員車輛',
+      addMemberCar: '新增成員車',
+      applyTime: '申請時間',
+      remark: '備註',
+      goToPay: '去繳費',
+      pleaseSelectDate: '請選擇',
+      carTypes: {
+        0: '家用小汽車',
+        1: '客車',
+        2: '貨車'
+      },
+      parkingSpace: '停車場',
+      parkingSpaceNum: '車位'
+    }
   }
 }

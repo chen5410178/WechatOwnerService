@@ -52,5 +52,32 @@ export default {
       loading: "Loading",
       noMore: "No more"
     }
+  },
+  "zh-TW": {
+    account: {
+      account: "帳戶",
+      accountDetail: "帳戶詳情",
+      balance: "餘額",
+      freeze: "凍結",
+      available: "可用",
+      recharge: "儲值",
+      withdraw: "提現",
+      record: "記錄",
+      points: "積分",
+      amount: "金額",
+      pointsUnit: "分",
+      yuan: "元",
+      transactionNo: "交易編號",
+      detailNo: "明細編號",
+      accountName: "帳戶名稱",
+      detailType: "明細類型",
+      transferIn: "轉入",
+      transferOut: "轉出",
+      transactionTime: "交易時間",
+      remark: "說明",
+      pullUpLoadMore: "上拉載入更多",
+      loading: "載入中",
+      noMore: "沒有更多"
+    }
   }
 }

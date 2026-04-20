@@ -50,5 +50,31 @@ export default {
       other: 'Other',
       charging: 'Charging'
     }
+  },
+  'zh-TW': {
+    service: {
+      fee: '費用',
+      propertyPay: '管理費繳費',
+      waterElectric: '水電充值',
+      carMonthly: '停車月卡',
+      invoice: '發票',
+      propertyService: '物业服務',
+      communityNotice: '小區公告',
+      familyMembers: '家庭成員',
+      ownerInfo: '業主資訊',
+      parkingApply: '停車申請',
+      vacantApply: '空置申請',
+      communityBulletin: '小區公示',
+      workOrder: '工單',
+      repair: '報修',
+      complaint: '投訴',
+      renovation: '裝修',
+      courtBooking: '場地預約',
+      access: '通行',
+      openDoor: '開門',
+      visitorAccess: '訪客通行',
+      other: '其他',
+      charging: '充電樁'
+    }
   }
 }

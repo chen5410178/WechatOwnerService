@@ -1,1 +1,1 @@
-export default { 'zh-CN': { appointment: {} }, 'en': { appointment: {} } }
+export default { 'zh-CN': { appointment: {} }, 'en': { appointment: {} }, 'zh-TW': { appointment: {} } }

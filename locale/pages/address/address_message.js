@@ -24,5 +24,18 @@ export default {
     addressDefault: 'Default',
     setDefault: 'Set Default',
     addressDelete: 'Delete'
+  },
+  'zh-TW': {
+    address: '地址',
+    addressList: '地址列表',
+    addAddress: '新增地址',
+    editAddress: '編輯地址',
+    contactName: '聯繫人',
+    contactPhone: '聯繫電話',
+    detailedAddress: '詳細地址',
+    addressSubmit: '提交',
+    addressDefault: '預設',
+    setDefault: '設為預設',
+    addressDelete: '刪除'
   }
 }

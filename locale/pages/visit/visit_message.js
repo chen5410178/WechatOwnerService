@@ -50,5 +50,31 @@ export default {
       loadMore: 'Load More',
       noMore: 'No More'
     }
+  },
+  'zh-TW': {
+    visit: {
+      visit: '訪客',
+      visitList: '訪客列表',
+      addVisit: '新增訪客',
+      visitTime: '來訪時間',
+      visitReason: '來訪事由',
+      visitorName: '訪客姓名',
+      visitorPhone: '訪客電話',
+      visitSubmit: '提交',
+      visitCancel: '取消',
+      visitConfirm: '確認',
+      visitDelete: '刪除',
+      visitEdit: '編輯',
+      visitSuccess: '操作成功',
+      visitFailed: '操作失敗',
+      visitProcessing: '處理中',
+      visitCompleted: '已完成',
+      visitCancelled: '已取消',
+      visitStatus: '狀態',
+      carNum: '車牌號',
+      estimatedVisitTime: '預計來訪時間',
+      loadMore: '載入更多',
+      noMore: '沒有更多了'
+    }
   }
 }

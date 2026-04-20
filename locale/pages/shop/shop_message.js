@@ -1,1 +1,1 @@
-export default { 'zh-CN': { shop: {} }, 'en': { shop: {} } }
+export default { 'zh-CN': { shop: {} }, 'en': { shop: {} }, 'zh-TW': { shop: {} } }

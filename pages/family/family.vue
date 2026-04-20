@@ -60,7 +60,6 @@
 	export default {
 		data() {
 			return {
-				"sexArr": [],
 				"sexShow": false,
 				"sex": "0",
 				"name": "",
@@ -68,7 +67,6 @@
 				"remark": "",
 				"ownerId": "",
 				"userId": "",
-				"typeCds": [],
 				"typeCdIndex": 0,
 				"personRole":'3',
 				"ownerTypeCd": "1002",
@@ -77,9 +75,9 @@
 				"communityId": "",
 				"second": 60,
 				"btnDisabled":false,
-				"btnValue": "",
 				"msgCode":'',
 				"address": "",
+				"index": 0,
 				photos:'',
 				uploadImage: {
 					maxPhotoNum: 1,

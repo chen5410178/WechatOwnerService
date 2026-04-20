@@ -29,6 +29,7 @@ import itemReleaseMsg from './pages/itemRelease/itemRelease_message'
 import reserveMsg from './pages/reserve/reserve_message'
 import meterMsg from './pages/meter/meter_message'
 import locationMsg from './pages/location/location_message'
+import viewBindOwnerMsg from './pages/viewBindOwner/viewBindOwner_message'
 import commonMsg from './common/common_message'
 import componentMsg from './components/component_message'
 import renovationMsg from './pages/renovation/renovation_message'
@@ -37,6 +38,7 @@ const messages = {
   'zh-CN': {
     ...commonMsg['zh-CN'],
     ...componentMsg['zh-CN'],
+    ...viewBindOwnerMsg['zh-CN'],
     ...settingsMsg['zh-CN'],
     ...loginMsg['zh-CN'],
     ...myMsg['zh-CN'],
@@ -70,6 +72,7 @@ const messages = {
   'en': {
     ...commonMsg['en'],
     ...componentMsg['en'],
+    ...viewBindOwnerMsg['en'],
     ...settingsMsg['en'],
     ...loginMsg['en'],
     ...myMsg['en'],
@@ -103,6 +106,7 @@ const messages = {
   'zh-TW': {
     ...commonMsg['zh-TW'],
     ...componentMsg['zh-TW'],
+    ...viewBindOwnerMsg['zh-TW'],
     ...settingsMsg['zh-TW'],
     ...loginMsg['zh-TW'],
     ...myMsg['zh-TW'],

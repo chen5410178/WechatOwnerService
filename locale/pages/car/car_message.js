@@ -1,5 +1,17 @@
 export default {
   'zh-CN': {
+    carNum: '车牌号',
+    pleaseInputCarNum: '请输入车牌号',
+    fillCarNumber: '请填写车牌号',
+    serverError: '服务器异常',
+    ownerCars: '我的车辆',
+    carDetail: '车辆信息',
+    modifyCarNum: '修改车牌',
+    parkingSpace: '车位',
+    applyParking: '申请车位',
+    waitApprove: '待审核',
+    complete: '完成',
+    applyFailed: '申请失败',
     car: {
       car: '车辆',
       carList: '车辆列表',
@@ -18,7 +30,7 @@ export default {
       selectCarType: '选择车辆类型',
       privateCar: '私家车',
       commercialCar: '商用车',
-       noCar: '暂无车辆',
+      noCar: '暂无车辆',
       carType: '车辆类型',
       pleaseSelect: '请选择',
       remarkInfo: '备注信息',
@@ -47,6 +59,18 @@ export default {
     }
   },
   'en': {
+    carNum: 'License Plate',
+    pleaseInputCarNum: 'Please input license plate',
+    fillCarNumber: 'Please fill in license plate',
+    serverError: 'Server error',
+    ownerCars: 'My Vehicles',
+    carDetail: 'Vehicle Info',
+    modifyCarNum: 'Modify License',
+    parkingSpace: 'Parking Space',
+    applyParking: 'Apply Parking',
+    waitApprove: 'Pending',
+    complete: 'Complete',
+    applyFailed: 'Apply Failed',
     car: {
       car: 'Vehicle',
       carList: 'Vehicle List',
@@ -94,6 +118,18 @@ export default {
     }
   },
   'zh-TW': {
+    carNum: '車牌號',
+    pleaseInputCarNum: '請輸入車牌號',
+    fillCarNumber: '請填寫車牌號',
+    serverError: '伺服器異常',
+    ownerCars: '我的車輛',
+    carDetail: '車輛資訊',
+    modifyCarNum: '修改車牌',
+    parkingSpace: '車位',
+    applyParking: '申請車位',
+    waitApprove: '待審核',
+    complete: '完成',
+    applyFailed: '申請失敗',
     car: {
       car: '車輛',
       carList: '車輛列表',

@@ -21,9 +21,24 @@ export default {
       visitStatus: '状态',
       carNum: '车牌号',
       estimatedVisitTime: '预计来访时间',
+      estimatedLeaveTime: '预计离开时间',
+      visitRoom: '到访房屋',
+      visitOwner: '业主',
+      visitCar: '到访车辆',
+      auditRemark: '审核备注',
       loadMore: '加载更多',
       noMore: '没有更多了'
-    }
+    },
+    qrCode: '二维码',
+    visitDetail: '来访信息',
+    auditStatus: '审核状态',
+    createTime: '创建时间',
+    contactWay: '联系方式',
+    visitType: '来访类型',
+    visitCase: '来访情况',
+    imageNotGenerated: '图片未生成',
+    savedToAlbum: '已保存到相册',
+    longPressSave: '长按保存图片'
   },
   'en': {
     visit: {
@@ -47,9 +62,24 @@ export default {
       visitStatus: 'Status',
       carNum: 'Car Number',
       estimatedVisitTime: 'Estimated Visit Time',
+      estimatedLeaveTime: 'Estimated Leave Time',
+      visitRoom: 'Visit Room',
+      visitOwner: 'Owner',
+      visitCar: 'Visit Car',
+      auditRemark: 'Audit Remark',
       loadMore: 'Load More',
       noMore: 'No More'
-    }
+    },
+    qrCode: 'QR Code',
+    visitDetail: 'Visit Info',
+    auditStatus: 'Audit Status',
+    createTime: 'Create Time',
+    contactWay: 'Contact Way',
+    visitType: 'Visit Type',
+    visitCase: 'Visit Case',
+    imageNotGenerated: 'Image not generated',
+    savedToAlbum: 'Saved to album',
+    longPressSave: 'Long press to save image'
   },
   'zh-TW': {
     visit: {
@@ -73,8 +103,23 @@ export default {
       visitStatus: '狀態',
       carNum: '車牌號',
       estimatedVisitTime: '預計來訪時間',
+      estimatedLeaveTime: '預計離開時間',
+      visitRoom: '到訪房屋',
+      visitOwner: '業主',
+      visitCar: '到訪車輛',
+      auditRemark: '審核備註',
       loadMore: '載入更多',
       noMore: '沒有更多了'
-    }
+    },
+    qrCode: '二維碼',
+    visitDetail: '來訪資訊',
+    auditStatus: '審核狀態',
+    createTime: '創建時間',
+    contactWay: '聯繫方式',
+    visitType: '來訪類型',
+    visitCase: '來訪情況',
+    imageNotGenerated: '圖片未生成',
+    savedToAlbum: '已保存到相冊',
+    longPressSave: '長按保存圖片'
   }
 }

@@ -10,7 +10,7 @@
 							<view class="text-cut" style="width:220px">{{publicity.title}}</view>
 						</view>
 						<view class="text-gray text-sm">
-							<text class="margin-right-xs">发布人：</text> {{publicity.createUserName}}</view>
+							<text class="margin-right-xs">{{ $t('community.publisher') }}：</text> {{publicity.createUserName}}</view>
 					</view>
 				</view>
 			</view>
@@ -21,7 +21,7 @@
 				<view class="cu-item">
 					<view class="content">
 						<text class="cuIcon-notification text-grey"></text>
-						<text class="text-grey">暂无公告信息</text>
+						<text class="text-grey">{{ $t('community.noPublicityInfo') }}</text>
 					</view>
 					<view class="action">
 					</view>
@@ -45,9 +45,9 @@
 				pubType:'',
 				loadingStatus : '',
 				loadingContentText: {
-					contentdown: '上拉加载更多',
-					contentrefresh: '加载中',
-					contentnomore: '没有更多'
+					contentdown: this.$t('community.contentdown'),
+					contentrefresh: this.$t('community.contentrefresh'),
+					contentnomore: this.$t('community.contentnomore')
 				}
 				
 			};

@@ -20,7 +20,7 @@
 						<view class="text-gray">{{item.tel}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">{{ $t('complaint.complaintType') }}</view>
+						<view class="text-gray">{{ $t('complaintList.complaintType') }}</view>
 						<view class="text-gray">{{item.typeName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">

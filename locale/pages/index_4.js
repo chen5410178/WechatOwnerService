@@ -21,12 +21,25 @@ import visitDetailLangMsg from './visit/visitDetail_lang'
 import visitListLangMsg from './visit/visitList_lang'
 import selectFloorLangMsg from './selectFloor/selectFloor_lang'
 import selectUnitLangMsg from './selectUnit/selectUnit_lang'
+import myRoomListLangMsg from './renovation/myRoomList_lang'
+import myRoomRenovationDetailLangMsg from './renovation/myRoomRenovationDetail_lang'
+import myRoomRenovationListLangMsg from './renovation/myRoomRenovationList_lang'
+import myRoomRenovationRecordDetailLangMsg from './renovation/myRoomRenovationRecordDetail_lang'
+import myRoomRenovationRecordLangMsg from './renovation/myRoomRenovationRecord_lang'
+import renovationDetailLangMsg from './renovation/renovationDetail_lang'
+import renovationRecordLangMsg from './renovation/renovationRecord_lang'
+import renovationLangMsg from './renovation/renovation_lang'
+import roomRenovationDetailLangMsg from './renovation/roomRenovationDetail_lang'
+import roomRenovationLangMsg from './renovation/roomRenovation_lang'
 import commentPageLangMsg from './common_page/commentPage_lang'
 import communityPublicityPageLangMsg from './common_page/communityPublicity_lang'
 import communityPublicityDetailPageLangMsg from './common_page/communityPublicityDetail_lang'
 import communityPublicityListPageLangMsg from './common_page/communityPublicityList_lang'
 import orderPageLangMsg from './common_page/orderPage_lang'
 import sortListPageLangMsg from './common_page/sort_list_lang'
+import questionAnswerLangMsg from './questionAnswer/questionAnswer_lang'
+import questionAnswerDetailLangMsg from './questionAnswer/questionAnswerDetail_lang'
+import ownerVoteLangMsg from './questionAnswer/ownerVote_lang'
 
 export default {
   'zh-CN': {
@@ -53,12 +66,25 @@ export default {
     ...visitListLangMsg['zh-CN'],
     ...selectFloorLangMsg['zh-CN'],
     ...selectUnitLangMsg['zh-CN'],
+    ...myRoomListLangMsg['zh-CN'],
+    ...myRoomRenovationDetailLangMsg['zh-CN'],
+    ...myRoomRenovationListLangMsg['zh-CN'],
+    ...myRoomRenovationRecordDetailLangMsg['zh-CN'],
+    ...myRoomRenovationRecordLangMsg['zh-CN'],
+    ...renovationDetailLangMsg['zh-CN'],
+    ...renovationRecordLangMsg['zh-CN'],
+    ...renovationLangMsg['zh-CN'],
+    ...roomRenovationDetailLangMsg['zh-CN'],
+    ...roomRenovationLangMsg['zh-CN'],
     ...commentPageLangMsg['zh-CN'],
     ...communityPublicityPageLangMsg['zh-CN'],
     ...communityPublicityDetailPageLangMsg['zh-CN'],
     ...communityPublicityListPageLangMsg['zh-CN'],
     ...orderPageLangMsg['zh-CN'],
-    ...sortListPageLangMsg['zh-CN']
+    ...sortListPageLangMsg['zh-CN'],
+    ...questionAnswerLangMsg['zh-CN'],
+    ...questionAnswerDetailLangMsg['zh-CN'],
+    ...ownerVoteLangMsg['zh-CN']
   },
   'en': {
     ...reportInfoBackLangMsg['en'],
@@ -84,12 +110,25 @@ export default {
     ...visitListLangMsg['en'],
     ...selectFloorLangMsg['en'],
     ...selectUnitLangMsg['en'],
+    ...myRoomListLangMsg['en'],
+    ...myRoomRenovationDetailLangMsg['en'],
+    ...myRoomRenovationListLangMsg['en'],
+    ...myRoomRenovationRecordDetailLangMsg['en'],
+    ...myRoomRenovationRecordLangMsg['en'],
+    ...renovationDetailLangMsg['en'],
+    ...renovationRecordLangMsg['en'],
+    ...renovationLangMsg['en'],
+    ...roomRenovationDetailLangMsg['en'],
+    ...roomRenovationLangMsg['en'],
     ...commentPageLangMsg['en'],
     ...communityPublicityPageLangMsg['en'],
     ...communityPublicityDetailPageLangMsg['en'],
     ...communityPublicityListPageLangMsg['en'],
     ...orderPageLangMsg['en'],
-    ...sortListPageLangMsg['en']
+    ...sortListPageLangMsg['en'],
+    ...questionAnswerLangMsg['en'],
+    ...questionAnswerDetailLangMsg['en'],
+    ...ownerVoteLangMsg['en']
   },
   'zh-TW': {
     ...reportInfoBackLangMsg['zh-TW'],
@@ -115,6 +154,16 @@ export default {
     ...visitListLangMsg['zh-TW'],
     ...selectFloorLangMsg['zh-TW'],
     ...selectUnitLangMsg['zh-TW'],
+    ...myRoomListLangMsg['zh-TW'],
+    ...myRoomRenovationDetailLangMsg['zh-TW'],
+    ...myRoomRenovationListLangMsg['zh-TW'],
+    ...myRoomRenovationRecordDetailLangMsg['zh-TW'],
+    ...myRoomRenovationRecordLangMsg['zh-TW'],
+    ...renovationDetailLangMsg['zh-TW'],
+    ...renovationRecordLangMsg['zh-TW'],
+    ...renovationLangMsg['zh-TW'],
+    ...roomRenovationDetailLangMsg['zh-TW'],
+    ...roomRenovationLangMsg['zh-TW'],
     ...commentPageLangMsg['zh-TW'],
     ...communityPublicityPageLangMsg['zh-TW'],
     ...communityPublicityDetailPageLangMsg['zh-TW'],

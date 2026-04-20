@@ -51,6 +51,9 @@ import itemReleaseLangMsg from './itemRelease/itemRelease_lang'
 import myItemReleaseDetailLangMsg from './itemRelease/myItemReleaseDetail_lang'
 import myItemReleaseListLangMsg from './itemRelease/myItemReleaseList_lang'
 import locationLangMsg from './location/location_lang'
+import parkingLangMsg from './parking/parking_lang'
+import getParkingCodeLangMsg from './parking/getParkingCode_lang'
+import payParkingLangMsg from './parking/payParking_lang'
 
 export default {
   'zh-CN': {
@@ -106,7 +109,10 @@ export default {
     ...itemReleaseLangMsg['zh-CN'],
     ...myItemReleaseDetailLangMsg['zh-CN'],
     ...myItemReleaseListLangMsg['zh-CN'],
-    ...locationLangMsg['zh-CN']
+    ...locationLangMsg['zh-CN'],
+    ...parkingLangMsg['zh-CN'],
+    ...getParkingCodeLangMsg['zh-CN'],
+    ...payParkingLangMsg['zh-CN']
   },
   'en': {
     ...chargeCouponLangMsg['en'],
@@ -161,7 +167,10 @@ export default {
     ...itemReleaseLangMsg['en'],
     ...myItemReleaseDetailLangMsg['en'],
     ...myItemReleaseListLangMsg['en'],
-    ...locationLangMsg['en']
+    ...locationLangMsg['en'],
+    ...parkingLangMsg['en'],
+    ...getParkingCodeLangMsg['en'],
+    ...payParkingLangMsg['en']
   },
   'zh-TW': {
     ...chargeCouponLangMsg['zh-TW'],
@@ -216,6 +225,9 @@ export default {
     ...itemReleaseLangMsg['zh-TW'],
     ...myItemReleaseDetailLangMsg['zh-TW'],
     ...myItemReleaseListLangMsg['zh-TW'],
-    ...locationLangMsg['zh-TW']
+    ...locationLangMsg['zh-TW'],
+    ...parkingLangMsg['zh-TW'],
+    ...getParkingCodeLangMsg['zh-TW'],
+    ...payParkingLangMsg['zh-TW']
   }
 }

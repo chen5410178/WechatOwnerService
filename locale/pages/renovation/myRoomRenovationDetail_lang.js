@@ -13,7 +13,19 @@ export default {
       approved: '已通过',
       rejected: '已驳回',
       completed: '已完成',
-      evaluate: '评价'
+      evaluate: '评价',
+      userInfo: '用户信息',
+      name: '姓名',
+      contact: '联系方式',
+      houseInfo: '房屋信息',
+      roomNum: '房间号',
+      startDate: '开始日期',
+      endDate: '结束日期',
+      currentProgress: '当前进度',
+      renovationComplete: '装修完成',
+      tip: '提示',
+      confirmComplete: '确认完成装修吗？',
+      operationSuccess: '操作成功'
     }
   },
   'en': {
@@ -30,7 +42,19 @@ export default {
       approved: 'Approved',
       rejected: 'Rejected',
       completed: 'Completed',
-      evaluate: 'Evaluate'
+      evaluate: 'Evaluate',
+      userInfo: 'User Info',
+      name: 'Name',
+      contact: 'Contact',
+      houseInfo: 'House Info',
+      roomNum: 'Room No.',
+      startDate: 'Start Date',
+      endDate: 'End Date',
+      currentProgress: 'Current Progress',
+      renovationComplete: 'Complete Renovation',
+      tip: 'Tip',
+      confirmComplete: 'Confirm complete renovation?',
+      operationSuccess: 'Success'
     }
   },
   'zh-TW': {
@@ -47,7 +71,19 @@ export default {
       approved: '已通過',
       rejected: '已駁回',
       completed: '已完成',
-      evaluate: '評價'
+      evaluate: '評價',
+      userInfo: '使用者資訊',
+      name: '姓名',
+      contact: '聯繫方式',
+      houseInfo: '房屋資訊',
+      roomNum: '房間號',
+      startDate: '開始日期',
+      endDate: '結束日期',
+      currentProgress: '目前進度',
+      renovationComplete: '裝修完成',
+      tip: '提示',
+      confirmComplete: '確認完成裝修嗎？',
+      operationSuccess: '操作成功'
     }
   }
 }

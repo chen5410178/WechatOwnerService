@@ -3,35 +3,35 @@
 		<view class="cu-form-group arrow" @click="showRenovationRecord()">
 			<view class="title">{{ $t('myRoomRenovationDetail.title') }}</view>
 		</view>
-		<view class="block__title">{{ $t('userInfo') }}</view>
+		<view class="block__title">{{ $t('myRoomRenovationDetail.userInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('name') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.name') }}</view>
 			{{renovationDetail.personName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('contact') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.contact') }}</view>
 			{{renovationDetail.personTel}}
 		</view>
 	
-		<view class="block__title">{{ $t('houseInfo') }}</view>
+		<view class="block__title">{{ $t('myRoomRenovationDetail.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('roomNum') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.roomNum') }}</view>
 			{{renovationDetail.roomName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('startDate') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.startDate') }}</view>
 			{{renovationDetail.startTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('endDate') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.endDate') }}</view>
 			{{renovationDetail.endTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('currentProgress') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.currentProgress') }}</view>
 			{{renovationDetail.stateName}}
 		</view>
 		<view class="btn-box" v-if="renovationDetail.state == 3000">
-			<button type="default" class="btn-sub" @click="renovationComplete()">{{ $t('renovationComplete') }}</button>
+			<button type="default" class="btn-sub" @click="renovationComplete()">{{ $t('myRoomRenovationDetail.renovationComplete') }}</button>
 		</view>
 	
 		<view class="button_up_blank"></view>
@@ -103,14 +103,14 @@
 			renovationComplete: function(){
 				let _that = this;
 				uni.showModal({
-				    title: _that.$t('tip'),
-				    content: _that.$t('confirmComplete'),
+				    title: _that.$t('myRoomRenovationDetail.tip'),
+				    content: _that.$t('myRoomRenovationDetail.confirmComplete'),
 				    success: function (res) {
 				        if (res.confirm) {
 							let params = _that.renovationDetail;
 							updateRoomRenovationState(params).then(function(_res){
 								uni.showToast({
-									title: _that.$t('operationSuccess')
+									title: _that.$t('myRoomRenovationDetail.operationSuccess')
 								});
 								setTimeout(function(){
 									uni.navigateBack({})

@@ -1,0 +1,59 @@
+export default {
+  'zh-CN': {
+    complaint: {
+      title: '投诉建议',
+      newComplaint: '新建投诉',
+      complaintList: '投诉列表',
+      complaintType: '投诉类型',
+      complaintContent: '投诉内容',
+      uploadImages: '上传图片',
+      contactInfo: '联系方式',
+      submit: '提交',
+      submitSuccess: '提交成功',
+      submitFailed: '提交失败',
+      selectType: '请选择投诉类型',
+      inputContent: '请输入投诉内容',
+      inputContact: '请输入联系方式',
+      myComplaint: '我的投诉',
+      noData: '暂无投诉记录'
+    }
+  },
+  'en': {
+    complaint: {
+      title: 'Complaint',
+      newComplaint: 'New Complaint',
+      complaintList: 'Complaint List',
+      complaintType: 'Complaint Type',
+      complaintContent: 'Complaint Content',
+      uploadImages: 'Upload Images',
+      contactInfo: 'Contact Info',
+      submit: 'Submit',
+      submitSuccess: 'Submit Success',
+      submitFailed: 'Submit Failed',
+      selectType: 'Please select complaint type',
+      inputContent: 'Please input complaint content',
+      inputContact: 'Please input contact info',
+      myComplaint: 'My Complaint',
+      noData: 'No complaint record'
+    }
+  },
+  'zh-TW': {
+    complaint: {
+      title: '投訴建議',
+      newComplaint: '新建投訴',
+      complaintList: '投訴列表',
+      complaintType: '投訴類型',
+      complaintContent: '投訴內容',
+      uploadImages: '上傳圖片',
+      contactInfo: '聯繫方式',
+      submit: '提交',
+      submitSuccess: '提交成功',
+      submitFailed: '提交失敗',
+      selectType: '請選擇投訴類型',
+      inputContent: '請輸入投訴內容',
+      inputContact: '請輸入聯繫方式',
+      myComplaint: '我的投訴',
+      noData: '暫無投訴記錄'
+    }
+  }
+}

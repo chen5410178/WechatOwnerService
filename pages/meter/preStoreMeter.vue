@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">{{machineName}}{{ $t('recharge') }}</view>
+		<view class="block__title">{{machineName}}{{ $t('meter.recharge') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('meterNo') }}</text>
+					<text class="text-grey">{{ $t('meter.meterNo') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{address}}</text>
@@ -12,7 +12,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('remainBalance') }}</text>
+					<text class="text-grey">{{ $t('meter.remainBalance') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{curDegrees}}</text>
@@ -20,10 +20,10 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('rechargeAmount') }}</text>
+					<text class="text-grey">{{ $t('meter.rechargeAmount') }}</text>
 				</view>
 				<view class="action">
-					<input v-model="amount" :placeholder="$t('inputRechargeAmount')" type="number" class="text-right"></input>
+					<input v-model="amount" :placeholder="$t('meter.inputRechargeAmount')" type="number" class="text-right"></input>
 				</view>
 			</view>
 		</view>
@@ -31,10 +31,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{amount}}{{ $t('yuan') }}
+				{{ $t('meter.total') }}：{{amount}}{{ $t('meter.yuan') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('meter.submitOrder') }}</button>
 			</view>
 		</view>
 	</view>
@@ -87,7 +87,7 @@
 				if(!this.amount){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('noAmountFilled')
+						title: this.$t('meter.noAmountFilled')
 					});
 					return ;
 				}
@@ -98,7 +98,7 @@
 					communityId:getCommunityId(),
 					roomId: this.roomId,
 					machineId: this.machineId,
-					feeName: this.feeConfigName + this.$t('recharge'),
+					feeName: this.feeConfigName + this.$t('meter.recharge'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 				};

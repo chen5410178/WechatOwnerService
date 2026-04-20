@@ -4,17 +4,17 @@
 			<view class="cu-dialog">
 				<scroll-view scroll-y style="height: 300upx; ">
 					<view class="cu-form-group">
-						<view class="title">{{ $t('oldCarNum') || '旧车牌号' }}</view>
+						<view class="title">{{ $t('modifyCarNum.oldCarNum') }}</view>
 						{{carNum}}
 					</view>
 					<view class="cu-form-group">
-						<view class="title">{{ $t('newCarNum') || '新车牌号' }}</view>
-						<input v-model="newCarNum" :placeholder="$t('pleaseInputCarNum')" style="text-align:right"></input>
+						<view class="title">{{ $t('modifyCarNum.newCarNum') }}</view>
+						<input v-model="newCarNum" :placeholder="$t('modifyCarNum.pleaseInputCarNum')" style="text-align:right"></input>
 					</view>
 				</scroll-view>
 				<view class="btn-box padding">
-					<button class=" btn bg-blue" @click="_doModifyCarNum()">{{ $t('confirmModify') }}</button>
-					<button class="line-red margin-top" @click="cancel()">{{ $t('cancel') }}</button>
+					<button class=" btn bg-blue" @click="_doModifyCarNum()">{{ $t('modifyCarNum.confirmModify') }}</button>
+					<button class="line-red margin-top" @click="cancel()">{{ $t('modifyCarNum.cancel') }}</button>
 				</view>
 			</view>
 		</view>

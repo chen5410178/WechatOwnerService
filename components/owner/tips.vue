@@ -12,7 +12,7 @@
 					<view >{{content}}</view>
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleTip()">关闭</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleTip()">{{ $t('tips.close') }}</view>
 				</view>
 			</view>
 		</view>

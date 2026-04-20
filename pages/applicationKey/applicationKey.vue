@@ -4,7 +4,7 @@
     <view class="ak_row_black">
     </view>
     <view class="ak_row_title">
-      <text>{{ $t('applyKey') }}</text>
+      <text>{{ $t('applicationKey.applyKey') }}</text>
     </view>
     <view class="ak_row_black_01"></view>
 	
@@ -13,24 +13,24 @@
 			<view class="grid text-center" :class="'col-2'">
 				<view class="padding">
 				    <text class="iconfont iconshenqing ak_icon_text">\n</text>
-					<text>{{ $t('submit') }}1.提交申请钥匙</text>
+					<text>{{ $t('applicationKey.submit') }}1.提交申请钥匙</text>
 				</view>
 				<view class="padding">
 					<text class="iconfont icondengdai ak_icon_text">\n</text>
-				    <text>2. {{ $t('propertyReview') }}</text>
+				    <text>2. {{ $t('applicationKey.propertyReview') }}</text>
 				</view>
 			</view>
 			<view class="grid text-center" :class="'col-1'">
 				<view class="padding">
 					<text class="iconfont iconshenqingtongguo ak_icon_text">\n</text>
-					<text>3. {{ $t('generateKey') }}</text>
+					<text>3. {{ $t('applicationKey.generateKey') }}</text>
 				</view>
 			</view>
 	</view>
     <view class="ak_row_black_02"></view>
      <view class="ak_row_black_03"></view>
 	  <view class="padding flex flex-direction">
-		 <button class="cu-btn bg-green lg" @click="applyApplicationKey">{{ $t('applyKey') }}</button>
+		 <button class="cu-btn bg-green lg" @click="applyApplicationKey">{{ $t('applicationKey.applyKey') }}</button>
 	  </view> 
      <view class="ak_row_black_04"></view>
   </view>

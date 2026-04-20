@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view v-if="discounts && discounts.length > 0">
-			<view class="block__title">折扣信息</view>
+			<view class="block__title">{{ $t('vcDiscount.discountInfo') }}</view>
 			<view class="cu-list menu" v-if="discounts.length > 0" v-for="(discount, idx) in discounts" :key="idx" :data-item="discount"
 			 @click="_viewDiscountDetail(discount)">
 				<view class="cu-item arrow">

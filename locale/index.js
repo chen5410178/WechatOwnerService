@@ -1,141 +1,216 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
-import settingsMsg from './pages/settings/settings_message'
-import loginMsg from './pages/login/login_message'
-import myMsg from './pages/my/my_message'
-import indexMsg from './pages/index/index_message'
-import serviceMsg from './pages/index/service_message'
-import repairMsg from './pages/repair/repair_message'
-import complaintMsg from './pages/complaint/complaint_message'
-import familyMsg from './pages/family/family_message'
-import noticeMsg from './pages/notice/notice_message'
-import feeMsg from './pages/fee/fee_message'
-import carMsg from './pages/car/car_message'
-import visitMsg from './pages/visit/visit_message'
-import machineMsg from './pages/machine/machine_message'
-import activityMsg from './pages/activity/activity_message'
-import invoiceMsg from './pages/invoice/invoice_message'
-import couponMsg from './pages/coupon/coupon_message'
-import addressMsg from './pages/address/address_message'
-import applicationKeyMsg from './pages/applicationKey/applicationKey_message'
-import appointmentMsg from './pages/appointment/appointment_message'
-import accountMsg from './pages/account/account_message'
-import applyRoomMsg from './pages/applyRoom/applyRoom_message'
-import shopMsg from './pages/shop/shop_message'
-import communityMsg from './pages/community/community_message'
-import commonPageMsg from './pages/common_page/common_page_message'
-import itemReleaseMsg from './pages/itemRelease/itemRelease_message'
-import reserveMsg from './pages/reserve/reserve_message'
-import meterMsg from './pages/meter/meter_message'
-import locationMsg from './pages/location/location_message'
-import viewBindOwnerMsg from './pages/viewBindOwner/viewBindOwner_message'
+import accountMsg from './components/account/account_lang'
+import blockExplainMsg from './components/block-explain/block-explain_lang'
+import addMemberCarMsg from './components/car/add-member-car_lang'
+import modifyCarNumMsg from './components/car/modify-car-num_lang'
+import chargeMsg from './components/charge/charge_lang'
+import codecookCarnumberMsg from './components/codecook-carnumber/codecook-carnumber_lang'
+import codecookKeyboardMsg from './components/codecook-keyboard/codecook-keyboard_lang'
+import giftCouponMsg from './components/coupon/gift-coupon_lang'
+import qrcodeReceiveMsg from './components/coupon/qrcode-receive_lang'
+import qrcodeFeeDetailMsg from './components/fee/qrcode-fee-detail_lang'
+import qrcodeOweFeeMsg from './components/fee/qrcode-owe-fee_lang'
+import fixedSearchMsg from './components/fixed-search/fixed-search_lang'
+import flixedaddMsg from './components/flixedadd/flixedadd_lang'
+import callPropertyMsg from './components/index/call-property_lang'
+import indexActivitiesMsg from './components/index/index-activities_lang'
+import indexTopMsg from './components/index/index-top_lang'
+import mgbAppointmentMsg from './components/mgb-appointment/mgb-appointment_lang'
+import authOwnerDialogMsg from './components/owner/auth-owner-dialog_lang'
+import tipsMsg from './components/owner/tips_lang'
+import pickerAddressMsg from './components/pickerAddress/pickerAddress_lang'
+import reserveGoodsMsg from './components/reserve/reserve-goods_lang'
+import reserveServiceNowMsg from './components/reserve/reserve-service-now_lang'
+import selectedGoodsMsg from './components/reserve/selected-goods_lang'
+import selectCarnumMsg from './components/select-carnum/select-carnum_lang'
+import successAdsMsg from './components/success/success-ads_lang'
+import successGoodsMsg from './components/success/success-goods_lang'
+import noDataPageMsg from './components/no-data-page/no-data-page_lang'
+import vcCategoryMsg from './components/vc-category/vc-category_lang'
+import vcCategoryHomemakingMsg from './components/vc-category-homemaking/vc-category-homemaking_lang'
+import vcRecommendMsg from './components/vc-recommend/vc-recommend_lang'
+import vcServeMsg from './components/vc-serve/vc-serve_lang'
+import vcUploadMsg from './components/vc-upload/vc-upload_lang'
+import vcActivityCardMsg from './components/vc-activity-card/vc-activity-card_lang'
+import vcAdsMsg from './components/vc-ads/vc-ads_lang'
+import vcBottomBlackMsg from './components/vc-bottom-black/vc-bottom-black_lang'
+import vcCommentMsg from './components/vc-comment/vc-comment_lang'
+import vcDiscountMsg from './components/vc-discount/vc-discount_lang'
+import vcEmptyMsg from './components/vc-empty/vc-empty_lang'
+import vcRecommendHomemakingMsg from './components/vc-recommend-homemaking/vc-recommend-homemaking_lang'
+import vcShopMsg from './components/vc-shop/vc-shop_lang'
+import vcUploadAsyncMsg from './components/vc-upload-async/vc-upload-async_lang'
+import vcUserAccountMsg from './components/vc-user-account/vc-user-account_lang'
+import viewImageMsg from './components/view-image/view-image_lang'
+import communityRecommendMsg from './components/community-recommend/community-recommend_lang'
+import wechatLoginMsg from './components/user/wechat-login_lang'
+import uniDatetimePickerMsg from './components/uni-datetime-picker/uni-datetime-picker_lang'
+import uniLoadMoreMsg from './components/uni-load-more/uni-load-more_lang'
+import uniNumberBoxMsg from './components/uni-number-box/uni-number-box_lang'
+
 import commonMsg from './common/common_message'
 import componentMsg from './components/component_message'
-import renovationMsg from './pages/renovation/renovation_message'
+
+import pagesLangMsg from './pages/index'
 
 const messages = {
   'zh-CN': {
     ...commonMsg['zh-CN'],
     ...componentMsg['zh-CN'],
-    ...viewBindOwnerMsg['zh-CN'],
-    ...settingsMsg['zh-CN'],
-    ...loginMsg['zh-CN'],
-    ...myMsg['zh-CN'],
-    ...indexMsg['zh-CN'],
-    ...serviceMsg['zh-CN'],
-    ...repairMsg['zh-CN'],
-    ...complaintMsg['zh-CN'],
-    ...familyMsg['zh-CN'],
-    ...noticeMsg['zh-CN'],
-    ...feeMsg['zh-CN'],
-    ...carMsg['zh-CN'],
-    ...visitMsg['zh-CN'],
-    ...machineMsg['zh-CN'],
-    ...activityMsg['zh-CN'],
-    ...invoiceMsg['zh-CN'],
-    ...couponMsg['zh-CN'],
-    ...addressMsg['zh-CN'],
-    ...applicationKeyMsg['zh-CN'],
-    ...appointmentMsg['zh-CN'],
-    ...accountMsg['zh-CN'],
-    ...applyRoomMsg['zh-CN'],
-    ...shopMsg['zh-CN'],
-    ...communityMsg['zh-CN'],
-    ...commonPageMsg['zh-CN'],
-    ...itemReleaseMsg['zh-CN'],
-    ...reserveMsg['zh-CN'],
-    ...meterMsg['zh-CN'],
-    ...locationMsg['zh-CN'],
-    ...renovationMsg['zh-CN']
+    ...blockExplainMsg['zh-CN'],
+    ...addMemberCarMsg['zh-CN'],
+    ...modifyCarNumMsg['zh-CN'],
+    ...chargeMsg['zh-CN'],
+    ...codecookCarnumberMsg['zh-CN'],
+    ...codecookKeyboardMsg['zh-CN'],
+    ...giftCouponMsg['zh-CN'],
+    ...qrcodeReceiveMsg['zh-CN'],
+    ...qrcodeFeeDetailMsg['zh-CN'],
+    ...qrcodeOweFeeMsg['zh-CN'],
+    ...fixedSearchMsg['zh-CN'],
+    ...flixedaddMsg['zh-CN'],
+    ...callPropertyMsg['zh-CN'],
+    ...indexActivitiesMsg['zh-CN'],
+    ...indexTopMsg['zh-CN'],
+    ...mgbAppointmentMsg['zh-CN'],
+    ...authOwnerDialogMsg['zh-CN'],
+    ...tipsMsg['zh-CN'],
+    ...pickerAddressMsg['zh-CN'],
+    ...reserveGoodsMsg['zh-CN'],
+    ...reserveServiceNowMsg['zh-CN'],
+    ...selectedGoodsMsg['zh-CN'],
+    ...selectCarnumMsg['zh-CN'],
+    ...successAdsMsg['zh-CN'],
+    ...successGoodsMsg['zh-CN'],
+    ...noDataPageMsg['zh-CN'],
+    ...vcCategoryMsg['zh-CN'],
+    ...vcCategoryHomemakingMsg['zh-CN'],
+    ...vcRecommendMsg['zh-CN'],
+    ...vcServeMsg['zh-CN'],
+    ...vcUploadMsg['zh-CN'],
+    ...vcActivityCardMsg['zh-CN'],
+    ...vcAdsMsg['zh-CN'],
+    ...vcBottomBlackMsg['zh-CN'],
+    ...vcCommentMsg['zh-CN'],
+    ...vcDiscountMsg['zh-CN'],
+    ...vcEmptyMsg['zh-CN'],
+    ...vcRecommendHomemakingMsg['zh-CN'],
+    ...vcShopMsg['zh-CN'],
+    ...vcUploadAsyncMsg['zh-CN'],
+    ...vcUserAccountMsg['zh-CN'],
+    ...viewImageMsg['zh-CN'],
+    ...communityRecommendMsg['zh-CN'],
+    ...wechatLoginMsg['zh-CN'],
+    ...uniDatetimePickerMsg['zh-CN'],
+    ...uniLoadMoreMsg['zh-CN'],
+    ...uniNumberBoxMsg['zh-CN'],
+    ...pagesLangMsg['zh-CN']
   },
   'en': {
     ...commonMsg['en'],
     ...componentMsg['en'],
-    ...viewBindOwnerMsg['en'],
-    ...settingsMsg['en'],
-    ...loginMsg['en'],
-    ...myMsg['en'],
-    ...indexMsg['en'],
-    ...serviceMsg['en'],
-    ...repairMsg['en'],
-    ...complaintMsg['en'],
-    ...familyMsg['en'],
-    ...noticeMsg['en'],
-    ...feeMsg['en'],
-    ...carMsg['en'],
-    ...visitMsg['en'],
-    ...machineMsg['en'],
-    ...activityMsg['en'],
-    ...invoiceMsg['en'],
-    ...couponMsg['en'],
-    ...addressMsg['en'],
-    ...applicationKeyMsg['en'],
-    ...appointmentMsg['en'],
-    ...accountMsg['en'],
-    ...applyRoomMsg['en'],
-    ...shopMsg['en'],
-    ...communityMsg['en'],
-    ...commonPageMsg['en'],
-    ...itemReleaseMsg['en'],
-    ...reserveMsg['en'],
-    ...meterMsg['en'],
-    ...locationMsg['en'],
-    ...renovationMsg['en']
+    ...blockExplainMsg['en'],
+    ...addMemberCarMsg['en'],
+    ...modifyCarNumMsg['en'],
+    ...chargeMsg['en'],
+    ...codecookCarnumberMsg['en'],
+    ...codecookKeyboardMsg['en'],
+    ...giftCouponMsg['en'],
+    ...qrcodeReceiveMsg['en'],
+    ...qrcodeFeeDetailMsg['en'],
+    ...qrcodeOweFeeMsg['en'],
+    ...fixedSearchMsg['en'],
+    ...flixedaddMsg['en'],
+    ...callPropertyMsg['en'],
+    ...indexActivitiesMsg['en'],
+    ...indexTopMsg['en'],
+    ...mgbAppointmentMsg['en'],
+    ...authOwnerDialogMsg['en'],
+    ...tipsMsg['en'],
+    ...pickerAddressMsg['en'],
+    ...reserveGoodsMsg['en'],
+    ...reserveServiceNowMsg['en'],
+    ...selectedGoodsMsg['en'],
+    ...selectCarnumMsg['en'],
+    ...successAdsMsg['en'],
+    ...successGoodsMsg['en'],
+    ...noDataPageMsg['en'],
+    ...vcCategoryMsg['en'],
+    ...vcCategoryHomemakingMsg['en'],
+    ...vcRecommendMsg['en'],
+    ...vcServeMsg['en'],
+    ...vcUploadMsg['en'],
+    ...vcActivityCardMsg['en'],
+    ...vcAdsMsg['en'],
+    ...vcBottomBlackMsg['en'],
+    ...vcCommentMsg['en'],
+    ...vcDiscountMsg['en'],
+    ...vcEmptyMsg['en'],
+    ...vcRecommendHomemakingMsg['en'],
+    ...vcShopMsg['en'],
+    ...vcUploadAsyncMsg['en'],
+    ...vcUserAccountMsg['en'],
+    ...viewImageMsg['en'],
+    ...communityRecommendMsg['en'],
+    ...wechatLoginMsg['en'],
+    ...uniDatetimePickerMsg['en'],
+    ...uniLoadMoreMsg['en'],
+    ...uniNumberBoxMsg['en'],
+    ...pagesLangMsg['en']
   },
   'zh-TW': {
     ...commonMsg['zh-TW'],
     ...componentMsg['zh-TW'],
-    ...viewBindOwnerMsg['zh-TW'],
-    ...settingsMsg['zh-TW'],
-    ...loginMsg['zh-TW'],
-    ...myMsg['zh-TW'],
-    ...indexMsg['zh-TW'],
-    ...serviceMsg['zh-TW'],
-    ...repairMsg['zh-TW'],
-    ...complaintMsg['zh-TW'],
-    ...familyMsg['zh-TW'],
-    ...noticeMsg['zh-TW'],
-    ...feeMsg['zh-TW'],
-    ...carMsg['zh-TW'],
-    ...visitMsg['zh-TW'],
-    ...machineMsg['zh-TW'],
-    ...activityMsg['zh-TW'],
-    ...invoiceMsg['zh-TW'],
-    ...couponMsg['zh-TW'],
-    ...addressMsg['zh-TW'],
-    ...applicationKeyMsg['zh-TW'],
-    ...appointmentMsg['zh-TW'],
-    ...accountMsg['zh-TW'],
-    ...applyRoomMsg['zh-TW'],
-    ...shopMsg['zh-TW'],
-    ...communityMsg['zh-TW'],
-    ...commonPageMsg['zh-TW'],
-    ...itemReleaseMsg['zh-TW'],
-    ...reserveMsg['zh-TW'],
-    ...meterMsg['zh-TW'],
-    ...locationMsg['zh-TW'],
-    ...renovationMsg['zh-TW']
+    ...blockExplainMsg['zh-TW'],
+    ...addMemberCarMsg['zh-TW'],
+    ...modifyCarNumMsg['zh-TW'],
+    ...chargeMsg['zh-TW'],
+    ...codecookCarnumberMsg['zh-TW'],
+    ...codecookKeyboardMsg['zh-TW'],
+    ...giftCouponMsg['zh-TW'],
+    ...qrcodeReceiveMsg['zh-TW'],
+    ...qrcodeFeeDetailMsg['zh-TW'],
+    ...qrcodeOweFeeMsg['zh-TW'],
+    ...fixedSearchMsg['zh-TW'],
+    ...flixedaddMsg['zh-TW'],
+    ...callPropertyMsg['zh-TW'],
+    ...indexActivitiesMsg['zh-TW'],
+    ...indexTopMsg['zh-TW'],
+    ...mgbAppointmentMsg['zh-TW'],
+    ...authOwnerDialogMsg['zh-TW'],
+    ...tipsMsg['zh-TW'],
+    ...pickerAddressMsg['zh-TW'],
+    ...reserveGoodsMsg['zh-TW'],
+    ...reserveServiceNowMsg['zh-TW'],
+    ...selectedGoodsMsg['zh-TW'],
+    ...selectCarnumMsg['zh-TW'],
+    ...successAdsMsg['zh-TW'],
+    ...successGoodsMsg['zh-TW'],
+    ...noDataPageMsg['zh-TW'],
+    ...vcCategoryMsg['zh-TW'],
+    ...vcCategoryHomemakingMsg['zh-TW'],
+    ...vcRecommendMsg['zh-TW'],
+    ...vcServeMsg['zh-TW'],
+    ...vcUploadMsg['zh-TW'],
+    ...vcActivityCardMsg['zh-TW'],
+    ...vcAdsMsg['zh-TW'],
+    ...vcBottomBlackMsg['zh-TW'],
+    ...vcCommentMsg['zh-TW'],
+    ...vcDiscountMsg['zh-TW'],
+    ...vcEmptyMsg['zh-TW'],
+    ...vcRecommendHomemakingMsg['zh-TW'],
+    ...vcShopMsg['zh-TW'],
+    ...vcUploadAsyncMsg['zh-TW'],
+    ...vcUserAccountMsg['zh-TW'],
+    ...viewImageMsg['zh-TW'],
+    ...communityRecommendMsg['zh-TW'],
+    ...wechatLoginMsg['zh-TW'],
+    ...uniDatetimePickerMsg['zh-TW'],
+    ...uniLoadMoreMsg['zh-TW'],
+    ...uniNumberBoxMsg['zh-TW'],
+    ...pagesLangMsg['zh-TW']
   }
 }
 

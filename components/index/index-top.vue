@@ -7,25 +7,25 @@
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-key"></view>
 					</view>
-					<text class="hero-text">{{ $t('indexOpenDoor') }}</text>
+					<text class="hero-text">{{ $t('indexTop.indexOpenDoor') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('visitor')">
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-qrcode"></view>
 					</view>
-					<text class="hero-text">{{ $t('indexVisit') }}</text>
+					<text class="hero-text">{{ $t('indexTop.indexVisit') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('payment')">
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-yen-sign"></view>
 					</view>
-					<text class="hero-text">{{ $t('indexPayment') }}</text>
+					<text class="hero-text">{{ $t('indexTop.indexPayment') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('repair')">
 					<view class="fa-icon-box">
 						<view class="iconfont fa-solid fa-user-shield"></view>
 					</view>
-					<text class="hero-text">{{ $t('quickRepair') }}</text>
+					<text class="hero-text">{{ $t('indexTop.quickRepair') }}</text>
 				</view>
 			</view>
 		</view>
@@ -33,14 +33,14 @@
 		<!-- 浮动卡片(物业账单) -->
 		<view class="banner-card" @click="goToPayment">
 			<view class="banner-text">
-				<view class="banner-title">{{ $t('propertyBill') }}</view>
+				<view class="banner-title">{{ $t('indexTop.propertyBill') }}</view>
 				<view class="banner-amount">
 					<text class="amount" >{{billAmount}}</text>
-					<text class="unit">{{ $t('yuanUnit') }}</text>
+					<text class="unit">{{ $t('indexTop.yuanUnit') }}</text>
 				</view>
-				<text class="banner-date">{{ $t('currentBill') }}</text>
+				<text class="banner-date">{{ $t('indexTop.currentBill') }}</text>
 			</view>
-			<view class="banner-btn">{{ $t('goPay') }}</view>
+			<view class="banner-btn">{{ $t('indexTop.goPay') }}</view>
 		</view>
 	</view>
 </template>
@@ -94,7 +94,7 @@
 			},
 			async onHeroAction(type) {
 				if (!hasLogin()) {
-					uni.showToast({ title: this.$t('pleaseLoginFirst'), icon: 'none' });
+					uni.showToast({ title: this.$t('indexTop.pleaseLoginFirst'), icon: 'none' });
 					return;
 				}
 				const urlMap = {

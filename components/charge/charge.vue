@@ -4,14 +4,14 @@
 			<view class="cu-item arrow" @click="_toPrestoreAccount()">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="cuIcon-rechargefill text-green margin-right-xs"></text> 充电月卡
+						<text class="cuIcon-rechargefill text-green margin-right-xs"></text> {{ $t('charge.chargeMonthCard') }}
 					</view>
 					<view class="text-gray text-sm">
-						<text class="cuIcon-right margin-right-xs"></text> {{ chargeOrders.length}} 张
+						<text class="cuIcon-right margin-right-xs"></text> {{ chargeOrders.length}} {{ $t('charge.quantity') }}
 					</view>
 				</view>
 				<view class="action">
-					去购买
+					{{ $t('charge.goToBuy') }}
 				</view>
 			</view>
 		</view>

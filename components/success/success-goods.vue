@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="home_swiper margin-top-sm" v-if="goodsList && goodsList.length>0">
-			<text class="text-gray padding-sm">为您推荐</text>
+			<text class="text-gray padding-sm">{{ $t('successGoods.recommendForYou') }}</text>
 			<view class="goods-list margin-top-xs">
 				<view class="list" v-for="(item,index) in goodsList" @click="_advertJump(item)" :key="index">
 					<view class="pictrue">

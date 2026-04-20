@@ -8,7 +8,7 @@
 							<text class="cuIcon-rechargefill text-green margin-right-xs"></text> {{item.acctTypeName}}
 						</view>
 <view class="text-gray text-sm">
-							<text class="cuIcon-right margin-right-xs"></text> {{ $t('balance') }}: {{item.amount}}
+							<text class="cuIcon-right margin-right-xs"></text> {{ $t('account.balance') }}: {{item.amount}}
 						</view>
 					</view>
 					<view class="action">

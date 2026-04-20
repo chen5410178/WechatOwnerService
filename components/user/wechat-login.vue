@@ -2,7 +2,7 @@
 	<view class="login-container margin-top-sm">
 		<!-- 确保方法名一致 -->
 		<button open-type="getPhoneNumber" @getphonenumber="_getPhoneNumber" class="login-btn">
-			{{ $t('wechatLogin') }}
+			{{ $t('wechatLogin.wechatLogin') }}
 		</button>
 	</view>
 </template>
@@ -37,7 +37,7 @@
 							let accountInfo = uni.getAccountInfoSync();
 							_that.appId = accountInfo.miniProgram.appId;
 						} else {
-							console.error(_that.$t('loginFailed') + ':', res);
+							console.error(_that.$t('wechatLogin.loginFailed') + ':', res);
 						}
 					}
 				});
@@ -56,7 +56,7 @@
 					this._loginByPhoneNumber();
 				} else {
 					uni.showToast({
-						title: _that.$t('getPhoneFailed'),
+						title: _that.$t('wechatLogin.getPhoneFailed'),
 						icon: 'none'
 					});
 				}

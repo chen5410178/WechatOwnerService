@@ -14,7 +14,7 @@
             <view class="goods-image-block">
               <image :src="product.coverPhoto?product.coverPhoto:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3466819736,3178401028&fm=26&gp=0.jpg'" class="goods-image c-radius"></image>
               <view class="cu-tag bg-gradual-orange round goods-tag">
-                专业
+                {{ $t('vcRecommendHomemaking.professional') }}
               </view>
             </view>
             <view class="margin-top-sm text-left">

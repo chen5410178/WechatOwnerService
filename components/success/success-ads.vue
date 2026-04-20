@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="home_swiper" v-if="ad && ad.length>0">
-			<text class="text-gray padding-xs">更多精彩</text>
+			<text class="text-gray padding-xs">{{ $t('successAds.moreWonderful') }}</text>
 			<swiper class="ad-swiper margin-top-xs bg-white" indicator-dots="true" indicator-color="rgba(228,228,228,1)"
 				indicator-active-color="#FECA49" autoplay="true" interval="5000" duration="1000" circular="true">
 				<block v-for="(item, index) in ad" :key="index" @click="_advertJump(item)">

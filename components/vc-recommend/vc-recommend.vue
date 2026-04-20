@@ -53,7 +53,7 @@
 			return {
 				curCategoryId: '-1',
 				mainCatagorys: [{
-					categoryName: this.$t('components.recommendForYou'),
+					categoryName: this.$t('vcRecommend.recommendForYou'),
 					mainCategoryId: "-1"
 				}],
 				products: [],
@@ -108,7 +108,7 @@
 						if (_that.pagefrom <= _data.records) {
 							_that.pagefrom = _that.pagefrom + 1;
 						} else {
-							_that.loadingText = this.$t('components.noMoreData');
+							_that.loadingText = this.$t('vcRecommend.noMoreData');
 						}
 					})
 			},

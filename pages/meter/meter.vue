@@ -5,18 +5,18 @@
 				<view class="flex text-center">
 					<view class="cu-item flex-sub" :class="item.roomId==curRoom.roomId?'text-green cur':''" v-for="(item,index) in rooms"
 					 :key="index" @tap="switchRoom(item)" :data-id="index">
-						{{item.floorNum}}{{ $t('building') }}{{item.roomNum}}{{ $t('room') }}
+						{{item.floorNum}}{{ $t('meter.building') }}{{item.roomNum}}{{ $t('meter.room') }}
 					</view>
 				</view>
 			</scroll-view>
 			<scroll-view v-if="rooms.length >4" scroll-x class="bg-white nav" scroll-with-animation scroll-left="true">
 				<view class="cu-item flex-sub" :class="item.roomId==curRoom.roomId?'text-green cur':''" v-for="(item,index) in rooms"
 				 :key="index" @tap="switchRoom(item)" :data-id="index">
-					{{item.floorNum}}{{ $t('building') }}{{item.roomNum}}{{ $t('room') }}
+					{{item.floorNum}}{{ $t('meter.building') }}{{item.roomNum}}{{ $t('meter.room') }}
 				</view>
 			</scroll-view>
 		</view>
-		<view v-if="rooms.length == 1" class="block__title">{{rooms[0].floorNum}}{{ $t('building') }}{{rooms[0].roomNum}}{{ $t('room') }}</view>
+		<view v-if="rooms.length == 1" class="block__title">{{rooms[0].floorNum}}{{ $t('meter.building') }}{{rooms[0].roomNum}}{{ $t('meter.room') }}</view>
 		<view v-if="rooms.length > 1" class="margin-header-top"></view>
 		
 		<view v-if="noData == false" style="padding-bottom: 200rpx;">

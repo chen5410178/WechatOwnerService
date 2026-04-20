@@ -4,9 +4,9 @@
 			<view class="active_title">
 				<view class="title-left">
 					<text class="title-line"></text>
-					<text class="title-text">{{ $t('communityDynamics') }}</text>
+					<text class="title-text">{{ $t('indexActivities.communityDynamics') }}</text>
 				</view>
-				<view class="more" @click="goToActivites">{{ $t('more') }} ></view>
+				<view class="more" @click="goToActivites">{{ $t('indexActivities.more') }} ></view>
 			</view>
 			<view class="active_list" v-if="activites && activites.length > 0">
 				<view class="noticesList-list" v-for="(item,index) in activites" :key="index" @click="goToActivitesDetail(item)">
@@ -25,7 +25,7 @@
 				</view>
 			</view>
 			<view class="active_empty" v-else>
-				<text class="text">{{ $t('noActivity') }}</text>
+				<text class="text">{{ $t('indexActivities.noActivity') }}</text>
 			</view>
 		</view>
 	</view>

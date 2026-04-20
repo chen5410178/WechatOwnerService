@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('machineInfo') }}</view>
+		<view class="block__title">{{ $t('machine.machineInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('machineName') }}</text>
+					<text class="text-grey">{{ $t('machine.machineName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.machineName}}</text>
@@ -14,7 +14,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('machineCode') }}</text>
+					<text class="text-grey">{{ $t('machine.machineCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.machineCode}}</text>
@@ -23,7 +23,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('machineLevel') }}</text>
+					<text class="text-grey">{{ $t('machine.machineLevel') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.levelName}}</text>
@@ -32,7 +32,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('machineState') }}</text>
+					<text class="text-grey">{{ $t('machine.machineState') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.stateName}}</text>
@@ -41,7 +41,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('machineBrand') }}</text>
+					<text class="text-grey">{{ $t('machine.machineBrand') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.brand}}</text>
@@ -50,7 +50,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('machineModel') }}</text>
+					<text class="text-grey">{{ $t('machine.machineModel') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.model}}</text>
@@ -59,7 +59,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('locationDetail') }}</text>
+					<text class="text-grey">{{ $t('machine.locationDetail') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.locationDetail}}</text>
@@ -68,7 +68,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('firstEnableTime') }}</text>
+					<text class="text-grey">{{ $t('machine.firstEnableTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.firstEnableTime}}</text>
@@ -77,7 +77,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('warrantyEndTime') }}</text>
+					<text class="text-grey">{{ $t('machine.warrantyEndTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.warrantyDeadline}}</text>
@@ -86,7 +86,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('usefulLife') }}</text>
+					<text class="text-grey">{{ $t('machine.usefulLife') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.usefulLife}}</text>
@@ -113,7 +113,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('useUser') }}</text>
+					<text class="text-grey">{{ $t('machine.useUser') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.useUserName}}</text>
@@ -122,7 +122,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('chargeUser') }}</text>
+					<text class="text-grey">{{ $t('machine.chargeUser') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.chargeUseName}}</text>
@@ -131,7 +131,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('remark') }}</text>
+					<text class="text-grey">{{ $t('machine.remark') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{equipmentAccountDetail.remark}}</text>
@@ -142,7 +142,7 @@
 			<view class="cu-item arrow">
 				<view class="content padding-tb-sm">
 					<view>
-						<view class="text-cut" style="width:220px">{{ $t('maintenanceRecord') }}</view>
+						<view class="text-cut" style="width:220px">{{ $t('machine.maintenanceRecord') }}</view>
 					</view>
 				</view>
 			</view>
@@ -151,7 +151,7 @@
 			<view class="cu-item arrow">
 				<view class="content padding-tb-sm">
 					<view>
-						<view class="text-cut" style="width:220px">{{ $t('inspectionRecord') }}</view>
+						<view class="text-cut" style="width:220px">{{ $t('machine.inspectionRecord') }}</view>
 					</view>
 				</view>
 			</view>

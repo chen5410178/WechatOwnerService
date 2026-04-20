@@ -186,7 +186,7 @@
 				if(!this.feeIds || this.feeIds.length < 1){
 					uni.showToast({
 						icon:'none',
-						title:this.$t('components.noFeeSelected')
+						title:this.$t('qrcodeOweFee.noFeeSelected')
 					})
 					return;
 				}
@@ -194,7 +194,7 @@
 					business: "oweFee",
 					communityId: this.communityId,
 					ownerId: this.ownerId,
-					feeName: this.$t('components.propertyFee'),
+					feeName: this.$t('qrcodeOweFee.propertyFee'),
 					receivedAmount: this.receivableAmount,
 					storeId: this.storeId,
 					feeIds:this.feeIds

@@ -4,10 +4,10 @@
 			<!-- 选择场馆 -->
 			<form>
 				<view class="cu-form-group">
-					<view class="title">{{ $t('selectVenue') || '选择场馆' }}</view>
+					<view class="title">{{ $t('mgbAppointment.selectVenue') }}</view>
 					<picker @change="PickerChange" :value="selectChangGuan" :range="picker">
 						<view class="picker">
-							{{selectChangGuan>-1?picker[selectChangGuan]:($t('defaultVenue') || '立德羽毛球馆')}}
+							{{selectChangGuan>-1?picker[selectChangGuan]:$t('mgbAppointment.defaultVenue')}}
 						</view>
 					</picker>
 				</view>
@@ -31,8 +31,8 @@
 
 				<view class="barConten">
 					<view class="flex justify-between">
-						<view class="radius text-df">{{ $t('selectTimeSlot') || '选择预约时间段' }}</view>
-						<view class="radius text-sm">{{ $t('totalVenue') || '共' }}{{ CDList.length }}{{ $t('venue') || '场地' }}</view>
+						<view class="radius text-df">{{ $t('mgbAppointment.selectTimeSlot') }}</view>
+						<view class="radius text-sm">{{ $t('mgbAppointment.totalVenue') }}{{ CDList.length }}{{ $t('mgbAppointment.venue') }}</view>
 					</view>
 				</view>
 			</view>
@@ -52,7 +52,7 @@
 					<!-- 预约内容 -->
 					<ul style="display: block;white-space: nowrap;">
 						<li v-if="CDList.length<=0"
-							style="display:inline-block;margin-left: 20px;margin-top: 20px;font-size: 14px;">{{ $t('noBookingInfo') || '暂无订场信息' }}</li>
+							style="display:inline-block;margin-left: 20px;margin-top: 20px;font-size: 14px;">{{ $t('mgbAppointment.noBookingInfo') }}</li>
 						<li style="display:inline-block;" v-for="(item,index) in CDList" :key="index">
 							<view>
 								<!-- 场馆 -->
@@ -76,19 +76,19 @@
 					<view class="dashed-bottom p-3" style="padding-bottom: 5px;padding-left: 10px;padding-top: 5px;">
 						<view class="cu-capsule radius">
 							<view class='cu-tag bg-grey' style="background-color: #dedede;">-</view>
-							<view class="cu-tag line-grey">{{ $t('notAvailable') || '不可约' }}</view>
+							<view class="cu-tag line-grey">{{ $t('mgbAppointment.notAvailable') }}</view>
 						</view>
 						<view class="cu-capsule radius">
 							<view class="cu-tag bg-white" style="border:solid 1px #b8b8b8;">-</view>
-							<view class="cu-tag line-grey">{{ $t('available') || '可约' }}</view>
+							<view class="cu-tag line-grey">{{ $t('mgbAppointment.available') }}</view>
 						</view>
 						<view class="cu-capsule radius">
 							<view class="cu-tag bg-blue" style="background-color: #8799a3;">-</view>
-							<view class="cu-tag line-grey">{{ $t('alreadyBooked') || '已有约' }}</view>
+							<view class="cu-tag line-grey">{{ $t('mgbAppointment.alreadyBooked') }}</view>
 						</view>
 						<view class="cu-capsule radius">
 							<view class="cu-tag bg-cyan">-</view>
-							<view class="cu-tag line-grey">{{ $t('selected') || '已选择' }}</view>
+							<view class="cu-tag line-grey">{{ $t('mgbAppointment.selected') }}</view>
 						</view>
 					</view>
 
@@ -112,11 +112,11 @@
 
 
 					<view class="cu-form-group">
-						<view class="title">{{ $t('total') || '总计' }}:
+						<view class="title">{{ $t('mgbAppointment.total') }}:
 							<text class="solid-bottom text-xxl text-price text-red">{{totalMoney}}</text>
 						</view>
 						<button @click="confCd()" class="cu-btn round bg-blue"
-							style="background-color: #1cbbb4;">{{ $t('submitOrder') }}</button>
+							style="background-color: #1cbbb4;">{{ $t('mgbAppointment.submitOrder') }}</button>
 					</view>
 				</view>
 			</view>
@@ -245,7 +245,7 @@
 				that.CDList = [];
 				that.totalMoney = 0;
 				uni.showLoading({
-					title: _that.$t('loading'),
+					title: _that.$t('mgbAppointment.loading'),
 					mask: true
 				});
 				let params = {
@@ -440,7 +440,7 @@
 				}
 				if (this.CurList.length <= 0) {
 					uni.showToast({
-						title: this.$t('pleaseSelectVenue'),
+						title: this.$t('mgbAppointment.pleaseSelectVenue'),
 						duration: 2000
 					});
 				} else {

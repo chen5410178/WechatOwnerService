@@ -5,7 +5,7 @@
 				<view class="bg-img" :style="'background-image: url('+ viewImageSrc +');height:800rpx;background-size: 100% 100%;'">
 					<view class="cu-bar justify-end text-white">
 						<view class="action" @tap="closeViewImage()">
-							<text class="btn-close">X</text>
+							<text class="btn-close">{{ $t('viewImage.close') }}</text>
 						</view>
 					</view>
 				</view>

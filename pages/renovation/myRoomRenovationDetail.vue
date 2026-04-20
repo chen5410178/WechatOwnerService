@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="cu-form-group arrow" @click="showRenovationRecord()">
-			<view class="title">{{ $t('renovationTracking') }}</view>
+			<view class="title">{{ $t('myRoomRenovationDetail.title') }}</view>
 		</view>
 		<view class="block__title">{{ $t('userInfo') }}</view>
 		<view class="cu-form-group">

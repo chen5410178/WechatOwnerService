@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view v-if="coupons && coupons.length > 0">
-			<view class="block__title">{{ $t('giftCoupon') }}</view>
+			<view class="block__title">{{ $t('giftCoupon.giftCoupon') }}</view>
 			<checkbox-group @change="checkboxChange">
 				<view class="cu-list menu" v-for="(coupon, idx) in coupons" :key="idx" :data-item="coupon"
 				 @click="_viewcouponDetail(coupon)">
@@ -12,7 +12,7 @@
 							</view>
 						</view>
 						<view class="action">
-							<text class="text-grey text-sm">{{coupon.quantity}}{{ $t('sheet') }}</text>
+							<text class="text-grey text-sm">{{coupon.quantity}}{{ $t('giftCoupon.sheet') }}</text>
 						</view>
 					</view>
 				</view>

@@ -8,38 +8,38 @@
 					<text class="cuIcon-roundclosefill" @tap="_cancle"></text>
 					<!-- 商品信息 -->
 					<view class="flex justify-between">
-						<view>{{ $t('reserveQuantity') }}</view>
+						<view>{{ $t('reserveServiceNow.reserveQuantity') }}</view>
 						<view style="width: 60%;">
 							<radio-group class="flex justify-end" @change="_changeReserveQuantity">
 								<!-- #ifdef MP-WEIXIN -->
 								<view class="margin-right-sm" v-for="item in goods.hoursMaxQuantity" :key="item">
 									<radio class=""  :value="item+1"></radio>
-									<view>{{item+1}}{{ $t('unit') || '个' }}</view>
+									<view>{{item+1}}{{ $t('reserveServiceNow.unit') }}</view>
 								</view>
 								<!-- #endif -->
 								<!-- #ifndef MP-WEIXIN -->
 								<view class="margin-right-sm" v-for="item in goods.hoursMaxQuantity" :key="item">
 									<radio class=""  :value="item"></radio>
-									<view>{{item}}{{ $t('unit') || '个' }}</view>
+									<view>{{item}}{{ $t('reserveServiceNow.unit') }}</view>
 								</view>
 								<!-- #endif -->
 							</radio-group>
 						</view>
 					</view>
 					<view class="flex justify-between  margin-top">
-						<view>{{ $t('reserveTime') }}</view>
+						<view>{{ $t('reserveServiceNow.reserveTime') }}</view>
 						<view style="width: 60%;">
 							<checkbox-group class="text-right" @change="_changeReserveTime">
 								<view class="margin-right-sm" style="display: inline-block;" v-if="item.isOpen == 'Y'"
 									v-for="(item,index) in openTimes" :key="index">
 									<checkbox class=' ' :value="item.hours"></checkbox>
-									<view>{{item.hours}}{{ $t('hourUnit') || '时' }}</view>
+									<view>{{item.hours}}{{ $t('reserveServiceNow.hourUnit') }}</view>
 								</view>
 							</checkbox-group>
 						</view>
 					</view>
 					<view class="btn-box foot_box margin-top-lg">
-						<button class="cu-btn  seckill-btn" @tap="confirm">{{ $t('confirm') }}</button>
+						<button class="cu-btn  seckill-btn" @tap="confirm">{{ $t('reserveServiceNow.confirm') }}</button>
 					</view>
 				</view>
 			</view>

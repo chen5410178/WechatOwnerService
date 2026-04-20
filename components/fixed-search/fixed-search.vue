@@ -20,7 +20,7 @@
         props:{  
 			placeholder:{
 				type: String,
-				default: '输入关键字搜索8888',
+				default: '输入关键字搜索',
 			},
 		},
 		data() {

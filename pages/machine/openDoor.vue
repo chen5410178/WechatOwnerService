@@ -19,12 +19,12 @@
 					</view>
 				</view>
 				<view class="padding-xl">
-					{{ $t('confirmOpenDoor') || '您确认开门? 开门次数有限,请勿频繁操作！' }}
+					{{ $t('openDoor.confirmOpenDoor') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleOpenDoor()">{{ $t('cancel') }}</view>
-					<view class="action margin-0 flex-sub  solid-left" v-if="curMachine.monitorId && curMachine.monitorId != '-1'" @tap="_viewDoorVideo()">视频</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doOpenDoor()">{{ $t('confirm') }}{{ $t('openDoor') }}</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleOpenDoor()">{{ $t('openDoor.cancel') }}</view>
+					<view class="action margin-0 flex-sub  solid-left" v-if="curMachine.monitorId && curMachine.monitorId != '-1'" @tap="_viewDoorVideo()">{{ $t('openDoor.video') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doOpenDoor()">{{ $t('openDoor.confirm') }}{{ $t('openDoor.openDoor') }}</view>
 				</view>
 			</view>
 		</view>
@@ -117,7 +117,7 @@
 			_doOpenDoor: function() {
 				let _that = this;
 				uni.showLoading({
-					title: this.$t('processing')
+					title: this.$t('openDoor.processing')
 				});
 				openDoor({
 					communityId: this.communityId,
@@ -129,7 +129,7 @@
 					let data = res.data;
 					let msg = '';
 					if (data.code == 0) {
-						msg = this.$t('requestSentToDoor');
+						msg = this.$t('openDoor.requestSentToDoor');
 					} else {
 						msg = data.msg;
 					}
@@ -142,7 +142,7 @@
 				}, (err) => {
 					uni.hideLoading();
 					uni.showToast({
-						title: this.$t('openDoorFailed'),
+						title: this.$t('openDoor.openDoorFailed'),
 						icon: 'none',
 						duration: 2000
 					});

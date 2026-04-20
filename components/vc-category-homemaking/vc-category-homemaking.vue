@@ -51,7 +51,7 @@
 			callUndefined:function(){
 				uni.showToast({
 					icon:'none',
-					title:this.$t('components.featureNotAvailable')
+					title:this.$t('vcCategoryHomemaking.featureNotAvailable')
 				})
 			},
 		}

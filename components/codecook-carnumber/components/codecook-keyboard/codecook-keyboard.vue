@@ -2,7 +2,7 @@
   <view class="car-keyboard">
     <view class="status-bar">
       <view class="close" @click="hideHandler">
-        关闭
+        {{ $t('codecookKeyboard.close') }}
       </view>
     </view>
 

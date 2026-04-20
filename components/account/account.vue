@@ -7,11 +7,11 @@
 						<text class="cuIcon-rechargefill text-green margin-right-xs"></text> {{account.acctTypeName}}
 					</view>
 					<view class="text-gray text-sm">
-						<text class="cuIcon-right margin-right-xs"></text>余额: {{account.amount}}
+<text class="cuIcon-right margin-right-xs"></text>{{ $t('account.balance') }}: {{account.amount}}
 					</view>
 				</view>
 				<view class="action">
-					去充值
+					{{ $t('account.goToRecharge') }}
 				</view>
 			</view>
 		</view>

@@ -2,8 +2,8 @@
 	<view class="cu-modal" :class="showModal ? 'show' : ''">
 		<view class="cu-dialog">
 			<view class="cu-bar bg-white justify-end">
-				<view class="content">{{ $t('callProperty') }}
-					<text v-if="property.communityQrCode">{{ $t('addWechatFriend') }}</text>
+				<view class="content">{{ $t('callProperty.callProperty') }}
+					<text v-if="property.communityQrCode">{{ $t('callProperty.addWechatFriend') }}</text>
 				</view>
 				<view class="action" @click="close">
 					<text class="cuIcon-close text-red"></text>
@@ -13,11 +13,11 @@
 				<view v-if="property.communityQrCode">
 					<image class="call-qrcode" :src="property.communityQrCode"></image>
 				</view>
-				<view>{{ $t('confirmCall') }},{{property.communityName}}{{ $t('propertyTel') }}<br />{{property.sCommunityTel}}</view>
+				<view>{{ $t('callProperty.confirmCall') }},{{property.communityName}}{{ $t('callProperty.propertyTel') }}<br />{{property.sCommunityTel}}</view>
 			</view>
 			<view class="cu-bar bg-white justify-end">
-				<view class="action margin-0 flex-sub solid-left" @click="close">{{ $t('cancel') }}</view>
-				<view class="action margin-0 flex-sub text-green solid-left" @click="doCall">{{ $t('dial') }}</view>
+				<view class="action margin-0 flex-sub solid-left" @click="close">{{ $t('callProperty.cancel') }}</view>
+				<view class="action margin-0 flex-sub text-green solid-left" @click="doCall">{{ $t('callProperty.dial') }}</view>
 			</view>
 		</view>
 	</view>
@@ -59,8 +59,8 @@
 				let _that = this;
 				uni.makePhoneCall({
 					phoneNumber: this.property.sCommunityTel,
-					success: () => console.log(_that.$t('callSuccess')),
-					fail: () => console.log(_that.$t('callFailed'))
+					success: () => console.log(_that.$t('callProperty.callSuccess')),
+					fail: () => console.log(_that.$t('callProperty.callFailed'))
 				});
 			}
 		}

@@ -1,7 +1,7 @@
 <template>
 	<view class="vc-shop margin-top " v-if="shops && shops.length>0">
 		<view class="text-left margin-left-xs margin-bottom-sm">
-			<text class="recommend-title">附近商家</text>
+			<text class="recommend-title">{{ $t('vcShop.nearbyShop') }}</text>
 		</view>
 		<view class="cu-list menu-avatar c-radius vc-shop-shop" v-for="(item,index) in shops" :key="index">
 			<view class="cu-item cur" @click="_toShopDetail(item)">

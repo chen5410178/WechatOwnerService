@@ -3,7 +3,7 @@
 		<view class="home_swiper margin-top-sm" v-if="goodsList && goodsList.length>0">
 			<view class="home_swiper-c">
 				<view class="line"></view>
-				<text class="text">小区推荐</text>
+				<text class="text">{{ $t('communityRecommend.communityRecommend') }}</text>
 				<view class="line"></view>
 			</view>
 			<view class="goods-list margin-top-xs">
@@ -68,7 +68,7 @@
 				if(_recommend.url == 'NULL'){
 					uni.showToast({
 						icon:'none',
-						title:'暂无推荐，请到商城系统配置小区推荐',
+						title: this.$t('communityRecommend.noRecommend'),
 						duration:5000
 					});
 					return;

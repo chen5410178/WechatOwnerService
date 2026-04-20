@@ -4,21 +4,21 @@
 			<view class="cu-dialog">
 				<scroll-view scroll-y style="height: 300upx; ">
 					<view class="cu-form-group">
-						<view class="title">{{ $t('carNum') }}</view>
-						<input v-model="carNum" :placeholder="$t('pleaseInputCarNum')" style="text-align:right"></input>
+						<view class="title">{{ $t('addMemberCar.carNum') }}</view>
+						<input v-model="carNum" :placeholder="$t('addMemberCar.pleaseInputCarNum')" style="text-align:right"></input>
 					</view>
 					<view class="cu-form-group">
-						<view class="title">{{ $t('carBrand') }}</view>
-						<input v-model="carBrand" :placeholder="$t('enterCarNum')" style="text-align:right"></input>
+						<view class="title">{{ $t('addMemberCar.carBrand') }}</view>
+						<input v-model="carBrand" :placeholder="$t('addMemberCar.enterCarNum')" style="text-align:right"></input>
 					</view>
 					<view class="cu-form-group">
-						<view class="title">{{ $t('carColor') }}</view>
-						<input v-model="carColor" :placeholder="$t('enterCarNum')" style="text-align:right"></input>
+						<view class="title">{{ $t('addMemberCar.carColor') }}</view>
+						<input v-model="carColor" :placeholder="$t('addMemberCar.enterCarNum')" style="text-align:right"></input>
 					</view>
 				</scroll-view>
 				<view class="btn-box padding">
-					<button class=" btn bg-blue" @click="_doSaveMemberCarNum()">{{ $t('submit') }}</button>
-					<button class="line-red margin-top" @click="cancel()">{{ $t('cancel') }}</button>
+					<button class=" btn bg-blue" @click="_doSaveMemberCarNum()">{{ $t('addMemberCar.submit') }}</button>
+					<button class="line-red margin-top" @click="cancel()">{{ $t('addMemberCar.cancel') }}</button>
 				</view>
 			</view>
 		</view>

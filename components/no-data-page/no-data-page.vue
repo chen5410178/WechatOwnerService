@@ -5,7 +5,7 @@
 				<text class=" cuIcon-warnfill light text-orange no-data-icon"></text>
 			</view>
 			<view class="">
-				<text class="text-gray">当前没有数据</text>
+				<text class="text-gray">{{ $t('noDataPage.noData') }}</text>
 			</view>
 			
 		</view>

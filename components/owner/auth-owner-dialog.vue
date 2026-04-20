@@ -3,18 +3,15 @@
 		<view class="cu-modal" :class="showAuthOwner==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">认证房屋</view>
-					<view class="action" @tap="_cancleAuth()">
-						<text class="cuIcon-close text-red"></text>
-					</view>
+<view class="content">{{ $t('authOwnerDialog.title') }}</view>
 				</view>
 				<view class="padding-xl">
-					<view v-if="code == -101">认证审核中</view>
-					<view v-else>您还没有认证房屋，请先认证房屋</view>
+					<view v-if="code == -101">{{ $t('authOwnerDialog.auditing') }}</view>
+					<view v-else>{{ $t('authOwnerDialog.notAuth') }}</view>
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleAuth()">关闭</view>
-					<view class="action margin-0 flex-sub text-green solid-left" v-if="code != -101" @tap="_toAuth()">去认证</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleAuth()">{{ $t('authOwnerDialog.close') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" v-if="code != -101" @tap="_toAuth()">{{ $t('authOwnerDialog.goAuth') }}</view>
 				</view>
 			</view>
 		</view>

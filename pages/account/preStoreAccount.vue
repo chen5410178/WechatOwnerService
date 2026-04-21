@@ -4,7 +4,7 @@
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('account.accountName') || '账户名称' }}</text>
+					<text class="text-grey">{{ $t('preStoreAccount.accountName') || '账户名称' }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{account.acctName}}</text>
@@ -12,7 +12,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('account.balance') }}</text>
+					<text class="text-grey">{{ $t('preStoreAccount.accountBalance') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{account.amount}}</text>

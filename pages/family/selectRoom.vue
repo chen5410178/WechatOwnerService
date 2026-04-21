@@ -1,18 +1,18 @@
 <template>
 	<view>
 		<view class="cu-form-group">
-<view class="title">{{ $t('family.selectFloor') }}</view>
+<view class="title">{{ $t('selectRoom.selectFloor') }}</view>
 			<picker :value="floorIndex" :range="floors" :range-key="'floorNum'" @change="floorChange">
 				<view class="picker">
-					{{floorIndex == -1 ? $t('family.pleaseSelect') :floors[floorIndex].floorNum}}
+					{{floorIndex == -1 ? $t('selectRoom.pleaseSelect') :floors[floorIndex].floorNum}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('family.selectUnit') }}</view>
+			<view class="title">{{ $t('selectRoom.selectUnit') }}</view>
 			<picker :value="unitIndex" :range="units" :range-key="'unitNum'" @change="unitChange">
 				<view class="picker">
-					{{unitIndex == -1 ? $t('family.pleaseSelect') :units[unitIndex].unitNum}}
+					{{unitIndex == -1 ? $t('selectRoom.pleaseSelect') :units[unitIndex].unitNum}}
 				</view>
 			</picker>
 		</view>

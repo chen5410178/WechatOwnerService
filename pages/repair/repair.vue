@@ -290,7 +290,7 @@
 						},
 						fail: function(e) {
 							uni.showToast({
-								title: that.$t('common.serverError'),
+								title: that.$t('repair.serverError'),
 								icon: 'none',
 								duration: 2000
 							})

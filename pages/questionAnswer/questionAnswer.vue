@@ -5,21 +5,21 @@
 			<view class="cu-item arrow">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="text-green margin-right-xs">{{question.qaType == '3003'?$t('vote'):$t('questionnaire')}}</text>
+						<text class="text-green margin-right-xs">{{question.qaType == '3003'?$t('questionAnswer.vote'):$t('questionAnswer.questionnaire')}}</text>
 						<view class="text-cut" style="width:220px">{{question.qaName}}</view>
 					</view>
 					<view class="text-gray text-sm">
-						<text class="margin-right-xs">{{ $t('endTime') }}：</text> {{question.endTime}}</view>
+						<text class="margin-right-xs">{{ $t('questionAnswer.endTime') }}：</text> {{question.endTime}}</view>
 				</view>
-				<view class="action" v-if="question.state == '0'">{{ $t('ended') }}</view>
-				<view class="action" v-else-if="question.state == '2'">{{ $t('voted') }}</view>
+<view class="action" v-if="question.state == '0'">{{ $t('questionAnswer.ended') }}</view>
+			<view class="action" v-else-if="question.state == '2'">{{ $t('questionAnswer.voted') }}</view>
 			</view>
 		</view>
 		<view class="cu-list menu" v-if="questions.length === 0">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-notification text-grey"></text>
-					<text class="text-grey">{{ $t('noData') }}</text>
+					<text class="text-grey">{{ $t('questionAnswer.noData') }}</text>
 				</view>
 				<view class="action">
 				</view>
@@ -89,25 +89,25 @@
 				})
 			},
 			gotoDetail: function(_question) {
-				let _msgType = _question.qaType == '3003' ? this.$t('vote') : this.$t('questionnaire');
+				let _msgType = _question.qaType == '3003' ? this.$t('questionAnswer.vote') : this.$t('questionAnswer.questionnaire');
 				if(_question.state == '-1'){
 					uni.showToast({
 						icon:'none',
-						title:_msgType+' '+this.$t('notStarted')
+						title:_msgType+' '+this.$t('questionAnswer.notStarted')
 					})
 					return ;
 				}
 				if(_question.state == '0'){
 					uni.showToast({
 						icon:'none',
-						title:_msgType+' '+this.$t('ended')
+						title:_msgType+' '+this.$t('questionAnswer.ended')
 					})
 					return ;
 				}
 				if(_question.state == '2'){
 					uni.showToast({
 						icon:'none',
-						title:_msgType+' '+this.$t('voted')
+						title:_msgType+' '+this.$t('questionAnswer.voted')
 					})
 					return ;
 				}

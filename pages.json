@@ -246,7 +246,7 @@
 				"enablePullDownRefresh": false
 			}
 		}, {
-			"path": "pages/renovation/myRoomList",
+			"path": "pages/renovation/myRenovationRoomList",
 			"style": {
 				"navigationBarTitleText": "选择房屋",
 				"enablePullDownRefresh": false

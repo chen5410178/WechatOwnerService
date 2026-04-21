@@ -10,7 +10,9 @@ export default {
       rechargeAmount: '充值金额',
       total: '合计',
       submitOrder: '提交订单',
-      yuan: '元'
+      yuan: '元',
+      accountBalance: '账户余额',
+      accountName: '账户名称'
     }
   },
   'en': {
@@ -24,7 +26,9 @@ export default {
       rechargeAmount: 'Recharge Amount',
       total: 'Total',
       submitOrder: 'Submit Order',
-      yuan: ' Yuan'
+      yuan: ' Yuan',
+      accountBalance: 'Account Balance',
+      accountName: 'Account Name'
     }
   },
   'zh-TW': {
@@ -38,7 +42,9 @@ export default {
       rechargeAmount: '充值金額',
       total: '合計',
       submitOrder: '提交訂單',
-      yuan: '元'
+      yuan: '元',
+      accountBalance: '帳戶餘額',
+      accountName: '帳戶名稱'
     }
   }
 }

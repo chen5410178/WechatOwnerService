@@ -5,7 +5,9 @@ export default {
       unit: '单元',
       selectUnit: '请选择单元',
       confirm: '确认',
-      cancel: '取消'
+      cancel: '取消',
+      serverError: '服务器异常',
+      searchPlaceholder: '请输入单元编号'
     }
   },
   'en': {
@@ -14,7 +16,9 @@ export default {
       unit: 'Unit',
       selectUnit: 'Please select unit',
       confirm: 'Confirm',
-      cancel: 'Cancel'
+      cancel: 'Cancel',
+      serverError: 'Server Error',
+      searchPlaceholder: 'Please enter unit number'
     }
   },
   'zh-TW': {
@@ -23,7 +27,9 @@ export default {
       unit: '單元',
       selectUnit: '請選擇單元',
       confirm: '確認',
-      cancel: '取消'
+      cancel: '取消',
+      serverError: '服務器異常',
+      searchPlaceholder: '請輸入單元編號'
     }
   }
 }

@@ -10,7 +10,7 @@
 							<view class="text-cut" style="width:220px">{{publicity.title}}</view>
 						</view>
 						<view class="text-gray text-sm">
-							<text class="margin-right-xs">{{ $t('community.publisher') }}：</text> {{publicity.createUserName}}</view>
+							<text class="margin-right-xs">{{ $t('communityPublicityList.publisher') }}：</text> {{publicity.createUserName}}</view>
 					</view>
 				</view>
 			</view>
@@ -21,7 +21,7 @@
 				<view class="cu-item">
 					<view class="content">
 						<text class="cuIcon-notification text-grey"></text>
-						<text class="text-grey">{{ $t('community.noPublicityInfo') }}</text>
+						<text class="text-grey">{{ $t('communityPublicityList.noPublicityInfo') }}</text>
 					</view>
 					<view class="action">
 					</view>
@@ -45,9 +45,9 @@
 				pubType:'',
 				loadingStatus : '',
 				loadingContentText: {
-					contentdown: this.$t('community.contentdown'),
-					contentrefresh: this.$t('community.contentrefresh'),
-					contentnomore: this.$t('community.contentnomore')
+					contentdown: this.$t('communityPublicityList.contentdown'),
+					contentrefresh: this.$t('communityPublicityList.contentrefresh'),
+					contentnomore: this.$t('communityPublicityList.contentnomore')
 				}
 				
 			};

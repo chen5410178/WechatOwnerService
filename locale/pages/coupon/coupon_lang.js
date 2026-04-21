@@ -19,8 +19,7 @@ export default {
       useInstructions: '使用说明',
       receive: '立即领取',
       myCoupon: '我的优惠券',
-availableCoupon: '可用优惠券',
-      myCoupon: '我的优惠券',
+      availableCoupon: '可用优惠券',
       notFound: '未找到'
     }
   },
@@ -44,8 +43,7 @@ availableCoupon: '可用优惠券',
       useInstructions: 'Instructions',
       receive: 'Receive',
       myCoupon: 'My Coupon',
-availableCoupon: 'Available',
-      myCoupon: 'My Coupon',
+      availableCoupon: 'Available',
       notFound: 'Not Found'
     }
   },
@@ -69,11 +67,8 @@ availableCoupon: 'Available',
       useInstructions: '使用說明',
       receive: '立即領取',
       myCoupon: '我的優惠券',
-availableCoupon: '可用優惠券',
-      myCoupon: '我的優惠券',
+      availableCoupon: '可用優惠券',
       notFound: '未找到'
     }
-  }
-}
   }
 }

@@ -1,32 +1,32 @@
 <template>
 	<view>
 		<view v-if="owners.length>0">
-			<view class="block__title">{{ $t('family.memberInfo') }}</view>
+			<view class="block__title">{{ $t('familyList.memberInfo') }}</view>
 			<view v-for="(item,index) in owners" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
 					<view>{{item.name}}</view>
 					<view class="text-gray">{{item.link}}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">{{ $t('family.memberId') }}</view>
+					<view class="text-gray">{{ $t('familyList.memberId') }}</view>
 					<view class="text-gray">{{item.memberId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('family.idCardNo') }}</view>
+					<view class="text-gray">{{ $t('familyList.idCardNo') }}</view>
 					<view class="text-gray">{{item.idCard}}</view>
 				</view>
 
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('family.memberAge') }}</view>
-					<view class="text-gray">{{item.age}}{{ $t('family.age') }}</view>
+					<view class="text-gray">{{ $t('familyList.memberAge') }}</view>
+					<view class="text-gray">{{item.age}}{{ $t('familyList.age') }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('family.memberSex') }}</view>
-					<view class="text-gray">{{item.sex == 0 ? $t('family.male') : $t('family.female') }}</view>
+					<view class="text-gray">{{ $t('familyList.memberSex') }}</view>
+					<view class="text-gray">{{item.sex == 0 ? $t('familyList.male') : $t('familyList.female') }}</view>
 				</view>
 				
 				<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm">
-					<button  class="cu-btn sm bg-red " @click="_deleteOwnerMember(item)">{{ $t('family.delete') }}</button>
+					<button  class="cu-btn sm bg-red " @click="_deleteOwnerMember(item)">{{ $t('familyList.delete') }}</button>
 				</view>
 			</view>
 		</view>
@@ -40,24 +40,24 @@
 
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-green shadow-blur lgplus sharp" @click="goAdd()">{{ $t('family.addMember') }}</button>
+				<button class="cu-btn bg-green shadow-blur lgplus sharp" @click="goAdd()">{{ $t('familyList.addMember') }}</button>
 			</view>
 		</view>
 		
 		<view class="cu-modal" :class="delOwnerMemberFlag==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">{{ $t('family.prompt') }}</view>
+					<view class="content">{{ $t('familyList.prompt') }}</view>
 					<view class="action" @tap="_cancleDeleteOwnerMember()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					{{ $t('family.confirmDeleteMember') }}
+					{{ $t('familyList.confirmDeleteMember') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteOwnerMember()">{{ $t('family.cancel') }}</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteOwnerMember()">{{ $t('family.confirm') }}</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteOwnerMember()">{{ $t('familyList.cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteOwnerMember()">{{ $t('familyList.confirm') }}</view>
 				</view>
 			</view>
 		</view>
@@ -126,7 +126,7 @@
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('familyList.serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -152,7 +152,7 @@
 				.then((res)=>{
 					uni.showToast({
 						icon:'none',
-						title: this.$t('family.deleteSuccess')
+						title: this.$t('familyList.deleteSuccess')
 					});
 					that._cancleDeleteOwnerMember();
 					that._initData();

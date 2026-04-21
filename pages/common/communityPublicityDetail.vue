@@ -5,8 +5,8 @@
 			<text class="text-black text-bold">{{publicity.title}}</text>
 		</view>
 		<view class="flex justify-around">
-<view class="footer">{{ $t('community.publisher') }}: {{publicity.createUserName}} </view>
-		  <view class="footer">{{ $t('community.time') }}: {{publicity.createTime}}</view>
+<view class="footer">{{ $t('communityPublicityDetail.publisher') }}: {{publicity.createUserName}} </view>
+				<view class="footer">{{ $t('communityPublicityDetail.time') }}: {{publicity.createTime}}</view>
 		</view>
 		  
 	</view>

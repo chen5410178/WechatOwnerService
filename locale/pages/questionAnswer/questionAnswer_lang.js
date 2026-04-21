@@ -12,7 +12,13 @@ export default {
       submit: '提交',
       submitSuccess: '提交成功',
       submitFailed: '提交失败',
-      noData: '暂无问题'
+      noData: '暂无问题',
+      vote: '投票',
+      questionnaire: '问卷',
+      endTime: '截止时间',
+      ended: '已结束',
+      notStarted: '未开始',
+      voted: '已投票'
     }
   },
   'en': {
@@ -28,7 +34,13 @@ export default {
       submit: 'Submit',
       submitSuccess: 'Submit Success',
       submitFailed: 'Submit Failed',
-      noData: 'No question'
+      noData: 'No question',
+      vote: 'Vote',
+      questionnaire: 'Questionnaire',
+      endTime: 'End Time',
+      ended: 'Ended',
+      notStarted: 'Not Started',
+      voted: 'Voted'
     }
   },
   'zh-TW': {
@@ -44,7 +56,13 @@ export default {
       submit: '提交',
       submitSuccess: '提交成功',
       submitFailed: '提交失敗',
-      noData: '暫無問題'
+      noData: '暫無問題',
+      vote: '投票',
+      questionnaire: '問卷',
+      endTime: '截止時間',
+      ended: '已結束',
+      notStarted: '未開始',
+      voted: '已投票'
     }
   }
 }

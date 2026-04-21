@@ -10,7 +10,11 @@ export default {
       submit: '提交回复',
       submitSuccess: '提交成功',
       submitFailed: '提交失败',
-      noData: '暂无回答'
+      noData: '暂无回答',
+      ownerName: '业主姓名',
+      contactPhone: '联系电话',
+      room: '房屋',
+      pleaseAnswer: '请输入回答'
     }
   },
   'en': {
@@ -24,7 +28,11 @@ export default {
       submit: 'Submit Reply',
       submitSuccess: 'Submit Success',
       submitFailed: 'Submit Failed',
-      noData: 'No answer'
+      noData: 'No answer',
+      ownerName: 'Owner Name',
+      contactPhone: 'Contact Phone',
+      room: 'Room',
+      pleaseAnswer: 'Please enter answer'
     }
   },
   'zh-TW': {
@@ -38,7 +46,11 @@ export default {
       submit: '提交回覆',
       submitSuccess: '提交成功',
       submitFailed: '提交失敗',
-      noData: '暫無回答'
+      noData: '暫無回答',
+      ownerName: '業主姓名',
+      contactPhone: '聯繫電話',
+      room: '房屋',
+      pleaseAnswer: '請輸入回答'
     }
   }
 }

@@ -6,7 +6,8 @@ export default {
       recognitionSuccess: '识别成功',
       recognitionFailed: '识别失败',
       pleaseFace: '请将人脸对准摄像头',
-      processing: '处理中...'
+      processing: '处理中...',
+      serverError: '服务器异常'
     }
   },
   'en': {
@@ -16,7 +17,8 @@ export default {
       recognitionSuccess: 'Recognition Success',
       recognitionFailed: 'Recognition Failed',
       pleaseFace: 'Please align your face with camera',
-      processing: 'Processing...'
+      processing: 'Processing...',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -26,7 +28,8 @@ export default {
       recognitionSuccess: '識別成功',
       recognitionFailed: '識別失敗',
       pleaseFace: '請將人臉對準攝像頭',
-      processing: '處理中...'
+      processing: '處理中...',
+      serverError: '伺服器異常'
     }
   }
 }

@@ -17,7 +17,10 @@ export default {
       cancel: '取消',
       confirm: '确认',
       deleteSuccess: '删除成功',
-      optionalRemark: '请输入备注'
+      optionalRemark: '请输入备注',
+      male: '男',
+      female: '女',
+      serverError: '服务器错误'
     }
   },
   'en': {
@@ -38,7 +41,10 @@ export default {
       cancel: 'Cancel',
       confirm: 'Confirm',
       deleteSuccess: 'Deleted successfully',
-      optionalRemark: 'Please enter remark'
+      optionalRemark: 'Please enter remark',
+      male: 'Male',
+      female: 'Female',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -59,7 +65,10 @@ export default {
       cancel: '取消',
       confirm: '確認',
       deleteSuccess: '刪除成功',
-      optionalRemark: '請輸入備註'
+      optionalRemark: '請輸入備註',
+      male: '男',
+      female: '女',
+      serverError: '服務器錯誤'
     }
   }
 }

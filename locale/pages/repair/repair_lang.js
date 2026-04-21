@@ -26,7 +26,8 @@ export default {
       pleaseSelectTime: '请选择时间',
       appointmentTimeError: '预约时间错误',
       submitSuccess: '提交成功',
-      notConfigRepair: '未配置报修类型'
+      notConfigRepair: '未配置报修类型',
+      serverError: '服务器错误'
     }
   },
   'en': {
@@ -56,7 +57,8 @@ export default {
       pleaseSelectTime: 'Please select time',
       appointmentTimeError: 'Appointment time error',
       submitSuccess: 'Submit success',
-      notConfigRepair: 'No repair type configured'
+      notConfigRepair: 'No repair type configured',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -86,7 +88,8 @@ export default {
       pleaseSelectTime: '請選擇時間',
       appointmentTimeError: '預約時間錯誤',
       submitSuccess: '提交成功',
-      notConfigRepair: '未配置報修類型'
+      notConfigRepair: '未配置報修類型',
+      serverError: '伺服器錯誤'
     }
   }
 }

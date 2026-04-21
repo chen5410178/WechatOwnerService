@@ -19,7 +19,7 @@ import visitDetailLangMsg from './visit/visitDetail_lang'
 import visitListLangMsg from './visit/visitList_lang'
 import selectFloorLangMsg from './selectFloor/selectFloor_lang'
 import selectUnitLangMsg from './selectUnit/selectUnit_lang'
-import myRoomListLangMsg from './renovation/myRoomList_lang'
+import myRenovationRoomListLangMsg from './renovation/myRenovationRoomList_lang'
 import myRoomRenovationDetailLangMsg from './renovation/myRoomRenovationDetail_lang'
 import myRoomRenovationListLangMsg from './renovation/myRoomRenovationList_lang'
 import myRoomRenovationRecordDetailLangMsg from './renovation/myRoomRenovationRecordDetail_lang'
@@ -62,7 +62,7 @@ export default {
     ...visitListLangMsg['zh-CN'],
     ...selectFloorLangMsg['zh-CN'],
     ...selectUnitLangMsg['zh-CN'],
-    ...myRoomListLangMsg['zh-CN'],
+    ...myRenovationRoomListLangMsg['zh-CN'],
     ...myRoomRenovationDetailLangMsg['zh-CN'],
     ...myRoomRenovationListLangMsg['zh-CN'],
     ...myRoomRenovationRecordDetailLangMsg['zh-CN'],
@@ -104,7 +104,7 @@ export default {
     ...visitListLangMsg['en'],
     ...selectFloorLangMsg['en'],
     ...selectUnitLangMsg['en'],
-    ...myRoomListLangMsg['en'],
+    ...myRenovationRoomListLangMsg['en'],
     ...myRoomRenovationDetailLangMsg['en'],
     ...myRoomRenovationListLangMsg['en'],
     ...myRoomRenovationRecordDetailLangMsg['en'],
@@ -146,7 +146,7 @@ export default {
     ...visitListLangMsg['zh-TW'],
     ...selectFloorLangMsg['zh-TW'],
     ...selectUnitLangMsg['zh-TW'],
-    ...myRoomListLangMsg['zh-TW'],
+    ...myRenovationRoomListLangMsg['zh-TW'],
     ...myRoomRenovationDetailLangMsg['zh-TW'],
     ...myRoomRenovationListLangMsg['zh-TW'],
     ...myRoomRenovationRecordDetailLangMsg['zh-TW'],

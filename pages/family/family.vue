@@ -183,7 +183,7 @@
 						fail: function(e) {
 							uni.hideLoading();
 							uni.showToast({
-								title: that.$t('common.serverError'),
+								title: that.$t('family.serverError'),
 								icon: 'none',
 								duration: 2000
 							})

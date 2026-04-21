@@ -46,7 +46,8 @@ export default {
       selectUnit: '选择单元',
       pleaseSelect: '请选择',
       deleteSuccess: '删除成功',
-      optionalRemark: '请输入备注'
+      optionalRemark: '请输入备注',
+      serverError: '服务器错误'
     }
   },
   'en': {
@@ -96,7 +97,8 @@ export default {
       selectUnit: 'Select Unit',
       pleaseSelect: 'Please select',
       deleteSuccess: 'Deleted successfully',
-      optionalRemark: 'Please enter remark'
+      optionalRemark: 'Please enter remark',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -146,7 +148,8 @@ export default {
       selectUnit: '選擇單元',
       pleaseSelect: '請選擇',
       deleteSuccess: '刪除成功',
-      optionalRemark: '請輸入備註'
+      optionalRemark: '請輸入備註',
+      serverError: '伺服器錯誤'
     }
   }
 }

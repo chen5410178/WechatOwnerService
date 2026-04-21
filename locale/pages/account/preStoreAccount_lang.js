@@ -8,6 +8,7 @@ export default {
       yuan: '元',
       rechargeAmount: '充值金额',
       accountBalance: '账户余额',
+      accountName: '账户名称',
       inputAmount: '请输入金额',
       feeTotal: '合计',
       submitOrder: '提交订单'
@@ -22,6 +23,7 @@ export default {
       yuan: 'Yuan',
       rechargeAmount: 'Recharge Amount',
       accountBalance: 'Account Balance',
+      accountName: 'Account Name',
       inputAmount: 'Please enter amount',
       feeTotal: 'Total',
       submitOrder: 'Submit Order'
@@ -36,6 +38,7 @@ export default {
       yuan: '元',
       rechargeAmount: '儲值金額',
       accountBalance: '帳戶餘額',
+      accountName: '帳戶名稱',
       inputAmount: '請輸入金額',
       feeTotal: '合計',
       submitOrder: '提交訂單'

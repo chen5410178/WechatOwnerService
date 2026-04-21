@@ -51,52 +51,6 @@ export default {
   },
   'zh-TW': {
     myProperty: {
-      title: '我的房产',
-      propertyList: '房产列表',
-      addProperty: '添加房产',
-      propertyNo: '房产编号',
-      propertyAddress: '房产地址',
-      propertyArea: '房产面积',
-      propertyStatus: '房产状态',
-      verified: '已认证',
-      unverified: '未认证',
-      verify: '去认证',
-      edit: '编辑',
-      delete: '删除',
-      confirmDelete: '确认删除该房产吗',
-      deleteSuccess: '删除成功',
-      noData: '暂无房产',
-      propertyInfo: '物业信息',
-      communityName: '小区名称',
-      propertyName: '物业名称',
-      propertyCode: '物业编号',
-      companyAddress: '公司地址',
-      contactPhone: '联系电话'
-    }
-  }
-}
-  },
-  'en': {
-    myProperty: {
-      title: 'My Property',
-      propertyList: 'Property List',
-      addProperty: 'Add Property',
-      propertyNo: 'Property No.',
-      propertyAddress: 'Property Address',
-      propertyArea: 'Property Area',
-      propertyStatus: 'Property Status',
-      verified: 'Verified',
-      unverified: 'Unverified',
-      verify: 'Verify',
-      edit: 'Edit',
-      delete: 'Delete',
-      confirmDelete: 'Confirm delete this property?',
-      deleteSuccess: 'Delete Success',
-      noData: 'No property'
-    }
-  },
-  'zh-TW': {
-    myProperty: {
       title: '我的房產',
       propertyList: '房產列表',
       addProperty: '添加房產',
@@ -111,7 +65,13 @@ export default {
       delete: '刪除',
       confirmDelete: '確認刪除該房產嗎',
       deleteSuccess: '刪除成功',
-      noData: '暫無房產'
+      noData: '暫無房產',
+      propertyInfo: '物業信息',
+      communityName: '小區名稱',
+      propertyName: '物業名稱',
+      propertyCode: '物業編號',
+      companyAddress: '公司地址',
+      contactPhone: '聯繫電話'
     }
   }
 }

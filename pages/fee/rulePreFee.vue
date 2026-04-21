@@ -207,7 +207,7 @@
 				
 				let _that = this;
 				uni.showLoading({
-					title: this.$t('loading')
+					title: this.$t('common.loading')
 				});
 				
 				listPrePayFeeRule({

@@ -142,7 +142,7 @@
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

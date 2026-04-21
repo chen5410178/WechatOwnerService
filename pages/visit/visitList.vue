@@ -56,9 +56,9 @@
 				page: 1,
 				loadingStatus: 'loading',
 				loadingContentText: {
-					contentdown: this.$t('loadMore'),
-					contentrefresh: this.$t('loading'),
-					contentnomore: this.$t('noMore')
+					contentdown: this.$t('common.loadMore'),
+					contentrefresh: this.$t('common.loading'),
+					contentnomore: this.$t('common.noMore')
 				}
 			}
 		},

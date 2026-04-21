@@ -23,7 +23,7 @@
 						 mode="widthFix"></image>
 		</view>
 		<!-- #endif -->
-		<text class="uni-load-more__text" :style="{color: color}">{{ status === 'more' ? $t('loadMore') : status === 'loading' ? $t('loading') : $t('noMore') }}</text>
+		<text class="uni-load-more__text" :style="{color: color}">{{ status === 'more' ? $t('common.loadMore') : status === 'loading' ? $t('common.loading') : $t('common.noMore') }}</text>
 	</view>
 </template>
 

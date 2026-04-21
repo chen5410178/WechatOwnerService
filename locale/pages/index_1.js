@@ -13,7 +13,7 @@ import myRoomListLangMsg from './applyRoom/myRoomList_lang'
 import appointmentLangMsg from './appointment/appointment_lang'
 import appointmentPayLangMsg from './appointment/appointmentPay_lang'
 import myBooksRenovationDetailLangMsg from './appointment/myBooksRenovationDetail_lang'
-import myBoomListLangMsg from './appointment/myBoomList_lang'
+import myAppointmentBoomLangMsg from './appointment/myAppointmentBoom_lang'
 import applyparkingLangMsg from './car/applyparking_lang'
 import carDetailLangMsg from './car/carDetail_lang'
 import ownerCarsLangMsg from './car/ownerCars_lang'
@@ -47,7 +47,7 @@ export default {
     ...appointmentLangMsg['zh-CN'],
     ...appointmentPayLangMsg['zh-CN'],
     ...myBooksRenovationDetailLangMsg['zh-CN'],
-    ...myBoomListLangMsg['zh-CN'],
+    ...myAppointmentBoomLangMsg['zh-CN'],
     ...applyparkingLangMsg['zh-CN'],
     ...carDetailLangMsg['zh-CN'],
     ...ownerCarsLangMsg['zh-CN'],
@@ -80,7 +80,7 @@ export default {
     ...appointmentLangMsg['en'],
     ...appointmentPayLangMsg['en'],
     ...myBooksRenovationDetailLangMsg['en'],
-    ...myBoomListLangMsg['en'],
+    ...myAppointmentBoomLangMsg['en'],
     ...applyparkingLangMsg['en'],
     ...carDetailLangMsg['en'],
     ...ownerCarsLangMsg['en'],
@@ -113,7 +113,7 @@ export default {
     ...appointmentLangMsg['zh-TW'],
     ...appointmentPayLangMsg['zh-TW'],
     ...myBooksRenovationDetailLangMsg['zh-TW'],
-    ...myBoomListLangMsg['zh-TW'],
+    ...myAppointmentBoomLangMsg['zh-TW'],
     ...applyparkingLangMsg['zh-TW'],
     ...carDetailLangMsg['zh-TW'],
     ...ownerCarsLangMsg['zh-TW'],

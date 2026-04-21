@@ -5,7 +5,7 @@
 		</view>
 			
 		<view class="padding text-center">
-			二维码有效期为5分钟
+			{{ $t('userQrCode.qrCodeValidTime') }}
 		</view>
 	</view>
 </template>

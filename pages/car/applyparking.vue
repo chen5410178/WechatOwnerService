@@ -118,7 +118,7 @@
 					},
 					fail: (res) => {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -186,14 +186,14 @@
 							return;
 						}
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

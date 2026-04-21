@@ -1,10 +1,10 @@
 <template>
 	<view>
 		<view class="cu-list menu margin-top">
-			<view class="cu-item">
+<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-time text-green"></text>
-					<text class="text-grey">{{ $t('applyRoom.applyRoom') }}</text>
+					<text class="text-grey">{{ $t('myApplyRoomRecordDetail.applyRoom') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{recordInfo.roomName}}</text>
@@ -13,20 +13,20 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-footprint text-green"></text>
-					<text class="text-grey">{{ $t('applyRoom.trackRemark') }}</text>
+					<text class="text-grey">{{ $t('myApplyRoomRecordDetail.trackRemark') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{recordList.length>0 ? recordList[0].remark : ''}}</text>
 				</view>
 			</view>
 			<view v-if="imgRecordList.length > 0">
-				<view class="block__title">{{ $t('applyRoom.image') }}</view>
+				<view class="block__title">{{ $t('myApplyRoomRecordDetail.image') }}</view>
 				<view class="record-img-item" v-for="(item,index) in imgRecordList" :key="index">
 					<image :src="commonBaseUrl + item.url" :data-url="commonBaseUrl + item.url" :data-index="index" @tap="preview" mode="widthFix"></image>
 				</view>
 			</view>
 			<view v-if="videoRecordList.length > 0">
-				<view class="block__title">{{ $t('applyRoom.video') }}</view>
+				<view class="block__title">{{ $t('myApplyRoomRecordDetail.video') }}</view>
 				<view v-for="(item,index) in videoRecordList" :key="index">
 					<video class="record-video" object-fit="contain" :src="commonBaseUrl + item.url" controls></video>
 				</view>

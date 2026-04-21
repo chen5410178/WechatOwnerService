@@ -18,7 +18,7 @@
 			<view class="cu-item" v-if="applyList.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">{{ $t('noApplyInfo') }}</text>
+					<text class="text-grey">{{ $t('myApplyRoomList.noApplyInfo') }}</text>
 				</view>
 				<view class="action">
 	

@@ -13,7 +13,24 @@ export default {
       noParkingSpace: '没有车位',
       leaseTerm: '租期',
       pleaseSelectDate: '请选择',
-      submit: '提交'
+      submit: '提交',
+      carNum: '车牌号',
+      pleaseInputCarNum: '请输入车牌号',
+      brand: '品牌',
+      inputBrand: '请输入品牌',
+      color: '颜色',
+      inputColor: '请输入颜色',
+      carType: '车辆类型',
+      pleaseSelect: '请选择',
+      remarkInfo: '备注信息',
+      inputRemarkInfo: '请输入备注信息',
+      viewProgress: '查看进度',
+      carTypes0: '普通车',
+      carTypes1: '新能源汽车',
+      carTypes2: '其他',
+      fillCarNumber: '请输入车牌号',
+      selectCarType: '请选择车辆类型',
+      serverError: '服务器错误'
     }
   },
   'en': {
@@ -30,7 +47,24 @@ export default {
       noParkingSpace: 'No parking space',
       leaseTerm: 'Lease Term',
       pleaseSelectDate: 'Please select',
-      submit: 'Submit'
+      submit: 'Submit',
+      carNum: 'Car Number',
+      pleaseInputCarNum: 'Please input car number',
+      brand: 'Brand',
+      inputBrand: 'Please input brand',
+      color: 'Color',
+      inputColor: 'Please input color',
+      carType: 'Car Type',
+      pleaseSelect: 'Please select',
+      remarkInfo: 'Remark',
+      inputRemarkInfo: 'Please input remark',
+      viewProgress: 'View Progress',
+      carTypes0: 'Regular Car',
+      carTypes1: 'New Energy Car',
+      carTypes2: 'Other',
+      fillCarNumber: 'Please input car number',
+      selectCarType: 'Please select car type',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -47,7 +81,24 @@ export default {
       noParkingSpace: '沒有車位',
       leaseTerm: '租期',
       pleaseSelectDate: '請選擇',
-      submit: '提交'
+      submit: '提交',
+      carNum: '車牌號',
+      pleaseInputCarNum: '請輸入車牌號',
+      brand: '品牌',
+      inputBrand: '請輸入品牌',
+      color: '顏色',
+      inputColor: '請輸入顏色',
+      carType: '車輛類型',
+      pleaseSelect: '請選擇',
+      remarkInfo: '備注信息',
+      inputRemarkInfo: '請輸入備注信息',
+      viewProgress: '查看進度',
+      carTypes0: '普通車',
+      carTypes1: '新能源車',
+      carTypes2: '其他',
+      fillCarNumber: '請輸入車牌號',
+      selectCarType: '請選擇車輛類型',
+      serverError: '服務器錯誤'
     }
   }
 }

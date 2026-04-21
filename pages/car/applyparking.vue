@@ -1,42 +1,42 @@
 <template>
 	<view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('carNum') || '车牌号' }}</view>
-			<input v-model="carNum" :placeholder="$t('pleaseInputCarNum')" style="text-align:right"></input>
+			<view class="title">{{ $t('applyparking.carNum') || '车牌号' }}</view>
+			<input v-model="carNum" :placeholder="$t('applyparking.pleaseInputCarNum')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('car.brand') }}</view>
-			<input v-model="carBrand" :placeholder="$t('car.inputBrand')" style="text-align:right"></input>
+			<view class="title">{{ $t('applyparking.brand') }}</view>
+			<input v-model="carBrand" :placeholder="$t('applyparking.inputBrand')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('car.color') }}</view>
-			<input v-model="carColor" :placeholder="$t('car.inputColor')" style="text-align:right"></input>
+			<view class="title">{{ $t('applyparking.color') }}</view>
+			<input v-model="carColor" :placeholder="$t('applyparking.inputColor')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('car.carType') }}</view>
+			<view class="title">{{ $t('applyparking.carType') }}</view>
 			<picker bindchange="PickerChange" :value="index" :range="carTypes" @change="chooseCarTypes">
 				<view class="picker">
-					{{carTypeName ? carTypeName : $t('car.pleaseSelect')}}
+					{{carTypeName ? carTypeName : $t('applyparking.pleaseSelect')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group align-start">
-			<view class="title">{{ $t('car.remarkInfo') }}</view>
-			<textarea maxlength="-1" v-model="remark" :placeholder="$t('car.inputRemarkInfo')"></textarea>
+			<view class="title">{{ $t('applyparking.remarkInfo') }}</view>
+			<textarea maxlength="-1" v-model="remark" :placeholder="$t('applyparking.inputRemarkInfo')"></textarea>
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
-			<button @click="submitApply()" class="cu-btn bg-blue margin-tb-sm lg">{{ $t('submit') || '提交' }}</button>
+			<button @click="submitApply()" class="cu-btn bg-blue margin-tb-sm lg">{{ $t('applyparking.submit') || '提交' }}</button>
 		</view>
 		
 		<view class="flex flex-direction">
-			<button @click="_applyDetail()" class="cu-btn line-blue margin-tb-sm lg">{{ $t('car.viewProgress') }}</button>
+			<button @click="_applyDetail()" class="cu-btn line-blue margin-tb-sm lg">{{ $t('applyparking.viewProgress') }}</button>
 		</view>
 		
 		<view class="temp-remark">
-			<view>{{ $t('car.parkingApplyNote') }}</view>
-			<view>1、{{ $t('car.parkingApplyNote1') }}</view>
-			<view>2、{{ $t('car.parkingApplyNote2') }}</view>
+			<view>{{ $t('applyparking.parkingApplyNote') }}</view>
+			<view>1、{{ $t('applyparking.parkingApplyNote1') }}</view>
+			<view>2、{{ $t('applyparking.parkingApplyNote2') }}</view>
 		</view>
 	</view>
 </template>
@@ -56,8 +56,8 @@
 				carColor:'',
 				remark:'',
 				psId: '',
-				startDate: this.$t('car.pleaseSelectDate'),
-				endDate: this.$t('car.pleaseSelectDate'),
+				startDate: this.$t('applyparking.pleaseSelectDate'),
+				endDate: this.$t('applyparking.pleaseSelectDate'),
 				ownerId:'',
 				storeId:'',
 				userId:'',
@@ -79,9 +79,9 @@
 		},
 		created() {
 			this.carTypes = [
-				this.$t('car.carTypes.0'),
-				this.$t('car.carTypes.1'),
-				this.$t('car.carTypes.2')
+				this.$t('applyparking.carTypes0'),
+				this.$t('applyparking.carTypes1'),
+				this.$t('applyparking.carTypes2')
 			];
 		},
 		onLoad: function(options) {
@@ -112,7 +112,7 @@
 					success: (res) => {
 						let arr = res.data.parkingSpaces;
 						arr.map(item => {
-							this.parkingSpaces.push(item.areaNum + " " + this.$t('car.parkingSpace') + "  " + item.num + this.$t('car.parkingSpaceNum'));
+							this.parkingSpaces.push(item.areaNum + " " + this.$t('applyparking.parkingSpace') + "  " + item.num + this.$t('applyparking.parkingSpaceNum'));
 							this.parkingSpaceIds.push(item.psId);
 						})
 					},
@@ -160,9 +160,9 @@
 				let msg = "";
 				
 				if (obj.carNum == "") {
-					msg = this.$t('fillCarNumber');
+					msg = this.$t('applyparking.fillCarNumber');
 				} else if(obj.carType == ""){
-					msg = this.$t('selectCarType');
+					msg = this.$t('applyparking.selectCarType');
 				}
 				if(msg != ""){
 					uni.showToast({

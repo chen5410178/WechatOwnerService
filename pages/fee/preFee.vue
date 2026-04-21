@@ -7,7 +7,7 @@
 						<view class="room-box">
 							<view class="room-info">
 								<text class="room-name">{{room.floorNum}}-{{room.unitNum}}-{{room.roomNum}}</text>
-								<text class="room-label">{{ $t('prepaid') || '预付款' }}</text>
+								<text class="room-label">{{ $t('preFee.prepaid') || '预付款' }}</text>
 							</view>
 						</view>
 					</view>
@@ -15,7 +15,7 @@
 						<view class="room-box">
 							<view class="room-info">
 								<text class="room-name">{{room.floorNum}}-{{room.unitNum}}-{{room.roomNum}}</text>
-								<text class="room-label">{{ $t('waterElectricPrepaid') || '水电预付款' }}</text>
+								<text class="room-label">{{ $t('preFee.waterElectricPrepaid') || '水电预付款' }}</text>
 							</view>
 						</view>
 					</view>

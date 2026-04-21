@@ -2,9 +2,9 @@
 	<view>
 		<view class="header">
 			<view class="search-input">
-				<input :placeholder="$t('inputCommunityName')" @input="input"></input>
+				<input :placeholder="$t('location.inputCommunityName')" @input="input"></input>
 			</view>
-			<view class="search-btn">{{ $t('search') }}</view>
+			<view class="search-btn">{{ $t('location.search') }}</view>
 		</view>
 		<view class="result-container" :hidden="hidden">
 			<scroll-view scroll-y="true" class="search-result-list" :hidden="hidden">
@@ -15,10 +15,10 @@
 				</block>
 			</scroll-view>
 		</view>
-		<view class="getLocation" @tap="getLocation">{{ $t('clickLocate') }}</view>
-		<view class="addLocation">{{ $t('addDeliveryAddress') }}<view class="addLocation-icon">+</view>
+		<view class="getLocation" @tap="getLocation">{{ $t('location.clickLocate') }}</view>
+		<view class="addLocation">{{ $t('location.addDeliveryAddress') }}<view class="addLocation-icon">+</view>
 		</view>
-		<view class="myLocation">{{ $t('myDeliveryAddress') }}</view>
+		<view class="myLocation">{{ $t('location.myDeliveryAddress') }}</view>
 		<view class="LocatonInfo"></view>
 		<view class="userTel"></view>
 	</view>

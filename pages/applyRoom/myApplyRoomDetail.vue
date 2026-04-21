@@ -1,34 +1,34 @@
 <template>
 	<view>
 		<view class="cu-form-group" @click="showRecord()">
-			<view class="title">{{ $t('applyRoom.trackRecord') }}</view>
-			{{ $t('applyRoom.clickToView') }}>
+			<view class="title">{{ $t('myApplyRoomDetail.trackRecord') }}</view>
+			{{ $t('myApplyRoomDetail.clickToView') }}>
 		</view>
-		<view class="block__title">{{ $t('applyRoom.userInfo') }}</view>
+		<view class="block__title">{{ $t('myApplyRoomDetail.userInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyRoom.name') }}</view>
+			<view class="title">{{ $t('myApplyRoomDetail.name') }}</view>
 			{{applyDetail.createUserName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyRoom.contact') }}</view>
+			<view class="title">{{ $t('myApplyRoomDetail.contact') }}</view>
 			{{applyDetail.createUserTel}}
 		</view>
 	
-		<view class="block__title">{{ $t('applyRoom.houseInfo') }}</view>
+		<view class="block__title">{{ $t('myApplyRoomDetail.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyRoom.roomNo') }}</view>
+			<view class="title">{{ $t('myApplyRoomDetail.roomNo') }}</view>
 			{{applyDetail.roomName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyRoom.startTime') }}</view>
+			<view class="title">{{ $t('myApplyRoomDetail.startTime') }}</view>
 			{{applyDetail.startTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyRoom.endTime') }}</view>
+			<view class="title">{{ $t('myApplyRoomDetail.endTime') }}</view>
 			{{applyDetail.endTime}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyRoom.currentProgress') }}</view>
+			<view class="title">{{ $t('myApplyRoomDetail.currentProgress') }}</view>
 			{{applyDetail.stateName}}
 		</view>
 		<uploadImageAsync v-if="applyDetail.urls.length > 0" ref="vcUploadRef" :maxPhotoNum="maxPhotoNum" :sendImgList="sendImgList" :canEdit="canEdit" :title="imgTitle"></uploadImageAsync>
@@ -50,7 +50,7 @@
 				maxPhotoNum: 4,
 				sendImgList: [],
 				canEdit: false,
-				imgTitle: this.$t('applyRoom.imageMaterial')
+				imgTitle: this.$t('myApplyRoomDetail.imageMaterial')
 			};
 		},
 

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('ownerCars') }}</view>
+		<view class="block__title">{{ $t('ownerCars.title') }}</view>
 		<view class="cu-list menu" v-for="(item,index) in cars" :key="index">
 			<view class="cu-item arrow" @click="_toCarDetail(item)" >
 				<view class="content">
@@ -8,12 +8,12 @@
 				</view>
 				<view class="action ">
 					<text class="text-grey text-sm" v-if="item.areaNum">{{item.areaNum}}-{{item.num}}</text>
-					<text class="text-grey text-sm" v-else>{{ $t('car.noParkingSpace') }}</text>
+					<text class="text-grey text-sm" v-else>{{ $t('ownerCars.noParkingSpace') }}</text>
 				</view>
 			</view>
 		</view>
 		<view class="flex flex-direction">
-			<button @click="_applyParking()" class="cu-btn line-blue margin-tb-sm lg">{{ $t('applyParking') }}</button>
+			<button @click="_applyParking()" class="cu-btn line-blue margin-tb-sm lg">{{ $t('ownerCars.applyParking') }}</button>
 		</view>
 	</view>
 </template>

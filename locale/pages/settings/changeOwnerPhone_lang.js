@@ -10,7 +10,9 @@ export default {
       inputCode: '请输入验证码',
       changeSuccess: '更换成功',
       changeFailed: '更换失败',
-      countdown: '秒后重发'
+      countdown: '秒后重发',
+      phoneCannotBeEmpty: '手机号不能为空',
+      interfaceFailed: '接口失败'
     }
   },
   'en': {
@@ -24,7 +26,9 @@ export default {
       inputCode: 'Please input verify code',
       changeSuccess: 'Change Success',
       changeFailed: 'Change Failed',
-      countdown: 'Resend after seconds'
+      countdown: 'Resend after seconds',
+      phoneCannotBeEmpty: 'Phone cannot be empty',
+      interfaceFailed: 'Interface failed'
     }
   },
   'zh-TW': {
@@ -38,7 +42,9 @@ export default {
       inputCode: '請輸入驗證碼',
       changeSuccess: '更換成功',
       changeFailed: '更換失敗',
-      countdown: '秒後重發'
+      countdown: '秒後重發',
+      phoneCannotBeEmpty: '手機號不能為空',
+      interfaceFailed: '接口失敗'
     }
   }
 }

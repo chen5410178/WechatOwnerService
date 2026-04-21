@@ -19,13 +19,9 @@ export default {
       useInstructions: '使用说明',
       receive: '立即领取',
       myCoupon: '我的优惠券',
-      availableCoupon: '可用优惠券',
-      used: '已使用',
-      expired: '已过期',
-      allCoupon: '全部',
-      loadMore: '上拉加载更多',
-      loading: '加载中',
-      noMore: '没有更多'
+availableCoupon: '可用优惠券',
+      myCoupon: '我的优惠券',
+      notFound: '未找到'
     }
   },
   'en': {
@@ -48,13 +44,9 @@ export default {
       useInstructions: 'Instructions',
       receive: 'Receive',
       myCoupon: 'My Coupon',
-      availableCoupon: 'Available',
-      used: 'Used',
-      expired: 'Expired',
-      allCoupon: 'All',
-      loadMore: 'Load More',
-      loading: 'Loading',
-      noMore: 'No More'
+availableCoupon: 'Available',
+      myCoupon: 'My Coupon',
+      notFound: 'Not Found'
     }
   },
   'zh-TW': {
@@ -77,13 +69,11 @@ export default {
       useInstructions: '使用說明',
       receive: '立即領取',
       myCoupon: '我的優惠券',
-      availableCoupon: '可用優惠券',
-      used: '已使用',
-      expired: '已過期',
-      allCoupon: '全部',
-      loadMore: '上拉載入更多',
-      loading: '載入中',
-      noMore: '沒有更多'
+availableCoupon: '可用優惠券',
+      myCoupon: '我的優惠券',
+      notFound: '未找到'
     }
+  }
+}
   }
 }

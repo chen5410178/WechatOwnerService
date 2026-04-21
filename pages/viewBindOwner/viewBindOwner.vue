@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('communityInfo') }}</view>
+		<view class="block__title">{{ $t('viewBindOwner.communityInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('communityCode') }}</text>
+					<text class="text-grey">{{ $t('viewBindOwner.communityCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityId}}</text>
@@ -15,19 +15,19 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-home text-green"></text>
-					<text class="text-grey">{{ $t('communityName') }}</text>
+					<text class="text-grey">{{ $t('viewBindOwner.communityName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
 				</view>
 			</view>
 		</view>
-		<view class="block__title">{{ $t('ownerInfo') }}</view>
+		<view class="block__title">{{ $t('viewBindOwner.ownerInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('name') }}</text>
+					<text class="text-grey">{{ $t('viewBindOwner.name') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{appUserName}}</text>
@@ -36,7 +36,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">{{ $t('phone') }}</text>
+					<text class="text-grey">{{ $t('viewBindOwner.phone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{link}}</text>

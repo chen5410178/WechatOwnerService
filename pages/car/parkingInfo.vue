@@ -20,23 +20,23 @@
 						<view></view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('car.carNumber') }}</view>
+						<view class="text-gray">{{ $t('parkingInfo.carNumber') }}</view>
 						<view class="text-gray">{{item.carNum}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('car.brand') }}</view>
+						<view class="text-gray">{{ $t('parkingInfo.brand') }}</view>
 						<view class="text-gray">{{item.carBrand}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('car.applyTime') }}</view>
+						<view class="text-gray">{{ $t('parkingInfo.applyTime') }}</view>
 						<view class="text-gray">{{item.createTime}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('car.remark') }}</view>
+						<view class="text-gray">{{ $t('parkingInfo.remark') }}</view>
 						<view class="text-gray">{{item.remark}}</view>
 					</view>
 					<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm"  v-if="item.state == '3003'">
-						<button class="cu-btn sm bg-green margin-left" @click="_toBuyCarMonthCard(item)">{{ $t('car.goToPay') }}</button>
+						<button class="cu-btn sm bg-green margin-left" @click="_toBuyCarMonthCard(item)">{{ $t('parkingInfo.goToPay') }}</button>
 					</view>
 				</view>
 			</view>
@@ -59,13 +59,13 @@
 		data() {
 			return {
 				parkingType: [{
-					"name": this.$t('waitApprove') || '待审核',
+					"name": this.$t('parkingInfo.waitApprove') || '待审核',
 					"code": 1001
 				}, {
-					"name": this.$t('complete') || '完成',
+					"name": this.$t('parkingInfo.complete') || '完成',
 					"code": 3003
 				}, {
-					"name": this.$t('applyFailed') || '申请失败',
+					"name": this.$t('parkingInfo.applyFailed') || '申请失败',
 					"code": 4004
 				}],
 				code: '1001',
@@ -130,7 +130,7 @@
 					},
 					fail(res) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('parkingInfo.serverError'),
 							icon: 'none',
 							duration: 2000
 						})

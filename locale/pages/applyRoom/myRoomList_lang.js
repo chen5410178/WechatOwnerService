@@ -7,7 +7,10 @@ export default {
       unit: '单元',
       layer: '楼层',
       apartment: '户型',
-      noData: '暂无数据'
+      noData: '暂无数据',
+      buildingUnit: '栋',
+      unitUnit: '单元',
+      roomRoom: '室'
     }
   },
   'en': {
@@ -18,7 +21,10 @@ export default {
       unit: 'Unit',
       layer: 'Floor',
       apartment: 'Apartment',
-      noData: 'No data'
+      noData: 'No data',
+      buildingUnit: 'Building',
+      unitUnit: 'Unit',
+      roomRoom: 'Room'
     }
   },
   'zh-TW': {
@@ -29,7 +35,10 @@ export default {
       unit: '單元',
       layer: '樓層',
       apartment: '戶型',
-      noData: '暫無資料'
+      noData: '暫無資料',
+      buildingUnit: '棟',
+      unitUnit: '單元',
+      roomRoom: '室'
     }
   }
 }

@@ -1,6 +1,7 @@
 export default {
   'zh-CN': {
     ownerCars: {
+      title: '我的车辆',
       ownerCars: '我的车辆',
       carList: '车辆列表',
       addCar: '添加车辆',
@@ -29,7 +30,9 @@ export default {
       remark: '备注',
       goToPay: '去缴费',
       inputBrand: '选填,请输入品牌',
-      inputColor: '选填,请输入颜色'
+      inputColor: '选填,请输入颜色',
+      noParkingSpace: '没有车位',
+      applyParking: '申请车位'
     }
   },
   'en': {
@@ -62,7 +65,9 @@ export default {
       remark: 'Remark',
       goToPay: 'Go to Pay',
       inputBrand: 'Optional, please enter brand',
-      inputColor: 'Optional, please enter color'
+      inputColor: 'Optional, please enter color',
+      noParkingSpace: 'No parking space',
+      applyParking: 'Apply Parking'
     }
   },
   'zh-TW': {
@@ -95,7 +100,9 @@ export default {
       remark: '備註',
       goToPay: '去繳費',
       inputBrand: '選填,請輸入品牌',
-      inputColor: '選填,請輸入顏色'
+      inputColor: '選填,請輸入顏色',
+      noParkingSpace: '沒有車位',
+      applyParking: '申請車位'
     }
   }
 }

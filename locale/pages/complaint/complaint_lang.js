@@ -15,7 +15,15 @@ export default {
       inputContent: '请输入投诉内容',
       inputContact: '请输入联系方式',
       myComplaint: '我的投诉',
-      noData: '暂无投诉记录'
+      noData: '暂无投诉记录',
+      houseInfo: '房屋信息',
+      pleaseSelect: '请选择',
+      complainant: '投诉人',
+      pleaseInputComplainant: '请输入投诉人',
+      phone: '手机号',
+      pleaseInputPhone: '请输入手机号',
+      pleaseInputContent: '请输入投诉内容',
+      photoInfo: '图片信息'
     }
   },
   'en': {
@@ -34,7 +42,15 @@ export default {
       inputContent: 'Please input complaint content',
       inputContact: 'Please input contact info',
       myComplaint: 'My Complaint',
-      noData: 'No complaint record'
+      noData: 'No complaint record',
+      houseInfo: 'House Info',
+      pleaseSelect: 'Please select',
+      complainant: 'Complainant',
+      pleaseInputComplainant: 'Please input complainant',
+      phone: 'Phone',
+      pleaseInputPhone: 'Please input phone',
+      pleaseInputContent: 'Please input complaint content',
+      photoInfo: 'Photo Info'
     }
   },
   'zh-TW': {
@@ -53,7 +69,15 @@ export default {
       inputContent: '請輸入投訴內容',
       inputContact: '請輸入聯繫方式',
       myComplaint: '我的投訴',
-      noData: '暫無投訴記錄'
+      noData: '暫無投訴記錄',
+      houseInfo: '房屋資訊',
+      pleaseSelect: '請選擇',
+      complainant: '投訴人',
+      pleaseInputComplainant: '請輸入投訴人',
+      phone: '手機號',
+      pleaseInputPhone: '請輸入手機號',
+      pleaseInputContent: '請輸入投訴內容',
+      photoInfo: '圖片資訊'
     }
   }
 }

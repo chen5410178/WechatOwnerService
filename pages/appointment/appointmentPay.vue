@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">{{ $t('orderInfo') }}</view>
+			<view class="block__title">{{ $t('appointmentPay.orderInfo') }}</view>
 			<form>
 				<view class="cu-list menu">
 					<view class="cu-item">
@@ -11,7 +11,7 @@
 					</view>
 					<view class="cu-item">
 						<view class="content">
-							<text class="text-grey">{{ $t('bookDate') }}</text>
+							<text class="text-grey">{{ $t('appointmentPay.bookDate') }}</text>
 						</view>
 						<view class="action">
 							<text class="text-grey text-sm">{{bookparams.bookDate}}</text>
@@ -19,7 +19,7 @@
 					</view>
 				</view>
 
-				<view class="block__title">{{ $t('venueInfo') }}</view>
+				<view class="block__title">{{ $t('appointmentPay.venueInfo') }}</view>
 				<view class="cu-list menu" v-for="(item,index) in this.bookList" :key="index">
 					<view class="cu-item">
 						<view class="content">
@@ -35,18 +35,18 @@
 		</scroll-view>
 		<view class=" bg-white  border flex cu-form-group" style="position: fixed;width: 100%;bottom: 0;">
 
-			<view class="title">{{ $t('total') }}:
+			<view class="title">{{ $t('appointmentPay.total') }}:
 				<text class="solid-bottom text-xxl text-price text-red">{{totalMoney}}</text>
 			</view>
 			<view class="btn-group">
 				<!-- #ifdef H5 || MP-WEIXIN -->
 				<!-- cu-btn bg-red shadow-blur lgplus sharp -->
 				<button @click="onPayFee()" class="cu-btn round bg-blue"
-					style="background-color: #1cbbb4;">{{ $t('submitOrder') }}</button>
+					style="background-color: #1cbbb4;">{{ $t('appointmentPay.submitOrder') }}</button>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
 				<button @click="_payWxApp()" class="cu-btn round bg-blue"
-					style="background-color: #1cbbb4;">{{ $t('submitOrder') }}</button>
+					style="background-color: #1cbbb4;">{{ $t('appointmentPay.submitOrder') }}</button>
 				<!-- #endif -->
 			</view>
 		</view>
@@ -160,7 +160,7 @@
 				if (this.canPay == "t") {
 					let _receivedAmount = this.receivableAmount;
 					uni.showLoading({
-						title: this.$t('paying')
+						title: this.$t('appointmentPay.paying')
 					});
 
 					let _tradeType = 'APP';
@@ -168,7 +168,7 @@
 						cycles: this.feeMonth,
 						communityId: getCommunityId(),
 						feeId: this.feeId,
-						feeName: this.$t('propertyFee'),
+						feeName: this.$t('appointmentPay.propertyFee'),
 						receivedAmount: _receivedAmount,
 						tradeType: _tradeType,
 						appId: this.appId,
@@ -210,7 +210,7 @@
 									orderInfo: orderInfo, //微信、支付宝订单数据
 									success: function(res) {
 										uni.showToast({
-											title: _that.$t('paySuccess'),
+											title: _that.$t('appointmentPay.paySuccess'),
 											duration: 2000
 										});
 										uni.reLaunch({
@@ -230,7 +230,7 @@
 							if (res.statusCode == 200 && res.data.code == '100') {
 								let data = res.data; //成功情况下跳转
 								uni.showToast({
-									title: _that.$t('paySuccess'),
+									title: _that.$t('appointmentPay.paySuccess'),
 									duration: 2000
 								});
 								setTimeout(function() {
@@ -247,7 +247,7 @@
 
 							uni.hideLoading();
 							uni.showToast({
-								title: _that.$t('feeFailed'),
+								title: _that.$t('appointmentPay.feeFailed'),
 								icon: 'none',
 								duration: 2000
 							});
@@ -255,7 +255,7 @@
 						fail: function(e) {
 							uni.hideLoading();
 							uni.showToast({
-								title: _that.$t('serverError'),
+								title: _that.$t('appointmentPay.serverError'),
 								icon: 'none',
 								duration: 2000
 							});
@@ -263,7 +263,7 @@
 					});
 				} else {
 					uni.showLoading({
-						title: _that.$t('payFail')
+						title: _that.$t('appointmentPay.payFail')
 					});
 				}
 			},
@@ -273,7 +273,7 @@
 				if (this.canPay == "t") {
 					let totalMoney = this.totalMoney;
 					uni.showLoading({
-						title: this.$t('paying')
+						title: this.$t('appointmentPay.paying')
 					});
 					let _tradeType = 'JSAPI';
 
@@ -339,7 +339,7 @@
 									'success': function(res) {
 										console.log("微信支付22",res)
 										uni.showToast({
-											title: this.$t('paySuccess'),
+title: this.$t('appointmentPay.paySuccess'),
 											duration: 2000
 										});
 										uni.reLaunch({
@@ -394,13 +394,13 @@
 									.substr(tipsIndex, res.data.msg.length - tipsIndex);
 
 								uni.showToast({
-									title: _that.$t('feeFailed') + ":" + tips,
+									title: _that.$t('appointmentPay.feeFailed') + ":" + tips,
 									icon: 'none',
 									duration: 4000
 								});
 								}else{
 									uni.showToast({
-										title: _that.$t('feeFailed') + ":" + res.data.msg,
+title: _that.$t('appointmentPay.feeFailed') + ":" + res.data.msg,
 										icon: 'none',
 										duration: 4000
 									});
@@ -417,7 +417,7 @@
 						fail: function(e) {
 							uni.hideLoading();
 							uni.showToast({
-								title: _that.$t('serverError'),
+								title: _that.$t('appointmentPay.serverError'),
 								icon: 'none',
 								duration: 2000
 							});
@@ -425,7 +425,7 @@
 					});
 				} else {
 					uni.showLoading({
-						title: this.$t('payFail')
+						title: this.$t('appointmentPay.payFail')
 					});
 				}
 			}

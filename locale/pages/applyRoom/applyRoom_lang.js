@@ -53,7 +53,9 @@ export default {
       pleaseSelectTime: '请选择时间',
       timeRangeError: '时间范围错误',
       pleaseFillApplyDescription: '请填写申请说明',
-      applySuccess: '申请成功'
+      applySuccess: '申请成功',
+      builtUpArea: '建筑面积',
+      sqm: '平方米'
     }
   },
   'en': {
@@ -110,7 +112,9 @@ export default {
       pleaseSelectTime: 'Please select time',
       timeRangeError: 'Time range error',
       pleaseFillApplyDescription: 'Please fill in apply description',
-      applySuccess: 'Apply success'
+      applySuccess: 'Apply success',
+      builtUpArea: 'Built-up Area',
+      sqm: 'sqm'
     }
   },
   'zh-TW': {

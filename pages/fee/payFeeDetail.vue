@@ -1,55 +1,55 @@
 <template>
 	<view>
-		<view  class="block__title">{{ $t('fee_history') }}</view>
+		<view  class="block__title">{{ $t('payFeeDetail.fee_history') }}</view>
 		<view v-if="noData == false">
 			<view v-for="(item,index) in feeDetails" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>{{ $t('fee_amount') }}</view>
-					<view class="text-gray">{{item.receivedAmount}}{{ $t('yuan') }}</view>
+					<view>{{ $t('payFeeDetail.fee_amount') }}</view>
+					<view class="text-gray">{{item.receivedAmount}}{{ $t('payFeeDetail.yuan') }}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">{{ $t('fee_name') || '费用名称' }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_name') || '费用名称' }}</view>
 					<view class="text-gray">{{item.feeName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('fee_code') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_code') }}</view>
 					<view class="text-gray">{{item.detailId}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('fee_period') }}</view>
-					<view class="text-gray">{{item.cycles}}{{ $t('months') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_period') }}</view>
+					<view class="text-gray">{{item.cycles}}{{ $t('payFeeDetail.months') }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('fee_start_time') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_start_time') }}</view>
 					<view class="text-gray">{{item.startTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('fee_end_time') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_end_time') }}</view>
 					<view class="text-gray">{{item.endTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('fee_paid_time') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_paid_time') }}</view>
 					<view class="text-gray">{{item.createTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.preDegrees">
-					<view class="text-gray">{{ $t('fee_pre_degrees') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_pre_degrees') }}</view>
 					<view class="text-gray">{{item.preDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.curDegrees">
-					<view class="text-gray">{{ $t('fee_cur_degrees') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_cur_degrees') }}</view>
 					<view class="text-gray">{{item.curDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.preDegrees">
-					<view class="text-gray">{{ $t('fee_usage') }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.fee_usage') }}</view>
 					<view class="text-gray">{{item.curDegrees-item.preDegrees}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('remark') || '备注' }}</view>
+					<view class="text-gray">{{ $t('payFeeDetail.remark') || '备注' }}</view>
 					<view class="text-gray">{{item.remark}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.openInvoice == 'N'">
 					<view class="text-gray"></view>
-					<view class="text-gray"><button class="cu-btn sm line-blue" @click="_applyInvoice(item)">{{ $t('invoiceApply') }}</button></view>
+					<view class="text-gray"><button class="cu-btn sm line-blue" @click="_applyInvoice(item)">{{ $t('payFeeDetail.invoiceApply') }}</button></view>
 				</view>
 			</view>
 			<uni-load-more :status="loadingStatus" :content-text="loadingContentText" />
@@ -80,9 +80,9 @@
 				page: 1,
 				loadingStatus : 'loading',
 				loadingContentText: {
-					contentdown: this.$t('loadMore'),
-					contentrefresh: this.$t('loading'),
-					contentnomore: this.$t('noMore')
+					contentdown: this.$t('payFeeDetail.loadMore'),
+					contentrefresh: this.$t('payFeeDetail.loading'),
+					contentnomore: this.$t('payFeeDetail.noMore')
 				}
 			}
 		},
@@ -165,7 +165,7 @@
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						})

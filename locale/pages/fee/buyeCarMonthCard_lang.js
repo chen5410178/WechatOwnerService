@@ -14,7 +14,18 @@ export default {
       payNow: '立即支付',
       paySuccess: '支付成功',
       payFailed: '支付失败',
-      purchaseSuccess: '购买成功'
+      purchaseSuccess: '购买成功',
+      buyeCarMonthCard: '购买车位月卡',
+      car: '车辆',
+      selectFirst: '请先选择',
+      expireTime: '到期时间',
+      selectMonthCard: '选择月卡',
+      payAmount: '支付金额',
+      total: '合计',
+      yuanUnit: '元',
+      submitOrder: '提交订单',
+      pleaseSelectMonthCard: '请选择月卡',
+      buyParkingMonthCard: '购买停车月卡'
     }
   },
   'en': {
@@ -32,7 +43,18 @@ export default {
       payNow: 'Pay Now',
       paySuccess: 'Pay Success',
       payFailed: 'Pay Failed',
-      purchaseSuccess: 'Purchase Success'
+      purchaseSuccess: 'Purchase Success',
+      buyeCarMonthCard: 'Buy Car Month Card',
+      car: 'Car',
+      selectFirst: 'Please select first',
+      expireTime: 'Expire Time',
+      selectMonthCard: 'Select Month Card',
+      payAmount: 'Pay Amount',
+      total: 'Total',
+      yuanUnit: '¥',
+      submitOrder: 'Submit Order',
+      pleaseSelectMonthCard: 'Please select month card',
+      buyParkingMonthCard: 'Buy Parking Month Card'
     }
   },
   'zh-TW': {
@@ -50,7 +72,18 @@ export default {
       payNow: '立即支付',
       paySuccess: '支付成功',
       payFailed: '支付失敗',
-      purchaseSuccess: '購買成功'
+      purchaseSuccess: '購買成功',
+      buyeCarMonthCard: '購買車位月卡',
+      car: '車輛',
+      selectFirst: '請先選擇',
+      expireTime: '到期時間',
+      selectMonthCard: '選擇月卡',
+      payAmount: '支付金額',
+      total: '合計',
+      yuanUnit: '元',
+      submitOrder: '提交訂單',
+      pleaseSelectMonthCard: '請選擇月卡',
+      buyParkingMonthCard: '購買停車月卡'
     }
   }
 }

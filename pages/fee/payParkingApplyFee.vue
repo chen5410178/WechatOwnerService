@@ -2,11 +2,11 @@
 	<view>
 
 		<scroll-view scroll-y>
-			<view class="block__title">{{ $t('parkingSpaceInfo') }}</view>
+			<view class="block__title">{{ $t('payParkingApplyFee.parkingSpaceInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('community') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.community') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{communityName}}</text>

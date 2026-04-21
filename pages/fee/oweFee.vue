@@ -81,10 +81,10 @@
 		<view v-if="batchFees.length > 0" class="bg-white  border flex justify-end"
 			style="position: fixed;width: 100%;bottom: 0;">
 			<view class="action text-orange margin-right line-height">
-				{{ $t('fee_total') }}：{{receivableAmount}}{{ $t('yuanUnit') }}
+				{{ $t('oweFee.fee_total') }}：{{receivableAmount}}{{ $t('oweFee.yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('fee_pay') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('oweFee.fee_pay') }}</button>
 			</view>
 		</view>
 	</view>
@@ -179,7 +179,7 @@
 					}, function(error) {
 						uni.showToast({
 							icon: 'none',
-							title: _that.$t('noOweFee')
+							title: _that.$t('oweFee.noOweFee')
 						})
 					});
 			},
@@ -303,7 +303,7 @@
 				if (_payFees.length < 1) {
 					uni.showToast({
 						icon: 'none',
-						title: _that.$t('noFeeSelected')
+						title: _that.$t('oweFee.noFeeSelected')
 					});
 					return;
 				}
@@ -316,7 +316,7 @@
 					feeConfigs: _payFees,
 					communityId: this.communityId,
 					ownerId: this.ownerId,
-					feeName: this.$t('propertyFee'),
+					feeName: this.$t('oweFee.propertyFee'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 					acctId: _acctId,

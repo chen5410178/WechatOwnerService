@@ -1,27 +1,27 @@
 <template>
 	<view>
 		<view class="cu-form-group margin-top-sm">
-			<view class="title">{{ $t('carNum') }}</view>
-			<input :placeholder="$t('inputCarNum')" class="text-right" v-model="carNum"></input>
+			<view class="title">{{ $t('giftParkingCoupon.carNum') }}</view>
+			<input :placeholder="$t('giftParkingCoupon.inputCarNum')" class="text-right" v-model="carNum"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('parkingLot') }}</view>
+			<view class="title">{{ $t('giftParkingCoupon.parkingLot') }}</view>
 			<picker @change="parkingAreaChange" :value="paIdIndex" :range="parkingAreas" :range-key="'num'">
 				<view class="picker">
-					{{paIdIndex > -1 ? paNum:$t('selectParkingLot')}}
+					{{paIdIndex > -1 ? paNum:$t('giftParkingCoupon.selectParkingLot')}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group margin-top-sm">
-			<view class="title">{{ $t('coupon') }}</view>
-			<input :placeholder="$t('inputCoupon')" class="text-right" disabled="disabled" v-model="couponName"></input>
+			<view class="title">{{ $t('giftParkingCoupon.coupon') }}</view>
+			<input :placeholder="$t('giftParkingCoupon.inputCoupon')" class="text-right" disabled="disabled" v-model="couponName"></input>
 		</view>
 		<view class="cu-form-group margin-top-sm">
-			<view class="title">{{ $t('giftCount') }}</view>
-			<input :placeholder="$t('inputGiftCount')" class="text-right" type="number" v-model="giftCount"></input>
+			<view class="title">{{ $t('giftParkingCoupon.giftCount') }}</view>
+			<input :placeholder="$t('giftParkingCoupon.inputGiftCount')" class="text-right" type="number" v-model="giftCount"></input>
 		</view>
 		<view class="padding">
-			<button class="cu-btn block bg-blue margin-tb-sm lg" @click="_saveCustomCoupon()" type="">{{ $t('gift') }}</button>
+			<button class="cu-btn block bg-blue margin-tb-sm lg" @click="_saveCustomCoupon()" type="">{{ $t('giftParkingCoupon.gift') }}</button>
 		</view>
 	</view>
 </template>
@@ -68,7 +68,7 @@
 				if(!this.carNum){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('noCarNum')
+						title: this.$t('giftParkingCoupon.noCarNum')
 					});
 					return ;
 				}
@@ -76,7 +76,7 @@
 				if(!this.couponId){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('noParkingTicket')
+						title: this.$t('giftParkingCoupon.noParkingTicket')
 					});
 					return ;
 				}
@@ -92,7 +92,7 @@
 				couponPropertyUserGiftCar(_data).then(_msg=>{
 					uni.showToast({
 						icon:'none',
-						title: this.$t('giftSuccess')
+						title: this.$t('giftParkingCoupon.giftSuccess')
 					});
 					uni.navigateBack({
 						delta:1

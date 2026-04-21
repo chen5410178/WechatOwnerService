@@ -3,12 +3,12 @@
 
 		<view class="bg-white money-info text-center">
 			<view class="money-black"></view>
-			<view class="money-title">{{ $t('orderAmount') }}</view>
+			<view class="money-title">{{ $t('cashier.orderAmount') }}</view>
 			<view class="money-value">{{money}}</view>
 		</view>
 
 		<view class="padding-sm">
-			<view class="block__title">{{ $t('useIntegral') }}</view>
+			<view class="block__title">{{ $t('cashier.useIntegral') }}</view>
 			<checkbox-group @change="_checkIntegral" >
 				<view class="cu-list menu">
 					<view class="cu-item ">
@@ -22,19 +22,19 @@
 							</view>
 						</view>
 						<view class="action">
-							<text class="text-grey text-sm">{{integral}}{{ $t('integralUnit') }}</text>
+							<text class="text-grey text-sm">{{integral}}{{ $t('cashier.integralUnit') }}</text>
 						</view>
 					</view>
 				</view>
 			</checkbox-group>
-			<view class="text-right" @click="_viewGetIntegral()">{{ $t('howGetIntegral') }}</view>
+			<view class="text-right" @click="_viewGetIntegral()">{{ $t('cashier.howGetIntegral') }}</view>
 		</view>
 
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-if="!appId">
-			<button disabled="disabled" class="cu-btn bg-blue shadow-blur round lg">{{ $t('confirmPayment') }}</button>
+			<button disabled="disabled" class="cu-btn bg-blue shadow-blur round lg">{{ $t('cashier.confirmPayment') }}</button>
 		</view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-else>
-			<button @click="_submit" class="cu-btn bg-blue shadow-blur round lg" :disabled="banButton">{{ $t('confirmPayment') }}</button>
+			<button @click="_submit" class="cu-btn bg-blue shadow-blur round lg" :disabled="banButton">{{ $t('cashier.confirmPayment') }}</button>
 		</view>
 
 		<tips ref="tipRef"></tips>
@@ -191,7 +191,7 @@
 					},
 					fail: function(error) {
 						// 调用 wx.login 接口失败
-						console.log(this.$t('wxLoginFailed'));
+						console.log(this.$t('cashier.wxLoginFailed'));
 						console.log(error);
 					}
 				});
@@ -200,7 +200,7 @@
 				if (!this.appId) {
 					uni.showToast({
 						icon: 'none',
-						title: this.$t('paymentNotConfigured')
+						title: this.$t('cashier.paymentNotConfigured')
 					});
 					return;
 				}
@@ -243,8 +243,8 @@
 				this.money = this.money.toFixed(2);
 			},
 			_viewGetIntegral: function() {
-				let _content = this.$t('getIntegralTip');
-				this.$refs.tipRef.openTip(this.$t('howGetIntegral'), _content);
+				let _content = this.$t('cashier.getIntegralTip');
+				this.$refs.tipRef.openTip(this.$t('cashier.howGetIntegral'), _content);
 			}
 		}
 	}

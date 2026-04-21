@@ -4,14 +4,14 @@
 			<view class="ak_row_black">
 			</view>
 			<view class="ak_row_title">
-				<text>{{ $t('getParkingCoupon') }}</text>
+				<text>{{ $t('getParkingCoupon.getParkingCoupon') }}</text>
 			</view>
 
 			<view class="tips_block">
 			</view>
 
 			<view class='tips'>
-				<text>{{ $t('clickInputCarNum') }}</text>
+				<text>{{ $t('getParkingCoupon.clickInputCarNum') }}</text>
 			</view>
 			<view class="plate-input-body">
 				<view class="plate-input-content" @click="showCarNumberKeyboard">
@@ -53,14 +53,14 @@
 			<view class="plat-btn-black"></view>
 			<view class="cu-bar btn-group" style="margin-top: 30px;">
 				<button @click="_receiveParkingCoupon" :disabled="carNum.length< 7 || getSuccess"
-					class="cu-btn bg-green shadow-blur round lg">{{ $t('getNow') }}</button>
+					class="cu-btn bg-green shadow-blur round lg">{{ $t('getParkingCoupon.getNow') }}</button>
 			</view>
 
 			<view class="temp-remark">
-				<view>{{ $t('parkingCouponNote') }}</view>
-				<view>{{ $t('parkingCouponNote1') }}</view>
-				<view>{{ $t('parkingCouponNote2') }}</view>
-				<view>{{ $t('parkingCouponNote3') }}</view>
+				<view>{{ $t('getParkingCoupon.parkingCouponNote') }}</view>
+				<view>{{ $t('getParkingCoupon.parkingCouponNote1') }}</view>
+				<view>{{ $t('getParkingCoupon.parkingCouponNote2') }}</view>
+				<view>{{ $t('getParkingCoupon.parkingCouponNote3') }}</view>
 			</view>
 		</view>
 
@@ -166,7 +166,7 @@
 				if(!this.carNum){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('noCarNum')
+						title: this.$t('getParkingCoupon.noCarNum')
 					});
 					return ;
 				}
@@ -186,7 +186,7 @@
 					}
 					uni.showToast({
 						icon:'none',
-						title: this.$t('parkingCouponSuccess'),
+						title: this.$t('getParkingCoupon.parkingCouponSuccess'),
 						duration:10000
 					})
 					_that.getSuccess = true;

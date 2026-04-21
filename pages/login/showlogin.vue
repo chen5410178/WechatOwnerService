@@ -7,7 +7,7 @@
 						<image class="cu-avatar xl round" :src="img" mode="widthFix"></image>
 					</view>
 					<view class="userinfo-nickname text-center margin-top">
-						<text>{{ $t('login.sorryLoginRequired') }}</text>
+						<text>{{ $t('showlogin.sorryLoginRequired') }}</text>
 					</view>
 				</block>
 

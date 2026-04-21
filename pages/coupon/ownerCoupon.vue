@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="block__title" v-if="couponList.length > 0">{{ $t('availableCoupon') }}</view>
-		<view class="block__title" v-if="couponList.length < 1">{{ $t('useMallCoupon') }}</view>
+		<view class="block__title" v-if="couponList.length > 0">{{ $t('ownerCoupon.availableCoupon') }}</view>
+		<view class="block__title" v-if="couponList.length < 1">{{ $t('ownerCoupon.useMallCoupon') }}</view>
 		<!-- 费用项 -->
 		<uni-collapse @change="change" class="margin-top fee-content">
 			<uni-tr v-show="false">
@@ -11,8 +11,8 @@
 			<view class="tl-section">
 				<checkbox-group class="block" @change="checkboxChange">
 					<view class="cu-form-group" v-for="(coupon,index) in couponList">
-						<view class="title">{{coupon.couponName}} {{ $t('couponValue') }}：{{coupon.actualPrice}}{{ $t('yuan') }}
-							{{ $t('couponTime') }}：{{coupon.actualPrice}}
+						<view class="title">{{coupon.couponName}} {{ $t('ownerCoupon.couponValue') }}：{{coupon.actualPrice}}{{ $t('ownerCoupon.yuan') }}
+							{{ $t('ownerCoupon.couponTime') }}：{{coupon.actualPrice}}
 						</view>
 						<checkbox class='round' :class="couponList[index].checked?'checked':''"
 							:checked="couponList[index].checked?true:false" :value="coupon.couponId"></checkbox>
@@ -24,10 +24,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{couponAmount}}{{ $t('yuan') }}
+				{{ $t('ownerCoupon.total') }}：{{couponAmount}}{{ $t('ownerCoupon.yuan') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_navigateBack()">{{ $t('confirm') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_navigateBack()">{{ $t('ownerCoupon.confirm') }}</button>
 			</view>
 		</view>
 	</view>

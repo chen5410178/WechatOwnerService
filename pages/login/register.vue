@@ -1,21 +1,21 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('login.registerInfo') }}</view>
+		<view class="block__title">{{ $t('register.registerInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.phone') }}</view>
-			<input v-model="link" required label="手机号" clearable :placeholder="$t('login.pleaseInputPhone')"></input>
+			<view class="title">{{ $t('register.phone') }}</view>
+			<input v-model="link" required label="手机号" clearable :placeholder="$t('register.pleaseInputPhone')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.password') }}</view>
-			<input v-model="password" required type="password" label="密码" clearable :placeholder="$t('login.pleaseInputPassword')"></input>
+			<view class="title">{{ $t('register.password') }}</view>
+			<input v-model="password" required type="password" label="密码" clearable :placeholder="$t('register.pleaseInputPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.confirmPassword') }}</view>
-			<input v-model="rePassword" required type="password" label="确认密码" clearable :placeholder="$t('login.pleaseConfirmPassword')"></input>
+			<view class="title">{{ $t('register.confirmPassword') }}</view>
+			<input v-model="rePassword" required type="password" label="确认密码" clearable :placeholder="$t('register.pleaseConfirmPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.verificationCode') }}</view>
-			<input v-model="msgCode" :placeholder="$t('login.pleaseInputCode')" name="input"></input>
+			<view class="title">{{ $t('register.verificationCode') }}</view>
+			<input v-model="msgCode" :placeholder="$t('register.pleaseInputCode')" name="input"></input>
 			<button class='cu-btn bg-green shadow' :disabled="btnDisabled" @click="_sendMsgCode()">{{btnValue}}</button>
 		</view>
 		<view class="padding flex justify-start">
@@ -23,12 +23,12 @@
 				<checkbox style="transform: scale(0.7)" value="readme"></checkbox>
 			</checkbox-group>
 			<view class="read-me">
-				<text class="margin-left-xs">{{ $t('login.iHaveRead') }}</text>
-				<text class="user-read" @click="_readMe">{{ $t('login.userNotice') }}</text>
+				<text class="margin-left-xs">{{ $t('register.iHaveRead') }}</text>
+				<text class="user-read" @click="_readMe">{{ $t('register.userNotice') }}</text>
 			</view>
 		</view>
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green   lg" @click="_doRegister()">{{ $t('login.submit') }}</button>
+			<button class="cu-btn bg-green   lg" @click="_doRegister()">{{ $t('register.submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -56,7 +56,7 @@
 		},
 		computed: {
 			btnValue() {
-				return this.$t('login.verificationCode');
+				return this.$t('register.verificationCode');
 			}
 		},
 		/**
@@ -90,7 +90,7 @@
 				}
 				if(!this.readme){
 					uni.showToast({
-						title: this.$t('login.pleaseReadNotice'),
+						title: this.$t('register.pleaseReadNotice'),
 						icon: 'none',
 						duration: 2000
 					})
@@ -98,11 +98,11 @@
 				}
 				let msg = "";
 				if (this.password == '' || this.password != this.rePassword) {
-					msg = this.$t('login.passwordNotMatch');
+					msg = this.$t('register.passwordNotMatch');
 				} else if (obj.link == "") {
-					msg = this.$t('login.pleaseInputPhone');
+					msg = this.$t('register.pleaseInputPhone');
 				} else if (obj.msgCode == "") {
-					msg = this.$t('login.pleaseInputCode');
+					msg = this.$t('register.pleaseInputCode');
 				}
 				if (msg != "") {
 					uni.showToast({

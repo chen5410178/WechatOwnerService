@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('myParkingCoupon') }}</view>
+		<view class="block__title">{{ $t('tempCarCoupon.myParkingCoupon') }}</view>
 		<!-- 费用项 -->
 		<uni-collapse @change="change" class="margin-top fee-content">
 			<uni-tr v-show="false">
@@ -12,10 +12,10 @@
 					<view class="cu-form-group" v-for="(coupon,index) in coupons">
 						<view class="title">
 							<text class="ellip">{{coupon.couponName}}-</text>
-							<text v-if="coupon.typeCd == '1001'">{{coupon.value}}{{ $t('minutes') }}</text>
-							<text v-if="coupon.typeCd == '2002'">{{coupon.value}}{{ $t('yuan') }}</text>
-							<text v-if="coupon.typeCd == '3003'">{{coupon.value}}{{ $t('discount') }}</text>
-							<text v-if="coupon.typeCd == '4004'">{{ $t('free') }}</text>
+							<text v-if="coupon.typeCd == '1001'">{{coupon.value}}{{ $t('tempCarCoupon.minutes') }}</text>
+							<text v-if="coupon.typeCd == '2002'">{{coupon.value}}{{ $t('tempCarCoupon.yuan') }}</text>
+							<text v-if="coupon.typeCd == '3003'">{{coupon.value}}{{ $t('tempCarCoupon.discount') }}</text>
+							<text v-if="coupon.typeCd == '4004'">{{ $t('tempCarCoupon.free') }}</text>
 						</view>
 						<checkbox class='round'  :class="coupons[index].checked?'checked':''"
 							:checked="coupons[index].checked?true:false" :value="coupon.pccId"></checkbox>
@@ -26,7 +26,7 @@
 
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total2') }}：{{selectCoupons.length}}{{ $t('pcs') }}
+				{{ $t('tempCarCoupon.total2') }}：{{selectCoupons.length}}{{ $t('pcs') }}
 			</view>
 			<view class="btn-group">
 				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_selectCouponBack()">{{ $t('confirm') }}</button>

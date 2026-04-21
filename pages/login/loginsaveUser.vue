@@ -7,37 +7,37 @@
 
 		<view class="margin-top padding-left padding-right radius" v-if="!loginByPhone">
 			<view class="cu-form-group margin-top">
-				<view class="title">{{ $t('login.username') }}</view>
-				<input :placeholder="$t('login.inputUsername')" name="input" v-model="username"></input>
+				<view class="title">{{ $t('loginsaveUser.username') }}</view>
+				<input :placeholder="$t('loginsaveUser.inputUsername')" name="input" v-model="username"></input>
 			</view>
 			<view class="cu-form-group border-bottom">
-				<view class="title">{{ $t('login.password') }}</view>
-				<input :placeholder="$t('login.inputPassword')" type="password" name="input" v-model="password"></input>
+				<view class="title">{{ $t('loginsaveUser.password') }}</view>
+				<input :placeholder="$t('loginsaveUser.inputPassword')" type="password" name="input" v-model="password"></input>
 			</view>
 		</view>
 		<view class="margin-top padding-left padding-right radius" v-else>
 			<view class="cu-form-group margin-top">
-				<view class="title">{{ $t('login.phoneNumber') }}</view>
-				<input :placeholder="$t('login.inputPhone')" name="input" v-model="username"></input>
+				<view class="title">{{ $t('loginsaveUser.phoneNumber') }}</view>
+				<input :placeholder="$t('loginsaveUser.inputPhone')" name="input" v-model="username"></input>
 			</view>
 			<view class="cu-form-group border-bottom">
-				<view class="title">{{ $t('login.verificationCode') }}</view>
-				<input v-model="password" :placeholder="$t('login.inputSmsCode')" name="input"></input>
+				<view class="title">{{ $t('loginsaveUser.verificationCode') }}</view>
+				<input v-model="password" :placeholder="$t('loginsaveUser.inputSmsCode')" name="input"></input>
 				<button class='cu-btn bg-green shadow' :disabled="btnDisabled"
 					@click="sendMsgCode()">{{btnValue}}</button>
 			</view>
 		</view>
 
 		<view class="padding-left padding-right padding-top flex flex-direction margin-top">
-			<button class="cu-btn bg-green lg" @click="_doLogin()">{{ $t('login.loginBtn') }}</button>
-			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_doRegister()">{{ $t('login.registerBtn') }}</button>
+			<button class="cu-btn bg-green lg" @click="_doLogin()">{{ $t('loginsaveUser.loginBtn') }}</button>
+			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_doRegister()">{{ $t('loginsaveUser.registerBtn') }}</button>
 		</view>
 		<view class="padding-right flex justify-end">
 			<checkbox-group @change="_changeSaveLogin">
 				<checkbox style="transform: scale(0.7)" :checked="loginInfo == 'ON'" ></checkbox>
 			</checkbox-group>
 			<view class="read-me">
-				<text class="margin-left-xs">{{ $t('login.rememberPassword') }}</text>
+				<text class="margin-left-xs">{{ $t('loginsaveUser.rememberPassword') }}</text>
 			</view>
 		</view>
 
@@ -82,8 +82,8 @@
 				loginByPhone: false,
 				msgCode: '',
 				btnDisabled: false,
-				btnValue: this.$t('login.verificationCode'),
-				phoneLoginName: this.$t('login.verificationCodeLogin'),
+				btnValue: this.$t('loginsaveUser.verificationCode'),
+				phoneLoginName: this.$t('loginsaveUser.verificationCodeLogin'),
 				loginInfo:'OFF'
 
 			};
@@ -119,14 +119,14 @@
 				let _that = this;
 				if (this.username == '') {
 					uni.showToast({
-						title: this.$t('login.pleaseInputUsername'),
+						title: this.$t('loginsaveUser.pleaseInputUsername'),
 						icon: "none"
 					});
 					return;
 				}
 				if (this.password == '') {
 					uni.showToast({
-						title: this.$t('login.pleaseInputPassword'),
+						title: this.$t('loginsaveUser.pleaseInputPassword'),
 						icon: "none"
 					});
 					return;

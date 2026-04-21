@@ -1,52 +1,52 @@
 <template>
 	<view>
-		<view  class="block__title">{{ $t('index.houseAuth') }}</view>
+		<view  class="block__title">{{ $t('authOwnerLog.houseAuth') }}</view>
 		<view v-if="appUsers && appUsers.length>0">
 			<view v-for="(item,index) in appUsers" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding padding-bottom-xs">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
 					<view>{{item.roomName || '-'}}</view>
-					<view class="text-red" v-if="item.state == '10000'">{{ $t('index.reviewing') }}</view>
-					<view class="text-red" v-else-if="item.state == '12000'">{{ $t('index.authCompleted') }}</view>
-					<view class="text-red" v-else-if="item.state == '13000'">{{ $t('index.authFailed') }}</view>
-					<view class="text-red" v-else>{{ $t('index.unknownStatus') }}</view>
+					<view class="text-red" v-if="item.state == '10000'">{{ $t('authOwnerLog.reviewing') }}</view>
+					<view class="text-red" v-else-if="item.state == '12000'">{{ $t('authOwnerLog.authCompleted') }}</view>
+					<view class="text-red" v-else-if="item.state == '13000'">{{ $t('authOwnerLog.authFailed') }}</view>
+					<view class="text-red" v-else>{{ $t('authOwnerLog.unknownStatus') }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('index.reviewRemark') }}</view>
-					<view class="text-gray">{{item.remark || $t('index.none')}}</view>
+					<view class="text-gray">{{ $t('authOwnerLog.reviewRemark') }}</view>
+					<view class="text-gray">{{item.remark || $t('authOwnerLog.none')}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('index.personName') }}</view>
+					<view class="text-gray">{{ $t('authOwnerLog.personName') }}</view>
 					<view class="text-gray">{{item.appUserName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('index.personType') }}</view>
-					<view class="text-gray" v-if="item.ownerTypeCd == '1001'">{{ $t('index.owner') }}</view>
-					<view class="text-gray" v-else-if="item.ownerTypeCd == '1002'">{{ $t('index.familyMember') }}</view>
-					<view class="text-gray" v-else-if="item.ownerTypeCd == '1003'">{{ $t('index.tenant') }}</view>
-					<view class="text-gray" v-else>{{ $t('index.other') }}</view>
+					<view class="text-gray">{{ $t('authOwnerLog.personType') }}</view>
+					<view class="text-gray" v-if="item.ownerTypeCd == '1001'">{{ $t('authOwnerLog.owner') }}</view>
+					<view class="text-gray" v-else-if="item.ownerTypeCd == '1002'">{{ $t('authOwnerLog.familyMember') }}</view>
+					<view class="text-gray" v-else-if="item.ownerTypeCd == '1003'">{{ $t('authOwnerLog.tenant') }}</view>
+					<view class="text-gray" v-else>{{ $t('authOwnerLog.other') }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('index.phoneNumber') }}</view>
+					<view class="text-gray">{{ $t('authOwnerLog.phoneNumber') }}</view>
 					<view class="text-gray">{{item.link}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('index.applyTime') }}</view>
+					<view class="text-gray">{{ $t('authOwnerLog.applyTime') }}</view>
 					<view class="text-gray">{{item.createTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('index.community') }}</view>
+					<view class="text-gray">{{ $t('authOwnerLog.community') }}</view>
 					<view class="text-gray">{{item.communityName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between" v-if="item.state == '10000'">
 					<view class="text-gray"></view>
 					<view class="text-gray">
-						<button class="cu-btn bg-red margin-tb-sm sm" @click="_deleteAuthOwner(item)">{{ $t('index.deleteAuth') }}</button>
+						<button class="cu-btn bg-red margin-tb-sm sm" @click="_deleteAuthOwner(item)">{{ $t('authOwnerLog.deleteAuth') }}</button>
 					</view>
 				</view>
 			</view>
 		</view>
 		<view  class="text-center to-auth" >
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toAuthOwner()">{{ $t('index.goToAuth') }}</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toAuthOwner()">{{ $t('authOwnerLog.goToAuth') }}</button>
 		</view>
 
 	</view>

@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('index.houseInfo') }}</view>
+		<view class="block__title">{{ $t('authOwner.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('index.community') }}</view>
+			<view class="title">{{ $t('authOwner.community') }}</view>
 			<picker bindchange="PickerChange" :value="communityIndex" :range="communitys" :range-key="'name'"
 				@change="communityChange">
 				<view class="picker">
@@ -11,21 +11,21 @@
 			</picker>
 		</view>
 		<view class="cu-form-group arrow" v-if="communityId" @tap="chooseRoom">
-			<view class="title">{{ $t('index.house') }}</view>
-			<input readonly v-model="roomName" class="text-right" :placeholder="$t('index.selectHouse')"  icon="arrow"></input>
+			<view class="title">{{ $t('authOwner.house') }}</view>
+			<input readonly v-model="roomName" class="text-right" :placeholder="$t('authOwner.selectHouse')"  icon="arrow"></input>
 			<text class='cuIcon-right'></text>
 		</view>
-		<view class="block__title">{{ $t('index.personInfo') }}</view>
+		<view class="block__title">{{ $t('authOwner.personInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('index.personName') }}</view>
-			<input v-model="ownerName" :placeholder="$t('index.inputName')" class="text-right"></input>
+			<view class="title">{{ $t('authOwner.personName') }}</view>
+			<input v-model="ownerName" :placeholder="$t('authOwner.inputName')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('index.phoneNumber') }}</view>
-			<input v-model="link" disabled="disabled" :placeholder="$t('index.inputPhone')" class="text-right"></input>
+			<view class="title">{{ $t('authOwner.phoneNumber') }}</view>
+			<input v-model="link" disabled="disabled" :placeholder="$t('authOwner.inputPhone')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('index.personType') }}</view>
+			<view class="title">{{ $t('authOwner.personType') }}</view>
 			<picker :value="typeCdIndex" :range="typeCds" range-key="name" @change="_changeTypeCd">
 				<view class="picker">
 					{{typeCds[typeCdIndex].name}}
@@ -34,7 +34,7 @@
 		</view>
 		
 		<view class="flex flex-direction margin-top margin-bottom">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_doAuthOwner()">{{ $t('index.submit') }}</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_doAuthOwner()">{{ $t('authOwner.submit') }}</button>
 		</view>
 
 	</view>
@@ -55,16 +55,16 @@
 				ownerName:'',
 				communitys: [{
 					communityId: '',
-					name: this.$t('index.selectCommunity')
+					name: this.$t('authOwner.selectCommunity')
 				}],
 				"typeCds": [
 					{
 						value: '1001',
-						name: this.$t('index.owner')
+						name: this.$t('authOwner.owner')
 					},
 					{
 						value: '1002',
-						name: this.$t('index.familyMember')
+						name: this.$t('authOwner.familyMember')
 					}
 				],
 				"typeCdIndex": 0,

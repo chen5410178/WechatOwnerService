@@ -1,43 +1,43 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('login.selectCommunity') }}</view>
+		<view class="block__title">{{ $t('registerByWechat.selectCommunity') }}</view>
 
 		<view class="cu-form-group arrow">
-			<view class="title">{{ $t('login.cityDistrict') }}</view>
+			<view class="title">{{ $t('registerByWechat.cityDistrict') }}</view>
 			<pickerAddress @change="change">{{areaName}}</pickerAddress>
 			<text class='cuIcon-right'></text>
 		</view>
 
 		<view class="cu-form-group" @tap="chooseCommunity">
-			<view class="title">{{ $t('login.communityName') }}</view>
-			<input v-model="communityName" required readonly :label="$t('login.communityName')" :placeholder="$t('login.selectCommunityPlaceholder')" name="communityName" icon="arrow"></input>
+			<view class="title">{{ $t('registerByWechat.communityName') }}</view>
+			<input v-model="communityName" required readonly :label="$t('registerByWechat.communityName')" :placeholder="$t('registerByWechat.selectCommunityPlaceholder')" name="communityName" icon="arrow"></input>
 			<text class='cuIcon-right'></text>
 		</view>
 
-		<view class="block__title">{{ $t('login.ownerInfo') }}</view>
+		<view class="block__title">{{ $t('registerByWechat.ownerInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.name') }}</view>
-			<input v-model="appUserName" required :label="$t('login.name')" clearable :placeholder="$t('login.inputName')" name="appUserName"></input>
+			<view class="title">{{ $t('registerByWechat.name') }}</view>
+			<input v-model="appUserName" required :label="$t('registerByWechat.name')" clearable :placeholder="$t('registerByWechat.inputName')" name="appUserName"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.idCard') }}</view>
-			<input v-model="idCard" required :label="$t('login.idCard')" clearable :placeholder="$t('login.inputIdCard')" name="idCard"></input>
+			<view class="title">{{ $t('registerByWechat.idCard') }}</view>
+			<input v-model="idCard" required :label="$t('registerByWechat.idCard')" clearable :placeholder="$t('registerByWechat.inputIdCard')" name="idCard"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.password') }}</view>
-			<input v-model="password" required type="password" :label="$t('login.password')" clearable :placeholder="$t('login.inputPassword')"></input>
+			<view class="title">{{ $t('registerByWechat.password') }}</view>
+			<input v-model="password" required type="password" :label="$t('registerByWechat.password')" clearable :placeholder="$t('registerByWechat.inputPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.confirmPassword') }}</view>
-			<input v-model="rePassword" required type="password" :label="$t('login.confirmPassword')" clearable :placeholder="$t('login.inputConfirmPassword')"></input>
+			<view class="title">{{ $t('registerByWechat.confirmPassword') }}</view>
+			<input v-model="rePassword" required type="password" :label="$t('registerByWechat.confirmPassword')" clearable :placeholder="$t('registerByWechat.inputConfirmPassword')"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('login.phoneNumber') }}</view>
-			<input v-model="link" required :label="$t('login.phoneNumber')" disabled="disabled" clearable :placeholder="$t('login.inputPhone')"></input>
-			<button  class="cu-btn bg-green" open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">{{ $t('login.getPhoneNumber') }}</button>
+			<view class="title">{{ $t('registerByWechat.phoneNumber') }}</view>
+			<input v-model="link" required :label="$t('registerByWechat.phoneNumber')" disabled="disabled" clearable :placeholder="$t('registerByWechat.inputPhone')"></input>
+			<button  class="cu-btn bg-green" open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">{{ $t('registerByWechat.getPhoneNumber') }}</button>
 		</view>
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green   lg" @click="_doRegister()">{{ $t('login.bind') }}</button>
+			<button class="cu-btn bg-green   lg" @click="_doRegister()">{{ $t('registerByWechat.bind') }}</button>
 		</view>
 	</view>
 </template>
@@ -56,7 +56,7 @@
 			return {
 				title: 'Hello',
 				areaCode: '',
-				areaName: this.$t('login.selectCommunityPlaceholder'),
+				areaName: this.$t('registerByWechat.selectCommunityPlaceholder'),
 				communityName: '',
 				communityId: '',
 				appUserName: '',
@@ -65,7 +65,7 @@
 				second: 60,
 				msgCode: '',
 				areaShow: false,
-				btnValue: this.$t('login.verificationCode'),
+				btnValue: this.$t('registerByWechat.verificationCode'),
 				btnDisabled: false,
 				password: '',
 				rePassword: '',
@@ -134,7 +134,7 @@
 			onGetPhoneNumber(e) {
 				if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
 					uni.showToast({
-						title: this.$t('login.phoneNotAuthorized'),
+						title: this.$t('registerByWechat.phoneNotAuthorized'),
 						icon: "none"
 					});
 					return;
@@ -181,9 +181,9 @@
 				} else if (obj.communityName == "") {
 					msg = "请填写小区名称";
 				} else if (obj.appUserName == "") {
-					msg = this.$t('login.pleaseInputOwnerName');
+					msg = this.$t('registerByWechat.pleaseInputOwnerName');
 				} else if (obj.link == "") {
-					msg = this.$t('login.pleaseInputPhone');
+					msg = this.$t('registerByWechat.pleaseInputPhone');
 				}
 				if (msg != "") {
 					uni.showToast({
@@ -220,7 +220,7 @@
 
 				if (this.areaCode == '' || this.areaCode == undefined) {
 					uni.showToast({
-						title: this.$t('login.pleaseSelectAreaFirst'),
+						title: this.$t('registerByWechat.pleaseSelectAreaFirst'),
 						icon: 'none'
 					});
 					return;

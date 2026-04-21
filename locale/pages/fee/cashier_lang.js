@@ -76,7 +76,14 @@ export default {
       roomIdRequired: '请选择房屋',
       communityIdRequired: '小区不能为空',
       noFeeType: '暂无费用类型',
-      loadFailed: '加载失败'
+      loadFailed: '加载失败',
+      orderAmount: '订单金额',
+      useIntegral: '使用积分',
+      integralUnit: '积分',
+      howGetIntegral: '如何获取积分',
+      confirmPayment: '确认支付',
+      paymentNotConfigured: '支付未配置',
+      getIntegralTip: '积分获取说明'
     }
   },
   'en': {
@@ -156,7 +163,14 @@ export default {
       roomIdRequired: 'Please select room',
       communityIdRequired: 'Community cannot be empty',
       noFeeType: 'No fee type',
-      loadFailed: 'Load failed'
+      loadFailed: 'Load failed',
+      orderAmount: 'Order Amount',
+      useIntegral: 'Use Points',
+      integralUnit: 'points',
+      howGetIntegral: 'How to get points',
+      confirmPayment: 'Confirm Payment',
+      paymentNotConfigured: 'Payment not configured',
+      getIntegralTip: 'Points acquisition instructions'
     }
   },
   'zh-TW': {
@@ -236,7 +250,14 @@ export default {
       roomIdRequired: '請選擇房屋',
       communityIdRequired: '小區不能為空',
       noFeeType: '暫無費用類型',
-      loadFailed: '載入失敗'
+      loadFailed: '載入失敗',
+      orderAmount: '訂單金額',
+      useIntegral: '使用積分',
+      integralUnit: '積分',
+      howGetIntegral: '如何獲取積分',
+      confirmPayment: '確認支付',
+      paymentNotConfigured: '支付未配置',
+      getIntegralTip: '積分獲取說明'
     }
   }
 }

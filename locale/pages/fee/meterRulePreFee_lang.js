@@ -10,7 +10,21 @@ export default {
       agreeRule: '我已阅读并同意此规则',
       submit: '确认预存',
       submitSuccess: '提交成功',
-      submitFailed: '提交失败'
+       submitFailed: '提交失败',
+       houseInfo: '房屋信息',
+       communityName: '小区名称',
+       room: '房间',
+       builtUpArea: '建筑面积',
+       sqm: '㎡',
+       feeInfo: '费用信息',
+       feeType: '费用类型',
+       selectFeeType: '请选择费用类型',
+       rechargeAmount: '充值金额',
+       inputRechargeAmount: '请输入充值金额',
+       amount: '金额',
+       total: '合计',
+       yuanUnit: '元',
+       payNow: '立即支付'
     }
   },
   'en': {
@@ -24,7 +38,21 @@ export default {
       agreeRule: 'I have read and agree to this rule',
       submit: 'Confirm Pre-store',
       submitSuccess: 'Submit Success',
-      submitFailed: 'Submit Failed'
+      submitFailed: 'Submit Failed',
+      houseInfo: 'House Information',
+      communityName: 'Community Name',
+      room: 'Room',
+      builtUpArea: 'Built-up Area',
+      sqm: '㎡',
+      feeInfo: 'Fee Information',
+      feeType: 'Fee Type',
+      selectFeeType: 'Please select fee type',
+      rechargeAmount: 'Recharge Amount',
+      inputRechargeAmount: 'Please enter recharge amount',
+      amount: 'Amount',
+      total: 'Total',
+      yuanUnit: 'yuan',
+      payNow: 'Pay Now'
     }
   },
   'zh-TW': {
@@ -38,7 +66,21 @@ export default {
       agreeRule: '我已閱讀並同意此規則',
       submit: '確認預存',
       submitSuccess: '提交成功',
-      submitFailed: '提交失敗'
+      submitFailed: '提交失敗',
+      houseInfo: '房屋信息',
+      communityName: '小區名稱',
+      room: '房間',
+      builtUpArea: '建築面積',
+      sqm: '㎡',
+      feeInfo: '費用信息',
+      feeType: '費用類型',
+      selectFeeType: '請選擇費用類型',
+      rechargeAmount: '充值金額',
+      inputRechargeAmount: '請輸入充值金額',
+      amount: '金額',
+      total: '合計',
+      yuanUnit: '元',
+      payNow: '立即支付'
     }
   }
 }

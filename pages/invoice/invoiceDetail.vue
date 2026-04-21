@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('invoiceDetail') }}</view>
+		<view class="block__title">{{ $t('invoiceDetail.invoiceDetail') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('id') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.id') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{applyId}}</text>
@@ -14,16 +14,16 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('invoiceType') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.invoiceType') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{invoiceType == '1001'?$t('personal'):$t('enterprise')}}</text>
+					<text class="text-grey text-sm">{{invoiceType == '1001'?$t('invoiceDetail.personal'):$t('invoiceDetail.enterprise')}}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('ownerName') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.ownerName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{ownerName}}</text>
@@ -32,7 +32,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('applicant') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.applicant') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{createUserName}}({{applyTel}})</text>
@@ -41,7 +41,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('invoiceTitle') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.invoiceTitle') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{invoiceName}}</text>
@@ -50,7 +50,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('taxNo') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.taxNo') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{invoiceNum}}</text>
@@ -59,7 +59,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('addressPhone') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.addressPhone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{invoiceAddress}}</text>
@@ -68,7 +68,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('applyAmount') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.applyAmount') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{invoiceAmount}}</text>
@@ -77,7 +77,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('auditStatus') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.auditStatus') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{stateName}}</text>
@@ -86,7 +86,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('applyTime') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.applyTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{createTime}}</text>
@@ -95,27 +95,27 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('invoiceNo') }}</text>
+					<text class="text-grey">{{ $t('invoiceDetail.invoiceNo') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{invoiceCode || $t('notUploaded')}}</text>
+					<text class="text-grey text-sm">{{invoiceCode || $t('invoiceDetail.notUploaded')}}</text>
 				</view>
 			</view>
 		</view>
 
 		<view class="cu-timeline margin-top" v-if="events && events.length >0">
-			<view class="cu-time">{{ $t('auditRecord') }}</view>
+			<view class="cu-time">{{ $t('invoiceDetail.auditRecord') }}</view>
 			<view class="cu-item " v-for="(item,index) in events" :key="index">
 				<view class="bg-cyan content">
 					<text>{{item.createUserName}} </text> {{item.createTime}} {{item.eventTypeName}}
 				</view>
 				<view class="bg-cyan content">
-					<text>{{ $t('handleOpinion') }}：</text> {{item.remark}}
+					<text>{{ $t('invoiceDetail.handleOpinion') }}：</text> {{item.remark}}
 				</view>
 			</view>
 		</view>
 		<view v-if="urls && urls.length >0">
-			<view class="block__title">{{ $t('invoiceImage') }}</view>
+			<view class="block__title">{{ $t('invoiceDetail.invoiceImage') }}</view>
 			<view v-for="(item,index) in urls" :key="index">
 				<image :src="item" class="padding-lr" style="width: 100%;"></image>
 			</view>

@@ -1,21 +1,21 @@
 <template>
 	<view>
 		<view v-if="oiId">
-			<view class="block__title">{{ $t('invoiceTitle') }}</view>
+			<view class="block__title">{{ $t('addInvoiceApply.invoiceTitle') }}</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('invoiceType') }}</view>
-				<view><text>{{invoiceType=='1001'?$t('personal'):$t('company')}}</text></view>
+				<view class="title">{{ $t('addInvoiceApply.invoiceType') }}</view>
+				<view><text>{{invoiceType=='1001'?$t('addInvoiceApply.personal'):$t('addInvoiceApply.company')}}</text></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('invoiceName') }}</view>
+				<view class="title">{{ $t('addInvoiceApply.invoiceName') }}</view>
 				<view><text>{{invoiceName}}</text></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('taxNo') }}</view>
+				<view class="title">{{ $t('addInvoiceApply.taxNo') }}</view>
 				<view><text>{{invoiceNum}}</text></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('addressPhone') }}</view>
+				<view class="title">{{ $t('addInvoiceApply.addressPhone') }}</view>
 				<view><text>{{invoiceAddress}}</text></view>
 			</view>
 
@@ -34,12 +34,12 @@
 										<view class="text-cut" style="width:220px">{{item.feeName || '-'}}</view>
 									</view>
 									<view class="text-gray text-sm">
-										<text class="margin-right-xs">{{item.startTime}} {{ $t('to') }} {{item.endTime}}</text>
+										<text class="margin-right-xs">{{item.startTime}} {{ $t('addInvoiceApply.to') }} {{item.endTime}}</text>
 									</view>
 								</view>
 							</view>
 							<view class="action">
-								<text class="text-grey text-sm">{{ $t('amount') }}:￥{{item.receivedAmount}}</text>
+								<text class="text-grey text-sm">{{ $t('addInvoiceApply.amount') }}:￥{{item.receivedAmount}}</text>
 							</view>
 						</view>
 					</view>
@@ -55,12 +55,12 @@
 
 				</view>
 				<view class="btn-group">
-					<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_submitInvoice()">{{ $t('submitOrder') }}</button>
+					<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_submitInvoice()">{{ $t('addInvoiceApply.submitOrder') }}</button>
 				</view>
 			</view>
 		</view>
 		<view v-else class="flex flex-direction padding">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toSettings()">{{ $t('setInvoiceTitle') }}</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_toSettings()">{{ $t('addInvoiceApply.setInvoiceTitle') }}</button>
 		</view>
 	</view>
 </template>
@@ -100,7 +100,7 @@
 			if (!_ownerId) {
 				uni.showToast({
 					icon: 'none',
-					title: this.$t('ownerNotExist'),
+					title: this.$t('addInvoiceApply.ownerNotExist'),
 				})
 				return;
 			}
@@ -163,7 +163,7 @@
 				if (!_that.detailIds || _that.detailIds.length < 1) {
 					uni.showToast({
 						icon: 'none',
-						title: this.$t('noFeeSelected')
+						title: this.$t('addInvoiceApply.noFeeSelected')
 					});
 					return;
 				}

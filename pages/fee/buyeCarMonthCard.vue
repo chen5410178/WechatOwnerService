@@ -1,22 +1,22 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('buyeCarMonthCard') }}</view>
+		<view class="block__title">{{ $t('buyeCarMonthCard.buyeCarMonthCard') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('car') }}</text>
+					<text class="text-grey">{{ $t('buyeCarMonthCard.car') }}</text>
 				</view>
 				<view class="action">
 					<picker bindchange="PickerChange" :value="carIndex" :range="cars" :range-key="'carNum'" @change="carChange">
 						<view class="picker ">
-							{{carIndex == -1? $t('selectFirst'): cars[carIndex].carNum}}
+							{{carIndex == -1? $t('buyeCarMonthCard.selectFirst'): cars[carIndex].carNum}}
 						</view>
 					</picker>
 				</view>
 			</view>
 			<view class="cu-item" v-if="carNum">
 				<view class="content">
-					<text class="text-grey">{{ $t('expireTime') }}</text>
+					<text class="text-grey">{{ $t('buyeCarMonthCard.expireTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{endTime}}</text>
@@ -24,19 +24,19 @@
 			</view>
 			<view class="cu-item" v-if="carNum">
 				<view class="content">
-					<text class="text-grey">{{ $t('selectMonthCard') }}</text>
+					<text class="text-grey">{{ $t('buyeCarMonthCard.selectMonthCard') }}</text>
 				</view>
 				<view class="action">
 					<picker bindchange="PickerChange" :value="cardIndex" :range="cards" :range-key="'cardName'" @change="cardChange">
 						<view class="picker">
-							{{cardIndex == -1? $t('selectFirst'): cards[cardIndex].cardName}}
+							{{cardIndex == -1? $t('buyeCarMonthCard.selectFirst'): cards[cardIndex].cardName}}
 						</view>
 					</picker>
 				</view>
 			</view>
 			<view class="cu-item" v-if="carNum">
 				<view class="content">
-					<text class="text-grey">{{ $t('payAmount') }}</text>
+					<text class="text-grey">{{ $t('buyeCarMonthCard.payAmount') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{amount}}</text>
@@ -47,10 +47,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{amount}}{{ $t('yuanUnit') }}
+				{{ $t('buyeCarMonthCard.total') }}：{{amount}}{{ $t('buyeCarMonthCard.yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('buyeCarMonthCard.submitOrder') }}</button>
 			</view>
 		</view>
 	</view>
@@ -126,7 +126,7 @@
 				if(!this.cardId){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('pleaseSelectMonthCard')
+						title: this.$t('buyeCarMonthCard.pleaseSelectMonthCard')
 					});
 					return ;
 				}
@@ -138,7 +138,7 @@
 					carId: this.carId,
 					carNum: this.carNum,
 					cardId: this.cardId,
-					feeName: this.$t('buyParkingMonthCard'),
+					feeName: this.$t('buyeCarMonthCard.buyParkingMonthCard'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 				};

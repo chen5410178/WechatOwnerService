@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">{{ $t('houseInfo') }}</view>
+			<view class="block__title">{{ $t('meterRulePreFee.houseInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('communityName') }}</text>
+						<text class="text-grey">{{ $t('meterRulePreFee.communityName') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{communityName}}</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('room') }}</text>
+						<text class="text-grey">{{ $t('meterRulePreFee.room') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{payerObjName}}</text>
@@ -21,38 +21,38 @@
 				</view>
 				<view class="cu-item" v-if="buildUpArea">
 					<view class="content">
-						<text class="text-grey">{{ $t('builtUpArea') }}</text>
+						<text class="text-grey">{{ $t('meterRulePreFee.builtUpArea') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{buildUpArea + $t('sqm')}}</text>
+						<text class="text-grey text-sm">{{buildUpArea + $t('meterRulePreFee.sqm')}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">{{ $t('feeInfo') }}</view>
+			<view class="block__title">{{ $t('meterRulePreFee.feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item arrow" v-if="feeTypes && feeTypes.length > 0">
 					<view class="content">
-						<text class="text-grey">{{ $t('feeType') }}</text>
+						<text class="text-grey">{{ $t('meterRulePreFee.feeType') }}</text>
 					</view>
 					<view class="action">
 						<picker :value="selectedFeeTypeIndex" :range="feeTypeNames" @change="onFeeTypeChange">
 							<view class="picker">
-								{{selectedFeeTypeName || $t('selectFeeType')}}
+								{{selectedFeeTypeName || $t('meterRulePreFee.selectFeeType')}}
 							</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedFeeType">
 					<view class="content">
-						<text class="text-grey">{{ $t('rechargeAmount') }}</text>
+						<text class="text-grey">{{ $t('meterRulePreFee.rechargeAmount') }}</text>
 					</view>
 					<view class="action">
-						<input v-model="amount" :placeholder="$t('inputRechargeAmount')" type="digit" class="text-right" @input="onAmountInput"></input>
+						<input v-model="amount" :placeholder="$t('meterRulePreFee.inputRechargeAmount')" type="digit" class="text-right" @input="onAmountInput"></input>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedFeeType && amount">
 					<view class="content">
-						<text class="text-grey">{{ $t('amount') }}</text>
+						<text class="text-grey">{{ $t('meterRulePreFee.amount') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-red text-lg">￥{{amount}}</text>
@@ -62,10 +62,10 @@
 		</scroll-view>
 		<view class="bg-white border flex justify-end" style="position: fixed;width: 100%;bottom: 0;" v-if="selectedFeeType && amount">
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{amount}}{{ $t('yuanUnit') }}
+				{{ $t('meterRulePreFee.total') }}：{{amount}}{{ $t('meterRulePreFee.yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('payNow') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('meterRulePreFee.payNow') }}</button>
 			</view>
 		</view>
 	</view>

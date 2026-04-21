@@ -48,7 +48,24 @@ export default {
       getPhoneNumber: '获取手机号',
       bind: '绑定',
       sorryLoginRequired: '非常抱歉，微信登录失败。请使用其他方式登录',
-      iWantToLogin: '我要登录'
+      iWantToLogin: '我要登录',
+      pleaseInputUsername: '请输入用户名',
+      pleaseInputPassword: '请输入密码',
+      pleaseInputPhone: '请输入手机号',
+      pleaseInputCode: '请输入验证码',
+      phone: '手机号',
+      passwordLogin: '密码登录',
+      codeLogin: '验证码登录',
+      registerInfo: '注册信息',
+      pleaseConfirmPassword: '请输入确认密码',
+      iHaveRead: '我已阅读',
+      userNotice: '《用户通知》',
+      submit: '提交',
+      passwordNotMatch: '密码不一致',
+      pleaseReadNotice: '请阅读用户通知',
+      phoneNotAuthorized: '手机号未授权',
+      pleaseInputOwnerName: '请输入业主名称',
+      pleaseSelectAreaFirst: '请先选择区域'
     }
   },
   'en': {
@@ -100,7 +117,24 @@ export default {
       getPhoneNumber: 'Get Phone Number',
       bind: 'Bind',
       sorryLoginRequired: 'Sorry, WeChat login failed. Please use other login methods',
-      iWantToLogin: 'I want to login'
+      iWantToLogin: 'I want to login',
+      pleaseInputUsername: 'Please enter username',
+      pleaseInputPassword: 'Please enter password',
+      pleaseInputPhone: 'Please enter phone number',
+      pleaseInputCode: 'Please enter verification code',
+      phone: 'Phone Number',
+      passwordLogin: 'Password Login',
+      codeLogin: 'Verification Code Login',
+      registerInfo: 'Registration Info',
+      pleaseConfirmPassword: 'Please enter confirm password',
+      iHaveRead: 'I have read',
+      userNotice: 'User Notice',
+      submit: 'Submit',
+      passwordNotMatch: 'Password not match',
+      pleaseReadNotice: 'Please read user notice',
+      phoneNotAuthorized: 'Phone not authorized',
+      pleaseInputOwnerName: 'Please enter owner name',
+      pleaseSelectAreaFirst: 'Please select area first'
     }
   },
   'zh-TW': {
@@ -152,7 +186,24 @@ export default {
       getPhoneNumber: '取得手機號',
       bind: '綁定',
       sorryLoginRequired: '非常抱歉，微信登入失敗。請使用其他方式登入',
-      iWantToLogin: '我要登入'
+      iWantToLogin: '我要登入',
+      pleaseInputUsername: '請輸入使用者名稱',
+      pleaseInputPassword: '請輸入密碼',
+      pleaseInputPhone: '請輸入手機號',
+      pleaseInputCode: '請輸入驗證碼',
+      phone: '手機號',
+      passwordLogin: '密碼登入',
+      codeLogin: '驗證碼登入',
+      registerInfo: '註冊資訊',
+      pleaseConfirmPassword: '請輸入確認密碼',
+      iHaveRead: '我已閱讀',
+      userNotice: '《用戶通知》',
+      submit: '提交',
+      passwordNotMatch: '密碼不一致',
+      pleaseReadNotice: '請閱讀用戶通知',
+      phoneNotAuthorized: '手機號未授權',
+      pleaseInputOwnerName: '請輸入業主名稱',
+      pleaseSelectAreaFirst: '請先選擇區域'
     }
   }
 }

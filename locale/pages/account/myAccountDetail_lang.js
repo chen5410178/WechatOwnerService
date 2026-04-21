@@ -12,7 +12,14 @@ export default {
       transferIn: '转入',
       transferOut: '转出',
       transactionTime: '交易时间',
-      remark: '说明'
+      remark: '说明',
+      points: '积分',
+      pointsUnit: '分',
+      yuan: '元',
+      transactionNo: '交易编号',
+      pullUpLoadMore: '上拉加载更多',
+      loading: '加载中',
+      noMore: '没有更多'
     }
   },
   'en': {
@@ -28,7 +35,14 @@ export default {
       transferIn: 'Transfer In',
       transferOut: 'Transfer Out',
       transactionTime: 'Transaction Time',
-      remark: 'Remark'
+      remark: 'Remark',
+      points: 'Points',
+      pointsUnit: 'Points',
+      yuan: 'Yuan',
+      transactionNo: 'Transaction No',
+      pullUpLoadMore: 'Pull up to load more',
+      loading: 'Loading',
+      noMore: 'No more'
     }
   },
   'zh-TW': {
@@ -44,7 +58,14 @@ export default {
       transferIn: '轉入',
       transferOut: '轉出',
       transactionTime: '交易時間',
-      remark: '說明'
+      remark: '說明',
+      points: '積分',
+      pointsUnit: '分',
+      yuan: '元',
+      transactionNo: '交易編號',
+      pullUpLoadMore: '上拉載入更多',
+      loading: '載入中',
+      noMore: '沒有更多'
     }
   }
 }

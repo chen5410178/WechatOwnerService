@@ -9,7 +9,7 @@
 							<text class="cuIcon-rechargefill text-green margin-right-xs"></text> {{item.acctTypeName}}
 						</view>
 						<view class="text-gray text-sm">
-							<text class="cuIcon-right margin-right-xs"></text>{{ $t('account.balance') }}: {{item.amount}}
+							<text class="cuIcon-right margin-right-xs"></text>{{ $t('myAccount.balance') }}: {{item.amount}}
 						</view>
 					</view>
 					<view class="action">
@@ -18,7 +18,7 @@
 				<view class="cu-item arrow" @click="coupons(item)">
 					<view class="content padding-tb-sm">
 						<view>
-							<text class="cuIcon-ticket text-green margin-right-xs"></text>{{ $t('myCoupon') }}
+							<text class="cuIcon-ticket text-green margin-right-xs"></text>{{ $t('myAccount.myCoupon') }}
 						</view>
 						<view class="text-gray text-sm">
 						</view>
@@ -33,7 +33,7 @@
 		</view>
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" >
-			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">{{ $t('accountRecharge') }}</button>
+			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">{{ $t('myAccount.recharge') }}</button>
 		</view>
 	</view>
 

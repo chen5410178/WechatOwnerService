@@ -46,10 +46,6 @@ import invoiceLangMsg from './invoice/invoice_lang'
 import invoiceApplyLangMsg from './invoice/invoiceApply_lang'
 import invoiceDetailLangMsg from './invoice/invoiceDetail_lang'
 import settingLangMsg from './invoice/setting_lang'
-import addItemReleaseResourceLangMsg from './itemRelease/addItemReleaseResource_lang'
-import itemReleaseLangMsg from './itemRelease/itemRelease_lang'
-import myItemReleaseDetailLangMsg from './itemRelease/myItemReleaseDetail_lang'
-import myItemReleaseListLangMsg from './itemRelease/myItemReleaseList_lang'
 import locationLangMsg from './location/location_lang'
 import parkingLangMsg from './parking/parking_lang'
 import getParkingCodeLangMsg from './parking/getParkingCode_lang'
@@ -105,10 +101,6 @@ export default {
     ...invoiceApplyLangMsg['zh-CN'],
     ...invoiceDetailLangMsg['zh-CN'],
     ...settingLangMsg['zh-CN'],
-    ...addItemReleaseResourceLangMsg['zh-CN'],
-    ...itemReleaseLangMsg['zh-CN'],
-    ...myItemReleaseDetailLangMsg['zh-CN'],
-    ...myItemReleaseListLangMsg['zh-CN'],
     ...locationLangMsg['zh-CN'],
     ...parkingLangMsg['zh-CN'],
     ...getParkingCodeLangMsg['zh-CN'],
@@ -163,10 +155,6 @@ export default {
     ...invoiceApplyLangMsg['en'],
     ...invoiceDetailLangMsg['en'],
     ...settingLangMsg['en'],
-    ...addItemReleaseResourceLangMsg['en'],
-    ...itemReleaseLangMsg['en'],
-    ...myItemReleaseDetailLangMsg['en'],
-    ...myItemReleaseListLangMsg['en'],
     ...locationLangMsg['en'],
     ...parkingLangMsg['en'],
     ...getParkingCodeLangMsg['en'],
@@ -221,10 +209,6 @@ export default {
     ...invoiceApplyLangMsg['zh-TW'],
     ...invoiceDetailLangMsg['zh-TW'],
     ...settingLangMsg['zh-TW'],
-    ...addItemReleaseResourceLangMsg['zh-TW'],
-    ...itemReleaseLangMsg['zh-TW'],
-    ...myItemReleaseDetailLangMsg['zh-TW'],
-    ...myItemReleaseListLangMsg['zh-TW'],
     ...locationLangMsg['zh-TW'],
     ...parkingLangMsg['zh-TW'],
     ...getParkingCodeLangMsg['zh-TW'],

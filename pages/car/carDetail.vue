@@ -2,15 +2,15 @@
 	<view>
 		<view>
 			<view class="block__title flex justify-between">
-				<view>{{ $t('carDetail') || '车辆信息' }}</view>
-				<view> <button class="cu-btn line-blue round" @tap="_openModifyCarNum()">{{ $t('modifyCarNum') || '修改车牌' }}</button></view>
+				<view>{{ $t('carDetail.carDetail') || '车辆信息' }}</view>
+				<view> <button class="cu-btn line-blue round" @tap="_openModifyCarNum()">{{ $t('carDetail.modifyCarNum') || '修改车牌' }}</button></view>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('carNum') || '车牌号' }}</view>
+				<view class="title">{{ $t('carDetail.carNumber') || '车牌号' }}</view>
 				{{carNum}}
 			</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('parkingSpace') || '车位' }}</view>
+				<view class="title">{{ $t('carDetail.parkingSpace') || '车位' }}</view>
 				<view v-if="areaNum">{{areaNum}}-{{num}}</view>
 				<view v-else>{{ $t('car.noParkingSpace') }}</view>
 			</view>
@@ -33,7 +33,7 @@
 						<view class="text-gray">{{item.createTime}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">{{ $t('car.brand') }}</view>
+						<view class="text-gray">{{ $t('carDetail.carBrand') }}</view>
 						<view class="text-gray">{{item.carBrand}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">

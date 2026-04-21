@@ -1,5 +1,3 @@
-import reportInfoBackLangMsg from './reportInfoBack/reportInfoBack_lang'
-import reportInfoDetailLangMsg from './reportInfoBack/reportInfoDetail_lang'
 import appointVisitLangMsg from './reserve/appointVisit_lang'
 import myReserveLangMsg from './reserve/myReserve_lang'
 import myReserveDetailLangMsg from './reserve/myReserveDetail_lang'
@@ -43,8 +41,6 @@ import ownerVoteLangMsg from './questionAnswer/ownerVote_lang'
 
 export default {
   'zh-CN': {
-    ...reportInfoBackLangMsg['zh-CN'],
-    ...reportInfoDetailLangMsg['zh-CN'],
     ...appointVisitLangMsg['zh-CN'],
     ...myReserveLangMsg['zh-CN'],
     ...myReserveDetailLangMsg['zh-CN'],
@@ -87,8 +83,6 @@ export default {
     ...ownerVoteLangMsg['zh-CN']
   },
   'en': {
-    ...reportInfoBackLangMsg['en'],
-    ...reportInfoDetailLangMsg['en'],
     ...appointVisitLangMsg['en'],
     ...myReserveLangMsg['en'],
     ...myReserveDetailLangMsg['en'],
@@ -131,8 +125,6 @@ export default {
     ...ownerVoteLangMsg['en']
   },
   'zh-TW': {
-    ...reportInfoBackLangMsg['zh-TW'],
-    ...reportInfoDetailLangMsg['zh-TW'],
     ...appointVisitLangMsg['zh-TW'],
     ...myReserveLangMsg['zh-TW'],
     ...myReserveDetailLangMsg['zh-TW'],

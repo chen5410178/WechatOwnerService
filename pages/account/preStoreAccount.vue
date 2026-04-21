@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('accountRecharge') || '账户充值' }}</view>
+		<view class="block__title">{{ $t('preStoreAccount.recharge') || '账户充值' }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('accountName') || '账户名称' }}</text>
+					<text class="text-grey">{{ $t('account.accountName') || '账户名称' }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{account.acctName}}</text>
@@ -12,7 +12,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('accountBalance') }}</text>
+					<text class="text-grey">{{ $t('account.balance') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{account.amount}}</text>
@@ -20,10 +20,10 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('rechargeAmount') }}</text>
+					<text class="text-grey">{{ $t('preStoreAccount.rechargeAmount') }}</text>
 				</view>
 				<view class="action">
-					<input v-model="amount" :placeholder="$t('inputAmount')" type="number" class="text-right"></input>
+					<input v-model="amount" :placeholder="$t('preStoreAccount.inputAmount')" type="number" class="text-right"></input>
 				</view>
 			</view>
 		</view>
@@ -31,10 +31,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				{{ $t('fee_total') || '合计' }}：{{amount}}{{ $t('yuan') }}
+				{{ $t('preStoreAccount.feeTotal') || '合计' }}：{{amount}}{{ $t('preStoreAccount.yuan') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') || '提交订单' }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('preStoreAccount.submitOrder') || '提交订单' }}</button>
 			</view>
 		</view>
 	</view>
@@ -91,7 +91,7 @@
 				if(!this.amount){
 					uni.showToast({
 						icon:'none',
-						title:_that.$t('inputAmount')
+						title:_that.$t('preStoreAccount.inputAmount')
 					});
 					return ;
 				}
@@ -102,7 +102,7 @@
 					business: "preStoreOnline",
 					communityId: this.communityId,
 					acctId: this.account.acctId,
-					feeName: _that.$t('accountRecharge') || '账户充值',
+					feeName: _that.$t('preStoreAccount.recharge') || '账户充值',
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 				};

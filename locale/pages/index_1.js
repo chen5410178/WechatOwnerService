@@ -3,15 +3,6 @@ import myAccountDetailLangMsg from './account/myAccountDetail_lang'
 import preStoreAccountLangMsg from './account/preStoreAccount_lang'
 import activitesLangMsg from './activites/activites_lang'
 import activitesDetailLangMsg from './activites/activitesDetail_lang'
-import addressEditLangMsg from './address/addressEdit_lang'
-import addressListLangMsg from './address/addressList_lang'
-import applicationKeyLangMsg from './applicationKey/applicationKey_lang'
-import applicationKeyLocationLangMsg from './applicationKey/applicationKeyLocation_lang'
-import applicationKeyProgressLangMsg from './applicationKey/applicationKeyProgress_lang'
-import applicationKeyUserLangMsg from './applicationKey/applicationKeyUser_lang'
-import myApplicationKeyLangMsg from './applicationKey/myApplicationKey_lang'
-import viewApplicationKeyUserLangMsg from './applicationKey/viewApplicationKeyUser_lang'
-import visitorApplicationKeyLangMsg from './applicationKey/visitorApplicationKey_lang'
 import applyRoomLangMsg from './applyRoom/applyRoom_lang'
 import applyRoomDetailLangMsg from './applyRoom/applyRoomDetail_lang'
 import myApplyRoomDetailLangMsg from './applyRoom/myApplyRoomDetail_lang'
@@ -46,15 +37,6 @@ export default {
     ...preStoreAccountLangMsg['zh-CN'],
     ...activitesLangMsg['zh-CN'],
     ...activitesDetailLangMsg['zh-CN'],
-    ...addressEditLangMsg['zh-CN'],
-    ...addressListLangMsg['zh-CN'],
-    ...applicationKeyLangMsg['zh-CN'],
-    ...applicationKeyLocationLangMsg['zh-CN'],
-    ...applicationKeyProgressLangMsg['zh-CN'],
-    ...applicationKeyUserLangMsg['zh-CN'],
-    ...myApplicationKeyLangMsg['zh-CN'],
-    ...viewApplicationKeyUserLangMsg['zh-CN'],
-    ...visitorApplicationKeyLangMsg['zh-CN'],
     ...applyRoomLangMsg['zh-CN'],
     ...applyRoomDetailLangMsg['zh-CN'],
     ...myApplyRoomDetailLangMsg['zh-CN'],
@@ -88,15 +70,6 @@ export default {
     ...preStoreAccountLangMsg['en'],
     ...activitesLangMsg['en'],
     ...activitesDetailLangMsg['en'],
-    ...addressEditLangMsg['en'],
-    ...addressListLangMsg['en'],
-    ...applicationKeyLangMsg['en'],
-    ...applicationKeyLocationLangMsg['en'],
-    ...applicationKeyProgressLangMsg['en'],
-    ...applicationKeyUserLangMsg['en'],
-    ...myApplicationKeyLangMsg['en'],
-    ...viewApplicationKeyUserLangMsg['en'],
-    ...visitorApplicationKeyLangMsg['en'],
     ...applyRoomLangMsg['en'],
     ...applyRoomDetailLangMsg['en'],
     ...myApplyRoomDetailLangMsg['en'],
@@ -130,15 +103,6 @@ export default {
     ...preStoreAccountLangMsg['zh-TW'],
     ...activitesLangMsg['zh-TW'],
     ...activitesDetailLangMsg['zh-TW'],
-    ...addressEditLangMsg['zh-TW'],
-    ...addressListLangMsg['zh-TW'],
-    ...applicationKeyLangMsg['zh-TW'],
-    ...applicationKeyLocationLangMsg['zh-TW'],
-    ...applicationKeyProgressLangMsg['zh-TW'],
-    ...applicationKeyUserLangMsg['zh-TW'],
-    ...myApplicationKeyLangMsg['zh-TW'],
-    ...viewApplicationKeyUserLangMsg['zh-TW'],
-    ...visitorApplicationKeyLangMsg['zh-TW'],
     ...applyRoomLangMsg['zh-TW'],
     ...applyRoomDetailLangMsg['zh-TW'],
     ...myApplyRoomDetailLangMsg['zh-TW'],

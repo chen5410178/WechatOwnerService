@@ -12,7 +12,8 @@ export default {
       remark: '说明',
       pullUpLoadMore: '上拉加载更多',
       loading: '加载中',
-      noMore: '没有更多'
+      noMore: '没有更多',
+      myCoupon: '我的优惠券'
     }
   },
   'en': {
@@ -28,7 +29,8 @@ export default {
       remark: 'Remark',
       pullUpLoadMore: 'Pull up to load more',
       loading: 'Loading',
-      noMore: 'No more'
+      noMore: 'No more',
+      myCoupon: 'My Coupon'
     }
   },
   'zh-TW': {
@@ -44,7 +46,8 @@ export default {
       remark: '說明',
       pullUpLoadMore: '上拉載入更多',
       loading: '載入中',
-      noMore: '沒有更多'
+      noMore: '沒有更多',
+      myCoupon: '我的優惠券'
     }
   }
 }

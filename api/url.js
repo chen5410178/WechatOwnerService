@@ -34,7 +34,7 @@ export default {
 	queryAppUserBindingOwner: baseUrl + 'app/owner.listAppUserBindingOwners', //解绑业主
 	queryUserAuthOwner: baseUrl + 'app/owner.queryUserAuthOwner', // 查询认证业主
 	appUserUnBindingOwner: baseUrl + 'app/owner.deleteAppUserBindingOwner', //查询业主门禁
-	listOwnerMachines: baseUrl + 'app/owner.listOwnerMachines', // 申请钥匙
+listOwnerMachines: baseUrl + 'app/owner.listOwnerMachines', // 申请钥匙
 	applyApplicationKey: baseUrl + "app/applicationKey.applyApplicationKey", //查询钥匙
 	listApplicationKeys: baseUrl + "app/applicationKey.listApplicationKeys", //申请访客钥匙
 	applyVisitorApplicationKey: baseUrl + "app/applicationKey.applyVisitorApplicationKey", //上传业主照片
@@ -252,6 +252,7 @@ export default {
 	appSaveMemberCar: baseUrl+"app/owner.appSaveMemberCar",
 	appDeleteMemberCar: baseUrl+"app/owner.appDeleteMemberCar",
 	queryAppUserIntegral: baseUrl+"app/integral.queryAppUserIntegral",
+	queryOwnerAcVideoUrl:baseUrl+"app/owner.queryOwnerAcVideoUrl",
 	queryOwnerAcVideoUrl:baseUrl+"app/owner.queryOwnerAcVideoUrl",
 	queryOwnerCamera:baseUrl+"app/machine.queryOwnerCamera",
 	queryCommunityRecommend:baseUrl+"app/mall.queryCommunityRecommend",

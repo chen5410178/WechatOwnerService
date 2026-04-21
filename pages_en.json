@@ -761,12 +761,13 @@
             
         }
         ,{
-            "path" : "pages/invoice/setting",
+            "path" : "pages/invoice/invoiceSetting",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "Invoice Settings",
                 "enablePullDownRefresh": false
             }
+        }
             
         }
         ,{

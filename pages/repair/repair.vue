@@ -122,11 +122,11 @@
 				index: 0,
 				repairScopes: [{
 						id: '004',
-						name: ''
+						name: this.$t('repair.privateArea')
 					},
 					{
 						id: '001',
-						name: ''
+						name: this.$t('repair.publicArea')
 					}
 				],
 				repairTypes: [],
@@ -140,7 +140,7 @@
 				todayDateTime:'',
 				uploadImage: {
 					maxPhotoNum: 4,
-					imgTitle: '',
+					imgTitle: this.$t('repair.relatedImages'),
 					canEdit: true
 				}
 			};

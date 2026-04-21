@@ -21,7 +21,7 @@
 				<view class="cu-item">
 					<view class="content">
 						<text class="cuIcon-notification text-grey"></text>
-						<text class="text-grey">{{ $t('communityPublicityList.noPublicityInfo') }}</text>
+						<text class="text-grey">{{ $t('noData') }}</text>
 					</view>
 					<view class="action">
 					</view>

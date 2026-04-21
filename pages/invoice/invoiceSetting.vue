@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('setting.invoiceSetting') }}</view>
+		<view class="block__title">{{ $t('invoiceSetting.invoiceSetting') }}</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('setting.invoiceType') }}</view>
 			<picker bindchange="PickerChange" :value="invoiceTypeIndex" :range="invoiceTypes" :range-key="'name'"

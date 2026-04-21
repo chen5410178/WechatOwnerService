@@ -29,6 +29,13 @@ import complaintLangMsg from './complaint/complaint_lang'
 import complaintDetailLangMsg from './complaint/complaintDetail_lang'
 import complaintListLangMsg from './complaint/complaintList_lang'
 import viewComplaintLangMsg from './complaint/viewComplaint_lang'
+import appraiseRepairLangMsg from './repair/appraiseRepair_lang'
+import myRepairLangMsg from './repair/myRepair_lang'
+import repairDetailLangMsg from './repair/repairDetail_lang'
+import repairListLangMsg from './repair/repairList_lang'
+import repairProgressLangMsg from './repair/repairProgress_lang'
+import repairScoreLangMsg from './repair/repairScore_lang'
+import repairLangMsg from './repair/repair_lang'
 
 export default {
   'zh-CN': {
@@ -62,7 +69,14 @@ export default {
     ...complaintLangMsg['zh-CN'],
     ...complaintDetailLangMsg['zh-CN'],
     ...complaintListLangMsg['zh-CN'],
-    ...viewComplaintLangMsg['zh-CN']
+    ...viewComplaintLangMsg['zh-CN'],
+    ...appraiseRepairLangMsg['zh-CN'],
+    ...myRepairLangMsg['zh-CN'],
+    ...repairDetailLangMsg['zh-CN'],
+    ...repairListLangMsg['zh-CN'],
+    ...repairProgressLangMsg['zh-CN'],
+    ...repairScoreLangMsg['zh-CN'],
+    ...repairLangMsg['zh-CN']
   },
   'en': {
     ...myAccountLangMsg['en'],
@@ -95,7 +109,14 @@ export default {
     ...complaintLangMsg['en'],
     ...complaintDetailLangMsg['en'],
     ...complaintListLangMsg['en'],
-    ...viewComplaintLangMsg['en']
+    ...viewComplaintLangMsg['en'],
+    ...appraiseRepairLangMsg['en'],
+    ...myRepairLangMsg['en'],
+    ...repairDetailLangMsg['en'],
+    ...repairListLangMsg['en'],
+    ...repairProgressLangMsg['en'],
+    ...repairScoreLangMsg['en'],
+    ...repairLangMsg['en']
   },
   'zh-TW': {
     ...myAccountLangMsg['zh-TW'],
@@ -128,6 +149,13 @@ export default {
     ...complaintLangMsg['zh-TW'],
     ...complaintDetailLangMsg['zh-TW'],
     ...complaintListLangMsg['zh-TW'],
-    ...viewComplaintLangMsg['zh-TW']
+    ...viewComplaintLangMsg['zh-TW'],
+    ...appraiseRepairLangMsg['zh-TW'],
+    ...myRepairLangMsg['zh-TW'],
+    ...repairDetailLangMsg['zh-TW'],
+    ...repairListLangMsg['zh-TW'],
+    ...repairProgressLangMsg['zh-TW'],
+    ...repairScoreLangMsg['zh-TW'],
+    ...repairLangMsg['zh-TW']
   }
 }

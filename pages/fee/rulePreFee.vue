@@ -77,7 +77,7 @@
 				{{ $t('rulePreFee.total') }}：{{receivableAmount}}{{ $t('rulePreFee.yuanUnit') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('payNow') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('goPay') }}</button>
 			</view>
 		</view>
 	</view>
@@ -157,7 +157,7 @@
 			_initMonthList: function() {
 				this.monthList = [];
 				for (let i = 1; i <= 24; i++) {
-					this.monthList.push(i + this.$t('month'));
+					this.monthList.push(i + this.$t('rulePreFee.month'));
 				}
 			},
 			
@@ -168,7 +168,7 @@
 				if (!this.roomId) {
 					uni.showToast({
 						icon: 'none',
-						title: this.$t('invalidRoomId')
+						title: this.$t('rulePreFee.invalidRoomId')
 					});
 					return;
 				}
@@ -200,7 +200,7 @@
 				if (!this.roomId || !this.communityId) {
 					uni.showToast({
 						icon: 'none',
-						title: this.$t('incompleteHouseInfo')
+						title: this.$t('rulePreFee.incompleteHouseInfo')
 					});
 					return;
 				}
@@ -232,7 +232,7 @@
 						} else {
 							uni.showToast({
 								icon: 'none',
-								title: this.$t('noPrePayRule')
+								title: this.$t('rulePreFee.noPrePayRule')
 							});
 						}
 					}
@@ -240,7 +240,7 @@
 					uni.hideLoading();
 					uni.showToast({
 						icon: 'none',
-						title: error || this.$t('loadFailed')
+						title: error || this.$t('rulePreFee.loadFailed')
 					});
 				});
 			},
@@ -291,7 +291,7 @@
 				if (!this.selectedRule) {
 					uni.showToast({
 						icon: 'none',
-						title: this.$t('pleaseSelectPrePayFee')
+						title: this.$t('rulePreFee.pleaseSelectPrePayFee')
 					});
 					return;
 				}
@@ -299,7 +299,7 @@
 				if (this.selectedMonth <= 0) {
 					uni.showToast({
 						icon: 'none',
-						title: this.$t('pleaseSelectMonth')
+						title: this.$t('rulePreFee.pleaseSelectMonth')
 					});
 					return;
 				}

@@ -15,7 +15,6 @@
 					</view>
 				</view>
 			</view>
-			<uni-load-more :status="loadingStatus" :content-text="loadingContentText" />
 		</block>
 		<block v-else>
 			<view class="cu-list menu">
@@ -33,7 +32,6 @@
 </template>
 
 <script>
-	import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
 	/** index.js **/
 	import context from '../../lib/java110/Java110Context.js';
 	import {
@@ -66,14 +64,13 @@
 		computed: {
 			loadingContentText() {
 				return {
-					contentdown: this.$t('notice.pullToLoadMore'),
-					contentrefresh: this.$t('notice.loading'),
-					contentnomore: this.$t('notice.noMore')
+					contentdown: this.$t('common.loadMore'),
+					contentrefresh: this.$t('common.loading'),
+					contentnomore: this.$t('common.noMore')
 				};
 			}
 		},
 		components: {
-			uniLoadMore
 		},
 		onLoad: function(options) {
 			let that = this;

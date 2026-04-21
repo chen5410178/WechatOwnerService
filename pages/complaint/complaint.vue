@@ -9,7 +9,7 @@
 				</view>
 			</picker>
 		</view>
-		<view class="block__title">{{ $t('complaint.complaintInfo') }}</view>
+		<view class="block__title">{{ $t('complaint.title') }}</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('complaint.complaintType') }}</view>
 			<picker :value="complaintIndex" :range="typeCds" :range-key="'typeName'" @change="_changeComplaint">

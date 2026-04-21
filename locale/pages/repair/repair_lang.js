@@ -28,7 +28,9 @@ export default {
       submitSuccess: '提交成功',
       notConfigRepair: '未配置报修类型',
        serverError: '服务器错误',
-      pleaseSelectLocation: '请选择位置'
+       pleaseSelectLocation: '请选择位置',
+       privateArea: '私有区域',
+       publicArea: '公共区域'
     }
   },
   'en': {
@@ -60,7 +62,9 @@ export default {
       submitSuccess: 'Submit success',
       notConfigRepair: 'No repair type configured',
        serverError: 'Server Error',
-      pleaseSelectLocation: 'Please select location'
+       pleaseSelectLocation: 'Please select location',
+       privateArea: 'Private Area',
+       publicArea: 'Public Area'
     }
   },
   'zh-TW': {
@@ -92,7 +96,9 @@ export default {
       submitSuccess: '提交成功',
       notConfigRepair: '未配置報修類型',
        serverError: '伺服器錯誤',
-      pleaseSelectLocation: '請選擇位置'
+       pleaseSelectLocation: '請選擇位置',
+       privateArea: '私有區域',
+       publicArea: '公共區域'
     }
   }
 }

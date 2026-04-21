@@ -3,10 +3,10 @@
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-					{{ $t('complaint.processing') }}
+					{{ $t('complaintList.processing') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-					{{ $t('complaint.processed') }}
+					{{ $t('complaintList.processed') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -24,20 +24,20 @@
 						<view class="text-gray">{{item.typeName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.complainant') }}</view>
+						<view class="text-gray">{{ $t('complaintList.complainant') }}</view>
 						<view class="text-gray">{{item.complaintName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.room') }}</view>
+						<view class="text-gray">{{ $t('complaintList.room') }}</view>
 						<view class="text-gray">{{item.roomName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.content') }}</view>
+						<view class="text-gray">{{ $t('complaintList.content') }}</view>
 						<view class="text-gray">{{item.context}}</view>
 					</view>
 
 					<view class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm">
-						<button class="cu-btn sm line-gray" @click="_toComplaintDetail(item)">{{ $t('detail') }}</button>
+						<button class="cu-btn sm line-gray" @click="_toComplaintDetail(item)">{{ $t('complaintList.detail') }}</button>
 					</view>
 				</view>
 			</view>
@@ -57,29 +57,29 @@
 						<view class="text-gray">{{item.tel}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">{{ $t('complaint.complaintType') }}</view>
+						<view class="text-gray">{{ $t('complaintList.complaintType') }}</view>
 						<view class="text-gray">{{item.typeName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.complainant') }}</view>
+						<view class="text-gray">{{ $t('complaintList.complainant') }}</view>
 						<view class="text-gray">{{item.complaintName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.room') }}</view>
+						<view class="text-gray">{{ $t('complaintList.room') }}</view>
 						<view class="text-gray">{{item.roomName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.complaintTime') }}</view>
+						<view class="text-gray">{{ $t('complaintList.complaintTime') }}</view>
 						<view class="text-gray">{{item.createTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('complaint.content') }}</view>
+						<view class="text-gray">{{ $t('complaintList.content') }}</view>
 						<view class="text-gray">{{item.context}}</view>
 					</view>
 					<view 
 						class="solid-top flex justify-end margin-top padding-top-sm padding-bottom-sm">
-						<button class="cu-btn sm bg-green " @click="_appraiseComplaint(item)">{{ $t('complaint.evaluate') }}</button>
-						<button class="cu-btn sm line-gray margin-left" @click="_toComplaintDetail(item)">{{ $t('detail') }}</button>
+						<button class="cu-btn sm bg-green " @click="_appraiseComplaint(item)">{{ $t('complaintList.evaluate') }}</button>
+						<button class="cu-btn sm line-gray margin-left" @click="_toComplaintDetail(item)">{{ $t('complaintList.detail') }}</button>
 					</view>
 				</view>
 			</view>

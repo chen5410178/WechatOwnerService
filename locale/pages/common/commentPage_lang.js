@@ -8,7 +8,11 @@ export default {
       submit: '提交',
       submitSuccess: '提交成功',
       submitFailed: '提交失败',
-      noData: '暂无评论'
+      noData: '暂无评论',
+      overallScore: '综合评分',
+      goodRate: '商家综合好评率为76%',
+      restaurantScore: '商家评分',
+      deliveryScore: '配送评分'
     }
   },
   'en': {
@@ -20,7 +24,11 @@ export default {
       submit: 'Submit',
       submitSuccess: 'Submit Success',
       submitFailed: 'Submit Failed',
-      noData: 'No comment'
+      noData: 'No comment',
+      overallScore: 'Overall Score',
+      goodRate: '76% good rate',
+      restaurantScore: 'Restaurant Score',
+      deliveryScore: 'Delivery Score'
     }
   },
   'zh-TW': {
@@ -32,7 +40,11 @@ export default {
       submit: '提交',
       submitSuccess: '提交成功',
       submitFailed: '提交失敗',
-      noData: '暫無評論'
+      noData: '暫無評論',
+      overallScore: '綜合評分',
+      goodRate: '商家綜合好感率為76%',
+      restaurantScore: '商家評分',
+      deliveryScore: '配送評分'
     }
   }
 }

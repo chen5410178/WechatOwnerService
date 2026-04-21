@@ -12,7 +12,20 @@ export default {
       pending: '待处理',
       processing: '处理中',
       completed: '已完成',
-      evaluate: '去评价'
+      evaluate: '去评价',
+      orderInfo: '订单信息',
+      complaintId: '投诉编号',
+      roomCode: '房屋编号',
+      type: '类型',
+      complaintPerson: '投诉人',
+      complaintPhone: '联系电话',
+      workOrder: '工单',
+      complaintWork: '发起投诉',
+      processWork: '处理工单',
+      processOpinion: '处理意见',
+      evaluateContent: '评价内容',
+      reply: '回复',
+      replyContent: '回复内容'
     }
   },
   'en': {
@@ -28,7 +41,20 @@ export default {
       pending: 'Pending',
       processing: 'Processing',
       completed: 'Completed',
-      evaluate: 'Evaluate'
+      evaluate: 'Evaluate',
+      orderInfo: 'Order Info',
+      complaintId: 'Complaint ID',
+      roomCode: 'Room No.',
+      type: 'Type',
+      complaintPerson: 'Complainant',
+      complaintPhone: 'Phone',
+      workOrder: 'Work Order',
+      complaintWork: 'File Complaint',
+      processWork: 'Process Order',
+      processOpinion: 'Opinion',
+      evaluateContent: 'Evaluation',
+      reply: 'Reply',
+      replyContent: 'Reply Content'
     }
   },
   'zh-TW': {
@@ -44,7 +70,20 @@ export default {
       pending: '待處理',
       processing: '處理中',
       completed: '已完成',
-      evaluate: '去評價'
+      evaluate: '去評價',
+      orderInfo: '訂單信息',
+      complaintId: '投訴編號',
+      roomCode: '房屋編號',
+      type: '類型',
+      complaintPerson: '投訴人',
+      complaintPhone: '聯繫電話',
+      workOrder: '工單',
+      complaintWork: '發起投訴',
+      processWork: '處理工單',
+      processOpinion: '處理意見',
+      evaluateContent: '評價內容',
+      reply: '回覆',
+      replyContent: '回覆內容'
     }
   }
 }

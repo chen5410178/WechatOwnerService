@@ -1,34 +1,34 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('userInfo') }}</view>
+		<view class="block__title">{{ $t('myBooksRenovationDetail.userInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('name') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.name') }}</view>
 			{{renovationDetail.personName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('contact') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.contact') }}</view>
 			{{renovationDetail.personTel}}
 		</view>
 
-		<view class="block__title">{{ $t('venueInfo') }}</view>
+		<view class="block__title">{{ $t('myBooksRenovationDetail.venueInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('venue') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.venue') }}</view>
 			{{renovationDetail.venueName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('space') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.space') }}</view>
 			{{renovationDetail.spaceName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('time') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.time') }}</view>
 			{{ this.HoursStr(renovationDetail.hours) }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('verifyStatus') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.verifyStatus') }}</view>
 			{{StateStr(renovationDetail.state)}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('bookDate') }}</view>
+			<view class="title">{{ $t('myBooksRenovationDetail.bookDate') }}</view>
 			{{renovationDetail.appointmentTime}}
 		</view>
 		<view v-if="renovationDetail.state == 'W'">
@@ -39,7 +39,7 @@
 				<canvas canvas-id="qrcode" style="width: 300rpx;margin: 0 auto;"/>
 			</view>
 			<view class="text-center">
-				<view>{{ $t('showQrcode') }}</view>
+				<view>{{ $t('myBooksRenovationDetail.showQrcode') }}</view>
 				<view>{{renovationDetail.timeId}}</view>
 			</view>
 
@@ -121,16 +121,16 @@
 		methods: {
 			StateStr(s) {
 				if (s == "W") {
-					return this.$t('waitVerify');
+					return this.$t('myBooksRenovationDetail.waitVerify');
 				}
 				if (s == "C") {
-					return this.$t('verified');
+					return this.$t('myBooksRenovationDetail.verified');
 				}
 				if (s == "Y") {
-					return this.$t('refunded')
+					return this.$t('myBooksRenovationDetail.refunded')
 				}
 				if (s == "T") {
-					return this.$t('applyRefund')
+					return this.$t('myBooksRenovationDetail.applyRefund')
 				}
 			},
 			// 时间转换

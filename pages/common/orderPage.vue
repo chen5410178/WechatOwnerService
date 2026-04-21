@@ -15,8 +15,8 @@
           <image class="img" :src="item.src"></image>
           <view class="food-info">
             <view class="name">{{item.name}}</view>
-            <view class="sales">{{ $t('monthlySales') }} {{item.sales}} {{ $t('praise') }} {{item.rating}}</view>
-            <view class="price">{{ $t('yuanSign') }}  {{item.price}}</view>
+            <view class="sales">{{ $t('orderPage.monthlySales') }} {{item.sales}} {{ $t('orderPage.praise') }} {{item.rating}}</view>
+            <view class="price">{{ $t('orderPage.yuanSign') }}  {{item.price}}</view>
           </view>
           <view class="food-numb">
             <view class="remove" @tap="removeFromTrolley" :hidden="item.numb==0" :data-index="index">-</view>
@@ -31,10 +31,10 @@
         <view class="img" :style="'background:' + (cost!=0?'#FFD161':'#E7E7E7') + ';'">
           <image src="../../static/images/trolley.png" style="width:60rpx;height:60rpx;"></image>
         </view>
-        <view class="cost" :hidden="cost==0">{{ $t('yuanSign') }}{{cost}}</view>
-        <view class="free">{{ $t('freeDelivery') }}</view>
+        <view class="cost" :hidden="cost==0">{{ $t('orderPage.yuanSign') }}{{cost}}</view>
+        <view class="free">{{ $t('orderPage.freeDelivery') }}</view>
       </view>
-      <view class="pay">{{cost!=0?$t('checkout'):$t('minOrderAmount2', {amount: '15'})}}</view>      
+      <view class="pay">{{cost!=0?$t('orderPage.checkout'):$t('orderPage.minOrderAmount2', {amount: '15'})}}</view>      
     </view>
 </template>
 </view>

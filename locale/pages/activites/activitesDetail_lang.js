@@ -14,7 +14,10 @@ export default {
       limitCount: '限制人数',
       contactName: '联系人',
       contactPhone: '联系电话',
-      registerSuccess: '恭喜您报名成功'
+      registerSuccess: '恭喜您报名成功',
+      admin: '管理员',
+      readCount: '阅读',
+      likeCount: '点赞'
     }
   },
   'en': {
@@ -32,7 +35,10 @@ export default {
       limitCount: 'Limit Count',
       contactName: 'Contact Name',
       contactPhone: 'Contact Phone',
-      registerSuccess: 'Congratulations on successful registration'
+      registerSuccess: 'Congratulations on successful registration',
+      admin: 'Admin',
+      readCount: 'Read',
+      likeCount: 'Like'
     }
   },
   'zh-TW': {
@@ -50,7 +56,10 @@ export default {
       limitCount: '限制人數',
       contactName: '聯繫人',
       contactPhone: '聯繫電話',
-      registerSuccess: '恭喜您報名成功'
+      registerSuccess: '恭喜您報名成功',
+      admin: '管理員',
+      readCount: '閱讀',
+      likeCount: '點贊'
     }
   }
 }

@@ -14,7 +14,13 @@ export default {
       completed: '已完成',
       cancelled: '已取消',
       refund: '退款',
-      noData: '暂无订单'
+      noData: '暂无订单',
+      monthlySales: '月销量',
+      praise: '好评',
+      yuanSign: '¥',
+      freeDelivery: '免费配送',
+      checkout: '去结算',
+      minOrderAmount2: '满{amount}元起送'
     }
   },
   'en': {
@@ -32,7 +38,13 @@ export default {
       completed: 'Completed',
       cancelled: 'Cancelled',
       refund: 'Refund',
-      noData: 'No order'
+      noData: 'No order',
+      monthlySales: 'Monthly Sales',
+      praise: 'Praise',
+      yuanSign: '¥',
+      freeDelivery: 'Free Delivery',
+      checkout: 'Checkout',
+      minOrderAmount2: 'Min order {amount}'
     }
   },
   'zh-TW': {
@@ -50,7 +62,13 @@ export default {
       completed: '已完成',
       cancelled: '已取消',
       refund: '退款',
-      noData: '暫無訂單'
+      noData: '暫無訂單',
+      monthlySales: '月銷量',
+      praise: '好評',
+      yuanSign: '¥',
+      freeDelivery: '免費配送',
+      checkout: '去結算',
+      minOrderAmount2: '滿{amount}元起送'
     }
   }
 }

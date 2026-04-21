@@ -7,35 +7,35 @@
 				</view>
 			</view>
 		</view>
-		<view class="block__title">{{ $t('complaint.houseInfo') }}</view>
+		<view class="block__title">{{ $t('viewComplaint.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.cityDistrict') }}</view>
+			<view class="title">{{ $t('viewComplaint.cityDistrict') }}</view>
 			{{areaName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.communityCode') }}</view>
+			<view class="title">{{ $t('viewComplaint.communityCode') }}</view>
 			{{communityId}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.communityName') }}</view>
+			<view class="title">{{ $t('viewComplaint.communityName') }}</view>
 			{{communityName}}
 		</view>
-		<view class="block__title">{{ $t('complaint.complaintInfo') }}</view>
+		<view class="block__title">{{ $t('viewComplaint.complaintInfo') }}</view>
 
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.ownerCode') }}</view>
+			<view class="title">{{ $t('viewComplaint.ownerCode') }}</view>
 			{{appUserId}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.name') }}</view>
+			<view class="title">{{ $t('viewComplaint.name') }}</view>
 			{{appUserName}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.idCard') }}</view>
+			<view class="title">{{ $t('viewComplaint.idCard') }}</view>
 			{{idCard}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('complaint.phone') }}</view>
+			<view class="title">{{ $t('viewComplaint.phone') }}</view>
 			{{link}}
 		</view>
 		<view class="button_up_blank"></view>
@@ -56,15 +56,15 @@
 			return {
 				steps: [{
 					cuIcon: 'usefullfill',
-					name: this.$t('complaint.apply'),
+					name: this.$t('viewComplaint.apply'),
 					desc: ''
 				}, {
 					cuIcon: 'radioboxfill',
-					name: this.$t('complaint.reviewing'),
+					name: this.$t('viewComplaint.reviewing'),
 					desc: ''
 				}, {
 					cuIcon: 'roundcheckfill',
-					name: this.$t('complaint.completed'),
+					name: this.$t('viewComplaint.completed'),
 					desc: ''
 				}],
 				active: 0,
@@ -154,7 +154,7 @@
 				let msg = "";
 
 				if (obj.appUserId == "" || obj.communityId == "") {
-					msg = this.$t('dataError');
+					msg = this.$t('viewComplaint.dataError');
 					uni.showToast({
 						title: msg,
 						icon: 'none',
@@ -173,7 +173,7 @@
 
 						if (res.statusCode != 200) {
 							uni.showToast({
-								title: this.$t('unbindFailed'),
+								title: this.$t('viewComplaint.unbindFailed'),
 								icon: 'none',
 								duration: 2000
 							});
@@ -187,7 +187,7 @@
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('viewComplaint.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

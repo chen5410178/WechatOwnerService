@@ -9,7 +9,10 @@ export default {
       timeAsc: '时间从早到晚',
       timeDesc: '时间从晚到早',
       confirm: '确认',
-      cancel: '取消'
+      cancel: '取消',
+      salesHighest: '销量最高',
+      nearestDistance: '距离最近',
+      filter: '筛选'
     }
   },
   'en': {
@@ -22,7 +25,10 @@ export default {
       timeAsc: 'Time Early to Late',
       timeDesc: 'Time Late to Early',
       confirm: 'Confirm',
-      cancel: 'Cancel'
+      cancel: 'Cancel',
+      salesHighest: 'Sales Highest',
+      nearestDistance: 'Nearest',
+      filter: 'Filter'
     }
   },
   'zh-TW': {
@@ -35,7 +41,10 @@ export default {
       timeAsc: '時間從早到晚',
       timeDesc: '時間從晚到早',
       confirm: '確認',
-      cancel: '取消'
+      cancel: '取消',
+      salesHighest: '銷量最高',
+      nearestDistance: '距離最近',
+      filter: '篩選'
     }
   }
 }

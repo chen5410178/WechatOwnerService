@@ -10,7 +10,13 @@ export default {
       pending: '待处理',
       processing: '处理中',
       completed: '已完成',
-      noData: '暂无投诉'
+      noData: '暂无投诉',
+      room: '房屋',
+      content: '内容',
+      complainant: '投诉人',
+      detail: '详情',
+      evaluate: '评价',
+      processed: '已处理'
     }
   },
   'en': {
@@ -24,7 +30,13 @@ export default {
       pending: 'Pending',
       processing: 'Processing',
       completed: 'Completed',
-      noData: 'No complaint'
+      noData: 'No complaint',
+      room: 'Room',
+      content: 'Content',
+      complainant: 'Complainant',
+      detail: 'Detail',
+      evaluate: 'Evaluate',
+      processed: 'Processed'
     }
   },
   'zh-TW': {
@@ -38,7 +50,13 @@ export default {
       pending: '待處理',
       processing: '處理中',
       completed: '已完成',
-      noData: '暫無投訴'
+      noData: '暫無投訴',
+      room: '房屋',
+      content: '內容',
+      complainant: '投訴人',
+      detail: '詳情',
+      evaluate: '評價',
+      processed: '已處理'
     }
   }
 }

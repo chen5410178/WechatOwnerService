@@ -1,13 +1,13 @@
 <template>
 	<view>
 		<view class="padding margin-top">
-			<text>{{ $t('complaint.orderInfo') }}</text>
+			<text>{{ $t('complaintDetail.orderInfo') }}</text>
 		</view>
 		<view class="cu-list menu" >
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-edit text-green"></text>
-					<text class="text-grey">{{ $t('complaint.complaintId') }}</text>
+					<text class="text-grey">{{ $t('complaintDetail.complaintId') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{complaint.complaintId}}</text>
@@ -16,7 +16,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-ticket text-green"></text>
-					<text class="text-grey">{{ $t('complaint.roomCode') }}</text>
+					<text class="text-grey">{{ $t('complaintDetail.roomCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{complaint.roomName}}</text>
@@ -25,7 +25,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-footprint text-green"></text>
-					<text class="text-grey">{{ $t('complaint.type') }}</text>
+					<text class="text-grey">{{ $t('complaintDetail.type') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{complaint.typeName}}</text>
@@ -34,7 +34,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-profile text-green"></text>
-					<text class="text-grey">{{ $t('complaint.complaintPerson') }}</text>
+					<text class="text-grey">{{ $t('complaintDetail.complaintPerson') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{complaint.complaintName}}</text>
@@ -43,7 +43,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">{{ $t('complaint.complaintPhone') }}</text>
+					<text class="text-grey">{{ $t('complaintDetail.complaintPhone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{complaint.tel}}</text>
@@ -52,7 +52,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-time text-green"></text>
-					<text class="text-grey">{{ $t('complaint.complaintTime') }}</text>
+					<text class="text-grey">{{ $t('complaintDetail.complaintTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{complaint.createTime}}</text>
@@ -61,7 +61,7 @@
 			<view class="cu-item">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="cuIcon-comment text-blue margin-right-xs"></text>{{ $t('complaint.complaintContent') }}</view>
+						<text class="cuIcon-comment text-blue margin-right-xs"></text>{{ $t('complaintDetail.complaintContent') }}</view>
 					<view class="text-gray text-sm">
 						<text class="cuIcon-infofill margin-right-xs"></text>{{complaint.context}}</view>
 				</view>
@@ -78,28 +78,28 @@
 		</view>
 		
 		<view class="cu-timeline margin-top">
-			<view class="cu-time">{{ $t('complaint.workOrder') }}</view>
+			<view class="cu-time">{{ $t('complaintDetail.workOrder') }}</view>
 			<view class="cu-item " v-for="(item,index) in audits" :key="index">
 				<view class="bg-cyan content"  v-if="item.eventType == '1000'">
-					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaint.complaintWork') }}
+					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaintDetail.complaintWork') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.eventType == '1001'">
-					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaint.processWork') }}
+					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaintDetail.processWork') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.eventType == '1001'">
-					<text>{{ $t('complaint.processOpinion') }}：</text> {{item.remark}}
+					<text>{{ $t('complaintDetail.processOpinion') }}：</text> {{item.remark}}
 				</view>
 				<view class="bg-cyan content" v-if="item.eventType == '2002'">
-					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaint.evaluate') }}
+					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaintDetail.evaluate') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.eventType == '2002'">
-					<text>{{ $t('complaint.evaluateContent') }}：</text> {{item.remark}}
+					<text>{{ $t('complaintDetail.evaluateContent') }}：</text> {{item.remark}}
 				</view>
 				<view class="bg-cyan content" v-if="item.eventType == '3003'">
-					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaint.reply') }}
+					<text>{{item.createUserName}}</text> {{item.createTime}} {{ $t('complaintDetail.reply') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.eventType == '3003'">
-					<text>{{ $t('complaint.replyContent') }}：</text> {{item.remark}}
+					<text>{{ $t('complaintDetail.replyContent') }}：</text> {{item.remark}}
 				</view>
 			</view>
 		</view>

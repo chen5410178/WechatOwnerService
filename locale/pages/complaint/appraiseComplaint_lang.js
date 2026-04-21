@@ -10,7 +10,12 @@ export default {
       submit: '提交评价',
       submitSuccess: '提交成功',
       submitFailed: '提交失败',
-      placeholder: '请输入评价内容'
+      placeholder: '请输入评价内容',
+      comprehensiveScore: '综合评分',
+      serviceEvaluation: '服务评价',
+      evaluationPlaceholder: '请输入评价内容',
+      submitEvaluation: '提交评价',
+      success: '提交成功'
     }
   },
   'en': {
@@ -24,7 +29,12 @@ export default {
       submit: 'Submit Evaluate',
       submitSuccess: 'Submit Success',
       submitFailed: 'Submit Failed',
-      placeholder: 'Please input evaluate content'
+      placeholder: 'Please input evaluate content',
+      comprehensiveScore: 'Comprehensive Score',
+      serviceEvaluation: 'Service Evaluation',
+      evaluationPlaceholder: 'Please input evaluation',
+      submitEvaluation: 'Submit Evaluation',
+      success: 'Success'
     }
   },
   'zh-TW': {
@@ -38,7 +48,12 @@ export default {
       submit: '提交評價',
       submitSuccess: '提交成功',
       submitFailed: '提交失敗',
-      placeholder: '請輸入評價內容'
+      placeholder: '請輸入評價內容',
+      comprehensiveScore: '綜合評分',
+      serviceEvaluation: '服務評價',
+      evaluationPlaceholder: '請輸入評價內容',
+      submitEvaluation: '提交評價',
+      success: '提交成功'
     }
   }
 }

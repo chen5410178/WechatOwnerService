@@ -3,12 +3,12 @@
 <template name="commentPage">
 <view class="commentPage-header">
   <view class="commentPage-score">
-    <view class="overall">综合评分</view>4.3<view class="rate">商家综合好评率为76%</view>
+    <view class="overall">{{ $t('commentPage.overallScore') }}</view>4.3<view class="rate">{{ $t('commentPage.goodRate') }}</view>
   </view>
   <view class="commentPage-rating">
-    <view class="restaurant">商家评分<view class="stars">★★★★★ 4</view>
+    <view class="restaurant">{{ $t('commentPage.restaurantScore') }}<view class="stars">★★★★★ 4</view>
     </view>
-    <view class="distribute">配送评分<view class="stars">★★★★★ 4.6</view>
+    <view class="distribute">{{ $t('commentPage.deliveryScore') }}<view class="stars">★★★★★ 4.6</view>
     </view>
     </view>
 </view>

@@ -2,18 +2,18 @@
 	<view>
 		<view class="content bg-white margin-top">
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">{{ $t('complaint.comprehensiveScore') }}</view>
+				<view class="item-title padding-sm radius">{{ $t('appraiseComplaint.comprehensiveScore') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync1" @change="appraiseScoreChange" />
 				</view>
 			</view>
 			<view class="cu-form-group padding align-start">
-				<view class="title padding-left-sm">{{ $t('complaint.serviceEvaluation') }}</view>
-				<textarea maxlength="200" v-model="context" :placeholder="$t('complaint.evaluationPlaceholder')"></textarea>
+				<view class="title padding-left-sm">{{ $t('appraiseComplaint.serviceEvaluation') }}</view>
+				<textarea maxlength="200" v-model="context" :placeholder="$t('appraiseComplaint.evaluationPlaceholder')"></textarea>
 			</view>
 
 			<view class="flex flex-direction margin">
-				<button class="cu-btn bg-green margin-tb-sm lg" @click="submitAppraiseComplaint()">{{ $t('complaint.submitEvaluation') }}</button>
+				<button class="cu-btn bg-green margin-tb-sm lg" @click="submitAppraiseComplaint()">{{ $t('appraiseComplaint.submitEvaluation') }}</button>
 			</view>
 
 		</view>
@@ -71,7 +71,7 @@
 					})
 					.then((_data) => {
 						uni.showToast({
-							title: this.$t('success'),
+							title: this.$t('appraiseComplaint.success'),
 							icon: 'none',
 							duration: 2000
 						});

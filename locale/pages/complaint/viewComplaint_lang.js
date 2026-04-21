@@ -13,7 +13,21 @@ export default {
       pending: '待处理',
       processing: '处理中',
       completed: '已完成',
-      noData: '暂无投诉'
+      noData: '暂无投诉',
+      houseInfo: '房屋信息',
+      cityDistrict: '城市区县',
+      communityCode: '小区编号',
+      communityName: '小区名称',
+      complaintInfo: '投诉信息',
+      ownerCode: '业主编号',
+      name: '姓名',
+      idCard: '身份证',
+      phone: '电话',
+      apply: '申请',
+      reviewing: '审核中',
+      dataError: '数据错误',
+      unbindFailed: '解绑失败',
+      serverError: '服务器错误'
     }
   },
   'en': {
@@ -30,7 +44,21 @@ export default {
       pending: 'Pending',
       processing: 'Processing',
       completed: 'Completed',
-      noData: 'No complaint'
+      noData: 'No complaint',
+      houseInfo: 'House Info',
+      cityDistrict: 'City District',
+      communityCode: 'Community Code',
+      communityName: 'Community Name',
+      complaintInfo: 'Complaint Info',
+      ownerCode: 'Owner Code',
+      name: 'Name',
+      idCard: 'ID Card',
+      phone: 'Phone',
+      apply: 'Apply',
+      reviewing: 'Reviewing',
+      dataError: 'Data Error',
+      unbindFailed: 'Unbind Failed',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -47,7 +75,21 @@ export default {
       pending: '待處理',
       processing: '處理中',
       completed: '已完成',
-      noData: '暫無投訴'
+      noData: '暫無投訴',
+      houseInfo: '房屋信息',
+      cityDistrict: '城市區縣',
+      communityCode: '小區編號',
+      communityName: '小區名稱',
+      complaintInfo: '投訴信息',
+      ownerCode: '業主編號',
+      name: '姓名',
+      idCard: '身份證',
+      phone: '電話',
+      apply: '申請',
+      reviewing: '審核中',
+      dataError: '數據錯誤',
+      unbindFailed: '解綁失敗',
+      serverError: '服務器錯誤'
     }
   }
 }

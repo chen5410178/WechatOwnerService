@@ -38,6 +38,8 @@ import sortListPageLangMsg from './common_page/sort_list_lang'
 import questionAnswerLangMsg from './questionAnswer/questionAnswer_lang'
 import questionAnswerDetailLangMsg from './questionAnswer/questionAnswerDetail_lang'
 import ownerVoteLangMsg from './questionAnswer/ownerVote_lang'
+import noticeLangMsg from './notice/notice_lang'
+import noticeDetailLangMsg from './notice/noticeDetail_lang'
 
 export default {
   'zh-CN': {
@@ -48,6 +50,11 @@ export default {
     ...reserveServiceLangMsg['zh-CN'],
     ...reserveServiceDetailLangMsg['zh-CN'],
     ...serviceLangMsg['zh-CN'],
+    ...questionAnswerLangMsg['zh-CN'],
+    ...questionAnswerDetailLangMsg['zh-CN'],
+    ...ownerVoteLangMsg['zh-CN'],
+    ...noticeLangMsg['zh-CN'],
+    ...noticeDetailLangMsg['zh-CN'],
     ...changeOwnerPhoneLangMsg['zh-CN'],
     ...changePasswordLangMsg['zh-CN'],
     ...settingsLangMsg['zh-CN'],
@@ -90,6 +97,11 @@ export default {
     ...reserveServiceLangMsg['en'],
     ...reserveServiceDetailLangMsg['en'],
     ...serviceLangMsg['en'],
+    ...questionAnswerLangMsg['en'],
+    ...questionAnswerDetailLangMsg['en'],
+    ...ownerVoteLangMsg['en'],
+    ...noticeLangMsg['en'],
+    ...noticeDetailLangMsg['en'],
     ...changeOwnerPhoneLangMsg['en'],
     ...changePasswordLangMsg['en'],
     ...settingsLangMsg['en'],
@@ -132,6 +144,11 @@ export default {
     ...reserveServiceLangMsg['zh-TW'],
     ...reserveServiceDetailLangMsg['zh-TW'],
     ...serviceLangMsg['zh-TW'],
+    ...questionAnswerLangMsg['zh-TW'],
+    ...questionAnswerDetailLangMsg['zh-TW'],
+    ...ownerVoteLangMsg['zh-TW'],
+    ...noticeLangMsg['zh-TW'],
+    ...noticeDetailLangMsg['zh-TW'],
     ...changeOwnerPhoneLangMsg['zh-TW'],
     ...changePasswordLangMsg['zh-TW'],
     ...settingsLangMsg['zh-TW'],

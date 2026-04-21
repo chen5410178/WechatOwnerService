@@ -7,7 +7,8 @@ export default {
       recordTime: '记录时间',
       recordType: '记录类型',
       recordDesc: '记录描述',
-      noData: '暂无记录'
+      noData: '暂无记录',
+      operator: '操作人'
     }
   },
   'en': {
@@ -18,7 +19,8 @@ export default {
       recordTime: 'Record Time',
       recordType: 'Record Type',
       recordDesc: 'Record Description',
-      noData: 'No record'
+      noData: 'No record',
+      operator: 'Operator'
     }
   },
   'zh-TW': {
@@ -29,7 +31,8 @@ export default {
       recordTime: '記錄時間',
       recordType: '記錄類型',
       recordDesc: '記錄描述',
-      noData: '暫無記錄'
+      noData: '暫無記錄',
+      operator: '操作人'
     }
   }
 }

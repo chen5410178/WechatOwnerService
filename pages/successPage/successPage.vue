@@ -7,13 +7,13 @@
 						<view class="text-xsl">
 							<text class="cuIcon-roundcheckfill text-green"></text>
 						</view>
-						<view class=" text-msg">{{msg || '处理成功'}}</view>
+						<view class=" text-msg">{{msg || $t('successPage.processingSuccess')}}</view>
 					</view>
 				</view>
 			</view>
 
 			<view class="padding flex flex-direction margin-top">
-				<button class="cu-btn bg-green lg" @click="_indexPage()">返回首页</button>
+				<button class="cu-btn bg-green lg" @click="_indexPage()">{{ $t('successPage.goHome') }}</button>
 			</view>
 		</view>
 		<community-recommend></community-recommend>

@@ -14,7 +14,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('parkingSpaceNo') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.parkingSpaceNo') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{num + '号车位'}}</text>
@@ -22,7 +22,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('parkingSpaceType') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.parkingSpaceType') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{feeTypeCdName}}</text>
@@ -30,18 +30,18 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('carNum') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.carNum') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{carNum}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">{{ $t('feeInfo') }}</view>
+			<view class="block__title">{{ $t('payParkingApplyFee.feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('feeId') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.feeId') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{feeId }}</text>
@@ -49,23 +49,23 @@
 				</view>
 				<view class="cu-item" v-if="feeFlag == '1003006'">
 					<view class="content">
-						<text class="text-grey">{{ $t('amount') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.amount') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{feePrice + $t('yuanPerMonth') }}</text>
+						<text class="text-grey text-sm">{{feePrice + $t('payParkingApplyFee.yuanPerMonth') }}</text>
 					</view>
 				</view>
 				<view class="cu-item" v-else>
 					<view class="content">
-						<text class="text-grey">{{ $t('amount') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.amount') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{feePrice + $t('yuan') }}</text>
+						<text class="text-grey text-sm">{{feePrice + $t('payParkingApplyFee.yuan') }}</text>
 					</view>
 				</view>
 				<view class="cu-item arrow" v-if="feeFlag == '1003006'">
 					<view class="content">
-						<text class="text-grey">{{ $t('cycle') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.cycle') }}</text>
 					</view>
 					<view class="action">
 						<picker bindchange="PickerChange" :value="index" :range="feeMonthList" @change="dateChange">
@@ -77,7 +77,7 @@
 				</view>
 				<view class="cu-item" v-if="feeFlag != '2006012'">
 					<view class="content">
-						<text class="text-grey">{{ $t('paymentAfterTime') }}</text>
+						<text class="text-grey">{{ $t('payParkingApplyFee.paymentAfterTime') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{endTime }}</text>
@@ -92,14 +92,14 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{receivableAmount}}{{ $t('yuan') }}
+				{{ $t('payParkingApplyFee.total') }}：{{receivableAmount}}{{ $t('payParkingApplyFee.yuan') }}
 			</view>
 			<view class="btn-group">
 				<!-- #ifdef H5 || MP-WEIXIN -->
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('payParkingApplyFee.submitOrder') }}</button>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_payWxApp()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_payWxApp()">{{ $t('payParkingApplyFee.submitOrder') }}</button>
 				<!-- #endif -->
 			</view>
 		</view>
@@ -137,12 +137,12 @@
 			computedFeeMonthList() {
 				let list = [];
 				for (let _index = 1; _index < 7; _index++) {
-					list.push(_index * this.paymentCycle + this.$t('months'))
+					list.push(_index * this.paymentCycle + this.$t('payParkingApplyFee.months'))
 				}
 				return list;
 			},
 			computedFeeMonthName() {
-				return this.paymentCycle + this.$t('months');
+				return this.paymentCycle + this.$t('payParkingApplyFee.months');
 			}
 		},
 		data() {
@@ -255,7 +255,7 @@
 			_payWxApp: function(_data) {
 				let _receivedAmount = this.receivableAmount;
 				uni.showLoading({
-					title: this.$t('processing')
+					title: this.$t('payParkingApplyFee.processing')
 				});
 				let _tradeType = 'APP';
 				let _objData = {
@@ -294,7 +294,7 @@
 								orderInfo: orderInfo, //微信、支付宝订单数据
 								success: function(res) {
 									uni.navigateTo({
-										url:"/pages/successPage/successPage?msg=" + encodeURIComponent(_that.$t('paySuccess')) + "&objType=3003"
+										url:"/pages/successPage/successPage?msg=" + encodeURIComponent(_that.$t('payParkingApplyFee.paySuccess')) + "&objType=3003"
 									})
 								},
 								fail: function(err) {
@@ -307,7 +307,7 @@
 
 						uni.hideLoading();
 						uni.showToast({
-							title: this.$t('paymentFailed'),
+							title: this.$t('payParkingApplyFee.paymentFailed'),
 							icon: 'none',
 							duration: 2000
 						});
@@ -315,7 +315,7 @@
 					fail: function(e) {
 						uni.hideLoading();
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						});
@@ -325,7 +325,7 @@
 			onPayFee: function() {
 				let _receivedAmount = this.receivableAmount;
 				uni.showLoading({
-					title: this.$t('processing'),
+					title: this.$t('payParkingApplyFee.processing'),
 				});
 				let _tradeType = 'JSAPI';
 				let _objData = {
@@ -358,7 +358,7 @@
 								'paySign': data.sign,
 								'success': function(res) {
 									uni.showToast({
-										title: _that.$t('paySuccess'),
+										title: _that.$t('payParkingApplyFee.paySuccess'),
 										duration: 2000
 									});
 									uni.navigateBack({});
@@ -372,7 +372,7 @@
 							let _that2 = this;
 							WexinPayFactory.wexinPay(data, function() {
 								uni.showToast({
-									title: _that2.$t('paySuccess'),
+									title: _that2.$t('payParkingApplyFee.paySuccess'),
 									duration: 2000
 								});
 								uni.navigateBack({});
@@ -383,7 +383,7 @@
 						}
 						uni.hideLoading();
 						uni.showToast({
-							title: this.$t('paymentFailed'),
+							title: this.$t('payParkingApplyFee.paymentFailed'),
 							icon: 'none',
 							duration: 2000
 						})

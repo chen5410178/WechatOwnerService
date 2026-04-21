@@ -4,10 +4,10 @@
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
 				<input v-model="searchValue" data-name="searchValue" name="searchValue" @focus="onChange" @blur="onSearch"
-				 :adjust-position="false" placeholder="请输入单元编号" confirm-type="search"></input>
+				 :adjust-position="false" :placeholder="$t('selectUnit.searchPlaceholder')" confirm-type="search"></input>
 			</view>
 			<view class="action">
-				<button class="cu-btn bg-green shadow-blur round" @tap="onSearch">搜索</button>
+				<button class="cu-btn bg-green shadow-blur round" @tap="onSearch">{{ $t('selectUnit.search')  }}</button>
 			</view>
 		</view>
 		<view class="cu-list menu">
@@ -92,7 +92,7 @@
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('selectUnit.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

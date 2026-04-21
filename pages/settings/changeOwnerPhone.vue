@@ -2,8 +2,8 @@
 	<view>
 		<form>
 			<view class="cu-form-group margin-top">
-				<view class="title">{{ $t('settings.phone') }}</view>
-				<input :placeholder="$t('settings.pleaseInputPhone')" type="number" v-model="phone"></input>
+				<view class="title">{{ $t('changeOwnerPhone.phone') }}</view>
+				<input :placeholder="$t('changeOwnerPhone.inputPhone')" type="number" v-model="phone"></input>
 				<!-- #ifdef MP-WEIXIN -->
 				<!-- <button  class="cu-btn bg-green" open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">获取手机号</button> -->
 				<!-- #endif -->
@@ -11,7 +11,7 @@
 		</form>
 		
 		<view class="padding flex flex-direction">
-			<button class="cu-btn bg-green lg" @tap="_doChangePhoto()">{{ $t('settings.submit') }}</button>
+			<button class="cu-btn bg-green lg" @tap="_doChangePhoto()">{{ $t('changeOwnerPhone.confirm') }}</button>
 		</view>
 		
 	</view>
@@ -76,7 +76,7 @@
 			onGetPhoneNumber(e) {
 				if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
 					uni.showToast({
-						title: this.$t('login.phoneNotAuthorized'),
+						title: this.$t('changeOwnerPhone.phoneNotAuthorized'),
 						icon: "none"
 					});
 					return;
@@ -106,7 +106,7 @@
 				if(this.phone == ''){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('settings.phoneCannotBeEmpty')
+						title: this.$t('changeOwnerPhone.phoneCannotBeEmpty')
 					});
 					return;
 				}
@@ -139,7 +139,7 @@
 					fail: function(error) {
 						// 调用服务端登录接口失败
 						uni.showToast({
-							title: this.$t('settings.interfaceFailed')
+							title: this.$t('changeOwnerPhone.interfaceFailed')
 						});
 						console.log(error);
 					}

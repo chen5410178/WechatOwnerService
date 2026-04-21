@@ -9,7 +9,9 @@ export default {
       rechargeAmount: '充值金额',
       yuan: '元',
       total: '合计',
-      submitOrder: '提交订单'
+      submitOrder: '提交订单',
+      dailyCharge: '每日充电',
+      hours: '小时'
     }
   },
   'en': {
@@ -22,7 +24,9 @@ export default {
       rechargeAmount: 'Recharge Amount',
       yuan: 'Yuan',
       total: 'Total',
-      submitOrder: 'Submit Order'
+      submitOrder: 'Submit Order',
+      dailyCharge: 'Daily Charge',
+      hours: 'hours'
     }
   },
   'zh-TW': {
@@ -35,7 +39,9 @@ export default {
       rechargeAmount: '充值金額',
       yuan: '元',
       total: '合計',
-      submitOrder: '提交訂單'
+      submitOrder: '提交訂單',
+      dailyCharge: '每日充電',
+      hours: '小時'
     }
   }
 }

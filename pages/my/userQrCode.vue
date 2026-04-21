@@ -41,7 +41,7 @@
 					}
 					_that.qrCode = data.data
 					new qrCode('userQrcode', {
-						text: _that.qrCode?_that.qrCode:this.$t('generateQrCodeFailed'),
+						text: _that.qrCode?_that.qrCode:this.$t('userQrCode.generateQrCodeFailed'),
 						width: 250,
 						height: 250,
 						colorDark: "#333333",

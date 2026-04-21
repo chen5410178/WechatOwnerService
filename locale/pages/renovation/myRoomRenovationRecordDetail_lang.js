@@ -8,7 +8,11 @@ export default {
       recordDesc: '记录描述',
       relatedPerson: '关联人员',
       relatedTime: '关联时间',
-      noData: '暂无详情'
+      noData: '暂无详情',
+      applyRoom: '申请房间',
+      trackRemark: '跟踪备注',
+      image: '图片',
+      video: '视频'
     }
   },
   'en': {
@@ -20,7 +24,11 @@ export default {
       recordDesc: 'Record Description',
       relatedPerson: 'Related Person',
       relatedTime: 'Related Time',
-      noData: 'No detail'
+      noData: 'No detail',
+      applyRoom: 'Apply Room',
+      trackRemark: 'Track Remark',
+      image: 'Image',
+      video: 'Video'
     }
   },
   'zh-TW': {
@@ -32,7 +40,11 @@ export default {
       recordDesc: '記錄描述',
       relatedPerson: '關聯人員',
       relatedTime: '關聯時間',
-      noData: '暫無詳情'
+      noData: '暫無詳情',
+      applyRoom: '申請房間',
+      trackRemark: '跟蹤備註',
+      image: '圖片',
+      video: '視頻'
     }
   }
 }

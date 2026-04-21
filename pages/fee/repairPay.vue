@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">{{ $t('repairInfo') }}</view>
+			<view class="block__title">{{ $t('repairPay.repairInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('orderNo') }}</text>
+						<text class="text-grey">{{ $t('repairPay.orderNo') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairId}}</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('repairType') }}</text>
+						<text class="text-grey">{{ $t('repairPay.repairType') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairTypeName}}</text>
@@ -21,7 +21,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('repairLocation') }}</text>
+						<text class="text-grey">{{ $t('repairPay.repairLocation') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairObjName}}</text>
@@ -29,7 +29,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('repairUser') }}</text>
+						<text class="text-grey">{{ $t('repairPay.repairUser') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{repairName}}</text>
@@ -37,18 +37,18 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('repairContent') }}</text>
+						<text class="text-grey">{{ $t('repairPay.repairContent') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{remark}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">{{ $t('feeInfo') }}</view>
+			<view class="block__title">{{ $t('repairPay.feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('feeId') }}</text>
+						<text class="text-grey">{{ $t('repairPay.feeId') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{feeInfo.feeId }}</text>
@@ -56,10 +56,10 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('amount') }}</text>
+						<text class="text-grey">{{ $t('repairPay.amount') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{feeInfo.amount + $t('yuan') }}</text>
+						<text class="text-grey text-sm">{{feeInfo.amount + $t('repairPay.yuan') }}</text>
 					</view>
 				</view>
 			</view>
@@ -67,10 +67,10 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{feeInfo.amount}}{{ $t('yuan') }}
+				{{ $t('repairPay.total') }}：{{feeInfo.amount}}{{ $t('repairPay.yuan') }}
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('repairPay.submitOrder') }}</button>
 			</view>
 
 
@@ -170,14 +170,14 @@
 							return;
 						}
 						uni.showToast({
-							title: this.$t('queryFeeFailed'),
+							title: this.$t('repairPay.queryFeeFailed'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -207,14 +207,14 @@
 							return;
 						}
 						uni.showToast({
-							title: this.$t('queryRepairFailed'),
+							title: this.$t('repairPay.queryRepairFailed'),
 							icon: 'none',
 							duration: 2000
 						});
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						})
@@ -223,7 +223,7 @@
 			},
 			onPayFee: function() {
 				uni.showLoading({
-					title: this.$t('processing')
+					title: this.$t('repairPay.processing')
 				});
 				let _tradeType = 'JSAPI';
 				let _receivedAmount = this.feeInfo.feePrice;
@@ -232,7 +232,7 @@
 					cycles: '1',
 					communityId: this.communityId,
 					feeId: this.feeInfo.feeId,
-					feeName: this.$t('repairFee'),
+					feeName: this.$t('repairPay.repairFee'),
 					receivedAmount: _receivedAmount,
 					tradeType: _tradeType,
 					appId: this.appId,

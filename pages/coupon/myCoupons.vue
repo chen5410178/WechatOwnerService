@@ -16,9 +16,9 @@
 							<image :src="couponImg" class="coupon"></image>
 							<view class="box">
 								<view class="descripe">
-									<view class="shop-name">{{ item.couponName }}({{item.stock}}张)</view>
+									<view class="shop-name">{{ item.couponName }}({{item.stock}}{{$t('myCoupons.sheet')}})</view>
 									<view class="text">{{ item.value }}</view>
-									<view class="expire">{{ item.createTime }}-{{ item.endTime+' 前' }}</view>
+									<view class="expire">{{ item.createTime }}-{{ item.endTime}}{{$t('myCoupons.before')}}</view>
 								</view>
 								<view class="usestate">
 									{{item.toTypeName}}
@@ -36,10 +36,10 @@
 								<view class="descripe">
 									<view class="shop-name">{{ item.couponName }}</view>
 									<view class="text">{{ item.value }}</view>
-									<view class="expire">{{ item.createTime }}-{{ item.endTime+'00：00' }}</view>
+									<view class="expire">{{ item.createTime }}-{{ item.endTime}}{{$t('myCoupons.timeSuffix')}}</view>
 								</view>
 								<view class="usestate" >
-									{{ $t('usedCoupon') }}
+									{{ $t('myCoupons.usedCoupon') }}
 								</view>
 							</view>
 						</view>
@@ -53,10 +53,10 @@
 								<view class="descripe">
 									<view class="shop-name">{{ item.couponName }}</view>
 									<view class="text">{{ item.value }}</view>
-									<view class="expire">{{ item.createTime }}-{{ item.endTime+'00：00' }}</view>
+									<view class="expire">{{ item.createTime }}-{{ item.endTime}}{{$t('myCoupons.timeSuffix')}}</view>
 								</view>
 								<view class="usestate">
-									{{ $t('expiredCoupon') }}
+									{{ $t('myCoupons.expiredCoupon') }}
 								</view>
 							</view>
 						</view>
@@ -117,7 +117,7 @@
 		},
 		computed: {
 			tab() {
-				return [this.$t('availableCoupon'), this.$t('usedCoupon'), this.$t('expiredCoupon')];
+				return [this.$t('myCoupons.availableCoupon'), this.$t('myCoupons.usedCoupon'), this.$t('myCoupons.expiredCoupon')];
 			}
 		},
 		onLoad: function(options) {
@@ -189,7 +189,7 @@
 				if(_coupon.toType == '2002'){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('notFound')
+						title: this.$t('myCoupons.notFound')
 					})
 					return;
 				}else if(_coupon.toType == '1001' || _coupon.toType == '1011'){

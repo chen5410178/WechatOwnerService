@@ -4,7 +4,7 @@
 		<view class="solid-bottom text-xl padding">
 			<text class="text-black text-bold">{{notice.title}}</text>
 		</view>
-		  <view class="footer">时间: {{notice.timeStr}}</view>
+		  <view class="footer">{{ $t('noticeDetail.time') }}: {{notice.timeStr}}</view>
 	</view>
 	<view class="flex-sub bg-white">
 		<view class="content">
@@ -73,5 +73,5 @@
 	};
 </script>
 <style>
-	@import "./detail.css";
+	/* 样式内联 */
 </style>

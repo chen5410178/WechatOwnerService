@@ -12,9 +12,10 @@ export default {
       submitFailed: '添加失败',
       inputName: '请输入访客姓名',
       inputPhone: '请输入访客电话',
-      inputPurpose: '请输入访问目的',
-      selectTime: '请选择访问时间',
-      generateQrcode: '生成二维码'
+       inputPurpose: '请输入访问目的',
+       selectTime: '请选择访问时间',
+       generateQrcode: '生成二维码',
+       houseNotCertified: '未认证房屋，请返回认证'
     }
   },
   'en': {
@@ -30,9 +31,10 @@ export default {
       submitFailed: 'Add Failed',
       inputName: 'Please input visitor name',
       inputPhone: 'Please input visitor phone',
-      inputPurpose: 'Please input visit purpose',
-      selectTime: 'Please select visit time',
-      generateQrcode: 'Generate QR Code'
+       inputPurpose: 'Please input visit purpose',
+       selectTime: 'Please select visit time',
+       generateQrcode: 'Generate QR Code',
+       houseNotCertified: 'House not certified, please return to certification'
     }
   },
   'zh-TW': {
@@ -48,9 +50,10 @@ export default {
       submitFailed: '添加失敗',
       inputName: '請輸入訪客姓名',
       inputPhone: '請輸入訪客電話',
-      inputPurpose: '請輸入訪問目的',
-      selectTime: '請選擇訪問時間',
-      generateQrcode: '生成二維碼'
+       inputPurpose: '請輸入訪問目的',
+       selectTime: '請選擇訪問時間',
+       generateQrcode: '生成二維碼',
+       houseNotCertified: '未認證房屋，請返回認證'
     }
   }
 }

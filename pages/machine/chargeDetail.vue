@@ -1,42 +1,42 @@
 <template>
 	<view>
 		<view>
-			<view class="block__title">{{ $t('machine.chargePile') }}</view>
+			<view class="block__title">{{ $t('chargeDetail.chargePile') }}</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('machine.name') }}</view>
+				<view class="title">{{ $t('chargeDetail.name') }}</view>
 				{{machine.machineName}}
 			</view>
 			<view class="cu-form-group">
-				<view class="title">{{ $t('machine.deviceNo') }}</view>
+				<view class="title">{{ $t('chargeDetail.deviceNo') }}</view>
 				{{machine.machineCode}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">{{ $t('machine.factory') }}</view>
+				<view class="title">{{ $t('chargeDetail.factory') }}</view>
 				{{machine.factoryName}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">{{ $t('machine.chargeRule') }}</view>
+				<view class="title">{{ $t('chargeDetail.chargeRule') }}</view>
 				{{machine.ruleName}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">{{ $t('machine.chargeType') }}</view>
+				<view class="title">{{ $t('chargeDetail.chargeType') }}</view>
 				{{machine.chargeTypeName}}
 			</view>
 			<view class="cu-form-group" >
-				<view class="title">{{ $t('machine.status') }}</view>
+				<view class="title">{{ $t('chargeDetail.status') }}</view>
 				{{machine.stateName}}
 			</view>
 			<view class="cu-form-group" v-if="machine.monitorId && machine.monitorId != '-1'">
-				<view class="title">{{ $t('machine.monitor') }}</view>
-				<view><button @click="_toPlayChargeVideo()" class="cu-btn  line-blue round q-input">{{ $t('machine.watch') }}</button></view>
+				<view class="title">{{ $t('chargeDetail.monitor') }}</view>
+				<view><button @click="_toPlayChargeVideo()" class="cu-btn  line-blue round q-input">{{ $t('chargeDetail.watch') }}</button></view>
 			</view>
 			<scroll-view scroll-x class="bg-white nav margin-top">
 				<view class="flex text-center">
 					<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-						{{ $t('machine.socket') }}
+						{{ $t('chargeDetail.socket') }}
 					</view>
 					<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-						{{ $t('machine.order') }}
+						{{ $t('chargeDetail.order') }}
 					</view>
 				</view>
 			</scroll-view>
@@ -53,43 +53,43 @@
 					</view>
 					<view class="apply-content flex justify-start flex-wrap">
 						<view class="item">
-							<text>{{ $t('machine.chargePile') }}:</text>
+							<text>{{ $t('chargeDetail.chargePile') }}:</text>
 							<text>{{item.machineName}}>{{item.machineCode}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.socket') }}:</text>
+							<text>{{ $t('chargeDetail.socket') }}:</text>
 							<text>{{item.portCode}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.chargeHours') }}:</text>
+							<text>{{ $t('chargeDetail.chargeHours') }}:</text>
 							<text>{{item.chargeHours}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.hourlyPrice') }}:</text>
+							<text>{{ $t('chargeDetail.hourlyPrice') }}:</text>
 							<text>{{item.durationPrice}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.energy') }}:</text>
+							<text>{{ $t('chargeDetail.energy') }}:</text>
 							<text>{{item.energy}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.deductAmount') }}:</text>
+							<text>{{ $t('chargeDetail.deductAmount') }}:</text>
 							<text>{{item.amount}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.startTime') }}:</text>
+							<text>{{ $t('chargeDetail.startTime') }}:</text>
 							<text>{{item.startTime}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.endTime') }}:</text>
+							<text>{{ $t('chargeDetail.endTime') }}:</text>
 							<text>{{item.endTime}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.status') }}:</text>
+							<text>{{ $t('chargeDetail.status') }}:</text>
 							<text>{{item.stateName}}</text>
 						</view>
 <view class="item">
-							<text>{{ $t('machine.remark') }}:</text>
+							<text>{{ $t('chargeDetail.remark') }}:</text>
 							<text>{{item.remark}}</text>
 						</view>
 					</view>
@@ -108,11 +108,11 @@
 					</view>
 					<view class="apply-content flex justify-start flex-wrap">
 						<view class="item">
-							<text>{{ $t('machine.deviceNo') }}:</text>
+							<text>{{ $t('chargeDetail.deviceNo') }}:</text>
 							<text>{{item.portCode}}</text>
 						</view>
 						<view class="item">
-							<text>{{ $t('machine.status') }}:</text>
+							<text>{{ $t('chargeDetail.status') }}:</text>
 							<text>{{item.stateName}}</text>
 						</view>
 					</view>

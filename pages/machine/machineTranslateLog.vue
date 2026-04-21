@@ -1,22 +1,22 @@
 <template>
 	<view>
-<view  class="block__title">{{ $t('machine.syncRecord') }}</view>
+<view  class="block__title">{{ $t('machineTranslateLog.syncRecord') }}</view>
 		<view v-if="noData == false">
 			<view v-for="(item,index) in machineTranslates" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>{{ $t('machine.syncTime') }}</view>
+					<view>{{ $t('machineTranslateLog.syncTime') }}</view>
 					<view class="text-gray">{{item.updateTime}}</view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">{{ $t('machine.deviceNameLabel') }}</view>
+					<view class="text-gray">{{ $t('machineTranslateLog.deviceNameLabel') }}</view>
 					<view class="text-gray">{{item.machineName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('machine.syncStatus') }}</view>
+					<view class="text-gray">{{ $t('machineTranslateLog.syncStatus') }}</view>
 					<view class="text-gray">{{item.stateName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('machine.syncRemark') }}</view>
+					<view class="text-gray">{{ $t('machineTranslateLog.syncRemark') }}</view>
 					<view class="text-gray">{{item.remark}}</view>
 				</view>
 			</view>

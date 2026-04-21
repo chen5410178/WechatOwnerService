@@ -7,7 +7,9 @@ export default {
       video: '视频',
       close: '关闭',
       openDoor: '开门',
-      back: '返回'
+      back: '返回',
+      noPermissionToOpenDoor: '无开门权限',
+      noDoorDeviceBound: '未绑定门禁设备'
     }
   },
   'en': {
@@ -18,7 +20,9 @@ export default {
       video: 'Video',
       close: 'Close',
       openDoor: 'Open Door',
-      back: 'Back'
+      back: 'Back',
+      noPermissionToOpenDoor: 'No permission to open door',
+      noDoorDeviceBound: 'No door device bound'
     }
   },
   'zh-TW': {
@@ -29,7 +33,9 @@ export default {
       video: '視頻',
       close: '關閉',
       openDoor: '開門',
-      back: '返回'
+      back: '返回',
+      noPermissionToOpenDoor: '無開門權限',
+      noDoorDeviceBound: '未綁定門禁設備'
     }
   }
 }

@@ -2,15 +2,15 @@
 	<view>
 		<view class="q-query flex justify-start flex-wrap">
 			<view class="q-item">
-				<input type="text" placeholder="输入监控名称" v-model="machineNameLike" confirm-type="search"></input>
+				<input type="text" :placeholder="$t('monitorCamera.monitorName')" v-model="machineNameLike" confirm-type="search"></input>
 			</view>
 			<view class=" margin-left ">
-				<button class="cu-btn  line-blue round q-input" @click="_loadMachines">搜索</button>
+				<button class="cu-btn  line-blue round q-input" @click="_loadMachines">{{ $t('monitorCamera.search') }}</button>
 			</view>
 		</view>
 		<view class="index-undo margin-top" v-if="machines && machines.length>0">
 			<view class="undo-title">
-				<text class="text-bold">监控相机</text>
+				<text class="text-bold">{{ $t('monitorCamera.monitorCenter') }}</text>
 			</view>
 			<view class="cu-list grid " :class="'col-2'">
 				<view class="cu-item" @click="_toPlayVideo(item);" v-for="(item,index) in machines" :key="index">

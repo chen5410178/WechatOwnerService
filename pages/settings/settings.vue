@@ -124,7 +124,7 @@
 					sourceType: ['album', 'camera'],
 					success: function(res) {
 						uni.showToast({
-							title: this.$t('uploading'),
+							title: this.$t('settings.uploading'),
 							icon: 'loading',
 							mask: true,
 							duration: 1000
@@ -176,7 +176,7 @@
 							console.log(res);
 							if (res.statusCode != 200) {
 								uni.showToast({
-									title: this.$t('uploadAvatarFailed'),
+									title: this.$t('settings.uploadAvatarFailed'),
 									icon: 'none',
 									duration: 2000
 								});
@@ -187,7 +187,7 @@
 						},
 						fail: function(e) {
 							uni.showToast({
-								title: this.$t('serverError'),
+								title: this.$t('settings.serverError'),
 								icon: 'none',
 								duration: 2000
 							});

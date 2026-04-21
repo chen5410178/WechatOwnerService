@@ -10,7 +10,7 @@
 						</view>
 						<view class="text-gray text-sm flex">
 							<view class="text-cut">
-								{{ $t('operator') }}：{{item.staffName}}
+								{{ $t('myRoomRenovationRecord.operator') }}：{{item.staffName}}
 							</view>
 						</view>
 					</view>

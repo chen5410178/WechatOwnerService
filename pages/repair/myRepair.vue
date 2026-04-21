@@ -3,13 +3,13 @@
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-					{{ $t('repair.pending') }}
+					{{ $t('myRepair.pending') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-					{{ $t('repair.processing') }}
+					{{ $t('myRepair.processing') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==2?'text-green cur':''" @tap="tabSelect(2)">
-					{{ $t('repair.completed') }}
+					{{ $t('myRepair.completed') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -23,45 +23,45 @@
 						<view class="text-gray">{{item.tel}}</view>
 					</view>
 					<view class="flex margin-top justify-between">
-						<view class="text-gray">{{ $t('repair.repairTypeName') }}</view>
+						<view class="text-gray">{{ $t('myRepair.repairTypeName') }}</view>
 						<view class="text-gray">{{item.repairTypeName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('repair.repairPerson') }}</view>
+						<view class="text-gray">{{ $t('myRepair.repairPerson') }}</view>
 						<view class="text-gray">{{item.repairName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('repair.location') }}</view>
+						<view class="text-gray">{{ $t('myRepair.location') }}</view>
 						<view class="text-gray">{{item.repairObjName}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('repair.submitTime') }}</view>
+						<view class="text-gray">{{ $t('myRepair.submitTime') }}</view>
 						<view class="text-gray">{{item.createTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('repair.submitHours') }}</view>
+						<view class="text-gray">{{ $t('myRepair.submitHours') }}</view>
 						<view class="text-gray">{{item.submitHours }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('repair.appointmentTime') }}</view>
+						<view class="text-gray">{{ $t('myRepair.appointmentTime') }}</view>
 						<view class="text-gray">{{item.appointmentTime }}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('repair.repairContent') }}</view>
+						<view class="text-gray">{{ $t('myRepair.repairContent') }}</view>
 						<view class="text-gray">{{item.context}}</view>
 					</view>
 					<view class="solid-top flex justify-end margin-top padding-top-sm ">
-						<button class="cu-btn sm line-gray" @click="repairDetail(item)">{{ $t('detail') }}</button>
+						<button class="cu-btn sm line-gray" @click="repairDetail(item)">{{ $t('myRepair.detail') }}</button>
 						<button class="cu-btn sm line-gray margin-left" v-if="item.timeoutFlag == 'Y'"
-							@click="_doUrgeRepair(item)">{{ $t('repair.urgeRepair') }}</button>
+							@click="_doUrgeRepair(item)">{{ $t('myRepair.urgeRepair') }}</button>
 						<button class="cu-btn sm bg-red margin-left" v-if="item.state == '1000'"
-							@click="deleteRepair(item)">{{ $t('repair.delete') }}</button>
+							@click="deleteRepair(item)">{{ $t('myRepair.delete') }}</button>
 						<button v-if="item.state == '1400'" class="cu-btn sm bg-green  margin-left"
-							@click="_toPay(item)">{{ $t('repair.pay') }}</button>
+							@click="_toPay(item)">{{ $t('myRepair.pay') }}</button>
 						<button v-if="item.state == '1700'" class="cu-btn sm bg-green margin-left"
-							@click="_appraiseRepair(item)">{{ $t('repair.evaluate') }}</button>
+							@click="_appraiseRepair(item)">{{ $t('myRepair.evaluate') }}</button>
 						<button v-if="item.state == '1700' || item.state == '1400'"
-							class="cu-btn sm  bg-red margin-left" @click="_backRepair(item)">{{ $t('repair.returnRepair') }}</button>
+							class="cu-btn sm  bg-red margin-left" 							@click="_backRepair(item)">{{ $t('myRepair.returnRepair') }}</button>
 					</view>
 				</view>
 			</view>
@@ -73,17 +73,17 @@
 		<view class="cu-modal" :class="deleteRepairModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">{{ $t('repair.tips') || '温馨提示' }}</view>
+					<view class="content">{{ $t('myRepair.tips') || '温馨提示' }}</view>
 					<view class="action" @tap="_cancleDeleteRepair()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					{{ $t('repair.confirmDelete') }}
+					{{ $t('myRepair.confirmDelete') }}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteRepair()">{{ $t('cancel') }}</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteRepair()">{{ $t('repair.delete') }}</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleDeleteRepair()">{{ $t('myRepair.cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doDeleteRepair()">{{ $t('myRepair.delete') }}</view>
 				</view>
 			</view>
 		</view>
@@ -91,17 +91,17 @@
 		<view class="cu-modal" :class="backRepairModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">{{ $t('repair.returnReason') }}</view>
+					<view class="content">{{ $t('myRepair.returnReason') }}</view>
 					<view class="action" @tap="_cancleBackRepair()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="cu-form-group">
-					<textarea v-model="context" maxlength="50" :placeholder="$t('repair.inputReturnReason')"></textarea>
+					<textarea v-model="context" maxlength="50" :placeholder="$t('myRepair.inputReturnReason')"></textarea>
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleBackRepair()">{{ $t('cancel') }}</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doBackRepair()">{{ $t('confirm') }}</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleBackRepair()">{{ $t('myRepair.cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doBackRepair()">{{ $t('myRepair.confirm') }}</view>
 				</view>
 			</view>
 		</view>
@@ -159,7 +159,7 @@
 			if (!hasLogin()) {
 				uni.showToast({
 					icon: 'none',
-					title: this.$t('repair.notLogin')
+						title: this.$t('myRepair.notLogin')
 				})
 				return;
 			}
@@ -215,7 +215,7 @@
 				}).then(_data=>{
 					uni.showToast({
 						icon:'none',
-						title: this.$t('repair.urgeSuccess'),
+						title: this.$t('myRepair.urgeSuccess'),
 						duration:5000
 					});
 					return;
@@ -248,7 +248,7 @@
 						}
 						uni.showToast({
 							icon: 'none',
-							title: this.$t('repair.processSuccess'),
+							title: this.$t('myRepair.processSuccess'),
 							duration: 2000
 						});
 						that._cancleDeleteRepair();
@@ -257,7 +257,7 @@
 					fail: function(e) {
 						console.log(e);
 						uni.showToast({
-							title: this.$t('repair.serverError'),
+							title: this.$t('myRepair.serverError'),
 							icon: 'none',
 							duration: 2000
 						});
@@ -282,7 +282,7 @@
 
 						if (_data.length < 1) {
 							uni.showToast({
-								title: this.$t('repair.cannotReturn')
+								title: this.$t('myRepair.cannotReturn')
 							});
 							return;
 						}
@@ -300,7 +300,7 @@
 				let that = this;
 				if (this.context == '') {
 					uni.showToast({
-						title: this.$t('repair.returnContentEmpty'),
+						title: this.$t('myRepair.returnContentEmpty'),
 						icon: 'none'
 					});
 					return;
@@ -332,7 +332,7 @@
 						}
 						uni.showToast({
 							icon: 'none',
-							title: this.$t('repair.processSuccess'),
+							title: this.$t('myRepair.processSuccess'),
 							duration: 2000
 						});
 						that._cancleBackRepair();
@@ -341,7 +341,7 @@
 					fail: function(e) {
 						console.log(e);
 						uni.showToast({
-							title: this.$t('repair.serverError'),
+							title: this.$t('myRepair.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

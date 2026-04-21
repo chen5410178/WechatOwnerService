@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('repair.workOrderDetail') }}</view>
+		<view class="block__title">{{ $t('repairDetail.workOrderDetail') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.repairType') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.repairType') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.repairTypeName}}</text>
@@ -12,15 +12,15 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.processingTimeStandard') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.processingTimeStandard') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{repairInfo.doTime}}{{ $t('repair.hours') }}</text>
+					<text class="text-grey text-sm">{{repairInfo.doTime}}{{ $t('repairDetail.hours') }}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.repairPerson') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.repairPerson') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.repairName}}({{repairInfo.tel}})</text>
@@ -28,7 +28,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.location') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.location') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.repairObjName}}</text>
@@ -36,7 +36,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.appointmentStartTime') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.appointmentStartTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.appointmentTime}}</text>
@@ -44,7 +44,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.submitTime') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.submitTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.createTime}}</text>
@@ -52,7 +52,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.submitDuration') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.submitDuration') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.submitHours || 0}}</text>
@@ -60,7 +60,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.completedTime') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.completedTime') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.finishTime || '-'}}</text>
@@ -68,7 +68,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.status') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.status') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.stateName}}</text>
@@ -76,7 +76,7 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('repair.repairContent') }}</text>
+					<text class="text-grey">{{ $t('repairDetail.repairContent') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{repairInfo.context}}</text>
@@ -84,23 +84,23 @@
 			</view>
 		</view>
 		<view class="cu-timeline margin-top">
-			<view class="cu-time">{{ $t('repair.workOrderProgress') }}</view>
+			<view class="cu-time">{{ $t('repairDetail.workOrderProgress') }}</view>
 			<view class="cu-item " v-for="(item,index) in staffs" :key="key">
 				<view class="bg-cyan content">
-					<text>{{item.startTime}} </text> {{ $t('repair.arrivedWorkstation') }}
+					<text>{{item.startTime}} </text> {{ $t('repairDetail.arrivedWorkstation') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.endTime != undefined">
-					<text>{{item.endTime}} </text> {{ $t('repair.processingComplete') }}
+					<text>{{item.endTime}} </text> {{ $t('repairDetail.processingComplete') }}
 				</view>
 				<view class="bg-cyan content" v-if="item.endTime != undefined">
-					<text>{{ $t('repair.processingOpinion') }}：</text>  {{item.context}}
+					<text>{{ $t('repairDetail.processingOpinion') }}：</text>  {{item.context}}
 					<block v-if="item.state == '12000' && item.payTypeName != undefined">
 						({{item.payTypeName}})
 					</block>
 				</view>
 				<!-- 待支付状态 - 详情描述 -->
 				<view class="bg-cyan content" v-if="item.state == '10009'">
-					<text>{{ $t('repair.processingOpinion') }}：</text> {{item.context}}
+					<text>{{ $t('repairDetail.processingOpinion') }}：</text> {{item.context}}
 					<block v-if="item.payTypeName != undefined">({{item.payTypeName}})</block>
 				</view>
 				<view class="bg-cyan content" v-if="item.photoVos.length > 0 && item.state==10005">

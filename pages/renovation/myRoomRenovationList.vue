@@ -18,7 +18,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">{{ $t('noRenovationInfo') }}</text>
+					<text class="text-grey">{{ $t('myRoomRenovationList.noRenovationInfo') }}</text>
 				</view>
 				<view class="action">
 

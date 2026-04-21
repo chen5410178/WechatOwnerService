@@ -4,30 +4,30 @@
 			<view class="tips_block">
 			</view>
 			<view class="ak_row_title">
-				<text>{{config.qrcodeName || $t('qrCodeName')}}</text>
+				<text>{{config.qrcodeName || $t('payQrCode.qrCodeName')}}</text>
 			</view>
 			<view class="tips_block">
 			</view>
 			<view class="cu-bar btn-group margin-left margin-right" style="margin-top: 30px;">
 				<button @click="_changeFlag('room')" style="margin-left: 0px;" v-if="config.queryWay == '2002' || config.queryWay == '3003'" class="cu-btn shadow-blur  lg"
-					:class="{'bg-blue':queryWay == 'room','line-blue':queryWay != 'room'}">{{ $t('roomWay') }}</button>
+					:class="{'bg-blue':queryWay == 'room','line-blue':queryWay != 'room'}">{{ $t('payQrCode.roomWay') }}</button>
 				<button @click="_changeFlag('phone')" style="margin-right: 0px;" v-if="config.queryWay == '1001' || config.queryWay == '3003'" class="cu-btn  shadow-blur lg"
-					:class="{'bg-blue':queryWay == 'phone','line-blue':queryWay != 'phone'}">{{ $t('phoneWay') }}</button>
+					:class="{'bg-blue':queryWay == 'phone','line-blue':queryWay != 'phone'}">{{ $t('payQrCode.phoneWay') }}</button>
 			</view>
 			<view>
 				<view class='tips'>
-					<text v-if="queryWay == 'room'">{{ $t('inputRoomNum') }}</text>
-					<text v-else>{{ $t('inputPhone') }}</text>
+					<text v-if="queryWay == 'room'">{{ $t('payQrCode.inputRoomNum') }}</text>
+					<text v-else>{{ $t('payQrCode.inputPhone') }}</text>
 				</view>
 				<view class="plate-input-body">
 					<view class="plate-input-content" v-if="queryWay == 'room'">
-						<input type="text" class="input-ui" v-model="roomNum" :placeholder="$t('inputRoomTip')" />
+						<input type="text" class="input-ui" v-model="roomNum" :placeholder="$t('payQrCode.inputRoomTip')" />
 					</view>
 					<view class="plate-input-content" v-else>
-						<input type="number" maxlength="11" class="input-ui" v-model="link" :placeholder="$t('inputOwnerPhone')" />
+						<input type="number" maxlength="11" class="input-ui" v-model="link" :placeholder="$t('payQrCode.inputOwnerPhone')" />
 					</view>
 					<view class="flex justify-between margin-top msg-code" v-if="config.smsValidate == 'ON'">
-						<input v-model="msgCode" :placeholder="$t('inputSmsCode')" name="input" style="width: 70%;"
+						<input v-model="msgCode" :placeholder="$t('payQrCode.inputSmsCode')" name="input" style="width: 70%;"
 							class="input-ui"></input>
 						<button class='cu-btn bg-green shadow msg-code' :disabled="btnDisabled"
 							@click="_sendSms()">{{btnValue}}</button>
@@ -37,11 +37,11 @@
 
 			<view class="plat-btn-black"></view>
 			<view class="cu-bar btn-group" style="margin-top: 30px;">
-				<button @click="_queryOwnerInfo" class="cu-btn bg-green shadow-blur round lg">{{ $t('queryNow') }}</button>
+				<button @click="_queryOwnerInfo" class="cu-btn bg-green shadow-blur round lg">{{ $t('payQrCode.queryNow') }}</button>
 			</view>
 
 			<view class="temp-remark">
-				<view>{{ $t('payDescription') }}</view>
+				<view>{{ $t('payQrCode.payDescription') }}</view>
 				<view>{{config.content}}</view>
 			</view>
 		</view>
@@ -70,7 +70,7 @@
 				queryWay: 'room',
 				pfqId:'',
 				second:60,
-				btnValue: this.$t('verificationCode'),
+				btnValue: this.$t('payQrCode.verificationCode'),
 				btnDisabled: false,
 				config:{
 					content: "",
@@ -78,7 +78,7 @@
 					createStaffName: "",
 					customFee: "",
 					preFee: "",
-					qrcodeName: this.$t('qrCodeName'),
+					qrcodeName: this.$t('payQrCode.qrCodeName'),
 					queryWay: "1001",
 					smsValidate: "ON",
 					state:''
@@ -99,7 +99,7 @@
 				if(this.config.state != 'ON'){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('qrCodeDisabled')
+						title: this.$t('payQrCode.qrCodeDisabled')
 					});
 					return;
 				}

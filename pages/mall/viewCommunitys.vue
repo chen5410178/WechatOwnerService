@@ -4,10 +4,10 @@
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
 				<input v-model="searchValue" data-name="searchValue" name="searchValue" @focus="onChange" @blur="onSearch"
-				 :adjust-position="false" :placeholder="$t('inputCommunityName')" confirm-type="search"></input>
+				 :adjust-position="false" :placeholder="$t('viewCommunitys.inputCommunityName')" confirm-type="search"></input>
 			</view>
 			<view class="action">
-				<button class="cu-btn bg-green shadow-blur round" @tap="onSearch">{{ $t('search') }}</button>
+				<button class="cu-btn bg-green shadow-blur round" @tap="onSearch">{{ $t('viewCommunitys.search') }}</button>
 			</view>
 		</view>
 		<view class="cu-list menu">

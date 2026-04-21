@@ -2,30 +2,30 @@
 	<view>
 		<view class="content bg-white margin-top">
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">{{ $t('repair.comprehensiveScore') }}</view>
+				<view class="item-title padding-sm radius">{{ $t('appraiseRepair.comprehensiveScore') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync1" @change="appraiseScoreChange" />
 				</view>
 			</view>
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">{{ $t('repair.repairSpeed') }}</view>
+				<view class="item-title padding-sm radius">{{ $t('appraiseRepair.repairSpeed') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync2" @change="doorSpeedScoreChange" />
 				</view>
 			</view>
 			<view class="flex solid-bottom justify-start">
-				<view class="item-title padding-sm radius">{{ $t('repair.repairmanService') }}</view>
+				<view class="item-title padding-sm radius">{{ $t('appraiseRepair.repairmanService') }}</view>
 				<view class="item-star padding-sm  radius">
 					<sx-rate :value="4" :fontSize="fontSize" :value.sync="rateSync3" @change="repairmanServiceScoreChange" />
 				</view>
 			</view>
 			<view class="cu-form-group padding align-start">
-				<view class="title padding-left-sm">{{ $t('repair.serviceEvaluation') }}</view>
-				<textarea maxlength="200" v-model="context" :placeholder="$t('repair.evaluationPlaceholder')"></textarea>
+				<view class="title padding-left-sm">{{ $t('appraiseRepair.serviceEvaluation') }}</view>
+				<textarea maxlength="200" v-model="context" :placeholder="$t('appraiseRepair.evaluationPlaceholder')"></textarea>
 			</view>
 			
 			<view class="flex flex-direction margin">
-				<button class="cu-btn bg-green margin-tb-sm lg" @click="submitAppraiseRepair()">{{ $t('repair.evaluate') }}</button>
+				<button class="cu-btn bg-green margin-tb-sm lg" @click="submitAppraiseRepair()">{{ $t('appraiseRepair.evaluate') }}</button>
 			</view>
 
 		</view>
@@ -84,14 +84,14 @@
 			submitAppraiseRepair:function(){
 				if(this.context == ''){
 					uni.showToast({
-						title: this.$t('repair.evaluationPlaceholder'),
+						title: this.$t('appraiseRepair.evaluationPlaceholder'),
 						icon:'none'
 					});
 					return ;
 				}
 				if(this.repairId == ''){
 					uni.showToast({
-						title: this.$t('repair.notConfigRepair'),
+						title: this.$t('appraiseRepair.notConfigRepair'),
 						icon:'none'
 					});
 					return ;

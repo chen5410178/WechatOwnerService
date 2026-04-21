@@ -73,7 +73,7 @@
 			},
 			propertyList() {
 				return [
-					{ name: this.$t('service.communityNotice'), icon: 'fa-solid fa-bullhorn c-orange', href: '/pages/notice/index' },
+					{ name: this.$t('service.communityNotice'), icon: 'fa-solid fa-bullhorn c-orange', href: '/pages/notice/notice' },
 					{ name: this.$t('service.familyMembers'), icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
 					{ name: this.$t('service.ownerInfo'), icon: 'fa-solid fa-user c-purple', href: '/pages/viewBindOwner/viewBindOwner' },
 					{ name: this.$t('service.parkingApply'), icon: 'fa-solid fa-square-parking c-green', href: '/pages/car/applyparking' },

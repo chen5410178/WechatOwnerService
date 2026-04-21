@@ -9,7 +9,8 @@ export default {
       saveSuccess: '保存成功',
       saveFailed: '保存失败',
       expired: '二维码已过期',
-      validTime: '有效期'
+      validTime: '有效期',
+      generateQrCodeFailed: '生成二维码失败'
     }
   },
   'en': {
@@ -22,7 +23,8 @@ export default {
       saveSuccess: 'Save Success',
       saveFailed: 'Save Failed',
       expired: 'QR Code Expired',
-      validTime: 'Valid Time'
+      validTime: 'Valid Time',
+      generateQrCodeFailed: 'Generate QR code failed'
     }
   },
   'zh-TW': {
@@ -35,7 +37,8 @@ export default {
       saveSuccess: '保存成功',
       saveFailed: '保存失敗',
       expired: '二維碼已過期',
-      validTime: '有效期'
+      validTime: '有效期',
+      generateQrCodeFailed: '生成二維碼失敗'
     }
   }
 }

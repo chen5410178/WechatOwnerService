@@ -47,7 +47,7 @@
 			if (!memberId || '-1' == memberId) {
 				uni.showToast({
 					icon: 'none',
-					title: '未认证房屋，请返回认证'
+					title: this.$t('addVisit.houseNotCertified')
 				});
 				return;
 			}

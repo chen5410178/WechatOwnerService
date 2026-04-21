@@ -19,7 +19,7 @@
 			<view class="cu-item" v-if="rooms.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">{{ $t('my.noHouseInfo') }}</text>
+					<text class="text-grey">{{ $t('myHouse.noHouseInfo') }}</text>
 				</view>
 				<view class="action">
 

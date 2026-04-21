@@ -6,8 +6,36 @@ export default {
       currentCommunity: '当前社区',
       selectCommunity: '选择社区',
       switchSuccess: '切换成功',
-      noData: '暂无社区'
+      noData: '暂无社区',
+      pleaseInputCommunityName: '请输入小区名称',
+      search: '搜索'
     }
+  },
+  'en': {
+    viewCommunitys: {
+      title: 'Switch Community',
+      communityList: 'Community List',
+      currentCommunity: 'Current Community',
+      selectCommunity: 'Select Community',
+      switchSuccess: 'Switch Success',
+      noData: 'No Community',
+      pleaseInputCommunityName: 'Please enter community name',
+      search: 'Search'
+    }
+  },
+  'zh-TW': {
+    viewCommunitys: {
+      title: '切换社区',
+      communityList: '社区列表',
+      currentCommunity: '当前社区',
+      selectCommunity: '选择社区',
+      switchSuccess: '切换成功',
+      noData: '暂无社区',
+      pleaseInputCommunityName: '请输入小区名称',
+      search: '搜索'
+    }
+  }
+}
   },
   'en': {
     viewCommunitys: {

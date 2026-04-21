@@ -3,7 +3,7 @@
 		<view class="scs-t">{{msg}}</view>
 		
 		<view class="flex flex-direction fixed-bottom" style="width: 100%;">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="toIndex()">返回首页</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="toIndex()">{{ $t('addVisitSuccess.goHome') }}</button>
 		</view>
 	</view>
 </template>

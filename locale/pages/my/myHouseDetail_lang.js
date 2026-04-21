@@ -17,7 +17,20 @@ export default {
       delete: '删除',
       confirmDelete: '确认删除该房屋吗',
       deleteSuccess: '删除成功',
-      deleteFailed: '删除失败'
+      deleteFailed: '删除失败',
+      houseInfo: '房屋信息',
+      houseId: '房屋ID',
+      building: '楼栋',
+      buildingNum: '号楼',
+      unit: '单元',
+      unitNum: '单元',
+      room: '房间',
+      roomNum: '室',
+      floor: '楼层',
+      floorLayer: '层',
+      builtUpArea: '建筑面积',
+      sqm: '平方米',
+      houseType: '户型'
     }
   },
   'en': {
@@ -38,7 +51,20 @@ export default {
       delete: 'Delete',
       confirmDelete: 'Confirm delete this house?',
       deleteSuccess: 'Delete Success',
-      deleteFailed: 'Delete Failed'
+      deleteFailed: 'Delete Failed',
+      houseInfo: 'House Info',
+      houseId: 'House ID',
+      building: 'Building',
+      buildingNum: '',
+      unit: 'Unit',
+      unitNum: 'Unit',
+      room: 'Room',
+      roomNum: 'Room',
+      floor: 'Floor',
+      floorLayer: '',
+      builtUpArea: 'Built-up Area',
+      sqm: 'sqm',
+      houseType: 'Type'
     }
   },
   'zh-TW': {
@@ -59,7 +85,20 @@ export default {
       delete: '刪除',
       confirmDelete: '確認刪除該房屋嗎',
       deleteSuccess: '刪除成功',
-      deleteFailed: '刪除失敗'
+      deleteFailed: '刪除失敗',
+      houseInfo: '房屋信息',
+      houseId: '房屋ID',
+      building: '楼栋',
+      buildingNum: '号楼',
+      unit: '单元',
+      unitNum: '单元',
+      room: '房间',
+      roomNum: '室',
+      floor: '楼层',
+      floorLayer: '层',
+      builtUpArea: '建筑面积',
+      sqm: '平方米',
+      houseType: '户型'
     }
   }
 }

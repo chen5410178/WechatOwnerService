@@ -27,6 +27,8 @@ import playVideoLangMsg from './machine/playVideo_lang'
 import prestoreChargeCardLangMsg from './machine/prestoreChargeCard_lang'
 import mallLangMsg from './mall/mall_lang'
 import mallIndexLangMsg from './mall/mallIndex_lang'
+import selectcommunityLangMsg from './mall/selectcommunity_lang'
+import viewCommunitysLangMsg from './mall/viewCommunitys_lang'
 import meterLangMsg from './meter/meter_lang'
 import meterDetailLangMsg from './meter/meterDetail_lang'
 import meterListLangMsg from './meter/meterList_lang'
@@ -37,7 +39,7 @@ import myHouseDetailLangMsg from './my/myHouseDetail_lang'
 import myPropertyLangMsg from './my/myProperty_lang'
 import userQrCodeLangMsg from './my/userQrCode_lang'
 import viewAdminLangMsg from './my/viewAdmin_lang'
-import viewCommunitysLangMsg from './my/viewCommunitys_lang'
+import viewCommunitysMyLangMsg from './my/viewCommunitys_lang'
 
 export default {
   'zh-CN': {
@@ -70,6 +72,8 @@ export default {
     ...prestoreChargeCardLangMsg['zh-CN'],
     ...mallLangMsg['zh-CN'],
     ...mallIndexLangMsg['zh-CN'],
+    ...selectcommunityLangMsg['zh-CN'],
+    ...viewCommunitysMyLangMsg['zh-CN'],
     ...meterLangMsg['zh-CN'],
     ...meterDetailLangMsg['zh-CN'],
     ...meterListLangMsg['zh-CN'],
@@ -112,6 +116,8 @@ export default {
     ...prestoreChargeCardLangMsg['en'],
     ...mallLangMsg['en'],
     ...mallIndexLangMsg['en'],
+    ...selectcommunityLangMsg['en'],
+    ...viewCommunitysMyLangMsg['en'],
     ...meterLangMsg['en'],
     ...meterDetailLangMsg['en'],
     ...meterListLangMsg['en'],
@@ -154,6 +160,8 @@ export default {
     ...prestoreChargeCardLangMsg['zh-TW'],
     ...mallLangMsg['zh-TW'],
     ...mallIndexLangMsg['zh-TW'],
+    ...selectcommunityLangMsg['zh-TW'],
+    ...viewCommunitysMyLangMsg['zh-TW'],
     ...meterLangMsg['zh-TW'],
     ...meterDetailLangMsg['zh-TW'],
     ...meterListLangMsg['zh-TW'],

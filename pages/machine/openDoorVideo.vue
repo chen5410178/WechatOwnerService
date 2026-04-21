@@ -5,8 +5,8 @@
 			<web-view :src="videoUrl" style="height: 600upx;"></web-view>
 		</view>
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-blue lg" @click="_doOpenDoor()">开门</button>
-			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_goBack()">返回</button>
+			<button class="cu-btn bg-blue lg" @click="_doOpenDoor()">{{ $t('openDoorVideo.openDoor') }}</button>
+			<button class="cu-btn line-orange  margin-tb-sm lg" @click="_goBack()">{{ $t('openDoorVideo.back') }}</button>
 		</view>
 		<!--#endif -->
 
@@ -81,7 +81,7 @@
 			_doOpenDoor: function() {
 				let _that = this;
 				uni.showLoading({
-					title: this.$t('processing')
+					title: this.$t('openDoorVideo.processing')
 				});
 				openDoor({
 					communityId: getCommunityId(),
@@ -93,7 +93,7 @@
 					let data = res.data;
 					let msg = '';
 					if (data.code == 0) {
-						msg = this.$t('requestSentToDoor');
+						msg = this.$t('openDoorVideo.requestSentToDoor');
 					} else {
 						msg = data.msg;
 					}
@@ -105,7 +105,7 @@
 				}, (err) => {
 					uni.hideLoading();
 					uni.showToast({
-						title: this.$t('openDoorFailed'),
+						title: this.$t('openDoorVideo.openDoorFailed'),
 						icon: 'none',
 						duration: 2000
 					});

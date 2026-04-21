@@ -72,7 +72,7 @@ export function getCategoryList() {
 		}, {
 			name: "公告",
 			src: "/static/images/index_notice.png",
-			href: "/pages/notice/index"
+			href: "/pages/notice/notice"
 		}, {
 			name: "开门",
 			src: "/static/images/index_openDoor.png",

@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('buyMonthCard') }}</view>
+		<view class="block__title">{{ $t('prestoreChargeCard.buyMonthCard') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('chargeMonthCard') }}</text>
+					<text class="text-grey">{{ $t('prestoreChargeCard.chargeMonthCard') }}</text>
 				</view>
 				<view class="action">
 					<picker  :value="cardIndex" :range="cards" :range-key="'cardName'" @change="cardChange">
@@ -16,23 +16,23 @@
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('rechargeMonth') }}</text>
+					<text class="text-grey">{{ $t('prestoreChargeCard.rechargeMonth') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{cardMonth}}{{ $t('months') }}</text>
+					<text class="text-grey text-sm">{{cardMonth}}{{ $t('prestoreChargeCard.months') }}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('dailyCharge') }}</text>
+					<text class="text-grey">{{ $t('prestoreChargeCard.dailyCharge') }}</text>
 				</view>
 				<view class="action">
-					<text class="text-grey text-sm">{{dayHours}}{{ $t('hours') }}</text>
+					<text class="text-grey text-sm">{{dayHours}}{{ $t('prestoreChargeCard.hours') }}</text>
 				</view>
 			</view>
 			<view class="cu-item">
 				<view class="content">
-					<text class="text-grey">{{ $t('rechargeAmount') }}</text>
+					<text class="text-grey">{{ $t('prestoreChargeCard.rechargeAmount') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{cardPrice}}</text>
@@ -43,14 +43,14 @@
 		<view class=" bg-white  border flex justify-end" style="position: fixed;width: 100%;bottom: 0;">
 		
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{cardPrice}}{{ $t('yuan') }}
+				{{ $t('prestoreChargeCard.total') }}：{{cardPrice}}{{ $t('prestoreChargeCard.yuan') }}
 			</view>
 			<view class="btn-group">
 				<!-- #ifdef H5 || MP-WEIXIN -->
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('prestoreChargeCard.submitOrder') }}</button>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
-				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_payWxApp()">{{ $t('submitOrder') }}</button>
+				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="_payWxApp()">{{ $t('prestoreChargeCard.submitOrder') }}</button>
 				<!-- #endif -->
 			</view>
 		</view>
@@ -126,7 +126,7 @@
 				payFeeApp(this,{
 					communityId: this.communityId,
 					personTel: this.personTel,
-					feeName: this.$t('monthCardRecharge'),
+					feeName: this.$t('prestoreChargeCard.monthCardRecharge'),
 					receivedAmount: _receivedAmount,
 					cardId:this.cardId,
 					tradeType: _tradeType,
@@ -141,7 +141,7 @@
 					business: "preStoreChargeCard",
 					communityId: this.communityId,
 					personTel: this.personTel,
-					feeName: this.$t('monthCardRecharge'),
+					feeName: this.$t('prestoreChargeCard.monthCardRecharge'),
 					receivedAmount: _receivedAmount,
 					cardId:this.cardId,
 					tradeType: _tradeType,

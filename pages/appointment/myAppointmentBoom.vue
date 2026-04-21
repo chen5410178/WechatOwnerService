@@ -29,45 +29,45 @@
 			<view v-for="(item,index) in bookingList" :key="index"
 				class="bg-white margin-top margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs justify-between">
-					<view style="font-size: 14px;">{{ $t('myBoomList.orderNo') }}<span style="margin-left: 10px;"
+					<view style="font-size: 14px;">							{{ $t('myAppointmentBoom.orderNo') }}<span style="margin-left: 10px;"
 							class="text-gray">{{item.timeId}}</span></view>
 				</view>
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view style="font-size: 14px;">{{ $t('myBoomList.venue') }}<span style="margin-left: 10px;"
+					<view style="font-size: 14px;">							{{ $t('myAppointmentBoom.venue') }}<span style="margin-left: 10px;"
 							class="text-gray">{{item.venueName}}</span></view>
 				</view>
 				<view class="flex margin-top justify-between">
-					<view class="text-gray">{{ $t('myBoomList.space') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.space') }}</view>
 					<view class="text-gray">{{item.spaceName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.bookDate') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.bookDate') }}</view>
 					<view class="text-gray">{{item.appointmentTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.bookTime') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.bookTime') }}</view>
 					<view class="text-gray">{{HoursStr(item.hours)}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.bookPerson') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.bookPerson') }}</view>
 					<view class="text-gray">{{item.personName }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.bookTel') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.bookTel') }}</view>
 					<view class="text-gray">{{item.personTel }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.amount') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.amount') }}</view>
 					<view class="text-gray">{{item.total }}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.verifyStatus') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.verifyStatus') }}</view>
 					<view class="text-gray">{{StateStr(item.state)}}</view>
 				</view>
 
 
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('myBoomList.verifyTime') }}</view>
+					<view class="text-gray">{{ $t('myAppointmentBoom.verifyTime') }}</view>
 					<view class="text-gray">{{item.stateTime}}</view>
 				</view>
 
@@ -76,7 +76,7 @@
 						@click="personTimeRefund(item,'T')">申请退款</button>
 					<button v-if="item.state == 'T'" class="cu-btn line-grey margin-left"
 						@click="personTimeRefund(item,'W')">取消退款</button> -->
-					<button class="cu-btn bg-gradual-blue margin-left" @click="toApplyDetail(item)">{{ $t('myBoomList.detail') }}</button>
+					<button class="cu-btn bg-gradual-blue margin-left" @click="toApplyDetail(item)">{{ $t('myAppointmentBoom.detail') }}</button>
 				</view>
 
 				<view
@@ -88,7 +88,7 @@
 			<view class="cu-item" v-if="bookingList.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">{{ $t('myBoomList.noRecord') }}</text>
+					<text class="text-grey">{{ $t('myAppointmentBoom.noRecord') }}</text>
 				</view>
 				<view class="action">
 
@@ -127,13 +127,13 @@
 		computed: {
 			parkingType() {
 				return [{
-					"name": this.$t('myBoomList.all'),
+					"name": this.$t('myAppointmentBoom.all'),
 					"code": 1000
 				}, {
-					"name": this.$t('myBoomList.waitVerify'),
+					"name": this.$t('myAppointmentBoom.waitVerify'),
 					"code": 1001
 				}, {
-					"name": this.$t('myBoomList.verified'),
+					"name": this.$t('myAppointmentBoom.verified'),
 					"code": 2002
 				}];
 			}
@@ -161,7 +161,7 @@
 			initList() {
 				// debugger
 				uni.showLoading({
-					title: this.$t('myBoomList.loading'),
+					title: this.$t('myAppointmentBoom.loading'),
 					mask: true
 				});
 				let _that = this;
@@ -212,16 +212,16 @@
 			},
 			StateStr(s) {
 				if (s == "W") {
-					return this.$t('myBoomList.waitVerify');
+					return this.$t('myAppointmentBoom.waitVerify');
 				}
 				if (s == "C") {
-					return this.$t('myBoomList.verified');
+					return this.$t('myAppointmentBoom.verified');
 				}
 				if (s == "Y") {
-					return this.$t('myBoomList.refunded');
+					return this.$t('myAppointmentBoom.refunded');
 				}
 				if (s == "T") {
-					return this.$t('myBoomList.applyRefund');
+					return this.$t('myAppointmentBoom.applyRefund');
 				}
 			},
 			// 时间转换

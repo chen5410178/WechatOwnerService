@@ -1,11 +1,11 @@
 <template>
 	<view>
 		<scroll-view scroll-y>
-			<view class="block__title">{{ $t('houseInfo') }}</view>
+			<view class="block__title">{{ $t('rulePreFee.houseInfo') }}</view>
 			<view class="cu-list menu">
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('communityName') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.communityName') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{communityName}}</text>
@@ -13,7 +13,7 @@
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text class="text-grey">{{ $t('room') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.room') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-grey text-sm">{{payerObjName}}</text>
@@ -21,50 +21,50 @@
 				</view>
 				<view class="cu-item" v-if="buildUpArea">
 					<view class="content">
-						<text class="text-grey">{{ $t('builtUpArea') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.builtUpArea') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{buildUpArea + $t('sqm')}}</text>
+						<text class="text-grey text-sm">{{buildUpArea + $t('rulePreFee.sqm')}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="block__title">{{ $t('feeInfo') }}</view>
+			<view class="block__title">{{ $t('rulePreFee.feeInfo') }}</view>
 			<view class="cu-list menu fee-last">
 				<view class="cu-item arrow" v-if="rules && rules.length > 0">
 					<view class="content">
-						<text class="text-grey">{{ $t('prePayFee') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.prePayFee') }}</text>
 					</view>
 					<view class="action">
 						<picker :value="selectedRuleIndex" :range="ruleNames" @change="onRuleChange">
 							<view class="picker">
-								{{selectedRuleName || $t('selectPrePayFee')}}
+								{{selectedRuleName || $t('rulePreFee.selectPrePayFee')}}
 							</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cu-item arrow" v-if="selectedRule">
 					<view class="content">
-						<text class="text-grey">{{ $t('month') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.month') }}</text>
 					</view>
 					<view class="action">
 						<picker :value="selectedMonthIndex" :range="monthList" @change="onMonthChange">
 							<view class="picker">
-								{{selectedMonthName || $t('selectMonth')}}
+								{{selectedMonthName || $t('rulePreFee.selectMonth')}}
 							</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedRule && selectedMonth > 0">
 					<view class="content">
-						<text class="text-grey">{{ $t('monthPrice') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.monthPrice') }}</text>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">{{selectedRule.monthAmount}}{{ $t('monthUnit') }}</text>
+						<text class="text-grey text-sm">{{selectedRule.monthAmount}}{{ $t('rulePreFee.monthUnit') }}</text>
 					</view>
 				</view>
 				<view class="cu-item" v-if="selectedRule && selectedMonth > 0">
 					<view class="content">
-						<text class="text-grey">{{ $t('amount') }}</text>
+						<text class="text-grey">{{ $t('rulePreFee.amount') }}</text>
 					</view>
 					<view class="action">
 						<text class="text-red text-lg">￥{{receivableAmount}}</text>
@@ -74,7 +74,7 @@
 		</scroll-view>
 		<view class="bg-white border flex justify-end" style="position: fixed;width: 100%;bottom: 0;" v-if="selectedRule && selectedMonth > 0">
 			<view class="action text-orange margin-right line-height">
-				{{ $t('total') }}：{{receivableAmount}}{{ $t('yuanUnit') }}
+				{{ $t('rulePreFee.total') }}：{{receivableAmount}}{{ $t('rulePreFee.yuanUnit') }}
 			</view>
 			<view class="btn-group">
 				<button class="cu-btn bg-red shadow-blur lgplus sharp" @click="onPayFee()">{{ $t('payNow') }}</button>

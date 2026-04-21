@@ -13,7 +13,10 @@ export default {
       completedTime: '完成时间',
       arrivedWorkstation: '到达工位',
       processingComplete: '处理完成',
-      processingOpinion: '处理意见'
+       processingOpinion: '处理意见',
+      repairType: '报修类型',
+      repairPerson: '报修人',
+      location: '位置'
     }
   },
   'en': {
@@ -30,7 +33,10 @@ export default {
       completedTime: 'Completed Time',
       arrivedWorkstation: 'Arrived workstation',
       processingComplete: 'Processing complete',
-      processingOpinion: 'Processing opinion'
+       processingOpinion: 'Processing opinion',
+      repairType: 'Repair Type',
+      repairPerson: 'Repair Person',
+      location: 'Location'
     }
   },
   'zh-TW': {
@@ -47,7 +53,10 @@ export default {
       completedTime: '完成時間',
       arrivedWorkstation: '到達工位',
       processingComplete: '處理完成',
-      processingOpinion: '處理意見'
+       processingOpinion: '處理意見',
+      repairType: '報修類型',
+      repairPerson: '報修人',
+      location: '位置'
     }
   }
 }

@@ -5,9 +5,12 @@ export default {
       faceRecognition: '人脸识别',
       recognitionSuccess: '识别成功',
       recognitionFailed: '识别失败',
-      pleaseFace: '请将人脸对准摄像头',
-      processing: '处理中...',
-      serverError: '服务器异常'
+       pleaseFace: '请将人脸对准摄像头',
+       processing: '处理中...',
+       serverError: '服务器异常',
+       faceInfo: '人脸信息',
+       collectFace: '采集人脸',
+       faceUploadFailed: '人脸上传失败'
     }
   },
   'en': {
@@ -16,9 +19,12 @@ export default {
       faceRecognition: 'Face Recognition',
       recognitionSuccess: 'Recognition Success',
       recognitionFailed: 'Recognition Failed',
-      pleaseFace: 'Please align your face with camera',
-      processing: 'Processing...',
-      serverError: 'Server Error'
+       pleaseFace: 'Please align your face with camera',
+       processing: 'Processing...',
+       serverError: 'Server Error',
+       faceInfo: 'Face Information',
+       collectFace: 'Collect Face',
+       faceUploadFailed: 'Face Upload Failed'
     }
   },
   'zh-TW': {
@@ -27,9 +33,12 @@ export default {
       faceRecognition: '人臉識別',
       recognitionSuccess: '識別成功',
       recognitionFailed: '識別失敗',
-      pleaseFace: '請將人臉對準攝像頭',
-      processing: '處理中...',
-      serverError: '伺服器異常'
+       pleaseFace: '請將人臉對準攝像頭',
+       processing: '處理中...',
+       serverError: '伺服器異常',
+       faceInfo: '人臉信息',
+       collectFace: '採集人臉',
+       faceUploadFailed: '人臉上傳失敗'
     }
   }
 }

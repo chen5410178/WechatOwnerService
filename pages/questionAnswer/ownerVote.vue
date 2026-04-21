@@ -4,15 +4,15 @@
 			{{qaInfo.qaName}}
 		</view>
 		<view class="flex justify-between padding-lr-sm margin-top-xs">
-			<view>投票人姓名（业主）</view>
+			<view>{{ $t('ownerVote.voterName') }}</view>
 			<view>{{qaInfo.ownerName}}</view>
 		</view>
 		<view class="flex justify-between padding-lr-sm margin-top-xs">
-			<view>联系电话</view>
+			<view>{{ $t('ownerVote.contactPhone') }}</view>
 			<view>{{qaInfo.link}}</view>
 		</view>
 		<view class="flex justify-between padding-lr-sm margin-top-xs">
-			<view>房产</view>
+			<view>{{ $t('ownerVote.property') }}</view>
 			<view>{{qaInfo.roomName}}</view>
 		</view>
 		<view class="qa-remark margin">
@@ -40,13 +40,13 @@
 			</checkbox-group>
 			<view v-else>
 				<view class="cu-form-group ">
-					<textarea maxlength="512" v-model="item.radio" placeholder="请回答"></textarea>
+					<textarea maxlength="512" v-model="item.radio" :placeholder="$t('ownerVote.pleaseAnswer')"></textarea>
 				</view>
 			</view>
 		</view>
 		<view class="button_up_blank"></view>
 		<view class="flex flex-direction">
-			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitQuestionAnswer()">提交</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @click="submitQuestionAnswer()">{{ $t('ownerVote.submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -199,7 +199,7 @@
 					.then(_data => {
 						uni.showToast({
 							icon: 'none',
-							title: '投票成功'
+							title: this.$t('ownerVote.submitSuccess')
 						});
 						uni.navigateBack({
 							delta: 1

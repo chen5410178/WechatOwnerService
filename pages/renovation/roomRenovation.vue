@@ -4,7 +4,7 @@
 			<view class="cu-item arrow" v-if="rooms.length > 0" v-for="(item, key) in rooms" :key="key" :data-item="item" @click="toApplyDetail(item)">
 				<view class="content padding-tb-sm">
 					<view>
-						<text class="cuIcon-homefill text-green margin-right-xs"></text> {{item.floorNum}}{{ $t('building') }}{{item.unitNum}}{{ $t('unit') }}{{item.roomNum}}{{ $t('roomNo') }}</view>
+						<text class="cuIcon-homefill text-green margin-right-xs"></text> {{item.floorNum}}{{ $t('roomRenovation.building') }}{{item.unitNum}}{{ $t('roomRenovation.unit') }}{{item.roomNum}}{{ $t('roomRenovation.roomNo') }}</view>
 					<view class="text-gray text-sm">
 						<text class="cuIcon-right margin-right-xs"></text> {{item.roomId}}</view>
 				</view>
@@ -15,7 +15,7 @@
 			<view class="cu-item" v-if="rooms.length === 0">
 				<view class="content">
 					<text class="cuIcon-warn text-green"></text>
-					<text class="text-grey">{{ $t('noData') }}</text>
+					<text class="text-grey">{{ $t('roomRenovation.noData') }}</text>
 				</view>
 				<view class="action">
 	

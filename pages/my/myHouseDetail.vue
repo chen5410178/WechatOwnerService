@@ -1,34 +1,34 @@
 <template>
 	<view>
-<view class="block__title">{{ $t('my.houseInfo') }}</view>
+ <view class="block__title">{{ $t('myHouseDetail.houseInfo') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.houseId') }}</view>
+			<view class="title">{{ $t('myHouseDetail.houseId') }}</view>
 			{{roomDetail.roomId}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.building') }}</view>
-			{{roomDetail.floorNum}}{{ $t('my.buildingNum') }}
+			<view class="title">{{ $t('myHouseDetail.building') }}</view>
+			{{roomDetail.floorNum}}{{ $t('myHouseDetail.buildingNum') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.unit') }}</view>
-			{{roomDetail.unitNum}}{{ $t('my.unitNum') }}
+			<view class="title">{{ $t('myHouseDetail.unit') }}</view>
+			{{roomDetail.unitNum}}{{ $t('myHouseDetail.unitNum') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.room') }}</view>
-			{{roomDetail.roomNum}}{{ $t('my.roomNum') }}
+			<view class="title">{{ $t('myHouseDetail.room') }}</view>
+			{{roomDetail.roomNum}}{{ $t('myHouseDetail.roomNum') }}
 		</view>
 
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.floor') }}</view>
-			{{roomDetail.layer}}{{ $t('my.floorLayer') }}
+			<view class="title">{{ $t('myHouseDetail.floor') }}</view>
+			{{roomDetail.layer}}{{ $t('myHouseDetail.floorLayer') }}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.houseType') }}</view>
+			<view class="title">{{ $t('myHouseDetail.houseType') }}</view>
 			{{roomDetail.apartment}}
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('my.builtUpArea') }}</view>
-			{{roomDetail.builtUpArea}}{{ $t('my.sqm') }}
+			<view class="title">{{ $t('myHouseDetail.builtUpArea') }}</view>
+			{{roomDetail.builtUpArea}}{{ $t('myHouseDetail.sqm') }}
 		</view>
 
 		<view class="button_up_blank"></view>

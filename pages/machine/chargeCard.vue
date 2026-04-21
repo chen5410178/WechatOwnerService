@@ -18,7 +18,7 @@
 		</view>
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" >
-			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">{{ $t('machine.buyMonthCard') }}</button>
+			<button @click="_toPrestoreAccount" class="cu-btn bg-orange shadow-blur round lg">{{ $t('chargeCard.buyMonthCard') }}</button>
 		</view>
 	</view>
 

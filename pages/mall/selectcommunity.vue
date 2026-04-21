@@ -1,21 +1,21 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('selectCommunity') }}</view>
+		<view class="block__title">{{ $t('selectcommunity.selectCommunity') }}</view>
 
 		<view class="cu-form-group arrow">
-			<view class="title">{{ $t('cityArea') }}</view>
+			<view class="title">{{ $t('selectcommunity.cityArea') }}</view>
 			<pickerAddress @change="change" class="text-right" style="width:80%">{{areaName}}</pickerAddress>
 			<text class='cuIcon-right'></text>
 		</view>
 
 		<view class="cu-form-group" @tap="chooseCommunity">
-			<view class="title">{{ $t('communityName') }}</view>
-			<input v-model="communityName" required readonly label="小区名称" :placeholder="$t('selectCommunity')" name="communityName" icon="arrow"
+			<view class="title">{{ $t('selectcommunity.communityName') }}</view>
+				<input v-model="communityName" required readonly label="小区名称" :placeholder="$t('selectcommunity.selectCommunity')" name="communityName" icon="arrow"
 			 ></input>
 			<text class='cuIcon-right'></text>
 		</view>
 		<view class="padding flex flex-direction margin-top" >
-			<button class="cu-btn bg-green lg" @click="_doSure()">{{ $t('confirm') }}</button>
+			<button class="cu-btn bg-green lg" @click="_doSure()">{{ $t('selectcommunity.confirm') }}</button>
 		</view>
 	</view>
 </template>
@@ -32,7 +32,7 @@
 			return {
 				title: 'Hello',
 				areaCode: '',
-				areaName: this.$t('selectArea'),
+				areaName: this.$t('selectcommunity.selectArea'),
 				communityName: '',
 				communityId: '',
 				areaList: {
@@ -89,7 +89,7 @@
 			chooseCommunity: function(e) {
 				if (this.areaCode == '' || this.areaCode == undefined) {
 					uni.showToast({
-						title: this.$t('selectAreaFirst'),
+						title: this.$t('selectcommunity.selectAreaFirst'),
 						icon: 'none'
 					});
 					return;

@@ -3,21 +3,21 @@
 		<form>
 			
 <view class="cu-form-group margin-top">
-				<view class="title">{{ $t('settings.password') }}</view>
-				<input :placeholder="$t('settings.pleaseInputOldPassword')" type="password" name="input" v-model="oldPwd"></input>
+				<view class="title">{{ $t('changePassword.oldPassword') }}</view>
+				<input :placeholder="$t('changePassword.inputOldPwd')" type="password" name="input" v-model="oldPwd"></input>
 			</view>
 			<view class="cu-form-group ">
-				<view class="title">{{ $t('settings.newPassword') }}</view>
-				<input :placeholder="$t('settings.pleaseInputNewPassword')" type="password" name="input" v-model="pwd"></input>
+				<view class="title">{{ $t('changePassword.newPassword') }}</view>
+				<input :placeholder="$t('changePassword.inputNewPwd')" type="password" name="input" v-model="pwd"></input>
 			</view>
 			<view class="cu-form-group ">
-				<view class="title">{{ $t('settings.confirmPassword') }}</view>
-				<input :placeholder="$t('settings.pleaseInputConfirmPassword')" type="password" name="input" v-model="newPwd"></input>
+				<view class="title">{{ $t('changePassword.confirmPassword') }}</view>
+				<input :placeholder="$t('changePassword.inputConfirmPwd')" type="password" name="input" v-model="newPwd"></input>
 			</view>
 		</form>
 		
 		<view class="padding flex flex-direction">
-			<button class="cu-btn bg-green lg" @tap="_doChangePwd()">{{ $t('settings.submit') }}</button>
+			<button class="cu-btn bg-green lg" @tap="_doChangePwd()">{{ $t('changePassword.submit') }}</button>
 		</view>
 		
 	</view>
@@ -42,7 +42,7 @@
 if(this.oldPwd == ''){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('settings.passwordCannotBeEmpty')
+						title: this.$t('changePassword.passwordCannotBeEmpty')
 					});
 					return;
 				}
@@ -50,7 +50,7 @@ if(this.oldPwd == ''){
 				if(this.pwd == ''){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('settings.newPasswordCannotBeEmpty')
+						title: this.$t('changePassword.newPasswordCannotBeEmpty')
 					});
 					return;
 				}
@@ -58,7 +58,7 @@ if(this.oldPwd == ''){
 				if(this.newPwd == ''){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('settings.confirmPasswordCannotBeEmpty')
+						title: this.$t('changePassword.confirmPasswordCannotBeEmpty')
 					});
 					return;
 				}
@@ -66,7 +66,7 @@ if(this.oldPwd == ''){
 				if(this.newPwd != this.pwd){
 					uni.showToast({
 						icon:'none',
-						title: this.$t('settings.passwordNotMatch')
+						title: this.$t('changePassword.passwordNotMatch')
 					});
 					return;
 				}
@@ -101,7 +101,7 @@ if(this.oldPwd == ''){
 fail: function(error) {
 						// 调用服务端登录接口失败
 						uni.showToast({
-							title: this.$t('settings.interfaceFailed')
+							title: this.$t('changePassword.interfaceFailed')
 						});
 						console.log(error);
 					}

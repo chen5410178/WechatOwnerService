@@ -4,8 +4,9 @@ export default {
       title: '操作成功',
       success: '成功',
       goBack: '返回',
-      goHome: '返回首页',
-      detail: '详情'
+       goHome: '返回首页',
+       detail: '详情',
+       processingSuccess: '处理成功'
     }
   },
   'en': {
@@ -13,8 +14,9 @@ export default {
       title: 'Success',
       success: 'Success',
       goBack: 'Go Back',
-      goHome: 'Go Home',
-      detail: 'Detail'
+       goHome: 'Go Home',
+       detail: 'Detail',
+       processingSuccess: 'Processing Success'
     }
   },
   'zh-TW': {
@@ -22,8 +24,9 @@ export default {
       title: '操作成功',
       success: '成功',
       goBack: '返回',
-      goHome: '返回首頁',
-      detail: '詳情'
+       goHome: '返回首頁',
+       detail: '詳情',
+       processingSuccess: '處理成功'
     }
   }
 }

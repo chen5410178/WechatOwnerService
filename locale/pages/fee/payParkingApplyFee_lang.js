@@ -31,7 +31,8 @@ export default {
       wxLoginFailed: '调用wx.login获取code失败',
       loadRoomListFailed: '加载房屋列表失败',
       systemBusy: '系统繁忙请稍等',
-      qrCodeExpired: '二维码失效'
+       qrCodeExpired: '二维码失效',
+       processing: '处理中'
     }
   },
   'en': {
@@ -66,7 +67,8 @@ export default {
       wxLoginFailed: 'Failed to call wx.login to get code',
       loadRoomListFailed: 'Failed to load room list',
       systemBusy: 'System busy, please wait',
-      qrCodeExpired: 'QR code expired'
+      qrCodeExpired: 'QR code expired',
+      processing: 'Processing'
     }
   },
   'zh-TW': {
@@ -101,7 +103,8 @@ export default {
       wxLoginFailed: '呼叫wx.login取得code失敗',
       loadRoomListFailed: '載入房屋列表失敗',
       systemBusy: '系統繁忙請稍等',
-      qrCodeExpired: '二維碼失效'
+      qrCodeExpired: '二維碼失效',
+      processing: '處理中'
     }
   }
 }

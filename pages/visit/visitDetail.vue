@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="block__title">
-			<text>{{ $t('qrCode') }}</text>
+			<text>{{ $t('visitDetail.qrCode') }}</text>
 		</view>
 		<view class="u-qrcode" style="text-align: center;">
 			<canvas style="width: 520upx;height: 520upx;  margin: 0 auto;" canvas-id="myQrcode" v-show="!needLongTapSaveImg"></canvas>
@@ -9,55 +9,55 @@
 		</view>
 		
 		<view class="block__title">
-			<text>{{ $t('visitDetail') || '来访信息' }}</text>
+			<text>{{ $t('visitDetail.visitInfo') }}</text>
 		</view>
 		<view class="bg-white margin-bottom padding">
 			<view class="flex padding-bottom-xs solid-bottom justify-between">
-				<view>{{ $t('auditStatus') }}</view>
+				<view>{{ $t('visitDetail.auditStatus') }}</view>
 				<view class="text-gray">{{visitInfo.stateName}}</view>
 			</view>
 			<view class="flex margin-top justify-between">
-				<view class="text-gray">{{ $t('createTime') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.createTime') }}</view>
 				<view class="text-gray">{{visitInfo.createTime}}</view>
 			</view>
 			<view class="flex margin-top justify-between">
-				<view class="text-gray">{{ $t('visitorName') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.visitorName') }}</view>
 				<view class="text-gray">{{visitInfo.name}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">{{ $t('contactWay') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.contactWay') }}</view>
 				<view class="text-gray">{{visitInfo.phoneNumber}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">{{ $t('visitType') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.visitType') }}</view>
 				<view class="text-gray">{{visitInfo.visitTypeName}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray w100">{{ $t('visitCase') }}</view>
+				<view class="text-gray w100">{{ $t('visitDetail.visitCase') }}</view>
 				<view class="text-gray">{{visitInfo.visitCase}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">{{ $t('estimatedVisitTime') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.estimatedVisitTime') }}</view>
 				<view class="text-gray">{{visitInfo.visitTime}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between">
-				<view class="text-gray">{{ $t('estimatedLeaveTime') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.estimatedLeaveTime') }}</view>
 				<view class="text-gray">{{visitInfo.departureTime}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-if="visitInfo.roomName">
-				<view class="text-gray">{{ $t('visitRoom') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.visitRoom') }}</view>
 				<view class="text-gray">{{visitInfo.roomName}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-if="visitInfo.ownerName">
-				<view class="text-gray">{{ $t('visitOwner') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.visitOwner') }}</view>
 				<view class="text-gray">{{visitInfo.ownerName}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-if="visitInfo.carNum">
-				<view class="text-gray">{{ $t('visitCar') }}</view>
+				<view class="text-gray">{{ $t('visitDetail.visitCar') }}</view>
 				<view class="text-gray">{{visitInfo.carNum}}</view>
 			</view>
 			<view class="flex margin-top-xs justify-between" v-show="visitInfo.msg">
-				<view class="text-gray w100">{{ $t('auditRemark') }}</view>
+				<view class="text-gray w100">{{ $t('visitDetail.auditRemark') }}</view>
 				<view class="text-gray">{{visitInfo.msg}}</view>
 			</view>
 		</view>
@@ -112,10 +112,10 @@
 			_toTempFilePath: function() {
 				let _that = this;
 				if(this.tempFilePath == ''){
-					uni.showToast({
-						title: _that.$t('imageNotGenerated'),
-						icon: 'none'
-					})
+						uni.showToast({
+							title: _that.$t('visitDetail.imageNotGenerated'),
+							icon: 'none'
+						})
 					return;
 				}
 				//#ifndef H5
@@ -123,7 +123,7 @@
 					filePath: this.tempFilePath,
 					success: function() {
 						uni.showToast({
-							title: _that.$t('savedToAlbum'),
+							title: _that.$t('visitDetail.savedToAlbum'),
 							icon: 'none'
 						})
 					}

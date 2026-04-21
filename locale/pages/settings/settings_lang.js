@@ -30,7 +30,10 @@ export default {
       pleaseInputPhone: '请输入手机号',
       submit: '提交',
       interfaceFailed: '调用接口失败',
-      phoneCannotBeEmpty: '手机号不能为空'
+       phoneCannotBeEmpty: '手机号不能为空',
+      uploading: '上传中',
+      uploadAvatarFailed: '上传头像失败',
+      serverError: '服务器异常'
     }
   },
   'en': {
@@ -64,7 +67,10 @@ export default {
       pleaseInputPhone: 'Please enter phone number',
       submit: 'Submit',
       interfaceFailed: 'Interface call failed',
-      phoneCannotBeEmpty: 'Phone number cannot be empty'
+       phoneCannotBeEmpty: 'Phone number cannot be empty',
+      uploading: 'Uploading',
+      uploadAvatarFailed: 'Upload avatar failed',
+      serverError: 'Server Error'
     }
   },
   'zh-TW': {
@@ -98,7 +104,10 @@ export default {
       pleaseInputPhone: '請輸入手機號',
       submit: '提交',
       interfaceFailed: '呼叫介面失敗',
-      phoneCannotBeEmpty: '手機號不能為空'
+       phoneCannotBeEmpty: '手機號不能為空',
+      uploading: '上傳中',
+      uploadAvatarFailed: '上傳頭像失敗',
+      serverError: '伺服器異常'
     }
   }
 }

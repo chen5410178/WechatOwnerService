@@ -146,7 +146,7 @@
 				}
 			},
 			goToNotice() {
-				this.vc.navigateTo({ url: '/pages/notice/index' });
+				this.vc.navigateTo({ url: '/pages/notice/notice' });
 			}
 		}
 	};

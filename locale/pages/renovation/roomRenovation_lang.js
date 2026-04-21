@@ -15,7 +15,10 @@ export default {
       submit: '提交申请',
       submitSuccess: '提交成功',
       submitFailed: '提交失败',
-      noData: '暂无申请记录'
+      noData: '暂无申请记录',
+      building: '栋',
+      unit: '单元',
+      roomNo: '号'
     }
   },
   'en': {
@@ -34,7 +37,10 @@ export default {
       submit: 'Submit Apply',
       submitSuccess: 'Submit Success',
       submitFailed: 'Submit Failed',
-      noData: 'No apply record'
+      noData: 'No apply record',
+      building: 'Building',
+      unit: 'Unit',
+      roomNo: 'No.'
     }
   },
   'zh-TW': {
@@ -53,7 +59,10 @@ export default {
       submit: '提交申請',
       submitSuccess: '提交成功',
       submitFailed: '提交失敗',
-      noData: '暫無申請記錄'
+      noData: '暫無申請記錄',
+      building: '棟',
+      unit: '單元',
+      roomNo: '號'
     }
   }
 }

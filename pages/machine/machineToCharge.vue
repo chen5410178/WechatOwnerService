@@ -3,7 +3,7 @@
 
 		<view class="flex justify-between mtc-machine">
 <view>{{machineName}}({{machineCode}})</view>
-			<view>{{ $t('machine.portCount') }}:{{portCount}}</view>
+			<view>{{ $t('machineToCharge.portCount') }}:{{portCount}}</view>
 		</view>
 		<view class="flex justify-start mtc-machine-port">
 			<view v-for="(item,index) in  ports" :key="index" class="port-item">
@@ -16,7 +16,7 @@
 			</view>
 		</view>
 		<view class=" mtc-hours-title">
-			<view>{{ $t('machine.chargeDuration') }}</view>
+			<view>{{ $t('machineToCharge.chargeDuration') }}</view>
 		</view>
 <view class="flex justify-start mtc-machine-hours">
 			<view v-for="(item,index) in  hoursOptions" :key="index" class="hours-item">
@@ -32,11 +32,11 @@
 			<view class="cu-item arrow">
 				<view class="content padding-tb-sm">
 					<view>
-						<view class="text-cut" style="width:220px">{{ $t('machine.useCoupon') }}</view>
+						<view class="text-cut" style="width:220px">{{ $t('machineToCharge.useCoupon') }}</view>
 					</view>
 				</view>
-				<view v-if="couponCount == 0">{{ $t('machine.pleaseSelect') }}</view>
-				<view v-else>{{couponCount+ $t('machine.coupon') }}</view>
+				<view v-if="couponCount == 0">{{ $t('machineToCharge.pleaseSelect') }}</view>
+				<view v-else>{{couponCount+ $t('machineToCharge.coupon') }}</view>
 			</view>
 		</view>
 		<view class="margin-sm" v-show="login">
@@ -49,11 +49,11 @@
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-if="login">
 <button @click="_toCharge" :disabled="!curHours.duration || !curPort.portId"
-				class="cu-btn bg-green shadow-blur round lg">{{ $t('machine.toCharge') }}</button>
+				class="cu-btn bg-green shadow-blur round lg">{{ $t('machineToCharge.toCharge') }}</button>
 		</view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-else>
 			<button @click="_toLogin" 
-				class="cu-btn bg-green shadow-blur round lg">{{ $t('machine.pleaseLogin') }}</button>
+				class="cu-btn bg-green shadow-blur round lg">{{ $t('machineToCharge.pleaseLogin') }}</button>
 		</view>
 
 	</view>
@@ -89,22 +89,22 @@ hours: []
 		computed: {
 			hoursOptions() {
 				return [{
-					name: this.$t('machine.fullStop'),
+					name: this.$t('machineToCharge.fullStop'),
 					duration: 999,
 				}, {
-					name: '2' + this.$t('machine.hours'),
+					name: '2' + this.$t('machineToCharge.hours'),
 					duration: 2,
 				}, {
-					name: '4' + this.$t('machine.hours'),
+					name: '4' + this.$t('machineToCharge.hours'),
 					duration: 4,
 				}, {
-					name: '6' + this.$t('machine.hours'),
+					name: '6' + this.$t('machineToCharge.hours'),
 					duration: 6,
 				}, {
-					name: '8' + this.$t('machine.hours'),
+					name: '8' + this.$t('machineToCharge.hours'),
 					duration: 8,
 				}, {
-					name: '10' + this.$t('machine.hours'),
+					name: '10' + this.$t('machineToCharge.hours'),
 					duration: 10,
 				}]
 			}

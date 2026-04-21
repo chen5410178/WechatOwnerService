@@ -1,11 +1,11 @@
 <template>
 	<view>
-		<view class="block__title">{{ $t('my.opsTeam') }}</view>
+		<view class="block__title">{{ $t('viewAdmin.opsTeam') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-home text-green"></text>
-					<text class="text-grey">{{ $t('my.communityName') }}</text>
+					<text class="text-grey">{{ $t('viewAdmin.communityName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
@@ -14,7 +14,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-service text-green"></text>
-					<text class="text-grey">{{ $t('my.opsName') }}</text>
+					<text class="text-grey">{{ $t('viewAdmin.opsName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.storeName}}</text>
@@ -23,7 +23,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('my.opsCode') }}</text>
+					<text class="text-grey">{{ $t('viewAdmin.opsCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.storeId}}</text>
@@ -33,7 +33,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-location text-green"></text>
-					<text class="text-grey">{{ $t('my.companyAddress') }}</text>
+					<text class="text-grey">{{ $t('viewAdmin.companyAddress') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.address}}</text>
@@ -43,7 +43,7 @@
 			<view class="cu-item arrow" @click="_callPhone()">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">{{ $t('my.contactPhone') }}</text>
+					<text class="text-grey">{{ $t('viewAdmin.contactPhone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{admin.tel}}</text>
@@ -54,17 +54,17 @@
 		<view class="cu-modal" :class="callAdminModal==true?'show':''">
 			<view class="cu-dialog">
 				<view class="cu-bar bg-white justify-end">
-					<view class="content">{{ $t('my.callPhone') }}</view>
+					<view class="content">{{ $t('viewAdmin.callPhone') }}</view>
 					<view class="action" @tap="_cancleCall()">
 						<text class="cuIcon-close text-red"></text>
 					</view>
 				</view>
 				<view class="padding-xl">
-					{{ $t('my.confirmCall') }}{{admin.name}}-{{admin.tel}}
+					{{ $t('viewAdmin.confirmCall') }}{{admin.name}}-{{admin.tel}}
 				</view>
 				<view class="cu-bar bg-white justify-end">
-					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleCall()">{{ $t('my.cancel') }}</view>
-					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doCall()">{{ $t('my.dial') }}</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="_cancleCall()">{{ $t('viewAdmin.cancel') }}</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="_doCall()">{{ $t('viewAdmin.dial') }}</view>
 				</view>
 			</view>
 		</view>
@@ -131,7 +131,7 @@
 					},
 					fail: function(e) {
 						uni.showToast({
-							title: this.$t('serverError'),
+							title: this.$t('common.serverError'),
 							icon: 'none',
 							duration: 2000
 						});

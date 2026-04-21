@@ -5,7 +5,7 @@
 		</view>
 
 		<view class="padding flex flex-direction margin-top">
-			<button class="cu-btn bg-green margin-tb-sm lg" @tap="_closeModal()">关闭</button>
+			<button class="cu-btn bg-green margin-tb-sm lg" @tap="_closeModal()">{{ $t('openDoorByQrCode.close') }}</button>
 		</view>
 	</view>
 </template>
@@ -53,7 +53,7 @@
 				let _that = this;
 				if (_machines == null || _machines.length < 1) {
 					uni.showToast({
-						title: this.$t('noPermissionToOpenDoor'),
+						title: this.$t('openDoorByQrCode.noPermissionToOpenDoor'),
 						icon: 'none',
 						duration: 2000
 					});
@@ -77,7 +77,7 @@
 					}
 					_that.qrCode = data.data
 					new qrCode('openDoorQrcode', {
-						text: _that.qrCode ? _that.qrCode : this.$t('noDoorDeviceBound'),
+						text: _that.qrCode ? _that.qrCode : this.$t('openDoorByQrCode.noDoorDeviceBound'),
 						width: 250,
 						height: 250,
 						colorDark: "#333333",

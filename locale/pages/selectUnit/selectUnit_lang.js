@@ -7,7 +7,8 @@ export default {
       confirm: '确认',
       cancel: '取消',
       serverError: '服务器异常',
-      searchPlaceholder: '请输入单元编号'
+       searchPlaceholder: '请输入单元编号',
+      search: '搜索'
     }
   },
   'en': {
@@ -18,7 +19,8 @@ export default {
       confirm: 'Confirm',
       cancel: 'Cancel',
       serverError: 'Server Error',
-      searchPlaceholder: 'Please enter unit number'
+       searchPlaceholder: 'Please enter unit number',
+      search: 'Search'
     }
   },
   'zh-TW': {
@@ -29,7 +31,8 @@ export default {
       confirm: '確認',
       cancel: '取消',
       serverError: '服務器異常',
-      searchPlaceholder: '請輸入單元編號'
+       searchPlaceholder: '請輸入單元編號',
+      search: '搜索'
     }
   }
 }

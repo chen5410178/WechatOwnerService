@@ -51,13 +51,13 @@
 			}
 		},
 		{
-			"path": "pages/notice/index",
+			"path": "pages/notice/notice",
 			"style": {
 				"navigationBarTitleText": "Announcement"
 			}
 		},
 		{
-			"path": "pages/notice/detail/detail",
+			"path": "pages/notice/noticeDetail",
 			"style": {
 				"navigationBarTitleText": "Announcement Detail"
 			}

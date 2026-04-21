@@ -7,12 +7,12 @@
 			</view>
 			<view class="main">
 				<view>
-					<view class="text">{{ $t('repair.repairType') || '报修类型' }}: {{item.repairTypeName}}</view>
-					<view class="text">{{ $t('repair.status') || '状态' }}<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>: {{item.stateName}}</view>
-					<view class="text">{{ $t('repair.appointmentTime') || '预约时间' }}: {{item.appointmentTime}}</view>
+					<view class="text">{{ $t('repairList.repairType')  }}: {{item.repairTypeName}}</view>
+					<view class="text">{{ $t('repairList.status') }}<text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>: {{item.stateName}}</view>
+					<view class="text">{{ $t('repairList.appointmentTime') }}: {{item.appointmentTime}}</view>
 				</view>
 				<view>
-					<button class="button" size="mini" type="default" @tap.native.stop="gotoDetail" :data-item="item">{{ $t('view') || '查看' }}</button>
+					<button class="button" size="mini" type="default" @tap.native.stop="gotoDetail" :data-item="item">{{ $t('repairList.view') }}</button>
 				</view>
 			</view>
 		</view>

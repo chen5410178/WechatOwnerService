@@ -4,7 +4,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-time text-green"></text>
-					<text class="text-grey">{{ $t('applyRoom') }}</text>
+					<text class="text-grey">{{ $t('myRoomRenovationRecordDetail.applyRoom') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{recordInfo.roomName}}</text>
@@ -13,20 +13,20 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-footprint text-green"></text>
-					<text class="text-grey">{{ $t('trackRemark') }}</text>
+					<text class="text-grey">{{ $t('myRoomRenovationRecordDetail.trackRemark') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{recordList.length>0 ? recordList[0].remark : ''}}</text>
 				</view>
 			</view>
 			<view v-if="imgRecordList.length > 0">
-				<view class="block__title">{{ $t('image') }}</view>
+				<view class="block__title">{{ $t('myRoomRenovationRecordDetail.image') }}</view>
 				<view class="record-img-item" v-for="(item,index) in imgRecordList" :key="index">
 					<image :src="item.url" :data-url="item.url" :data-index="index" @tap="preview" mode="widthFix"></image>
 				</view>
 			</view>
 			<view v-if="videoRecordList.length > 0">
-				<view class="block__title">{{ $t('video') }}</view>
+				<view class="block__title">{{ $t('myRoomRenovationRecordDetail.video') }}</view>
 				<view v-for="(item,index) in videoRecordList" :key="index">
 					<video class="record-video" object-fit="contain" :src="item.url" controls></video>
 				</view>

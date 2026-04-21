@@ -5,7 +5,7 @@
 				<image src="/static/images/noface.png"></image>
 			</view>
 			<view class="face-desc">
-				<text>您尚未进行人脸识别认证，请联系物业公司</text>
+				<text>{{ $t('faceRecognition.notCertified') }}</text>
 			</view>
 		</view>
 		<view class="face-top" v-else>
@@ -13,13 +13,13 @@
 				<image src="/static/images/hasface.png"></image>
 			</view>
 			<view class="face-desc">
-				<text>您已通过人脸识别认证，请放心使用</text>
+				<text>{{ $t('faceRecognition.certified') }}</text>
 			</view>
 		</view>
 		
 		<view class="face-tel">
 			<view v-if="property.communityQrCode"><image class="call-qrcode" :src="property.communityQrCode"></image></view>
-			<view class="bg-white face-tel-text">您确认拨打,{{property.communityName}}物业客服电话<br />{{property.sCommunityTel}}</view>
+			<view class="bg-white face-tel-text">{{ $t('faceRecognition.confirmCall') }},{{property.communityName}}{{$t('faceRecognition.propertyTel')}}<br />{{property.sCommunityTel}}</view>
 		</view>
 		
 	</view>

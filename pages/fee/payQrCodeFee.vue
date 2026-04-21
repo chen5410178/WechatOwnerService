@@ -3,10 +3,10 @@
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-green cur':''" @tap="tabSelect(0)">
-					{{ $t('comprehensivePayment') }}
+					{{ $t('payQrCodeFee.comprehensivePayment') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-green cur':''" @tap="tabSelect(1)">
-					{{ $t('paymentRecord') }}
+					{{ $t('payQrCodeFee.paymentRecord') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -43,7 +43,7 @@
 					createStaffName: "",
 					customFee: "",
 					preFee: "",
-					qrcodeName: this.$t('qrCodeName'),
+					qrcodeName: this.$t('payQrCodeFee.qrCodeName'),
 					queryWay: "1001",
 					smsValidate: "ON"
 				}

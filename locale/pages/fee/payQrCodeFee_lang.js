@@ -28,7 +28,9 @@ export default {
       serverError: '服务器异常了',
       loadMore: '上拉加载更多',
       loading: '加载中',
-      noMore: '没有更多'
+       noMore: '没有更多',
+       comprehensivePayment: '综合缴费',
+       paymentRecord: '缴费记录'
     }
   },
   'en': {
@@ -60,7 +62,9 @@ export default {
       serverError: 'Server error',
       loadMore: 'Load More',
       loading: 'Loading',
-      noMore: 'No More'
+      noMore: 'No More',
+      comprehensivePayment: 'Comprehensive Payment',
+      paymentRecord: 'Payment Record'
     }
   },
   'zh-TW': {
@@ -92,7 +96,9 @@ export default {
       serverError: '伺服器異常',
       loadMore: '上拉載入更多',
       loading: '載入中',
-      noMore: '沒有更多'
+      noMore: '沒有更多',
+      comprehensivePayment: '綜合繳費',
+      paymentRecord: '繳費記錄'
     }
   }
 }

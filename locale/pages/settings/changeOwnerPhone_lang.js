@@ -12,7 +12,8 @@ export default {
       changeFailed: '更换失败',
       countdown: '秒后重发',
       phoneCannotBeEmpty: '手机号不能为空',
-      interfaceFailed: '接口失败'
+       interfaceFailed: '接口失败',
+      phoneNotAuthorized: '用户未授权手机号'
     }
   },
   'en': {
@@ -28,7 +29,8 @@ export default {
       changeFailed: 'Change Failed',
       countdown: 'Resend after seconds',
       phoneCannotBeEmpty: 'Phone cannot be empty',
-      interfaceFailed: 'Interface failed'
+       interfaceFailed: 'Interface failed',
+      phoneNotAuthorized: 'Phone not authorized'
     }
   },
   'zh-TW': {
@@ -44,7 +46,8 @@ export default {
       changeFailed: '更換失敗',
       countdown: '秒後重發',
       phoneCannotBeEmpty: '手機號不能為空',
-      interfaceFailed: '接口失敗'
+       interfaceFailed: '接口失敗',
+      phoneNotAuthorized: '用戶未授權手機號'
     }
   }
 }

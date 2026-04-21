@@ -11,7 +11,8 @@ export default {
       approved: '已通过',
       rejected: '已驳回',
       completed: '已完成',
-      noData: '暂无装修记录'
+      noData: '暂无装修记录',
+      noRenovationInfo: '暂无装修信息'
     }
   },
   'en': {
@@ -26,7 +27,8 @@ export default {
       approved: 'Approved',
       rejected: 'Rejected',
       completed: 'Completed',
-      noData: 'No renovation record'
+      noData: 'No renovation record',
+      noRenovationInfo: 'No renovation information'
     }
   },
   'zh-TW': {
@@ -41,7 +43,8 @@ export default {
       approved: '已通過',
       rejected: '已駁回',
       completed: '已完成',
-      noData: '暫無裝修記錄'
+      noData: '暫無裝修記錄',
+      noRenovationInfo: '暫無裝修信息'
     }
   }
 }

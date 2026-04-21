@@ -5,25 +5,25 @@
 				{{machineName}}
 			</view>
 <view class="a-code">
-				{{ $t('machine.deviceNo') }}: {{machineCode}}
+				{{ $t('chargeConfirm.deviceNo') }}: {{machineCode}}
 			</view>
 		</view>
 		
 		<view class="suc-b">
-			<view class="suc-b-1">{{ $t('machine.chargeRule') }}: {{ $t('machine.chargeRuleDetail') }};</view>
-			<view class="suc-b-1">{{ $t('machine.priceDesc') }}: </view>
+			<view class="suc-b-1">{{ $t('chargeConfirm.chargeRule') }}: {{ $t('chargeConfirm.chargeRuleDetail') }};</view>
+			<view class="suc-b-1">{{ $t('chargeConfirm.priceDesc') }}: </view>
 			<view class="suc-b-2" v-for="(item,index) in fees" :key="index">
-				{{index+1}}、{{item.minEnergyPrice}}~{{item.maxEnergyPrice}}功率,{{item.durationPrice}}{{ $t('machine.yuanPerHour') }};
+				{{index+1}}、{{item.minEnergyPrice}}~{{item.maxEnergyPrice}}功率,{{item.durationPrice}}{{ $t('chargeConfirm.yuanPerHour') }};
 			</view>
-			<view class="suc-b-1 margin-top">{{ $t('machine.ruleDesc') }}:</view>
-			<view class="suc-b-2">1、{{ $t('machine.rule1') }};</view>
-			<view class="suc-b-2">2、{{ $t('machine.rule2') }};</view>
+			<view class="suc-b-1 margin-top">{{ $t('chargeConfirm.ruleDesc') }}:</view>
+			<view class="suc-b-2">1、{{ $t('chargeConfirm.rule1') }};</view>
+			<view class="suc-b-2">2、{{ $t('chargeConfirm.rule2') }};</view>
 		</view>
 		
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;">
 			<button @click="_toChargeConfirm"
-				class="cu-btn bg-orange shadow-blur round lg">{{ $t('machine.confirmKnow') }}</button>
+				class="cu-btn bg-orange shadow-blur round lg">{{ $t('chargeConfirm.confirmKnow') }}</button>
 		</view>
 	</view>
 </template>

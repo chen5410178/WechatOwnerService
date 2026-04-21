@@ -1,6 +1,6 @@
 export default {
   'zh-CN': {
-    myBoomList: {
+    myAppointmentBoom: {
       orderNo: '订单号',
       venue: '场地',
       space: '空间',
@@ -22,7 +22,7 @@ export default {
     }
   },
   'en': {
-    myBoomList: {
+    myAppointmentBoom: {
       orderNo: 'Order No',
       venue: 'Venue',
       space: 'Space',
@@ -44,7 +44,7 @@ export default {
     }
   },
   'zh-TW': {
-    myBoomList: {
+    myAppointmentBoom: {
       orderNo: '訂單號',
       venue: '場地',
       space: '空間',

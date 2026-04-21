@@ -27,7 +27,8 @@ export default {
       appointmentTimeError: '预约时间错误',
       submitSuccess: '提交成功',
       notConfigRepair: '未配置报修类型',
-      serverError: '服务器错误'
+       serverError: '服务器错误',
+      pleaseSelectLocation: '请选择位置'
     }
   },
   'en': {
@@ -58,7 +59,8 @@ export default {
       appointmentTimeError: 'Appointment time error',
       submitSuccess: 'Submit success',
       notConfigRepair: 'No repair type configured',
-      serverError: 'Server Error'
+       serverError: 'Server Error',
+      pleaseSelectLocation: 'Please select location'
     }
   },
   'zh-TW': {
@@ -89,7 +91,8 @@ export default {
       appointmentTimeError: '預約時間錯誤',
       submitSuccess: '提交成功',
       notConfigRepair: '未配置報修類型',
-      serverError: '伺服器錯誤'
+       serverError: '伺服器錯誤',
+      pleaseSelectLocation: '請選擇位置'
     }
   }
 }

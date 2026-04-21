@@ -4,7 +4,7 @@
 			<view class="vpf_row_black">
 			</view>
 			<view class="vpf_row_title">
-				<text>人脸信息</text>
+				<text>{{ $t('viewPersonFace.faceInfo') }}</text>
 			</view>
 			<view class="vpf_row_black_01"></view>
 			<view class="vpf_image">
@@ -14,7 +14,7 @@
 			</view>
 			<view class="vpf_row_black_03"></view>
 			<view class="padding flex flex-direction">
-				<button class="cu-btn bg-green lg" @click="collectFace()">{{btnValue}}</button>
+				<button class="cu-btn bg-green lg" @click="collectFace()">{{ $t('viewPersonFace.collectFace') }}</button>
 			</view>
 			<view class="vpf_row_black_04"></view>
 		</view>
@@ -31,7 +31,7 @@
 		data() {
 			return {
 				face: null,
-				btnValue: "采集人脸"
+				btnValue: this.$t('viewPersonFace.collectFace')
 			};
 		},
 
@@ -119,7 +119,7 @@
 							console.log(res);
 							if (res.statusCode != 200) {
 								uni.showToast({
-									title: this.$t('faceUploadFailed'),
+									title: this.$t('viewPersonFace.faceUploadFailed'),
 									icon: 'none',
 									duration: 2000
 								});
@@ -129,7 +129,7 @@
 						},
 						fail: function(e) {
 							uni.showToast({
-								title: this.$t('serverError'),
+								title: this.$t('viewPersonFace.serverError'),
 								icon: 'none',
 								duration: 2000
 							});

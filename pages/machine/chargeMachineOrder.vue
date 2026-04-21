@@ -4,7 +4,7 @@
 			<view class="cu-list menu">
 				<view class="cu-item ">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.startTime') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.startTime') }}</text>
 					</view>
 					<view class="action">
 						{{startTime || 0}}
@@ -12,7 +12,7 @@
 				</view>
 				<view class="cu-item " v-if="state == '2002'">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.endTime') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.endTime') }}</text>
 					</view>
 					<view class="action">
 						{{endTime || 0}}
@@ -20,7 +20,7 @@
 				</view>
 				<view class="cu-item ">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.chargeTime') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.chargeTime') }}</text>
 					</view>
 					<view class="action">
 						{{chargeHours  || 0}}
@@ -28,7 +28,7 @@
 				</view>
 				<view class="cu-item ">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.chargePile') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.chargePile') }}</text>
 					</view>
 					<view class="action">
 						{{machineName || 0}}
@@ -36,7 +36,7 @@
 				</view>
 				<view class="cu-item ">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.chargeSlot') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.chargeSlot') }}</text>
 					</view>
 					<view class="action">
 						{{portName || 0}}
@@ -44,15 +44,15 @@
 				</view>
 				<view class="cu-item ">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.billingMode') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.billingMode') }}</text>
 					</view>
 					<view class="action">
-						{{durationPrice || 0}}{{ $t('machine.yuanPerHour') }}
+						{{durationPrice || 0}}{{ $t('chargeMachineOrder.yuanPerHour') }}
 					</view>
 				</view>
 			<view class="cu-item ">
 					<view class="content">
-						<text class="text-grey">{{ $t('machine.status') }}</text>
+						<text class="text-grey">{{ $t('chargeMachineOrder.status') }}</text>
 					</view>
 					<view class="action">
 						{{stateName || 0}}
@@ -63,7 +63,7 @@
 
 		<view class="plat-btn-black"></view>
 		<view class="cu-bar btn-group" style="margin-top: 30px;" v-if="state == '1001'">
-			<button @click="_stopCharge" class="cu-btn bg-orange shadow-blur round lg">{{ $t('machine.stopCharging') }}</button>
+			<button @click="_stopCharge" class="cu-btn bg-orange shadow-blur round lg">{{ $t('chargeMachineOrder.stopCharging') }}</button>
 		</view>
 	</view>
 </template>

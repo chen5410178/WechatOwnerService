@@ -3,10 +3,10 @@
 		<scroll-view scroll-x class="bg-white nav ">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="active==0?'text-blue cur':''" @tap="tabSelect(0)">
-					{{ $t('machine.chargePile') }}
+					{{ $t('chargeMachines.chargePile') }}
 				</view>
 				<view class="cu-item flex-sub" :class="active==1?'text-blue cur':''" @tap="tabSelect(1)">
-					{{ $t('machine.order') }}
+					{{ $t('chargeMachines.order') }}
 				</view>
 			</view>
 		</scroll-view>
@@ -32,43 +32,43 @@
 				</view>
 				<view class="apply-content flex justify-start flex-wrap">
 					<view class="item">
-						<text>{{ $t('machine.chargePile') }}:</text>
+						<text>{{ $t('chargeMachines.chargePile') }}:</text>
 						<text>{{item.machineName}}>{{item.machineCode}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.socket') }}:</text>
+						<text>{{ $t('chargeMachines.socket') }}:</text>
 						<text>{{item.portCode}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.chargeHours') }}:</text>
+						<text>{{ $t('chargeMachines.chargeHours') }}:</text>
 						<text>{{item.chargeHours}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.hourlyPrice') }}:</text>
+						<text>{{ $t('chargeMachines.hourlyPrice') }}:</text>
 						<text>{{item.durationPrice}}</text>
 					</view>
 <view class="item">
-						<text>{{ $t('machine.chargeEnergy') }}:</text>
+						<text>{{ $t('chargeMachines.chargeEnergy') }}:</text>
 						<text>{{item.energy}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.deductAmount') }}:</text>
+						<text>{{ $t('chargeMachines.deductAmount') }}:</text>
 						<text>{{item.amount}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.startTime') }}:</text>
+						<text>{{ $t('chargeMachines.startTime') }}:</text>
 						<text>{{item.startTime}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.endTime') }}:</text>
+						<text>{{ $t('chargeMachines.endTime') }}:</text>
 						<text>{{item.endTime}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.status') }}:</text>
+						<text>{{ $t('chargeMachines.status') }}:</text>
 						<text>{{item.stateName}}</text>
 					</view>
 					<view class="item">
-						<text>{{ $t('machine.remark') }}:</text>
+						<text>{{ $t('chargeMachines.remark') }}:</text>
 						<text>{{item.remark}}</text>
 					</view>
 				</view>

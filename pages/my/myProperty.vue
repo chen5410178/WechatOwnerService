@@ -1,11 +1,11 @@
 <template>
 	<view>
-<view class="block__title">{{ $t('my.propertyInfo') }}</view>
+ <view class="block__title">{{ $t('myProperty.propertyInfo') }}</view>
 		<view class="cu-list menu">
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-home text-green"></text>
-					<text class="text-grey">{{ $t('my.communityName') }}</text>
+					<text class="text-grey">{{ $t('myProperty.communityName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{communityName}}</text>
@@ -14,7 +14,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-service text-green"></text>
-					<text class="text-grey">{{ $t('my.propertyName') }}</text>
+					<text class="text-grey">{{ $t('myProperty.propertyName') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.storeName}}</text>
@@ -23,7 +23,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-info text-green"></text>
-					<text class="text-grey">{{ $t('my.propertyCode') }}</text>
+					<text class="text-grey">{{ $t('myProperty.propertyCode') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.storeId}}</text>
@@ -33,7 +33,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-location text-green"></text>
-					<text class="text-grey">{{ $t('my.companyAddress') }}</text>
+					<text class="text-grey">{{ $t('myProperty.companyAddress') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.address}}</text>
@@ -43,7 +43,7 @@
 			<view class="cu-item">
 				<view class="content">
 					<text class="cuIcon-phone text-green"></text>
-					<text class="text-grey">{{ $t('my.contactPhone') }}</text>
+					<text class="text-grey">{{ $t('myProperty.contactPhone') }}</text>
 				</view>
 				<view class="action">
 					<text class="text-grey text-sm">{{property.tel}}</text>

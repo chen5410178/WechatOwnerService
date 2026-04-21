@@ -13,7 +13,16 @@ export default {
       status: '状态',
       remark: '备注',
       stopCharging: '结束充电',
-      yuanPerHour: '元/小时'
+      yuanPerHour: '元/小时',
+      portCount: '端口数',
+      chargeDuration: '充电时长',
+      useCoupon: '使用优惠券',
+      pleaseSelect: '请选择',
+      coupon: '张优惠券',
+      toCharge: '去充电',
+      pleaseLogin: '请登录',
+      fullStop: '充满为止',
+      hours: '小时'
     }
   },
   'en': {
@@ -30,7 +39,16 @@ export default {
       status: 'Status',
       remark: 'Remark',
       stopCharging: 'Stop Charging',
-      yuanPerHour: 'Yuan/Hour'
+      yuanPerHour: 'Yuan/Hour',
+      portCount: 'Port Count',
+      chargeDuration: 'Charge Duration',
+      useCoupon: 'Use Coupon',
+      pleaseSelect: 'Please Select',
+      coupon: 'Coupons',
+      toCharge: 'Go to Charge',
+      pleaseLogin: 'Please Login',
+      fullStop: 'Full Stop',
+      hours: 'hours'
     }
   },
   'zh-TW': {
@@ -47,7 +65,16 @@ export default {
       status: '狀態',
       remark: '備註',
       stopCharging: '結束充電',
-      yuanPerHour: '元/小時'
+      yuanPerHour: '元/小時',
+      portCount: '端口數',
+      chargeDuration: '充電時長',
+      useCoupon: '使用優惠券',
+      pleaseSelect: '請選擇',
+      coupon: '張優惠券',
+      toCharge: '去充電',
+      pleaseLogin: '請登錄',
+      fullStop: '充滿為止',
+      hours: '小時'
     }
   }
 }

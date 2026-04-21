@@ -14,7 +14,12 @@ export default {
       paymentFailed: '支付失败',
       orderNo: '工单号',
       queryRepairFailed: '查询报修失败',
-      serverError: '服务器异常'
+       serverError: '服务器异常',
+       feeInfo: '费用信息',
+       feeId: '费用编号',
+       yuan: '元',
+       queryFeeFailed: '查询费用失败',
+       processing: '处理中'
     }
   },
   'en': {
@@ -32,7 +37,12 @@ export default {
       paymentFailed: 'Payment Failed',
       orderNo: 'Order No.',
       queryRepairFailed: 'Query Repair Failed',
-      serverError: 'Server error'
+      serverError: 'Server error',
+      feeInfo: 'Fee Info',
+      feeId: 'Fee No.',
+      yuan: 'Yuan',
+      queryFeeFailed: 'Query Fee Failed',
+      processing: 'Processing'
     }
   },
   'zh-TW': {
@@ -50,7 +60,12 @@ export default {
       paymentFailed: '支付失敗',
       orderNo: '工單號',
       queryRepairFailed: '查詢報修失敗',
-      serverError: '伺服器異常'
+      serverError: '伺服器異常',
+      feeInfo: '費用資訊',
+      feeId: '費用編號',
+      yuan: '元',
+      queryFeeFailed: '查詢費用失敗',
+      processing: '處理中'
     }
   }
 }

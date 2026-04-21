@@ -17,7 +17,8 @@ export default {
       confirmDelete: '确认删除该房屋吗',
       deleteSuccess: '删除成功',
       deleteFailed: '删除失败',
-      noData: '暂无房屋'
+      noData: '暂无房屋',
+      noHouseInfo: '暂无房屋信息'
     }
   },
   'en': {
@@ -38,7 +39,8 @@ export default {
       confirmDelete: 'Confirm delete this house?',
       deleteSuccess: 'Delete Success',
       deleteFailed: 'Delete Failed',
-      noData: 'No house'
+      noData: 'No house',
+      noHouseInfo: 'No house info'
     }
   },
   'zh-TW': {
@@ -59,7 +61,8 @@ export default {
       confirmDelete: '確認刪除該房屋嗎',
       deleteSuccess: '刪除成功',
       deleteFailed: '刪除失敗',
-      noData: '暫無房屋'
+      noData: '暫無房屋',
+      noHouseInfo: '暫無房屋信息'
     }
   }
 }

@@ -1,22 +1,22 @@
 <template>
 	<view>
-<view  class="block__title">{{ $t('machine.inspectionRecord') }}</view>
+<view  class="block__title">{{ $t('machineInspection.inspectionRecord') }}</view>
 		<view v-if="details.length > 0">
 			<view v-for="(item,index) in details" :key="index" class="bg-white margin-bottom margin-right-xs radius margin-left-xs padding">
 				<view class="flex padding-bottom-xs solid-bottom justify-between">
-					<view>{{ $t('machine.inspectionPoint') }}</view>
+					<view>{{ $t('machineInspection.inspectionPoint') }}</view>
 					<view class="text-gray">{{item.inspectionName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('machine.inspectionTime') }}</view>
+					<view class="text-gray">{{ $t('machineInspection.inspectionTime') }}</view>
 					<view class="text-gray">{{item.inspectionTime}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('machine.inspector') }}</view>
+					<view class="text-gray">{{ $t('machineInspection.inspector') }}</view>
 					<view class="text-gray">{{item.actUserName}}</view>
 				</view>
 				<view class="flex margin-top-xs justify-between">
-					<view class="text-gray">{{ $t('machine.inspectionRemark') }}</view>
+					<view class="text-gray">{{ $t('machineInspection.inspectionRemark') }}</view>
 					<view class="text-gray">{{item.description}}</view>
 				</view>
 			</view>

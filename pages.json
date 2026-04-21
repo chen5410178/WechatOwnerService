@@ -705,8 +705,6 @@
                 "enablePullDownRefresh": false
             }
         }
-            
-        }
         ,{
             "path" : "pages/invoice/invoiceApply",
             "style" :                                                                                    

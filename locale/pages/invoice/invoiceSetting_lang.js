@@ -1,44 +1,65 @@
 export default {
   'zh-CN': {
-    setting: {
-      title: '设置',
-      invoiceTitle: '默认发票抬头',
+    invoiceSetting: {
+      invoiceSetting: '发票设置',
+      invoiceType: '发票类型',
+      selectFirst: '请先选择',
+      invoiceTitle: '发票抬头',
+      inputInvoiceTitle: '请输入发票抬头',
       taxNo: '税号',
-      email: '接收邮箱',
-      save: '保存',
-      saveSuccess: '保存成功',
-      saveFailed: '保存失败',
-      edit: '编辑',
-      delete: '删除',
-      confirmDelete: '确认删除此设置'
+      inputTaxNo: '请输入税号',
+      address: '地址',
+      inputAddress: '请输入地址',
+      phone: '电话',
+      inputPhone: '请输入电话',
+      bankAccount: '银行账户',
+      inputBankAccount: '请输入银行账户',
+      personal: '个人',
+      enterprise: '企业',
+      submit: '提交',
+      ownerNotExist: '业主不存在'
     }
   },
   'en': {
-    setting: {
-      title: 'Settings',
-      invoiceTitle: 'Default Invoice Title',
+    invoiceSetting: {
+      invoiceSetting: 'Invoice Settings',
+      invoiceType: 'Invoice Type',
+      selectFirst: 'Please select first',
+      invoiceTitle: 'Invoice Title',
+      inputInvoiceTitle: 'Please enter invoice title',
       taxNo: 'Tax No.',
-      email: 'Receive Email',
-      save: 'Save',
-      saveSuccess: 'Save Success',
-      saveFailed: 'Save Failed',
-      edit: 'Edit',
-      delete: 'Delete',
-      confirmDelete: 'Confirm delete this setting'
+      inputTaxNo: 'Please enter tax no.',
+      address: 'Address',
+      inputAddress: 'Please enter address',
+      phone: 'Phone',
+      inputPhone: 'Please enter phone',
+      bankAccount: 'Bank Account',
+      inputBankAccount: 'Please enter bank account',
+      personal: 'Personal',
+      enterprise: 'Enterprise',
+      submit: 'Submit',
+      ownerNotExist: 'Owner not exist'
     }
   },
   'zh-TW': {
-    setting: {
-      title: '設置',
-      invoiceTitle: '默認發票抬頭',
+    invoiceSetting: {
+      invoiceSetting: '發票設置',
+      invoiceType: '發票類型',
+      selectFirst: '請先選擇',
+      invoiceTitle: '發票抬頭',
+      inputInvoiceTitle: '請輸入發票抬頭',
       taxNo: '稅號',
-      email: '接收郵箱',
-      save: '保存',
-      saveSuccess: '保存成功',
-      saveFailed: '保存失敗',
-      edit: '編輯',
-      delete: '刪除',
-      confirmDelete: '確認刪除此設置'
+      inputTaxNo: '請輸入稅號',
+      address: '地址',
+      inputAddress: '請輸入地址',
+      phone: '電話',
+      inputPhone: '請輸入電話',
+      bankAccount: '銀行賬戶',
+      inputBankAccount: '請輸入銀行賬戶',
+      personal: '個人',
+      enterprise: '企業',
+      submit: '提交',
+      ownerNotExist: '業主不存在'
     }
   }
 }

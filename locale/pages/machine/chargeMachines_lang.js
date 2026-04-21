@@ -14,8 +14,16 @@ export default {
       socket: '插座',
       buyMonthCard: '购买月卡',
       noRecord: '暂无充电记录',
-      portCount: '插槽数',
-      toCharge: '去充电'
+       portCount: '插槽数',
+       toCharge: '去充电',
+       order: '订单',
+       chargeHours: '充电时长',
+       hourlyPrice: '每小时价格',
+       chargeEnergy: '充电能量',
+       deductAmount: '扣费金额',
+       startTime: '开始时间',
+       endTime: '结束时间',
+       remark: '备注'
     }
   },
   'en': {
@@ -33,8 +41,16 @@ export default {
       socket: 'Socket',
       buyMonthCard: 'Buy Monthly Card',
       noRecord: 'No charging records',
-      portCount: 'Port Count',
-      toCharge: 'Start Charging'
+       portCount: 'Port Count',
+       toCharge: 'Start Charging',
+       order: 'Order',
+       chargeHours: 'Charge Hours',
+       hourlyPrice: 'Hourly Price',
+       chargeEnergy: 'Charge Energy',
+       deductAmount: 'Deduct Amount',
+       startTime: 'Start Time',
+       endTime: 'End Time',
+       remark: 'Remark'
     }
   },
   'zh-TW': {
@@ -52,8 +68,16 @@ export default {
       socket: '插座',
       buyMonthCard: '購買月卡',
       noRecord: '暫無充電記錄',
-      portCount: '插槽數',
-      toCharge: '去充電'
+       portCount: '插槽數',
+       toCharge: '去充電',
+       order: '訂單',
+       chargeHours: '充電時長',
+       hourlyPrice: '每小時價格',
+       chargeEnergy: '充電能量',
+       deductAmount: '扣費金額',
+       startTime: '開始時間',
+       endTime: '結束時間',
+       remark: '備註'
     }
   }
 }

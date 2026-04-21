@@ -1,5 +1,11 @@
 export default {
   'zh-CN': {
+    common:{
+      confirm: '确认',
+      cancel: '取消',
+      submit: '提交',
+      serverError: '服务器异常了',
+    },
     confirm: '确认',
     cancel: '取消',
     submit: '提交',
@@ -80,6 +86,12 @@ export default {
     shareQrcodeTip: '请截图保存到相册分享给访客'
   },
   'en': {
+    common:{
+      confirm: 'Confirm',
+      cancel: 'Cancel',
+      submit: 'Submit',
+      serverError: 'Server error',
+    },
     confirm: 'Confirm',
     cancel: 'Cancel',
     submit: 'Submit',
@@ -159,6 +171,12 @@ export default {
     shareQrcodeTip: 'Please save the screenshot and share it with your visitor'
   },
   'zh-TW': {
+    common:{
+      confirm: '確認',
+      cancel: '取消',
+      submit: '提交',
+      serverError: '伺服器異常了',
+    },
     confirm: '確認',
     cancel: '取消',
     submit: '提交',

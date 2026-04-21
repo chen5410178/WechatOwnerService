@@ -11,8 +11,10 @@ export default {
       agreeProtocol: '同意协议',
       userProtocol: '《用户协议》',
       privacyPolicy: '《隐私政策》',
-      loginSuccess: '登录成功',
-      loginFailed: '登录失败'
+       loginSuccess: '登录成功',
+       loginFailed: '登录失败',
+       sorryLoginRequired: '抱歉，需要登录后才能使用',
+       iWantToLogin: '我要登录'
     }
   },
   'en': {
@@ -27,8 +29,10 @@ export default {
       agreeProtocol: 'I agree to',
       userProtocol: 'User Agreement',
       privacyPolicy: 'Privacy Policy',
-      loginSuccess: 'Login successful',
-      loginFailed: 'Login failed'
+       loginSuccess: 'Login successful',
+       loginFailed: 'Login failed',
+       sorryLoginRequired: 'Sorry, login is required to use',
+       iWantToLogin: 'I want to login'
     }
   },
   'zh-TW': {
@@ -43,8 +47,10 @@ export default {
       agreeProtocol: '同意協議',
       userProtocol: '《使用者協議》',
       privacyPolicy: '《隱私政策》',
-      loginSuccess: '登入成功',
-      loginFailed: '登入失敗'
+       loginSuccess: '登入成功',
+       loginFailed: '登入失敗',
+       sorryLoginRequired: '抱歉，需要登入後才能使用',
+       iWantToLogin: '我要登入'
     }
   }
 }

@@ -45,7 +45,7 @@ import addInvoiceApplyLangMsg from './invoice/addInvoiceApply_lang'
 import invoiceLangMsg from './invoice/invoice_lang'
 import invoiceApplyLangMsg from './invoice/invoiceApply_lang'
 import invoiceDetailLangMsg from './invoice/invoiceDetail_lang'
-import settingLangMsg from './invoice/setting_lang'
+import invoiceSettingLangMsg from './invoice/invoiceSetting_lang'
 import locationLangMsg from './location/location_lang'
 import parkingLangMsg from './parking/parking_lang'
 import getParkingCodeLangMsg from './parking/getParkingCode_lang'
@@ -100,7 +100,7 @@ export default {
     ...invoiceLangMsg['zh-CN'],
     ...invoiceApplyLangMsg['zh-CN'],
     ...invoiceDetailLangMsg['zh-CN'],
-    ...settingLangMsg['zh-CN'],
+    ...invoiceSettingLangMsg['zh-CN'],
     ...locationLangMsg['zh-CN'],
     ...parkingLangMsg['zh-CN'],
     ...getParkingCodeLangMsg['zh-CN'],
@@ -154,7 +154,7 @@ export default {
     ...invoiceLangMsg['en'],
     ...invoiceApplyLangMsg['en'],
     ...invoiceDetailLangMsg['en'],
-    ...settingLangMsg['en'],
+    ...invoiceSettingLangMsg['en'],
     ...locationLangMsg['en'],
     ...parkingLangMsg['en'],
     ...getParkingCodeLangMsg['en'],
@@ -208,7 +208,7 @@ export default {
     ...invoiceLangMsg['zh-TW'],
     ...invoiceApplyLangMsg['zh-TW'],
     ...invoiceDetailLangMsg['zh-TW'],
-    ...settingLangMsg['zh-TW'],
+    ...invoiceSettingLangMsg['zh-TW'],
     ...locationLangMsg['zh-TW'],
     ...parkingLangMsg['zh-TW'],
     ...getParkingCodeLangMsg['zh-TW'],

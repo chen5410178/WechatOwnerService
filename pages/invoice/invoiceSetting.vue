@@ -2,39 +2,39 @@
 	<view>
 		<view class="block__title">{{ $t('invoiceSetting.invoiceSetting') }}</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('setting.invoiceType') }}</view>
+			<view class="title">{{ $t('invoiceSetting.invoiceType') }}</view>
 			<picker bindchange="PickerChange" :value="invoiceTypeIndex" :range="invoiceTypes" :range-key="'name'"
 				@change="invoiceTypeChange">
 				<view class="picker">
-					{{invoiceTypeIndex == -1?$t('setting.selectFirst'):invoiceTypes[invoiceTypeIndex].name}}
+					{{invoiceTypeIndex == -1?$t('invoiceSetting.selectFirst'):invoiceTypes[invoiceTypeIndex].name}}
 				</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('setting.invoiceTitle') }}</view>
-			<input v-model="invoiceName" :placeholder="$t('setting.inputInvoiceTitle')" class="text-right"></input>
+			<view class="title">{{ $t('invoiceSetting.invoiceTitle') }}</view>
+			<input v-model="invoiceName" :placeholder="$t('invoiceSetting.inputInvoiceTitle')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('setting.taxNo') }}</view>
-			<input v-model="invoiceNum" :placeholder="$t('setting.inputTaxNo')" class="text-right"></input>
+			<view class="title">{{ $t('invoiceSetting.taxNo') }}</view>
+			<input v-model="invoiceNum" :placeholder="$t('invoiceSetting.inputTaxNo')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('setting.address') }}</view>
-			<input v-model="invoiceAddress" :placeholder="$t('setting.inputAddress')" class="text-right"></input>
+			<view class="title">{{ $t('invoiceSetting.address') }}</view>
+			<input v-model="invoiceAddress" :placeholder="$t('invoiceSetting.inputAddress')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('setting.phone') }}</view>
-			<input v-model="invoiceLink" :placeholder="$t('setting.inputPhone')" class="text-right"></input>
+			<view class="title">{{ $t('invoiceSetting.phone') }}</view>
+			<input v-model="invoiceLink" :placeholder="$t('invoiceSetting.inputPhone')" class="text-right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('setting.bankAccount') }}</view>
-			<input v-model="invoiceAccount" :placeholder="$t('setting.inputBankAccount')" class="text-right"></input>
+			<view class="title">{{ $t('invoiceSetting.bankAccount') }}</view>
+			<input v-model="invoiceAccount" :placeholder="$t('invoiceSetting.inputBankAccount')" class="text-right"></input>
 		</view>
 		
 
 		<view class="flex flex-direction padding">
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_updateOwnerInvoice()" v-if="oiId">{{ $t('setting.submit') }}</button>
-			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_saveOwnerInvoice()" v-else>{{ $t('setting.submit') }}</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_updateOwnerInvoice()" v-if="oiId">{{ $t('invoiceSetting.submit') }}</button>
+			<button class="cu-btn bg-blue margin-tb-sm lg" @click="_saveOwnerInvoice()" v-else>{{ $t('invoiceSetting.submit') }}</button>
 		</view>
 	</view>
 </template>
@@ -57,10 +57,10 @@
 			return {
 				invoiceTypeIndex: -1,
 				invoiceTypes: [{
-					name: this.$t('setting.personal'),
+					name: this.$t('invoiceSetting.personal'),
 					value: '1001'
 				}, {
-					name: this.$t('setting.enterprise'),
+					name: this.$t('invoiceSetting.enterprise'),
 					value: '2002'
 				}],
 				invoiceType: '',
@@ -79,7 +79,7 @@
 			if (!_ownerId) {
 				uni.showToast({
 					icon: 'none',
-					title: this.$t('setting.ownerNotExist'),
+					title: this.$t('invoiceSetting.ownerNotExist'),
 				})
 				return;
 			}

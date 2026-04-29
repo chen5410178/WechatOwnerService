@@ -129,6 +129,8 @@ listOwnerMachines: baseUrl + 'app/owner.listOwnerMachines', // 申请钥匙
 	openDoor: baseUrl + "app/iot.openAccessControlDoor",
 	getQrCode: baseUrl + "app/machine/getQRcode",
 	queryOwnerCars: baseUrl + "app/parkingSpaceApply.listParkingSpaceApply",
+	saveOwnerCar: baseUrl + "app/parkingSpaceApply.saveParkingSpaceApply",
+	queryParkingSpaces: baseUrl + "app/parkingSpace.queryParkingSpacesByOwner",
 	customCarInOut: baseUrl + "app/machine.customCarInOutCmd", //手工保存车牌号
 	saveRoomRenovation: baseUrl + "app/roomRenovation/saveRoomRenovation",
 	queryRoomRenovation: baseUrl + "app/roomRenovation/queryRoomRenovation",

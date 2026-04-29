@@ -47,6 +47,7 @@
 	import {getCurCommunity} from '../../api/community/communityApi.js'
 	
 	import {getProperty} from '../../api/property/propertyApi.js';
+	import {queryParkingSpaces, saveOwnerCar} from '../../api/car/carApi.js';
 
 	export default {
 		data() {
@@ -99,30 +100,24 @@
 		},
 		methods: {
 			listParkingSpace: function() {
-				context.request({
-					url: constant.url.queryParkingSpaces,
-					header: context.getHeaders(),
-					method: "GET",
-					data: {
-						"page": this.page,
-						"row": this.row,
-						"communityId": this.communityId,
-						"state": 'F'
-					},
-					success: (res) => {
-						let arr = res.data.parkingSpaces;
-						arr.map(item => {
-							this.parkingSpaces.push(item.areaNum + " " + this.$t('applyparking.parkingSpace') + "  " + item.num + this.$t('applyparking.parkingSpaceNum'));
-							this.parkingSpaceIds.push(item.psId);
-						})
-					},
-					fail: (res) => {
-						uni.showToast({
-							title: this.$t('common.serverError'),
-							icon: 'none',
-							duration: 2000
-						})
-					}
+				let _that = this;
+				queryParkingSpaces({
+					page: this.page,
+					row: this.row,
+					communityId: this.communityId,
+					state: 'F'
+				}).then((res) => {
+					let arr = res.parkingSpaces;
+					arr.map(item => {
+						_that.parkingSpaces.push(item.areaNum + " " + _that.$t('applyparking.parkingSpace') + "  " + item.num + _that.$t('applyparking.parkingSpaceNum'));
+						_that.parkingSpaceIds.push(item.psId);
+					})
+				}).catch(() => {
+					uni.showToast({
+						title: _that.$t('common.serverError'),
+						icon: 'none',
+						duration: 2000
+					})
 				});
 			},
 			choosePickerSpace: function(e) {
@@ -172,32 +167,25 @@
 					});
 					return;
 				}
-				context.request({
-					url: constant.url.saveOwnerCar,
-					header: context.getHeaders(),
-					method: "POST",
-					data: obj,
-					success: function(res) {
-						let _json = res.data;
-						if (_json.code == 0) {
-							uni.redirectTo({
-								url: '/pages/car/parkingInfo',
-							});
-							return;
-						}
-						uni.showToast({
-							title: this.$t('common.serverError'),
-							icon: 'none',
-							duration: 2000
+				let _that = this;
+				saveOwnerCar(obj).then((_json) => {
+					if (_json.code == 0) {
+						uni.redirectTo({
+							url: '/pages/car/parkingInfo',
 						});
-					},
-					fail: function(e) {
-						uni.showToast({
-							title: this.$t('common.serverError'),
-							icon: 'none',
-							duration: 2000
-						});
+						return;
 					}
+					uni.showToast({
+						title: _that.$t('common.serverError'),
+						icon: 'none',
+						duration: 2000
+					});
+				}).catch(() => {
+					uni.showToast({
+						title: _that.$t('common.serverError'),
+						icon: 'none',
+						duration: 2000
+					});
 				});	
 			
 			}

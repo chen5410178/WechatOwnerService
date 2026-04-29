@@ -168,6 +168,48 @@ export function deleteMemberCar(_objData) {
 };
 
 /**
+ * 查询停车位
+ */
+export function queryParkingSpaces(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.queryParkingSpaces,
+			method: "GET",
+			data: _objData,
+			success: function(res) {
+				resolve(res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+
+/**
+ * 保存停车位申请
+ */
+export function saveOwnerCar(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.saveOwnerCar,
+			method: "POST",
+			data: _objData,
+			success: function(res) {
+				if (res.data.code == 0) {
+					resolve(res.data);
+					return;
+				}
+				reject(res.data.msg || res.data);
+			},
+			fail: function(res) {
+				reject(res);
+			}
+		});
+	});
+};
+
+/**
  * 保存业主车辆
  */
 export function customCarInOut(_objData) {

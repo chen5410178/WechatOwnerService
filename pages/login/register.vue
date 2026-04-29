@@ -3,15 +3,15 @@
 		<view class="block__title">{{ $t('register.registerInfo') }}</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('register.phone') }}</view>
-			<input v-model="link" required label="手机号" clearable :placeholder="$t('register.pleaseInputPhone')"></input>
+			<input v-model="link" required :label="$t('register.phone')" clearable :placeholder="$t('register.pleaseInputPhone')"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('register.password') }}</view>
-			<input v-model="password" required type="password" label="密码" clearable :placeholder="$t('register.pleaseInputPassword')"></input>
+			<input v-model="password" required type="password" :label="$t('register.password')" clearable :placeholder="$t('register.pleaseInputPassword')"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('register.confirmPassword') }}</view>
-			<input v-model="rePassword" required type="password" label="确认密码" clearable :placeholder="$t('register.pleaseConfirmPassword')"></input>
+			<input v-model="rePassword" required type="password" :label="$t('register.confirmPassword')" clearable :placeholder="$t('register.pleaseConfirmPassword')"></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('register.verificationCode') }}</view>
@@ -47,17 +47,12 @@
 				codeMsg: '',
 				msgCode: '',
 				areaShow: false,
-				btnValue: '',
+				btnValue: this.$t('register.verificationCode'),
 				btnDisabled: false,
 				password: '',
 				rePassword: '',
 				readme:false,
 			};
-		},
-		computed: {
-			btnValue() {
-				return this.$t('register.verificationCode');
-			}
 		},
 		/**
 		 * 生命周期函数--监听页面加载

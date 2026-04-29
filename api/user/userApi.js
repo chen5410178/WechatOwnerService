@@ -24,15 +24,16 @@ import {
 
 export function timer(_that) {
 	let second = 60;
+	const originalBtnValue = _that.btnValue;
 	let promise = new Promise((resolve, reject) => {
 		let setTimer = setInterval(
 			() => {
 				second = second - 1;
-				_that.btnValue = second + '秒';
+				_that.btnValue = second + _that.$t('seconds');
 				_that.btnDisabled = true;
 				if (second <= 0) {
 					second = 60;
-					_that.btnValue = '获取验证码';
+					_that.btnValue = originalBtnValue;
 					_that.btnDisabled = false;
 					resolve(setTimer)
 				}
@@ -51,14 +52,14 @@ export function sendSmsCode(_link, _that) {
 	};
 	if (obj.tel == '') {
 		wx.showToast({
-			title: '请输入手机号',
+			title: _that.$t('pleaseInputPhone'),
 			icon: 'none',
 			duration: 2000
 		});
 		return;
 	}
 	uni.showLoading({
-		title: '加载中',
+		title: _that.$t('loading'),
 		mask: true
 	});
 	return new Promise(

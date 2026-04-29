@@ -83,7 +83,9 @@ export default {
     dial: '拨打',
     callSuccess: '拨打成功',
     callFailed: '拨打失败',
-    shareQrcodeTip: '请截图保存到相册分享给访客'
+    shareQrcodeTip: '请截图保存到相册分享给访客',
+    seconds: '秒',
+    pleaseInputPhone: '请输入手机号'
   },
   'en': {
     common:{
@@ -168,7 +170,9 @@ export default {
     dial: 'Dial',
     callSuccess: 'Call succeeded',
     callFailed: 'Call failed',
-    shareQrcodeTip: 'Please save the screenshot and share it with your visitor'
+    shareQrcodeTip: 'Please save the screenshot and share it with your visitor',
+    seconds: 's',
+    pleaseInputPhone: 'Please enter phone number'
   },
   'zh-TW': {
     common:{
@@ -253,6 +257,8 @@ export default {
     dial: '撥打',
     callSuccess: '撥打成功',
     callFailed: '撥打失敗',
-    shareQrcodeTip: '請截圖保存到相冊分享給訪客'
+    shareQrcodeTip: '請截圖保存到相冊分享給訪客',
+    seconds: '秒',
+    pleaseInputPhone: '請輸入手機號'
   }
 }

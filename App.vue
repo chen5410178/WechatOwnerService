@@ -11,6 +11,7 @@
 	
 	
 	import url from './api/url.js'
+	import config from './conf/config.js'
 
 	export default {
 		// 小程序启动生命周期
@@ -33,23 +34,37 @@
 			     })
 			    })   
 				
-				requestNoAuth({
-					url: url.listSystemInfo,
-					method: "GET",
-					data: {
-						page:1,
-						row:1
-					},
-					success: function(res) {
-						console.log(res.data);
-						if(res.data.data && res.data.data.length >0){
-							uni.setStorageSync('java110SystemConfig',res.data.data[0])
-						}
-						//reslove(res);
-					},
-					fail: function(e) {}
-				
-				});
+			requestNoAuth({
+				url: url.listSystemInfo,
+				method: "GET",
+				data: {
+					page:1,
+					row:1
+				},
+				success: function(res) {
+					console.log(res.data);
+					if(res.data.data && res.data.data.length >0){
+						uni.setStorageSync('java110SystemConfig',res.data.data[0])
+					}
+					//reslove(res);
+				},
+				fail: function(e) {}
+			
+			});
+
+			// #ifdef MP-WEIXIN
+			uni.loadFontFace({
+				family: 'Font Awesome 6 Free',
+				source: `url('${config.commonBaseUrl.replace(/\/?$/, '/')}h5/iconfont/fa-solid-900.woff2')`,
+				global: true,
+				success() {
+					console.log('Font Awesome 6 Free loaded successfully')
+				},
+				fail(err) {
+					console.error('Font Awesome 6 Free load failed:', err)
+				}
+			})
+			// #endif
 		},
 		methods: {
 			initLanguage: function() {

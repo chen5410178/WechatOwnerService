@@ -888,7 +888,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "#E60012",
+		"navigationBarBackgroundColor": "#ff6b6b",
 		"navigationBarTitleText": "业主版",
 "usingComponents": {
 

@@ -1,12 +1,18 @@
 /* iconfont 图标字体 - Font Awesome 6.4.0 */
 
 /* 加载 Font Awesome 字体 */
+/* #ifdef H5 */
 @font-face {
   font-family: 'Font Awesome 6 Free';
   font-style: normal;
   font-weight: 900;
   src: url('@/static/iconfont/fa-solid-900.woff2') format('woff2');
 }
+/* #endif */
+
+/* #ifdef MP-WEIXIN */
+/* 小程序端字体通过 App.vue 中 uni.loadFontFace 动态加载 */
+/* #endif */
 
 /* 图标基础样式 - 兼容小程序 */
 .iconfont {

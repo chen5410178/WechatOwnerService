@@ -34,12 +34,12 @@
 			<wechat-login ref="wechatLoginRef"></wechat-login>
 			<!-- #endif -->
 		</view>
-		<!-- #ifdef H5 -->
+
 		<view class="padding-lr flex justify-between">
 			<view class="text-green" @click="_doLoginPhone()">{{phoneLoginName}}</view>
 			<view class="text-green" @click="_doRegister()">{{ $t('login.register') }}</view>
 		</view>
-		<!-- #endif -->
+
 
 	</view>
 </template>

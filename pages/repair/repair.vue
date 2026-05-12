@@ -188,8 +188,10 @@
 
 			//加载报修类型
 			this._loadRepairTypes();
-			this.todayDate = formatDate(new Date());
-			this.todayDateTime = formatHourAndMin(new Date())
+			this.todayDate = formatDate(new Date()).replaceAll('/', '-');
+			this.todayDateTime = formatHourAndMin(new Date());
+			this.bindDate = this.todayDate;
+			this.bindTime = this.todayDateTime
 		},
 
 		methods: {

@@ -16,11 +16,11 @@
 				<button class="cu-btn bg-green lg" @click="_indexPage()">{{ $t('successPage.goHome') }}</button>
 			</view>
 		</view>
-		<community-recommend></community-recommend>
+		<!-- <community-recommend></community-recommend>
 		<view class="home_wrap">
 			<success-ads :objType="objType"></success-ads>
 		</view>
-			<success-goods :objType="objType"></success-goods>
+			<success-goods :objType="objType"></success-goods> -->
 
 
 	</view>

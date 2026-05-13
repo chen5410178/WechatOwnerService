@@ -93,8 +93,8 @@
 				ownerInfo: {},
 				ownerFlag: false,
 				roomDetail: {},
-				startTime: '',
-				endTime: '',
+				startTime: this.$t('roomRenovationDetail.selectFirst'),
+				endTime: this.$t('roomRenovationDetail.selectFirst'),
 				remark: '',
 				isPostpone: 'N',
 				renovationCompany: '',
@@ -199,11 +199,11 @@
 					personMainTel: this.personMainTel,
 					storeId: this.property.storeId,
 				}
-				saveRoomRenovation(params).then(function(_res){
+				saveRoomRenovation(params).then((_res) => {
 					uni.showToast({
 						title: this.$t('roomRenovationDetail.applySuccess')
 					});
-					setTimeout(function(){
+					setTimeout(() => {
 						uni.navigateBack({})
 					}, 1000);
 				})

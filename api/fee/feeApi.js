@@ -752,5 +752,27 @@ export function queryPhoneMeterPayFeeRule(_objData) {
 	})
 }
 
-
-
+/**
+ * 根据属性查询费用（报修缴费用）
+ * @param {Object} _objData { communityId, page, row, specCd, value }
+ */
+export function listFeeByAttr(_objData) {
+	return new Promise((resolve, reject) => {
+		request({
+			url: url.listFeeByAttr,
+			method: "GET",
+			data: _objData,
+			success: function(res) {
+				let _json = res.data;
+				if (_json.code == 0) {
+					resolve(_json.data);
+					return;
+				}
+				reject(_json.msg);
+			},
+			fail: function(e) {
+				reject(e);
+			}
+		});
+	})
+}

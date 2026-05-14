@@ -76,24 +76,16 @@
 
 		</view>
 	</view>
-
-	</view>
 </template>
 
 <script>
 	import {
 		date2String
 	} from '../../lib/java110/utils/DateUtil.js'
-	import context from '../../lib/java110/Java110Context.js';
 	import {getUserId} from '../../api/user/userApi.js';
-	const constant = context.constant;
-	const util = context.util;
 
-	import {
-		payFeeApp,
-		payFeeWechat,
-		computeObjFee
-	} from '@/api/fee/feeApi.js';
+	import { listFeeByAttr } from '@/api/fee/feeApi.js';
+	import { queryUserRepair } from '@/api/repair/repairApi.js';
 
 
 	export default {
@@ -119,15 +111,6 @@
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad: function(options) {
-			context.onLoad(options);
-			// #ifdef MP-WEIXIN
-			let accountInfo = uni.getAccountInfoSync();
-			this.appId = accountInfo.miniProgram.appId;
-			// #endif
-
-			// #ifdef H5
-			this.appId = uni.getStorageSync(constant.mapping.W_APP_ID)
-			// #endif
 			this.communityId = options.communityId;
 			this.repairId = options.repairId;
 			this.userId = options.userId;
@@ -148,101 +131,61 @@
 			 * 
 			 */
 			_listFee: function() {
-				let that = this;
-				let _url = '';
-				_url = constant.url.listFeeByAttr;
-				let _paramIn = {
-					"communityId": that.communityId,
-					"page": 1,
-					"row": 1,
-					"specCd": '390001',
-					"value": that.repairId
-				};
-				context.request({
-					url: _url,
-					header: context.getHeaders(),
-					method: "GET",
-					data: _paramIn,
-					success: function(res) {
-						let _json = res.data;
-						if (_json.code == 0) {
-							that.feeInfo = _json.data[0];
-							return;
-						}
-						uni.showToast({
-							title: this.$t('repairPay.queryFeeFailed'),
-							icon: 'none',
-							duration: 2000
-						});
-					},
-					fail: function(e) {
-						uni.showToast({
-							title: this.$t('common.serverError'),
-							icon: 'none',
-							duration: 2000
-						})
-					}
-				})
+				let _that = this;
+				listFeeByAttr({
+					communityId: _that.communityId,
+					page: 1,
+					row: 1,
+					specCd: '390001',
+					value: _that.repairId
+				}).then(function(_data) {
+					_that.feeInfo = _data[0];
+				}).catch(function() {
+					uni.showToast({
+						title: _that.$t('repairPay.queryFeeFailed'),
+						icon: 'none'
+					});
+				});
 			},
 			_loadRepair: function() {
-				let that = this;
-				let _url = '';
-				_url = constant.url.listStaffFinishRepairs;
-				let _paramIn = {
-					"communityId": that.communityId,
-					"page": 1,
-					"row": 1,
-					"userId": that.userId,
-					"repairId": that.repairId
-				};
-				context.request({
-					url: _url,
-					header: context.getHeaders(),
-					method: "GET",
-					data: _paramIn,
-					success: function(res) {
-						let _json = res.data;
-						if (_json.code == 0) {
-							that.repairInfo = _json.data[0];
-							return;
-						}
-						uni.showToast({
-							title: this.$t('repairPay.queryRepairFailed'),
-							icon: 'none',
-							duration: 2000
-						});
-					},
-					fail: function(e) {
-						uni.showToast({
-							title: this.$t('common.serverError'),
-							icon: 'none',
-							duration: 2000
-						})
-					}
-				})
+				let _that = this;
+				queryUserRepair({
+					communityId: _that.communityId,
+					page: 1,
+					row: 1,
+					userId: _that.userId,
+					repairId: _that.repairId
+				}).then(function(_data) {
+					_that.repairInfo = _data.data[0];
+				}).catch(function() {
+					uni.showToast({
+						title: _that.$t('repairPay.queryRepairFailed'),
+						icon: 'none'
+					});
+				});
 			},
 			onPayFee: function() {
 				uni.showLoading({
 					title: this.$t('repairPay.processing')
 				});
+				let _that = this;
 				let _tradeType = 'JSAPI';
 				let _receivedAmount = this.feeInfo.feePrice;
+				let _payFees = [{
+					configId: _that.feeInfo.configId,
+					payFees: [_that.feeInfo]
+				}];
 				let _objData = {
-					business: "payFee",
-					cycles: '1',
-					communityId: this.communityId,
-					feeId: this.feeInfo.feeId,
-					feeName: this.$t('repairPay.repairFee'),
+					business: "oweFee",
+					feeConfigs: _payFees,
+					communityId: _that.communityId,
+					feeName: _that.$t('repairPay.repairFee'),
 					receivedAmount: _receivedAmount,
-					tradeType: _tradeType,
-					appId: this.appId,
-					endTime: this.endTime,
-					payerObjId: this.payerObjId,
-					payerObjType: this.payerObjType
+					tradeType: _tradeType
 				};
 				uni.setStorageSync('doing_cashier', _objData);
 				uni.navigateTo({
-					url: '/pages/fee/cashier?money=' + _receivedAmount + "&business=payFee&communityId=" + this
+					url: '/pages/fee/cashier?money=' + _receivedAmount + "&business=oweFee&communityId=" + _that
 						.communityId + "&cashierUserId=" + getUserId()
 				});
 			}

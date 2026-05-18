@@ -78,7 +78,8 @@
 					{ name: this.$t('service.ownerInfo'), icon: 'fa-solid fa-user c-purple', href: '/pages/viewBindOwner/viewBindOwner' },
 					{ name: this.$t('service.parkingApply'), icon: 'fa-solid fa-square-parking c-green', href: '/pages/car/applyparking' },
 					{ name: this.$t('service.vacantApply'), icon: 'fa-solid fa-door-open c-red', href: '/pages/applyRoom/applyRoom' },
-					{ name: this.$t('service.communityBulletin'), icon: 'fa-solid fa-newspaper c-blue', href: '/pages/common/communityPublicityList' }
+					{ name: this.$t('service.communityBulletin'), icon: 'fa-solid fa-newspaper c-blue', href: '/pages/common/communityPublicityList' },
+					{ name: this.$t('service.voteQuestionnaire'), icon: 'fa-solid fa-check-to-slot c-orange', href: '/pages/questionAnswer/questionAnswer' }
 				];
 			},
 			workOrderList() {

@@ -22,7 +22,8 @@ export default {
       openDoor: '开门',
       visitorAccess: '访客通行',
       other: '其他',
-      charging: '充电桩'
+      charging: '充电桩',
+      voteQuestionnaire: '投票问卷'
     }
   },
   'en': {
@@ -48,7 +49,8 @@ export default {
       openDoor: 'Open Door',
       visitorAccess: 'Visitor Access',
       other: 'Other',
-      charging: 'Charging'
+      charging: 'Charging',
+      voteQuestionnaire: 'Vote & Survey'
     }
   },
   'zh-TW': {
@@ -74,7 +76,8 @@ export default {
       openDoor: '開門',
       visitorAccess: '訪客通行',
       other: '其他',
-      charging: '充電樁'
+      charging: '充電樁',
+      voteQuestionnaire: '投票問卷'
     }
   }
 }

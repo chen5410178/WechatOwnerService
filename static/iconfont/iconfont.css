@@ -67,6 +67,7 @@
 .fa-newspaper::before { content: "\f1ea"; }
 .fa-baseball::before { content: "\f433"; }
 .fa-coins::before { content: "\f51e"; }
+.fa-check-to-slot::before { content: "\f772"; }
 
 /* 颜色辅助类 */
 .c-blue { color: #1890ff; }

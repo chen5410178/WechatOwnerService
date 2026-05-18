@@ -140,6 +140,7 @@
 					value: _that.repairId
 				}).then(function(_data) {
 					_that.feeInfo = _data[0];
+					_that.feeInfo.receivedAmount = _data[0].feePrice;
 				}).catch(function() {
 					uni.showToast({
 						title: _that.$t('repairPay.queryFeeFailed'),

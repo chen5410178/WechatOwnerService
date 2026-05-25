@@ -15,10 +15,10 @@ const baseUrl = '/';
 
 // #ifndef H5
 //服务器域名 小程序 或者 app 时 后端地址 
-const baseUrl = 'http://demo.homecommunity.cn/';
+const baseUrl = 'https://wuye.jqtcwy.com/';
 // #endif
 
-let commonBaseUrl = 'http://demo.homecommunity.cn/';
+let commonBaseUrl = 'https://wuye.jqtcwy.com/';
 
 //商城的url
 let mallUrl = 'http://mallapp.homecommunity.cn/';
@@ -28,8 +28,8 @@ let mallMinAppId = "xx";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 
-let DEFAULT_COMMUNITY_ID = "2025071810280004"; //HC测试小区id  用于没有登录时展示相关信息
-let DEFAULT_COMMUNITY_NAME = "演示小区";
+let DEFAULT_COMMUNITY_ID = "2026052169330033"; //HC测试小区id  用于没有登录时展示相关信息
+let DEFAULT_COMMUNITY_NAME = "锦绣阳光嘉园";
 
 // APP 或者 公众号  appId
 const wAppId = ""; //微信AppId

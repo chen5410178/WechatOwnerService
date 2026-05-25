@@ -124,7 +124,7 @@
 					sourceType: ['album', 'camera'],
 					success: function(res) {
 						uni.showToast({
-							title: this.$t('settings.uploading'),
+							title: _that.$t('settings.uploading'),
 							icon: 'loading',
 							mask: true,
 							duration: 1000

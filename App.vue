@@ -53,17 +53,18 @@
 			});
 
 			// #ifdef MP-WEIXIN
-			uni.loadFontFace({
-				family: 'Font Awesome 6 Free',
-				source: `url('${config.commonBaseUrl.replace(/\/?$/, '/')}h5/iconfont/fa-solid-900.woff2')`,
-				global: true,
-				success() {
-					console.log('Font Awesome 6 Free loaded successfully')
-				},
-				fail(err) {
-					console.error('Font Awesome 6 Free load failed:', err)
-				}
-			})
+			// ⚠ 字体图标已替换为PNG图片，字体加载已禁用，解决Android微信兼容问题
+			// uni.loadFontFace({
+			// 	family: 'Font Awesome 6 Free',
+			// 	source: `url('${config.commonBaseUrl.replace(/\/?$/, '/')}h5/iconfont/fa-solid-900.woff2')`,
+			// 	global: true,
+			// 	success() {
+			// 		console.log('Font Awesome 6 Free loaded successfully')
+			// 	},
+			// 	fail(err) {
+			// 		console.error('Font Awesome 6 Free load failed:', err)
+			// 	}
+			// })
 			// #endif
 		},
 		methods: {

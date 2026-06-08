@@ -11,7 +11,7 @@
 		<!-- 网格菜单 -->
 		<view class="grid-menu">
 			<view class="grid-item" @click="onGridMenu(item)" v-for="(item, index) in gridMenu" :key="index">
-				<view class="grid-icon iconfont" :class="item.icon"></view>
+				<image class="grid-icon-img" :src="commonBaseUrl + '/h5/owner/' + item.iconImg"></image>
 				<text class="grid-text">{{item.name}}</text>
 			</view>
 		</view>
@@ -57,25 +57,27 @@
 	import indexTop from '@/components/index/index-top.vue';
 	import indexActivities from '@/components/index/index-activities.vue';
 	import callProperty from '@/components/index/call-property.vue';
+	import config from '@/conf/config.js';
 
 	export default {
 		data() {
 			return {
 				latestNotice: '',
 				adverts: [],
-				currentAdIndex: 0
+				currentAdIndex: 0,
+				commonBaseUrl: config.commonBaseUrl
 			};
 		},
 		computed: {
 			gridMenu() {
 				return [
-					{ name: this.$t('index.familyMembers'), icon: 'fa-solid fa-users c-blue', href: '/pages/family/familyList' },
-					{ name: this.$t('index.complaint'), icon: 'fa-solid fa-comment c-orange', href: '/pages/complaint/complaint' },
-					{ name: this.$t('index.parkingMonthly'), icon: 'fa-solid fa-car c-green', href: '/pages/fee/payParkingFeeList' },
-					{ name: this.$t('index.waterElectric'), icon: 'fa-solid fa-droplet c-blue', href: '/pages/meter/meter' },
-					{ name: this.$t('index.contactProperty'), icon: 'fa-solid fa-phone-volume c-purple', href: '_callProperty' },
-					{ name: this.$t('index.communityBulletin'), icon: 'fa-solid fa-newspaper c-red', href: '/pages/common/communityPublicityList' },
-					{ name: this.$t('index.preStored'), icon: 'fa-solid fa-coins c-orange', href: '/pages/fee/preFee' }
+					{ name: this.$t('index.familyMembers'), iconImg: 'fa-users.png', href: '/pages/family/familyList' },
+					{ name: this.$t('index.complaint'), iconImg: 'fa-comment.png', href: '/pages/complaint/complaint' },
+					{ name: this.$t('index.parkingMonthly'), iconImg: 'fa-car.png', href: '/pages/fee/payParkingFeeList' },
+					{ name: this.$t('index.waterElectric'), iconImg: 'fa-droplet.png', href: '/pages/meter/meter' },
+					{ name: this.$t('index.contactProperty'), iconImg: 'fa-phone-volume.png', href: '_callProperty' },
+					{ name: this.$t('index.communityBulletin'), iconImg: 'fa-newspaper.png', href: '/pages/common/communityPublicityList' },
+					{ name: this.$t('index.preStored'), iconImg: 'fa-coins.png', href: '/pages/fee/preFee' }
 				]
 			}
 		},
@@ -204,8 +206,9 @@
 		align-items: center;
 		justify-content: center;
 
-		.grid-icon {
-			font-size: 48rpx;
+		.grid-icon-img {
+			width: 48rpx;
+			height: 48rpx;
 			margin-bottom: 16rpx;
 		}
 

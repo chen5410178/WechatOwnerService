@@ -5,25 +5,25 @@
 			<view class="hero-actions">
 				<view class="hero-item" @click="onHeroAction('openDoor')">
 					<view class="fa-icon-box">
-						<view class="iconfont fa-solid fa-key"></view>
+						<image class="fa-icon-img" :src="commonBaseUrl + '/h5/owner/fa-key-white.png'"></image>
 					</view>
 					<text class="hero-text">{{ $t('indexTop.indexOpenDoor') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('visitor')">
 					<view class="fa-icon-box">
-						<view class="iconfont fa-solid fa-qrcode"></view>
+						<image class="fa-icon-img" :src="commonBaseUrl + '/h5/owner/fa-qrcode.png'"></image>
 					</view>
 					<text class="hero-text">{{ $t('indexTop.indexVisit') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('payment')">
 					<view class="fa-icon-box">
-						<view class="iconfont fa-solid fa-yen-sign"></view>
+						<image class="fa-icon-img" :src="commonBaseUrl + '/h5/owner/fa-yen-sign.png'"></image>
 					</view>
 					<text class="hero-text">{{ $t('indexTop.indexPayment') }}</text>
 				</view>
 				<view class="hero-item" @click="onHeroAction('repair')">
 					<view class="fa-icon-box">
-						<view class="iconfont fa-solid fa-user-shield"></view>
+						<image class="fa-icon-img" :src="commonBaseUrl + '/h5/owner/fa-user-shield.png'"></image>
 					</view>
 					<text class="hero-text">{{ $t('indexTop.quickRepair') }}</text>
 				</view>
@@ -58,11 +58,13 @@
 	import {
 		hasAuthOwner
 	} from '@/api/owner/ownerApi.js';
+	import config from '@/conf/config.js';
 
 	export default {
 		data() {
 			return {
-				billAmount: '0.00'
+				billAmount: '0.00',
+				commonBaseUrl: config.commonBaseUrl
 			};
 		},
 		methods: {
@@ -155,8 +157,9 @@
 		background: rgba(255, 255, 255, 0.2);
 	}
 
-	.fa-icon {
-		font-size: 40rpx;
+	.fa-icon-img {
+		width: 40rpx;
+		height: 40rpx;
 	}
 
 	.hero-text {

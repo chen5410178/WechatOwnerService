@@ -18,7 +18,7 @@ const baseUrl = '/';
 const baseUrl = 'https://wuye.jqtcwy.com/';
 // #endif
 
-let commonBaseUrl = 'https://wuye.jqtcwy.com/';
+let commonBaseUrl = 'https://wuye.jqtcwy.com';
 
 //商城的url
 let mallUrl = 'http://mallapp.homecommunity.cn/';

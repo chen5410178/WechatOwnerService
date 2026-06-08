@@ -3,7 +3,7 @@
 		<!-- 红色背景头部 -->
 		<view class="mine-header-red" @click="goToLogin">
 			<view class="avatar">
-				<view class="iconfont fa-solid fa-user"></view>
+				<image class="avatar-icon-img" :src="commonBaseUrl + '/h5/owner/fa-user-white.png'"></image>
 			</view>
 			<view class="user-info" v-if="isLogin">
 				<view class="user-name">{{userName}}</view>
@@ -37,7 +37,7 @@
 			<view class="mine-grid-row">
 				<view class="mine-grid-item" v-for="(item, index) in serviceList1" :key="index" @click="onServiceClick(item)">
 					<view class="icon-wrapper" >
-						<view class="iconfont" :class="item.icon"></view>
+						<image class="service-icon-img" :src="commonBaseUrl + '/h5/owner/' + item.iconImg"></image>
 					</view>
 					<text class="item-text">{{item.name}}</text>
 				</view>
@@ -45,7 +45,7 @@
 			<view class="mine-grid-row">
 				<view class="mine-grid-item" v-for="(item, index) in serviceList2" :key="index" @click="onServiceClick(item)">
 					<view class="icon-wrapper" >
-						<view class="iconfont" :class="item.icon"></view>
+						<image class="service-icon-img" :src="commonBaseUrl + '/h5/owner/' + item.iconImg"></image>
 					</view>
 					<text class="item-text">{{item.name}}</text>
 				</view>
@@ -56,27 +56,27 @@
 		<view class="setting-list">
 			<view class="setting-item" @click="goToChangeCommunity">
 				<view class="setting-left">
-					<view class="iconfont fa-solid fa-building"></view> {{ $t('my.changeCommunity') }}
+					<image class="setting-icon-img" :src="commonBaseUrl + '/h5/owner/fa-building.png'"></image> {{ $t('my.changeCommunity') }}
 				</view>
 				<view class="setting-right">
-					<view class="iconfont fa-solid fa-chevron-right"></view>
+					<image class="setting-icon-img" :src="commonBaseUrl + '/h5/owner/fa-chevron-right.png'"></image>
 				</view>
 			</view>
 			<view class="setting-item" @click="onAuthClick">
 				<view class="setting-left">
-					<view class="iconfont fa-solid fa-house-user"></view> {{ $t('my.houseAuth') }}
+					<image class="setting-icon-img" :src="commonBaseUrl + '/h5/owner/fa-house-user.png'"></image> {{ $t('my.houseAuth') }}
 				</view>
 				<view class="setting-right">
 					<text class="auth-status">{{authStatusText}}</text>
-					<view class="iconfont fa-solid fa-chevron-right"></view>
+					<image class="setting-icon-img" :src="commonBaseUrl + '/h5/owner/fa-chevron-right.png'"></image>
 				</view>
 			</view>
 			<view class="setting-item" @click="goToSetting">
 				<view class="setting-left">
-					<view class="iconfont fa-solid fa-gear"></view> {{ $t('my.settings') }}
+					<image class="setting-icon-img" :src="commonBaseUrl + '/h5/owner/fa-gear.png'"></image> {{ $t('my.settings') }}
 				</view>
 				<view class="setting-right">
-					<view class="iconfont fa-solid fa-chevron-right"></view>
+					<image class="setting-icon-img" :src="commonBaseUrl + '/h5/owner/fa-chevron-right.png'"></image>
 				</view>
 			</view>
 		</view>
@@ -113,6 +113,7 @@
 	import {
 		hasLogin
 	} from '@/api/user/sessionApi.js';
+	import config from '@/conf/config.js';
 
 	export default {
 		data() {
@@ -123,23 +124,24 @@
 				houseCount: '0',
 				carCount: '0',
 				couponCount: '0',
-				isAuthOwner: false
+				isAuthOwner: false,
+				commonBaseUrl: config.commonBaseUrl
 			};
 		},
 		computed: {
 			serviceList1() {
 				return [
-					{ name: this.$t('my.paymentRecord'), icon: 'fa-solid fa-file-lines c-red', href: '/pages/fee/payFeeDetail' },
-					{ name: this.$t('my.repairRecord'), icon: 'fa-solid fa-screwdriver-wrench c-orange', href: '/pages/repair/myRepair' },
-					{ name: this.$t('my.complaintRecord'), icon: 'fa-solid fa-comment-dots c-blue', href: '/pages/complaint/complaintList' },
-					{ name: this.$t('my.vacantRoom'), icon: 'fa-solid fa-house-chimney-crack c-orange', href: '/pages/applyRoom/myApplyRoomList' },
-					{ name: this.$t('my.renovationRecord'), icon: 'fa-solid fa-paint-roller c-blue', href: '/pages/renovation/myRoomRenovationList' }
+					{ name: this.$t('my.paymentRecord'), iconImg: 'fa-file-lines.png', href: '/pages/fee/payFeeDetail' },
+					{ name: this.$t('my.repairRecord'), iconImg: 'fa-screwdriver-wrench-orange.png', href: '/pages/repair/myRepair' },
+					{ name: this.$t('my.complaintRecord'), iconImg: 'fa-comment-dots.png', href: '/pages/complaint/complaintList' },
+					{ name: this.$t('my.vacantRoom'), iconImg: 'fa-house-chimney-crack.png', href: '/pages/applyRoom/myApplyRoomList' },
+					{ name: this.$t('my.renovationRecord'), iconImg: 'fa-paint-roller-blue.png', href: '/pages/renovation/myRoomRenovationList' }
 				];
 			},
 			serviceList2() {
 				return [
-					{ name: this.$t('my.accessLog'), icon: 'fa-solid fa-id-card c-purple', href: '/pages/machine/machineTranslateLog' },
-					{ name: this.$t('my.invoiceHistory'), icon: 'fa-solid fa-receipt c-orange', href: '/pages/invoice/invoiceApply' }
+					{ name: this.$t('my.accessLog'), iconImg: 'fa-id-card.png', href: '/pages/machine/machineTranslateLog' },
+					{ name: this.$t('my.invoiceHistory'), iconImg: 'fa-receipt-orange.png', href: '/pages/invoice/invoiceApply' }
 				];
 			},
 			authStatusText() {
@@ -311,9 +313,9 @@
 		align-items: center;
 		justify-content: center;
 
-		.iconfont {
-			font-size: 64rpx;
-			color: #fff;
+		.avatar-icon-img {
+			width: 64rpx;
+			height: 64rpx;
 		}
 	}
 
@@ -399,8 +401,9 @@
 			border-radius: 50%;
 			background: #f5f5f5;
 
-			.iconfont {
-				font-size: 40rpx;
+			.service-icon-img {
+				width: 40rpx;
+				height: 40rpx;
 			}
 		}
 
@@ -435,11 +438,10 @@
 		display: flex;
 		align-items: center;
 
-		.iconfont {
+		.setting-icon-img {
 			width: 40rpx;
-			text-align: center;
+			height: 40rpx;
 			margin-right: 10rpx;
-			color: #666;
 			display: inline-block;
 		}
 	}
@@ -454,8 +456,9 @@
 			color: #1890ff;
 		}
 
-		.icon-arrow-right {
-			margin-left: 10rpx;
+		.setting-icon-img {
+			width: 32rpx;
+			height: 32rpx;
 		}
 	}
 

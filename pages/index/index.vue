@@ -74,7 +74,9 @@
 					{ name: this.$t('index.familyMembers'), iconImg: 'fa-users.png', href: '/pages/family/familyList' },
 					{ name: this.$t('index.complaint'), iconImg: 'fa-comment.png', href: '/pages/complaint/complaint' },
 					{ name: this.$t('index.parkingMonthly'), iconImg: 'fa-car.png', href: '/pages/fee/payParkingFeeList' },
+					//#ifndef MP-WEIXIN
 					{ name: this.$t('index.waterElectric'), iconImg: 'fa-droplet.png', href: '/pages/meter/meter' },
+					//#endif
 					{ name: this.$t('index.contactProperty'), iconImg: 'fa-phone-volume.png', href: '_callProperty' },
 					{ name: this.$t('index.communityBulletin'), iconImg: 'fa-newspaper.png', href: '/pages/common/communityPublicityList' },
 					{ name: this.$t('index.preStored'), iconImg: 'fa-coins.png', href: '/pages/fee/preFee' }

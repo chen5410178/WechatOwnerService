@@ -70,7 +70,9 @@
 			feeList() {
 				return [
 					{ name: this.$t('service.propertyPay'), iconImg: 'fa-house-user.png', href: '/pages/fee/oweFee' },
+					//#ifndef MP-WEIXIN
 					{ name: this.$t('service.waterElectric'), iconImg: 'fa-droplet.png', href: '/pages/meter/meter' },
+					//#endif
 					{ name: this.$t('service.carMonthly'), iconImg: 'fa-car-orange.png', href: '/pages/fee/payParkingFeeList' },
 					{ name: this.$t('service.invoice'), iconImg: 'fa-receipt.png', href: '/pages/invoice/invoice' }
 				];

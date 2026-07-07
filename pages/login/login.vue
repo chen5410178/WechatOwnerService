@@ -77,8 +77,8 @@
 		data() {
 			return {
 				logoUrl: '',
-				username: '',
-				password: '',
+				username: '18909711234',
+				password: '123456',
 				code: "",
 				loginByPhone: false,
 				msgCode: '',

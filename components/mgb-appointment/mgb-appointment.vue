@@ -245,7 +245,7 @@
 				that.CDList = [];
 				that.totalMoney = 0;
 				uni.showLoading({
-					title: _that.$t('mgbAppointment.loading'),
+					title: that.$t('mgbAppointment.loading'),
 					mask: true
 				});
 				let params = {

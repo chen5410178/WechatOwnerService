@@ -62,31 +62,35 @@
 				</view>
 			</picker>
 		</view>
-		<view class="cu-form-group arrow">
-			<view class="title">{{ $t('applyRoomDetail.feeProject') }}</view>
-			<picker mode="selector" :range="feeTypeCds" range-key="feeName"  @change="feeTypeCdsChange">
-				<view class="picker">
-					{{feeTypeCd?feeTypeCd: $t('applyRoomDetail.selectFirst')}}
-				</view>
-			</picker>
+		<view class="block__title">{{ $t('applyRoomDetail.feeProject') }}</view>
+		<view class="fee-toolbar">
+			<view class="fee-tool" @click="handleSelectAll">{{ $t('applyRoomDetail.selectAll') }}</view>
+			<view class="fee-tool" @click="handleClearAll">{{ $t('applyRoomDetail.clearAll') }}</view>
 		</view>
-		<view class="cu-form-group arrow">
-			<view class="title">{{ $t('applyRoomDetail.startDate') }}</view>
-			<picker mode="date" :value="bindStartDate" start="2020-09-01" end="2050-09-01" @change="dateStartChange">
-				<view class="picker">
-					{{bindStartDate}}
+		<checkbox-group class="block" @change="feeCheckChange">
+			<view class="cu-list menu left-line">
+				<view class="cu-item" v-for="(fee, idx) in feeTypeCds" :key="fee.feeId" :data-item="fee">
+					<view class="padding-tb-sm flex justify-start">
+						<view style="line-height: 1.6rem; display: flex; align-items: center;">
+							<checkbox :value="fee.feeId" :checked="fee.checked"></checkbox>
+						</view>
+						<view class="margin-left-sm" @click="toggleFeeCheck(fee)">
+							<view>
+								<view class="text-cut" style="width:260px">{{fee.feeName}}</view>
+							</view>
+							<view class="text-gray text-sm" v-if="fee.startTime && fee.endTime">
+								<text>{{fee.startTime}} ~ {{fee.endTime}}</text>
+							</view>
+						</view>
+					</view>
+					<view class="action">
+						<text class="text-red text-sm" v-if="fee.oweAmount">￥{{fee.oweAmount}}</text>
+					</view>
 				</view>
-			</picker>
-		</view>
-		<view class="cu-form-group arrow">
-			<view class="title">{{ $t('applyRoomDetail.endDate') }}</view>
-			<picker mode="date" :value="bindEndDate" start="2020-09-01" end="2050-09-01" @change="dateEndChange">
-				<view class="picker">
-					{{bindEndDate}}
-				</view>
-			</picker>
-		</view>
-		<view class="cu-form-group arrow">
+			</view>
+		</checkbox-group>
+		<view v-if="feeTypeCds.length === 0" class="fee-empty">{{ $t('applyRoomDetail.noFee') }}</view>
+		<view class="cu-form-group">
 			<view class="title">{{ $t('applyRoomDetail.applyDescription') }}</view>
 			<input type="text" v-model="createRemark">
 		</view>
@@ -107,7 +111,7 @@
 	import * as TanslateImage from '../../lib/java110/utils/translate-image.js';
 	import context from '../../lib/java110/Java110Context.js'
 	const factory = context.factory;
-	import {compareDate,addDay,date2String} from '../../lib/java110/utils/DateUtil.js'
+	import {formatDate} from '../../lib/java110/utils/DateUtil.js'
 	import {queryApplyRoomDiscountType,saveApplyRoomDiscount,listRoomFee} from '../../api/applyRoom/applyRoomApi.js'
 	import uploadImageAsync from "../../components/vc-upload-async/vc-upload-async.vue";
 	import {getUserId,getUserName,getUserTel} from '../../api/user/userApi.js';
@@ -120,20 +124,19 @@
 				ownerFlag: false,
 				// 是否有业主信息 标记 如果有为 true  没有为false
 				roomDetail: {},
-bindStartDate: this.$t('applyRoomDetail.selectFirst'),
-				bindEndDate: this.$t('applyRoomDetail.selectFirst'),
+				startTime: formatDate(new Date()).replaceAll('/', '-'),
+				endTime: '2050-01-01 23:59:59',
 				createRemark: '',
 				applyType: '',
 				applyTypeShow: '',
 				applyTypes: [],
 				feeTypeCds: [],
-				feeId: '',
-				feeTypeCd: '',
+				selectedFees: [],
 				photos: [],
 				communityId: '',
 				userName:'',
 				userTel:'',
-uploadImage: {
+				uploadImage: {
 					maxPhotoNum: 4,
 					imgTitle: this.$t('applyRoomDetail.imageUpload'),
 					canEdit: true
@@ -175,7 +178,6 @@ uploadImage: {
 				}
 			},
 			loadRoomFee: function(){
-				let _that = this;
 				let params = {
 					page: 1,
 					row: 50,
@@ -183,21 +185,22 @@ uploadImage: {
 					payerObjId: this.roomDetail.roomId,
 					state: '2008001'
 				};
-				listRoomFee(params).then(function(data){
-					let fees = data.fees;
-					_that.feeTypeCds = fees;
+				listRoomFee(params).then((data) => {
+					let fees = data.fees || [];
+					fees.forEach(f => f.checked = false);
+					this.feeTypeCds = fees;
+					this.selectedFees = [];
 				})
 			},
 			
 			loadApplyRoomDiscountType: function(){
-				let _that = this;
 				let params = {
 					communityId: getCommunityId(),
 					page: 1,
 					row: 50
 				}
-				queryApplyRoomDiscountType(params).then(function(types){
-					_that.applyTypes = types;
+				queryApplyRoomDiscountType(params).then((types) => {
+					this.applyTypes = types;
 				})
 			},
 			
@@ -228,46 +231,44 @@ uploadImage: {
 			},
 			
 			/**
+			 * 费用项多选
 			 * @param {Object} e
-			 * 费用项改变
 			 */
-			feeTypeCdsChange: function(e){
-				if(this.feeTypeCds.length > 0){
-					this.feeId = this.feeTypeCds[e.detail.value].feeId;
-					this.feeTypeCd = this.feeTypeCds[e.detail.value].feeName;
-				}
+			feeCheckChange: function(e){
+				const checkedSet = new Set(e.detail.value);
+				this.feeTypeCds.forEach(f => f.checked = checkedSet.has(f.feeId));
+				this.refreshSelectedFees();
 			},
 			
-			/**
-			 * 修改开始时间
-			 * @param {Object} e
-			 */
-			dateStartChange: function(e) {
-				this.bindStartDate = e.detail.value;
+			toggleFeeCheck: function(fee){
+				fee.checked = !fee.checked;
+				this.refreshSelectedFees();
+				this.$forceUpdate();
 			},
 			
-			/**
-			 * 修改结束时间
-			 * @param {Object} e
-			 */
-			dateEndChange: function(e) {
-				this.bindEndDate = e.detail.value;
+			handleSelectAll: function(){
+				this.feeTypeCds.forEach(f => f.checked = true);
+				this.refreshSelectedFees();
+			},
+			
+			handleClearAll: function(){
+				this.feeTypeCds.forEach(f => f.checked = false);
+				this.refreshSelectedFees();
+			},
+			
+			refreshSelectedFees: function(){
+				this.selectedFees = this.feeTypeCds.filter(f => f.checked);
 			},
 			
 			/**
 			 * 提交申请
 			 */
 			subApply: function(){
-				let _that = this;
 				let msg = '';
-if(this.applyType == ''){
+				if(this.applyType == ''){
 					msg = this.$t('applyRoomDetail.pleaseSelectDiscountType');
-				}else if(this.feeId == ''){
+				}else if(this.selectedFees.length === 0){
 					msg = this.$t('applyRoomDetail.pleaseSelectFeeProject');
-				}else if(this.bindStartDate == this.$t('applyRoomDetail.selectFirst') || this.bindEndDate == this.$t('applyRoomDetail.selectFirst')){
-					msg = this.$t('applyRoomDetail.pleaseSelectTime');
-				}else if(!compareDate(this.bindEndDate, this.bindStartDate)){
-					msg = this.$t('applyRoomDetail.timeRangeError');
 				}else if(this.createRemark == ''){
 					msg = this.$t('applyRoomDetail.pleaseFillApplyDescription');
 				}
@@ -281,10 +282,8 @@ if(this.applyType == ''){
 				}
 				
 				let params = {
-					startTime: this.bindStartDate,
-					// endTime: this.bindEndDate + ' 23:59:59',
-					// endTime: date2String(addDay(new Date(this.bindEndDate.replace(/-/g, "/")), 1)),
-					endTime: this.bindEndDate,
+					startTime: this.startTime,
+					endTime: this.endTime,
 					roomName: this.roomDetail.floorNum + '-' + this.roomDetail.unitNum + '-' + this.roomDetail.roomNum,
 					roomId: this.roomDetail.roomId,
 					communityId: getCommunityId(),
@@ -293,14 +292,15 @@ if(this.applyType == ''){
 					createRemark: this.createRemark,
 					ardId: '',
 					applyType: this.applyType,
-					feeId: this.feeId,
+					feeIds: this.selectedFees.map(f => f.feeId),
+					feeNames: this.selectedFees.map(f => f.feeName),
 					photos: this.photos
 				}
-saveApplyRoomDiscount(params).then(function(_res){
+				saveApplyRoomDiscount(params).then(() => {
 					uni.showToast({
-						title: _that.$t('applyRoomDetail.applySuccess')
+						title: this.$t('applyRoomDetail.applySuccess')
 					});
-					setTimeout(function(){
+					setTimeout(() => {
 						uni.navigateBack({})
 					}, 1000);
 				})
@@ -334,5 +334,25 @@ saveApplyRoomDiscount(params).then(function(_res){
 		margin: 0 auto;
 		background-color: #1F8DEE!important;
 		color: #fff!important;
+	}
+	
+	.fee-toolbar{
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 30rpx 16rpx;
+	}
+	.fee-tool{
+		font-size: 26rpx;
+		color: #1F8DEE;
+		padding: 6rpx 20rpx;
+		margin-left: 16rpx;
+		border: 1rpx solid #1F8DEE;
+		border-radius: 8rpx;
+	}
+	.fee-empty{
+		text-align: center;
+		color: rgba(69, 90, 100, .5);
+		font-size: 26rpx;
+		padding: 20rpx 0 10rpx;
 	}
 </style>

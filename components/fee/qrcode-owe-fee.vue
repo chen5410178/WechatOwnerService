@@ -22,7 +22,7 @@
 							</view>
 						</view>
 						<view class="action"  @click="_showDetailFee(item)">
-							<text class="text-grey text-sm">应缴:￥{{item.feeTotalPrice}}</text>
+							<text class="text-grey text-sm">应缴:￥{{item.oweAmount}}</text>
 						</view>
 					</view>
 					<view class="sub-info flex justify-start flex-wrap" v-if="item.showDetail">
@@ -68,7 +68,7 @@
 						</view>
 					</view>
 					<view class="action">
-						<text class="text-grey text-sm">应缴:￥{{item.feeTotalPrice}}</text>
+						<text class="text-grey text-sm">应缴:￥{{item.oweAmount}}</text>
 					</view>
 				</view>
 				<view class="sub-info flex justify-start flex-wrap" v-if="item.showDetail">
@@ -214,7 +214,7 @@
 				_fees.forEach(_item=>{
 					_feeIds.forEach(_feeId =>{
 						if(_item.feeId == _feeId){
-							_receivableAmount += parseFloat(_item.feeTotalPrice);
+							_receivableAmount += parseFloat(_item.oweAmount);
 						}
 					})
 				});

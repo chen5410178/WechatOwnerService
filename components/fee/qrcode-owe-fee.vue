@@ -17,7 +17,7 @@
 									</view>
 								</view>
 								<view class="text-gray text-sm">
-									<text class="margin-right-xs">{{item.endTime}}至{{_getDeadlineTime(item)}}</text>
+									<text class="margin-right-xs">{{item.startTime}}至{{item.endTime}}</text>
 								</view>
 							</view>
 						</view>
@@ -64,7 +64,7 @@
 							</view>
 						</view>
 						<view class="text-gray text-sm">
-							<text class="margin-right-xs">{{item.endTime}}至{{_getDeadlineTime(item)}}</text>
+							<text class="margin-right-xs">{{item.startTime}}至{{item.endTime}}</text>
 						</view>
 					</view>
 					<view class="action">

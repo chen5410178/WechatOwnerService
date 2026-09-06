@@ -18,7 +18,7 @@ const baseUrl = '/';
 const baseUrl = 'https://demo.homecommunity.cn/';
 // #endif
 
-let commonBaseUrl = 'https://demo.homecommunity.cn';
+let commonBaseUrl = 'https://demo.homecommunity.cn/';
 
 //商城的url
 let mallUrl = 'http://mallapp.homecommunity.cn/';
@@ -28,8 +28,8 @@ let mallMinAppId = "xx";
 
 //默认的小区ID和名称，用户还没有登录时显示的小区信息
 
-let DEFAULT_COMMUNITY_ID = "2026071443980858"; //HC测试小区id  用于没有登录时展示相关信息
-let DEFAULT_COMMUNITY_NAME = "翔莱演示";
+let DEFAULT_COMMUNITY_ID = "2026090412730039"; //HC测试小区id  用于没有登录时展示相关信息
+let DEFAULT_COMMUNITY_NAME = "铁桥新家园";
 
 // APP 或者 公众号  appId
 const wAppId = ""; //微信AppId

@@ -85,6 +85,8 @@
 		<view class="logout-btn" @click="logout" v-if="isLogin">
 			{{ $t('my.logout') }}
 		</view>
+
+		<auth-owner-dialog ref="authOwnerDialogRef"></auth-owner-dialog>
 	</view>
 </template>
 
@@ -113,9 +115,13 @@
 	import {
 		hasLogin
 	} from '@/api/user/sessionApi.js';
+	import authOwnerDialog from '@/components/owner/auth-owner-dialog.vue';
 	import config from '@/conf/config.js';
 
 	export default {
+		components: {
+			authOwnerDialog
+		},
 		data() {
 			return {
 				isLogin: false,

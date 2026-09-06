@@ -83,7 +83,10 @@ export function hasAuthOwner(_that) {
 				let _json = res.data;
 				if (_json.code != 0) {
 					//todo 弹出 认证对话框
-					_that.$refs.authOwnerDialogRef.openDialog(_json.code, _json.msg);
+					console.error('Error querying user auth owner:',  _that.$refs.authOwnerDialogRef);
+					if (_that && _that.$refs && _that.$refs.authOwnerDialogRef) {
+						_that.$refs.authOwnerDialogRef.openDialog(_json.code, _json.msg);
+					}
 					reject(_json.msg);
 					return;
 				}

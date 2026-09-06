@@ -42,6 +42,8 @@
 			</view>
 			<view class="banner-btn">{{ $t('indexTop.goPay') }}</view>
 		</view>
+
+		<auth-owner-dialog ref="authOwnerDialogRef"></auth-owner-dialog>
 	</view>
 </template>
 
@@ -58,9 +60,13 @@
 	import {
 		hasAuthOwner
 	} from '@/api/owner/ownerApi.js';
+	import authOwnerDialog from '@/components/owner/auth-owner-dialog.vue';
 	import config from '@/conf/config.js';
 
 	export default {
+		components: {
+			authOwnerDialog
+		},
 		data() {
 			return {
 				billAmount: '0.00',
@@ -109,7 +115,9 @@
 				try {
 					await hasAuthOwner(this);
 					this.vc.navigateToWithLogin({ url: urlMap[type] });
-				} catch (e) {}
+				} catch (e) {
+					console.error('User has not authenticated as owner:', e);
+				}
 			},
 			goToPayment() {
 				this.vc.navigateToWithLogin({ url: '/pages/fee/oweFee' });

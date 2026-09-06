@@ -29,6 +29,8 @@
 			</block>
 		</view>
 
+		<auth-owner-dialog ref="authOwnerDialogRef"></auth-owner-dialog>
+
 	</view>
 </template>
 
@@ -44,8 +46,12 @@
 	import {
 		getUserTel
 	} from '@/api/user/userApi.js'
+	import authOwnerDialog from '@/components/owner/auth-owner-dialog.vue';
 
 	export default {
+		components: {
+			authOwnerDialog
+		},
 		data() {
 			return {
 				communityName: '',
@@ -54,7 +60,7 @@
 		},
 		onLoad() {
 			let _that = this;
-			hasAuthOwner().then(_owner => {
+			hasAuthOwner(_that).then(_owner => {
 				_that._loadCommunitys();
 			})
 

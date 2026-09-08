@@ -80,12 +80,12 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/app" : {
-                    "target" : "https://admin.tzxfwy.cn/", //目标接口域名
+                    "target" : "http://demo.homecommunity.cn/", //目标接口域名
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 },
                 "/callComponent" : {
-                    "target" : "https://admin.tzxfwy.cn/", //目标接口域名
+                    "target" : "http://demo.homecommunity.cn/", //目标接口域名
                     "changeOrigin" : true, //是否跨域
                     "secure" : true // 设置支持https协议的代理
                 }

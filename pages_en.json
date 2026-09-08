@@ -761,16 +761,6 @@
             
         }
         ,{
-            "path" : "pages/invoice/invoiceSetting",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "Invoice Settings",
-                "enablePullDownRefresh": false
-            }
-        }
-            
-        }
-        ,{
             "path" : "pages/invoice/invoiceApply",
             "style" :                                                                                    
             {
@@ -784,15 +774,6 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "Invoice Detail",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/invoice/addInvoiceApply",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "Apply Invoice",
                 "enablePullDownRefresh": false
             }
             

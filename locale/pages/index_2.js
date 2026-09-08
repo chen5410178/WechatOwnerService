@@ -41,11 +41,9 @@ import authOwnerLangMsg from './index/authOwner_lang'
 import authOwnerLogLangMsg from './index/authOwnerLog_lang'
 import indexLangMsg from './index/index_lang'
 import serviceLangMsg from './index/service_lang'
-import addInvoiceApplyLangMsg from './invoice/addInvoiceApply_lang'
 import invoiceLangMsg from './invoice/invoice_lang'
 import invoiceApplyLangMsg from './invoice/invoiceApply_lang'
 import invoiceDetailLangMsg from './invoice/invoiceDetail_lang'
-import invoiceSettingLangMsg from './invoice/invoiceSetting_lang'
 import locationLangMsg from './location/location_lang'
 import parkingLangMsg from './parking/parking_lang'
 import getParkingCodeLangMsg from './parking/getParkingCode_lang'
@@ -96,11 +94,9 @@ export default {
     ...authOwnerLogLangMsg['zh-CN'],
     ...indexLangMsg['zh-CN'],
     ...serviceLangMsg['zh-CN'],
-    ...addInvoiceApplyLangMsg['zh-CN'],
     ...invoiceLangMsg['zh-CN'],
     ...invoiceApplyLangMsg['zh-CN'],
     ...invoiceDetailLangMsg['zh-CN'],
-    ...invoiceSettingLangMsg['zh-CN'],
     ...locationLangMsg['zh-CN'],
     ...parkingLangMsg['zh-CN'],
     ...getParkingCodeLangMsg['zh-CN'],
@@ -150,11 +146,9 @@ export default {
     ...authOwnerLogLangMsg['en'],
     ...indexLangMsg['en'],
     ...serviceLangMsg['en'],
-    ...addInvoiceApplyLangMsg['en'],
     ...invoiceLangMsg['en'],
     ...invoiceApplyLangMsg['en'],
     ...invoiceDetailLangMsg['en'],
-    ...invoiceSettingLangMsg['en'],
     ...locationLangMsg['en'],
     ...parkingLangMsg['en'],
     ...getParkingCodeLangMsg['en'],
@@ -204,11 +198,9 @@ export default {
     ...authOwnerLogLangMsg['zh-TW'],
     ...indexLangMsg['zh-TW'],
     ...serviceLangMsg['zh-TW'],
-    ...addInvoiceApplyLangMsg['zh-TW'],
     ...invoiceLangMsg['zh-TW'],
     ...invoiceApplyLangMsg['zh-TW'],
     ...invoiceDetailLangMsg['zh-TW'],
-    ...invoiceSettingLangMsg['zh-TW'],
     ...locationLangMsg['zh-TW'],
     ...parkingLangMsg['zh-TW'],
     ...getParkingCodeLangMsg['zh-TW'],

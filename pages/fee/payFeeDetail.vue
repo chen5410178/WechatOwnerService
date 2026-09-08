@@ -47,10 +47,6 @@
 					<view class="text-gray">{{ $t('payFeeDetail.remark') || '备注' }}</view>
 					<view class="text-gray">{{item.remark}}</view>
 				</view>
-				<view class="flex margin-top-xs justify-between" v-if="item.openInvoice == 'N'">
-					<view class="text-gray"></view>
-					<view class="text-gray"><button class="cu-btn sm line-blue" @click="_applyInvoice(item)">{{ $t('payFeeDetail.invoiceApply') }}</button></view>
-				</view>
 			</view>
 			<uni-load-more :status="loadingStatus" :content-text="loadingContentText" />
 		</view>
@@ -171,11 +167,6 @@
 						})
 					}
 				});
-			},
-			_applyInvoice:function(_feeDetail){
-				uni.navigateTo({
-					url:'/pages/invoice/addInvoiceApply?detailId='+_feeDetail.detailId+'&feeId='+_feeDetail.feeId
-				})
 			}
 		}
 	}

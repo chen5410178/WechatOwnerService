@@ -700,14 +700,6 @@
             
         }
         ,{
-            "path" : "pages/invoice/invoiceSetting",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "发票设置",
-                "enablePullDownRefresh": false
-            }
-        }
-        ,{
             "path" : "pages/invoice/invoiceApply",
             "style" :                                                                                    
             {
@@ -721,15 +713,6 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "发票详情",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/invoice/addInvoiceApply",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "申请开票",
                 "enablePullDownRefresh": false
             }
             

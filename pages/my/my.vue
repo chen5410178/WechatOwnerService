@@ -42,14 +42,6 @@
 					<text class="item-text">{{item.name}}</text>
 				</view>
 			</view>
-			<view class="mine-grid-row">
-				<view class="mine-grid-item" v-for="(item, index) in serviceList2" :key="index" @click="onServiceClick(item)">
-					<view class="icon-wrapper" >
-						<image class="service-icon-img" :src="commonBaseUrl + '/h5/owner/' + item.iconImg"></image>
-					</view>
-					<text class="item-text">{{item.name}}</text>
-				</view>
-			</view>
 		</view>
 
 		<!-- 设置与认证 -->
@@ -141,13 +133,8 @@
 					{ name: this.$t('my.repairRecord'), iconImg: 'fa-screwdriver-wrench-orange.png', href: '/pages/repair/myRepair' },
 					{ name: this.$t('my.complaintRecord'), iconImg: 'fa-comment-dots.png', href: '/pages/complaint/complaintList' },
 					{ name: this.$t('my.vacantRoom'), iconImg: 'fa-house-chimney-crack.png', href: '/pages/applyRoom/myApplyRoomList' },
-					{ name: this.$t('my.renovationRecord'), iconImg: 'fa-paint-roller-blue.png', href: '/pages/renovation/myRoomRenovationList' }
-				];
-			},
-			serviceList2() {
-				return [
-					{ name: this.$t('my.accessLog'), iconImg: 'fa-id-card.png', href: '/pages/machine/machineTranslateLog' },
-					{ name: this.$t('my.invoiceHistory'), iconImg: 'fa-receipt-orange.png', href: '/pages/invoice/invoiceApply' }
+					{ name: this.$t('my.renovationRecord'), iconImg: 'fa-paint-roller-blue.png', href: '/pages/renovation/myRoomRenovationList' },
+					{ name: this.$t('my.accessLog'), iconImg: 'fa-id-card.png', href: '/pages/machine/machineTranslateLog' }
 				];
 			},
 			authStatusText() {

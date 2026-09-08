@@ -240,13 +240,16 @@ listOwnerMachines: baseUrl + 'app/owner.listOwnerMachines', // 申请钥匙
 	refreshAppUserBindingOwnerOpenId: baseUrl+"app/owner.refreshAppUserBindingOwnerOpenId",
 	ownerUserLoginByOpenId: baseUrl+"app/user.ownerUserLoginByOpenId",
 	
-	listOwnerInvoice: baseUrl+"app/invoice.listOwnerInvoice",
-	saveOwnerInvoice: baseUrl+"app/invoice.saveOwnerInvoice",
-	updateOwnerInvoice: baseUrl+"app/invoice.updateOwnerInvoice",
 	listInvoiceApply: baseUrl+"app/invoice.listInvoiceApply",
 	deleteInvoiceApply: baseUrl+"app/invoice.deleteInvoiceApply",
 	listInvoiceEvent: baseUrl+"app/invoice.listInvoiceEvent",
 	saveInvoiceApply: baseUrl+"app/invoice.saveInvoiceApply",
+	// 手机端发票抬头 App 专用（登录用户手机号由后端推导）
+	queryAppInvoiceHeader: baseUrl+"app/invoice.queryAppInvoiceHeader",
+	// 手机端未开票缴费明细 App 专用
+	queryAppUnInvoiceFeeDetail: baseUrl+"app/fee.queryAppUnInvoiceFeeDetail",
+	// 手机端已开票记录 App 专用
+	queryAppInvoiceApply: baseUrl+"app/invoice.queryAppInvoiceApply",
 	getNativeQrcodePayment: baseUrl+"app/payment.getNativeQrcodePayment",
 	queryAppOwnerCars: baseUrl+"app/owner.queryAppOwnerCars",
 	queryAppCarMonthCard: baseUrl+"app/carMonth.queryAppCarMonthCard",

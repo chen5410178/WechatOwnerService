@@ -125,7 +125,7 @@
 					success: function(res) {
 						if (res.statusCode == 200) {
 							//成功情况下跳转
-							let _feeDetails = res.data.feeDetails;
+							let _feeDetails = res.data.data;
 							if (_feeDetails == null || _feeDetails == undefined) {
 								_feeDetails = [];
 							} else {

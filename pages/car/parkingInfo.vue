@@ -24,10 +24,6 @@
 						<view class="text-gray">{{item.carNum}}</view>
 					</view>
 					<view class="flex margin-top-xs justify-between">
-						<view class="text-gray">{{ $t('parkingInfo.brand') }}</view>
-						<view class="text-gray">{{item.carBrand}}</view>
-					</view>
-					<view class="flex margin-top-xs justify-between">
 						<view class="text-gray">{{ $t('parkingInfo.applyTime') }}</view>
 						<view class="text-gray">{{item.createTime}}</view>
 					</view>

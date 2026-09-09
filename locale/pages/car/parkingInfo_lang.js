@@ -12,7 +12,6 @@ export default {
       complete: '完成',
       applyFailed: '申请失败',
       carNumber: '车牌号',
-      brand: '品牌',
       applyTime: '申请时间',
       remark: '备注',
       goToPay: '去缴费'
@@ -31,7 +30,6 @@ export default {
       complete: 'Complete',
       applyFailed: 'Failed',
       carNumber: 'Car Number',
-      brand: 'Brand',
       applyTime: 'Apply Time',
       remark: 'Remark',
       goToPay: 'Go to Pay'
@@ -50,7 +48,6 @@ export default {
       complete: '完成',
       applyFailed: '申請失敗',
       carNumber: '車牌號',
-      brand: '品牌',
       applyTime: '申請時間',
       remark: '備註',
       goToPay: '去繳費'

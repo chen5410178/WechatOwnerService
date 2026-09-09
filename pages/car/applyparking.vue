@@ -5,12 +5,12 @@
 			<input v-model="carNum" :placeholder="$t('applyparking.pleaseInputCarNum')" style="text-align:right"></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">{{ $t('applyparking.brand') }}</view>
-			<input v-model="carBrand" :placeholder="$t('applyparking.inputBrand')" style="text-align:right"></input>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">{{ $t('applyparking.color') }}</view>
-			<input v-model="carColor" :placeholder="$t('applyparking.inputColor')" style="text-align:right"></input>
+			<view class="title">{{ $t('applyparking.parkingLot') }}</view>
+			<picker @change="parkingAreaChange" :value="paIdIndex" :range="parkingAreas" :range-key="'num'">
+				<view class="picker">
+					{{paIdIndex > -1 ? paNum : $t('applyparking.selectParkingLot')}}
+				</view>
+			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">{{ $t('applyparking.carType') }}</view>
@@ -44,19 +44,16 @@
 <script>
 	import context from '../../lib/java110/Java110Context.js'
 	const constant = context.constant;
-	import {getCurCommunity} from '../../api/community/communityApi.js'
+	import {listParkingAreas} from '../../api/community/communityApi.js'
 	
 	import {getProperty} from '../../api/property/propertyApi.js';
-	import {queryParkingSpaces, saveOwnerCar} from '../../api/car/carApi.js';
+	import {saveOwnerCar} from '../../api/car/carApi.js';
 
 	export default {
 		data() {
 			return {
 				carNum:'',
-				carBrand:'',
-				carColor:'',
 				remark:'',
-				psId: '',
 				startDate: this.$t('applyparking.pleaseSelectDate'),
 				endDate: this.$t('applyparking.pleaseSelectDate'),
 				ownerId:'',
@@ -65,9 +62,10 @@
 				applyPersonName:'',
 				applyPersonLink:'',
 				applyPersonId:'',
-				parkingSpaces: [],
-				parkingSpaceIds: [],
-				parkingSpacesName: '',
+				parkingAreas: [],
+				paIdIndex: '-1',
+				paNum: '',
+				paId: '',
 				//车辆类型
 				carTypes: [],
 				carTypeCodes: ['9901', '9902', '9903'],
@@ -95,23 +93,18 @@
 				_this.applyPersonName = _owner.ownerName;
 				_this.applyPersonLink = _owner.ownerTel;
 				_this.applyPersonId = _owner.memberId;
-				_this.listParkingSpace();
+				_this.listParkingAreas();
 			});
 		},
 		methods: {
-			listParkingSpace: function() {
+			listParkingAreas: function() {
 				let _that = this;
-				queryParkingSpaces({
-					page: this.page,
-					row: this.row,
-					communityId: this.communityId,
-					state: 'F'
+				listParkingAreas({
+					page: 1,
+					row: 100,
+					communityId: this.communityId
 				}).then((res) => {
-					let arr = res.parkingSpaces;
-					arr.map(item => {
-						_that.parkingSpaces.push(item.areaNum + " " + _that.$t('applyparking.parkingSpace') + "  " + item.num + _that.$t('applyparking.parkingSpaceNum'));
-						_that.parkingSpaceIds.push(item.psId);
-					})
+					_that.parkingAreas = res;
 				}).catch(() => {
 					uni.showToast({
 						title: _that.$t('common.serverError'),
@@ -120,10 +113,11 @@
 					})
 				});
 			},
-			choosePickerSpace: function(e) {
-				let checkInIndex = e.target.value;
-				this.psId = this.parkingSpaceIds[checkInIndex];
-				this.parkingSpacesName = this.parkingSpaces[checkInIndex];
+			parkingAreaChange: function(e) {
+				let index = e.detail.value;
+				this.paIdIndex = index;
+				this.paNum = this.parkingAreas[index].num;
+				this.paId = this.parkingAreas[index].paId;
 			},
 			//车辆类型
 			chooseCarTypes: function(e) {
@@ -139,10 +133,9 @@
 			submitApply:function(){
 				let obj = {
 					"carNum": this.carNum,
-					"carBrand": this.carBrand,
-					"carColor": this.carColor,
 					"remark": this.remark,
 					"carType":this.carTypeCode,
+					"paId": this.paId,
 					"communityId":this.communityId,
 					"ownerId":this.ownerId,
 					"state":"1001",
@@ -158,6 +151,8 @@
 					msg = this.$t('applyparking.fillCarNumber');
 				} else if(obj.carType == ""){
 					msg = this.$t('applyparking.selectCarType');
+				} else if(obj.paId == ""){
+					msg = this.$t('applyparking.selectParkingLot');
 				}
 				if(msg != ""){
 					uni.showToast({

@@ -75,9 +75,9 @@ export function autoLoginWechat(options) {
 		let _time = uni.getStorageSync('refreshUserOpenId');
 		if(_time){
 			loginByOpenId(_openId);
-			uni.removeStorageSync('refreshUserOpenId');
-			return;
+			uni.removeStorageSync('refreshUserOpenId');	
 		}
+		return;
 	}
 	//todo 如果参数中带了wAppId
 	let _wAppId = options.wAppId;
